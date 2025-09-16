@@ -45,12 +45,34 @@
 </head>
 
 <body class="pr-5 scroll-smooth">
-    <section>
+    <!-- Mobile header (phones only) -->
+    <header class="md:hidden sticky top-0 z-50 bg-[#06142A] text-white">
+        <div class="flex items-center justify-between px-4 py-3">
+            <span class="font-semibold tracking-wide">NAZMUL HUDA BADHON</span>
+            <button id="mobileMenuBtn" class="text-white text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+        <!-- tap-to-open quick links -->
+        <nav id="mobileMenu" class="hidden border-t border-white/10 bg-[#06142A]">
+            <a href="#about" class="block px-4 py-3 hover:text-orange-400">About</a>
+            <a href="#education" class="block px-4 py-3 hover:text-orange-400">Education</a>
+            <a href="#publication" class="block px-4 py-3 hover:text-orange-400">Publications</a>
+            <a href="#project" class="block px-4 py-3 hover:text-orange-400">Projects</a>
+            <a href="#work" class="block px-4 py-3 hover:text-orange-400">Experience</a>
+            <a href="#service" class="block px-4 py-3 hover:text-orange-400">Services</a>
+            <a href="#contact" class="block px-4 py-3 hover:text-orange-400">Contact</a>
+        </nav>
+    </header>
+
+    <section id="about">
         <div class="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex flex-col pl-4">
                 <!-- ABOUT -->
-                <section id="about" class="px-6 pt-4 pb-6 mt-10 mx-auto">
+                <section class="px-6 pt-4 pb-6 mt-10 mx-auto">
                     <!-- Heading on top -->
                     <h2 class="flex items-center font-medium text-3xl mb-8">
                         <span class="w-1 h-10 bg-orange-500 mr-2"></span> ABOUT ME
@@ -101,10 +123,10 @@
                 </section>
                 <br>
                 <br>
-                <br>
+                <br id="education">
 
                 <!-- EDUCATION -->
-                <section id="education" class="scroll-mt-24 bg-white p-6">
+                <section class="scroll-mt-24 bg-white p-6">
                     <h2 class="flex items-center font-medium text-3xl mb-4">
                         <span class="w-1 h-10 bg-orange-500 mr-2"></span> EDUCATION
                     </h2>
@@ -131,9 +153,9 @@
                 </section>
 
                 <!-- PUBLICATIONS -->
-                <section id="publication" class="scroll-mt-24 bg-white p-6 mt-5">
+                <section class="scroll-mt-24 bg-white p-6 mt-5">
                     <h2 class="flex items-center font-semibold text-3xl mb-10">
-                        <span class="w-1 h-10 bg-orange-500 mr-2"></span> PUBLICATIONS/PRESS
+                        <span id="publication" class="w-1 h-10 bg-orange-500 mr-2"></span> PUBLICATIONS/PRESS
                     </h2>
 
                     <div class="space-y-6">
@@ -317,9 +339,10 @@
                     </h2>
                     <p>Coming soon...</p>
                 </section>
+                <br id="work">
 
                 <!-- WORK EXPERIENCE -->
-                <section id="work" class="scroll-mt-24 bg-white p-6 mt-5">
+                <section class="scroll-mt-24 bg-white p-6 mt-5">
                     <h2 class="flex items-center font-medium text-3xl mb-10">
                         <span class="w-1 h-10 bg-orange-500 mr-2"></span> WORK EXPERIENCE
                     </h2>
@@ -358,38 +381,43 @@
                     </h2>
                     <div class="flex gap-6">
                         <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=-1VBDA8AAAAJ&hl=en">
-                            <img class="w-9" src="./Image/googlescholar.svg" alt="Google Scholar">
+                            <img class="w-8" src="./Image/googlescholar.svg" alt="Google Scholar">
                         </a>
                         <a target="_blank" rel="noopener noreferrer" href="https://orcid.org/0009-0006-6205-2422">
-                            <img class="w-9" src="./Image/orcid_icon_196062.png" alt="ORCID">
+                            <img class="w-8" src="./Image/orcid_icon_196062.png" alt="ORCID">
                         </a>
                         <a target="_blank" rel="noopener noreferrer" href="https://www.researchgate.net/profile/Nazmul-Huda-Badhon">
-                            <img class="w-9" src="./Image/RG_Logo.02_Black.White.png" alt="ResearchGate">
+                            <img class="w-8" src="./Image/RG_Logo.02_Black.White.png" alt="ResearchGate">
                         </a>
                         <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/nazmuhudabadhon/">
-                            <img class="w-9" src="./Image/linkedin-logo-png_seeklogo-480553.png" alt="LinkedIn">
+                            <img class="w-8" src="./Image/linkedin-logo-png_seeklogo-480553.png" alt="LinkedIn">
                         </a>
                         <a target="_blank" rel="noopener noreferrer" href="https://www.webofscience.com/wos/author/record/NYS-9310-2025">
-                            <img class="w-9" src="./Image/wos.png" alt="Web of Science">
+                            <img class="w-8" src="./Image/wos.png" alt="Web of Science">
                         </a>
+                    </div>
+                    <div class="flex mt-4 gap-6">
                         <a target="_blank" rel="noopener noreferrer" href="https://sciprofiles.com/profile/nazmulhudabadhon">
-                            <img class="w-9" src="./Image/sci.png" alt="SciProfiles">
+                            <img class="w-8" src="./Image/sci.png" alt="SciProfiles">
                         </a>
                         <a target="_blank" rel="noopener noreferrer" href="https://www.scopus.com/authid/detail.uri?authorId=58864125600">
-                            <img class="w-9" src="./Image/scopus-icon.png" alt="Scopus">
+                            <img class="w-8" src="./Image/scopus-icon.png" alt="Scopus">
+                        </a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.semanticscholar.org/author/Nazmul-Huda-Badhon/2281092135">
+                            <img class="w-8" src="./Image/semantic.jpg" alt="Semantic Scholar">
                         </a>
                         <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/nazmul.huda.badhon/">
-                            <img class="w-9" src="./Image/facebook.png" alt="Facebook">
+                            <img class="w-8" src="./Image/facebook.png" alt="Facebook">
                         </a>
                         <a target="_blank" rel="noopener noreferrer" href="https://github.com/badhon4772">
-                            <img class="w-9" src="./Image/25231.png" alt="GitHub">
+                            <img class="w-8" src="./Image/25231.png" alt="GitHub">
                         </a>
                     </div>
                 </section>
             </div>
 
             <!-- SIDEBAR -->
-            <div class="drawer-side">
+            <div class="drawer-side hidden lg:block">
                 <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
                 <ul class="min-h-full w-60 p-6 bg-[#06142A]">
                     <br>
@@ -403,12 +431,13 @@
                         <a href="#publication" class="block hover:text-orange-400">PUBLICATIONS/PRESS</a>
                         <a href="#project" class="block hover:text-orange-400">PROJECT</a>
                         <a href="#work" class="block hover:text-orange-400">EXPERIENCE</a>
-                        <a href="activities.html" class="block hover:text-orange-400">ACHIEVEMENT &amp; ECA</a>
+                        <a href="activities.html" class="block hover:text-orange-400">ACHIEVEMENT & ECA</a>
                         <a href="#service" class="block hover:text-orange-400">SERVICES</a>
                         <a href="#contact" class="block hover:text-orange-400">CONTACT</a>
                     </nav>
                 </ul>
             </div>
+
         </div>
 
         <!-- COPYRIGHT FOOTER -->
@@ -421,6 +450,12 @@
     </section>
 
     <script src="index.js"></script>
+
+    <!-- Back-to-top (phones only) -->
+    <button id="backToTop" class="md:hidden hidden fixed right-4 bottom-2 rounded bg-orange-400 text-white p-3 shadow-lg" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up text"></i>
+</button>
+
 </body>
 
 </html>

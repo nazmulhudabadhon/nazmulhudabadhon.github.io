@@ -31,6 +31,15 @@
         #sideNav a.active {
             color: rgb(251 146 60);
             font-weight: 600;
+            #animatedText {
+                min-height: 2.75rem;
+                /* ~44px; tune to your tallest sentence on mobile */
+            }
+            @media (min-width: 768px) {
+                #animatedText {
+                    min-height: 2rem;
+                }
+            }
         }
     </style>
 </head>
@@ -39,7 +48,6 @@
     <section>
         <div class="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-
             <div class="drawer-content flex flex-col pl-4">
                 <!-- ABOUT -->
                 <section id="about" class="px-6 pt-4 pb-6 mt-10 mx-auto">
@@ -70,7 +78,10 @@
                         <!-- RIGHT COLUMN -->
                         <div class="w-full md:w-2/3">
                             <h1 class="text-xl md:text-2xl font-normal mb-2">Hi there! I'm Nazmul Huda Badhon and I'm</h1>
-                            <div id="animatedText" class="text-lg md:text-2xl font-medium text-orange-600 min-h-[1.5em]"></div>
+                            <div class="relative h-14 md:h-8">
+                                <div id="animatedText" class="absolute inset-0 text-lg md:text-2xl font-medium text-orange-600 overflow-hidden leading-tight">
+                                </div>
+                            </div>
 
                             <p class="text-justify font-normal mt-4">
                                 an undergraduate final semester student in Computer Science and Engineering at Daffodil International University, Bangladesh, specializing in Machine Learning, Deep Learning, and Medical AI. His research explores AI-driven solutions for healthcare, medical
@@ -83,11 +94,14 @@
                             </p>
 
                             <p class="mt-4"><span class="font-medium">Research Areas:</span> Deep Learning, Machine Learning, Medical AI, Computer Vision, Medical Imaging</p>
-
+                            <br>
                             <a href="https://drive.google.com/file/d/11mBzcEa6IVK_tcOc3buR1dnlpkwOGz-d/view?usp=sharing" target="_blank" class="btn mt-2 px-8 text-white text-lg font-medium bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-400 hover:to-red-700">CV</a>
                         </div>
                     </div>
                 </section>
+                <br>
+                <br>
+                <br>
 
                 <!-- EDUCATION -->
                 <section id="education" class="scroll-mt-24 bg-white p-6">
@@ -301,6 +315,7 @@
                     <h2 class="flex items-center font-semibold text-3xl mb-4">
                         <span class="w-1 h-12 bg-orange-500 mr-2"></span> RESEARCH PROJECTS
                     </h2>
+                    <p>Coming soon...</p>
                 </section>
 
                 <!-- WORK EXPERIENCE -->
@@ -343,31 +358,31 @@
                     </h2>
                     <div class="flex gap-6">
                         <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=-1VBDA8AAAAJ&hl=en">
-                            <img class="w-6" src="./Image/googlescholar.svg" alt="Google Scholar">
+                            <img class="w-9" src="./Image/googlescholar.svg" alt="Google Scholar">
                         </a>
                         <a target="_blank" rel="noopener noreferrer" href="https://orcid.org/0009-0006-6205-2422">
-                            <img class="w-6" src="./Image/orcid_icon_196062.png" alt="ORCID">
+                            <img class="w-9" src="./Image/orcid_icon_196062.png" alt="ORCID">
                         </a>
                         <a target="_blank" rel="noopener noreferrer" href="https://www.researchgate.net/profile/Nazmul-Huda-Badhon">
-                            <img class="w-6" src="./Image/RG_Logo.02_Black.White.png" alt="ResearchGate">
+                            <img class="w-9" src="./Image/RG_Logo.02_Black.White.png" alt="ResearchGate">
                         </a>
                         <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/nazmuhudabadhon/">
-                            <img class="w-6" src="./Image/linkedin-logo-png_seeklogo-480553.png" alt="LinkedIn">
+                            <img class="w-9" src="./Image/linkedin-logo-png_seeklogo-480553.png" alt="LinkedIn">
                         </a>
                         <a target="_blank" rel="noopener noreferrer" href="https://www.webofscience.com/wos/author/record/NYS-9310-2025">
-                            <img class="w-6" src="./Image/wos.png" alt="Web of Science">
+                            <img class="w-9" src="./Image/wos.png" alt="Web of Science">
                         </a>
                         <a target="_blank" rel="noopener noreferrer" href="https://sciprofiles.com/profile/nazmulhudabadhon">
-                            <img class="w-6" src="./Image/sci.png" alt="SciProfiles">
+                            <img class="w-9" src="./Image/sci.png" alt="SciProfiles">
                         </a>
                         <a target="_blank" rel="noopener noreferrer" href="https://www.scopus.com/authid/detail.uri?authorId=58864125600">
-                            <img class="w-6" src="./Image/scopus-icon.png" alt="Scopus">
+                            <img class="w-9" src="./Image/scopus-icon.png" alt="Scopus">
                         </a>
                         <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/nazmul.huda.badhon/">
-                            <img class="w-6" src="./Image/facebook.png" alt="Facebook">
+                            <img class="w-9" src="./Image/facebook.png" alt="Facebook">
                         </a>
                         <a target="_blank" rel="noopener noreferrer" href="https://github.com/badhon4772">
-                            <img class="w-6" src="./Image/25231.png" alt="GitHub">
+                            <img class="w-9" src="./Image/25231.png" alt="GitHub">
                         </a>
                     </div>
                 </section>

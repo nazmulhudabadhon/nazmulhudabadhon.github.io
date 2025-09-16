@@ -1,7 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    /* ===========================
-        Animated line (no layout jump)
-    ============================ */
     const sentences = [
         "Looking for Research Assistantship Position",
         "A Researcher in Deep Learning",
@@ -61,9 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
         showSentence();
     }
 
-    /* ===========================
-        Side nav active highlight
-    ============================ */
     const sideNav = document.getElementById("sideNav");
     if (sideNav) {
         const sectionIds = [
@@ -123,9 +117,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    /* ===========================
-        Mobile header 3-dot menu
-    ============================ */
     const mmBtn = document.getElementById("mobileMenuBtn");
     const mmNav = document.getElementById("mobileMenu");
     if (mmBtn && mmNav) {
@@ -136,9 +127,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* ===========================
-        Back-to-top FAB (mobile)
-    ============================ */
     const topBtn = document.getElementById("backToTop");
     if (topBtn) {
         const toggleTopBtn = () => {

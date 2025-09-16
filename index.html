@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nazmul's Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4/dist/full.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        #sideNav a {
+            position: relative;
+            display: block;
+        }
+        
+        #sideNav a:hover::after,
+        #sideNav a.active::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 28px;
+            height: 2px;
+            background: rgb(249 115 22);
+            margin-left: 10px;
+            transform: translateY(-50%);
+        }
+        
+        #sideNav a.active {
+            color: rgb(251 146 60);
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body class="pr-5 scroll-smooth">
+    <section>
+        <div class="drawer lg:drawer-open">
+            <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+
+            <div class="drawer-content flex flex-col pl-4">
+
+                <!-- ABOUT -->
+                <section id="about" class="px-6 pt-4 pb-6 mt-0 mx-auto min-h-screen flex items-center">
+                    <h2 class="flex items-center font-medium text-4xl mb-12">
+                        <span class="w-1 h-10 bg-orange-500 mr-2"></span> ABOUT ME
+                    </h2>
+                    <div class="flex gap-20 justify-center items-start">
+                        <div class="w-1/3 pl-1 -ml-16 mt-10">
+                            <div class="bg-white border border-gray-200 shadow-sm p-2 rounded-lg">
+                                <img class="w-full h-auto object-cover rounded-md" src="./Image/badhon.png" alt="Nazmul Huda Badhon">
+                            </div>
+                            <p class="flex items-center mt-6">
+                                <strong>Nazmul Huda Badhon   </strong> (he/him)
+                            </p>
+                            <p class="flex items-center mt-6">
+                                <i class="fa-solid fa-envelope text-orange-500 mr-2"></i> badhon15-4772@diu.edu.bd
+                            </p>
+                            <p class="flex items-center">
+                                <i class="fa-solid fa-phone text-orange-500 mr-2"></i> +880 1903-906230
+                            </p>
+                            <p class="flex items-center">
+                                <i class="fa-solid fa-location-dot text-orange-500 mr-2"></i> Daffodil Smart City, Birulia, Savar, Dhaka-1216, Bangladesh
+                            </p>
+                        </div>
+
+                        <div class="w-1/2">
+                            <h1 class="text-2xl font-normal mb-2">Hi there! I'm Nazmul Huda Badhon and I'm</h1>
+                            <div class="text-2xl font-medium text-orange-600 min-h-[1.5em]" id="animatedText"></div><br>
+                            <p class="text-justify font-normal">an undergraduate final semester student in Computer Science and Engineering at Daffodil International University, Bangladesh, specializing in Machine Learning, Deep Learning, and Medical AI. His research explores AI-driven
+                                solutions for healthcare, medical imaging, and intelligent data analysis. He has authored
+                                <strong style="color: tomato;">8+</strong> peer-reviewed publications, including accepted works in <b class="font-medium">Q1 and Q2 journals</b>, data articles, and book chapters with publishers such as
+                                <b class="font-medium">Taylor & Francis and Elsevier (Data in Brief)</b>. His contributions cover areas including energy demand prediction, medical imaging datasets, and systematic literature reviews on Large Language Models
+                                (LLMs) in healthcare. Beyond research, Badhon is passionate about teaching and mentoring, with a vision of pursuing a Research Assistantship or Teaching Assistantship to further develop his academic and research career.
+                                His strong foundation in algorithms, statistical modeling, and deep learning architectures supports his long-term goal of advancing AI for impactful, real-world applications. </p>
+                            <br>
+                            <p><span class="font-medium">Research Areas:</span> Deep Learning, Machine Learning, Medical AI, Computer Vision, Medical Imaging</p>
+                            <a href="https://drive.google.com/file/d/11mBzcEa6IVK_tcOc3buR1dnlpkwOGz-d/view?usp=sharing" target="_blank" class="btn mt-2 px-8 text-white text-lg font-medium bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-400 hover:to-red-700">CV</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- EDUCATION -->
+                <section id="education" class="bg-white p-6">
+                    <h2 class="flex items-center font-medium text-3xl mb-4">
+                        <span class="w-1 h-10 bg-orange-500 mr-2"></span> EDUCATION
+                    </h2>
+
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-10 list-disc list-outside pl-5">
+                        <li>
+                            <div class="font-medium">Bachelor of Science in Computer Science & Engineering</div>
+                            <div class="ml-4">
+                                <div>Daffodil International University, Dhaka, Bangladesh</div>
+                                <div>(Spring 2022 - Fall 2025)</div>
+                                <div>CGPA 3.88/4.00</div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="font-medium">Exchange Program, Computer Engineering</div>
+                            <div class="ml-4">
+                                <div>Dongseo University, Busan, South Korea</div>
+                                <div>(Fall 2023)</div>
+                                <div>GPA 3.94/4.50 (93.25% Marks in total.)</div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </section>
+
+                <!-- PUBLICATIONS -->
+                <section id="publication" class="bg-white p-6 mt-5">
+                    <h2 class="flex items-center font-semibold text-3xl mb-10">
+                        <span class="w-1 h-10 bg-orange-500 mr-2"></span> PUBLICATIONS/PRESS
+                    </h2>
+
+
+                    <div class="space-y-6">
+                        <!-- Publication Card -->
+                        <!--TLCNN-->
+                        <article class="rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition p-5 md:p-6 flex flex-col md:flex-row gap-6 md:gap-8">
+                            <!-- Left: badge + citation -->
+                            <div class="flex-1 min-w-0">
+                                <!-- Badge -->
+                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-purple-100 text-purple-700">Journal</span>
+                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-red-100 text-red-700">Research Article</span>
+                                <span class="inline-flex items-center text-xs font-medium uppercase tracking-wider px-3 py-1 rounded-full bg-[#7BE495] text-white">Q1</span>
+                                <!-- Citation -->
+                                <p class="mt-3 leading-relaxed text-[15px] md:text-[16px] text-slate-800">
+                                    <strong>Nazmul Huda Badhon</strong>, Imrus Salehin, Md Tomal Ahmed Sajib, Md Sakibul Hassan Rifat, SM Noman, Nazmun Nessa Moon, "TLCNN: Tabular data-based Lightweight Convolutional Neural Network for Electricity Energy
+                                    Demand Prediction" on Current Research in Deep Learning, <em>Global Energy Interconnection</em> (<b>In Press,Elsevier</b>), 2025.
+                                </p>
+                                <div class="mt-4 flex gap-3 ">
+                                    <!-- Official Paper -->
+                                    <a href=" " target="_blank" class="inline-flex items-center px-4 py-2 border border-black rounded-md text-black font-medium hover:bg-gray-100 transition">
+                                        <i class="fa-solid fa-link mr-2"></i> Paper Link
+                                    </a>
+
+                                    <!-- PDF in your repo -->
+                                    <a href="./pdfs/tlcnn.pdf" target="_blank" class="inline-flex items-center px-2 py-2 border border-black rounded-md text-black font-semibold hover:bg-gray-100 transition">
+                                        <i class="fa-solid fa-file-pdf text-red-600 mr-2"></i> Paper PDF
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Right: Thumbnail -->
+                            <a href=" " target="_blank " rel="noopener " class="md:w-64 lg:w-72 shrink-0 ">
+                                <img src="./Image/tlcnn.jpg " alt="Paper figure " class="w-full h-40 md:h-44 object-cover rounded-xl ring-1 ring-black/5 ">
+                            </a>
+                        </article>
+
+                        <!--Mini Review-->
+                        <article class="rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition p-5 md:p-6 flex flex-col md:flex-row gap-6 md:gap-8">
+                            <!-- Left: badge + citation -->
+                            <div class="flex-1 min-w-0">
+                                <!-- Badge -->
+                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-purple-100 text-purple-700">Journal</span>
+                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-red-100 text-red-700">Mini Review</span>
+                                <span class="inline-flex items-center text-xs font-medium uppercase tracking-wider px-3 py-1 rounded-full bg-[#7BE495] text-white">Q1</span>
+                                <p class="mt-3 leading-relaxed text-[15px] md:text-[16px] text-slate-800">
+                                    Imrus Salehin, <strong>Nazmul Huda Badhon</strong>, Md Tomal Ahmed Sajib, Nazmun Nessa Moon, "Secure Medical AI: Federated Learning and Large Language Models for Medical Intelligence." on Current Research in Federated
+                                    Learning and LLM, Elsevier.” <em>Fundamental Research</em> (<b>With Editor, Elsevier</b>), 2025.
+                                </p>
+                                <div class="mt-4 flex gap-3 ">
+                                    <!-- Official Paper -->
+                                    <a href="" target="_blank" class="inline-flex items-center px-4 py-2 border border-black rounded-md text-black font-medium hover:bg-gray-100 transition">
+                                        <i class="fa-solid fa-link mr-2"></i> Paper Link
+                                    </a>
+
+                                    <!-- PDF in your repo -->
+                                    <a href="./pdfs/mini.pdf" target="_blank" class="inline-flex items-center px-2 py-2 border border-black rounded-md text-black font-semibold hover:bg-gray-100 transition">
+                                        <i class="fa-solid fa-file-pdf text-red-600 mr-2"></i> Paper PDF
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Right: Thumbnail -->
+                            <a href=" " target="_blank " rel="noopener " class="md:w-64 lg:w-72 shrink-0 ">
+                                <img src="./Image/mini.jpg " alt="Paper figure " class="w-full h-40 md:h-44 object-cover rounded-xl ring-1 ring-black/5 ">
+                            </a>
+                        </article>
+
+                        <!--LLM-->
+                        <article class="rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition p-5 md:p-6 flex flex-col md:flex-row gap-6 md:gap-8">
+                            <!-- Left: badge + citation -->
+                            <div class="flex-1 min-w-0">
+                                <!-- Badge -->
+                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-purple-100 text-purple-700">Journal</span>
+                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-sky-100 text-sky-700">Review Article</span>
+                                <span class="inline-flex items-center text-xs font-medium uppercase tracking-wider px-3 py-1 rounded-full bg-[#E6F995] text">Q2</span>
+                                <!-- Citation -->
+                                <p class="mt-3 leading-relaxed text-[15px] md:text-[16px] text-slate-800">
+                                    Imrus Salehin, Md Tomal Ahmed Sajib,
+                                    <strong>Nazmul Huda Badhon</strong>, Md Sakibul Hassan Rifat, Nazrul Amin, Nazmun Nessa Moon, Systematic Literature Review of LLM-Large Language Model in Medical: Digital Health, Technology and Applications " on Current
+                                    Research in Deep Learning, Elsevier.” <em>Engineering Reports</em> (<b>Accepted, Wiley</b>), September 2025.
+                                </p>
+                                <div class="mt-4 flex gap-3 ">
+                                    <!-- Official Paper -->
+                                    <a href="https://onlinelibrary.wiley.com/doi/10.1002/eng2.70365" target="_blank" class="inline-flex items-center px-4 py-2 border border-black rounded-md text-black font-medium hover:bg-gray-100 transition">
+                                        <i class="fa-solid fa-link mr-2"></i> Paper Link
+                                    </a>
+
+                                    <!-- PDF in your repo -->
+                                    <a href="./pdfs/llm.pdf" target="_blank" class="inline-flex items-center px-2 py-2 border border-black rounded-md text-black font-semibold hover:bg-gray-100 transition">
+                                        <i class="fa-solid fa-file-pdf text-red-600 mr-2"></i> Paper PDF
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Right: Thumbnail -->
+                            <a href="https://onlinelibrary.wiley.com/doi/10.1002/eng2.70365" target="_blank " rel="noopener " class="md:w-64 lg:w-72 shrink-0 ">
+                                <img src="./Image/llm.jpg " alt="Paper figure " class="w-full h-40 md:h-44 object-cover rounded-xl ring-1 ring-black/5 ">
+                            </a>
+                        </article>
+
+                        <!--MethodsX-->
+                        <article class="rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition p-5 md:p-6 flex flex-col md:flex-row gap-6 md:gap-8">
+                            <!-- Left: badge + citation -->
+                            <div class="flex-1 min-w-0">
+                                <!-- Badge -->
+                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-purple-100 text-purple-700">Journal</span>
+                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-orange-100 text-orange-700">Micro Article</span>
+                                <span class="inline-flex items-center text-xs font-medium uppercase tracking-wider px-3 py-1 rounded-full bg-[#E6F995] text">Q2</span>
+                                <!-- Citation -->
+                                <p class="mt-3 leading-relaxed text-[15px] md:text-[16px] text-slate-800">
+                                    Imrus Salehin, Md Tomal Ahmed Sajib,
+                                    <strong>Nazmul Huda Badhon</strong>, Md Sakibul Hassan Rifat, Faysal Ahmed, Nazmun Nessa Moon, "A comparative deep learning methodology for plant insect image classification: assessment of CNN architectures and augmentation
+                                    techniques." on Current Research in Deep Learning. <em>MethodsX</em> (<b>Under Review, Elsevier</b>), 2025
+                                </p>
+                                <div class="mt-4 flex gap-3 ">
+                                    <!-- Official Paper -->
+                                    <a href=" " target="_blank" class="inline-flex items-center px-4 py-2 border border-black rounded-md text-black font-medium hover:bg-gray-100 transition">
+                                        <i class="fa-solid fa-link mr-2"></i> Paper Link
+                                    </a>
+
+                                    <!-- PDF in your repo -->
+                                    <a href="./pdfs/methodsx.pdf" target="_blank" class="inline-flex items-center px-2 py-2 border border-black rounded-md text-black font-semibold hover:bg-gray-100 transition">
+                                        <i class="fa-solid fa-file-pdf text-red-600 mr-2"></i> Paper PDF
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Right: Thumbnail -->
+                            <a href=" " target="_blank " rel="noopener " class="md:w-64 lg:w-72 shrink-0 ">
+                                <img src="./Image/methodsx.jpg " alt="Paper figure " class="w-full h-40 md:h-44 object-cover rounded-xl ring-1 ring-black/5 ">
+                            </a>
+                        </article>
+
+                        <!--IQ data paper-->
+                        <article class="rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition p-5 md:p-6 flex flex-col md:flex-row gap-6 md:gap-8">
+                            <!-- Left: badge + citation -->
+                            <div class="flex-1 min-w-0">
+                                <!-- Badge -->
+                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-purple-100 text-purple-700">Journal
+                                </span>
+                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-100 text-emerald-700">Data Article</span>
+                                <span class="inline-flex items-center text-xs font-medium uppercase tracking-wider px-3 py-1 rounded-full bg-[#FFF176] text">Q3</span>
+                                <!-- Citation -->
+                                <p class="mt-3 leading-relaxed text-[15px] md:text-[16px] text-slate-800">
+                                    Imrus Salehin, <strong>Nazmul Huda Badhon</strong>, Md Tomal Ahmed Sajib, Mohd Saifuzzaman, Nazmun Nessa Moon (2025), “ IQ-UltraRecon: Demodulated IQ ultrasound dataset of human hand and arm tissue for deep learning-based
+                                    reconstruction.”
+                                    <em>Data in Brief</em> (<b>Accepted, Elsevier</b>), August 2025.
+                                </p>
+                                <div class="mt-4 flex gap-3">
+                                    <!-- Official Paper -->
+                                    <a href="https://www.sciencedirect.com/science/article/pii/S2352340925007255" target="_blank" class="inline-flex items-center px-4 py-2 border border-black rounded-md text-black font-medium hover:bg-gray-100 transition">
+                                        <i class="fa-solid fa-link mr-2"></i> Paper Link
+                                    </a>
+
+                                    <!-- PDF in your repo -->
+                                    <a href="./pdfs/IQ-UltraRecon.pdf" target="_blank" class="inline-flex items-center px-2 py-2 border border-black rounded-md text-black font-semibold hover:bg-gray-100 transition">
+                                        <i class="fa-solid fa-file-pdf text-red-600 mr-2"></i> Paper PDF
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Right: Thumbnail -->
+                            <a href="https://www.sciencedirect.com/science/article/pii/S2352340925007255 " target="_blank " rel="noopener " class="md:w-64 lg:w-72 shrink-0 ">
+                                <img src="./Image/ultrarecon_fig.png " alt="Paper figure " class="w-full h-40 md:h-44 object-cover rounded-xl ring-1 ring-black/5 ">
+                            </a>
+                        </article>
+
+                        <!--B-mode-->
+                        <article class="rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition p-5 md:p-6 flex flex-col md:flex-row gap-6 md:gap-8">
+                            <!-- Left: badge + citation -->
+                            <div class="flex-1 min-w-0">
+                                <!-- Badge -->
+                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-purple-100 text-purple-700">Journal
+                                </span>
+                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-100 text-emerald-700">Data Article</span>
+                                <span class="inline-flex items-center text-xs font-medium uppercase tracking-wider px-3 py-1 rounded-full bg-[#FFF176] text">Q3</span>
+                                <!-- Citation -->
+                                <p class="mt-3 leading-relaxed text-[15px] md:text-[16px] text-slate-800">
+                                    Imrus Salehin, <strong>Nazmul Huda Badhon</strong>, Md Tomal Ahmed Sajib, Nazmun Nessa Moon, "DeepUS-ReconSeg: A Multi-Angle Paired B-Mode Ultrasound Dataset for Medical Imaging Reconstruction and Segmentation. " on
+                                    Current Research in Deep Learning, <em>Data in Brief</em> (<b>In Press, Elsevier</b>), 2025.
+                                </p>
+                                <div class="mt-4 flex gap-3">
+                                    <!-- Official Paper -->
+                                    <a href=" " target="_blank" class="inline-flex items-center px-4 py-2 border border-black rounded-md text-black font-medium hover:bg-gray-100 transition">
+                                        <i class="fa-solid fa-link mr-2"></i> Paper Link
+                                    </a>
+
+                                    <!-- PDF in your repo -->
+                                    <a href="./pdfs/bmode.pdf" target="_blank" class="inline-flex items-center px-2 py-2 border border-black rounded-md text-black font-semibold hover:bg-gray-100 transition">
+                                        <i class="fa-solid fa-file-pdf text-red-600 mr-2"></i> Paper PDF
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Right: Thumbnail -->
+                            <a href="" target="_blank " rel="noopener " class="md:w-64 lg:w-72 shrink-0 ">
+                                <img src="./Image/bmode.png " alt="Paper figure " class="w-full h-40 md:h-44 object-cover rounded-xl ring-1 ring-black/5 ">
+                            </a>
+                        </article>
+
+                        <!--BAU-Insectv2-->
+                        <article class="rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition p-5 md:p-6 flex flex-col md:flex-row gap-6 md:gap-8">
+                            <!-- Left: badge + citation -->
+                            <div class="flex-1 min-w-0">
+                                <!-- Badge -->
+                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-purple-100 text-purple-700">Journal
+                                </span>
+                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-100 text-emerald-700">Data Article</span>
+                                <span class="inline-flex items-center text-xs font-medium uppercase tracking-wider px-3 py-1 rounded-full bg-[#FFF176] text">Q3</span>
+                                <!-- Citation -->
+                                <p class="mt-3 leading-relaxed text-[15px] md:text-[16px] text-slate-800">
+                                    Imrus Salehin, Mahbubur Rahman Khan, Ummya Habiba, <strong>Nazmul Huda Badhon</strong>, Nazmun Nessa Moon (2024), "BAU-Insectv2: An Agricultural Plant Insect Dataset for Deep Learning and Biomedical Image Analysis"
+                                    on Current Research in Deep Learning.
+                                    <em>Data in Brief</em> (<b>Accepted, Elsevier</b>), January 2024.
+                                </p>
+                                <div class="mt-4 flex gap-3">
+                                    <!-- Official Paper -->
+                                    <a href="https://www.sciencedirect.com/science/article/pii/S2352340924000568" target="_blank" class="inline-flex items-center px-4 py-2 border border-black rounded-md text-black font-medium hover:bg-gray-100 transition">
+                                        <i class="fa-solid fa-link mr-2"></i> Paper Link
+                                    </a>
+
+                                    <!-- PDF in your repo -->
+                                    <a href="./pdfs/BAU-Insectv2.pdf" target="_blank" class="inline-flex items-center px-2 py-2 border border-black rounded-md text-black font-semibold hover:bg-gray-100 transition">
+                                        <i class="fa-solid fa-file-pdf text-red-600 mr-2"></i> Paper PDF
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Right: Thumbnail -->
+                            <a href="https://www.sciencedirect.com/science/article/pii/S2352340924000568 " target="_blank " rel="noopener " class="md:w-64 lg:w-72 shrink-0 ">
+                                <img src="./Image/bauinsect.jpg " alt="Paper figure " class="w-full h-40 md:h-44 object-cover rounded-xl ring-1 ring-black/5 ">
+                            </a>
+                        </article>
+
+                        <!--Book Chapter-->
+                        <article class="rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition p-5 md:p-6 flex flex-col md:flex-row gap-6 md:gap-8">
+                            <!-- Left: badge + citation -->
+                            <div class="flex-1 min-w-0">
+                                <!-- Badge -->
+                                <span class="inline-flex items-center text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-cyan-100 text-cyan-700">Book Chapter
+                                </span>
+                                <!-- Citation -->
+                                <p class="mt-3 leading-relaxed text-[15px] md:text-[16px] text-slate-800">
+                                    <strong>Nazmul Huda Badhon</strong>, Imrus Salehin, Md. Tomal Ahmed Sajib, Md. Sakibul Hassan Rifat, Nazmun Nessa Moon, "Predicting Peak Energy Demand Using Machine Learning Techniques for Efficient Electricity Supply
+                                    Management."
+                                    <em>Engineering Applications of AI for Demand Forecasting</em> (<b>In Press, Taylor & Francis</b>), 2024.
+                                </p>
+                                <div class="mt-4 flex gap-3">
+                                    <!-- Official Paper -->
+                                    <a href="" target="_blank" class="inline-flex items-center px-4 py-2 border border-black rounded-md text-black font-medium hover:bg-gray-100 transition">
+                                        <i class="fa-solid fa-link mr-2"></i> Paper Link
+                                    </a>
+
+                                    <!-- PDF in your repo -->
+                                    <a href="./pdfs/bookchapter.pdf" target="_blank" class="inline-flex items-center px-2 py-2 border border-black rounded-md text-black font-semibold hover:bg-gray-100 transition">
+                                        <i class="fa-solid fa-file-pdf text-red-600 mr-2"></i> Paper PDF
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Right: Thumbnail -->
+                            <a href="" target="_blank " rel="noopener " class="md:w-64 lg:w-72 shrink-0 ">
+                                <img src="./Image/bookchapter.jpg " alt="Paper figure " class="w-full h-40 md:h-44 object-cover rounded-xl ring-1 ring-black/5 ">
+                            </a>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- PROJECT -->
+                <section id="project" class="bg-white p-6 mt-5">
+                    <h2 class="flex items-center font-semibold text-3xl mb-4">
+                        <span class="w-1 h-12 bg-orange-500 mr-2"></span> RESEARCH PROJECTS
+                    </h2>
+                </section>
+
+                <!-- WORK EXPERIENCE -->
+                <section id="work" class="bg-white p-6 mt-5 ">
+                    <h2 class="flex items-center font-medium text-3xl mb-10 ">
+                        <span class="w-1 h-10 bg-orange-500 mr-2 "></span> WORK EXPERIENCE
+                    </h2>
+                    <h4 class="list-disc list-inside ml-2 leading-relaxed">Research Assistant,
+                        <a href="https://hirl.daffodilvarsity.edu.bd/" class="underline hover:text-orange-400" style="color: blue;">Health Informatics Research Lab</a> (March 2025 to Present)
+                    </h4>
+                    <ul class="list-disc list-inside ml-2 leading-relaxed">
+                        <li>Collaborating in Computer Vision Projects, Especially in the area of Medical Imaging.</li>
+                        <li>The task is to Produce High-quality Q1 Journals.</li>
+                    </ul>
+                    <hr class="my-4 border-gray-300">
+                    <h4 class="list-disc list-inside ml-2 leading-relaxed">Trainer, Multidisciplinary Action Lab, Dept of Computer Science and Engineering, DIU (February 2024 to Present)
+                    </h4>
+                    <ul class="list-disc list-inside ml-2 leading-relaxed">
+                        <li>Collaborating in Computer Vision Projects, Especially in the area of Medical Imaging.</li>
+                        <li>The task is to Produce High-quality Q1 Journals.</li>
+                    </ul>
+                </section>
+
+                <!-- SERVICE -->
+                <section id="service" class="bg-white p-6 mt-5 ">
+                    <h2 class="flex items-center font-medium text-3xl mb-10 ">
+                        <span class="w-1 h-10 bg-orange-500 mr-2 "></span> SERVICES
+                    </h2>
+                    <ul class="list-disc list-inside ml-2 leading-relaxed">
+                        <li>Peer Reviewer for <strong>Digital Health</strong></li>
+                    </ul>
+                </section>
+
+                <!-- CONTACT -->
+                <section id="contact" class="bg-white p-6 mt-5 ">
+                    <h2 class="flex items-center font-semibold text-3xl mb-10 ">
+                        <span class="w-1 h-10 bg-orange-500 mr-2 "></span> CONTACT ME
+                    </h2>
+                    <div class="flex gap-6 ">
+                        <a target="_blank " href="https://scholar.google.com/citations?user=-1VBDA8AAAAJ&hl=en ">
+                            <img class="w-6 " src="./Image/googlescholar.svg " alt=" ">
+                        </a>
+                        <a target="_blank " href="https://orcid.org/0009-0006-6205-2422 ">
+                            <img class="w-6 " src="./Image/orcid_icon_196062.png " alt=" ">
+                        </a>
+                        <a target="_blank " href="https://www.researchgate.net/profile/Nazmul-Huda-Badhon ">
+                            <img class="w-6" src="./Image/RG_Logo.02_Black.White.png " alt=" ">
+                        </a>
+                        <a target="_blank " href="https://www.linkedin.com/in/nazmuhudabadhon/ ">
+                            <img class="w-6" src="./Image/linkedin-logo-png_seeklogo-480553.png " alt=" ">
+                        </a>
+                        <a target="_blank " href="https://www.webofscience.com/wos/author/record/NYS-9310-2025 ">
+                            <img class="w-6" src="./Image/wos.png " alt=" ">
+                        </a>
+                        <a target="_blank " href="https://sciprofiles.com/profile/nazmulhudabadhon ">
+                            <img class="w-6" src="./Image/sci.png " alt=" ">
+                        </a>
+                        <a target="_blank " href="https://www.scopus.com/authid/detail.uri?authorId=58864125600 ">
+                            <img class="w-6" src="./Image/scopus-icon.png " alt=" ">
+                        </a>
+                        <a target="_blank " href="https://www.facebook.com/nazmul.huda.badhon/ ">
+                            <img class="w-6" src="./Image/facebook.png " alt=" ">
+                        </a>
+                        <a target="_blank " href="https://github.com/badhon4772 ">
+                            <img class="w-6" src="./Image/25231.png " alt=" ">
+                        </a>
+                    </div>
+                </section>
+            </div>
+
+            <!-- SIDEBAR -->
+            <div class="drawer-side">
+                <label for="my-drawer-2 " aria-label="close sidebar " class="drawer-overlay "></label>
+                <ul class="min-h-full w-60 p-6 bg-[#06142A]">
+                    <br>
+                    <h4 class="text-white text-center font-medium tracking-wide text-3xl leading-tight mt-30">
+                        <a href="#about" class="hover:text-orange-400">NAZMUL HUDA</a>
+                    </h4>
+                    <hr class="border-white/15 my-5 ">
+                    <nav id="sideNav" class="mt-2 space-y-4 text-white text-lg font-medium ">
+                        <a href="#about " class="block hover:text-orange-400 ">ABOUT</a>
+                        <a href="#education " class="block hover:text-orange-400 ">EDUCATION</a>
+                        <a href="#publication " class="block hover:text-orange-400 ">PUBLICATIONS/PRESS</a>
+                        <a href="#project " class="block hover:text-orange-400 ">PROJECT</a>
+                        <a href="#work " class="block hover:text-orange-400 ">EXPERIENCE</a>
+                        <a href="activities.html" class="block hover:text-orange-400 ">ACHIEVEMENT & ECA</a>
+                        <a href="#service " class="block hover:text-orange-400 ">SERVICES</a>
+                        <a href="#contact " class="block hover:text-orange-400 ">CONTACT</a>
+                    </nav>
+                </ul>
+            </div>
+        </div>
+        <!-- COPYRIGHT FOOTER -->
+        <footer class="bg-[#06142A] text-center py-3 border-slate-200">
+            <p class="text-sm text-white">
+                © Copyright 2025. All Rights Reserved by
+                <span class="font-medium text-yellow-400">Nazmul Huda Badhon.</span>
+            </p>
+        </footer>
+    </section>
+    <script src="index.js "></script>
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nazmulhudabadhon.github.io/sitemap.xml

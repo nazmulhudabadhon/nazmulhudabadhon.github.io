@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <!--  Main homepage  -->
 <url>
@@ -6,4 +7,14 @@
 <changefreq>monthly</changefreq>
 <priority>1.0</priority>
 </url>
+=======
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!--  Main homepage  -->
+<url>
+<loc>https://nazmulhudabadhon.github.io/</loc>
+<lastmod>2025-09-17</lastmod>
+<changefreq>monthly</changefreq>
+<priority>1.0</priority>
+</url>
+>>>>>>> d2fe11a462a6fc27bb736093cfd25e65fd9b954e
 </urlset>

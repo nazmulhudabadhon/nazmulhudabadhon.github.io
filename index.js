@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const sentences = [
-        "Looking for Research Assistantship Position",
         "A Researcher in Deep Learning, Medical Imaging",
+        "Looking for Research Assistantship Position",
     ];
 
     const textContainer = document.getElementById("animatedText");

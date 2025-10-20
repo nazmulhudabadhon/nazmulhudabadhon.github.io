@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const sentences = [
-        "A Researcher in Deep Learning, Medical Imaging",
+        "A Researcher in Deep Learning, Medical AI",
         "Looking for Research Assistantship Position",
     ];
 

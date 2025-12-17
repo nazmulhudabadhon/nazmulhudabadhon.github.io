@@ -139,4 +139,27 @@ document.addEventListener("DOMContentLoaded", () => {
             window.scrollTo({ top: 0, behavior: "smooth" })
         );
     }
+    const items = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add("in");
+                io.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    items.forEach(el => io.observe(el));
+
+    const eduItems = document.querySelectorAll(".edu-reveal");
+    const eduObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add("in");
+                eduObs.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    eduItems.forEach(el => eduObs.observe(el));
 });

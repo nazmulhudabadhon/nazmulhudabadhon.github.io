@@ -888,26 +888,7 @@
     </button>
 
     <script src="index.js"></script>
-    <script>
-        const reveals = document.querySelectorAll(".reveal");
-        const io = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) e.target.classList.add("show");
-            });
-        }, {
-            threshold: 0.12
-        });
-
-        reveals.forEach(el => io.observe(el));
-    </script>
-
 </body>
-
-</html>
-
-</html>
-
-</html>
 
 </html>
 

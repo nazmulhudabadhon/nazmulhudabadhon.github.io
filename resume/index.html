@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="canonical" href="../resume/">
+    <title>Nazmul Huda Badhon | Portfolio</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4/dist/full.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/style.css">
+
+    <style>
+        .pdf-frame {
+            width: 100%;
+            height: calc(100vh - 96px);
+            /* adjust if your header height changes */
+            border: 0;
+            border-radius: 12px;
+            background: white;
+        }
+    </style>
+
+
+    <!-- Current favicon for UI -->
+    <link rel="icon" type="image/png" href="../Image/favicon.png">
+
+    <!-- Root-level versions for Google and crawlers -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../Image/favicon.png">
+    <link rel="shortcut icon" href="../Image/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="../Image/apple-touch-icon.png">
+</head>
+
+<body class="scroll-smooth">
+
+    <!-- PDF Viewer -->
+<main class="w-full mx-auto px-0 py-0">
+<div class="cv-card p-0 sm:p-3">
+  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+    <div class="w-full px-2 md:px-4">
+      <div class="hidden lg:block brand text-xl text-orange-900">
+          <p class="hover:text-[#D3D3D3]">
+              <strong>CV</strong> <span style="font-weight: 500;">of Nazmul Huda Badhon</span>
+          </p>
+      </div>
+    </div>
+
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2 px-2 md:px-4">
+      <a href="../index.html"
+        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-300 text-slate-700 bg-white hover:bg-slate-50 transition text-sm">
+        <i class="fa-solid fa-arrow-left text-xs"></i> Back
+      </a>
+
+      <a href="../pdfs/Nazmul_Huda_Badhon_Academic_CV.pdf" download
+        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#E3872D] text-white font-medium hover:opacity-90 transition text-sm">
+        <i class="fa-solid fa-download text-xs"></i> Download
+      </a>
+
+      <a href="../pdfs/Nazmul_Huda_Badhon_Academic_CV.pdf" target="_blank" rel="noopener"
+        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-300 text-slate-700 bg-white hover:bg-slate-50 transition text-sm">
+        <i class="fa-solid fa-up-right-from-square text-xs"></i> Open
+      </a>
+    </div>
+  </div>
+
+  <div class="rounded-xl overflow-hidden border border-slate-200 bg-white">
+<iframe class="pdf-frame"
+  src="./cv-viewer.html?file=/../pdfs/Nazmul_Huda_Badhon_Academic_CV.pdf"
+  title="Nazmul Huda Badhon CV"></iframe>
+
+  </div>
+</div>
+</main>
+
+</body>
+
+</html>

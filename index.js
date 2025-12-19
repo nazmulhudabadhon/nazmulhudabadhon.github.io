@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 1) Typewriter (animatedText)
     const sentences = [
-        "a researcher in deep learning",
-        "seeking research assistantship position",
+        "a young researcher in deep learning",
+        "seeking graduate research assistantship position",
     ];
 
     const textContainer = document.getElementById("animatedText");
@@ -190,6 +190,9 @@ document.addEventListener("DOMContentLoaded", () => {
     makeReplayObserver(".ach-card", "in", 0.10);
 
     const slides = document.querySelectorAll('.carousel-slide');
+    if (slides.length > 0) {
+        slides[0].classList.add('active');
+    }
     const dots = document.querySelectorAll('.carousel-dots .dot');
     let index = 0;
 
@@ -265,5 +268,87 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // 7) PRO Carousel
+    (() => {
+        const viewport = document.getElementById("bioCarousel");
+        if (!viewport) return;
 
+        const slides = Array.from(viewport.querySelectorAll(".pro-slide"));
+        if (!slides.length) return;
+
+        const root = viewport.closest(".pro-carousel") || viewport.parentElement;
+
+        const dotsWrap = root?.querySelector(".pro-dots");
+        const bar = root?.querySelector(".pro-progress__bar");
+        const prevBtn = root?.querySelector(".pro-btn--prev");
+        const nextBtn = root?.querySelector(".pro-btn--next");
+
+        let index = 0;
+
+        // Build dots
+        if (dotsWrap) {
+            dotsWrap.innerHTML = slides
+                .map(
+                    () =>
+                    `<button class="pro-dot" type="button" aria-label="Go to slide"></button>`
+                )
+                .join("");
+        }
+
+        const dots = dotsWrap ?
+            Array.from(dotsWrap.querySelectorAll(".pro-dot")) : [];
+
+        const clamp = (i) => (i + slides.length) % slides.length;
+
+        function updateUI() {
+            dots.forEach((d, k) => d.classList.toggle("is-active", k === index));
+            if (bar) {
+                bar.style.width = "0%";
+                requestAnimationFrame(() => (bar.style.width = "100%"));
+            }
+        }
+
+        function goTo(i, smooth = true) {
+            index = clamp(i);
+            viewport.scrollTo({
+                left: slides[index].offsetLeft,
+                behavior: smooth ? "smooth" : "auto",
+            });
+            updateUI();
+        }
+
+        prevBtn?.addEventListener("click", () => goTo(index - 1));
+        nextBtn?.addEventListener("click", () => goTo(index + 1));
+
+        dots.forEach((dot, i) => dot.addEventListener("click", () => goTo(i)));
+
+        let raf = null;
+        viewport.addEventListener(
+            "scroll",
+            () => {
+                if (raf) cancelAnimationFrame(raf);
+                raf = requestAnimationFrame(() => {
+                    const x = viewport.scrollLeft;
+
+                    let best = 0;
+                    let bestDist = Infinity;
+
+                    slides.forEach((s, i) => {
+                        const d = Math.abs(s.offsetLeft - x);
+                        if (d < bestDist) {
+                            bestDist = d;
+                            best = i;
+                        }
+                    });
+
+                    if (best !== index) {
+                        index = best;
+                        updateUI();
+                    }
+                });
+            }, { passive: true }
+        );
+
+        goTo(0, false);
+    })();
 });

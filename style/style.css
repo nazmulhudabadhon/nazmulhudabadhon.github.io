@@ -1,61 +1,3 @@
-.edu-reveal {
-    opacity: 0;
-    transform: translateY(14px);
-    transition: opacity 1.05s cubic-bezier(.22, 1, .36, 1), transform 1.05s cubic-bezier(.22, 1, .36, 1);
-    transition-delay: 120ms;
-}
-
-.edu-reveal.in {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.edu-dot {
-    transition: transform 320ms cubic-bezier(.22, 1, .36, 1), box-shadow 320ms cubic-bezier(.22, 1, .36, 1);
-}
-
-.edu-item:hover .edu-dot {
-    transform: scale(1.08);
-    box-shadow: 0 0 0 6px rgba(227, 135, 45, .18);
-}
-
-.edu-line {
-    transform-origin: top;
-    transform: scaleY(.2);
-    transition: transform 1.05s cubic-bezier(.22, 1, .36, 1);
-}
-
-.edu-reveal.in .edu-line {
-    transform: scaleY(1);
-}
-
-
-/* Sidebar links */
-
-#sideNav a {
-    position: relative;
-    display: block;
-}
-
-#sideNav a.active {
-    color: #E3872D;
-    font-weight: 600;
-}
-
-#sideNav a:hover::after,
-#sideNav a.active::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    width: 28px;
-    height: 2px;
-    background: #E3872D;
-    margin-left: 10px;
-    transform: translateY(-50%);
-}
-
-
 /* Animated text height fix (keep OUTSIDE sidebar rules) */
 
 #animatedText {
@@ -67,6 +9,39 @@
     #animatedText {
         min-height: 2rem;
     }
+}
+
+
+/* Sticky animated top nav */
+
+#topHeader {
+    position: sticky;
+    /* stays visible while scrolling */
+    top: 0;
+    z-index: 9999;
+    transition: transform 280ms ease, box-shadow 280ms ease, background-color 280ms ease;
+    will-change: transform;
+}
+
+
+/* When scrolling down: compact + shadow */
+
+#topHeader.is-scrolled {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+/* Hide on scroll down */
+
+#topHeader.nav-hide {
+    transform: translateY(-110%);
+}
+
+
+/* Show on scroll up */
+
+#topHeader.nav-show {
+    transform: translateY(0);
 }
 
 
@@ -93,24 +68,6 @@
 .photo-card:hover {
     transform: translateY(-4px) scale(1.01);
     box-shadow: 0 18px 40px rgba(2, 8, 23, .12);
-}
-
-
-/* ===== CV button micro interaction ===== */
-
-.btn-pro {
-    transition: transform 200ms cubic-bezier(.22, 1, .36, 1), box-shadow 200ms cubic-bezier(.22, 1, .36, 1), filter 200ms cubic-bezier(.22, 1, .36, 1);
-}
-
-.btn-pro:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 12px 26px rgba(227, 135, 45, .28);
-    filter: saturate(1.05);
-}
-
-.btn-pro:active {
-    transform: translateY(0);
-    box-shadow: 0 8px 18px rgba(227, 135, 45, .22);
 }
 
 
@@ -207,5 +164,547 @@
     }
     50% {
         transform: translateY(-6px);
+    }
+}
+
+
+/* === Profile card: make footer same width as image and align together === */
+
+.profile-card {
+    width: 300px;
+    margin: 0 auto;
+    justify-content: right;
+    /* mobile center */
+}
+
+@media (min-width: 768px) {
+    .profile-card {
+        margin: 0;
+        /* let md:flex md:justify-end control position */
+    }
+}
+
+
+/* footer aligned with image width */
+
+.profile-footer {
+    width: 100%;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid #d1d5db;
+    text-align: center;
+}
+
+
+/* === Profile rows: icon left, text right === */
+
+.profile-item {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    /* icon | text */
+    align-items: end;
+    column-gap: 12px;
+    text-align: right;
+    /* text aligns right */
+    font-size: 0.95rem;
+    color: #1f2937;
+    margin: 10px 0;
+}
+
+
+/* === Profile name (centered, standalone) === */
+
+.profile-name {
+    margin: 0px 0 12px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: #111827;
+    border-bottom: 1px solid #e5e7eb;
+    /* subtle divider */
+}
+
+
+/* === Profile info rows === */
+
+
+/* icon left | text right */
+
+.profile-item {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    align-items: start;
+    column-gap: 12px;
+    margin: 10px 0;
+    font-size: 0.95rem;
+    color: #1f2937;
+}
+
+
+/* icon column */
+
+.profile-item i {
+    justify-self: start;
+    color: #06142A;
+    margin-top: 2px;
+}
+
+
+/* text column */
+
+.profile-item a,
+.profile-item span {
+    justify-self: end;
+    text-align: right;
+    line-height: 1.45;
+}
+
+
+/* horizontal divider between profile rows */
+
+.profile-item+.profile-item {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 10px;
+}
+
+
+/* === Profile icons (centered with top & bottom lines) === */
+
+.profile-icons {
+    margin-top: 14px;
+    padding: 12px 0;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* icon links */
+
+.profile-icons a {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+
+/* separators */
+
+.profile-icons a:not(:last-child) {
+    border-right: 1px solid #d1d5db;
+}
+
+
+/* icons */
+
+.profile-icons img {
+    width: 24px !important;
+    height: 24px !important;
+    opacity: 0.85;
+    transition: all 0.2s ease;
+}
+
+.profile-icons img:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+
+/* === Academic Status Line (Professional) === */
+
+.status-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    margin-top: 16px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #ffffff;
+    line-height: 1.45;
+}
+
+
+/* subtle status label */
+
+.status-badge {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 999px;
+    color: #9a3412;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    white-space: nowrap;
+}
+
+
+/* main text */
+
+.status-text {
+    font-size: 15px;
+    color: #374151;
+    flex: 1;
+}
+
+
+/* CV button (low emphasis) */
+
+.status-cta {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 8px;
+    color: #0f172a;
+    background: #d5eaff;
+    border: 1px solid #e5e7eb;
+    text-decoration: none;
+}
+
+.status-cta:hover {
+    background: #a4b8fd;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.status-card {
+    animation: fadeUp 0.4s ease-out both;
+}
+
+
+/* ===== Mobile: stack nicely ===== */
+
+@media (max-width: 640px) {
+    .status-card {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 14px;
+    }
+    .status-cta {
+        width: fit-content;
+        /* or 100% if you want full width */
+    }
+}
+
+
+/* --- Live attention badge (professional) --- */
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+
+/* small solid dot */
+
+.status-badge .live-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background: #e32d2d;
+    /* your accent */
+    position: relative;
+}
+
+
+/* soft “ping” ring */
+
+.status-badge .live-dot::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 9999px;
+    border: 8px solid rgba(227, 135, 45, 0.45);
+    animation: badgePing 1.6s ease-out infinite;
+}
+
+@keyframes badgePing {
+    0% {
+        transform: scale(0.6);
+        opacity: 0.9;
+    }
+    70% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
+
+
+/* respect reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .status-badge .live-dot::after {
+        animation: none;
+    }
+}
+
+
+/* === Section header (modern academic) === */
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 28px 0 14px;
+}
+
+
+/* icon container (modern, subtle) */
+
+.section-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    color: #0f172a;
+    flex-shrink: 0;
+}
+
+
+/* section title */
+
+.section-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    color: #0f172a;
+    margin: 0;
+    white-space: nowrap;
+}
+
+
+/* horizontal rule */
+
+.section-rule {
+    height: 0.75px;
+    flex: 1;
+    background: #011f4e;
+    transform: translateY(2px);
+}
+
+
+/* Modifier: compact top spacing */
+
+.section-header--compact {
+    margin-top: 0 !important;
+}
+
+
+/* ===== Modern Carousel ===== */
+
+.modern-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+.carousel-track {
+    position: relative;
+    height: 360px;
+}
+
+.carousel-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Glass caption */
+
+.carousel-caption {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    padding: 12px 16px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.carousel-caption h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0;
+}
+
+.carousel-caption p {
+    font-size: 13px;
+    color: #475569;
+    margin: 2px 0 0;
+}
+
+
+/* Dots */
+
+.carousel-dots {
+    position: absolute;
+    bottom: 14px;
+    right: 18px;
+    display: flex;
+    gap: 8px;
+}
+
+.carousel-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #cbd5e1;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.carousel-dots .dot.active {
+    background: #0f172a;
+    width: 20px;
+}
+
+
+/* === Recent publications (professional) === */
+
+.rp-ico {
+    font-size: 18px;
+    color: #111827;
+    opacity: 0.85;
+}
+
+.rp-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.rp-item {
+    padding-bottom: 14px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.rp-item p {
+    margin: 0;
+    line-height: 1.65;
+    color: #374151;
+    font-size: 15.5px;
+}
+
+.rp-item a {
+    color: dodgerblue;
+    text-decoration: none;
+}
+
+.rp-item a:hover {
+    text-decoration: underline;
+}
+
+.rp-link {
+    margin-left: 8px;
+    color: #1d4ed8;
+    text-decoration: none;
+}
+
+.rp-link i {
+    font-size: 14px;
+    transform: translateY(1px);
+}
+
+
+/* Mobile only */
+
+@media (max-width: 640px) {
+    .edu-line {
+        flex-wrap: wrap;
+        row-gap: 6px;
+    }
+    .edu-cgpa {
+        width: 100%;
+        margin-left: 22px;
+        /* aligns under text, not icon */
+    }
+}
+
+
+/* ✅ Mobile layout ONLY for the status card (desktop unchanged) */
+
+@media (max-width: 640px) {
+    .status-card {
+        display: grid;
+        /* override your flex on mobile */
+        grid-template-columns: 1fr;
+        /* single column */
+        gap: 10px;
+        align-items: start;
+    }
+    /* Seeking badge goes to the TOP */
+    .status-card .status-badge {
+        justify-self: start;
+        order: 1;
+    }
+    /* Text stays in the MIDDLE */
+    .status-card .status-text {
+        order: 2;
+        line-height: 1.35;
+    }
+    .status-card .status-text p {
+        margin: 0 0 2px 0;
+    }
+    /* CV button goes to BOTTOM-LEFT */
+    .status-card .status-cta {
+        justify-self: start;
+        order: 3;
+    }
+}
+
+
+/* ✅ Mobile-only spacing fix so image doesn't stick to top */
+
+@media (max-width: 640px) {
+    #about {
+        padding-top: 1.25rem;
+        /* space below mobile navbar */
     }
 }

@@ -63,735 +63,367 @@
 </head>
 
 <body class="scroll-smooth">
+    <!-- ===== TOP NAVBAR ===== -->
+    <header id="topHeader" class="hidden lg:block site-topbar w-full h-16 bg-[#06142A] font-[Montserrat]">
+        <div class="w-full px-6 md:px-12">
+            <div class="h-16 flex items-center justify-between">
+
+                <div class="hidden lg:block brand text-xl text-slate-300 font-semibold">
+                    <a href="https://nazmulhudabadhon.github.io/" class="hover:text-[#D3D3D3]">
+                        <strong>Nazmul Huda</strong> Badhon
+                    </a>
+                    <p class="text-left text-xs text-[#D3D3D3] mt-1 tracking-wide">Researcher · Deep Learning</p>
+                </div>
+
+                <nav id="topNav" class="hidden lg:flex items-center gap-6 text-slate-300 font-medium">
+                    <a href="./index.html" class="block hover:text-[#E3872D]">Home</a>
+                    <a href="./research.html" class="block hover:text-[#E3872D]">Publications</a>
+                    <a href="./projects.html" class="block hover:text-[#E3872D]">Projects</a>
+                    <a href="./achievement.html" class="block hover:text-[#E3872D]">Achievements</a>
+                    <a href="./pdfs/Nazmul_Huda_Badhon_Academic_CV.pdf" class="block hover:text-[#E3872D]">Resume</a>
+                </nav>
+
+            </div>
+        </div>
+    </header>
+
 
     <!-- Mobile header (phones only) -->
-    <header class="md:hidden sticky top-0 z-50 bg-[#06142A] text-white w-full">
+    <header id="mobileHeader" class="md:hidden sticky top-0 z-50 bg-[#06142A] text-white w-full">
         <div class="flex items-center justify-between px-4 py-3">
             <span class="font-semibold tracking-wide font-[Montserrat]">NAZMUL HUDA BADHON</span>
-            <button id="mobileMenuBtn" class="text-white text-2xl focus:outline-none">
+            <button id="mobileMenuBtn" class="text-white text-2xl focus:outline-none" aria-label="Open menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
-
         </div>
 
-        <!-- tap-to-open quick links -->
-        <nav id="mobileMenu" class="hidden border-t border-white/10 bg-[#06142A] font-[Montserrat]">
-            <a href="#about" class="block px-4 py-3 text-white hover:text-[#E3872D]">ABOUT</a>
-            <a href="#education" class="block px-4 py-3 text-white hover:text-[#E3872D]">EDUCATION</a>
-            <a href="#publication" class="block px-4 py-3 text-white hover:text-[#E3872D]">RESEARCH</a>
-            <a href="#project" class="block px-4 py-3 text-white hover:text-[#E3872D]">PROJECTS</a>
-            <a href="#work" class="block px-4 py-3 text-white hover:text-[#E3872D]">WORK EXPERIENCE</a>
-            <a href="#achievement" class="block px-4 py-3 text-white hover:text-[#E3872D]">ACHIEVEMENT</a>
-            <a href="#service" class="block px-4 py-3 text-white hover:text-[#E3872D]">SERVICES</a>
-            <a href="#contact" class="block px-4 py-3 text-white hover:text-[#E3872D]">CONTACTS</a>
+        <!-- Collapsible nav (hidden by default, header remains visible) -->
+        <nav id="mobileMenu" class="hidden flex-col gap-2 px-4 pb-4 text-slate-200 font-medium">
+            <a href="./index.html" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Home</a>
+            <a href="./research.html" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Publications</a>
+            <a href="./projects.html" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Projects</a>
+            <a href="./achievement.html" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Achievements</a>
+            <a href="./pdfs/Nazmul_Huda_Badhon_Academic_CV.pdf" class="py-2 hover:text-[#E3872D]">Resume</a>
         </nav>
     </header>
 
+    <!-- ===== MAIN CONTENT ===== -->
     <section>
         <div class="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex flex-col w-full">
 
-                <!-- ABOUT -->
-                <section id="about" class="px-8 pt-4 pb-6 mt-2 md:mt-8 font-[Montserrat]">
-                    <h2 class="about-heading hidden md:flex items-center font-medium text-[#00008B] text-4xl mt-0 mb-4">
-                        <span class="w-1 h-10 mr-4 " style="background-color:#E3872D;"></span> BIOGRAPHY
-                    </h2>
+                <!-- About -->
+                <section id="about" class="pt-4 pb-6 mt-2 md:mt-8 font-[Montserrat]">
 
-                    <br>
                     <!-- Flex container -->
-                    <div class=" flex flex-col md:flex-row gap-6 md:gap-4 items-start ">
+                    <div class="flex flex-col md:flex-row gap-6 items-start max-w-7xl mx-auto px-6 md:px-12
+            -mt-4 md:-mt-4 md:-translate-x-9">
 
                         <!-- LEFT COLUMN -->
-                        <div class="w-full md:w-1/3 font-normal reveal ">
-                            <div class="relative w-full max-w-[360px] mx-auto md:mx-0 ">
-                                <!-- Blob background -->
-                                <div class="absolute -top-6 -left-6 ml-1 h-40 rounded-2xl blur-2xl opacity-40 " style="background:#E3872D; "></div>
-                                <div class="absolute -bottom-8 -right-6 w-44 h-44 rounded-2xl blur-2xl opacity-30 " style="background:#06142A; "></div>
+                        <div class="w-full md:w-1/3 font-normal reveal flex justify-center md:justify-end">
+                            <div class="profile-card">
+                                <div class="relative w-full max-w-[300px] mx-auto">
 
-                                <!-- Photo card -->
-                                <div class="relative bg-white rounded-2xl border border-gray-200 shadow-md overflow-hidden reveal ">
-                                    <div class="absolute inset-0 pointer-events-none opacity-10 " style="background: radial-gradient(circle at 20% 20%, #E3872D 0, transparent 45%), radial-gradient(circle at 80% 10%, #06142A 0, transparent 55%); "></div>
+                                    <!-- Photo card -->
+                                    <div class="relative bg-white  border border-gray-200 shadow-md overflow-hidden reveal ">
+                                        <div class="absolute inset-0 pointer-events-none opacity-10"></div>
 
-                                    <img src="./Image/badhonn.jpg" alt="Nazmul Huda Badhon – Deep Learning Researcher and Computer Scientist " class="w-full h-auto object-cover ">
+                                        <img src="./Image/badhonn.jpg " alt="Nazmul Huda Badhon – Deep Learning Researcher and Computer Scientist " class="object-cover ">
 
-                                    <!-- Bottom tag -->
-                                    <div class="absolute bottom-3 left-3 inline-flex items-center gap-2 px-3 py-1 rounded-xl bg-white/90 border border-black/5 text-sm ">
-                                        <span class="w-2 h-2 rounded-xl" style="background:#E3872D; "></span>
-                                        <span class="font-semibold text-xs text-slate-900 ">Nazmul Huda Badhon</span>
                                     </div>
                                 </div>
+                                <div class="profile-footer ">
+                                    <p class="profile-name">
+                                        Nazmul Huda BADHON
+                                    </p>
+                                    <p class="profile-item">
+                                        <i class="fa-solid fa-envelope text-[#06142A] w-6 mr-3 mt-1 "></i>
+                                        <a href="mailto:badhon15-4772@diu.edu.bd " class="hover:underline hover:text-orange-600 ">badhon15-4772@diu.edu.bd</a>
+                                    </p>
+                                    <p class="profile-item">
+                                        <i class="fa-solid fa-phone text-[#06142A] w-6 mr-3 mt-1 "></i>
+                                        <a href="tel:+8801903906230 " class="hover:underline hover:text-orange-600 ">+880 1903-906230 </a>
+                                    </p>
+                                    <p class="profile-item">
+                                        <i class="fa-solid fa-location-dot text-[#06142A] w-6 mr-3 mt-1 "></i>
+                                        <span>Daffodil Smart City, Birulia, Savar,<br>Dhaka-1216, Bangladesh</span>
+                                    </p>
 
-                                <!-- Orange ring 
-                                <div class="absolute -right-4 -top-4 w-12 h-12 rounded-md border-4 opacity-70 " style="border-color:#E3872D; "></div>-->
+                                    <div class="profile-icons ">
+                                        <a target="_blank " rel="noopener noreferrer " href="https://scholar.google.com/citations?user=-1VBDA8AAAAJ&hl=en ">
+                                            <img class="w-8 " src="./Image/googlescholar.svg " alt="Google Scholar ">
+                                        </a>
+                                        <a target="_blank " rel="noopener noreferrer " href="https://orcid.org/0009-0006-6205-2422 ">
+                                            <img class="w-8 " src="./Image/orcid_icon_196062.png " alt="ORCID ">
+                                        </a>
+                                        <a target="_blank " rel="noopener noreferrer " href="https://www.researchgate.net/profile/Nazmul-Huda-Badhon ">
+                                            <img class="w-8 " src="./Image/RG_Logo.02_Black.White.png " alt="ResearchGate ">
+                                        </a>
+                                        <a target="_blank " rel="noopener noreferrer " href="https://www.linkedin.com/in/nazmuhudabadhon/ ">
+                                            <img class="w-8 " src="./Image/linkedin-logo-png_seeklogo-480553.png " alt="LinkedIn ">
+                                        </a>
+                                        <a target="_blank " rel="noopener noreferrer " href="https://www.facebook.com/nazmul.huda.badhon/ ">
+                                            <img class="w-8 " src="./Image/facebook.png " alt="Facebook ">
+                                        </a>
+                                        <a target="_blank " rel="noopener noreferrer " href="https://github.com/nazmulhudabadhon ">
+                                            <img class="w-8 " src="./Image/25231.png " alt="GitHub ">
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                            <p class="flex items-center mt-7 ml-1 ">
-                                <i class="fa-solid fa-envelope text-[#E3872D] mr-3 "></i>
-                                <a href="mailto:badhon15-4772@diu.edu.bd " class="hover:underline hover:text-orange-600 ">badhon15-4772@diu.edu.bd</a>
-                            </p>
-                            <p class="flex items-center ml-1 ">
-                                <i class="fa-solid fa-phone text-[#E3872D] mr-3 "></i>
-                                <a href="tel:+8801903906230 " class="hover:underline hover:text-orange-600 ">+880 1903-906230</a>
-                            </p>
-                            <p class="flex ml-1 mr-2 ">
-                                <i class="fa-solid fa-location-dot text-[#E3872D] mr-3 mt-1 "></i> Daffodil Smart City, Birulia, Savar, Dhaka-1216, Bangladesh
-                            </p>
                         </div>
 
                         <!-- RIGHT COLUMN -->
-                        <div class="w-full md:w-2/3 font-[Montserrat] reveal">
-                            <h1 class="text-xl md:text-2xl font-medium mb-2 ">Hi there! I'm <span class="text-blue-900 font-semibold ">Nazmul Huda Badhon </span>and I'm</h1>
+                        <div class="w-full md:w-2/3 font-[Montserrat] reveal min-w-0 pl-0 md:pl-8">
+
+                            <h1 class="text-xl md:text-xl font-medium mb-2 ">Welcome! This is <span class="text-indigo-900 font-semibold">Nazmul Huda Badhon</span>,</h1>
                             <div class="relative h-14 md:h-8 ">
-                                <div id="animatedText" class="absolute inset-0 text-lg md:text-2xl text-[#E3872D] font-semibold overflow-hidden leading-tight ">
+                                <div id="animatedText" class="absolute inset-0 text-lg md:text-xl text-[#E3872D] font-semibold overflow-hidden leading-tight ">
                                 </div>
                             </div>
 
-                            <p class="text-justify text-0.5xl font-normal mt-4">
-                                an undergraduate final semester student (graduating in January, 2026) in Computer Science and Engineering at Daffodil International University, Bangladesh, specializing in Machine Learning, Deep Learning, and Medical AI. He has authored Several peer-reviewed
-                                publications, including accepted works in Q1 and Q2 journals, data articles, and book chapters with publishers such as Taylor & Francis, Wiley and Elsevier. His contributions cover areas including CNNs, deep learning image
-                                datasets, and systematic literature reviews on Large Language Models-LLMs in healthcare. Beyond research, Badhon is passionate about teaching and mentoring with a vision of pursuing a Research Assistantship or Teaching
-                                Assistantship to further develop his academic and research career. His strong foundation in deep learning architectures supports his long-term goal of AI real-world applications.
+                            <!-- Academic Status Line -->
+                            <div class="status-card mt-4 font-medium">
+                                <span class="status-badge">
+                                    <span class="live-dot"></span> SEEKING
+                                </span>
+
+                                <div class="status-text">
+                                    <p class="font-semibold">Research or Teaching Assistantship (Spring–Fall 2026)</p>
+                                    <p>Deep Learning · Machine Learning · Computer Vision · Medical AI</p>
+                                </div>
+
+                                <a class="status-cta" href="./pdfs/Nazmul_Huda_Badhon_Academic_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+                            </div>
+
+
+                            <p class="text-left text-base md:text-base mt-6 leading-relaxed">
+                                He is an undergraduate final semester student (graduating in January, 2026) in <span class="font-semibold ">Computer Science and Engineering</span> at Daffodil International University. His undergraudate thesis was on "Tabular
+                                data based lightweight convolutional neural networks for electricity energy demand prediction" under the supervision of Associate Professor <a href="https://scholar.google.com/citations?user=mC0VMYQAAAAJ&hl=en" class="font-semibold hover:text-red-500 text-orange-500 hover:underline hover:decoration-red-400">Nazmun Nessa Moon</a>.
+                                His research focuses on
+                                <span class="font-semibold " style="color: brown; ">Deep Learning, Machine Learning, Medical AI</span>. He specializes in convolutional neural networks, and their applications in interdisciplinary fields.
                             </p>
 
-                            <p class="mt-4 "><span class="font-semibold ">Research Areas:</span> Deep Learning, Machine Learning, Medical AI</p>
+                            <!--Biography-->
+                            <div class="section-header mt-6">
+                                <span class="section-icon">
+                                        <i class="fa-solid fa-user"></i>
+                                    </span>
+                                <h2 class="section-title">Biography</h2>
+                                <span class="section-rule"></span>
+                            </div>
+                            <p class="text-left text-base md:text-base mt-4 leading-relaxed">
+
+                                My research journey began during my second year of undergraduate studies at Daffodil International University, Bangladesh. While studying there I took part in a
+                                <span class="font-semibold">semester exchange program at Dongseo University, South Korea</span>, and this experience significantly strengthened my interest in deep learning and advanced AI research. By the time, I formed
+                                and worked with <span class="font-semibold">a dedicated research team</span>, collaboratively developing machine learning and deep learning projects and systematically publishing our findings in reputable journals and publishers.
+                                <br>
+                                <br> Throughout this journey, I have had the privilege of collaborating closely with my research mentor
+                                <a href="https://scholar.google.com/citations?user=eg3QPhcAAAAJ&hl=en" class="font-semibold text-orange-500 hover:text-red-500 hover:underline hover:decoration-red-400">Imrus Salehin</a> and team members
+                                <a href="https://scholar.google.com/citations?user=-LaCK8oAAAAJ&hl=en" class="font-semibold text-orange-500 hover:text-red-500 hover:underline hover:decoration-red-400">SM Noman</a>,
+                                <a href="https://scholar.google.com/citations?user=TRul1CgAAAAJ&hl=en" class="font-semibold text-orange-500 hover:text-red-500 hover:underline hover:decoration-red-400">Md Tomal Ahmed Sajib</a>,
+                                <a href="https://scholar.google.com/citations?user=fFd-BXEAAAAJ&hl=en" class="font-semibold text-orange-500 hover:text-red-500 hover:underline hover:decoration-red-400">Nazrul Amin</a>, and
+
+                                <a href="https://scholar.google.com/citations?user=wpGO__oAAAAJ&hl=en" class="font-semibold text-orange-500 hover:text-red-500 hover:underline hover:decoration-red-400">Pritom Saha</a>. These collaborations have resulted
+                                in
+                                <span class="font-semibold">5 peer-reviewed publications in high-impact venues</span> including Q1 and Q2: <span class="font-semibold" style="color: brown; ">Global Energy Interconnection, Elsevier; Engineering Reports, Wiley; Taylor & Francis</span>;
+                                contributing to applied research in machine learning, deep learning, and computer vision.
+                            </p>
+
+                            <!-- Modern Biography Carousel -->
+                            <div class="modern-carousel mt-8">
+
+                                <div class="carousel-track">
+                                    <!-- Slide 1 -->
+                                    <div class="carousel-slide active">
+                                        <img src="./Image/camp.jpg" alt="International Camping">
+                                        <div class="carousel-caption">
+                                            <h4>International Camping, 2023</h4>
+                                            <p>Busan, South Korea</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 2 -->
+                                    <div class="carousel-slide">
+                                        <img src="./Image/embassy.jpg" alt="Korea Embassy Visit">
+                                        <div class="carousel-caption">
+                                            <h4>Embassy Visit, 2024 </h4>
+                                            <p>Embassy of South Korea in Dhaka, Bangladesh</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 3 -->
+                                    <div class="carousel-slide">
+                                        <img src="./Image/dsume.jpg" alt="Nazmul Huda Badhon at Dongseo University">
+                                        <div class="carousel-caption">
+                                            <h4>Me while Semester Exchange Program, 2023</h4>
+                                            <p>Dongseo University, South Korea</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 4 -->
+                                    <div class="carousel-slide">
+                                        <img src="./Image/bootcamp.png" alt="Nazmul Huda Badhon at Daffodil Bootcamp">
+                                        <div class="carousel-caption">
+                                            <h4>Top performer in Computer Vision Bootcamp, 2025</h4>
+                                            <p>Daffodil International University, Bangladesh</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Dots -->
+                                <div class="carousel-dots">
+                                    <span class="dot active"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+                                    <span class="dot"></span>
+
+                                </div>
+
+                            </div>
+                            <!-- End of Biography Carousel -->
+
+                            <p class="text-left text-base md:text-base font-awesome mt-6 leading-relaxed "> My work and academic efforts have been recognized through
+                                <span class="font-semibold " style="color: brown;">key honors</span> including the <span class="font-semibold " style="color: goldenrod;">fully funded Global Korea Scholarship GKS 2023</span> and the <span class="font-semibold"
+                                    style="color: darkblue;">Research Award in 2024</span> from the Division of Research and Department of Computer Science and Engineering at Daffodil International University. I was also acknowledged as a Top Performer in
+                                the Computer Vision and Deep Learning bootcamp for Medical Data at DIU. </p>
+
                             <br>
-                            <a href="./pdfs/Nazmul_Huda_Badhon_Academic_CV.pdf " target="_blank " class="inline-flex items-center gap-2 mt-3 px-8 py-3 rounded-md border border-[#E3872D] bg-[#E3872D] text-white text-base font-semibold shadow-sm hover:shadow-md
-                        hover:bg-white hover:text-[#E3872D] transition-all duration-300 " style="font-family: 'Montserrat'; ">
-                                <i class="fa-solid fa-file-lines "></i> Download CV
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mt-4 md:mt-20 "></div>
-                </section>
 
-                <!-- EDUCATION -->
-                <section class="scroll-mt-24 px-6 py-6 w-full bg-[#f6f7fd] font-[Montserrat] ">
-                    <!-- Heading -->
-                    <h2 id="education" class="flex items-center text-4xl font-medium text-[#00008B] mb-8 ">
-                        <span class="w-1 h-12 mr-4 " style="background-color: #E3872D; "></span> EDUCATION
-                    </h2>
-                    <!-- Timeline wrapper -->
-                    <div class="relative pl-0 space-y-6 ">
-                        <!-- Bachelor -->
-                        <div class="relative edu-item edu-reveal">
-                            <!-- Dot -->
-                            <span class="edu-dot absolute -left-[2px] top-2 w-4 h-4 bg-orange-500 rounded-full "></span>
-                            <!-- Content -->
-                            <div class="ml-6 ">
-                                <span class="inline-block mb-2 px-3 py-1 text-xs font-semibold tracking-wide rounded-full bg-orange-100 text-orange-600 ">TO BE GRADUATED</span>
-                                <h3 class="text-2xl font-semibold text-slate-900 ">
-                                    Bachelor of Science in Computer Science and Engineering
-                                </h3>
-                                <!-- Vertical line -->
-                                <div class="edu-line absolute left-1 top-10 bottom-1 w-[2px] bg-orange-500"></div>
-
-                                <p class="flex items-center gap-2 text-lg text-slate-600 leading-none ">
-                                    <img src="./Image/diu.png " class="w-4 h-4 shrink-0 object-contain align-middle " />
-                                    <span class="leading-snug ">Daffodil International University, Dhaka, Bangladesh</span>
-                                </p>
-
-                                <p class="mt-1 text-sm text-slate-500 flex items-center gap-2 ">
-                                    <i class="fa-regular fa-calendar "></i> Spring 2022 – Fall 2025
-                                </p>
-                                <p class="mt-2 text-slate-700 ">
-                                    <span class="font-medium ">CGPA:</span> 3.88 / 4.00
-                                    <!-- &nbsp;|&nbsp;
-                                    <span class="font-medium ">Total Marks</span> (90%)-->
-                                </p>
+                            <!-- Education -->
+                            <div class="section-header" id="education">
+                                <span class="section-icon">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </span>
+                                <h2 class="section-title">Education</h2>
+                                <span class="section-rule"></span>
                             </div>
-                        </div>
 
-                        <!-- Exchange -->
-                        <div class="relative edu-item edu-reveal ">
-                            <!-- Dot -->
-                            <span class="edu-dot absolute -left-[2px] top-2 w-4 h-4 bg-slate-600 rounded-full "></span>
-                            <!-- Content -->
-                            <div class="ml-6 ">
-                                <span class="inline-block mb-2 px-3 py-1 text-xs font-semibold tracking-wide rounded-full bg-slate-600 text-white ">SEMESTER EXCHANGE PROGRAM</span>
-                                <h3 class="text-2xl font-semibold text-slate-900 ">
-                                    Computer Engineering
-                                </h3>
-                                <!-- Vertical line -->
-                                <div class="edu-line absolute left-1 top-10 bottom-1 w-[2px] bg-slate-600 "></div>
+                            <!-- Timeline wrapper -->
+                            <div class="relative pl-0 space-y-6 ">
+                                <!-- Bachelor -->
+                                <div class="relative edu-item edu-reveal ">
+                                    <!-- Content -->
+                                    <div class="ml-0">
+                                        <h3 class="text-base font-medium text-slate-900 ">
+                                            Bachelor of Science in Computer Science and Engineering – Present
+                                        </h3>
+                                        <p class="edu-line flex items-center gap-2 text-base mt-1 text-slate-600 leading-none">
+                                            <img src="./Image/diu.png" class="w-4 h-4 shrink-0 object-contain align-middle" />
+                                            <span class="text-base leading-snug">
+                                                Daffodil International University, Bangladesh
+                                            </span>
 
-                                <p class=" flex items-center gap-2 text-lg text-slate-600 leading-none ">
-                                    <img src="./Image/dsu.svg " alt="Dongseo University " class="w-7 h-5 shrink-0 object-contain align-middle ">
-                                    <span class="leading-snug ">Dongseo University, Busan, South Korea</span>
-                                </p>
-                                <div class="mt-1 h-px w-80 bg-slate-200 "></div>
+                                            <span class="edu-cgpa inline-flex items-center gap-1">
+                                                <i class="fa-regular fa-file-lines text-slate-500"></i>
+                                            <span class="text-slate-700">CGPA:</span> 3.88 / 4.00
+                                            </span>
+                                        </p>
 
-                                <p class="flex items-center gap-2 text-sm text-slate-500 leading-none ">
-                                    <img src="./Image/gks.png " alt="GKS Scholarship " class="w-7 h-6 shrink-0 object-contain align-middle ">
-                                    <span>Global Korea Scholarship (GKS)</span>
-                                </p>
-
-                                <p class="mt-1 text-sm text-slate-500 flex items-center gap-2">
-                                    <i class="fa-regular fa-calendar"></i> Fall 2023
-                                </p>
-
-                                <p class="mt-2 text-slate-700 ">
-                                    <span class="font-medium ">CGPA:</span> 3.94 / 4.50
-                                    <!-- &nbsp;|&nbsp;
-                                    <span class="font-medium ">Total Marks</span> (93.25%)-->
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- PUBLICATIONS -->
-                <section class="scroll-mt-24 p-4 mt-5 px-6 py-6 w-full bg-[#f6f7fd] font-[Montserrat] ">
-                    <h2 id="publication " class="flex items-center text-4xl font-medium text-[#00008B] mb-10 ">
-                        <span class="w-1 h-10 bg-orange-500 mr-4 " style="background-color: #E3872D; "></span> RESEARCH
-                    </h2>
-                    <div class=" space-y-6 ">
-                        <article class="reveal rounded-2xl border border-gray-200 bg-white p-6 md:p-8 font-[Montserrat] shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-gray-300 ">
-                            <div class="flex flex-col lg:flex-row gap-6 lg:gap-10 ">
-
-                                <!-- LEFT: content -->
-                                <div class="flex-1 min-w-0 ">
-                                    <!-- Meta row -->
-                                    <div class="flex flex-wrap items-center gap-2 text-sm ">
-                                        <span class="inline-flex items-center px-2 py-1 rounded-full bg-green-600 text-white font-semibold tracking-wide ">JOURNAL</span>
-                                        <span class="inline-flex items-center px-2 py-1 rounded-full bg-pink-600 text-white font-semibold tracking-wide ">Research Article</span>
-                                        <span class="text-gray-700 font-medium ">November, 2025 &nbsp;–&nbsp; <span class="uppercase tracking-wide ">Global Energy Interconnection</span> <span class="font-semibold ">[Q1]</span>
-                                        </span>
                                     </div>
-                                    <!-- Title -->
-                                    <p class="mt-4 text-sm md:text-base font-normal leading-snug text-gray-900 text-justify ">
-                                        <strong>Nazmul Huda Badhon</strong>, Imrus Salehin, Md Tomal Ahmed Sajib, Md Sakibul Hassan Rifat, SM Noman, Nazmun Nessa Moon, <span class=" group-hover:text-purple-600 transition-colors duration-200 ">"TLCNN:
-                                    Tabular data-based Lightweight Convolutional Neural Network for Electricity Energy Demand Prediction. "</span> on Global Energy Interconnection, 14 November 2025, ISSN: 2590-0358, Elsevier.
+                                </div>
+
+                                <!-- Exchange -->
+                                <div class="relative edu-item edu-reveal ">
+
+                                    <!-- Content -->
+                                    <div class="ml-0">
+                                        <h3 class="text-base font-medium text-slate-900 ">
+                                            Semester Exchange, Computer Engineering
+                                        </h3>
+
+                                        <p class="edu-line flex items-center gap-2 text-base text-slate-600 leading-none mt-1">
+                                            <img src="./Image/dsu.svg " alt="Dongseo University " class="w-7 h-5 shrink-0 object-contain align-middle ">
+                                            <span class="edu-cgpa text-base leading-snug ">Dongseo University, South Korea</span>&nbsp;<i class=" fa-regular fa-file-lines text-slate-500"></i>
+                                            <span class="text-slate-700">CGPA:</span> 3.94 / 4.50
+                                        </p>
+                                        <div class="mt-1 h-px w-80 bg-slate-100 "></div>
+
+                                        <p class="flex items-center gap-2 text-sm text-slate-500 leading-none ">
+                                            <img src="./Image/gks.png " alt="GKS Scholarship " class="w-7 h-6 shrink-0 object-contain align-middle ">
+                                            <span>Global Korea Scholarship (GKS)</span>&nbsp;<i class="fa-regular fa-calendar "></i>Fall 2023
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="section-header" id="publication">
+                                <span class="section-icon">
+                                    <i class="fa-regular fa-newspaper rp-ico"></i>
+                                </span>
+                                <h2 class="section-title">Recent Publications</h2>
+                                <span class="section-rule"></span>
+                            </div>
+
+                            <div class="rp-list">
+                                <div class="rp-item">
+                                    <p>
+                                        <b>Nazmul Huda Badhon</b>, Imrus Salehin, Md Tomal Ahmed Sajib, Md Sakibul Hassan Rifat, SM Noman, Nazmun Nessa Moon, "TLCNN: Tabular data-based Lightweight Convolutional Neural Network for Electricity Energy Demand
+                                        Prediction. " In
+                                        <a href="https://www.sciencedirect.com/journal/global-energy-interconnection" target="_blank">Global Energy Interconnection, Elsevier</a>, December 2025.
+                                        <a class="rp-link" href="https://www.sciencedirect.com/science/article/pii/S2096511725001239" target="_blank" aria-label="Open publication link">
+                                            <i class="fa-solid fa-link"></i>
+                                        </a>
                                     </p>
-                                    <!-- Buttons -->
-                                    <div class="mt-6 flex flex-wrap gap-3 ">
-                                        <a href="https://www.sciencedirect.com/science/article/pii/S2096511725001239 " target="_blank " class="inline-flex items-center gap-2 rounded-xl border-2 border-black px-2 py-2 font-semibold text-gray-900 hover:bg-gray-50
-                                    transition ">
-                                            <i class="fa-solid fa-file-pdf "></i> Paper
-                                        </a>
-
-                                        <a href="./bibtex/tlcnn.bib " target="_blank " class="inline-flex items-center gap-2 rounded-xl border-2 border-black px-2 py-2 font-semibold text-gray-900 hover:bg-gray-50 transition ">
-                                            <i class="fa-solid fa-quote-right "></i> BibTeX
-                                        </a>
-                                    </div>
                                 </div>
 
-                                <!-- RIGHT: thumbnails-->
-                                <div class="lg:w-[300px] shrink-0 ">
-                                    <div class="h-[180px] w-full overflow-hidden rounded-xl ring-1 ring-black/5 bg-gray-50 ">
-                                        <img src="./Image/tlcnn.jpg " alt="Publication figure " loading="lazy " class="h-full w-full object-cover " />
-                                    </div>
-                                </div>
-
-                        </article>
-
-                        <!-- MethodsX -->
-                        <article class="reveal rounded-2xl border border-gray-200 bg-white p-6 md:p-8 font-[Montserrat] shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-gray-300 ">
-
-                            <div class="flex flex-col lg:flex-row gap-6 lg:gap-10 ">
-                                <!-- LEFT: content -->
-                                <div class="flex-1 min-w-0 ">
-                                    <!-- Meta row -->
-                                    <div class="flex flex-wrap items-center gap-2 text-sm ">
-                                        <span class="inline-flex items-center px-2 py-1 rounded-full bg-green-600 text-white font-semibold tracking-wide ">JOURNAL</span>
-                                        <span class="inline-flex items-center px-2 py-1 rounded-full bg-yellow-500 text-white font-semibold tracking-wide ">Micro Article</span>
-                                        <span class="text-gray-700 font-medium ">October, 2025 &nbsp;–&nbsp; <span class="uppercase tracking-wide ">MethodsX</span> <span class="font-semibold ">[Q2]</span>
-                                        </span>
-                                    </div>
-                                    <!-- Title -->
-                                    <p class="mt-4 text-sm md:text-base font-normal leading-snug text-gray-900 text-justify ">
-                                        Md Tomal Ahmed Sajib, <strong>Nazmul Huda Badhon</strong>, Imrus Salehin, Md Sakibul Hassan Rifat, Faysal Ahmed, Nazmun Nessa Moon, "A comparative deep learning methodology for plant insect image classification:
-                                        assessment of CNN architectures and augmentation techniques " on MethodsX, 17 October 2025. ISSN: 2215-0161, Elsevier.
+                                <div class="rp-item">
+                                    <p>
+                                        Md Tomal Ahmed Sajib, <b>Nazmul Huda Badhon</b>, Imrus Salehin, Md Sakibul Hassan Rifat, Faysal Ahmed, Nazmun Nessa Moon, "A comparative deep learning methodology for plant insect image classification: assessment
+                                        of CNN architectures and augmentation techniques " In
+                                        <a href="https://www.sciencedirect.com/journal/methodsx" target="_blank">MethodsX</a>, December 2025.
+                                        <a class="rp-link" href="https://www.sciencedirect.com/science/article/pii/S2215016125005242" target="_blank" aria-label="Open publication link">
+                                            <i class="fa-solid fa-link"></i>
+                                        </a>
                                     </p>
-                                    <!-- Buttons -->
-                                    <div class="mt-6 flex flex-wrap gap-2 ">
-                                        <a href="https://www.sciencedirect.com/science/article/pii/S2215016125005242 " target="_blank " class="inline-flex items-center gap-2 rounded-xl border-2 border-black px-2 py-2 font-semibold text-gray-900 hover:bg-gray-50
-                                    transition ">
-                                            <i class="fa-solid fa-file-pdf "></i> Paper
-                                        </a>
-
-                                        <a href="./bibtex/methodsx.bib " target="_blank " class="inline-flex items-center gap-2 rounded-xl border-2 border-black px-2 py-2 font-semibold text-gray-900 hover:bg-gray-50 transition ">
-                                            <i class="fa-solid fa-quote-right "></i> BibTeX
-                                        </a>
-                                    </div>
                                 </div>
 
-                                <!-- RIGHT: thumbnails-->
-                                <div class="lg:w-[300px] shrink-0 ">
-                                    <div class="h-[180px] w-full overflow-hidden rounded-xl ring-1 ring-black/5 bg-gray-50 ">
-                                        <img src="./Image/methodsx.jpg " alt="Publication figure " loading="lazy " class="h-full w-full object-cover " />
-                                    </div>
-                                </div>
-                        </article>
 
-                        <!-- LLM Review -->
-                        <article class="reveal rounded-2xl border border-gray-200 bg-white p-6 md:p-8 font-[Montserrat] shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-gray-300 ">
-
-                            <div class="flex flex-col lg:flex-row gap-6 lg:gap-10 ">
-
-                                <!-- LEFT: content -->
-                                <div class="flex-1 min-w-0 ">
-                                    <!-- Meta row -->
-                                    <div class="flex flex-wrap items-center gap-2 text-sm ">
-                                        <span class="inline-flex items-center px-2 py-1 rounded-full bg-green-600 text-white font-semibold tracking-wide ">JOURNAL</span>
-                                        <span class="inline-flex items-center px-2 py-1 rounded-full bg-cyan-400 text-white font-semibold tracking-wide ">Review Article</span>
-
-                                        <span class="text-gray-700 font-medium ">September, 2025 &nbsp;–&nbsp;<span class="uppercase tracking-wide ">Engineering Reports</span>
-                                        <span class="font-semibold ">[Q2]</span>
-                                        </span>
-                                    </div>
-
-                                    <!-- Citation -->
-                                    <p class="mt-4 text-sm md:text-base font-normal leading-snug text-gray-900 text-justify ">
-                                        Imrus Salehin, Md Tomal Ahmed Sajib,
-                                        <strong>Nazmul Huda Badhon</strong>, Md Sakibul Hassan Rifat, Nazrul Amin, Nazmun Nessa Moon, "Systematic Literature Review of LLM–Large Language Models in Medical: Digital Health, Technology and Applications. "
-                                        Engineering Reports, 7(9): e70365, 12 September 2025. ISSN: 2577-8196, Wiley.
+                                <div class="rp-item">
+                                    <p>
+                                        Imrus Salehin, Md Tomal Ahmed Sajib, <b>Nazmul Huda Badhon</b>, Md Sakibul Hassan Rifat, Nazrul Amin, Nazmun Nessa Moon, "Systematic Literature Review of LLM–Large Language Models in Medical: Digital Health, Technology
+                                        and Applications." In
+                                        <a href="https://onlinelibrary.wiley.com/journal/25778196" target="_blank">Engineerinng Reports</a>, September 2025.
+                                        <a class="rp-link" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/eng2.70365" target="_blank" aria-label="Open publication link">
+                                            <i class="fa-solid fa-link"></i>
+                                        </a>
                                     </p>
-
-                                    <!-- Buttons -->
-                                    <div class="mt-6 flex flex-wrap gap-3 ">
-                                        <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/eng2.70365 " target="_blank " class="inline-flex items-center gap-2 rounded-xl border-2 border-black px-2 py-2 font-semibold text-gray-900 hover:bg-gray-50
-                                    transition ">
-                                            <i class="fa-solid fa-file-pdf "></i> Paper
-                                        </a>
-
-                                        <a href="./bibtex/llm_review.bib " target="_blank " class="inline-flex items-center gap-2 rounded-xl border-2 border-black px-2 py-2 font-semibold text-gray-900 hover:bg-gray-50 transition ">
-                                            <i class="fa-solid fa-quote-right "></i> BibTeX
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <!-- RIGHT: thumbnail -->
-                                <div class="lg:w-[300px] shrink-0 ">
-                                    <div class="h-[180px] w-full overflow-hidden rounded-xl ring-1 ring-black/5 bg-gray-50 ">
-                                        <img src="./Image/llm.jpg " alt="Publication figure " loading="lazy " class="h-full w-full object-cover " />
-                                    </div>
                                 </div>
                             </div>
-                        </article>
-
-                        <!-- BAU-Insectv2 -->
-                        <article class="reveal rounded-2xl border border-gray-200 bg-white p-6 md:p-8 font-[Montserrat] shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-gray-300 ">
-
-                            <div class="flex flex-col lg:flex-row gap-6 lg:gap-10 ">
-
-                                <!-- LEFT: content -->
-                                <div class="flex-1 min-w-0 ">
-                                    <!-- Meta row -->
-                                    <div class="flex flex-wrap items-center gap-2 text-sm ">
-                                        <span class="inline-flex items-center px-2 py-1 rounded-full bg-green-600 text-white font-semibold tracking-wide ">JOURNAL</span>
-                                        <span class="inline-flex items-center px-2 py-1 rounded-full bg-violet-400 text-white font-semibold tracking-wide ">Data Article</span>
-
-                                        <span class="text-gray-700 font-medium ">January, 2024 &nbsp;–&nbsp;<span class="uppercase tracking-wide ">Data in Breif</span>
-                                        <span class="font-semibold ">[Q3]</span>
-                                        </span>
-                                    </div>
-
-                                    <!-- Citation -->
-                                    <p class="mt-4 text-sm md:text-base font-normal leading-snug text-gray-900 text-justify ">
-                                        Imrus Salehin, Mahbubur Rahman Khan, Ummya Habiba, <strong>Nazmul Huda Badhon</strong>, Nazmun Nessa Moon (2024), "BAU-Insectv2: An Agricultural Plant Insect Dataset for Deep Learning and Biomedical Image Analysis
-                                        " on Data in Brief, 110083, 23 January 2024. ISSN: 2352-3409, Elsevier.
-                                    </p>
-
-                                    <!-- Buttons -->
-                                    <div class="mt-6 flex flex-wrap gap-3 ">
-                                        <a href="https://www.sciencedirect.com/science/article/pii/S2352340924000568 " target="_blank " class="inline-flex items-center gap-2 rounded-xl border-2 border-black px-2 py-2 font-semibold text-gray-900 hover:bg-gray-50
-                                    transition ">
-                                            <i class="fa-solid fa-file-pdf "></i> Paper
-                                        </a>
-
-                                        <a href="./bibtex/bau-insectv2.bib " target="_blank " class="inline-flex items-center gap-2 rounded-xl border-2 border-black px-2 py-2 font-semibold text-gray-900 hover:bg-gray-50 transition ">
-                                            <i class="fa-solid fa-quote-right "></i> BibTeX
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <!-- RIGHT: thumbnail -->
-                                <div class="lg:w-[300px] shrink-0 ">
-                                    <div class="h-[180px] w-full overflow-hidden rounded-xl ring-1 ring-black/5 bg-gray-50 ">
-                                        <img src="./Image/bauinsect.jpg " alt="Publication figure " loading="lazy " class="h-full w-full object-cover " />
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-
-                        <!-- Book Chapter -->
-                        <article class="reveal rounded-2xl border border-gray-200 bg-white p-6 md:p-8 font-[Montserrat] shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-gray-300 ">
-
-                            <div class="flex flex-col lg:flex-row gap-6 lg:gap-10 ">
-
-                                <!-- LEFT: content -->
-                                <div class="flex-1 min-w-0 ">
-                                    <!-- Meta row -->
-                                    <div class="flex flex-wrap items-center gap-2 text-sm ">
-                                        <span class="inline-flex items-center px-2 py-1 rounded-full bg-slate-600 text-white font-semibold tracking-wide ">BOOK CHAPTER</span>
-                                        <!--<span class="text-gray-700 font-medium ">January, 2024 &nbsp;–&nbsp;--><span class="uppercase tracking-wide ">Taylor & francis</span>
-                                    </div>
-
-                                    <!-- Citation -->
-                                    <p class="mt-4 text-sm md:text-base font-normal leading-snug text-gray-900 text-justify ">
-                                        Imrus Salehin, <strong>Nazmul Huda Badhon</strong>, Md. Tomal Ahmed Sajib, Md. Sakibul Hassan Rifat, Nazmun Nessa Moon, "Predicting Peak Energy Demand Using Machine Learning Techniques for Efficient Electricity
-                                        Supply Management. " on Engineering Applications of AI for Demand Forecasting, Taylor & Francis. Accepted on 24 April 2025. (in press).
-                                    </p>
-
-                                    <!-- Buttons -->
-                                    <div class="mt-6 flex flex-wrap gap-3 ">
-                                        <a href=" " target="_blank " class="inline-flex items-center gap-2 rounded-xl border-2 border-black px-2 py-2 font-semibold text-gray-900 hover:bg-gray-50 transition ">
-                                            <i class="fa-solid fa-file-pdf "></i> Paper
-                                        </a>
-
-                                        <a href=" " target="_blank " class="inline-flex items-center gap-2 rounded-xl border-2 border-black px-2 py-2 font-semibold text-gray-900 hover:bg-gray-50 transition ">
-                                            <i class="fa-solid fa-quote-right "></i> BibTeX
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <!-- RIGHT: thumbnail -->
-                                <div class="lg:w-[300px] shrink-0 ">
-                                    <div class="h-[180px] w-full overflow-hidden rounded-xl ring-1 ring-black/5 bg-gray-50 ">
-                                        <img src="./Image/bookchapter.jpg " alt="Publication figure " loading="lazy " class="h-full w-full object-cover " />
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-
-                        <!-- Mini Review
-                        <article class="reveal rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition p-6 md:p-8 font-[Montserrat] ">
-                            <div class="flex flex-col lg:flex-row gap-6 lg:gap-10 ">
-
-                        <div class="flex-1 min-w-0 ">
-                        <div class="flex flex-wrap items-center gap-3 text-sm ">
-                            <span class="inline-flex items-center px-3 py-1 rounded-full bg-green-600 text-white font-semibold tracking-wide ">
-                    JOURNAL
-                </span>
-                            <span class="text-gray-700 font-medium ">
-                    2025 &nbsp;–&nbsp;
-                    <span class="uppercase tracking-wide ">Engineering Reports</span>
-                            <span class="font-semibold ">[Q2]</span>
-                            </span>
+                            <br>
                         </div>
-
-                        <p class="mt-4 text-xl md:text-base font-normal leading-snug text-gray-900 text-justify ">
-                            Imrus Salehin, <strong>Nazmul Huda Badhon</strong>, Md Tomal Ahmed Sajib, Nazmun Nessa Moon,
-                            <span class="group-hover:text-purple-600 transition-colors duration-200 ">
-                    "Secure Medical AI: Federated Learning and Large Language Models for Medical Intelligence. "
-                </span>
-                            <em>Engineering Reports</em> (
-                            <strong>Submitted</strong>, Wiley), 2025.
-                        </p>
-
-                        <div class="mt-6 flex flex-wrap gap-3 ">
-                                    <a href="# " target="_blank "
-                                    class="inline-flex items-center gap-2 rounded-xl border-2 border-black px-2 py-2 font-semibold text-gray-900 hover:bg-gray-50 transition ">
-                                    <i class="fa-solid fa-file-pdf "></i> Paper
-                                    </a>
-
-                                    <a href="./bibtex/mini_review.bib " target="_blank "
-                                    class="inline-flex items-center gap-2 rounded-xl border-2 border-black px-2 py-2 font-semibold text-gray-900 hover:bg-gray-50 transition ">
-                                    <i class="fa-solid fa-quote-right "></i> BibTeX
-                                    </a> 
-                        </div>
-                        </div>
-                        <div class="lg:w-[300px] shrink-0 ">
-                            <img src="./Image/mini.jpg " alt="Mini review paper figure " loading="lazy " class="h-full w-full object-cover rounded-xl ring-1 ring-black/5 bg-gray-50 " />
-                        </div>
-                    </div>
-                    </article>-->
-
-                        </div>
-                </section>
-
-                <!-- PROJECT -->
-                <section class="scroll-mt-24 p-6 mt-5 px-6 py-6 w-full bg-[#f6f7fd] font-[Montserrat] ">
-                    <h2 id="project " class="flex items-center font-medium text-[#00008B] text-4xl mb-8 ">
-                        <span class="w-1 h-10 bg-[#E3872D] mr-4 "></span> PROJECTS
-                    </h2>
-
-                    <!-- Horizontal card row -->
-                    <div class="flex flex-col md:flex-row gap-3 ">
-
-                        <!-- Project: Breast Cancer Segmentation & Classification (Hybrid) -->
-                        <article class="proj-card flex-1 flex-1 rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-gray-300 p-2 md:p-4 font-[Montserrat] flex flex-col
-                                    flex flex-col ">
-                            <!-- Thumbnail (16:9 like your YouTube embed) -->
-                            <div class="w-full rounded-xl overflow-hidden aspect-video ">
-                                <img src="./Image/breast_ultrasound_thumbnail.jpg " alt="Breast ultrasound – segmentation & hybrid classification " loading="lazy " decoding="async " width="1280 " height="720 " class="w-full aspect-[16/9] object-cover
-                                    rounded-xl ring-1 ring-black/5 ">
-                            </div>
-
-                            <!-- Content -->
-                            <div class="mt-4 space-y-2 ">
-                                <div class="flex flex-wrap gap-2 ">
-                                    <span class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-pink-100 text-pink-700 ">Ultrasound</span>
-                                    <span class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 ">Segmentation</span>
-                                    <span class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-indigo-100 text-indigo-700 ">Hybrid Model</span>
-                                    <span class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-amber-100 text-amber-700 ">Classification</span>
-                                </div>
-
-                                <h3 class="font-semibold text-xl text-slate-900 ">
-                                    Breast Cancer: Segmentation-Guided Hybrid Classification
-                                </h3>
-                                <p class="text-sm text-slate-500 ">
-                                    Datasets: <a class="underline " href="https://www.kaggle.com/datasets/sabahesaraki/breast-ultrasound-images-dataset ">BUSI with GT</a> (segmentation) &amp;
-                                    <a class="underline " href="https://www.kaggle.com/datasets/mrmaazoo/breast-ultrasound-classification?select=BUSI_Corrected ">BUSI_Corrected</a> (classification)</p>
-
-                                <p class="text-justify text-sm md:text-base ">
-                                    A two-stage pipeline on breast ultrasound: (1) train U-Net on BUSI-with-GT to obtain lesion masks, then segment BUSI_Corrected images; <br><br>(2) merge classes (Normal, Benign, Malignant) and train a hybrid classifier
-                                    that fuses features from strong CNN backbones. evaluation metrics: Accuracy/Loss curves, ROC for all classes, confusion matrix, and a full metrics table.
-                                </p>
-
-                                <!-- Actions -->
-                                <div class=" mt-3 flex flex-wrap gap-3 ">
-
-                                    <a href="https://github.com/nazmulhudabadhon/Computer-Vision-and-Deep-Learning-in-Medical-Imaging/blob/9303a9f41ee4fe1e1477e76dbd2743dd810db34a/Breast_Cancer_Segmentation_and_classification.ipynb " target="_blank
-                                    " rel="noopener noreferrer " class="inline-flex items-center px-2 py-1 border border-black rounded-md text-black font-medium hover:bg-gray-100 transition ">
-                                        <i class="fa-brands fa-github mr-2 "></i> Code & Notebooks
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <!-- Lung Colon -->
-                        <article class="proj-card flex-1 rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-gray-300 p-2 md:p-4 font-[Montserrat] flex flex-col ">
-                            <div class="w-full rounded-xl ring-black/5 overflow-hidden aspect-video ">
-                                <img src="./Image/lc_histopathology_thumbnail.jpg " alt="Lung–Colon project overview " loading="lazy " decoding="async " width="1280 " height="720 " class="w-full aspect-[16/9] object-cover rounded-xl ring-1 ring-black/5 ">
-                            </div>
-                            <!-- Content -->
-                            <div class="mt-4 space-y-2 ">
-                                <div class="flex flex-wrap gap-2 ">
-                                    <span class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-purple-100 text-purple-700 ">Computer Vision</span>
-                                    <span class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-sky-100 text-sky-700 ">Transfer Learning</span>
-                                    <span class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 ">Ablation Study</span>
-                                </div>
-
-                                <h3 class="font-semibold text-xl text-slate-900 ">
-                                    Lung–Colon Histopathology: Image Enhancement & Transfer Learning
-                                </h3>
-                                <p class="text-sm text-slate-500 ">Dataset: Lung–Colon Histopathology Images</p>
-
-                                <p class="text-justify text-sm md:text-base ">
-                                    This project applied sequential image processing techniques to enhance round nuclei in lung–colon histopathological images, followed by evaluation using MSE, RMSE, SSIM, and PSNR metrics.<br>
-                                </p>
-                                <p class=" text-sm md:text-base ">
-                                    Five transfer learning models (ResNet50, DenseNet121, EfficientNet-B0, MobileNetV3, ViT-B/16) were exploredwith the best model by accuracy and F1-score. An ablation study has also been performed.</p>
-                                <!-- Actions -->
-                                <div class="mt-3 flex flex-wrap gap-3 ">
-                                    <a href="https://github.com/nazmulhudabadhon/Computer-Vision-and-Deep-Learning-in-Medical-Imaging/blob/a024c4d66ebfc31581006f1932921234cc33c346/Lung%E2%80%93Colon%20Histopathology%3A%20Image%20Enhancement%20%26%20Transfer%20Learning.ipynb
-                                    " target="_blank " rel="noopener noreferrer " class="inline-flex items-center px-2 py-1 border border-black rounded-md text-black font-medium hover:bg-gray-100 transition ">
-                                        <i class="fa-brands fa-github mr-2 "></i> Code & Notebooks
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-
-                        <!-- ViT Project -->
-                        <article class="proj-card flex-1 rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-gray-300 p-2 md:p-4 font-[Montserrat] flex flex-col ">
-                            <div class="w-full rounded-xl ring-1 ring-black/5 overflow-hidden aspect-video ">
-                                <img src="./Image/vit_thumbnail.jpg " alt="Vision Transformer project overview " loading="lazy " decoding="async " width="1280 " height="720 " class="w-full aspect-[16/9] object-cover rounded-xl ring-1 ring-black/5 ">
-                            </div>
-                            <!-- Content -->
-                            <div class="mt-4 space-y-2 ">
-                                <div class="flex flex-wrap gap-2 ">
-                                    <span class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-purple-100 text-purple-700 ">Computer Vision</span>
-                                    <span class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-sky-100 text-sky-700 ">Vision Transformer</span>
-                                    <span class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 ">Image Processing</span>
-                                </div>
-
-                                <h3 class="font-semibold text-xl text-slate-900 ">
-                                    Image Preprocessing & Quality Analysis with Vision Transformer
-                                </h3>
-                                <p class="text-sm text-slate-500 ">Dataset: Medical Image Preprocessing Experiments</p>
-
-                                <p class="text-justify text-sm md:text-base ">
-                                    This project applied sequential preprocessing and quality enhancement steps to medical images, followed by classification using a Vision Transformer (ViT).
-                                    <br>Performance evaluation achieved <b>87% testing accuracy</b>, demonstrating the effectiveness of preprocessing in improving transformer-based models. The workflow included image quality analysis, evaluation metrics
-                                    summarization.
-                                </p>
-
-                                <!-- Actions -->
-                                <div class="mt-3 flex flex-wrap gap-3 ">
-                                    <a href="https://github.com/nazmulhudabadhon/Computer-Vision-and-Deep-Learning-in-Medical-Imaging/blob/a024c4d66ebfc31581006f1932921234cc33c346/Image%20Preprocessing%20and%20Quality%20Analysis%20with%20Vision%20Transformer-ViT.ipynb
-                                    " target="_blank " rel="noopener noreferrer " class="inline-flex items-center px-2 py-1 border border-black rounded-md text-black font-medium hover:bg-gray-100 transition ">
-                                        <i class="fa-brands fa-github mr-2 "></i> Code & Notebooks
-                                    </a>
-                                </div>
-                            </div>
-                        </article>
-
-                </section>
-
-
-                <!-- WORK EXPERIENCE -->
-                <section class="scroll-mt-24 bg-[#f6f7fd] p-6 mt-5 font-[Montserrat] ">
-
-                    <h2 id="work " class="flex items-center text-[#00008B] font-medium text-4xl mb-8 ">
-                        <span class="w-1 h-10 bg-orange-500 mr-4 "></span> WORK EXPERIENCE
-                    </h2>
-                    <h4 class="list-disc list-inside ml-2 leading-relaxed ">
-                        Trainer, Multidisciplinary Action Lab, Dept of Computer Science and Engineering, DIU (February 2024 to Present)
-                    </h4>
-                    <ul class="list-disc list-inside ml-2 leading-relaxed ">
-                        <li>Collaborating in Computer Vision Projects, Especially in the area of Medical Imaging.</li>
-                        <li>The task is to Produce High-quality Q1 Journals.</li>
-                    </ul>
-                </section>
-
-                <!--ACHIEVEMENT & ECA-->
-                <section class="scroll-mt-24 p-6 mt-5 px-6 py-6 w-full bg-[#f6f7fd] font-[Montserrat] ">
-                    <h2 id="achievement " class="flex items-center font-medium text-[#00008B] text-4xl mb-8 ">
-                        <span class="w-1 h-10 bg-[#E3872D] mr-4 "></span> ACHIEVEMENT & ECA
-                    </h2>
-
-                    <!-- Horizontal card row -->
-                    <div class="flex flex-col md:flex-row gap-3 ">
-
-                        <!-- Card 1: YouTube -->
-                        <article class="ach-card flex-1 flex-1 rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-gray-300 p-2 md:p-4 font-[Montserrat] flex flex-col ">
-                            <div class="ach-media rounded-xl ring-1 ring-black/5 overflow-hidden aspect-video ">
-                                <iframe class="w-full h-full " src="https://www.youtube.com/embed/zmkiBl4CQtU " title="Global Korea Scholarship " frameborder="0 " allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture " allowfullscreen></iframe>
-                            </div>
-                            <div class="ach-media mt-3 ">
-                                <span class="ach-badge inline-flex items-center text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-sky-100 text-sky-700 ">Scholarship</span>
-                                <h3 class="mt-2 font-semibold text-lg text-slate-900 ">Global Korea Scholarship (GKS) 2023</h3>
-                                <p class="mt-2 mb-2 text-slate-700 text-justify text-sm md:text-base font-normal ">Achieved the fully-funded GKS scholarship 2023 by the Government of Republic of Korea while completing Bachelor of Science degree at Daffodil International University and studied one semester on-site in South Korea under
-                                    the Semester Exchange Program.</p>
-                                <p class="text-sm md:text-base font-normal text-slate-500 mt-1 font-sans emoji " style="font-family: Montserrat; ">
-                                    Receiving Year: Fall 2023 — Dongseo University,SK 🇰🇷
-                                </p>
-                            </div>
-                        </article>
-
-                        <!-- Card 2: Image -->
-                        <article class="ach-card flex-1 rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-gray-300 p-2 md:p-4 font-[Montserrat] flex flex-col ">
-                            <div class="ach-media w-full rounded-xl ring-1 ring-black/5 overflow-hidden aspect-video ">
-                                <img src="./Image/award_certificate.jpg " alt="Award Certificate " loading="lazy " decoding="async " width="1280 " height="720 " class="w-full aspect-[16/9] object-cover rounded-xl ring-1 ring-black/5 ">
-                            </div>
-                            <div class="ach-media mt-3 ">
-                                <span class="ach-badge inline-flex items-center text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-green-100 text-green-700 ">Award</span>
-                                <h3 class="mt-2 font-semibold text-lg text-slate-900 ">Research Award for Scholarly Publication in Reputed Indexed Journal</h3>
-                                <p class="mt-2 mb-2 text-slate-700 text-justify text-sm md:text-base font-normal ">Recognized for scholarly publications in reputed indexed journals by the Division of Research and Department of Computer Science and Engineering, Daffodil International Uninversity.</p>
-                                <p class="text-sm md:text-base font-normal text-slate-500 mt-1 ">Receiving Date: 20 May 2025</p>
-                            </div>
-                        </article>
-
-                        <!-- Card 3: Image -->
-                        <article class="ach-card flex-1 rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-gray-300 p-2 md:p-4 font-[Montserrat] flex flex-col ">
-                            <div class="ach-media w-full rounded-xl ring-1 ring-black/5 overflow-hidden aspect-video ">
-                                <img src="./Image/bootcamp.png " alt="Bootcamp Performance " loading="lazy " decoding="async " width="1280 " height="720 " class="w-full aspect-[16/9] object-cover rounded-xl ring-1 ring-black/5 ">
-                            </div>
-                            <div class="ach-media mt-3 ">
-                                <span class="ach-badge inline-flex items-center text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full bg-orange-100 text-orange-700 ">Bootcamp</span>
-                                <h3 class="mt-2 font-semibold text-lg text-slate-900 ">Top Performer — CV & DL for Medical Data Analysis</h3>
-                                <p class="mt-2 mb-2 text-slate-700 text-justify text-sm md:text-base font-normal ">Received token of appreciation for top performance in Computer Vision & Medical Image Analysis Bootcamp organized by Health Informatics Research Lab, Daffodil International University.</p>
-                                <p class="text-sm md:text-base font-normal text-slate-500 mt-1 ">Receiving Date: 30 July 2025</p>
-                            </div>
-                        </article>
                     </div>
                 </section>
 
-                <!-- SERVICE -->
-                <section id="service " class="scroll-mt-24 bg-[#f6f7fd] p-6 mt-5 font-[Montserrat] ">
-                    <h2 class="flex items-center font-medium text-blue-900 text-4xl mb-8 ">
-                        <span class="w-1 h-10 bg-orange-500 mr-4 "></span> SERVICES
-                    </h2>
-                    <ul class="list-disc list-inside ml-2 leading-relaxed ">
-                        <li>Peer Reviewer for
-                            <a href="https://journals.sagepub.com/home/DHJ " class="underline text-blue-600 ">
-                                Digital Health</a>
-                        </li>
-                    </ul>
-                </section>
+            </div>
 
-                <!-- CONTACT -->
-                <section id="contact " class="scroll-mt-24 bg-[#f6f7fd] p-6 mt-5 font-[Montserrat] ">
-                    <h2 class="flex items-center font-medium text-blue-900 text-4xl mb-8 ">
-                        <span class="w-1 h-10 bg-orange-500 mr-4 "></span> CONTACT ME
-                    </h2>
-                    <div class="flex gap-6 ">
-                        <a target="_blank " rel="noopener noreferrer " href="https://scholar.google.com/citations?user=-1VBDA8AAAAJ&hl=en ">
-                            <img class="w-8 " src="./Image/googlescholar.svg " alt="Google Scholar ">
-                        </a>
-                        <a target="_blank " rel="noopener noreferrer " href="https://orcid.org/0009-0006-6205-2422 ">
-                            <img class="w-8 " src="./Image/orcid_icon_196062.png " alt="ORCID ">
-                        </a>
-                        <a target="_blank " rel="noopener noreferrer " href="https://www.researchgate.net/profile/Nazmul-Huda-Badhon ">
-                            <img class="w-8 " src="./Image/RG_Logo.02_Black.White.png " alt="ResearchGate ">
-                        </a>
-                        <a target="_blank " rel="noopener noreferrer " href="https://www.linkedin.com/in/nazmuhudabadhon/ ">
-                            <img class="w-8 " src="./Image/linkedin-logo-png_seeklogo-480553.png " alt="LinkedIn ">
-                        </a>
-                        <a target="_blank " rel="noopener noreferrer " href="https://www.webofscience.com/wos/author/record/NYS-9310-2025 ">
-                            <img class="w-8 " src="./Image/wos.png " alt="Web of Science ">
-                        </a>
-                    </div>
-                    <div class="flex mt-4 gap-6 ">
-                        <a target="_blank " rel="noopener noreferrer " href="https://sciprofiles.com/profile/nazmulhudabadhon ">
-                            <img class="w-8 " src="./Image/sci.png " alt="SciProfiles ">
-                        </a>
-                        <a target="_blank " rel="noopener noreferrer " href="https://www.scopus.com/authid/detail.uri?authorId=58864125600 ">
-                            <img class="w-8 " src="./Image/scopus-icon.png " alt="Scopus ">
-                        </a>
-                        <a target="_blank " rel="noopener noreferrer " href="https://www.semanticscholar.org/author/Nazmul-Huda-Badhon/2281092135 ">
-                            <img class="w-8 " src="./Image/semantic.jpg " alt="Semantic Scholar ">
-                        </a>
-                        <a target="_blank " rel="noopener noreferrer " href="https://www.facebook.com/nazmul.huda.badhon/ ">
-                            <img class="w-8 " src="./Image/facebook.png " alt="Facebook ">
-                        </a>
-                        <a target="_blank " rel="noopener noreferrer " href="https://github.com/nazmulhudabadhon ">
-                            <img class="w-8 " src="./Image/25231.png " alt="GitHub ">
-                        </a>
-                    </div>
-                </section>
-                </div>
+        </div>
 
-                <!-- SIDEBAR -->
-                <div class="drawer-side hidden lg:block font-[Montserrat] ">
-                    <label for="my-drawer-2 " aria-label="close sidebar " class="drawer-overlay "></label>
-                    <ul class="h-full w-75 px-8 bg-[#06142A] ">
-                        <br>
-                        <h4 class="text-[#D3D3D3] text-center font-semibold tracking-wide text-2xl leading-snug mt-6 mb-8 ">
-                            <a href="https://nazmulhudabadhon.github.io/ " class="hover:text-[#808080] ">NAZMUL HUDA <br>BADHON</a>
-                            <p class="text-center text-sm text-slate-300 mt-1 tracking-wide ">Researcher · Deep Learning</p>
-                        </h4>
-                        <hr class="border-white/15 my-5 ">
-                        <nav id="sideNav " class="mt-8 space-y-3 text-white text-md font-medium tracking-wide ">
-                            <div class="pl-6 space-y-4 ">
-                                <a href="#about " class="block hover:text-[#E3872D] ">ABOUT</a>
-                                <a href="#education " class="block hover:text-[#E3872D] ">EDUCATION</a>
-                                <a href="#publication " class="block hover:text-[#E3872D] ">RESEARCH</a>
-                                <a href="#project " class="block hover:text-[#E3872D] ">PROJECTS</a>
-                                <a href="#work " class="block hover:text-[#E3872D] ">WORK EXPERIENCE</a>
-                                <a href="#achievement " class="block hover:text-[#E3872D] ">ACHIEVEMENT</a>
-                                <a href="#service " class="block hover:text-[#E3872D] ">SERVICES</a>
-                                <a href="#contact " class="block hover:text-[#E3872D] ">CONTACTS</a>
-                            </div>
-                        </nav>
-                    </ul>
-                </div>
-
-                </div>
-
-                <!-- COPYRIGHT FOOTER -->
-                <footer class="bg-[#06142A] w-full py-2 border-t border-white/10">
-                    <div class="max-w-7xl mx-auto px-4 text-center">
-                        <p class="text-sm text-white/80 tracking-wide font-[Montserrat]">
-                            © 2025 —
-                            <span class="font-semibold text-yellow-500 hover:opacity-90 transition">
+        <!-- COPYRIGHT FOOTER -->
+        <footer class="bg-[#06142A] w-full py-2 border-t border-white/10 ">
+            <div class="max-w-7xl mx-auto px-4 text-center ">
+                <p class="text-sm text-white/80 tracking-wide font-[Montserrat] ">
+                    © 2025 —
+                    <span class="font-semibold text-yellow-500 hover:opacity-90 transition ">
                             Nazmul Huda Badhon
                             </span> . All Rights Reserved.
-                        </p>
-                    </div>
-                </footer>
+                </p>
+            </div>
+        </footer>
 
     </section>
 
     <!-- Back to Top Button -->
-    <button id="backToTop " aria-label="Back to top " class="fixed right-8 bottom-16 z-50 flex items-center justify-center h-12 w-12 rounded-full bg-[#E3872D] text-white shadow-md transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1
-                                    hover:scale-110 focus:outline-none focus:ring-4 focus:ring-[#E3872D]/40 ">
+    <button id="backToTop" aria-label="Back to top " class="fixed right-8 bottom-16 z-50 flex items-center justify-center h-12 w-12 rounded-full bg-[#E3872D] text-white shadow-md transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1
+                                            hover:scale-110 focus:outline-none focus:ring-4 focus:ring-[#E3872D]/40 ">
         <i class="fa-solid fa-arrow-up text-lg transition-transform duration-300 group-hover:-rotate-12 "></i>
     </button>
 
-    <script src="index.js "></script>
+    <script src="index.js"></script>
 </body>
+
+</html>
 
 </html>
 

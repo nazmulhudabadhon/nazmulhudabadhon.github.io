@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 1) Typewriter (animatedText)
     const sentences = [
-        "A Researcher in Deep Learning",
-        "Looking for Research Assistantship Position",
+        "a researcher in deep learning",
+        "seeking research assistantship position",
     ];
 
     const textContainer = document.getElementById("animatedText");
@@ -131,16 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // 3) Mobile menu
-    const mmBtn = document.getElementById("mobileMenuBtn");
-    const mmNav = document.getElementById("mobileMenu");
-    if (mmBtn && mmNav) {
-        mmBtn.addEventListener("click", () => mmNav.classList.toggle("hidden"));
-        mmNav.addEventListener("click", (e) => {
-            if (e.target.closest("a")) mmNav.classList.add("hidden");
-        });
-    }
-
     // 4) Back to top
     const topBtn = document.getElementById("backToTop");
     if (topBtn) {
@@ -198,4 +188,82 @@ document.addEventListener("DOMContentLoaded", () => {
     makeReplayObserver(".edu-reveal", "in", 0.08);
     makeReplayObserver(".proj-card", "in", 0.12);
     makeReplayObserver(".ach-card", "in", 0.10);
+
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dots .dot');
+    let index = 0;
+
+    function showSlide(i) {
+        slides.forEach(s => s.classList.remove('active'));
+        dots.forEach(d => d.classList.remove('active'));
+        slides[i].classList.add('active');
+        dots[i].classList.add('active');
+    }
+
+    setInterval(() => {
+        index = (index + 1) % slides.length;
+        showSlide(index);
+    }, 4500);
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            index = i;
+            showSlide(i);
+        });
+    });
+
+    (() => {
+        const header = document.getElementById("topHeader");
+        if (!header) return;
+
+        let lastY = window.scrollY;
+        let ticking = false;
+
+        const onScroll = () => {
+            const y = window.scrollY;
+
+            // add shadow after a bit scroll
+            if (y > 10) header.classList.add("is-scrolled");
+            else header.classList.remove("is-scrolled");
+
+            // show/hide based on direction
+            if (y > lastY && y > 120) {
+                // scrolling down
+                header.classList.add("nav-hide");
+                header.classList.remove("nav-show");
+            } else {
+                // scrolling up
+                header.classList.add("nav-show");
+                header.classList.remove("nav-hide");
+            }
+
+            lastY = y;
+            ticking = false;
+        };
+
+        window.addEventListener("scroll", () => {
+            if (!ticking) {
+                window.requestAnimationFrame(onScroll);
+                ticking = true;
+            }
+        }, { passive: true });
+
+        // initial state
+        header.classList.add("nav-show");
+    })();
+
+    const btn = document.getElementById("mobileMenuBtn");
+    const menu = document.getElementById("mobileMenu");
+
+    if (btn && menu) {
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+
+        menu.addEventListener("click", (e) => {
+            if (e.target.closest("a")) menu.classList.add("hidden");
+        });
+    }
+
+
 });

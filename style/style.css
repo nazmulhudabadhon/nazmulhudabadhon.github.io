@@ -622,6 +622,22 @@
 }
 
 
+/* Mobile tuning */
+
+@media (max-width: 640px) {
+    .pro-slide {
+        height: 260px;
+    }
+    .pro-btn {
+        display: none;
+    }
+    /* swipe-friendly */
+    .pro-progress {
+        max-width: 140px;
+    }
+}
+
+
 /* Bottom UI */
 
 .pro-ui {
@@ -657,22 +673,6 @@
 .pro-dot.is-active {
     width: 22px;
     background: rgba(15, 23, 42, .92);
-}
-
-
-/* Mobile tuning */
-
-@media (max-width: 640px) {
-    .pro-slide {
-        height: 260px;
-    }
-    .pro-btn {
-        display: none;
-    }
-    /* swipe-friendly */
-    .pro-progress {
-        max-width: 140px;
-    }
 }
 
 
@@ -771,7 +771,7 @@
 
 /* Mobile safety against subpixel reflow */
 
-@media (max-width: 640px) {
+@media (max-width: 1980px) {
     .tw-slot {
         max-width: 100%;
     }

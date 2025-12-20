@@ -782,6 +782,18 @@
 }
 
 
+/* Desktop: keep the animated phrase on the same line */
+
+@media (min-width: 1024px) {
+    .tw-slot,
+    .tw-reserve,
+    .tw-anim {
+        white-space: nowrap !important;
+        word-break: normal !important;
+    }
+}
+
+
 /* ✅ Mobile layout ONLY for the status card (desktop unchanged) */
 
 @media (max-width: 640px) {

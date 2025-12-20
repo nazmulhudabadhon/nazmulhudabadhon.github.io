@@ -254,19 +254,32 @@ document.addEventListener("DOMContentLoaded", () => {
         // initial state
         header.classList.add("nav-show");
     })();
+	
+	const btn = document.getElementById("mobileMenuBtn");
+	const menu = document.getElementById("mobileMenu");
 
-    const btn = document.getElementById("mobileMenuBtn");
-    const menu = document.getElementById("mobileMenu");
+	const openIcon = document.getElementById("menuOpenIcon");
+	const closeIcon = document.getElementById("menuCloseIcon");
 
-    if (btn && menu) {
-        btn.addEventListener("click", () => {
-            menu.classList.toggle("hidden");
-        });
+	if (btn && menu) {
+	btn.addEventListener("click", () => {
+		const isOpen = !menu.classList.contains("hidden");
 
-        menu.addEventListener("click", (e) => {
-            if (e.target.closest("a")) menu.classList.add("hidden");
-        });
-    }
+		menu.classList.toggle("hidden");
+
+		openIcon.classList.toggle("hidden", !isOpen);
+		closeIcon.classList.toggle("hidden", isOpen);
+	});
+
+	// Auto-close when clicking a link
+	menu.addEventListener("click", (e) => {
+		if (e.target.closest("a")) {
+		menu.classList.add("hidden");
+		openIcon.classList.remove("hidden");
+		closeIcon.classList.add("hidden");
+		}
+	});
+	}
 
     // 7) PRO Carousel
     (() => {

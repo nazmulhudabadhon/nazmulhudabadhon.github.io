@@ -687,7 +687,8 @@
 .rp-list {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    text-align: justify;
+    gap: 12px;
 }
 
 .rp-item {
@@ -734,6 +735,49 @@
         width: 100%;
         margin-left: 22px;
         /* aligns under text, not icon */
+    }
+}
+
+
+/* ===== Stable typewriter container (NO layout shift) ===== */
+
+.tw-slot {
+    position: relative;
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+
+/* Reserves space in layout, but invisible */
+
+.tw-reserve {
+    visibility: hidden;
+    display: inline-block;
+    white-space: normal;
+    /* wraps like real text */
+}
+
+
+/* Animated text overlays the reserved space, doesn't affect layout */
+
+.tw-anim {
+    position: absolute;
+    inset: 0;
+    display: inline-block;
+    white-space: normal;
+    pointer-events: none;
+}
+
+
+/* Mobile safety against subpixel reflow */
+
+@media (max-width: 640px) {
+    .tw-slot {
+        max-width: 100%;
+    }
+    .tw-reserve,
+    .tw-anim {
+        word-break: break-word;
     }
 }
 

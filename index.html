@@ -129,8 +129,11 @@
                     <div class="flex flex-col md:flex-row gap-6 items-start max-w-7xl mx-auto px-6 md:px-12
             -mt-4 md:-mt-4 md:-translate-x-9">
 
+                        <!-- Mobile-only spacer -->
+                        <div class="block lg:hidden h-4"></div>
+
                         <!-- LEFT COLUMN -->
-                        <div class="w-full md:w-1/3 font-awesome reveal flex justify-center md:justify-end" x>
+                        <div class="w-full md:w-1/3 font-awesome reveal flex justify-center md:mt-0 md:justify-end">
                             <div class="profile-card">
                                 <div class="relative w-full max-w-[300px] mx-auto">
 
@@ -144,8 +147,10 @@
                                 </div>
                                 <div class="profile-footer ">
                                     <p class="profile-name" style="font-size: 16px;">
-                                        Nazmul Huda BADHON
+                                        Nazmul Huda BADHON<br>
+                                        <a class="block mx-auto mt-1 lg:hidden status-cta" href="./resume/" target="_blank" rel="noopener">CV (PDF)</a>
                                     </p>
+
                                     <p class="profile-item">
                                         <i class="fa-solid fa-envelope text-[#06142A] w-6 mr-3 mt-1 "></i>
                                         <a href="mailto:badhon15-4772@diu.edu.bd " class="hover:underline hover:text-orange-600 " style="font-size: 14px;">badhon15-4772@diu.edu.bd</a>
@@ -184,16 +189,20 @@
                         </div>
 
                         <!-- RIGHT COLUMN -->
-                        <div class="w-full md:w-2/3 font-[Montserrat] reveal min-w-0 pl-0 md:pl-8">
+                        <div class="w-full md:w-2/3 font-[Montserrat] md:reveal min-w-0 pl-0 md:pl-8">
 
-                            <h1 class="text-xl md:text-xl font-medium mb-2" style="font-size:18px;">
+                            <h1 class="font-medium mb-2" style="font-size:18px; line-height:1.35;">
                                 <span class="text-indigo-900 font-semibold">Nazmul Huda Badhon</span> is
-                                <span class="tw-wrap inline-block align-baseline">
-                                    <span id="animatedText" class="text-[#E3872D] font-semibold"></span>
-                                <span class="tw-measure invisible absolute -left-[9999px] whitespace-nowrap font-semibold text-[#E3872D]"></span>
-                                <span class="text-[#E3872D] font-semibold">.</span>
+                                <span class="tw-slot">
+                                    <!-- This invisible line reserves stable height/width -->
+                                    <span class="tw-reserve">Deep Learning Researcher Nazmul Huda Badhon</span>
+
+                                <!-- JS will keep typing into this (same id, no JS change) -->
+                                <span id="animatedText" class="tw-anim text-[#E3872D] font-semibold"></span>
                                 </span>
+                                <span class="text-[#E3872D] font-semibold">.</span>
                             </h1>
+
 
                             <!-- Academic Status Line -->
                             <div class="status-card mt-4 font-medium">
@@ -206,11 +215,11 @@
                                     <p>Deep Learning · Machine Learning · Computer Vision · Medical AI</p>
                                 </div>
 
-                                <a class="status-cta" href="./resume/index.html" target="_blank" rel="noopener">CV (PDF)</a>
+                                <a class="hidden lg:inline-block status-cta" href="./resume/" target="_blank" rel="noopener">CV (PDF)</a>
                             </div>
 
 
-                            <p class="text-left text-base mt-6 leading-relaxed font-awesome" style="font-size: 14px;">
+                            <p class="text-justify text-base mt-6 leading-relaxed font-awesome" style="font-size: 14px;">
                                 He is an undergraduate final semester student (graduating in January, 2026) in <span class="font-semibold">Computer Science and Engineering</span> at Daffodil International University. His undergraudate thesis was on "Tabular
                                 data based lightweight convolutional neural networks for electricity energy demand prediction" under the supervision of Associate Professor <a href="https://scholar.google.com/citations?user=mC0VMYQAAAAJ&hl=en" class="font-semibold hover:text-red-500 text-orange-500 hover:underline hover:decoration-red-400">Nazmun Nessa Moon</a>.
                                 His research focuses on
@@ -225,7 +234,7 @@
                                 <h2 class="section-title">ACADEMIC PROFILE</h2>
                                 <span class="section-rule"></span>
                             </div>
-                            <p class="text-left text-base md:text-awesome mt-2 leading-relaxed" style="font-size: 14px;">
+                            <p class="text-justify text-base md:text-awesome mt-2 leading-relaxed" style="font-size: 14px;">
                                 My research journey began during my second year of undergraduate studies at Daffodil International University, Bangladesh. While studying there I took part in a
                                 <span class="font-semibold">semester exchange program at Dongseo University, South Korea</span>, and this experience significantly strengthened my interest in deep learning and advanced AI research. By the time, I formed
                                 and worked with <span class="font-semibold">a dedicated research team</span>, collaboratively developing machine learning and deep learning projects and systematically publishing our findings in reputable journals and publishers.
@@ -294,7 +303,7 @@
 
                             <!-- End of Biography Carousel -->
 
-                            <p class="text-left text-base md:text-base font-awesome mt-6 leading-relaxed " style="font-size: 14px;"> My work and academic efforts have been recognized through
+                            <p class="text-justify text-base md:text-base font-awesome mt-6 leading-relaxed " style="font-size: 14px;"> My work and academic efforts have been recognized through
                                 <span class="font-semibold " style="color: brown;">key honors</span> including the <span class="font-semibold " style="color: goldenrod;">fully funded Global Korea Scholarship GKS 2023</span> and the <span class="font-semibold"
                                     style="color: darkblue;">Research Award in 2024</span> from the Division of Research and Department of Computer Science and Engineering at Daffodil International University. I was also acknowledged as a Top Performer in
                                 the Computer Vision and Deep Learning bootcamp for Medical Data at DIU. </p>
@@ -369,7 +378,7 @@
 
                             <div class="rp-list">
                                 <div class="rp-item">
-                                    <p style="font-family:Montserrat , sans-serif; font-size:14px;">
+                                    <p style="font-family:Montserrat, sans-serif; font-size:14px;">
                                         <b>Nazmul Huda Badhon</b>, Imrus Salehin, Md Tomal Ahmed Sajib, Md Sakibul Hassan Rifat, SM Noman, Nazmun Nessa Moon, " TLCNN: Tabular data-based Lightweight Convolutional Neural Network for Electricity Energy Demand
                                         Prediction. " In
                                         <a href="https://www.sciencedirect.com/journal/global-energy-interconnection " target="_blank ">Global Energy Interconnection, Elsevier</a>, December 2025.

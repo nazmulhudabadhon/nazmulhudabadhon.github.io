@@ -4,124 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>CV Viewer</title>
-
-<style>
-  body { margin: 0; background: #f8fafc; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-  .wrap { padding: 10px; }
-  .stage {
-    width: 100%;
-    background: #fff;
-    border: 1px solid #e2e8f0;
-    border-radius: 14px;
-    overflow: hidden;
-  }
-  .pages {
-    display: grid;
-    grid-template-columns: 1fr;   /* always one page */
-    gap: 12px;                   /* space between pages */
-    padding: 12px;
-    justify-items: center;
-  }
-  canvas {
-    display: block;
-    width: 100%;                 /* fill container width */
-    height: auto;
-    border-radius: 10px;
-    background: #fff;
-    box-shadow: 0 1px 8px rgba(2,6,23,.08);
-  }
-  .loading {
-    padding: 18px;
-    text-align: center;
-    color: #64748b;
-    font-size: 14px;
-  }
-</style>
-
 </head>
 
-<body>
-  <div class="wrap">
-    <div class="stage">
-      <div class="loading" id="loading">Rendering PDF…</div>
-      <div class="pages" id="pages"></div>
-    </div>
-  </div>
-
-<script type="module">
-  import * as pdfjsLib from "https://cdn.jsdelivr.net/npm/pdfjs-dist@5.4.449/build/pdf.mjs";
-
-  pdfjsLib.GlobalWorkerOptions.workerSrc =
-    "https://cdn.jsdelivr.net/npm/pdfjs-dist@5.4.449/build/pdf.worker.mjs";
-
-  const $pages = document.getElementById("pages");
-  const $loading = document.getElementById("loading");
-
-  const params = new URLSearchParams(location.search);
-  const file = params.get("file") || "./pdfs/Nazmul_Huda_Badhon_Academic_CV.pdf";
-
-  let pdfDoc = null;
-  let userScale = 1; // keep = 1 for "fit width"
-
-  function clamp(n, a, b){ return Math.max(a, Math.min(b, n)); }
-
-  async function renderPage(pageNumber, targetWidthPx){
-    const page = await pdfDoc.getPage(pageNumber);
-
-    const vp1 = page.getViewport({ scale: 1 });
-    const fitScale = targetWidthPx / vp1.width;
-
-    const viewport = page.getViewport({ scale: fitScale * userScale });
-
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d", { alpha: false });
-
-    const dpr = window.devicePixelRatio || 1;
-    canvas.width = Math.floor(viewport.width * dpr);
-    canvas.height = Math.floor(viewport.height * dpr);
-    canvas.style.width = `${Math.floor(viewport.width)}px`;
-    canvas.style.height = `${Math.floor(viewport.height)}px`;
-
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-    await page.render({ canvasContext: ctx, viewport }).promise;
-    return canvas;
-  }
-
-  async function renderAll(){
-    if (!pdfDoc) return;
-
-    $loading.style.display = "block";
-    $pages.innerHTML = "";
-
-    const stage = document.querySelector(".stage");
-    const pagesPadding = 12 * 2; // .pages padding left+right
-    const available = stage.clientWidth - pagesPadding;
-    const targetWidth = clamp(available, 300, 2000);
-
-    for (let i = 1; i <= pdfDoc.numPages; i++){
-      const canvas = await renderPage(i, targetWidth);
-      $pages.appendChild(canvas);
-    }
-
-    $loading.style.display = "none";
-  }
-
-  // Debounced resize -> re-render fit-width
-  let t = null;
-  window.addEventListener("resize", () => {
-    clearTimeout(t);
-    t = setTimeout(() => renderAll(), 150);
-  });
-
-  try {
-    pdfDoc = await pdfjsLib.getDocument({ url: file }).promise;
-    await renderAll();
-  } catch (err) {
-    console.error(err);
-    $loading.textContent = "Failed to load PDF. Check the file path and hosting.";
-  }
-</script>
-
+<body style="margin:0">
+  <iframe
+    src="../pdfs/Nazmul_Huda_Badhon_Academic_CV.pdf"
+    style="width:100vw;height:100vh;border:0"
+    title="CV">
+  </iframe>
 </body>
 </html>
+

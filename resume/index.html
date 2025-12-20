@@ -20,7 +20,7 @@
             height: calc(100vh - 96px);
             /* adjust if your header height changes */
             border: 0;
-            border-radius: 12px;
+            border-radius: 0px;
             background: white;
         }
     </style>
@@ -38,43 +38,15 @@
 <body class="scroll-smooth">
 
     <!-- PDF Viewer -->
-<main class="w-full mx-auto px-0 py-0">
-<div class="cv-card p-0 sm:p-3">
-  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
-    <div class="w-full px-2 md:px-4">
-      <div class="hidden lg:block brand text-xl text-orange-900">
-          <p class="hover:text-[#D3D3D3]">
-              <strong>CV</strong> <span style="font-weight: 500;">of Nazmul Huda Badhon</span>
-          </p>
-      </div>
-    </div>
-
-    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2 px-2 md:px-4">
-      <a href="../index.html"
-        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-300 text-slate-700 bg-white hover:bg-slate-50 transition text-sm">
-        <i class="fa-solid fa-arrow-left text-xs"></i> Back
-      </a>
-
-      <a href="../pdfs/Nazmul_Huda_Badhon_Academic_CV.pdf" download
-        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#E3872D] text-white font-medium hover:opacity-90 transition text-sm">
-        <i class="fa-solid fa-download text-xs"></i> Download
-      </a>
-
-      <a href="../pdfs/Nazmul_Huda_Badhon_Academic_CV.pdf" target="_blank" rel="noopener"
-        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-300 text-slate-700 bg-white hover:bg-slate-50 transition text-sm">
-        <i class="fa-solid fa-up-right-from-square text-xs"></i> Open
-      </a>
-    </div>
-  </div>
-
-  <div class="rounded-xl overflow-hidden border border-slate-200 bg-white">
-<iframe class="pdf-frame"
-  src="./cv-viewer.html?file=/../pdfs/Nazmul_Huda_Badhon_Academic_CV.pdf"
-  title="Nazmul Huda Badhon CV"></iframe>
-
-  </div>
-</div>
+<main class="w-full">
+  <iframe
+    src="../pdfs/Nazmul_Huda_Badhon_Academic_CV.pdf"
+    class="w-full h-screen border-0"
+    title="Nazmul Huda Badhon CV">
+  </iframe>
 </main>
+
+
 
 </body>
 

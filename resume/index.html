@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="canonical" href="../resume/">
+    <link rel="canonical" href="../resume/">
     <title>Nazmul Huda Badhon | Portfolio</title>
 
 
@@ -15,39 +15,32 @@
     <link rel="stylesheet" href="../style/style.css">
 
     <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+        
         .pdf-frame {
             width: 100%;
-            height: calc(100vh - 96px);
-            /* adjust if your header height changes */
+            height: 100vh;
             border: 0;
-            border-radius: 0px;
-            background: white;
         }
     </style>
 
-
-    <!-- Current favicon for UI -->
-    <link rel="icon" type="image/png" href="../Image/favicon.png">
-
-    <!-- Root-level versions for Google and crawlers -->
-    <link rel="icon" type="image/png" sizes="32x32" href="../Image/favicon.png">
-    <link rel="shortcut icon" href="../Image/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="../Image/apple-touch-icon.png">
+    <script>
+        (function() {
+            // Phone-sized screens: open PDF directly (works best on iPhone + Android)
+            if (window.matchMedia("(max-width: 767px)").matches) {
+                window.location.replace("../pdfs/Nazmul_Huda_Badhon_Academic_CV.pdf");
+            }
+        })();
+    </script>
 </head>
 
-<body class="scroll-smooth">
-
-    <!-- PDF Viewer -->
-<main class="w-full">
-  <iframe
-    src="../pdfs/Nazmul_Huda_Badhon_Academic_CV.pdf"
-    class="w-full h-screen border-0"
-    title="Nazmul Huda Badhon CV">
-  </iframe>
-</main>
-
-
-
+<body>
+    <!-- Desktop/Tablet: embed PDF -->
+    <iframe class="pdf-frame" src="../pdfs/Nazmul_Huda_Badhon_Academic_CV.pdf" title="Nazmul Huda Badhon CV"></iframe>
 </body>
 
 </html>

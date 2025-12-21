@@ -528,151 +528,125 @@
 }
 
 
-/* =========================
-   PRO Carousel (modern)
-   ========================= */
+/* Academic highlights carousel */
 
-.pro-carousel {
-    position: relative;
-    border-radius: 18px;
-    overflow: hidden;
-    border: 1px solid #e2e8f0;
-    background: #f8fafc;
-}
-
-.pro-carousel__viewport {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-}
-
-.pro-carousel__viewport::-webkit-scrollbar {
-    display: none;
-}
-
-.pro-slide {
-    position: relative;
-    flex: 0 0 100%;
-    scroll-snap-align: start;
-    height: 360px;
-}
-
-.pro-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
-/* Caption glass */
-
-.pro-cap {
-    position: absolute;
-    right: 14px;
-    bottom: 14px;
-    max-width: min(320px, calc(100% - 16px));
-    padding: 6px 14px;
-    border-radius: 10px;
-    background: blanchedalmond;
-    backdrop-filter: blur(12px);
-}
-
-.pro-cap h4 {
-    margin: 0;
-    font-size: 15px;
-    font-weight: 650;
-    color: #0f172a;
-}
-
-.pro-cap p {
-    margin: 2px 0 0;
-    font-size: 13px;
-    color: #475569;
-}
-
-
-/* Arrows */
-
-.pro-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 42px;
-    height: 42px;
-    place-items: center;
-    color: white;
-    transition: transform .18s ease, opacity .18s ease;
-    opacity: .92;
-}
-
-.pro-btn:hover {
-    transform: translateY(-50%) scale(1.04);
-    opacity: 1;
-}
-
-.pro-btn--prev {
-    left: 12px;
-}
-
-.pro-btn--next {
-    right: 12px;
-}
-
-
-/* Mobile tuning */
-
-@media (max-width: 640px) {
-    .pro-slide {
-        height: 260px;
-    }
-    .pro-btn {
-        display: none;
-    }
-    /* swipe-friendly */
-    .pro-progress {
-        max-width: 140px;
-    }
-}
-
-
-/* Bottom UI */
-
-.pro-ui {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 10px;
-    padding: 0 14px;
+.act__head {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
-    pointer-events: none;
-    /* so swipe works */
+    gap: 0.5rem;
 }
 
-.pro-dots {
+
+/* Controls */
+
+.act__controls {
     display: flex;
-    gap: 8px;
-    pointer-events: auto;
+    gap: .5rem;
 }
 
-.pro-dot {
-    width: 8px;
-    height: 8px;
+.act__btn {
+    width: 40px;
+    height: 40px;
     border-radius: 999px;
-    background: rgba(148, 163, 184, .9);
-    border: 1px solid rgba(226, 232, 240, .9);
+    background: #fff;
+    display: grid;
+    place-items: center;
     cursor: pointer;
-    transition: width .2s ease, background .2s ease;
+    transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
 }
 
-.pro-dot.is-active {
-    width: 22px;
-    background: rgba(15, 23, 42, .92);
+.act__btn:hover {
+    background: #f8f9fb;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+}
+
+.act__btn:active {
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* Track */
+
+.act__track {
+    display: flex;
+    gap: 0.95rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 0;
+    scrollbar-width: none;
+}
+
+.act__track::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Card */
+
+.act__card {
+    flex: 0 0 88%;
+    scroll-snap-align: start;
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, .06);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.act__card:hover {
+    transform: translateY(2px);
+}
+
+@media (min-width:768px) {
+    .act__card {
+        flex-basis: 46%;
+    }
+}
+
+@media (min-width:1100px) {
+    .act__card {
+        flex-basis: 32%;
+    }
+}
+
+
+/* Media */
+
+.act__media {
+    aspect-ratio: 16 / 10;
+    background: #eef1f5;
+    overflow: hidden;
+}
+
+.act__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Body */
+
+.act__body {
+    padding: 1.05rem 1.15rem 1.25rem;
+}
+
+.act__h3 {
+    margin: 0 0 .35rem;
+    font-size: 0.89rem;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.act__meta {
+    margin: 0;
+    font-size: .95rem;
+    color: #5f6368;
 }
 
 

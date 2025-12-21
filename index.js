@@ -14,8 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 1) Typewriter (animatedText)
     const sentences = [
-        "a young researcher in deep learning",
-        "seeking graduate research assistantship position",
+        "Research or Teaching Assistantship (Spring–Fall 2026)",
     ];
 
     const textContainer = document.getElementById("animatedText");
@@ -77,58 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
             clearTimeout(typingTimer);
             typeNextChar();
         });
-    }
-
-    // 2) Side nav active highlight (IntersectionObserver)
-    const sideNav = document.getElementById("sideNav");
-    if (sideNav) {
-        const linkEls = Array.from(sideNav.querySelectorAll("a[href^='#']"));
-        const linkMap = {};
-        linkEls.forEach((a) => {
-            const id = a.getAttribute("href").slice(1).trim();
-            linkMap[id] = a;
-        });
-
-        let lockActive = false;
-        let lockTimer = null;
-
-        function setActiveById(id) {
-            Object.values(linkMap).forEach((a) => a.classList.remove("active"));
-            if (linkMap[id]) linkMap[id].classList.add("active");
-        }
-
-        const navObserver = new IntersectionObserver(
-            (entries) => {
-                if (lockActive) return;
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) setActiveById(entry.target.id);
-                });
-            }, { root: null, rootMargin: "0px 0px -60% 0px", threshold: 0.12 }
-        );
-
-        Object.keys(linkMap).forEach((id) => {
-            const el = document.getElementById(id);
-            if (el) navObserver.observe(el);
-        });
-
-        sideNav.addEventListener("click", (e) => {
-            const a = e.target.closest("a[href^='#']");
-            if (!a) return;
-            const id = a.getAttribute("href").slice(1).trim();
-
-            lockActive = true;
-            clearTimeout(lockTimer);
-            setActiveById(id);
-
-            lockTimer = setTimeout(() => {
-                lockActive = false;
-            }, 1200);
-        });
-
-        if (location.hash) {
-            const id = location.hash.slice(1).trim();
-            if (linkMap[id]) setActiveById(id);
-        }
     }
 
     // 4) Back to top
@@ -280,88 +227,27 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	});
 	}
+// 7) PRO Carousel
+(() => {
+  const track = document.getElementById('actTrack');
+  const prev = document.getElementById('actPrev');
+  const next = document.getElementById('actNext');
+  if (!track || !prev || !next) return;
 
-    // 7) PRO Carousel
-    (() => {
-        const viewport = document.getElementById("bioCarousel");
-        if (!viewport) return;
+  const step = () => {
+    const card = track.querySelector('.act__card');
+    if (!card) return 320;
+    const gap = parseFloat(getComputedStyle(track).gap || "0");
+    return card.getBoundingClientRect().width + gap;
+  };
 
-        const slides = Array.from(viewport.querySelectorAll(".pro-slide"));
-        if (!slides.length) return;
+  prev.addEventListener('click', () =>
+    track.scrollBy({ left: -step(), behavior: 'smooth' })
+  );
 
-        const root = viewport.closest(".pro-carousel") || viewport.parentElement;
+  next.addEventListener('click', () =>
+    track.scrollBy({ left: step(), behavior: 'smooth' })
+  );
+})();
 
-        const dotsWrap = root?.querySelector(".pro-dots");
-        const bar = root?.querySelector(".pro-progress__bar");
-        const prevBtn = root?.querySelector(".pro-btn--prev");
-        const nextBtn = root?.querySelector(".pro-btn--next");
-
-        let index = 0;
-
-        // Build dots
-        if (dotsWrap) {
-            dotsWrap.innerHTML = slides
-                .map(
-                    () =>
-                    `<button class="pro-dot" type="button" aria-label="Go to slide"></button>`
-                )
-                .join("");
-        }
-
-        const dots = dotsWrap ?
-            Array.from(dotsWrap.querySelectorAll(".pro-dot")) : [];
-
-        const clamp = (i) => (i + slides.length) % slides.length;
-
-        function updateUI() {
-            dots.forEach((d, k) => d.classList.toggle("is-active", k === index));
-            if (bar) {
-                bar.style.width = "0%";
-                requestAnimationFrame(() => (bar.style.width = "100%"));
-            }
-        }
-
-        function goTo(i, smooth = true) {
-            index = clamp(i);
-            viewport.scrollTo({
-                left: slides[index].offsetLeft,
-                behavior: smooth ? "smooth" : "auto",
-            });
-            updateUI();
-        }
-
-        prevBtn?.addEventListener("click", () => goTo(index - 1));
-        nextBtn?.addEventListener("click", () => goTo(index + 1));
-
-        dots.forEach((dot, i) => dot.addEventListener("click", () => goTo(i)));
-
-        let raf = null;
-        viewport.addEventListener(
-            "scroll",
-            () => {
-                if (raf) cancelAnimationFrame(raf);
-                raf = requestAnimationFrame(() => {
-                    const x = viewport.scrollLeft;
-
-                    let best = 0;
-                    let bestDist = Infinity;
-
-                    slides.forEach((s, i) => {
-                        const d = Math.abs(s.offsetLeft - x);
-                        if (d < bestDist) {
-                            bestDist = d;
-                            best = i;
-                        }
-                    });
-
-                    if (best !== index) {
-                        index = best;
-                        updateUI();
-                    }
-                });
-            }, { passive: true }
-        );
-
-        goTo(0, false);
-    })();
 });

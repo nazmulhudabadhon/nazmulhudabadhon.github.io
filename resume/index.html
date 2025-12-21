@@ -1,46 +1,41 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="en">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="canonical" href="../resume/">
-    <title>Nazmul Huda Badhon | Portfolio</title>
-
-
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4/dist/full.min.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style/style.css">
+    <title>Resume | Nazmul Huda Badhon</title>
 
     <style>
         html,
         body {
-            height: 100%;
             margin: 0;
+            height: 100%;
         }
         
-        .pdf-frame {
-            width: 100%;
+        iframe {
+            width: 100vw;
+            /* TRUE full width */
             height: 100vh;
             border: 0;
+            display: block;
         }
     </style>
 
     <script>
-        (() => {
-            if (window.matchMedia("(max-width: 767px)").matches) {
-            window.location.replace("../pdfs/Nazmul_Huda_Badhon's_CV.pdf");
-        }
+        (function() {
+            const pdf = "/pdfs/Nazmul_Huda_Badhon_CV.pdf";
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            if (isMobile) {
+                window.location.replace(pdf);
+            }
         })();
     </script>
-
 </head>
 
 <body>
-    <!-- Desktop/Tablet: embed PDF -->
-    <iframe class="pdf-frame" src="../pdfs/Nazmul_Huda_Badhon's_CV.pdf" title="Nazmul Huda Badhon CV"></iframe>
+    <!-- Desktop only -->
+    <iframe class="pdf-frame" src="../pdfs/Nazmul_Huda_Badhon_CV.pdf#view=FitH&zoom=page-width" title="Nazmul Huda Badhon CV"></iframe>
 </body>
 
 </html>

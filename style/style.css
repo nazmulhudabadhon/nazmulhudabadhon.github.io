@@ -359,12 +359,15 @@
 .status-cta {
     font-size: 13px;
     font-weight: 600;
-    padding: 6px 12px;
-    border-radius: 8px;
+    padding: 6px 14px;
+    border-radius: 10px;
     color: #0f172a;
     background: #d5eaff;
     border: 1px solid #e5e7eb;
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .status-cta:hover {
@@ -565,6 +568,15 @@
 .act__btn:active {
     transform: none;
     box-shadow: none;
+}
+
+
+/* Hide on mobile */
+
+@media (max-width: 768px) {
+    .act__controls {
+        display: none;
+    }
 }
 
 

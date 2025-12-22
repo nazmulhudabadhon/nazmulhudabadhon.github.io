@@ -630,6 +630,23 @@
 }
 
 
+/* ✅ Mobile: start centered (works with scroll-snap) */
+
+@media (max-width: 640px) {
+    /* Your cards are 88% wide, so leftover space is 12% → half each side = 6% */
+    .act__track {
+        padding-left: 6%;
+        padding-right: 6%;
+        scroll-padding-left: 6%;
+        scroll-padding-right: 6%;
+    }
+    /* Make snap center instead of start on mobile */
+    .act__card {
+        scroll-snap-align: center;
+    }
+}
+
+
 /* Body */
 
 .act__body {

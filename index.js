@@ -227,27 +227,43 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	});
 	}
-// 7) PRO Carousel
-(() => {
-  const track = document.getElementById('actTrack');
-  const prev = document.getElementById('actPrev');
-  const next = document.getElementById('actNext');
-  if (!track || !prev || !next) return;
+	// 7) PRO Carousel
+	(() => {
+	const track = document.getElementById('actTrack');
+	const prev = document.getElementById('actPrev');
+	const next = document.getElementById('actNext');
+	if (!track || !prev || !next) return;
 
-  const step = () => {
-    const card = track.querySelector('.act__card');
-    if (!card) return 320;
-    const gap = parseFloat(getComputedStyle(track).gap || "0");
-    return card.getBoundingClientRect().width + gap;
-  };
+	const step = () => {
+		const card = track.querySelector('.act__card');
+		if (!card) return 320;
+		const gap = parseFloat(getComputedStyle(track).gap || "0");
+		return card.getBoundingClientRect().width + gap;
+	};
 
-  prev.addEventListener('click', () =>
-    track.scrollBy({ left: -step(), behavior: 'smooth' })
-  );
+	prev.addEventListener('click', () =>
+		track.scrollBy({ left: -step(), behavior: 'smooth' })
+	);
 
-  next.addEventListener('click', () =>
-    track.scrollBy({ left: step(), behavior: 'smooth' })
-  );
+	next.addEventListener('click', () =>
+		track.scrollBy({ left: step(), behavior: 'smooth' })
+	);
+   
+   /* ✅ MOBILE: center first card on load */
+	const centerFirstCard = () => {
+		if (window.innerWidth > 640) return; // mobile only
+		const card = track.querySelector('.act__card');
+		if (!card) return;
+
+		const trackWidth = track.clientWidth;
+		const cardWidth = card.clientWidth;
+		const offset = (cardWidth - trackWidth) / 2;
+
+		track.scrollLeft = offset;
+	};
+
+	window.addEventListener('load', centerFirstCard);
+	window.addEventListener('resize', centerFirstCard);
 })();
 
 });

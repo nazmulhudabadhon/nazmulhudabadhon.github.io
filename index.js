@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 1) Typewriter (animatedText)
     const sentences = [
-        "Research or Teaching Assistantship Fall 2026",
+        "research or teaching assistant opportunities",
     ];
 
     const textContainer = document.getElementById("animatedText");
@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		track.scrollBy({ left: step(), behavior: 'smooth' })
 	);
    
-   /* ✅ MOBILE: center first card on load */
+   /* MOBILE: center first card on load */
 	const centerFirstCard = () => {
 		if (window.innerWidth > 640) return; // mobile only
 		const card = track.querySelector('.act__card');

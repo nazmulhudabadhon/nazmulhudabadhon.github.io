@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 1) Typewriter (animatedText)
     const sentences = [
-        "research or teaching assistant opportunities",
+        "Research or Teaching Assistant Opportunities",
     ];
 
     const textContainer = document.getElementById("animatedText");

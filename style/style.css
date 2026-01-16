@@ -193,6 +193,8 @@
     padding-top: 12px;
     border-top: 1px solid #d1d5db;
     text-align: center;
+    font-weight: 400;
+    color: #111827;
 }
 
 
@@ -314,7 +316,7 @@
 }
 
 
-/* === Academic Status Line (Professional) === */
+/* === Academic Status Line (Professional – Blue) === */
 
 .status-card {
     display: flex;
@@ -326,10 +328,11 @@
     border-radius: 12px;
     background: #ffffff;
     line-height: 1.45;
+    animation: fadeUp 0.4s ease-out both;
 }
 
 
-/* subtle status label */
+/* subtle academic badge */
 
 .status-badge {
     font-size: 11px;
@@ -338,32 +341,36 @@
     text-transform: uppercase;
     padding: 3px 9px;
     border-radius: 999px;
-    color: #9a3412;
-    background: #fff7ed;
-    border: 1px solid #fed7aa;
+    color: #1e40af;
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
     white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
 
 /* main text */
 
 .status-text {
-    font-size: 15px;
-    color: #374151;
+    font-size: 14px;
+    color: #1f2937;
+    opacity: 0.98;
     flex: 1;
 }
 
 
-/* CV button (low emphasis) */
+/* CV button (low emphasis, academic) */
 
 .status-cta {
     font-size: 13px;
     font-weight: 600;
     padding: 6px 14px;
     border-radius: 10px;
-    color: #0f172a;
-    background: #d5eaff;
-    border: 1px solid #e5e7eb;
+    color: #1e40af;
+    background: #f8fafc;
+    border: 1px solid #c7d2fe;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
@@ -371,71 +378,38 @@
 }
 
 .status-cta:hover {
-    background: #a4b8fd;
-}
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(6px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.status-card {
-    animation: fadeUp 0.4s ease-out both;
+    background: #eef2ff;
 }
 
 
-/* ===== Mobile: stack nicely ===== */
-
-@media (max-width: 640px) {
-    .status-card {
-        grid-template-columns: 1fr;
-        gap: 10px;
-        padding: 14px;
-    }
-    .status-cta {
-        width: fit-content;
-        /* or 100% if you want full width */
-    }
-}
-
-
-/* --- Live attention badge (professional) --- */
-
-.status-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    position: relative;
-}
-
-
-/* small solid dot */
+/* live dot — calm, non-alert */
 
 .status-badge .live-dot {
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     border-radius: 9999px;
-    background: #e32d2d;
-    /* your accent */
+    background: #2563eb;
     position: relative;
 }
-
-
-/* soft “ping” ring */
 
 .status-badge .live-dot::after {
     content: "";
     position: absolute;
-    inset: -6px;
+    inset: -5px;
     border-radius: 9999px;
-    border: 8px solid rgba(227, 135, 45, 0.45);
-    animation: badgePing 1.6s ease-out infinite;
+    border: 5px solid rgba(37, 99, 235, 0.35);
+    animation: badgePing 2s ease-out infinite;
+}
+
+.status-card {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 14px;
+}
+
+.status-cta {
+    width: fit-content;
+    /* or 100% if you want full width */
 }
 
 @keyframes badgePing {
@@ -469,12 +443,12 @@
     display: flex;
     align-items: center;
     gap: 14px;
-    margin: 28px 0 2px;
+    margin: 16px 0 2px;
 }
 
 .section-ic {
-    width: 36px;
-    height: 36px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -507,7 +481,7 @@
     font-size: 20px;
     font-weight: 600;
     letter-spacing: -0.3px;
-    color: #0f172a;
+    color: #063277;
     margin: 0;
     white-space: nowrap;
 }
@@ -516,9 +490,9 @@
 /* horizontal rule */
 
 .section-rule {
-    height: 0.75px;
+    height: 0.5px;
     flex: 1;
-    background: #011f4e;
+    background: #d5daee;
     transform: translateY(2px);
 }
 
@@ -537,7 +511,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 0.5rem;
+    gap: 0.75rem;
 }
 
 
@@ -545,29 +519,34 @@
 
 .act__controls {
     display: flex;
-    gap: .5rem;
+    gap: 0.5rem;
 }
 
+
+/* more academic button style */
+
 .act__btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 999px;
-    background: #fff;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    color: #0f172a;
     display: grid;
     place-items: center;
     cursor: pointer;
-    transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+    transition: background .15s ease, border-color .15s ease, transform .15s ease;
 }
 
 .act__btn:hover {
-    background: #f8f9fb;
+    background: #f8fafc;
+    border-color: #dbeafe;
+    /* subtle blue-ish academic hint */
     transform: translateY(-1px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
 }
 
 .act__btn:active {
-    transform: none;
-    box-shadow: none;
+    transform: translateY(0);
 }
 
 
@@ -590,6 +569,8 @@
     scroll-behavior: smooth;
     padding: 0;
     scrollbar-width: none;
+    overscroll-behavior-x: contain;
+    scrollbar-gutter: stable both-edges;
 }
 
 .act__track::-webkit-scrollbar {
@@ -602,24 +583,27 @@
 .act__card {
     flex: 0 0 88%;
     scroll-snap-align: start;
-    background: #fff;
-    border-radius: 18px;
+    background: #ffffff;
+    border-radius: 16px;
     overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, .06);
-    transition: transform .2s ease, box-shadow .2s ease;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 
 .act__card:hover {
-    transform: translateY(2px);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.10);
+    border-color: #dbeafe;
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
     .act__card {
         flex-basis: 46%;
     }
 }
 
-@media (min-width:1100px) {
+@media (min-width: 1100px) {
     .act__card {
         flex-basis: 32%;
     }
@@ -630,7 +614,7 @@
 
 .act__media {
     aspect-ratio: 16 / 10;
-    background: #eef1f5;
+    background: #f1f5f9;
     overflow: hidden;
 }
 
@@ -642,17 +626,15 @@
 }
 
 
-/* ✅ Mobile: start centered (works with scroll-snap) */
+/* Mobile: start centered (keep your good snap behavior) */
 
 @media (max-width: 640px) {
-    /* Your cards are 88% wide, so leftover space is 12% → half each side = 6% */
     .act__track {
         padding-left: 6%;
         padding-right: 6%;
         scroll-padding-left: 6%;
         scroll-padding-right: 6%;
     }
-    /* Make snap center instead of start on mobile */
     .act__card {
         scroll-snap-align: center;
     }
@@ -662,22 +644,24 @@
 /* Body */
 
 .act__body {
-    padding: 1.05rem 1.15rem 1.25rem;
+    padding: 1rem 1.1rem 1.15rem;
 }
 
 .act__h3 {
     margin: 0 0 .35rem;
-    font-size: 0.89rem;
+    font-size: 1rem;
+    /* title should be bigger */
     font-weight: 700;
     line-height: 1.25;
+    color: #0f172a;
 }
 
 .act__meta {
     margin: 0;
-    font-size: .95rem;
-    color: #5f6368;
+    font-size: 0.875rem;
+    /* meta should be smaller */
+    color: #475569;
 }
-
 
 /* === Recent publications (professional) === */
 
@@ -797,7 +781,7 @@
 }
 
 
-/* ✅ Mobile layout ONLY for the status card (desktop unchanged) */
+/* Mobile layout ONLY for the status card */
 
 @media (max-width: 640px) {
     .status-card {
@@ -829,7 +813,7 @@
 }
 
 
-/* ✅ Mobile-only spacing fix so image doesn't stick to top */
+/* Mobile-only spacing fix so image doesn't stick to top */
 
 @media (max-width: 640px) {
     #about {

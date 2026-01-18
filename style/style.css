@@ -50,7 +50,7 @@
 .reveal {
     opacity: 0;
     transform: translateY(14px);
-    transition: opacity 1.05s cubic-bezier(.22, 1, .36, 1), transform 1.05s cubic-bezier(.22, 1, .36, 1);
+    transition: opacity 1.05s cubic-bezier(.22, 1, .36, 1), transform .5s cubic-bezier(.22, 1, .36, 1);
 }
 
 .reveal.show {
@@ -79,6 +79,7 @@
         margin: 0;
         padding: 0;
     }
+
     #about {
         margin-top: 0 !important;
         padding-top: 0 !important;
@@ -134,9 +135,11 @@
     0% {
         transform: scale(.92);
     }
+
     60% {
         transform: scale(1.06);
     }
+
     100% {
         transform: scale(1);
     }
@@ -158,10 +161,12 @@
 }
 
 @keyframes float {
+
     0%,
     100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-6px);
     }
@@ -417,10 +422,12 @@
         transform: scale(0.6);
         opacity: 0.9;
     }
+
     70% {
         transform: scale(1.6);
         opacity: 0;
     }
+
     100% {
         transform: scale(1.6);
         opacity: 0;
@@ -481,7 +488,7 @@
     font-size: 20px;
     font-weight: 600;
     letter-spacing: -0.3px;
-    color: #063277;
+    color: #0A3D91;
     margin: 0;
     white-space: nowrap;
 }
@@ -526,12 +533,14 @@
 /* more academic button style */
 
 .act__btn {
-    width: 38px;
-    height: 38px;
+    width: 28px;
+    height: 28px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     border-radius: 10px;
     background: #ffffff;
     border: 1px solid #e5e7eb;
-    color: #0f172a;
+    color: #808080;
     display: grid;
     place-items: center;
     cursor: pointer;
@@ -635,6 +644,7 @@
         scroll-padding-left: 6%;
         scroll-padding-right: 6%;
     }
+
     .act__card {
         scroll-snap-align: center;
     }
@@ -662,6 +672,7 @@
     /* meta should be smaller */
     color: #475569;
 }
+
 
 /* === Recent publications (professional) === */
 
@@ -718,6 +729,7 @@
         flex-wrap: wrap;
         row-gap: 6px;
     }
+
     .edu-cgpa {
         width: 100%;
         margin-left: 22px;
@@ -762,6 +774,7 @@
     .tw-slot {
         max-width: 100%;
     }
+
     .tw-reserve,
     .tw-anim {
         word-break: break-word;
@@ -772,6 +785,7 @@
 /* Desktop: keep the animated phrase on the same line */
 
 @media (min-width: 1024px) {
+
     .tw-slot,
     .tw-reserve,
     .tw-anim {
@@ -792,19 +806,23 @@
         gap: 10px;
         align-items: start;
     }
+
     /* Seeking badge goes to the TOP */
     .status-card .status-badge {
         justify-self: start;
         order: 1;
     }
+
     /* Text stays in the MIDDLE */
     .status-card .status-text {
         order: 2;
         line-height: 1.35;
     }
+
     .status-card .status-text p {
         margin: 0 0 2px 0;
     }
+
     /* CV button goes to BOTTOM-LEFT */
     .status-card .status-cta {
         justify-self: start;

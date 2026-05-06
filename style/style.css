@@ -1,51 +1,122 @@
-/* Animated text height fix (keep OUTSIDE sidebar rules) */
+/* ================================
+   Global Typography
+================================ */
+
+html,
+body {
+    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    font-size: 16.5px;
+    font-weight: 300;
+    color: #1f2937;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+* {
+    font-family: inherit;
+}
+
+/* Main academic body paragraphs only */
+#about p.text-justify {
+    font-size: 16px !important;
+    line-height: 1.45;
+}
+
+/* Navigation */
+#topNav a {
+    font-size: 16px;
+}
+
+/* Publication text */
+.rp-item p {
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+strong,
+b,
+.font-semibold {
+    font-weight: 500 !important;
+    color: #0f172a;
+}
+
+p,
+div,
+.profile-item,
+.rp-item p,
+.act__meta {
+    font-weight: 300;
+}
+
+p,
+
+span {
+    font-size: 16 px;
+}
+
+.section-title,
+.metric-number {
+    font-weight: 500;
+}
+
+/*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+@media (max-width: 640px) {
+    .portfolio-layout {
+        gap: 0 !important;
+    }
+
+    .scholar-metrics {
+        margin-bottom: 0 !important;
+    }
+
+    #about .w-full.md\:w-2\/3>p:first-child {
+        margin-top: 0 !important;
+    }
+}
+
+/* ================================
+   Animated Text Height Fix
+================================ */
 
 #animatedText {
     min-height: 2.75rem;
-    /* ~44px */
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
     #animatedText {
         min-height: 2rem;
     }
 }
 
 
-/* Sticky animated top nav */
+/* ================================
+   Sticky Animated Top Nav
+================================ */
 
 #topHeader {
     position: sticky;
-    /* stays visible while scrolling */
     top: 0;
     z-index: 9999;
     transition: transform 280ms ease, box-shadow 280ms ease, background-color 280ms ease;
     will-change: transform;
 }
 
-
-/* When scrolling down: compact + shadow */
-
 #topHeader.is-scrolled {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
 }
 
-
-/* Hide on scroll down */
-
 #topHeader.nav-hide {
     transform: translateY(-110%);
 }
-
-
-/* Show on scroll up */
 
 #topHeader.nav-show {
     transform: translateY(0);
 }
 
 
-/* ===== Scroll reveal ===== */
+/* ================================
+   Reveal Animations
+================================ */
 
 .reveal {
     opacity: 0;
@@ -59,7 +130,9 @@
 }
 
 
-/* ===== Photo card hover ===== */
+/* ================================
+   Photo Card Hover
+================================ */
 
 .photo-card {
     transition: transform 320ms cubic-bezier(.22, 1, .36, 1), box-shadow 320ms cubic-bezier(.22, 1, .36, 1);
@@ -71,7 +144,9 @@
 }
 
 
-/* Hide ABOUT heading on mobile */
+/* ================================
+   Mobile About Spacing
+================================ */
 
 @media (max-width: 767px) {
     .about-heading {
@@ -86,8 +161,16 @@
     }
 }
 
+@media (max-width: 640px) {
+    #about {
+        padding-top: 1.25rem;
+    }
+}
 
-/* Projects: stagger reveal */
+
+/* ================================
+   Projects Animation
+================================ */
 
 .proj-card {
     opacity: 0;
@@ -101,16 +184,15 @@
     transform: translateX(0) scale(1);
 }
 
-
-/* Nice hover (professional) */
-
 .proj-card:hover {
     transform: translateX(0) translateY(-4px) scale(1.01);
     box-shadow: 0 18px 40px rgba(2, 8, 23, .12);
 }
 
 
-/* Achievements: pop-in */
+/* ================================
+   Achievements Animation
+================================ */
 
 .ach-card {
     opacity: 0;
@@ -123,9 +205,6 @@
     opacity: 1;
     transform: translateY(0);
 }
-
-
-/* Badge micro-pulse on appear */
 
 .ach-card.in .ach-badge {
     animation: badgePop .6s ease-out;
@@ -145,9 +224,6 @@
     }
 }
 
-
-/* Media (image/iframe) slight float on hover */
-
 .ach-media {
     transition: transform .45s ease;
 }
@@ -155,6 +231,11 @@
 .ach-card:hover .ach-media {
     transform: translateY(-3px);
 }
+
+
+/* ================================
+   Back to Top Button
+================================ */
 
 #backToTop {
     animation: float 3s ease-in-out infinite;
@@ -173,84 +254,54 @@
 }
 
 
-/* === Profile card: make footer same width as image and align together === */
+/* ================================
+   Profile Sidebar
+================================ */
 
 .profile-card {
     width: 300px;
     margin: 0 auto;
     justify-content: right;
-    /* mobile center */
 }
 
 @media (min-width: 768px) {
     .profile-card {
         margin: 0;
-        /* let md:flex md:justify-end control position */
     }
 }
 
-
-/* footer aligned with image width */
-
 .profile-footer {
     width: 100%;
-    margin-top: 14px;
-    padding-top: 12px;
-    border-top: 1px solid #d1d5db;
+    margin-top: 2px;
+    padding-top: 10px;
     text-align: center;
-    font-weight: 400;
+    font-weight: 300;
     color: #111827;
 }
 
-
-/* === Profile rows: icon left, text right === */
-
-.profile-item {
-    display: grid;
-    grid-template-columns: 20px 1fr;
-    /* icon | text */
-    align-items: end;
-    column-gap: 12px;
-    text-align: right;
-    /* text aligns right */
-    font-size: 0.95rem;
-    color: #1f2937;
-    margin: 10px 0;
-}
-
-
-/* === Profile name (centered, standalone) === */
-
 .profile-name {
-    margin: 0px 0 12px;
+    margin: 0;
     padding-bottom: 10px;
     text-align: center;
-    font-size: 1.05rem;
-    font-weight: 500;
+    font-size: 16px;
     letter-spacing: 0.3px;
     color: #111827;
     border-bottom: 1px solid #e5e7eb;
-    /* subtle divider */
 }
 
 
-/* === Profile info rows === */
-
-
-/* icon left | text right */
+/* Profile rows: icon left, text right */
 
 .profile-item {
     display: grid;
     grid-template-columns: 22px 1fr;
     align-items: start;
-    column-gap: 12px;
-    margin: 10px 0;
-    font-size: 0.95rem;
+    column-gap: 8px;
+    margin: 5px 0;
+    font-size: 14.5px;
     color: #1f2937;
+    text-align: right;
 }
-
-
-/* icon column */
 
 .profile-item i {
     justify-self: start;
@@ -258,30 +309,24 @@
     margin-top: 2px;
 }
 
-
-/* text column */
-
 .profile-item a,
 .profile-item span {
     justify-self: end;
     text-align: right;
-    line-height: 1.45;
+    line-height: 1.5;
 }
-
-
-/* horizontal divider between profile rows */
 
 .profile-item+.profile-item {
     border-top: 1px solid #e5e7eb;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 
-/* === Profile icons (centered with top & bottom lines) === */
+/* Profile icons */
 
 .profile-icons {
-    margin-top: 14px;
-    padding: 12px 0;
+    margin-top: 4px;
+    padding: 8px 0;
     border-top: 1px solid #e5e7eb;
     border-bottom: 1px solid #e5e7eb;
     display: flex;
@@ -289,24 +334,15 @@
     align-items: center;
 }
 
-
-/* icon links */
-
 .profile-icons a {
     display: flex;
     align-items: center;
     padding: 0 10px;
 }
 
-
-/* separators */
-
 .profile-icons a:not(:last-child) {
-    border-right: 1px solid #d1d5db;
+    border-right: none;
 }
-
-
-/* icons */
 
 .profile-icons img {
     width: 24px !important;
@@ -321,80 +357,122 @@
 }
 
 
-/* === Academic Status Line (Professional – Blue) === */
+/* Academic Portrait */
+
+.academic-portrait {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #d7dde8;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+    padding: 0;
+    overflow: hidden;
+}
+
+.academic-portrait img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+/* Scholar Metrics Block */
+
+.scholar-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    width: 100%;
+    margin: 10px 0 10px;
+    padding: 12px 10px 11px;
+    background: linear-gradient(135deg, #f9fafb 0%, #f1f3f6 55%, #eceff3 100%);
+    border-radius: 7px;
+}
+
+.metric-item {
+    text-align: center;
+}
+
+.metric-number {
+    display: block;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: 0.03em;
+}
+
+.metric-blue {
+    color: #1976d2;
+}
+
+.metric-pink {
+    color: #d81b60;
+}
+
+.metric-green {
+    color: #008000;
+}
+
+.metric-label {
+    display: block;
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #555555;
+}
+
+
+/* ================================
+   Academic Status Line
+================================ */
 
 .status-card {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px 16px;
-    margin-top: 16px;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    background: #ffffff;
-    line-height: 1.45;
+    gap: 10px;
+    padding: 11px 13px;
+    margin-top: 14px;
+    border-radius: 7px;
+    background: linear-gradient(135deg, #f9fafb 0%, #f1f3f6 55%, #eceff3 100%);
+    line-height: 1.28;
     animation: fadeUp 0.4s ease-out both;
 }
 
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
 
-/* subtle academic badge */
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 .status-badge {
     font-size: 11px;
     font-weight: 600;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     padding: 3px 9px;
     border-radius: 999px;
-    color: #1e40af;
-    background: #eff6ff;
-    border: 1px solid #dbeafe;
+    color: lightcoral;
+    background: #ffffff;
+    border: 1px solid #d5deea;
     white-space: nowrap;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 7px;
 }
-
-
-/* main text */
-
-.status-text {
-    font-size: 14px;
-    color: #1f2937;
-    opacity: 0.98;
-    flex: 1;
-}
-
-
-/* CV button (low emphasis, academic) */
-
-.status-cta {
-    font-size: 13px;
-    font-weight: 600;
-    padding: 6px 14px;
-    border-radius: 10px;
-    color: #1e40af;
-    background: #f8fafc;
-    border: 1px solid #c7d2fe;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.status-cta:hover {
-    background: #eef2ff;
-}
-
-
-/* live dot — calm, non-alert */
 
 .status-badge .live-dot {
     width: 7px;
     height: 7px;
     border-radius: 9999px;
-    background: #2563eb;
+    background: crimson;
     position: relative;
+    display: inline-block;
+    flex-shrink: 0;
 }
 
 .status-badge .live-dot::after {
@@ -402,19 +480,8 @@
     position: absolute;
     inset: -5px;
     border-radius: 9999px;
-    border: 5px solid rgba(37, 99, 235, 0.35);
+    border: 5px solid rgba(220, 20, 60, 0.28);
     animation: badgePing 2s ease-out infinite;
-}
-
-.status-card {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 14px;
-}
-
-.status-cta {
-    width: fit-content;
-    /* or 100% if you want full width */
 }
 
 @keyframes badgePing {
@@ -434,17 +501,82 @@
     }
 }
 
+.status-text {
+    font-size: 15px;
+    color: #1f2937;
+    flex: 1;
+}
 
-/* respect reduced motion */
+.status-text p {
+    font-size: 15px;
+    line-height: 1.28;
+    margin: 0;
+}
 
-@media (prefers-reduced-motion: reduce) {
-    .status-badge .live-dot::after {
-        animation: none;
+.status-text p.opacity-80 {
+    font-size: 13.5px;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+.status-cta {
+    width: fit-content;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 7px;
+    color: #0A3D91;
+    background: #ffffff;
+    border: 1px solid #d5deea;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-cta:hover {
+    background: #f8fafc;
+    border-color: #b8c7dc;
+}
+
+/* Mobile layout */
+@media (max-width: 640px) {
+    .status-card {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        align-items: start;
+    }
+
+    .status-card .status-badge {
+        justify-self: start;
+        order: 1;
+    }
+
+    .status-card .status-text {
+        order: 2;
+        line-height: 1.45;
+    }
+
+    .status-card .status-text p {
+        margin: 0 0 2px 0;
+        font-size: 15px;
+        line-height: 1.45;
+    }
+
+    .status-card .status-text p.opacity-80 {
+        font-size: 13.5px;
+    }
+
+    .status-card .status-cta {
+        justify-self: start;
+        order: 3;
     }
 }
 
-
-/* === Section header (modern academic) === */
+/* ================================
+   Section Headers
+================================ */
 
 .section-header {
     display: flex;
@@ -466,9 +598,6 @@
     flex-shrink: 0;
 }
 
-
-/* icon container (modern, subtle) */
-
 .section-icon {
     width: 36px;
     height: 36px;
@@ -480,21 +609,13 @@
     flex-shrink: 0;
 }
 
-
-/* section title */
-
 .section-title {
-    font-family: "Montserrat", sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: -0.3px;
-    color: #0A3D91;
+    font-size: 18px;
+    letter-spacing: 0.03em;
+    color: #062350;
     margin: 0;
     white-space: nowrap;
 }
-
-
-/* horizontal rule */
 
 .section-rule {
     height: 0.5px;
@@ -503,16 +624,14 @@
     transform: translateY(2px);
 }
 
-
-/* Modifier: compact top spacing */
-
 .section-header--compact {
     margin-top: -10px !important;
-    /* Increased reduction of top spacing */
 }
 
 
-/* Academic highlights carousel */
+/* ================================
+   Academic Highlights Carousel
+================================ */
 
 .act__head {
     display: flex;
@@ -521,16 +640,10 @@
     gap: 0.75rem;
 }
 
-
-/* Controls */
-
 .act__controls {
     display: flex;
     gap: 0.5rem;
 }
-
-
-/* more academic button style */
 
 .act__btn {
     width: 28px;
@@ -550,7 +663,6 @@
 .act__btn:hover {
     background: #f8fafc;
     border-color: #dbeafe;
-    /* subtle blue-ish academic hint */
     transform: translateY(-1px);
 }
 
@@ -558,17 +670,11 @@
     transform: translateY(0);
 }
 
-
-/* Hide on mobile */
-
 @media (max-width: 768px) {
     .act__controls {
         display: none;
     }
 }
-
-
-/* Track */
 
 .act__track {
     display: flex;
@@ -585,9 +691,6 @@
 .act__track::-webkit-scrollbar {
     display: none;
 }
-
-
-/* Card */
 
 .act__card {
     flex: 0 0 88%;
@@ -618,9 +721,6 @@
     }
 }
 
-
-/* Media */
-
 .act__media {
     aspect-ratio: 16 / 10;
     background: #f1f5f9;
@@ -633,9 +733,6 @@
     object-fit: cover;
     display: block;
 }
-
-
-/* Mobile: start centered (keep your good snap behavior) */
 
 @media (max-width: 640px) {
     .act__track {
@@ -650,9 +747,6 @@
     }
 }
 
-
-/* Body */
-
 .act__body {
     padding: 1rem 1.1rem 1.15rem;
 }
@@ -660,8 +754,7 @@
 .act__h3 {
     margin: 0 0 .35rem;
     font-size: 1rem;
-    /* title should be bigger */
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.25;
     color: #0f172a;
 }
@@ -669,12 +762,18 @@
 .act__meta {
     margin: 0;
     font-size: 0.875rem;
-    /* meta should be smaller */
     color: #475569;
 }
 
+.act__body p {
+    font-size: 0.875rem;
+    line-height: 1.45;
+}
 
-/* === Recent publications (professional) === */
+
+/* ================================
+   Recent Publications
+================================ */
 
 .rp-ico {
     font-size: 18px;
@@ -696,9 +795,8 @@
 
 .rp-item p {
     margin: 0;
-    line-height: 1.65;
     color: #374151;
-    font-size: 15.5px;
+    font-size: 16px;
 }
 
 .rp-item a {
@@ -722,7 +820,9 @@
 }
 
 
-/* Mobile only */
+/* ================================
+   Education Mobile Fix
+================================ */
 
 @media (max-width: 640px) {
     .edu-line {
@@ -733,12 +833,13 @@
     .edu-cgpa {
         width: 100%;
         margin-left: 22px;
-        /* aligns under text, not icon */
     }
 }
 
 
-/* ===== Stable typewriter container (NO layout shift) ===== */
+/* ================================
+   Stable Typewriter Container
+================================ */
 
 .tw-slot {
     position: relative;
@@ -746,18 +847,11 @@
     vertical-align: baseline;
 }
 
-
-/* Reserves space in layout, but invisible */
-
 .tw-reserve {
     visibility: hidden;
     display: inline-block;
     white-space: normal;
-    /* wraps like real text */
 }
-
-
-/* Animated text overlays the reserved space, doesn't affect layout */
 
 .tw-anim {
     position: absolute;
@@ -766,9 +860,6 @@
     white-space: normal;
     pointer-events: none;
 }
-
-
-/* Mobile safety against subpixel reflow */
 
 @media (max-width: 1980px) {
     .tw-slot {
@@ -781,9 +872,6 @@
     }
 }
 
-
-/* Desktop: keep the animated phrase on the same line */
-
 @media (min-width: 1024px) {
 
     .tw-slot,
@@ -794,48 +882,10 @@
     }
 }
 
+/**/
 
-/* Mobile layout ONLY for the status card */
-
-@media (max-width: 640px) {
-    .status-card {
-        display: grid;
-        /* override your flex on mobile */
-        grid-template-columns: 1fr;
-        /* single column */
-        gap: 10px;
-        align-items: start;
-    }
-
-    /* Seeking badge goes to the TOP */
-    .status-card .status-badge {
-        justify-self: start;
-        order: 1;
-    }
-
-    /* Text stays in the MIDDLE */
-    .status-card .status-text {
-        order: 2;
-        line-height: 1.35;
-    }
-
-    .status-card .status-text p {
-        margin: 0 0 2px 0;
-    }
-
-    /* CV button goes to BOTTOM-LEFT */
-    .status-card .status-cta {
-        justify-self: start;
-        order: 3;
-    }
-}
-
-
-/* Mobile-only spacing fix so image doesn't stick to top */
-
-@media (max-width: 640px) {
-    #about {
-        padding-top: 1.25rem;
-        /* space below mobile navbar */
-    }
+.academic-emphasis {
+    color: #0A3D91;
+    font-weight: 500;
+    background: transparent;
 }

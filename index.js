@@ -227,6 +227,36 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	});
 	}
+	
+	// 6) Publication year filter
+const filterButtons = document.querySelectorAll(".year-filter");
+const publicationCards = document.querySelectorAll(".publication-card");
+
+if (filterButtons.length && publicationCards.length) {
+    filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const selectedYear = button.dataset.year;
+
+            publicationCards.forEach((card) => {
+                const cardYear = card.dataset.year;
+
+                if (selectedYear === "all" || selectedYear === cardYear) {
+                    card.classList.remove("hidden");
+                } else {
+                    card.classList.add("hidden");
+                }
+            });
+
+            filterButtons.forEach((btn) => {
+                btn.classList.remove("text-slate-900", "font-semibold");
+                btn.classList.add("text-slate-500");
+            });
+
+            button.classList.remove("text-slate-500");
+            button.classList.add("text-slate-900", "font-semibold");
+        });
+    });
+}
 	// 7) PRO Carousel
 	(() => {
 	const track = document.getElementById('actTrack');

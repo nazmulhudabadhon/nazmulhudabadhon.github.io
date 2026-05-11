@@ -1,331 +1,249 @@
 <!doctype html>
 <html class="scroll-smooth" lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="canonical" href="../achievement/" />
-    <title>Nazmul Huda Badhon | Portfolio</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4/dist/full.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../style/style.css" />
+  <link rel="canonical" href="../achievement/" />
+  <title>Nazmul Huda Badhon | Portfolio</title>
 
-    <!-- Current favicon for UI -->
-    <link rel="icon" type="image/png" href="../Image/favicon.png" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4/dist/full.min.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="../style/style.css" />
 
-    <!-- Root-level versions for Google and crawlers -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="../Image/favicon.png"
-    />
-    <link rel="shortcut icon" href="../Image/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="../Image/apple-touch-icon.png"
-    />
-  </head>
+  <!-- Current favicon for UI -->
+  <link rel="icon" type="image/png" href="../Image/favicon.png" />
 
-  <body class="scroll-smooth">
-    <!-- ===== TOP NAVBAR ===== -->
-    <header
-      id="topHeader"
-      class="hidden lg:block site-topbar w-full h-14 bg-[#06142A] font-[Montserrat]"
-    >
-      <div class="w-full px-6 md:px-12">
-        <div class="h-14 flex items-center justify-between">
-          <div class="hidden lg:block brand text-white font-semibold">
-            <a
-              href="https://nazmulhudabadhon.github.io/"
-              class="hover:text-[#D3D3D3]"
-            >
-              NAZMUL HUDA BADHON
-            </a>
-            <p class="text-left text-xs text-[#D3D3D3] tracking-wide">
-              Bachelor of Science | Deep Learning Research
-            </p>
-          </div>
+  <!-- Root-level versions for Google and crawlers -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../Image/favicon.png" />
+  <link rel="shortcut icon" href="../Image/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../Image/apple-touch-icon.png" />
+</head>
 
-          <nav
-            id="topNav"
-            class="hidden lg:flex items-center gap-6 text-white font-medium"
-          >
-            <a href="../" class="block hover:text-slate-200">Home</a>
-            <a href="../research/" class="block hover:text-slate-200"
-              >Publications</a
-            >
-            <a href="../projects/" class="block hover:text-slate-200"
-              >Projects</a
-            >
-            <a href="../achievement/" class="block hover:text-slate-200"
-              >Achievements</a
-            >
-            <a
-              href="../resume/"
-              target="_blank"
-              rel="noopener"
-              class="block hover:text-slate-200"
-              >Resume</a
-            >
-          </nav>
-        </div>
-      </div>
-    </header>
-
-    <!-- Mobile header (phones only) -->
-    <header
-      id="mobileHeader"
-      class="md:hidden sticky top-0 z-50 bg-[#06142A] text-white w-full"
-    >
-      <div class="flex items-center justify-between px-4 py-3">
-        <!-- LEFT TEXT BLOCK -->
-        <div class="flex flex-col">
-          <span
-            class="font-semibold text-slate-300 tracking-wide font-[Montserrat]"
-          >
+<body class="scroll-smooth">
+  <!-- ===== TOP NAVBAR ===== -->
+  <header id="topHeader" class="hidden lg:block site-topbar w-full h-14 bg-[#06142A] ">
+    <div class="w-full px-6 md:px-12">
+      <div class="h-14 flex items-center justify-between">
+        <div class="hidden lg:block brand text-white font-semibold">
+          <a href="https://nazmulhudabadhon.github.io/" class="hover:text-[#D3D3D3]">
             NAZMUL HUDA BADHON
-          </span>
+          </a>
           <p class="text-left text-xs text-[#D3D3D3] tracking-wide">
             Bachelor of Science | Deep Learning Research
           </p>
         </div>
-        <button
-          id="mobileMenuBtn"
-          class="text-white text-2xl focus:outline-none"
-          aria-label="Toggle menu"
-        >
-          <i class="fa-solid fa-bars" id="menuOpenIcon"></i>
-          <i class="fa-solid fa-xmark hidden" id="menuCloseIcon"></i>
-        </button>
+
+        <nav id="topNav" class="hidden lg:flex items-center gap-6 text-white font-medium">
+          <a href="../" class="block hover:text-slate-200">Home</a>
+          <a href="../research/" class="block hover:text-slate-200">Publications</a>
+          <a href="../projects/" class="block hover:text-slate-200">Projects</a>
+          <a href="../achievement/" class="block hover:text-slate-200">Achievements</a>
+          <a href="../resume/" target="_blank" rel="noopener" class="block hover:text-slate-200">Resume</a>
+        </nav>
       </div>
+    </div>
+  </header>
 
-      <!-- Collapsible nav (hidden by default, header remains visible) -->
-      <nav
-        id="mobileMenu"
-        class="hidden flex-col gap-2 px-4 pb-4 text-slate-200 font-medium"
-      >
-        <br />
-        <a href="../" class="py-2 border-b border-white/10 hover:text-[#E3872D]"
-          >Home</a
-        ><br /><br />
-        <a
-          href="../research/"
-          class="py-2 border-b border-white/10 hover:text-[#E3872D]"
-          >Publications</a
-        ><br /><br />
-        <a
-          href="/projects/"
-          class="py-2 border-b border-white/10 hover:text-[#E3872D]"
-          >Projects</a
-        ><br /><br />
-        <a
-          href="/achievement/"
-          class="py-2 border-b border-white/10 hover:text-[#E3872D]"
-          >Achievements</a
-        ><br /><br />
-        <a
-          href="../resume/"
-          class="py-2 border-b border-white/10 hover:text-[#E3872D]"
-          target="_blank"
-          rel="noopener"
-          >Resume</a
-        >
-      </nav>
-    </header>
+  <!-- Mobile header (phones only) -->
+  <header id="mobileHeader" class="md:hidden sticky top-0 z-50 bg-[#06142A] text-white w-full">
+    <div class="flex items-center justify-between px-4 py-3">
+      <!-- LEFT TEXT BLOCK -->
+      <div class="flex flex-col">
+        <span class="font-semibold text-slate-300 tracking-wide ">
+          NAZMUL HUDA BADHON
+        </span>
+        <p class="text-left text-xs text-[#D3D3D3] tracking-wide">
+          Bachelor of Science | Deep Learning Research
+        </p>
+      </div>
+      <button id="mobileMenuBtn" class="text-white text-2xl focus:outline-none" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars" id="menuOpenIcon"></i>
+        <i class="fa-solid fa-xmark hidden" id="menuCloseIcon"></i>
+      </button>
+    </div>
 
-    <section class="bg-[#f6f7fd]">
-      <div class="drawer lg:drawer-open">
-        <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-        <div class="drawer-content flex flex-col w-full">
-          <!--ACHIEVEMENT & ECA-->
-          <section
-            class="scroll-mt-24 p-6 px-6 py-7 w-full bg-[#f6f7fd] font-[Montserrat]"
-          >
-            <div class="section-header section-header--compact mb-4">
+    <!-- Collapsible nav (hidden by default, header remains visible) -->
+    <nav id="mobileMenu" class="hidden flex-col gap-2 px-4 pb-4 text-slate-200 font-medium">
+      <br />
+      <a href="../" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Home</a><br /><br />
+      <a href="../research/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Publications</a><br /><br />
+      <a href="/projects/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Projects</a><br /><br />
+      <a href="/achievement/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Achievements</a><br /><br />
+      <a href="../resume/" class="py-2 border-b border-white/10 hover:text-[#E3872D]" target="_blank"
+        rel="noopener">Resume</a>
+    </nav>
+  </header>
+
+  <section class="bg-white">
+    <div class="drawer lg:drawer-open">
+      <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content flex flex-col w-full">
+
+        <!--ACHIEVEMENT & ECA-->
+        <section class="scroll-mt-24 mt-0 w-full bg-white px-6 py-7 md:px-0">
+          <div class="md:max-w-7xl md:mx-auto md:px-12">
+
+            <div class="section-header section-header--compact mb-6">
               <span class="section-ic">
                 <i class="fa-solid fa-award"></i>
               </span>
               <h2 class="section-title text-[#00008B]">Achievements</h2>
               <span class="section-rule"></span>
             </div>
-            <br />
 
-            <!-- Horizontal card row -->
-            <div class="flex flex-col md:flex-row gap-4 mb-4">
+            <!-- Achievement list -->
+            <div class="space-y-6">
+
               <!-- Card 1: YouTube -->
-              <article
-                class="ach-card flex-1 flex-1 border border-gray-200 bg-white shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-gray-300 p-2 md:p-4 font-[Montserrat] flex flex-col"
-              >
-                <div
-                  class="ach-media ring-1 ring-black/5 overflow-hidden aspect-video"
-                >
-                  <iframe
-                    class="w-full h-full"
-                    src="https://www.youtube.com/embed/zmkiBl4CQtU "
-                    title="Global Korea Scholarship "
-                    frameborder="0 "
-                    allow="
-                      accelerometer;
-                      autoplay;
-                      clipboard-write;
-                      encrypted-media;
-                      gyroscope;
-                      picture-in-picture;
-                    "
-                    allowfullscreen
-                  ></iframe>
-                </div>
-                <div class="ach-media mt-3">
-                  <span
-                    class="ach-badge inline-flex items-center text-xs font-semibold uppercase tracking-wider px-3 py-1 bg-sky-100 text-sky-700"
-                    >Scholarship</span
-                  >
-                  <h3 class="mt-2 font-semibold text-lg text-slate-900">
-                    Global Korea Scholarship (GKS) 2023
-                  </h3>
-                  <p
-                    class="mt-2 mb-2 text-slate-700 text-justify text-sm md:text-base font-normal"
-                  >
-                    Achieved the fully-funded GKS scholarship 2023 by the
-                    Government of Republic of Korea while completing Bachelor of
-                    Science degree at Daffodil International University and
-                    studied one semester on-site in South Korea under the
-                    Semester Exchange Program.
-                  </p>
-                  <p
-                    class="text-sm md:text-base font-normal text-slate-500 mt-1 font-sans emoji"
-                    style="font-family: Montserrat"
-                  >
-                    Receiving Year: Fall 2023 — Dongseo University,SK 🇰🇷
-                  </p>
+              <article class="ach-card rounded-2xl border border-gray-200 bg-white p-4 md:p-8 shadow-sm">
+                <div class="flex flex-col lg:flex-row gap-6 lg:gap-10">
+
+                  <!-- LEFT: content -->
+                  <div class="flex-1 min-w-0">
+                    <span
+                      class="ach-badge inline-flex items-center font-semibold px-3 py-1 rounded-full tracking-wider bg-sky-100 text-sky-700">
+                      Scholarship
+                    </span>
+
+                    <h3 class="mt-4 font-semibold text-xl text-slate-900">
+                      Global Korea Scholarship Reciepent, 2023
+                    </h3>
+
+                    <p class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-base ">
+                      Achieved the fully-funded GKS scholarship 2023 by the
+                      Government of Republic of Korea while completing Bachelor of
+                      Science degree at Daffodil International University and
+                      studied one semester on-site in South Korea under the
+                      Semester Exchange Program.
+                    </p>
+
+                    <p class="text-sm md:text-base  text-slate-500 mt-2">
+                      Receiving Year: Fall 2023 — Dongseo University,SK 🇰🇷
+                    </p>
+                  </div>
+
+                  <!-- RIGHT: video -->
+                  <div class="w-full lg:w-[300px] shrink-0">
+                    <div class="h-[180px] w-full overflow-hidden rounded-xl ring-1 ring-black/5 bg-gray-50">
+                      <iframe class="h-full w-full" src="https://www.youtube.com/embed/zmkiBl4CQtU"
+                        title="Global Korea Scholarship" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+                        allowfullscreen>
+                      </iframe>
+                    </div>
+                  </div>
+
                 </div>
               </article>
 
               <!-- Card 2: Image -->
-              <article
-                class="ach-card flex-1 border border-gray-200 bg-white shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-gray-300 p-2 md:p-4 font-[Montserrat] flex flex-col"
-              >
-                <div
-                  class="ach-media w-full ring-1 ring-black/5 overflow-hidden aspect-video"
-                >
-                  <img
-                    src="../Image/award_certificate.jpg"
-                    alt="Award Certificate "
-                    loading="lazy "
-                    decoding="async "
-                    width="1280 "
-                    height="720 "
-                    class="w-full aspect-[16/9] object-cover ring-1 ring-black/5"
-                  />
-                </div>
-                <div class="ach-media mt-3">
-                  <span
-                    class="ach-badge inline-flex items-center text-xs font-semibold uppercase tracking-wider px-3 py-1 bg-green-100 text-green-700"
-                    >Award</span
-                  >
-                  <h3 class="mt-2 font-semibold text-lg text-slate-900">
-                    Research Award for Scholarly Publication in Reputed Indexed
-                    Journal
-                  </h3>
-                  <p
-                    class="mt-2 mb-2 text-slate-700 text-justify text-sm md:text-base font-normal"
-                  >
-                    Recognized for scholarly publications in reputed indexed
-                    journals by the Division of Research and Department of
-                    Computer Science and Engineering, Daffodil International
-                    Uninversity.
-                  </p>
-                  <p
-                    class="text-sm md:text-base font-normal text-slate-500 mt-1"
-                  >
-                    Receiving Date: 20 May 2025
-                  </p>
+              <article class="ach-card rounded-2xl border border-gray-200 bg-white p-4 md:p-8 shadow-sm">
+                <div class="flex flex-col lg:flex-row gap-6 lg:gap-10">
+
+                  <!-- LEFT: content -->
+                  <div class="flex-1 min-w-0">
+                    <span
+                      class="ach-badge inline-flex items-center rounded-full font-semibold tracking-wider px-3 py-1 bg-green-100 text-green-700">
+                      Award
+                    </span>
+
+                    <h3 class="mt-4 font-semibold text-xl text-slate-900">
+                      Research Award for Scholarly Publication in Reputed Indexed
+                      Journal
+                    </h3>
+
+                    <p class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-base ">
+                      Recognized for scholarly publications in reputed indexed
+                      journals by the Division of Research and Department of
+                      Computer Science and Engineering, Daffodil International
+                      Uninversity.
+                    </p>
+
+                    <p class="text-sm md:text-base  text-slate-500 mt-2">
+                      Receiving Date: 20 May 2025
+                    </p>
+                  </div>
+
+                  <!-- RIGHT: image -->
+                  <div class="w-full lg:w-[300px] shrink-0">
+                    <div class="h-[180px] w-full overflow-hidden rounded-xl ring-1 ring-black/5 bg-gray-50">
+                      <img src="../Image/award_certificate.jpg" alt="Award Certificate" loading="lazy" decoding="async"
+                        class="h-full w-full object-cover" />
+                    </div>
+                  </div>
+
                 </div>
               </article>
 
               <!-- Card 3: Image -->
-              <article
-                class="ach-card flex-1 border border-gray-200 bg-white shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-gray-300 p-2 md:p-4 font-[Montserrat] flex flex-col"
-              >
-                <div
-                  class="ach-media w-full ring-1 ring-black/5 overflow-hidden aspect-video"
-                >
-                  <img
-                    src="../Image/bootcamp.png"
-                    alt="Bootcamp Performance "
-                    loading="lazy "
-                    decoding="async "
-                    width="1280 "
-                    height="720 "
-                    class="w-full aspect-[16/9] object-cover ring-1 ring-black/5"
-                  />
-                </div>
-                <div class="ach-media mt-3">
-                  <span
-                    class="ach-badge inline-flex items-center text-xs font-semibold uppercase tracking-wider px-3 py-1 bg-orange-100 text-orange-700"
-                    >Bootcamp</span
-                  >
-                  <h3 class="mt-2 font-semibold text-lg text-slate-900">
-                    Top Performer — CV & DL for Medical Data Analysis
-                  </h3>
-                  <p
-                    class="mt-2 mb-2 text-slate-700 text-justify text-sm md:text-base font-normal"
-                  >
-                    Received token of appreciation for top performance in
-                    Computer Vision & Medical Image Analysis Bootcamp organized
-                    by Health Informatics Research Lab, Daffodil International
-                    University.
-                  </p>
-                  <p
-                    class="text-sm md:text-base font-normal text-slate-500 mt-1"
-                  >
-                    Receiving Date: 30 July 2025
-                  </p>
+              <article class="ach-card rounded-2xl border border-gray-200 bg-white p-4 md:p-8 shadow-sm">
+                <div class="flex flex-col lg:flex-row gap-6 lg:gap-10">
+
+                  <!-- LEFT: content -->
+                  <div class="flex-1 min-w-0">
+                    <span
+                      class="ach-badge inline-flex items-center rounded-full font-semibold  tracking-wider px-3 py-1 bg-orange-100 text-orange-700">
+                      Bootcamp
+                    </span>
+
+                    <h3 class="mt-4 font-semibold text-xl text-slate-900">
+                      Top Performer — CV & DL for Medical Data Analysis
+                    </h3>
+
+                    <p class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-base ">
+                      Received token of appreciation for top performance in
+                      Computer Vision & Medical Image Analysis Bootcamp organized
+                      by Health Informatics Research Lab, Daffodil International
+                      University.
+                    </p>
+
+                    <p class="text-sm md:text-base  text-slate-500 mt-2">
+                      Receiving Date: 30 July 2025
+                    </p>
+                  </div>
+
+                  <!-- RIGHT: image -->
+                  <div class="w-full lg:w-[300px] shrink-0">
+                    <div class="h-[180px] w-full overflow-hidden rounded-xl ring-1 ring-black/5 bg-gray-50">
+                      <img src="../Image/bootcamp.png" alt="Bootcamp Performance" loading="lazy" decoding="async"
+                        class="h-full w-full object-cover" />
+                    </div>
+                  </div>
+
                 </div>
               </article>
+
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
       </div>
-      <br />
-    </section>
+    </div>
+    <br />
+  </section>
 
-    <!-- COPYRIGHT FOOTER -->
-    <footer class="bg-[#06142A] w-full py-1 border-t border-white/10">
-      <div class="max-w-7xl mx-auto px-4 text-center">
-        <p class="text-sm text-white/80 tracking-wide font-awesome">
-          © 2026
-          <span class="hover:opacity-90 transition"> Nazmul Huda Badhon </span>
-          . All Rights Reserved.
-        </p>
-      </div>
-    </footer>
+  <!-- COPYRIGHT FOOTER -->
+  <footer class="bg-[#06142A] w-full py-1 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <p class="text-sm text-white/80 tracking-wide font-awesome">
+        © 2026
+        <span class="hover:opacity-90 transition"> Nazmul Huda Badhon </span>
+        . All Rights Reserved.
+      </p>
+    </div>
+  </footer>
 
-    <!-- Back to Top Button -->
-    <button
-      id="backToTop"
-      aria-label="Back to top "
-      class="fixed right-8 bottom-16 z-50 flex items-center justify-center h-12 w-12 rounded-full bg-[#87CEEB] text-white shadow-md transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1 hover:scale-110 focus:ring-4 focus:ring-[#87CEEB]/40"
-    >
-      <i
-        class="fa-solid fa-arrow-up text-lg transition-transform duration-300 group-hover:-rotate-12"
-      ></i>
-    </button>
+  <!-- Back to Top Button -->
+  <button id="backToTop" aria-label="Back to top "
+    class="fixed right-8 bottom-16 z-50 flex items-center justify-center h-12 w-12 rounded-full bg-[#87CEEB] text-white shadow-md transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1 hover:scale-110 focus:ring-4 focus:ring-[#87CEEB]/40">
+    <i class="fa-solid fa-arrow-up text-lg transition-transform duration-300 group-hover:-rotate-12"></i>
+  </button>
 
-    <script src="../index.js"></script>
-  </body>
+  <script src="../index.js"></script>
+</body>
+
 </html>

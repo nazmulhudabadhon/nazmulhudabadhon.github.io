@@ -60,7 +60,8 @@ span {
 }
 
 article {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 55%, #f3f6fa 100%);
+    background: linear-gradient(135deg, #f9fafb 0%, #f1f3f6 55%, #eceff3 100%);
+}
 }
 
 /*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
@@ -173,24 +174,23 @@ article {
 
 
 /* ================================
-   Projects Animation
+   Projects Card
 ================================ */
 
 .proj-card {
-    opacity: 0;
-    transform: translateX(18px) scale(.985);
-    transition: opacity .9s ease, transform .9s ease;
-    will-change: opacity, transform;
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
 }
 
 .proj-card.in {
     opacity: 1;
-    transform: translateX(0) scale(1);
+    transform: none;
 }
 
 .proj-card:hover {
-    transform: translateX(0) translateY(-4px) scale(1.01);
-    box-shadow: 0 18px 40px rgba(2, 8, 23, .12);
+    transform: none;
 }
 
 
@@ -199,43 +199,28 @@ article {
 ================================ */
 
 .ach-card {
-    opacity: 0;
-    transform: translateY(14px);
-    transition: opacity .95s ease, transform .95s ease;
-    will-change: opacity, transform;
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
 }
 
 .ach-card.in {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
 }
 
 .ach-card.in .ach-badge {
-    animation: badgePop .6s ease-out;
-}
-
-@keyframes badgePop {
-    0% {
-        transform: scale(.92);
-    }
-
-    60% {
-        transform: scale(1.06);
-    }
-
-    100% {
-        transform: scale(1);
-    }
+    animation: none;
 }
 
 .ach-media {
-    transition: transform .45s ease;
+    transition: none;
 }
 
 .ach-card:hover .ach-media {
-    transform: translateY(-3px);
+    transform: none;
 }
-
 
 /* ================================
    Back to Top Button

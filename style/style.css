@@ -60,8 +60,39 @@ span {
 }
 
 article {
-    background: linear-gradient(135deg, #f9fafb 0%, #f1f3f6 55%, #eceff3 100%);
+    position: relative;
+    overflow: hidden;
+    background: #fbfcff;
+    border: 1px solid #dbe3ef;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.055);
 }
+
+/* Premium academic left accent */
+article::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #06142A 0%, #0A3D91 55%, #8fb8e8 100%);
+}
+
+/* Very subtle paper highlight */
+article::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(248, 250, 252, 0.45)),
+        radial-gradient(circle at 92% 8%, rgba(10, 61, 145, 0.055), transparent 26%);
+    pointer-events: none;
+}
+
+/* Keep real content above the overlay */
+article>* {
+    position: relative;
+    z-index: 1;
 }
 
 /*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
@@ -190,35 +221,6 @@ article {
 }
 
 .proj-card:hover {
-    transform: none;
-}
-
-
-/* ================================
-   Achievements Animation
-================================ */
-
-.ach-card {
-    opacity: 1;
-    transform: none;
-    transition: none;
-    will-change: auto;
-}
-
-.ach-card.in {
-    opacity: 1;
-    transform: none;
-}
-
-.ach-card.in .ach-badge {
-    animation: none;
-}
-
-.ach-media {
-    transition: none;
-}
-
-.ach-card:hover .ach-media {
     transform: none;
 }
 

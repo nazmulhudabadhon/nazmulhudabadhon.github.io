@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         stabilizeHeight();
+
         let rzTimer = null;
         window.addEventListener("resize", () => {
             clearTimeout(rzTimer);
@@ -85,8 +86,11 @@ document.addEventListener("DOMContentLoaded", () => {
             if (window.scrollY > 300) topBtn.classList.remove("hidden");
             else topBtn.classList.add("hidden");
         };
+
         toggleTopBtn();
+
         window.addEventListener("scroll", toggleTopBtn, { passive: true });
+
         topBtn.addEventListener("click", () =>
             window.scrollTo({ top: 0, behavior: "smooth" })
         );
@@ -113,7 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         entry.target.classList.remove(inClass);
                     }
                 });
-            }, {
+            },
+            {
                 threshold: [0, 0.15],
                 rootMargin: "0px 0px -12% 0px",
             }
@@ -136,18 +141,19 @@ document.addEventListener("DOMContentLoaded", () => {
     makeReplayObserver(".proj-card", "in", 0.12);
     makeReplayObserver(".ach-card", "in", 0.10);
 
-    const slides = document.querySelectorAll('.carousel-slide');
+    const slides = document.querySelectorAll(".carousel-slide");
     if (slides.length > 0) {
-        slides[0].classList.add('active');
+        slides[0].classList.add("active");
     }
-    const dots = document.querySelectorAll('.carousel-dots .dot');
+
+    const dots = document.querySelectorAll(".carousel-dots .dot");
     let index = 0;
 
     function showSlide(i) {
-        slides.forEach(s => s.classList.remove('active'));
-        dots.forEach(d => d.classList.remove('active'));
-        slides[i].classList.add('active');
-        dots[i].classList.add('active');
+        slides.forEach((s) => s.classList.remove("active"));
+        dots.forEach((d) => d.classList.remove("active"));
+        slides[i].classList.add("active");
+        dots[i].classList.add("active");
     }
 
     setInterval(() => {
@@ -156,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 4500);
 
     dots.forEach((dot, i) => {
-        dot.addEventListener('click', () => {
+        dot.addEventListener("click", () => {
             index = i;
             showSlide(i);
         });
@@ -191,109 +197,143 @@ document.addEventListener("DOMContentLoaded", () => {
             ticking = false;
         };
 
-        window.addEventListener("scroll", () => {
-            if (!ticking) {
-                window.requestAnimationFrame(onScroll);
-                ticking = true;
-            }
-        }, { passive: true });
+        window.addEventListener(
+            "scroll",
+            () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(onScroll);
+                    ticking = true;
+                }
+            },
+            { passive: true }
+        );
 
         // initial state
         header.classList.add("nav-show");
     })();
-	
-	const btn = document.getElementById("mobileMenuBtn");
-	const menu = document.getElementById("mobileMenu");
 
-	const openIcon = document.getElementById("menuOpenIcon");
-	const closeIcon = document.getElementById("menuCloseIcon");
+    const btn = document.getElementById("mobileMenuBtn");
+    const menu = document.getElementById("mobileMenu");
 
-	if (btn && menu) {
-	btn.addEventListener("click", () => {
-		const isOpen = !menu.classList.contains("hidden");
+    const openIcon = document.getElementById("menuOpenIcon");
+    const closeIcon = document.getElementById("menuCloseIcon");
 
-		menu.classList.toggle("hidden");
+    if (btn && menu) {
+        btn.addEventListener("click", () => {
+            const isOpen = !menu.classList.contains("hidden");
 
-		openIcon.classList.toggle("hidden", !isOpen);
-		closeIcon.classList.toggle("hidden", isOpen);
-	});
+            menu.classList.toggle("hidden");
 
-	// Auto-close when clicking a link
-	menu.addEventListener("click", (e) => {
-		if (e.target.closest("a")) {
-		menu.classList.add("hidden");
-		openIcon.classList.remove("hidden");
-		closeIcon.classList.add("hidden");
-		}
-	});
-	}
-	
-	// 6) Publication year filter
-const filterButtons = document.querySelectorAll(".year-filter");
-const publicationCards = document.querySelectorAll(".publication-card");
-
-if (filterButtons.length && publicationCards.length) {
-    filterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-            const selectedYear = button.dataset.year;
-
-            publicationCards.forEach((card) => {
-                const cardYear = card.dataset.year;
-
-                if (selectedYear === "all" || selectedYear === cardYear) {
-                    card.classList.remove("hidden");
-                } else {
-                    card.classList.add("hidden");
-                }
-            });
-
-            filterButtons.forEach((btn) => {
-                btn.classList.remove("text-slate-900", "font-semibold");
-                btn.classList.add("text-slate-500");
-            });
-
-            button.classList.remove("text-slate-500");
-            button.classList.add("text-slate-900", "font-semibold");
+            openIcon.classList.toggle("hidden", !isOpen);
+            closeIcon.classList.toggle("hidden", isOpen);
         });
-    });
-}
-	// 7) PRO Carousel
-	(() => {
-	const track = document.getElementById('actTrack');
-	const prev = document.getElementById('actPrev');
-	const next = document.getElementById('actNext');
-	if (!track || !prev || !next) return;
 
-	const step = () => {
-		const card = track.querySelector('.act__card');
-		if (!card) return 320;
-		const gap = parseFloat(getComputedStyle(track).gap || "0");
-		return card.getBoundingClientRect().width + gap;
-	};
+        // Auto-close when clicking a link
+        menu.addEventListener("click", (e) => {
+            if (e.target.closest("a")) {
+                menu.classList.add("hidden");
+                openIcon.classList.remove("hidden");
+                closeIcon.classList.add("hidden");
+            }
+        });
+    }
 
-	prev.addEventListener('click', () =>
-		track.scrollBy({ left: -step(), behavior: 'smooth' })
-	);
+    // 6) Publication year filter
+    const filterButtons = document.querySelectorAll(".year-filter");
+    const publicationCards = document.querySelectorAll(".publication-card");
 
-	next.addEventListener('click', () =>
-		track.scrollBy({ left: step(), behavior: 'smooth' })
-	);
-   
-   /* MOBILE: center first card on load */
-	const centerFirstCard = () => {
-		if (window.innerWidth > 640) return; // mobile only
-		const card = track.querySelector('.act__card');
-		if (!card) return;
+    if (filterButtons.length && publicationCards.length) {
+        filterButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const selectedYear = button.dataset.year;
 
-		const trackWidth = track.clientWidth;
-		const cardWidth = card.clientWidth;
-		const offset = (cardWidth - trackWidth) / 2;
+                publicationCards.forEach((card) => {
+                    const cardYear = card.dataset.year;
 
-		track.scrollLeft = offset;
-	};
+                    if (selectedYear === "all" || selectedYear === cardYear) {
+                        card.classList.remove("hidden");
+                    } else {
+                        card.classList.add("hidden");
+                    }
+                });
 
-	window.addEventListener('load', centerFirstCard);
-	window.addEventListener('resize', centerFirstCard);
-})();
+                filterButtons.forEach((btn) => {
+                    btn.classList.remove("text-slate-900", "font-semibold");
+                    btn.classList.add("text-slate-500");
+                });
 
+                button.classList.remove("text-slate-500");
+                button.classList.add("text-slate-900", "font-semibold");
+            });
+        });
+    }
+
+    // Achievement type filter
+    const achievementFilterButtons = document.querySelectorAll(".ach-filter");
+    const achievementCards = document.querySelectorAll(".ach-card");
+
+    if (achievementFilterButtons.length && achievementCards.length) {
+        achievementFilterButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const selectedType = button.dataset.type;
+
+                achievementCards.forEach((card) => {
+                    const cardType = card.dataset.type;
+
+                    if (selectedType === "all" || selectedType === cardType) {
+                        card.classList.remove("hidden");
+                    } else {
+                        card.classList.add("hidden");
+                    }
+                });
+
+                achievementFilterButtons.forEach((btn) => {
+                    btn.classList.remove("text-slate-900", "font-semibold");
+                    btn.classList.add("text-slate-500");
+                });
+
+                button.classList.remove("text-slate-500");
+                button.classList.add("text-slate-900", "font-semibold");
+            });
+        });
+    }
+
+    // 7) PRO Carousel
+    (() => {
+        const track = document.getElementById("actTrack");
+        const prev = document.getElementById("actPrev");
+        const next = document.getElementById("actNext");
+        if (!track || !prev || !next) return;
+
+        const step = () => {
+            const card = track.querySelector(".act__card");
+            if (!card) return 320;
+            const gap = parseFloat(getComputedStyle(track).gap || "0");
+            return card.getBoundingClientRect().width + gap;
+        };
+
+        prev.addEventListener("click", () =>
+            track.scrollBy({ left: -step(), behavior: "smooth" })
+        );
+
+        next.addEventListener("click", () =>
+            track.scrollBy({ left: step(), behavior: "smooth" })
+        );
+
+        /* MOBILE: center first card on load */
+        const centerFirstCard = () => {
+            if (window.innerWidth > 640) return; // mobile only
+            const card = track.querySelector(".act__card");
+            if (!card) return;
+
+            const trackWidth = track.clientWidth;
+            const cardWidth = card.clientWidth;
+            const offset = (cardWidth - trackWidth) / 2;
+
+            track.scrollLeft = offset;
+        };
+
+        window.addEventListener("load", centerFirstCard);
+        window.addEventListener("resize", centerFirstCard);
+    })();
 });

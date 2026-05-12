@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nazmulhudabadhon.github.io/sitemap.xml
+Sitemap: https://nazmulhudabadhon.github.io/sitemap_index.xml

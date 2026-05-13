@@ -33,6 +33,15 @@ body {
     line-height: 1.45;
 }
 
+.research-scroll {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.research-scroll::-webkit-scrollbar {
+    display: none;
+}
+
 strong,
 b,
 .font-semibold {

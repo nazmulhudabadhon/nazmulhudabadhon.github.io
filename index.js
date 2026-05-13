@@ -238,35 +238,60 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 6) Publication year filter
-    const filterButtons = document.querySelectorAll(".year-filter");
-    const publicationCards = document.querySelectorAll(".publication-card");
+// 6) Publication year + research type filter
+const yearFilterButtons = document.querySelectorAll(".year-filter");
+const researchFilterButtons = document.querySelectorAll(".research-filter");
+const publicationCards = document.querySelectorAll(".publication-card");
 
-    if (filterButtons.length && publicationCards.length) {
-        filterButtons.forEach((button) => {
-            button.addEventListener("click", () => {
-                const selectedYear = button.dataset.year;
+let activeYear = "all";
+let activeResearchType = "all";
 
-                publicationCards.forEach((card) => {
-                    const cardYear = card.dataset.year;
+function updatePublicationFilters() {
+    publicationCards.forEach((card) => {
+        const cardYear = card.dataset.year;
+        const cardResearchType = card.getAttribute("research-type");
 
-                    if (selectedYear === "all" || selectedYear === cardYear) {
-                        card.classList.remove("hidden");
-                    } else {
-                        card.classList.add("hidden");
-                    }
-                });
+        const yearMatches =
+            activeYear === "all" || activeYear === cardYear;
 
-                filterButtons.forEach((btn) => {
-                    btn.classList.remove("text-slate-900", "font-semibold");
-                    btn.classList.add("text-slate-500");
-                });
+        const typeMatches =
+            activeResearchType === "all" || activeResearchType === cardResearchType;
 
-                button.classList.remove("text-slate-500");
-                button.classList.add("text-slate-900", "font-semibold");
-            });
+        if (yearMatches && typeMatches) {
+            card.classList.remove("hidden");
+        } else {
+            card.classList.add("hidden");
+        }
+    });
+}
+
+function setActiveButton(buttons, activeButton) {
+    buttons.forEach((btn) => {
+        btn.classList.remove("text-slate-900", "font-semibold");
+        btn.classList.add("text-slate-500");
+    });
+
+    activeButton.classList.remove("text-slate-500");
+    activeButton.classList.add("text-slate-900", "font-semibold");
+}
+
+if (publicationCards.length) {
+    yearFilterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            activeYear = button.dataset.year || "all";
+            setActiveButton(yearFilterButtons, button);
+            updatePublicationFilters();
         });
-    }
+    });
+
+    researchFilterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            activeResearchType = button.getAttribute("research-type") || "all";
+            setActiveButton(researchFilterButtons, button);
+            updatePublicationFilters();
+        });
+    });
+}
 
     // Achievement type filter
     const achievementFilterButtons = document.querySelectorAll(".ach-filter");

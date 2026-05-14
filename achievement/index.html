@@ -12,7 +12,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style/style.css" />
 
   <!-- Current favicon for UI -->
@@ -24,51 +25,50 @@
   <link rel="apple-touch-icon" sizes="180x180" href="../Image/apple-touch-icon.png" />
 </head>
 
-<body class="scroll-smooth">
+<body class="scroll-smooth overflow-x-hidden lg:overflow-hidden">
   <!-- ===== TOP NAVBAR ===== -->
-  <header id="topHeader" class="hidden lg:block site-topbar w-full h-14 bg-[#06142A] ">
-    <div class="w-full px-6 md:px-12">
+  <header id="topHeader" class="hidden lg:block site-topbar w-full h-14 font-medium">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
       <div class="h-14 flex items-center justify-between">
-        <div class="hidden lg:block brand text-white font-semibold">
-          <a href="https://nazmulhudabadhon.github.io/" class="hover:text-[#D3D3D3]">
-            NAZMUL HUDA BADHON
+
+        <div class="brand text-[#06142A]">
+          <a href="https://nazmulhudabadhon.github.io/" class="hover:text-[#0A3D91]"
+            style="font-family: 'Libre Baskerville', Georgia, serif;">
+            <b>Nazmul Huda</b> Badhon
           </a>
-          <p class="text-left text-xs text-[#D3D3D3] tracking-wide">
-            Bachelor of Science Graduate | Deep Learning Research
-          </p>
         </div>
 
-        <nav id="topNav" class="hidden lg:flex items-center gap-6 text-white font-medium">
-          <a href="../" class="block hover:text-slate-200">Home</a>
-          <a href="../research/" class="block hover:text-slate-200">Publications</a>
-          <a href="../projects/" class="block hover:text-slate-200">Projects</a>
-          <a href="../achievement/" class="block hover:text-slate-200">Achievements</a>
-          <a href="../resume/" target="_blank" rel="noopener" class="block hover:text-slate-200">CV</a>
+        <nav id="topNav" class="flex items-center gap-6 text-[#06142A] font-medium">
+          <a href="../" class="nav-link block hover:text-[#0A3D91]">Home</a>
+          <a href="../research/" class="nav-link block hover:text-[#0A3D91]">Publications</a>
+          <a href="../projects/" class="nav-link block hover:text-[#0A3D91]">Projects</a>
+          <a href="../achievement/" class="nav-link active block hover:text-[#0A3D91]">Achievements</a>
+          <a href="../resume/" target="_blank" rel="noopener" class="nav-link block hover:text-[#0A3D91]">CV</a>
         </nav>
       </div>
     </div>
   </header>
 
   <!-- Mobile header (phones only) -->
-  <header id="mobileHeader" class="md:hidden sticky top-0 z-50 bg-[#06142A] text-white w-full">
+  <header id="mobileHeader" class="md:hidden sticky top-0 z-50 text-[#06142A] w-full">
     <div class="flex items-center justify-between px-4 py-3">
       <!-- LEFT TEXT BLOCK -->
       <div class="flex flex-col">
-        <span class="font-semibold text-slate-300 tracking-wide ">
+        <span class="text-slate-900 tracking-wide ">
           NAZMUL HUDA BADHON
         </span>
-        <p class="text-left text-xs text-[#D3D3D3] tracking-wide">
+        <p class="text-left text-xs text-slate-500 tracking-wide">
           B.Sc. Graduate | Deep Learning Research
         </p>
       </div>
-      <button id="mobileMenuBtn" class="text-white text-2xl focus:outline-none" aria-label="Toggle menu">
+      <button id="mobileMenuBtn" class="text-[#06142A] text-2xl focus:outline-none" aria-label="Toggle menu">
         <i class="fa-solid fa-bars" id="menuOpenIcon"></i>
         <i class="fa-solid fa-xmark hidden" id="menuCloseIcon"></i>
       </button>
     </div>
 
     <!-- Collapsible nav (hidden by default, header remains visible) -->
-    <nav id="mobileMenu" class="hidden flex-col gap-2 px-4 pb-4 text-slate-200 font-medium">
+    <nav id="mobileMenu" class="hidden flex-col gap-2 px-4 pb-4 text-slate-900 font-medium">
       <br />
       <a href="../" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Home</a><br /><br />
       <a href="../research/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Publications</a><br /><br />
@@ -85,348 +85,407 @@
       <div class="drawer-content flex flex-col w-full">
 
         <!--ACHIEVEMENT & ECA-->
-        <section class="scroll-mt-24 mt-0 w-full bg-white px-6 py-6 md:px-0">
-          <div class="md:max-w-7xl md:mx-auto md:px-12">
+        <section class="scroll-mt-24 mt-0 w-full h-[calc(100vh-3.5rem)] bg-[var(--page-bg)]">
+          <div class="md:max-w-7xl md:mx-auto md:px-12 h-full overflow-hidden pt-6 pb-4">
+            <div
+              class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_170px] gap-10 items-start h-full min-h-0 overflow-hidden">
 
-            <div class="section-header section-header--compact mb-2">
-              <span class="section-ic">
-                <i class="fa-solid fa-award"></i>
-              </span>
-              <h2 class="section-title text-[#00008B]">Achievements</h2>
-              <span class="section-rule"></span>
-            </div>
+              <!-- LEFT: heading + achievement cards scroll -->
+              <div
+                class="flex flex-col gap-0 overflow-y-auto pr-2 h-full min-h-0 pb-8 achievement-scroll justify-start items-stretch">
+                <div style="border-bottom: none; margin-top: 0; margin-bottom: 1.5rem;">
+                  <span class="profile-name">Achievements</span> ·
+                  <span
+                    style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif; font-size: 14px; color: var(--text-muted);">
+                    Awards, honors, certifications and leadership activities grouped by category.
+                  </span>
+                </div>
 
-            <!-- Achievement Type Filter -->
-            <div class="mb-4 flex justify-center
-                        items-center gap-6 text-sm md:text-base">
-              <button class="ach-filter text-slate-900 font-semibold" data-type="all">All</button>
-              <button class="ach-filter text-slate-500 hover:text-slate-900" data-type="academic">Academic</button>
-              <button class="ach-filter text-slate-500 hover:text-slate-900" data-type="research">Research</button>
-              <button class="ach-filter text-slate-500 hover:text-slate-900" data-type="eca">ECA</button>
-            </div>
+                <!-- Achievement Type Filter -->
+                <div class="mb-4 flex justify-center items-center gap-6 text-sm md:text-[14px] lg:hidden">
+                  <button class="ach-filter text-slate-900 font-semibold" data-type="all">All</button>
+                  <button class="ach-filter text-slate-500 hover:text-slate-900" data-type="academic">Academic</button>
+                  <button class="ach-filter text-slate-500 hover:text-slate-900" data-type="research">Research</button>
+                  <button class="ach-filter text-slate-500 hover:text-slate-900" data-type="eca">ECA</button>
+                </div>
 
-            <!-- Achievement list -->
-            <div class="space-y-6 md:space-y-10">
+                <!-- Achievement list -->
+                <div class="flex flex-col gap-6 md:gap-8 w-full">
 
-              <!-- Card 1: YouTube -->
-              <article data-type="academic"
-                class="ach-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
-                <div class="flex flex-col lg:flex-row">
+                  <!-- Card 1: YouTube -->
+                  <article data-type="academic"
+                    class="ach-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+                    <div class="flex flex-col lg:flex-row">
 
-                  <!-- LEFT: content -->
-                  <div class="flex-1 min-w-0 p-4 md:p-8">
-                    <span
-                      class=" inline-flex items-center text-[14px] font-semibold px-3 py-1 rounded-full tracking-wider bg-red-100 text-[#800000]">
-                      Scholarship
-                    </span>
+                      <div class="flex-1 min-w-0 p-4 md:p-8">
+                        <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
+                          <span
+                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-red-100 text-[#800000]">
+                            Scholarship
+                          </span>
 
-                    <span
-                      class=" inline-flex items-center text-[14px] font-semibold px-3 py-1 rounded-full tracking-wider bg-yellow-100 text-yellow-700">Academic
-                      Milestone</span>
+                          <span
+                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-yellow-100 text-yellow-700">
+                            Academic Milestone
+                          </span>
 
-                    <h3 class="mt-4 font-semibold text-xl text-slate-900">
-                      Global Korea Scholarship Recipient, 2023
+                          <h3 class="mt-4 text-xl text-slate-900">
+                            Global Korea Scholarship Recipient, 2023
+                          </h3>
+                        </span>
+
+                        <p
+                          class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-[13px] leading-snug break-words">
+                          Achieved the fully-funded GKS scholarship 2023 by the
+                          Government of Republic of Korea while completing Bachelor of
+                          Science degree at Daffodil International University and
+                          studied one semester on-site in South Korea under the
+                          Semester Exchange Program.
+                        </p>
+
+                        <p class="text-sm md:text-[13px] text-slate-500 mt-2 flex items-center gap-1">
+                          <span>Receiving Year: Fall 2023, Dongseo University, SK</span>
+                          <img src="../Image/south-korea-flag.png" alt="South Korea" class="w-5 h-[14px] object-cover">
+                        </p>
+                      </div>
+
+                      <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
+                        <div class="aspect-video min-h-[230px] w-full bg-gray-50 lg:h-full lg:min-h-[220px]">
+                          <iframe class="h-full w-full" src="https://www.youtube.com/embed/zmkiBl4CQtU"
+                            title="Global Korea Scholarship" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+                            allowfullscreen>
+                          </iframe>
+                        </div>
+                      </div>
+
+                    </div>
+                  </article>
+
+                  <!-- Card 2: Image -->
+                  <article data-type="research"
+                    class="ach-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+                    <div class="flex flex-col lg:flex-row">
+
+                      <div class="flex-1 min-w-0 p-4 md:p-8">
+                        <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
+                          <span
+                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-green-100 text-green-700">
+                            Award
+                          </span>
+
+                          <span
+                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-purple-100 text-purple-700">
+                            Research
+                          </span>
+
+                          <h3 class="mt-4 text-xl text-slate-900">
+                            Research Award for Scholarly Publication in Reputed Indexed Journal
+                          </h3>
+                        </span>
+
+                        <p
+                          class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-[13px] leading-snug break-words">
+                          Recognized for scholarly publications in reputed indexed
+                          journals by the Division of Research and Department of
+                          Computer Science and Engineering, Daffodil International
+                          University.
+                        </p>
+
+                        <p class="text-sm md:text-[13px] text-slate-500 mt-2">
+                          Receiving Date: 20 May 2025
+                        </p>
+                      </div>
+
+                      <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
+                        <div class="h-full min-h-[220px] w-full bg-gray-50">
+                          <img src="../Image/award_certificate.jpg"
+                            alt="Nazmul Huda Badhon research award certificate from Daffodil International University"
+                            loading="lazy" decoding="async" class="h-full w-full object-cover" />
+                        </div>
+                      </div>
+
+                    </div>
+                  </article>
+
+                  <!-- Card 3: Image -->
+                  <article data-type="academic"
+                    class="ach-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+                    <div class="flex flex-col lg:flex-row">
+
+                      <div class="flex-1 min-w-0 p-4 md:p-8">
+                        <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
+                          <span
+                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-orange-100 text-orange-700">
+                            Bootcamp
+                          </span>
+
+                          <span
+                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-yellow-100 text-yellow-700">
+                            Academic Milestone
+                          </span>
+
+                          <h3 class="mt-4 text-xl text-slate-900">
+                            Top Performer of Computer Vision and Deep Learning for Medical Image Analysis Bootcamp, 2025
+                          </h3>
+                        </span>
+
+                        <p class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-[13px]">
+                          Received token of appreciation for top performance in
+                          Computer Vision & Medical Image Analysis Bootcamp organized
+                          by Health Informatics Research Lab, Daffodil International
+                          University.
+                        </p>
+
+                        <p class="text-sm md:text-[13px] text-slate-500 mt-2">
+                          Receiving Date: 30 July 2025
+                        </p>
+                      </div>
+
+                      <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
+                        <div class="h-full min-h-[220px] w-full bg-gray-50">
+                          <img src="../Image/bootcamp.png"
+                            alt="Nazmul Huda Badhon top performer certificate for Computer Vision and Deep Learning bootcamp"
+                            loading="lazy" decoding="async" class="h-full w-full object-cover" />
+                        </div>
+                      </div>
+
+                    </div>
+                  </article>
+
+                  <!-- Card 4: Image -->
+                  <article data-type="research"
+                    class="ach-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+                    <div class="flex flex-col lg:flex-row">
+
+                      <div class="flex-1 min-w-0 p-4 md:p-8">
+                        <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
+                          <span
+                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-pink-100 text-pink-700">
+                            Peer Reviewer
+                          </span>
+
+                          <span
+                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-purple-100 text-purple-700">
+                            Research
+                          </span>
+
+                          <h4 class="mt-4 text-xl text-slate-900">
+                            Reviewed research article for Digital Health Journal, Sage Publishing, 2025
+                          </h4>
+                        </span>
+
+                        <p class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-[13px]">
+                          Received an acknowledgement certificate for serving as a peer reviewer for
+                          <i>Digital Health</i>, a journal published by SAGE Publishing. I contributed to the scholarly
+                          review process by evaluating a submitted research manuscript and providing constructive
+                          academic feedback.
+                        </p>
+
+                        <p class="text-sm md:text-[13px] text-slate-500 mt-2">
+                          Receiving Date: 05 August 2025
+                        </p>
+                      </div>
+
+                      <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
+                        <div class="h-[300px] min-h-[220px] w-full bg-gray-50">
+                          <img src="../Image/reviewer.jpg"
+                            alt="Nazmul Huda Badhon peer reviewer acknowledgement certificate from SAGE Digital Health journal"
+                            loading="lazy" decoding="async" class="h-full w-full object-contain" />
+                        </div>
+                      </div>
+
+                    </div>
+                  </article>
+
+                  <!-- Card 5: Image -->
+                  <article data-type="eca"
+                    class="ach-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+                    <div class="flex flex-col lg:flex-row">
+
+                      <div class="flex-1 min-w-0 p-4 md:p-8">
+                        <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
+                          <span
+                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-blue-100 text-blue-700">
+                            Voluntary Service
+                          </span>
+
+                          <span
+                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-teal-100 text-teal-700">
+                            ECA
+                          </span>
+
+                          <h4 class="mt-4 text-xl text-slate-900">
+                            Founding General Secretary, Daffodil Research Society, 2024
+                          </h4>
+                        </span>
+
+                        <p class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-[13px]">
+                          Served as Founding General Secretary for the Daffodil International University Research
+                          Society,
+                          2024. I contributed to the student community by organizing research initiatives and fostering
+                          academic collaboration.
+                        </p>
+
+                        <p class="text-sm md:text-[13px] text-slate-500 mt-2">
+                          Timeline: March-July, 2024
+                        </p>
+                      </div>
+
+                      <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
+                        <div class="h-[300px] min-h-[220px] w-full bg-gray-50">
+                          <img src="../Image/gs.jpg"
+                            alt="Nazmul Huda Badhon Founding General Secretary of Daffodil Research Society"
+                            loading="lazy" decoding="async" class="h-full w-full object-cover" />
+                        </div>
+                      </div>
+
+                    </div>
+                  </article>
+
+                  <!-- Card 6: Image -->
+                  <article data-type="eca"
+                    class="ach-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+                    <div class="flex flex-col lg:flex-row">
+
+                      <div class="flex-1 min-w-0 p-4 md:p-8">
+                        <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
+                          <span
+                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-300 text-slate-700">
+                            International Student Activity
+                          </span>
+
+                          <span
+                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-teal-100 text-teal-700">
+                            ECA
+                          </span>
+
+                          <h4 class="mt-4 text-xl text-slate-900">
+                            Team Leader, Dongseo University International Camp, 2023
+                          </h4>
+                        </span>
+
+                        <p class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-[13px]">
+                          Participated as Team Leader for the Dongseo University International Camp, 2023. I contributed
+                          to the international student community by building cross-cultural collaboration and exchanging
+                          ideas through various camp activities.
+                        </p>
+
+                        <p class="text-sm md:text-[13px] text-slate-500 mt-2">
+                          Timeline: September, 2023. Place: South Korea
+                        </p>
+                      </div>
+
+                      <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
+                        <div class="h-[300px] min-h-[220px] w-full bg-gray-50">
+                          <img src="../Image/camp2.jpg"
+                            alt="Nazmul Huda Badhon team leader at Dongseo University International Camp 2023 in South Korea"
+                            loading="lazy" decoding="async" class="h-full w-full object-cover" />
+                        </div>
+                      </div>
+
+                    </div>
+                  </article>
+
+                  <!-- Card 7: Image -->
+                  <article data-type="eca"
+                    class="ach-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+                    <div class="flex flex-col lg:flex-row">
+
+                      <div class="flex-1 min-w-0 p-4 md:p-8">
+                        <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
+                          <span
+                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-orange-100 text-orange-700">
+                            Cultural Event
+                          </span>
+
+                          <span
+                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-teal-100 text-teal-700">
+                            ECA
+                          </span>
+
+                          <h4 class="mt-4 text-xl text-slate-900">
+                            Participant, Cultural Event by Embassy of the People's Republic of Korea in Bangladesh
+                          </h4>
+                        </span>
+
+                        <p class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-[13px]">
+                          Participated in a cultural event in Bangladesh South Korean Embassy. It was an exciting
+                          opportunity to showcase my talents and connect with other participants in K-pop culture.
+                        </p>
+
+                        <p class="text-sm md:text-[13px] leading-snug text-slate-500 mt-2">
+                          Timeline: 2025. Place: Bangladesh
+                        </p>
+                      </div>
+
+                      <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
+                        <div class="h-[300px] min-h-[220px] w-full bg-gray-50">
+                          <img src="../Image/sing_embassy.jpg"
+                            alt="Nazmul Huda Badhon participating in Korean Embassy cultural event in Bangladesh"
+                            loading="lazy" decoding="async" class="h-full w-full object-cover" />
+                        </div>
+                      </div>
+
+                    </div>
+                  </article>
+
+                </div>
+              </div>
+
+              <!-- RIGHT: achievement type filter/sidebar -->
+              <aside class="hidden lg:block h-full" style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
+                <div class="text-sm text-slate-700">
+                  <div>
+                    <h3 class="text-xs font-bold uppercase tracking-[0.25em] text-slate-500 mb-2">
+                      By Type
                     </h3>
 
-                    <p class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-base">
-                      Achieved the fully-funded GKS scholarship 2023 by the
-                      Government of Republic of Korea while completing Bachelor of
-                      Science degree at Daffodil International University and
-                      studied one semester on-site in South Korea under the
-                      Semester Exchange Program.
-                    </p>
+                    <div class="border-t border-slate-300 pt-3">
+                      <button type="button"
+                        class="ach-filter flex w-full justify-between text-left px-3 py-2 rounded-sm bg-black text-white font-semibold"
+                        data-type="all">
+                        <span>All</span><span>7</span>
+                      </button>
 
-                    <p class="text-sm md:text-base text-slate-500 mt-2 flex items-center gap-1">
-                      <span>Receiving Year: Fall 2023, Dongseo University, SK</span>
-                      <img src="../Image/south-korea-flag.png" alt="South Korea" class="w-5 h-[14px] object-cover">
-                    </p>
-                  </div>
+                      <button type="button"
+                        class="ach-filter flex w-full justify-between text-left px-3 py-2 rounded-sm text-slate-500 font-normal hover:text-slate-900"
+                        data-type="academic">
+                        <span>Academic</span><span>2</span>
+                      </button>
 
-                  <!-- RIGHT: video with no padding -->
-                  <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
-                    <div class="aspect-video min-h-[230px] w-full bg-gray-50 lg:h-full lg:min-h-[220px]">
-                      <iframe class="h-full w-full" src="https://www.youtube.com/embed/zmkiBl4CQtU"
-                        title="Global Korea Scholarship" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
-                        allowfullscreen>
-                      </iframe>
+                      <button type="button"
+                        class="ach-filter flex w-full justify-between text-left px-3 py-2 rounded-sm text-slate-500 font-normal hover:text-slate-900"
+                        data-type="research">
+                        <span>Research</span><span>2</span>
+                      </button>
+
+                      <button type="button"
+                        class="ach-filter flex w-full justify-between text-left px-3 py-2 rounded-sm text-slate-500 font-normal hover:text-slate-900"
+                        data-type="eca">
+                        <span>ECA</span><span>3</span>
+                      </button>
                     </div>
                   </div>
-
                 </div>
-              </article>
-
-              <!-- Card 2: Image -->
-              <article data-type="research"
-                class="ach-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
-                <div class="flex flex-col lg:flex-row">
-
-                  <!-- LEFT: content -->
-                  <div class="flex-1 min-w-0 p-4 md:p-8">
-                    <span
-                      class=" inline-flex items-center text-[14px] font-semibold px-3 py-1 rounded-full tracking-wider bg-green-100 text-green-700">
-                      Award
-                    </span>
-
-                    <span
-                      class=" inline-flex items-center text-[14px] font-semibold px-3 py-1 rounded-full tracking-wider bg-purple-100 text-purple-700">Research</span>
-
-                    <h3 class="mt-4 font-semibold text-xl text-slate-900">
-                      Research Award for Scholarly Publication in Reputed Indexed
-                      Journal
-                    </h3>
-
-                    <p class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-base">
-                      Recognized for scholarly publications in reputed indexed
-                      journals by the Division of Research and Department of
-                      Computer Science and Engineering, Daffodil International
-                      University.
-                    </p>
-
-                    <p class="text-sm md:text-base text-slate-500 mt-2">
-                      Receiving Date: 20 May 2025
-                    </p>
-                  </div>
-
-                  <!-- RIGHT: image with no padding -->
-                  <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
-                    <div class="h-full min-h-[220px] w-full bg-gray-50">
-                      <img src="../Image/award_certificate.jpg"
-                        alt="Nazmul Huda Badhon research award certificate from Daffodil International University"
-                        loading="lazy" decoding="async" class="h-full w-full object-cover" />
-                    </div>
-                  </div>
-
-                </div>
-              </article>
-
-              <!-- Card 3: Image -->
-              <article data-type="academic"
-                class="ach-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
-                <div class="flex flex-col lg:flex-row">
-
-                  <!-- LEFT: content -->
-                  <div class="flex-1 min-w-0 p-4 md:p-8">
-                    <span
-                      class=" inline-flex items-center text-[14px] font-semibold px-3 py-1 rounded-full tracking-wider bg-orange-100 text-orange-700">
-                      Bootcamp
-                    </span>
-
-                    <span
-                      class=" inline-flex items-center text-[14px] font-semibold px-3 py-1 rounded-full tracking-wider bg-yellow-100 text-yellow-700">Academic
-                      Milestone</span>
-
-                    <h3 class="mt-4 font-semibold text-xl text-slate-900">
-                      Top Performer of Computer Vision and Deep Learning for Medical Image Analysis Bootcamp, 2025
-                    </h3>
-
-                    <p class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-base">
-                      Received token of appreciation for top performance in
-                      Computer Vision & Medical Image Analysis Bootcamp organized
-                      by Health Informatics Research Lab, Daffodil International
-                      University.
-                    </p>
-
-                    <p class="text-sm md:text-base text-slate-500 mt-2">
-                      Receiving Date: 30 July 2025
-                    </p>
-                  </div>
-
-                  <!-- RIGHT: image with no padding -->
-                  <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
-                    <div class="h-full min-h-[220px] w-full bg-gray-50">
-                      <img src="../Image/bootcamp.png"
-                        alt="Nazmul Huda Badhon top performer certificate for Computer Vision and Deep Learning bootcamp"
-                        loading="lazy" decoding="async" class="h-full w-full object-cover" />
-                    </div>
-                  </div>
-
-                </div>
-              </article>
-
-              <!-- Card 4: Image -->
-              <article data-type="research"
-                class="ach-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
-                <div class="flex flex-col lg:flex-row">
-
-                  <!-- LEFT: content -->
-                  <div class="flex-1 min-w-0 p-4 md:p-8">
-                    <span
-                      class=" inline-flex items-center text-[14px] font-semibold px-3 py-1 rounded-full tracking-wider bg-pink-100 text-pink-700">
-                      Peer Reviewer
-                    </span>
-
-                    <span
-                      class=" inline-flex items-center text-[14px] font-semibold px-3 py-1 rounded-full tracking-wider bg-purple-100 text-purple-700">Research</span>
-
-                    <h4 class="mt-4 font-semibold text-xl text-slate-900">
-                      Reviewed research article for Digital Health Journal, Sage Publishing, 2025
-                    </h4>
-
-                    <p class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-base">
-                      Received an acknowledgement certificate for serving as a peer reviewer for
-                      <i>Digital Health</i>, a journal published by SAGE Publishing. I contributed to the scholarly
-                      review process by evaluating a
-                      submitted research manuscript and providing constructive academic feedback.
-                    </p>
-
-                    <p class="text-sm md:text-base text-slate-500 mt-2">
-                      Receiving Date: 05 August 2025
-                    </p>
-                  </div>
-
-                  <!-- RIGHT: image with no padding -->
-                  <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
-                    <div class="h-[300px] min-h-[220px] w-full bg-gray-50">
-                      <img src="../Image/reviewer.jpg"
-                        alt="Nazmul Huda Badhon peer reviewer acknowledgement certificate from SAGE Digital Health journal"
-                        loading="lazy" decoding="async" class="h-full w-full object-contain" />
-                    </div>
-                  </div>
-
-                </div>
-              </article>
-
-              <!-- Card 5: Image -->
-              <article data-type="eca" class="ach-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
-                <div class="flex flex-col lg:flex-row">
-
-                  <!-- LEFT: content -->
-                  <div class="flex-1 min-w-0 p-4 md:p-8">
-                    <span
-                      class=" inline-flex items-center text-[14px] font-semibold px-3 py-1 rounded-full tracking-wider bg-blue-100 text-blue-700">
-                      Voluntary Service
-                    </span>
-
-                    <span
-                      class=" inline-flex items-center text-[14px] font-semibold px-3 py-1 rounded-full tracking-wider bg-teal-100 text-teal-700">ECA</span>
-
-                    <h4 class="mt-4 font-semibold text-xl text-slate-900">
-                      Founding General Secretary, Daffodil Research Society, 2024
-                    </h4>
-
-                    <p class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-base">
-                      Served as Founding General Secretary for the Daffodil International University Research Society,
-                      2024. I contributed to the student community by organizing research initiatives and fostering
-                      academic collaboration.
-                    </p>
-
-                    <p class="text-sm md:text-base text-slate-500 mt-2">
-                      Timeline: March-July, 2024
-                    </p>
-                  </div>
-
-                  <!-- RIGHT: image with no padding -->
-                  <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
-                    <div class="h-[300px] min-h-[220px] w-full bg-gray-50">
-                      <img src="../Image/gs.jpg"
-                        alt="Nazmul Huda Badhon Founding General Secretary of Daffodil Research Society" loading="lazy"
-                        decoding="async" class="h-full w-full object-cover" />
-                    </div>
-                  </div>
-
-                </div>
-              </article>
-
-              <!-- Card 5: Image -->
-              <article data-type="eca" class="ach-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
-                <div class="flex flex-col lg:flex-row">
-
-                  <!-- LEFT: content -->
-                  <div class="flex-1 min-w-0 p-4 md:p-8">
-                    <span
-                      class=" inline-flex items-center text-[14px] font-semibold px-3 py-1 rounded-full tracking-wider bg-slate-300 text-slate-700">
-                      International Student Activity
-                    </span>
-
-                    <span
-                      class=" inline-flex items-center text-[14px] font-semibold px-3 py-1 rounded-full tracking-wider bg-teal-100 text-teal-700">ECA</span>
-
-                    <h4 class="mt-4 font-semibold text-xl text-slate-900">
-                      Team Leader, Dongseo University International Camp, 2023
-                    </h4>
-
-                    <p class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-base">
-                      Participated as Team Leader for the Dongseo University International Camp, 2023. I contributed to
-                      the international student community by building cross-cultural collaboration and exchanging ideas
-                      through various camp activities.
-                    </p>
-
-                    <p class="text-sm md:text-base text-slate-500 mt-2">
-                      Timeline: September, 2023. Place: South Korea
-                    </p>
-                  </div>
-
-                  <!-- RIGHT: image with no padding -->
-                  <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
-                    <div class="h-[300px] min-h-[220px] w-full bg-gray-50">
-                      <img src="../Image/camp2.jpg"
-                        alt="Nazmul Huda Badhon team leader at Dongseo University International Camp 2023 in South Korea"
-                        loading="lazy" decoding="async" class="h-full w-full object-cover" />
-                    </div>
-                  </div>
-
-                </div>
-              </article>
-
-              <!-- Card 6: Image -->
-              <article data-type="eca" class="ach-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
-                <div class="flex flex-col lg:flex-row">
-
-                  <!-- LEFT: content -->
-                  <div class="flex-1 min-w-0 p-4 md:p-8">
-                    <span
-                      class=" inline-flex items-center text-[14px] font-semibold px-3 py-1 rounded-full tracking-wider bg-orange-100 text-orange-700">
-                      Cultural Event
-                    </span>
-
-                    <span
-                      class=" inline-flex items-center text-[14px] font-semibold px-3 py-1 rounded-full tracking-wider bg-teal-100 text-teal-700">ECA</span>
-
-                    <h4 class="mt-4 font-semibold text-xl text-slate-900">
-                      Participant, Cultural Event by Embassy of the People's Republic of Korea in Bangladesh
-                    </h4>
-
-                    <p class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-base">
-                      Participated in a cultural event in Bangladesh South Korean Embassy. It was an exciting
-                      opportunity to showcase my talents and connect with other participants in K-pop culture.
-                    </p>
-
-                    <p class="text-sm md:text-base text-slate-500 mt-2">
-                      Timeline: 2025. Place: Bangladesh
-                    </p>
-                  </div>
-
-                  <!-- RIGHT: image with no padding -->
-                  <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
-                    <div class="h-[300px] min-h-[220px] w-full bg-gray-50">
-                      <img src="../Image/sing_embassy.jpg"
-                        alt="Nazmul Huda Badhon participating in Korean Embassy cultural event in Bangladesh"
-                        loading="lazy" decoding="async" class="h-full w-full object-cover" />
-                    </div>
-                  </div>
-
-                </div>
-              </article>
+              </aside>
 
             </div>
           </div>
         </section>
       </div>
     </div>
-    <br />
   </section>
 
-  <!-- COPYRIGHT FOOTER -->
-  <footer class="bg-[#06142A] w-full py-1 border-t border-white/10">
+  <!-- COPYRIGHT FOOTER
+  <footer id="sitefooter" class="w-full py-1 border-t border-white/10">
     <div class="max-w-7xl mx-auto px-4 text-center">
-      <p class="text-sm text-white/80 tracking-wide font-awesome">
-        © 2026
+      <p class="text-sm text-[#06142A] tracking-wide font-awesome"> © 2026
         <span class="hover:opacity-90 transition"> Nazmul Huda Badhon </span>
         . All Rights Reserved.
       </p>
     </div>
-  </footer>
+  </footer> -->
 
   <!-- Back to Top Button -->
   <button id="backToTop" aria-label="Back to top "

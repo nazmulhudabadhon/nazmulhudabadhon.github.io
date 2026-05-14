@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style/style.css" />
 
   <!-- Current favicon for UI -->
@@ -67,43 +68,50 @@
 
 <body class="scroll-smooth">
   <!-- ===== TOP NAVBAR ===== -->
-  <header id="topHeader" class="hidden lg:block site-topbar w-full h-14 bg-[#06142A]">
-    <div class="w-full px-6 md:px-12">
-      <div class="h-14 flex items-center justify-between">
-        <div class="hidden lg:block brand text-white font-semibold">
-          <a href="https://nazmulhudabadhon.github.io/" class="hover:text-[#D3D3D3]"> NAZMUL HUDA BADHON </a>
-          <p class="text-left text-xs text-[#D3D3D3] tracking-wide">Bachelor
-            of Science Graduate | Deep Learning Research</p>
+  <header id="topHeader" class="hidden lg:block site-topbar w-full h-14 font-medium">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 md:-translate-x-9">
+      <div class="h-14 flex items-center gap-4">
+
+        <!-- LEFT: matches profile column -->
+        <div class="w-1/3 flex justify-end">
+          <div class="w-[300px] text-left brand text-[#06142A]">
+            <a href="https://nazmulhudabadhon.github.io/" class="hover:text-[#0A3D91]"
+              style="font-family: 'Libre Baskerville', Georgia, serif;">
+              <b>Nazmul Huda</b> Badhon
+            </a>
+          </div>
         </div>
 
-        <nav id="topNav" class="hidden lg:flex items-center gap-6 text-white font-medium">
-          <a href="../" class="block hover:text-slate-200">Home</a>
-          <a href="./research/" class="block hover:text-slate-200">Publications</a>
-          <a href="./projects/" class="block hover:text-slate-200">Projects</a>
-          <a href="./achievement/" class="block hover:text-slate-200">Achievements</a>
-          <a href="./resume/" target="_blank" rel="noopener" class="block hover:text-slate-200">CV</a>
+        <!-- RIGHT: matches main content column -->
+        <nav id="topNav" class="w-2/3 flex items-center justify-end gap-6 text-[#06142A] font-medium">
+          <a href="./" class="nav-link active block hover:text-[#0A3D91]">Home</a>
+          <a href="./research/" class="nav-link block hover:text-[#0A3D91]">Publications</a>
+          <a href="./projects/" class="nav-link block hover:text-[#0A3D91]">Projects</a>
+          <a href="./achievement/" class="nav-link block hover:text-[#0A3D91]">Achievements</a>
+          <a href="./resume/" target="_blank" rel="noopener" class="nav-link block hover:text-[#0A3D91]">CV</a>
         </nav>
+
       </div>
     </div>
   </header>
 
   <!-- Mobile header (phones only) -->
-  <header id="mobileHeader" class="md:hidden sticky top-0 z-50 bg-[#06142A] text-white w-full">
+  <header id="topHeader" class="md:hidden sticky top-0 z-50 text-[#06142A] w-full">
     <div class="flex items-center justify-between px-4 py-3">
       <!-- LEFT TEXT BLOCK -->
       <div class="flex flex-col">
-        <span class="font-semibold text-slate-300 tracking-wide">
+        <span class=" text-slate-700 tracking-wide" style="font-family: 'Libre Baskerville', Georgia, serif;">
           NAZMUL HUDA BADHON </span>
-        <p class="text-left text-xs text-[#D3D3D3] tracking-wide">B.Sc. Graduate | Deep Learning Research</p>
+        <p class="text-left text-xs text-slate-500 tracking-wide">B.Sc. Graduate | Deep Learning Research</p>
       </div>
-      <button id="mobileMenuBtn" class="text-white text-2xl focus:outline-none" aria-label="Toggle menu">
+      <button id="mobileMenuBtn" class="text-[#06142A] text-2xl focus:outline-none" aria-label="Toggle menu">
         <i class="fa-solid fa-bars" id="menuOpenIcon"></i>
         <i class="fa-solid fa-xmark hidden" id="menuCloseIcon"></i>
       </button>
     </div>
 
     <!-- Collapsible nav (hidden by default, header remains visible) -->
-    <nav id="mobileMenu" class="hidden flex-col gap-2 px-4 pb-4 text-slate-200 font-medium">
+    <nav id="mobileMenu" class="hidden flex-col gap-2 px-4 pb-4 hover:text-[#0A3D91] text-slate-900 font-medium">
       <br />
       <a href="./" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Home</a><br /><br />
       <a href="./research/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Publications</a><br /><br />
@@ -116,9 +124,10 @@
 
   <!-- ===== MAIN CONTENT ===== -->
   <section>
-    <div class="drawer lg:drawer-open bg-[#FFFFFF]">
+    <div class="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content flex flex-col w-full">
+
         <!-- About -->
         <section id="about" class="pt-4 pb-6 mt-2 md:mt-6">
           <!-- Flex container -->
@@ -138,18 +147,9 @@
                   </div>
                 </div>
                 <div class="profile-footer">
-                  <!-- Profile Name -->
-                  <p class="profile-name">
-                    Nazmul Huda Badhon (he/him)<br />
-                    <a class="status-cta lg:hidden" href="./resume/" target="_blank" rel="noopener">
-                      <span>View CV</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
-                        aria-hidden="true">
-                        <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z"></path>
-                        <path d="M5 5h6v2H7v10h10v-4h2v6H5V5z"></path>
-                      </svg>
-                    </a>
-                  </p>
+                  <a class="status-card lg:hidden" href="./resume/" target="_blank" rel="noopener">
+                    <span style="font-size: 14px; font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">View CV</span>
+                  </a>
 
                   <p class="profile-item">
                     <i class="fa-solid fa-envelope text-[#06142A] w-6 mr-3 mt-1"></i>
@@ -216,17 +216,17 @@
             <div class="w-full md:w-2/3 md:reveal min-w-0 pl-0 md:pl-4">
               <!-- Biography Header -->
               <p class="text-justify text-slate-800 mt-6 md:mt-0 leading-relaxed">
-                Nazmul Huda Badhon is a <span class="font-semibold">Bachelor
-                  of Science graduate in Computer Science and Engineering,
-                  Class of 2026,</span> from <span class="font-semibold" style="color: crimson">Daffodil International
-                  University</span>. His undergraduate thesis is on
+                <span class="profile-name"><b>Nazmul Huda</b> Badhon</span> <span
+                  style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif; font-size: 15px;">(He/his) ·
+                  Bachelor of Science graduate · Computer Science and Engineering,
+                  <span style="color: #A51C30">Daffodil International
+                    University</span>, Class of 2026.</span><br><br> His undergraduate thesis is on
                 "Tabular data based lightweight convolutional neural networks for electricity energy demand prediction"
                 under the supervision of Associate Professor <a
                   href="https://scholar.google.com/citations?user=mC0VMYQAAAAJ&hl=en"
-                  class="font-semibold hover:text-red-500 text-orange-500 hover:underline hover:decoration-red-400">Nazmun
-                  Nessa Moon</a>. His research focuses on <span class="academic-emphasis">designing computationally
-                  efficient
-                  deep neural network architectures</span>.
+                  class=" hover:text-red-500 text-[#00778B] underline hover:decoration-red-400">Nazmun
+                  Nessa Moon</a>. His research focuses on <span class="academic-emphasis">designing
+                  deep neural network architectures, computer vision tasks, medical imaging analysis</span>.
               </p>
 
               <!-- Academic Status Line -->
@@ -236,14 +236,15 @@
                 </span>
 
                 <div class="status-text">
-                  <p class="font-semibold">
+                  <p>
                     <span class="tw-slot">
                       <span class="tw-reserve">Exploring research roles in
                         Deep Learning & Computer Vision</span>
-                      <span id="animatedText" class="tw-anim text-[#2563EB] font-semibold"></span>
+                      <span id="animatedText" class="tw-anim text-[#2563EB] "></span>
                     </span>
                   </p>
-                  <p class="opacity-80">Deep Learning · Machine Learning ·
+                  <p class="opacity-80" style="font-size: 13px;">
+                    Deep Learning · Machine Learning ·
                     Computer Vision</p>
                 </div>
 
@@ -257,12 +258,11 @@
               </div>
 
               <!--Biography-->
-              <div class="section-header">
-                <span class="section-ic"> <i class="fa-solid fa-file-lines text-[#0A3D91]"></i> </span>
-                <h2 class="section-title">Academic Profile</h2>
-                <span class="section-rule"></span>
+              <div class="academic-section-heading">
+                <span class="academic-section-kicker">academic profile</span>
+                <span class="academic-section-title">Profile</span>
               </div>
-              <p class="text-justify text-slate-800 md:text-awesome mt-2 mb-4 leading-relaxed" style="font-size: 15px">
+              <p class="text-justify text-slate-800 md:text-awesome mt-2 mb-4 leading-relaxed" style="font-size: 14px">
                 My research journey began during my second year of
                 undergraduate studies at Daffodil International University,
                 Bangladesh. While studying there I took part in a <span class="academic-emphasis">semester exchange
@@ -270,29 +270,21 @@
                   at Dongseo
                   University, South Korea</span>, and this experience
                 significantly strengthened my interest in deep learning and
-                advanced AI research. During this period, I formed and worked
-                with <span class="academic-emphasis">a dedicated research
-                  team</span>, collaboratively developing machine learning and
-                deep learning projects and systematically publishing our
-                findings in peer-reviewed journals.
-                <br />
-                <br />
-                I have experience in international research collaboration with
-                research teams across multiple countries. Throughout this
+                advanced AI research. Throughout this
                 journey, I have had the privilege of collaborating closely
                 with my research mentor <a href="https://scholar.google.com/citations?user=eg3QPhcAAAAJ&hl=en"
-                  class="font-semibold text-orange-500 hover:text-red-500 hover:underline hover:decoration-red-400">Imrus
+                  class="text-[#00778B] underline hover:decoration-red-400">Imrus
                   Salehin</a> and team members <a href="https://scholar.google.com/citations?user=-LaCK8oAAAAJ&hl=en"
-                  class="font-semibold text-orange-500 hover:text-red-500 hover:underline hover:decoration-red-400">SM
+                  class="text-[#00778B] underline hover:decoration-red-400">SM
                   Noman</a>, <a href="https://scholar.google.com/citations?user=TRul1CgAAAAJ&hl=en"
-                  class="font-semibold text-orange-500 hover:text-red-500 hover:underline hover:decoration-red-400">Md
+                  class=" text-[#00778B] underline hover:decoration-red-400">Md
                   Tomal Ahmed Sajib</a>, <a href="https://scholar.google.com/citations?user=fFd-BXEAAAAJ&hl=en"
-                  class="font-semibold text-orange-500 hover:text-red-500 hover:underline hover:decoration-red-400">Nazrul
+                  class="text-[#00778B] underline hover:decoration-red-400">Nazrul
                   Amin</a>, and
 
                 <a href="https://scholar.google.com/citations?user=wpGO__oAAAAJ&hl=en"
-                  class="font-semibold text-orange-500 hover:text-red-500 hover:underline hover:decoration-red-400">Pritom
-                  Saha</a>. These collaborations have resulted in <span class="font-semibold">several peer-reviewed
+                  class=" text-[#00778B] underline hover:decoration-red-400">Pritom
+                  Saha</a>. These collaborations have resulted in <span class="">several peer-reviewed
                   publications in
                   high-impact venues</span> including, <i>Global Energy
                   Interconnection,
@@ -303,7 +295,7 @@
               <!-- Biography Carousel -->
               <section class="act mt-2" aria-labelledby="actTitle">
                 <div class="act__head">
-                  <h2 id="actTitle">Academic Highlights</h2>
+                  <h2 id="actTitle" class="academic-section-kicker">Academic Highlights</h2>
                   <br />
 
                   <div class="act__controls">
@@ -404,12 +396,12 @@
 
               <!-- End of Biography Carousel -->
 
-              <p class="text-justify text-slate-800 md:text-slate-800 mt-6 leading-relaxed" style="font-size: 15px">
+              <p class="text-justify text-slate-800 md:text-slate-800 mt-6" style="font-size: 14px">
                 My work and academic efforts have been recognized through
-                <span class="font-semibold">key honors</span> including the
-                <span class="font-semibold" style="color: dodgerblue">fully
+                <span class="">key honors</span> including the
+                <span class="" style="color: dodgerblue">fully
                   funded Global Korea Scholarship GKS in 2023</span> by the
-                Government of the Republic of Korea and the <a class="font-semibold" href="./research/"> Research Award
+                Government of the Republic of Korea and the <a class="" href="./research/"> Research Award
                   in 2024 and 2025</a>
                 from the
                 Division of Research and Department of Computer Science and
@@ -420,16 +412,12 @@
               <br />
 
               <!-- Education -->
-              <div class="section-header" id="education ">
-                <span class="section-ic">
-                  <i class="fa-solid fa-graduation-cap text-[#0A3D91]"></i>
-                </span>
-                <h2 class="section-title">Education</h2>
-                <span class="section-rule"></span>
+              <div class="academic-section-heading">
+                <span class="academic-section-kicker">academic background</span>
+                <span class="academic-section-title">Education</span>
               </div>
-
               <!-- Timeline wrapper -->
-              <div class="relative mt-4 mb-0" style="font-size: 16px">
+              <div class="relative mt-4 mb-0" style="font-size: 14px">
                 <!-- Bachelor -->
                 <div class="grid grid-cols-[24px_1fr] gap-[6px] items-start">
                   <!-- Left icon column -->
@@ -439,7 +427,7 @@
 
                   <!-- Right content column -->
                   <div class="min-w-0">
-                    <h3 class="text-slate-800 font-semibold leading-snug">
+                    <h3 class="text-slate-800  leading-snug">
                       Bachelor of Science in Computer Science and Engineering
                     </h3>
 
@@ -447,7 +435,7 @@
                     <div class="mt-1 text-slate-600">
                       <div class="flex flex-col gap-2 md:flex-row md:items-center md:gap-10">
                         <!-- University -->
-                        <div class="flex items-start gap-2 md:mr-6 min-w-0" style="font-size: 15px">
+                        <div class="flex items-start gap-2 md:mr-6 min-w-0" style="font-size: 14px">
                           <img src="./Image/diu.png " alt="DIU " class="w-4 h-4 shrink-0 mt-[2px] object-contain" />
                           <span class="leading-snug">
                             Daffodil International University,
@@ -458,7 +446,7 @@
 
                         <!-- Meta -->
                         <div class="flex flex-col gap-2 text-slate-700 md:flex-row md:items-center md:gap-3"
-                          style="font-size: 15px">
+                          style="font-size: 14px">
                           <span class="flex items-start gap-2 md:gap-4 md:mr-8">
                             <span>
                               <i class="fa-regular fa-calendar text-slate-500 mt-[2px] w-4 shrink-0"></i>
@@ -489,11 +477,11 @@
 
                   <!-- Right content column -->
                   <div class="min-w-0">
-                    <h3 class="text-slate-800 font-semibold leading-snug"> Semester
+                    <h3 class="text-slate-800  leading-snug"> Semester
                       Exchange, Computer Engineering </h3>
 
                     <!-- Row: University + CGPA (mobile stacks, desktop stays one line) -->
-                    <div class="mt-1 mb-1 text-slate-600" style="font-size: 15px">
+                    <div class="mt-1 mb-1 text-slate-600" style="font-size: 14px">
                       <div class="flex flex-col gap-2 md:flex-row md:items-center md:gap-3">
                         <!-- University -->
                         <div class="flex items-start gap-2 min-w-0">
@@ -504,7 +492,7 @@
                         </div>
 
                         <!-- CGPA -->
-                        <div class="flex items-start gap-2 text-slate-700" style="font-size: 15px">
+                        <div class="flex items-start gap-2 text-slate-700" style="font-size: 14px">
                           <i class="fa-regular fa-file-lines text-slate-500 mt-[2px] w-4 shrink-0"></i>
                           <span>CGPA: 3.94 / 4.50</span>
                         </div>
@@ -512,7 +500,7 @@
                     </div>
 
                     <!-- Scholarship (mobile stacks, desktop stays one line) -->
-                    <div class="pt-1 border-t border-slate-100 w-[60%] text-slate-700" style="font-size: 15px">
+                    <div class="pt-1 border-t border-slate-100 w-[60%] text-slate-700" style="font-size: 14px">
                       <div class="flex flex-col gap-2 md:flex-row md:items-center md:gap-4">
                         <div class="flex items-start gap-2 min-w-0">
                           <img src="./Image/gks.png " alt="GKS Scholarship "
@@ -530,11 +518,9 @@
               <br>
 
               <!-- Recent Publications -->
-              <div class="section-header" id="publication ">
-                <span class="section-ic"> <i class="fa-regular fa-newspaper text-[#0A3D91]"></i>
-                </span>
-                <h2 class="section-title">Recent Key Publications</h2>
-                <span class="section-rule"></span>
+              <div class="academic-section-heading">
+                <span class="academic-section-kicker">selected works</span>
+                <span class="academic-section-title">Recent Key Publications</span>
               </div>
 
               <div class="rp-list mt-4 mb-0">
@@ -610,7 +596,6 @@
                     </p>
                   </div>
                 </div>
-                <br />
               </div>
             </div>
         </section>
@@ -618,9 +603,9 @@
     </div>
 
     <!-- COPYRIGHT FOOTER -->
-    <footer class="bg-[#06142A] w-full py-1 border-t border-white/10">
+    <footer id="sitefooter" class="w-full py-1 border-t border-white/10">
       <div class="max-w-7xl mx-auto px-4 text-center">
-        <p class="text-sm text-white/80 tracking-wide">
+        <p class="text-sm text-[#06142A] tracking-wide">
           © 2026
           <span class="hover:opacity-90 transition"> Nazmul Huda Badhon
           </span>

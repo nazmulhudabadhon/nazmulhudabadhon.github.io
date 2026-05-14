@@ -1,13 +1,54 @@
+:root {
+    --page-bg: #FAF9F6;
+    --card-bg: #FFFFFF;
+    --soft-bg: #F4F1EA;
+    --border: #D8D6CF;
+    --text-main: #111827;
+    --text-muted: #64748B;
+    --accent: #06142A;
+    --accent-link: #00778B;
+    --accent-red: #A51C30;
+}
+
+.nav-link {
+    position: relative;
+    padding-bottom: 1px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #041271;
+}
+
+.nav-link.active {
+    color: #111;
+}
+
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #041371;
+    border-radius: 999px;
+}
+
 /* ================================
    Global Typography
 ================================ */
 
 html,
 body {
-    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
-    font-size: 16.5px;
-    font-weight: 300;
-    color: #1f2937;
+    font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    background: var(--page-bg);
+    color: var(--text-main);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
 }
@@ -16,21 +57,43 @@ body {
     font-family: inherit;
 }
 
-/* Main academic body paragraphs only */
-#about p.text-justify {
-    font-size: 16px !important;
-    line-height: 1.45;
+p {
+    font-size: 14.5px;
+    line-height: 1.65;
+    font-weight: 400;
+}
+
+strong,
+b,
+.font-semibold {
+    font-weight: 700 !important;
+    color: #0f172a;
+}
+
+.metric-number {
+    font-weight: 700;
 }
 
 /* Navigation */
-#topNav a {
+#topHeader a {
     font-size: 16px;
 }
 
-/* Publication text */
-.rp-item p {
-    font-size: 16px;
-    line-height: 1.45;
+#topHeader,
+#topNav,
+.brand {
+    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+}
+
+/* Main academic body paragraphs only */
+#about p.text-justify {
+    font-size: 14.5px !important;
+    line-height: 1.65;
+}
+
+.profile-item {
+    font-size: 12.5px;
+    font-weight: 400;
 }
 
 .research-scroll {
@@ -42,37 +105,11 @@ body {
     display: none;
 }
 
-strong,
-b,
-.font-semibold {
-    font-weight: 500 !important;
-    color: #0f172a;
-}
-
-p,
-div,
-.profile-item,
-.rp-item p,
-.act__meta {
-    font-weight: 300;
-}
-
-p,
-
-span {
-    font-size: 16px;
-}
-
-.section-title,
-.metric-number {
-    font-weight: 500;
-}
-
 article {
     position: relative;
     overflow: hidden;
-    background: #fbfcff;
-    border: 1px solid #dbe3ef;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
     box-shadow: 0 8px 24px rgba(15, 23, 42, 0.055);
 }
 
@@ -84,7 +121,7 @@ article::before {
     top: 0;
     width: 4px;
     height: 100%;
-    background: linear-gradient(180deg, #06142A 0%, #0A3D91 55%, #8fb8e8 100%);
+    background: linear-gradient(180deg, var(--accent) 0%, #0A3D91 55%, #8fb8e8 100%);
 }
 
 /* Very subtle paper highlight */
@@ -133,31 +170,33 @@ article>* {
     }
 }
 
-
 /* ================================
-   Sticky Animated Top Nav
+   Transparent Top Nav - No Blur
 ================================ */
 
 #topHeader {
     position: sticky;
     top: 0;
     z-index: 9999;
-    transition: transform 280ms ease, box-shadow 280ms ease, background-color 280ms ease;
-    will-change: transform;
+
+    background: rgba(250, 249, 246, 0.35) !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+
+    transition: none;
 }
 
-#topHeader.is-scrolled {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-}
-
-#topHeader.nav-hide {
-    transform: translateY(-110%);
-}
-
+#topHeader.is-scrolled,
+#topHeader.nav-hide,
 #topHeader.nav-show {
-    transform: translateY(0);
+    background: rgba(250, 249, 246, 0.50) !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    transform: none !important;
+    box-shadow: none !important;
 }
-
 
 /* ================================
    Reveal Animations
@@ -174,7 +213,6 @@ article>* {
     transform: translateY(0);
 }
 
-
 /* ================================
    Photo Card Hover
 ================================ */
@@ -187,7 +225,6 @@ article>* {
     transform: translateY(-4px) scale(1.01);
     box-shadow: 0 18px 40px rgba(2, 8, 23, .12);
 }
-
 
 /* ================================
    Mobile About Spacing
@@ -211,7 +248,6 @@ article>* {
         padding-top: 1.25rem;
     }
 }
-
 
 /* ================================
    Projects Card
@@ -253,7 +289,6 @@ article>* {
     }
 }
 
-
 /* ================================
    Profile Sidebar
 ================================ */
@@ -275,20 +310,18 @@ article>* {
     margin-top: 2px;
     padding-top: 10px;
     text-align: center;
-    font-weight: 300;
-    color: #111827;
+    font-weight: 400;
+    color: var(--text-main);
 }
 
 .profile-name {
     margin: 0;
     padding-bottom: 10px;
     text-align: center;
-    font-size: 16px;
+    font-size: 20px;
     letter-spacing: 0.3px;
-    color: #111827;
-    border-bottom: 1px solid #e5e7eb;
+    color: var(--text-main);
 }
-
 
 /* Profile rows: icon left, text right */
 
@@ -298,14 +331,14 @@ article>* {
     align-items: start;
     column-gap: 8px;
     margin: 5px 0;
-    font-size: 14.5px;
-    color: #1f2937;
+    font-size: 12px;
+    color: var(--text-main);
     text-align: right;
 }
 
 .profile-item i {
     justify-self: start;
-    color: #06142A;
+    color: var(--accent);
     margin-top: 2px;
 }
 
@@ -317,18 +350,17 @@ article>* {
 }
 
 .profile-item+.profile-item {
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid var(--border);
     padding-top: 5px;
 }
-
 
 /* Profile icons */
 
 .profile-icons {
     margin-top: 4px;
     padding: 8px 0;
-    border-top: 1px solid #e5e7eb;
-    border-bottom: 1px solid #e5e7eb;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -356,13 +388,12 @@ article>* {
     transform: translateY(-2px);
 }
 
-
 /* Academic Portrait */
 
 .academic-portrait {
     width: 100%;
-    background: #ffffff;
-    border: 1px solid #d7dde8;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
     box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
     padding: 0;
     overflow: hidden;
@@ -375,94 +406,80 @@ article>* {
     object-fit: cover;
 }
 
-
 /* Scholar Metrics Block */
 
 .scholar-metrics {
+    width: 100%;
+    margin: 18px 0 0;
+    padding: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    width: 100%;
-    margin: 10px 0 0px;
-    padding: 12px 10px 11px;
-    background: linear-gradient(135deg, #f9fafb 0%, #f1f3f6 55%, #eceff3 100%);
-    border-radius: 7px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 0;
 }
 
 .metric-item {
-    text-align: center;
+    text-align: left;
+    padding: 10px 10px 10px;
+    border-right: 1px solid var(--border);
+}
+
+.metric-item:last-child {
+    border-right: none;
 }
 
 .metric-number {
     display: block;
     font-size: 20px;
     line-height: 1;
-    letter-spacing: 0.03em;
-}
-
-.metric-blue {
-    color: #1976d2;
-}
-
-.metric-pink {
-    color: #d81b60;
-}
-
-.metric-green {
-    color: #008000;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+    color: #111111;
 }
 
 .metric-label {
     display: block;
-    margin-top: 4px;
-    font-size: 14px;
+    margin-top: 6px;
+    font-size: 12px;
     font-weight: 400;
-    color: #555555;
+    color: var(--text-muted);
 }
-
 
 /* ================================
    Academic Status Line
 ================================ */
 
 .status-card {
-    display: flex;
+    display: grid;
+    grid-template-columns: 120px 1fr 110px;
     align-items: center;
-    gap: 10px;
-    padding: 11px 13px;
+    gap: 0;
     margin-top: 14px;
-    border-radius: 7px;
-    background: linear-gradient(135deg, #f9fafb 0%, #f1f3f6 55%, #eceff3 100%);
-    line-height: 1.28;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 0;
+    background: transparent;
+    line-height: 1.45;
     animation: fadeUp 0.4s ease-out both;
 }
 
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .status-badge {
+    height: 100%;
+    min-height: 58px;
+    padding: 14px 18px;
+    border-right: 1px solid var(--border);
+    border-radius: 0;
+    background: transparent;
+    color: var(--text-muted);
     font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
+    font-weight: 700;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    padding: 3px 9px;
-    border-radius: 999px;
-    color: lightcoral;
-    background: #ffffff;
-    border: 1px solid #d5deea;
     white-space: nowrap;
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 7px;
+    gap: 8px;
 }
 
 .status-badge .live-dot {
@@ -484,6 +501,63 @@ article>* {
     animation: badgePing 2s ease-out infinite;
 }
 
+.status-text {
+    padding: 10px 18px;
+    color: var(--text-main);
+    min-width: 0;
+}
+
+.status-text p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.status-text p:first-child {
+    font-weight: 700;
+    color: #111111;
+}
+
+.status-text p.opacity-80 {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.status-cta {
+    height: 100%;
+    min-height: 58px;
+    padding: 14px 16px;
+    border-left: 1px solid var(--border);
+    border-radius: 0;
+    background: transparent;
+    color: #111111;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.status-cta:hover {
+    background: var(--soft-bg);
+    color: #0A3D91;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes badgePing {
     0% {
         transform: scale(0.6);
@@ -501,76 +575,39 @@ article>* {
     }
 }
 
-.status-text {
-    font-size: 15px;
-    color: #1f2937;
-    flex: 1;
-}
-
-.status-text p {
-    font-size: 15px;
-    line-height: 1.28;
-    margin: 0;
-}
-
-.status-text p.opacity-80 {
-    font-size: 13.5px;
-    color: #64748b;
-    margin-top: 2px;
-}
-
-.status-cta {
-    width: fit-content;
-    font-size: 13px;
-    font-weight: 500;
-    padding: 5px 12px;
-    border-radius: 7px;
-    color: #0A3D91;
-    background: #ffffff;
-    border: 1px solid #d5deea;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.status-cta:hover {
-    background: #f8fafc;
-    border-color: #b8c7dc;
-}
-
 /* Mobile layout */
 @media (max-width: 640px) {
     .status-card {
-        display: grid;
         grid-template-columns: 1fr;
-        gap: 10px;
-        align-items: start;
     }
 
-    .status-card .status-badge {
-        justify-self: start;
-        order: 1;
+    .status-badge {
+        min-height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 12px 14px;
     }
 
-    .status-card .status-text {
-        order: 2;
-        line-height: 1.45;
+    .status-text {
+        padding: 12px 14px;
     }
 
     .status-card .status-text p {
-        margin: 0 0 2px 0;
-        font-size: 15px;
-        line-height: 1.45;
+        font-size: 14px;
+        line-height: 1.5;
     }
 
     .status-card .status-text p.opacity-80 {
-        font-size: 13.5px;
+        font-size: 11px;
+        letter-spacing: 0.12em;
     }
 
     .status-card .status-cta {
-        justify-self: start;
-        order: 3;
+        border-left: none;
+        border-top: 1px solid var(--border);
+        justify-content: flex-start;
+        padding: 12px 14px;
+        min-height: auto;
     }
 }
 
@@ -578,56 +615,28 @@ article>* {
    Section Headers
 ================================ */
 
-.section-header {
+.academic-section-heading {
     display: flex;
-    align-items: center;
-    gap: 14px;
-    margin: 16px 0 2px;
+    align-items: end;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px;
+    margin: 22px 0 14px;
 }
 
-.section-ic {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f8fafc;
-    border: 1px solid #e5e7eb;
-    color: #0f172a;
-    flex-shrink: 0;
+.academic-section-kicker {
+    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
 }
 
-.section-icon {
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f8fafc;
-    color: #0f172a;
-    flex-shrink: 0;
+.academic-section-title {
+    line-height: 1;
+    font-weight: 400;
+    color: #94a3b8;
 }
-
-.section-title {
-    font-size: 18px;
-    letter-spacing: 0.03em;
-    color: #062350;
-    margin: 0;
-    white-space: nowrap;
-}
-
-.section-rule {
-    height: 0.5px;
-    flex: 1;
-    background: #d5daee;
-    transform: translateY(2px);
-}
-
-.section-header--compact {
-    margin-top: -10px !important;
-}
-
 
 /* ================================
    Academic Highlights Carousel
@@ -651,8 +660,8 @@ article>* {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     border-radius: 10px;
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
     color: #808080;
     display: grid;
     place-items: center;
@@ -661,8 +670,8 @@ article>* {
 }
 
 .act__btn:hover {
-    background: #f8fafc;
-    border-color: #dbeafe;
+    background: var(--soft-bg);
+    border-color: var(--border);
     transform: translateY(-1px);
 }
 
@@ -695,10 +704,10 @@ article>* {
 .act__card {
     flex: 0 0 88%;
     scroll-snap-align: start;
-    background: #ffffff;
+    background: var(--card-bg);
     border-radius: 16px;
     overflow: hidden;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--border);
     box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
     transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
@@ -706,7 +715,7 @@ article>* {
 .act__card:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 26px rgba(15, 23, 42, 0.10);
-    border-color: #dbeafe;
+    border-color: var(--border);
 }
 
 @media (min-width: 768px) {
@@ -723,7 +732,7 @@ article>* {
 
 .act__media {
     aspect-ratio: 16 / 10;
-    background: #f1f5f9;
+    background: var(--soft-bg);
     overflow: hidden;
 }
 
@@ -754,7 +763,7 @@ article>* {
 .act__h3 {
     margin: 0 0 .35rem;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 1.25;
     color: #0f172a;
 }
@@ -762,14 +771,13 @@ article>* {
 .act__meta {
     margin: 0;
     font-size: 0.875rem;
-    color: #475569;
+    color: var(--text-muted);
 }
 
 .act__body p {
     font-size: 0.875rem;
     line-height: 1.45;
 }
-
 
 /* ================================
    Recent Publications
@@ -790,27 +798,27 @@ article>* {
 
 .rp-item {
     padding-bottom: 14px;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.rp-item p {
-    margin: 0;
-    color: #374151;
-    font-size: 16px;
+    border-bottom: 1px solid var(--border);
 }
 
 .rp-item a {
-    color: dodgerblue;
+    color: var(--accent-link);
     text-decoration: none;
 }
 
+.rp-item p {
+    font-size: 14px;
+    line-height: 1.65;
+}
+
 .rp-item a:hover {
+    color: var(--accent-red);
     text-decoration: underline;
 }
 
 .rp-link {
     margin-left: 8px;
-    color: #1d4ed8;
+    color: var(--accent-link);
     text-decoration: none;
 }
 
@@ -818,7 +826,6 @@ article>* {
     font-size: 14px;
     transform: translateY(1px);
 }
-
 
 /* ================================
    Education Mobile Fix
@@ -835,7 +842,6 @@ article>* {
         margin-left: 22px;
     }
 }
-
 
 /* ================================
    Stable Typewriter Container
@@ -885,7 +891,18 @@ article>* {
 /**/
 
 .academic-emphasis {
-    color: #0A3D91;
-    font-weight: 500;
+    color: var(--accent-red);
+    font-style: normal;
     background: transparent;
+}
+
+/*========================*/
+
+#siteFooter,
+#sitefooter {
+    background: rgba(250, 249, 246, 0.35) !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    transition: none;
 }

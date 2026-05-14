@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const textContainer = document.getElementById("animatedText");
     if (textContainer) {
-        // lock container height to tallest sentence for current width
         function stabilizeHeight() {
             const probe = document.createElement("span");
             probe.style.visibility = "hidden";
@@ -49,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
             rzTimer = setTimeout(stabilizeHeight, 150);
         });
 
-        // Typewriter loop (safe + smooth)
         let sIndex = 0;
         let tIndex = 0;
         let typingTimer = null;
@@ -60,19 +58,17 @@ document.addEventListener("DOMContentLoaded", () => {
             tIndex++;
 
             if (tIndex <= sentence.length) {
-                typingTimer = setTimeout(typeNextChar, 90); // typing speed
+                typingTimer = setTimeout(typeNextChar, 90);
             } else {
-                // pause, then next sentence
                 typingTimer = setTimeout(() => {
                     sIndex = (sIndex + 1) % sentences.length;
                     tIndex = 0;
                     textContainer.textContent = "";
                     typeNextChar();
-                }, 1200); // hold time
+                }, 1200);
             }
         }
 
-        // start after layout is ready (prevents “sometimes not starting”)
         requestAnimationFrame(() => {
             clearTimeout(typingTimer);
             typeNextChar();
@@ -96,9 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
-    // 5) Scroll reveal (REPLAYABLE + no “glitching”)
-    //    - Adds class when entering
-    //    - Removes class only when fully out (intersectionRatio === 0)
+    // 5) Scroll reveal
     function makeReplayObserver(selector, inClass, baseDelay = 0) {
         const els = Array.from(document.querySelectorAll(selector));
         if (!els.length) return;
@@ -113,7 +107,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add(inClass);
                     } else if (entry.intersectionRatio === 0) {
-                        // only reset when completely out (prevents flicker/glitch)
                         entry.target.classList.remove(inClass);
                     }
                 });
@@ -126,7 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         els.forEach((el) => obs.observe(el));
 
-        // Show items already in view on load
         els.forEach((el) => {
             const r = el.getBoundingClientRect();
             if (r.top < window.innerHeight * 0.9 && r.bottom > 0) {
@@ -135,7 +127,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Your sections/cards
     makeReplayObserver(".reveal", "show", 0);
     makeReplayObserver(".edu-reveal", "in", 0.08);
     makeReplayObserver(".proj-card", "in", 0.12);
@@ -156,17 +147,19 @@ document.addEventListener("DOMContentLoaded", () => {
         dots[i].classList.add("active");
     }
 
-    setInterval(() => {
-        index = (index + 1) % slides.length;
-        showSlide(index);
-    }, 4500);
+    if (slides.length && dots.length) {
+        setInterval(() => {
+            index = (index + 1) % slides.length;
+            showSlide(index);
+        }, 4500);
 
-    dots.forEach((dot, i) => {
-        dot.addEventListener("click", () => {
-            index = i;
-            showSlide(i);
+        dots.forEach((dot, i) => {
+            dot.addEventListener("click", () => {
+                index = i;
+                showSlide(i);
+            });
         });
-    });
+    }
 
     (() => {
         const header = document.getElementById("topHeader");
@@ -178,17 +171,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const onScroll = () => {
             const y = window.scrollY;
 
-            // add shadow after a bit scroll
             if (y > 10) header.classList.add("is-scrolled");
             else header.classList.remove("is-scrolled");
 
-            // show/hide based on direction
             if (y > lastY && y > 120) {
-                // scrolling down
                 header.classList.add("nav-hide");
                 header.classList.remove("nav-show");
             } else {
-                // scrolling up
                 header.classList.add("nav-show");
                 header.classList.remove("nav-hide");
             }
@@ -208,7 +197,6 @@ document.addEventListener("DOMContentLoaded", () => {
             { passive: true }
         );
 
-        // initial state
         header.classList.add("nav-show");
     })();
 
@@ -228,7 +216,6 @@ document.addEventListener("DOMContentLoaded", () => {
             closeIcon.classList.toggle("hidden", isOpen);
         });
 
-        // Auto-close when clicking a link
         menu.addEventListener("click", (e) => {
             if (e.target.closest("a")) {
                 menu.classList.add("hidden");
@@ -238,90 +225,253 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-// 6) Publication year + research type filter
-const yearFilterButtons = document.querySelectorAll(".year-filter");
-const researchFilterButtons = document.querySelectorAll(".research-filter");
-const publicationCards = document.querySelectorAll(".publication-card");
+    // 6) Publication year + research type toggle filter
+    // Dynamic behavior:
+    // - Year buttons/counts update based on selected type.
+    // - Type buttons/counts stay fixed and always visible.
+    // - Clicking selected filter again unselects it.
+    const yearFilterButtons = document.querySelectorAll(".year-filter");
+    const researchFilterButtons = document.querySelectorAll(".research-filter");
+    const publicationCards = document.querySelectorAll(".publication-card");
+    const publicationYearHeadings = document.querySelectorAll(".publication-year-heading");
+	const publicationYearGroups = document.querySelectorAll(".publication-year-group");
 
-let activeYear = "all";
-let activeResearchType = "all";
+    let activeYear = null;
+    let activeResearchType = null;
 
-function updatePublicationFilters() {
-    publicationCards.forEach((card) => {
-        const cardYear = card.dataset.year;
-        const cardResearchType = card.getAttribute("research-type");
+    function updateButtonCount(button, count) {
+        const spans = button.querySelectorAll("span");
+        const countSpan = spans[spans.length - 1];
 
-        const yearMatches =
-            activeYear === "all" || activeYear === cardYear;
-
-        const typeMatches =
-            activeResearchType === "all" || activeResearchType === cardResearchType;
-
-        if (yearMatches && typeMatches) {
-            card.classList.remove("hidden");
-        } else {
-            card.classList.add("hidden");
+        if (countSpan) {
+            countSpan.textContent = count;
         }
-    });
-}
+    }
 
-function setActiveButton(buttons, activeButton) {
-    buttons.forEach((btn) => {
-        btn.classList.remove("text-slate-900", "font-semibold");
-        btn.classList.add("text-slate-500");
-    });
+    function updatePublicationFilters() {
+        const visibleCountByYear = {};
 
-    activeButton.classList.remove("text-slate-500");
-    activeButton.classList.add("text-slate-900", "font-semibold");
-}
+        publicationCards.forEach((card) => {
+            const cardYear = card.dataset.year;
+            const cardResearchType = card.getAttribute("research-type");
 
-if (publicationCards.length) {
-    yearFilterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-            activeYear = button.dataset.year || "all";
-            setActiveButton(yearFilterButtons, button);
-            updatePublicationFilters();
+            const yearMatches = !activeYear || activeYear === cardYear;
+            const typeMatches = !activeResearchType || activeResearchType === cardResearchType;
+
+            if (yearMatches && typeMatches) {
+                card.classList.remove("hidden");
+                visibleCountByYear[cardYear] = (visibleCountByYear[cardYear] || 0) + 1;
+            } else {
+                card.classList.add("hidden");
+            }
         });
-    });
 
-    researchFilterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-            activeResearchType = button.getAttribute("research-type") || "all";
-            setActiveButton(researchFilterButtons, button);
-            updatePublicationFilters();
+        publicationYearHeadings.forEach((heading) => {
+            const headingYear = heading.dataset.headingYear;
+            const count = visibleCountByYear[headingYear] || 0;
+            const countText = heading.querySelector(".year-count");
+
+            if (count > 0) {
+                heading.classList.remove("hidden");
+
+                if (countText) {
+                    countText.textContent =
+                        count === 1 ? "1 publication" : `${count} publications`;
+                }
+            } else {
+                heading.classList.add("hidden");
+            }
         });
-    });
-}
+		
+		publicationYearGroups.forEach((group) => {
+    const groupYear = group.dataset.groupYear;
+    const count = visibleCountByYear[groupYear] || 0;
 
-    // Achievement type filter
-    const achievementFilterButtons = document.querySelectorAll(".ach-filter");
-    const achievementCards = document.querySelectorAll(".ach-card");
+    if (count > 0) {
+        group.classList.remove("hidden");
+    } else {
+        group.classList.add("hidden");
+    }
+});
 
-    if (achievementFilterButtons.length && achievementCards.length) {
-        achievementFilterButtons.forEach((button) => {
-            button.addEventListener("click", () => {
-                const selectedType = button.dataset.type;
+        updateAvailableFilterButtons();
+    }
 
-                achievementCards.forEach((card) => {
-                    const cardType = card.dataset.type;
+    function updateAvailableFilterButtons() {
+        // Dynamic Jump to Year buttons/counts based on selected research type
+        yearFilterButtons.forEach((btn) => {
+            const year = btn.dataset.year;
 
-                    if (selectedType === "all" || selectedType === cardType) {
-                        card.classList.remove("hidden");
-                    } else {
-                        card.classList.add("hidden");
-                    }
-                });
+            const matchingCards = Array.from(publicationCards).filter((card) => {
+                const cardYear = card.dataset.year;
+                const cardResearchType = card.getAttribute("research-type");
 
-                achievementFilterButtons.forEach((btn) => {
-                    btn.classList.remove("text-slate-900", "font-semibold");
-                    btn.classList.add("text-slate-500");
-                });
+                const yearMatches = cardYear === year;
+                const typeMatches =
+                    !activeResearchType || activeResearchType === cardResearchType;
 
-                button.classList.remove("text-slate-500");
-                button.classList.add("text-slate-900", "font-semibold");
+                return yearMatches && typeMatches;
             });
+
+            const count = matchingCards.length;
+
+            if (count > 0 || activeYear === year) {
+                btn.classList.remove("hidden");
+                updateButtonCount(btn, count);
+            } else {
+                btn.classList.add("hidden");
+            }
+        });
+
+        // By Type buttons stay visible and counts stay fixed in HTML
+        researchFilterButtons.forEach((btn) => {
+            btn.classList.remove("hidden");
         });
     }
+
+    function updateActiveButtonStyles() {
+        yearFilterButtons.forEach((btn) => {
+            const year = btn.dataset.year;
+
+            if (activeYear === year) {
+                btn.classList.remove("text-slate-500", "font-normal");
+                btn.classList.add("text-slate-900", "font-semibold");
+            } else {
+                btn.classList.remove("text-slate-900", "font-semibold");
+                btn.classList.add("text-slate-500", "font-normal");
+            }
+        });
+
+        researchFilterButtons.forEach((btn) => {
+    const type = btn.getAttribute("research-type");
+
+    if (activeResearchType === type) {
+        btn.classList.remove(
+            "text-slate-500",
+            "font-normal",
+            "hover:bg-slate-100",
+            "hover:text-slate-900"
+        );
+
+        btn.classList.add(
+            "bg-black",
+            "text-white",
+            "font-semibold"
+        );
+    } else {
+        btn.classList.remove(
+            "bg-black",
+            "text-white",
+            "font-semibold"
+        );
+
+        btn.classList.add(
+            "text-slate-500",
+            "font-normal",
+            "hover:bg-slate-100",
+            "hover:text-slate-900"
+        );
+    }
+});
+    }
+
+    if (publicationCards.length) {
+        yearFilterButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const selectedYear = button.dataset.year;
+
+                activeYear = activeYear === selectedYear ? null : selectedYear;
+
+                updateActiveButtonStyles();
+                updatePublicationFilters();
+            });
+        });
+
+        researchFilterButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const selectedType = button.getAttribute("research-type");
+
+                activeResearchType =
+                    activeResearchType === selectedType ? null : selectedType;
+
+                if (activeYear) {
+                    const selectedYearStillExists = Array.from(publicationCards).some((card) => {
+                        return (
+                            card.dataset.year === activeYear &&
+                            (!activeResearchType ||
+                                card.getAttribute("research-type") === activeResearchType)
+                        );
+                    });
+
+                    if (!selectedYearStillExists) {
+                        activeYear = null;
+                    }
+                }
+
+                updateActiveButtonStyles();
+                updatePublicationFilters();
+            });
+        });
+
+        updateActiveButtonStyles();
+        updatePublicationFilters();
+    }
+
+// Achievement type filter
+const achievementFilterButtons = document.querySelectorAll(".ach-filter");
+const achievementCards = document.querySelectorAll(".ach-card");
+
+if (achievementFilterButtons.length && achievementCards.length) {
+    achievementFilterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const selectedType = button.dataset.type;
+
+            achievementCards.forEach((card) => {
+                const cardType = card.dataset.type;
+
+                if (selectedType === "all" || selectedType === cardType) {
+                    card.classList.remove("hidden");
+                } else {
+                    card.classList.add("hidden");
+                }
+            });
+
+            achievementFilterButtons.forEach((btn) => {
+                btn.classList.remove(
+                    "bg-black",
+                    "text-white",
+                    "font-semibold"
+                );
+
+                btn.classList.add(
+                    "text-slate-500",
+                    "font-normal",
+                    "hover:text-slate-900"
+                );
+            });
+
+            button.classList.remove(
+                "text-slate-500",
+                "font-normal",
+                "hover:text-slate-900"
+            );
+
+            button.classList.add(
+                "bg-black",
+                "text-white",
+                "font-semibold"
+            );
+
+            const achievementScrollArea = document.querySelector(".research-scroll");
+            if (achievementScrollArea) {
+                achievementScrollArea.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+}
 
     // 7) PRO Carousel
     (() => {
@@ -345,9 +495,8 @@ if (publicationCards.length) {
             track.scrollBy({ left: step(), behavior: "smooth" })
         );
 
-        /* MOBILE: center first card on load */
         const centerFirstCard = () => {
-            if (window.innerWidth > 640) return; // mobile only
+            if (window.innerWidth > 640) return;
             const card = track.querySelector(".act__card");
             if (!card) return;
 

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/style.css">
 
     <!-- Current favicon for UI -->
@@ -28,26 +29,23 @@
 
 <body class="scroll-smooth">
     <!-- ===== TOP NAVBAR ===== -->
-    <header id="topHeader" class="hidden lg:block site-topbar w-full h-14 bg-[#06142A] ">
-        <div class="w-full px-6 md:px-12">
+    <header id="topHeader" class="hidden lg:block site-topbar w-full h-14 font-medium">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
             <div class="h-14 flex items-center justify-between">
 
-                <div class="hidden lg:block brand text-white font-semibold">
-                    <a href="https://nazmulhudabadhon.github.io/" class="hover:text-[#D3D3D3]">
-                        NAZMUL HUDA BADHON
+                <div class="brand text-[#06142A]">
+                    <a href="https://nazmulhudabadhon.github.io/" class="hover:text-[#0A3D91]"
+                        style="font-family: 'Libre Baskerville', Georgia, serif;">
+                        <b>Nazmul Huda</b> Badhon
                     </a>
-                    <p class="text-left text-xs text-[#D3D3D3] tracking-wide"> Bachelor of Science Graduate | Deep
-                        Learning
-                        Research
-                    </p>
                 </div>
 
-                <nav id="topNav" class="hidden lg:flex items-center gap-6 text-white font-medium">
-                    <a href="../" class="block hover:text-slate-200">Home</a>
-                    <a href="../research/" class="block hover:text-slate-200">Publications</a>
-                    <a href="../projects/" class="block hover:text-slate-200">Projects</a>
-                    <a href="../achievement/" class="block hover:text-slate-200">Achievements</a>
-                    <a href="../resume/" target="_blank" rel="noopener" class="block hover:text-slate-200">CV</a>
+                <nav id="topNav" class="flex items-center gap-6 text-[#06142A] font-medium">
+                    <a href="../" class="nav-link block hover:text-[#0A3D91]">Home</a>
+                    <a href="../research/" class="nav-link block hover:text-[#0A3D91]">Publications</a>
+                    <a href="../projects/" class="nav-link active block hover:text-[#0A3D91]">Projects</a>
+                    <a href="../achievement/" class="nav-link block hover:text-[#0A3D91]">Achievements</a>
+                    <a href="../resume/" target="_blank" rel="noopener" class="nav-link block hover:text-[#0A3D91]">CV</a>
                 </nav>
 
             </div>
@@ -55,18 +53,18 @@
     </header>
 
     <!-- Mobile header (phones only) -->
-    <header id="mobileHeader" class="md:hidden sticky top-0 z-50 bg-[#06142A] text-white w-full">
+    <header id="mobileHeader" class="md:hidden sticky top-0 z-50 text-[#06142A] w-full">
         <div class="flex items-center justify-between px-4 py-3">
             <!-- LEFT TEXT BLOCK -->
             <div class="flex flex-col">
-                <span class="font-semibold text-slate-300 tracking-wide ">
+                <span class="text-slate-900 tracking-wide ">
                     NAZMUL HUDA BADHON
                 </span>
-                <p class="text-left text-xs text-[#D3D3D3] tracking-wide">
+                <p class="text-left text-xs text-slate-500 tracking-wide">
                     B.Sc. Graduate | Deep Learning Research
                 </p>
             </div>
-            <button id="mobileMenuBtn" class="text-white text-2xl focus:outline-none" aria-label="Toggle menu">
+            <button id="mobileMenuBtn" class="text-[#06142A] text-2xl focus:outline-none" aria-label="Toggle menu">
                 <i class="fa-solid fa-bars" id="menuOpenIcon"></i>
                 <i class="fa-solid fa-xmark hidden" id="menuCloseIcon"></i>
             </button>
@@ -74,11 +72,11 @@
         </div>
 
         <!-- Collapsible nav (hidden by default, header remains visible) -->
-        <nav id="mobileMenu" class="hidden flex-col gap-2 px-4 pb-4 text-slate-200 font-medium">
+        <nav id="mobileMenu" class="hidden flex-col gap-2 px-4 pb-4 text-slate-900 font-medium">
             <br>
             <a href="../" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Home</a><br><br>
             <a href="../research/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Publications</a><br><br>
-            <a href="/projects/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Projects</a><br><br>
+            <a href="../projects/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Projects</a><br><br>
             <a href="../achievement/"
                 class="py-2 border-b border-white/10 hover:text-[#E3872D]">Achievements</a><br><br>
             <a href="../resume/" class="py-2 border-b border-white/10 hover:text-[#E3872D]" target="_blank"
@@ -93,41 +91,43 @@
 
 
                 <!-- PROJECT -->
-                <section class="scroll-mt-24 mt-0 w-full bg-white px-6 py-6 md:px-0">
+                <section class="scroll-mt-24 mt-0 w-full px-6 py-6 md:px-0">
                     <div class="md:max-w-7xl md:mx-auto md:px-12">
 
-                        <div class="section-header section-header--compact mb-6">
-                            <span class="section-ic">
-                                <i class="fa-solid fa-diagram-project"></i>
+                        <div style="border-bottom: none; margin-top: 0; margin-bottom: 1.5rem;">
+                            <span class="profile-name">Projects</span> ·
+                            <span
+                                style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif; font-size: 14px; color: var(--text-muted);">
+                                projects by category in reverse chronological order
                             </span>
-                            <h2 class="section-title text-[#00008B]">Projects</h2>
-                            <span class="section-rule"></span>
                         </div>
 
                         <!-- Project list -->
-                        <div class="space-y-8 md:space-y-10 ">
+                        <div class="space-y-8 md:space-y-8 ">
 
                             <!-- Project: Breast Cancer Segmentation & Classification (Hybrid) -->
                             <article class="proj-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
                                 <div class="flex flex-col lg:flex-row">
 
                                     <!-- LEFT: content -->
-                                    <div class="flex-1 min-w-0 p-4 md:p-8">
-                                        <div class="flex flex-wrap gap-2">
-                                            <span
-                                                class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-pink-100 text-pink-700">Ultrasound</span>
-                                            <span
-                                                class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700">Segmentation</span>
-                                            <span
-                                                class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-indigo-100 text-indigo-700">Hybrid
-                                                Model</span>
-                                            <span
-                                                class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-amber-100 text-amber-700">Classification</span>
-                                        </div>
+                                    <div class="flex-1 min-w-0 p-4 md:p-8"><span
+                                            style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
+                                            <div class="flex flex-wrap gap-2">
+                                                <span
+                                                    class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-pink-100 text-pink-700">Ultrasound</span>
+                                                <span
+                                                    class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700">Segmentation</span>
+                                                <span
+                                                    class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-indigo-100 text-indigo-700">Hybrid
+                                                    Model</span>
+                                                <span
+                                                    class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-amber-100 text-amber-700">Classification</span>
+                                            </div>
 
-                                        <h3 class="mt-4 font-semibold text-xl text-slate-900">
-                                            Breast Cancer: Segmentation-Guided Hybrid Classification
-                                        </h3>
+                                            <h3 class="mt-4 text-xl text-slate-900">
+                                                Breast Cancer: Segmentation-Guided Hybrid Classification
+                                            </h3>
+                                        </span>
 
                                         <p class="mt-2 text-sm text-slate-500">
                                             Datasets:
@@ -140,7 +140,8 @@
                                             (classification)
                                         </p>
 
-                                        <p class="mt-4 text-justify text-sm md:text-base">
+                                        <p
+                                            class="mt-4 text-justify text-sm md:text-[13px] leading-snug text-gray-900 break-words">
                                             A two-stage pipeline on breast ultrasound: (1) train U-Net on BUSI-with-GT
                                             to obtain
                                             lesion masks, then segment BUSI_Corrected images; (2) merge classes
@@ -180,35 +181,35 @@
 
                                     <!-- LEFT: content -->
                                     <div class="flex-1 min-w-0 p-4 md:p-8">
-                                        <div class="flex flex-wrap gap-2">
-                                            <span
-                                                class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-purple-100 text-purple-700">Computer
-                                                Vision</span>
-                                            <span
-                                                class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-sky-100 text-sky-700">Transfer
-                                                Learning</span>
-                                            <span
-                                                class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700">Ablation
-                                                Study</span>
-                                        </div>
+                                        <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
+                                            <div class="flex flex-wrap gap-2">
+                                                <span
+                                                    class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-purple-100 text-purple-700">Computer
+                                                    Vision</span>
+                                                <span
+                                                    class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-sky-100 text-sky-700">Transfer
+                                                    Learning</span>
+                                                <span
+                                                    class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700">Ablation
+                                                    Study</span>
+                                            </div>
 
-                                        <h3 class="mt-4 font-semibold text-xl text-slate-900">
-                                            Lung–Colon Histopathology: Image Enhancement & Transfer Learning
-                                        </h3>
+                                            <h3 class="mt-4 text-xl text-slate-900">
+                                                Lung–Colon Histopathology: Image Enhancement & Transfer Learning
+                                            </h3>
+                                        </span>
 
                                         <p class="mt-2 text-sm text-slate-500">
                                             Dataset: Lung–Colon Histopathology Images
                                         </p>
 
-                                        <p class="mt-4 text-justify text-sm md:text-base">
+                                        <p
+                                            class="mt-4 text-justify text-sm md:text-[13px] leading-snug text-gray-900 break-words">
                                             This project applied sequential image processing techniques to enhance round
                                             nuclei
                                             in lung–colon histopathological images, followed by evaluation using MSE,
                                             RMSE,
-                                            SSIM, and PSNR metrics.<br>
-                                        </p>
-
-                                        <p class="mt-2 text-sm md:text-base">
+                                            SSIM, and PSNR metrics.
                                             Five transfer learning models (ResNet50, DenseNet121, EfficientNet-B0,
                                             MobileNetV3,
                                             ViT-B/16) were explored with the best model by accuracy and F1-score. An
@@ -244,31 +245,33 @@
 
                                     <!-- LEFT: content -->
                                     <div class="flex-1 min-w-0 p-4 md:p-8">
-                                        <div class="flex flex-wrap gap-2">
-                                            <span
-                                                class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-purple-100 text-purple-700">Computer
-                                                Vision</span>
-                                            <span
-                                                class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-sky-100 text-sky-700">Vision
-                                                Transformer</span>
-                                            <span
-                                                class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700">Image
-                                                Processing</span>
-                                        </div>
+                                        <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
+                                            <div class="flex flex-wrap gap-2">
+                                                <span
+                                                    class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-purple-100 text-purple-700">Computer
+                                                    Vision</span>
+                                                <span
+                                                    class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-sky-100 text-sky-700">Vision
+                                                    Transformer</span>
+                                                <span
+                                                    class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700">Image
+                                                    Processing</span>
+                                            </div>
 
-                                        <h3 class="mt-4 font-semibold text-xl text-slate-900">
-                                            Image Preprocessing & Quality Analysis with Vision Transformer
-                                        </h3>
+                                            <h3 class="mt-4 text-xl text-slate-900">
+                                                Image Preprocessing & Quality Analysis with Vision Transformer
+                                            </h3>
+                                        </span>
 
                                         <p class="mt-2 text-sm text-slate-500">
                                             Dataset: Medical Image Preprocessing Experiments
                                         </p>
 
-                                        <p class="mt-4 text-justify text-sm md:text-base">
+                                        <p class="mt-4 text-justify text-sm md:text-[14px]">
                                             This project applied sequential preprocessing and quality enhancement steps
                                             to
                                             medical images, followed by classification using a Vision Transformer (ViT).
-                                            <br>Performance evaluation achieved <b>87% testing accuracy</b>,
+                                            Performance evaluation achieved <b>87% testing accuracy</b>,
                                             demonstrating the
                                             effectiveness of preprocessing in improving transformer-based models. The
                                             workflow
@@ -304,9 +307,9 @@
                 </section>
 
                 <!-- COPYRIGHT FOOTER -->
-                <footer class="bg-[#06142A] w-full py-1 border-t border-white/10 ">
+                <footer id="sitefooter" class="w-full py-1 border-t border-white/10 ">
                     <div class="max-w-7xl mx-auto px-4 text-center ">
-                        <p class="text-sm text-white/80 tracking-wide font-awesome">
+                        <p class="text-sm text-[#06142A] tracking-wide font-awesome">
                             © 2026
                             <span class="hover:opacity-90 transition ">
                                 Nazmul Huda Badhon

@@ -638,6 +638,8 @@ article>* {
 @media (max-width: 1023px) {
     .mobile-cv-button {
         width: 100%;
+        box-sizing: border-box;
+
         margin: 12px 0 14px;
         padding: 10px 14px;
 
@@ -658,6 +660,9 @@ article>* {
         align-items: center;
         justify-content: center;
         gap: 8px;
+
+        white-space: nowrap;
+        overflow: hidden;
 
         transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
     }
@@ -684,33 +689,6 @@ article>* {
     .mobile-cv-button:focus-visible svg {
         transform: translate(1px, -1px);
     }
-}
-
-/* ================================
-   Section Headers
-================================ */
-
-.academic-section-heading {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 6px;
-    margin: 22px 0 14px;
-}
-
-.academic-section-kicker {
-    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--text-muted);
-}
-
-.academic-section-title {
-    line-height: 1;
-    font-weight: 400;
-    color: #94a3b8;
 }
 
 /* ================================

@@ -157,9 +157,14 @@
                   </div>
                 </div>
                 <div class="profile-footer">
-                  <a class="status-card lg:hidden" href="./resume/" target="_blank" rel="noopener">
-                    <span style="font-size: 14px; font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">View
-                      CV</span>
+                  <a class="mobile-cv-button lg:hidden" href="./resume/" target="_blank" rel="noopener"
+                    aria-label="View CV">
+                    <span>View CV</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                      aria-hidden="true">
+                      <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z"></path>
+                      <path d="M5 5h6v2H7v10h10v-4h2v6H5V5z"></path>
+                    </svg>
                   </a>
 
                   <p class="profile-item">
@@ -209,7 +214,7 @@
                     </div>
 
                     <div class="metric-item">
-                      <span class="metric-number metric-pink">12+</span>
+                      <span class="metric-number metric-pink">13+</span>
                       <span class="metric-label">Citations</span>
                     </div>
 
@@ -218,7 +223,7 @@
                       <span class="metric-label">Q1 Journals</span>
                     </div>
                   </div>
-                  <span class="text-slate-400 mt-0 text-[0.65rem]">Last updated: 2026-05-11</span>
+                  <span class="text-slate-400 mt-0 text-[0.65rem]">Last updated: 2026-05-20</span>
                 </div>
               </div>
             </div>
@@ -615,12 +620,23 @@
 
     <!-- COPYRIGHT FOOTER -->
     <footer id="sitefooter" class="w-full py-1 border-t border-white/10">
-      <div class="max-w-7xl mx-auto px-4 text-center">
+      <!-- Desktop footer: left and right like top nav -->
+      <div class="hidden md:flex max-w-6xl mx-auto px-4 items-center justify-between">
         <p class="text-sm text-[#06142A] tracking-wide">
           © 2026
-          <span class="hover:opacity-90 transition"> Nazmul Huda Badhon
-          </span>
-          . All Rights Reserved.
+          <span class="hover:text-[#87CEEB] transition"> Nazmul Huda Badhon</span>.
+        </p>
+
+        <p class="text-sm text-[#06142A] tracking-wide">
+          All Rights Reserved.
+        </p>
+      </div>
+      <!-- Mobile footer: same as before -->
+      <div class="md:hidden max-w-6xl mx-auto px-4 text-center">
+        <p class="text-sm text-[#06142A] tracking-wide">
+          © 2026
+          <span class="hover:text-[#87CEEB] transition"> Nazmul Huda Badhon</span>.
+          All Rights Reserved.
         </p>
       </div>
     </footer>

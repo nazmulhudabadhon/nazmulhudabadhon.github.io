@@ -198,6 +198,25 @@ article>* {
     box-shadow: none !important;
 }
 
+/* Mobile-only blurry header */
+@media (max-width: 1023px) {
+    #topHeader {
+        background: rgba(250, 249, 246, 0.78) !important;
+        -webkit-backdrop-filter: blur(12px) saturate(135%) !important;
+        backdrop-filter: blur(12px) saturate(135%) !important;
+        border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    #topHeader.is-scrolled,
+    #topHeader.nav-hide,
+    #topHeader.nav-show {
+        background: rgba(250, 249, 246, 0.86) !important;
+        -webkit-backdrop-filter: blur(12px) saturate(135%) !important;
+        backdrop-filter: blur(12px) saturate(135%) !important;
+        box-shadow: none !important;
+    }
+}
+
 /* ================================
    Reveal Animations
 ================================ */
@@ -611,6 +630,62 @@ article>* {
     }
 }
 
+/* Mobile-only CV button below profile photo */
+.mobile-cv-button {
+    display: none;
+}
+
+@media (max-width: 1023px) {
+    .mobile-cv-button {
+        width: 100%;
+        margin: 12px 0 14px;
+        padding: 10px 14px;
+
+        border: 1px solid var(--border);
+        border-radius: 0;
+        background: transparent;
+        color: var(--accent);
+
+        box-shadow: none;
+        font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+    }
+
+    .mobile-cv-button svg {
+        width: 14px;
+        height: 14px;
+        fill: currentColor;
+        flex-shrink: 0;
+        transition: transform 180ms ease;
+    }
+
+    .mobile-cv-button:hover,
+    .mobile-cv-button:focus-visible {
+        background: var(--soft-bg);
+        color: var(--accent-link);
+        border-color: var(--border);
+        box-shadow: none;
+        transform: none;
+        outline: none;
+    }
+
+    .mobile-cv-button:hover svg,
+    .mobile-cv-button:focus-visible svg {
+        transform: translate(1px, -1px);
+    }
+}
+
 /* ================================
    Section Headers
 ================================ */
@@ -905,4 +980,30 @@ article>* {
     backdrop-filter: none !important;
     border-top: 1px solid rgba(15, 23, 42, 0.08);
     transition: none;
+}
+
+.footer-inner {
+    max-width: 1152px;
+    margin: 0 auto;
+    padding: 14px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+    .footer-inner {
+        padding: 14px 16px;
+        font-size: 12px;
+
+        justify-content: center;
+        text-align: center;
+        gap: 4px;
+    }
 }

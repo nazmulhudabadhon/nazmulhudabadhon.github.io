@@ -12,70 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
         a.setAttribute("href", "#" + id);
     });
 
-    // 1) Typewriter (animatedText)
-    const sentences = [
-        "Research or Teaching Assistant Opportunities",
-    ];
-
-    const textContainer = document.getElementById("animatedText");
-    if (textContainer) {
-        function stabilizeHeight() {
-            const probe = document.createElement("span");
-            probe.style.visibility = "hidden";
-            probe.style.position = "absolute";
-            probe.style.left = "-9999px";
-            probe.style.top = "0";
-            probe.style.whiteSpace = "normal";
-            probe.style.font = getComputedStyle(textContainer).font;
-            probe.style.lineHeight = getComputedStyle(textContainer).lineHeight;
-            probe.style.width = textContainer.clientWidth + "px";
-            document.body.appendChild(probe);
-
-            let maxH = 0;
-            for (const s of sentences) {
-                probe.textContent = s;
-                maxH = Math.max(maxH, probe.offsetHeight);
-            }
-            textContainer.style.minHeight = maxH + "px";
-            document.body.removeChild(probe);
-        }
-
-        stabilizeHeight();
-
-        let rzTimer = null;
-        window.addEventListener("resize", () => {
-            clearTimeout(rzTimer);
-            rzTimer = setTimeout(stabilizeHeight, 150);
-        });
-
-        let sIndex = 0;
-        let tIndex = 0;
-        let typingTimer = null;
-
-        function typeNextChar() {
-            const sentence = sentences[sIndex];
-            textContainer.textContent = sentence.slice(0, tIndex);
-            tIndex++;
-
-            if (tIndex <= sentence.length) {
-                typingTimer = setTimeout(typeNextChar, 90);
-            } else {
-                typingTimer = setTimeout(() => {
-                    sIndex = (sIndex + 1) % sentences.length;
-                    tIndex = 0;
-                    textContainer.textContent = "";
-                    typeNextChar();
-                }, 1200);
-            }
-        }
-
-        requestAnimationFrame(() => {
-            clearTimeout(typingTimer);
-            typeNextChar();
-        });
-    }
-
-    // 4) Back to top
+    // 1) Back to top
     const topBtn = document.getElementById("backToTop");
     if (topBtn) {
         const toggleTopBtn = () => {
@@ -92,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
-    // 5) Scroll reveal
+    // 2) Scroll reveal
     function makeReplayObserver(selector, inClass, baseDelay = 0) {
         const els = Array.from(document.querySelectorAll(selector));
         if (!els.length) return;
@@ -225,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 6) Publication year + research type toggle filter
+    // 3) Publication year + research type toggle filter
     // Dynamic behavior:
     // - Year buttons/counts update based on selected type.
     // - Type buttons/counts stay fixed and always visible.
@@ -376,16 +313,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (publicationCards.length) {
-        yearFilterButtons.forEach((button) => {
-            button.addEventListener("click", () => {
-                const selectedYear = button.dataset.year;
+yearFilterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const selectedYear = button.dataset.year;
 
-                activeYear = activeYear === selectedYear ? null : selectedYear;
-
-                updateActiveButtonStyles();
-                updatePublicationFilters();
+        // Mobile "All" button: go back to top of publications
+        if (!selectedYear) {
+            document.querySelector(".research-page-heading")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
             });
+            return;
+        }
+
+        const target = document.querySelector(
+            `.publication-year-group[data-group-year="${selectedYear}"]`
+        );
+
+        target?.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
         });
+    });
+});
 
         researchFilterButtons.forEach((button) => {
             button.addEventListener("click", () => {

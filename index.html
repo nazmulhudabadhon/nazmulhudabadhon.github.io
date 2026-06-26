@@ -18,6 +18,11 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="./style/style.css" />
 
   <!-- Current favicon for UI -->
@@ -85,7 +90,7 @@
         <!-- LEFT: matches profile column -->
         <div class="w-1/3 flex justify-end">
           <div class="w-[300px] text-left brand text-[#06142A]">
-            <a href="https://nazmulhudabadhon.github.io/" class="hover:text-[#0A3D91]"
+            <a href="https://nazmulhudabadhon.github.io/" class="hover:text-[#A51C30] transition"
               style="font-family: 'Libre Baskerville', Georgia, serif;">
               <b>Nazmul Huda</b> Badhon
             </a>
@@ -93,12 +98,12 @@
         </div>
 
         <!-- RIGHT: matches main content column -->
-        <nav id="topNav" class="w-2/3 flex items-center justify-end gap-6 text-[#06142A] font-medium">
-          <a href="./" class="nav-link active block hover:text-[#0A3D91]">Home</a>
-          <a href="./research/" class="nav-link block hover:text-[#0A3D91]">Publications</a>
-          <a href="./projects/" class="nav-link block hover:text-[#0A3D91]">Projects</a>
-          <a href="./achievement/" class="nav-link block hover:text-[#0A3D91]">Achievements</a>
-          <a href="./resume/" target="_blank" rel="noopener" class="nav-link block hover:text-[#0A3D91]">CV</a>
+        <nav id="topNav" class="w-2/3 flex items-center justify-end gap-6 text-[#06142A]">
+          <a href="./" class="nav-link active block hover:text-[#A51C30]">HOME</a>
+          <a href="./research/" class="nav-link block hover:text-[#A51C30]">PUBLICATIONS</a>
+          <a href="./projects/" class="nav-link block hover:text-[#A51C30]">PROJECTS</a>
+          <a href="./achievement/" class="nav-link block hover:text-[#A51C30]">ACHIEVEMENTS</a>
+          <a href="./resume/" target="_blank" rel="noopener" class="nav-link block hover:text-[#A51C30]">CV</a>
         </nav>
 
       </div>
@@ -121,7 +126,7 @@
     </div>
 
     <!-- Collapsible nav (hidden by default, header remains visible) -->
-    <nav id="mobileMenu" class="hidden flex-col gap-2 px-4 pb-4 hover:text-[#0A3D91] text-slate-900 font-medium">
+    <nav id="mobileMenu" class="hidden flex-col gap-2 px-4 pb-4 hover:text-[#A51C30] text-slate-900 font-medium">
       <br />
       <a href="./" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Home</a><br /><br />
       <a href="./research/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Publications</a><br /><br />
@@ -142,7 +147,7 @@
         <section id="about" class="pt-4 pb-6 mt-2 md:mt-6">
           <!-- Flex container -->
           <div
-            class="flex flex-col md:flex-row gap-4 items-start max-w-7xl mx-auto px-6 md:px-12 -mt-4 md:-mt-4 md:-translate-x-9">
+            class="flex flex-col md:flex-row gap-4 md:gap-2 items-start max-w-7xl mx-auto px-6 md:px-12 -mt-4 md:-mt-4 md:-translate-x-9">
             <!-- Mobile-only spacer -->
             <div class="block lg:hidden h-4"></div>
 
@@ -157,6 +162,17 @@
                   </div>
                 </div>
                 <div class="profile-footer">
+
+                  <div class="profile-intro">
+                    <span>Nazmul Huda Badhon</span>
+                    <p class="profile-role">Deep Learning Researcher</p>
+                    <p class="profile-affiliation">
+                      BSc Graduate in Computer Science<br>
+                      Daffodil International University<br>
+                    </p>
+                    <p class="profile-affiliation">badhon15-4772@diu.edu.bd</p>
+                  </div>
+
                   <a class="mobile-cv-button lg:hidden" href="./resume/" target="_blank" rel="noopener"
                     aria-label="View CV">
                     <span>View CV</span>
@@ -167,119 +183,84 @@
                     </svg>
                   </a>
 
-                  <p class="profile-item">
-                    <i class="fa-solid fa-envelope text-[#06142A] w-6 mr-3 mt-1"></i>
-                    <a href="mailto:badhon15-4772@diu.edu.bd " class="hover:underline hover:text-[#2563EB]"
-                      style="font-size: 14px">badhon15-4772@diu.edu.bd</a>
-                  </p>
-                  <p class="profile-item">
-                    <i class="fa-solid fa-phone text-[#06142A] w-6 mr-3 mt-1"></i>
-                    <a href="tel:+8801903906230 " class="hover:underline hover:text-[#2563EB]"
-                      style="font-size: 14px">+880 1903-906230 </a>
-                  </p>
-                  <p class="profile-item">
-                    <i class="fa-solid fa-location-dot text-[#06142A] w-6 mr-3 mt-1"></i>
-                    <span style="font-size: 14px">Dhaka, Bangladesh</span>
-                  </p>
-
-                  <div class="profile-icons">
-                    <a target="_blank " rel="noopener noreferrer "
-                      href="https://scholar.google.com/citations?user=-1VBDA8AAAAJ&hl=en ">
-                      <img class="w-8" src="./Image/googlescholar.svg " alt="Google Scholar " />
-                    </a>
-                    <a target="_blank " rel="noopener noreferrer " href="https://orcid.org/0009-0006-6205-2422 ">
-                      <img class="w-8" src="./Image/orcid_icon_196062.png " alt="ORCID " />
-                    </a>
-                    <a target="_blank " rel="noopener noreferrer "
-                      href="https://www.researchgate.net/profile/Nazmul-Huda-Badhon ">
-                      <img class="w-8" src="./Image/RG_Logo.02_Black.White.png " alt="ResearchGate " />
-                    </a>
-                    <a target="_blank " rel="noopener noreferrer "
-                      href="https://www.linkedin.com/in/nazmulhudabadhon/ ">
-                      <img class="w-8" src="./Image/linkedin-logo-png_seeklogo-480553.png " alt="LinkedIn " />
-                    </a>
-                    <a target="_blank " rel="noopener noreferrer " href="https://www.facebook.com/nazmul.huda.badhon/ ">
-                      <img class="w-8" src="./Image/facebook.png " alt="Facebook " />
-                    </a>
-                    <a target="_blank " rel="noopener noreferrer " href="https://github.com/nazmulhudabadhon ">
-                      <img class="w-8" src="./Image/25231.png " alt="GitHub " />
-                    </a>
-                  </div>
-
                   <!-- Scholar Metrics -->
                   <div class="scholar-metrics">
                     <div class="metric-item">
-                      <span class="metric-number metric-blue">8</span>
+                      <span class="metric-number">8</span>
                       <span class="metric-label">Publications</span>
                     </div>
 
                     <div class="metric-item">
-                      <span class="metric-number metric-pink">16+</span>
+                      <span class="metric-number">17+</span>
                       <span class="metric-label">Citations</span>
                     </div>
 
                     <div class="metric-item">
-                      <span class="metric-number metric-green">5</span>
+                      <span class="metric-number">5</span>
                       <span class="metric-label">Q1 Journals</span>
                     </div>
                   </div>
-                  <span class="text-slate-400 mt-0 text-[0.65rem]">Last updated: 2026-06-09</span>
+                  <span class="text-slate-400 mt-0 text-[0.65rem]">Last updated: 2026-06-26</span>
+
+
+                  <div class="profile-icons">
+                    <a target="_blank" rel="noopener noreferrer"
+                      href="https://scholar.google.com/citations?user=-1VBDA8AAAAJ&hl=en" aria-label="Google Scholar">
+                      <img src="./Image/googlescholar.svg" alt="Google Scholar" />
+                    </a>
+
+                    <a target="_blank" rel="noopener noreferrer"
+                      href="https://www.researchgate.net/profile/Nazmul-Huda-Badhon" aria-label="ResearchGate">
+                      <img src="./Image/RG_Logo.02_Black.White.png" alt="ResearchGate" />
+                    </a>
+
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/nazmulhudabadhon/"
+                      aria-label="LinkedIn">
+                      <img src="./Image/linkedin-logo-png_seeklogo-480553.png" alt="LinkedIn" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
 
             <!-- RIGHT COLUMN -->
-            <div class="w-full md:w-2/3 md:reveal min-w-0 pl-0 md:pl-4">
+            <div class="w-full md:w-2/3 md:reveal min-w-0 pl-0 md:pl-0">
               <!-- Biography Header -->
-              <p class="text-justify text-slate-800 mt-6 md:mt-0 leading-relaxed">
-                <span class="profile-name"><b>Nazmul Huda</b> Badhon</span> <span
-                  style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif; font-size: 15px;">(He/his) ·
-                  Bachelor of Science graduate · Computer Science and Engineering,
-                  <span style="color: #A51C30">Daffodil International
-                    University</span>, Class of 2026.</span><br><br> His undergraduate thesis is on
-                "Tabular data based lightweight convolutional neural networks for electricity energy demand prediction"
-                under the supervision of Associate Professor <a
-                  href="https://scholar.google.com/citations?user=mC0VMYQAAAAJ&hl=en"
-                  class=" hover:text-red-500 text-[#00778B] underline hover:decoration-red-400">Nazmun
-                  Nessa Moon</a>. His research focuses on <span class="academic-emphasis">designing
-                  deep neural network architectures, computer vision tasks, medical imaging analysis</span>.
-              </p>
+              <div class="research-intro">
+                <p>
+                  My research focuses on <span class="academic-emphasis">designing
+                    deep neural network architectures, machine learning tasks, medical imaging analysis and AI for healthcare</span>.
+                  My undergraduate thesis was on developing a novel method,
+                  "Tabular data based lightweight convolutional neural networks"
+                  under the supervision of Associate Professor <a
+                    href="https://scholar.google.com/citations?user=mC0VMYQAAAAJ&hl=en"
+                    class=" hover:text-red-500 text-[#00778B] underline hover:decoration-red-400">Nazmun
+                    Nessa Moon</a>.
+                </p>
+              </div>
 
               <!-- Academic Status Line -->
-              <div class="status-card mt-4 font-medium" role="status" aria-label="Availability">
-                <span class="status-badge" aria-label="Open to opportunities">
-                  <span class="live-dot" aria-hidden="true"></span> Seeking
-                </span>
+              <div class="status-card" role="status" aria-label="Availability">
+                <div class="status-badge">
+                  <span class="live-dot" aria-hidden="true"></span>
+                  <span>Available</span>
+                </div>
 
                 <div class="status-text">
-                  <p>
-                    <span class="tw-slot">
-                      <span class="tw-reserve">Exploring research roles in
-                        Deep Learning & Computer Vision</span>
-                      <span id="animatedText" class="tw-anim text-[#2563EB] "></span>
-                    </span>
-                  </p>
-                  <p class="opacity-80" style="font-size: 13px;">
-                    Deep Learning · Machine Learning ·
-                    Computer Vision</p>
+                  <p>Open to research opportunities in Deep Learning, Machine Learning, and Interdisciplinary AI.</p>
                 </div>
 
                 <a class="status-cta hidden lg:inline-flex" href="./resume/" target="_blank" rel="noopener">
-                  <span>View CV</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z"></path>
-                    <path d="M5 5h6v2H7v10h10v-4h2v6H5V5z"></path>
-                  </svg>
+                  View CV
+                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                 </a>
               </div>
 
               <!--Biography-->
               <div class="academic-section-heading">
                 <span class="academic-section-kicker">academic profile</span>
-                <span class="academic-section-title">Profile</span>
               </div>
-              <p class="text-justify text-slate-800 md:text-awesome mt-2 mb-4 leading-relaxed" style="font-size: 14px">
-                My research journey began during my second year of
+              <p class="profile-copy text-slate-800 mt-2 mb-4"> The research journey began during my second year of
                 undergraduate studies at Daffodil International University,
                 Bangladesh. While studying there I took part in a <span class="academic-emphasis">semester exchange
                   program
@@ -308,11 +289,24 @@
                   Francis.</i>
               </p>
 
-              <!-- Biography Carousel -->
-              <section class="act mt-2" aria-labelledby="actTitle">
+              <p class="profile-copy text-slate-800 mt-2 mb-4">
+                My work and academic efforts have been recognized through
+                <span class="">key honors</span> including the
+                <span class="academic-emphasis">fully
+                  funded Global Korea Scholarship GKS in 2023</span> by the
+                Government of the Republic of Korea and the <a class="" href="./research/"> Research Award
+                  in 2024 and 2025</a>
+                from the
+                Division of Research and Department of Computer Science and
+                Engineering at Daffodil International University. I was also
+                acknowledged as a Top Performer in the Computer Vision and
+                Deep Learning bootcamp for Medical Data at DIU.
+              </p>
+
+                            <!-- Biography Carousel -->
+              <section class="act mt-2 mb-4" aria-labelledby="actTitle">
                 <div class="act__head">
                   <h2 id="actTitle" class="academic-section-kicker">Academic Highlights</h2>
-                  <br />
 
                   <div class="act__controls">
                     <button class="act__btn" type="button" id="actPrev" aria-controls="actTrack" aria-label="Previous ">
@@ -412,122 +406,54 @@
 
               <!-- End of Biography Carousel -->
 
-              <p class="text-justify text-slate-800 md:text-slate-800 mt-6" style="font-size: 14px">
-                My work and academic efforts have been recognized through
-                <span class="">key honors</span> including the
-                <span class="" style="color: dodgerblue">fully
-                  funded Global Korea Scholarship GKS in 2023</span> by the
-                Government of the Republic of Korea and the <a class="" href="./research/"> Research Award
-                  in 2024 and 2025</a>
-                from the
-                Division of Research and Department of Computer Science and
-                Engineering at Daffodil International University. I was also
-                acknowledged as a Top Performer in the Computer Vision and
-                Deep Learning bootcamp for Medical Data at DIU.
-              </p>
-              <br />
-
               <!-- Education -->
               <div class="academic-section-heading">
-                <span class="academic-section-kicker">academic background</span>
-                <span class="academic-section-title">Education</span>
+                <span class="academic-section-kicker">Academic Background</span>
               </div>
-              <!-- Timeline wrapper -->
-              <div class="relative mt-4 mb-0" style="font-size: 14px">
-                <!-- Bachelor -->
-                <div class="grid grid-cols-[24px_1fr] gap-[6px] items-start">
-                  <!-- Left icon column -->
-                  <div class="flex justify-center mt-[1px]">
-                    <i class="fa-solid fa-circle-check text-green-700 text-sm"></i>
+
+              <div class="education-list">
+                <div class="education-item">
+                  <div class="education-marker">
+                    <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                   </div>
 
-                  <!-- Right content column -->
-                  <div class="min-w-0">
-                    <h3 class="text-slate-800  leading-snug">
-                      Bachelor of Science in Computer Science and Engineering
-                    </h3>
+                  <div class="education-content">
+                    <h3>Bachelor of Science in Computer Science and Engineering</h3>
 
-                    <!-- Row: University + Meta -->
-                    <div class="mt-1 text-slate-600">
-                      <div class="flex flex-col gap-2 md:flex-row md:items-center md:gap-10">
-                        <!-- University -->
-                        <div class="flex items-start gap-2 md:mr-6 min-w-0" style="font-size: 14px">
-                          <img src="./Image/diu.png " alt="DIU " class="w-4 h-4 shrink-0 mt-[2px] object-contain" />
-                          <span class="leading-snug">
-                            Daffodil International University,
-                            <br class="hidden md:block" />
-                            Dhaka, Bangladesh
-                          </span>
-                        </div>
+                    <p class="education-place">
+                      <img src="./Image/diu.png" alt="Daffodil International University logo" class="education-logo">
+                      <span>Daffodil International University, Dhaka, Bangladesh</span>
+                    </p>
 
-                        <!-- Meta -->
-                        <div class="flex flex-col gap-2 text-slate-700 md:flex-row md:items-center md:gap-3"
-                          style="font-size: 14px">
-                          <span class="flex items-start gap-2 md:gap-4 md:mr-8">
-                            <span>
-                              <i class="fa-regular fa-calendar text-slate-500 mt-[2px] w-4 shrink-0"></i>
-                              Duration:
-                              <br class="hidden md:block" />
-                              <span class="md:ml-0 ml-1">Spring 2022 – Fall 2025</span>
-                            </span>
-                          </span>
-
-                          <span class="flex items-start gap-2 md:gap-4 md:ml-8">
-                            <span>
-                              <i class="fa-regular fa-file-lines text-slate-500 mt-[2px] w-4 shrink-0"></i>
-                              CGPA:
-                              <br class="hidden md:block" />
-                              <span class="md:ml-0 ml-1">3.88 / 4.00</span>
-                            </span>
-                          </span>
-                        </div>
-                      </div>
+                    <div class="education-meta">
+                      <span>Spring 2022 – Fall 2025</span>
+                      <span>CGPA 3.88 / 4.00</span>
                     </div>
                   </div>
                 </div>
 
-                <!-- Exchange -->
-                <div class="grid grid-cols-[24px_1fr] gap-[6px] items-start mt-6">
-                  <!-- Empty left column for alignment -->
-                  <div></div>
+                <div class="education-item">
+                  <div class="education-marker education-marker--muted">
+                  </div>
 
-                  <!-- Right content column -->
-                  <div class="min-w-0">
-                    <h3 class="text-slate-800  leading-snug"> Semester
-                      Exchange, Computer Engineering </h3>
+                  <div class="education-content">
+                    <h3>Semester Exchange, Computer Engineering</h3>
 
-                    <!-- Row: University + CGPA (mobile stacks, desktop stays one line) -->
-                    <div class="mt-1 mb-1 text-slate-600" style="font-size: 14px">
-                      <div class="flex flex-col gap-2 md:flex-row md:items-center md:gap-3">
-                        <!-- University -->
-                        <div class="flex items-start gap-2 min-w-0">
-                          <img src="./Image/dsu.svg " alt="Dongseo University "
-                            class="w-6 h-4 shrink-0 mt-[2px] object-contain" />
-                          <span class="leading-snug  ">Dongseo
-                            University, South Korea</span>
-                        </div>
+                    <p class="education-place">
+                      <img src="./Image/dsu.svg" alt="Dongseo University logo" class="education-logo">
+                      <span>Dongseo University, South Korea</span>
+                    </p>
 
-                        <!-- CGPA -->
-                        <div class="flex items-start gap-2 text-slate-700" style="font-size: 14px">
-                          <i class="fa-regular fa-file-lines text-slate-500 mt-[2px] w-4 shrink-0"></i>
-                          <span>CGPA: 3.94 / 4.50</span>
-                        </div>
-                      </div>
+                    <div class="education-meta">
+                      <span>Fall 2023</span>
+                      <span>CGPA 3.94 / 4.50</span>
                     </div>
 
-                    <!-- Scholarship (mobile stacks, desktop stays one line) -->
-                    <div class="pt-1 border-t border-slate-100 w-[60%] text-slate-700" style="font-size: 14px">
-                      <div class="flex flex-col gap-2 md:flex-row md:items-center md:gap-4">
-                        <div class="flex items-start gap-2 min-w-0">
-                          <img src="./Image/gks.png " alt="GKS Scholarship "
-                            class="w-6 h-4 shrink-0 mt-[2px] object-contain" />
-                          <span class="leading-snug">Global Korea
-                            Scholarship (GKS)</span>
-                          <i class="fa-regular fa-calendar   text-slate-500 mt-[2px] w-4 shrink-0 "></i>
-                          <span class="leading-snug">Fall 2023</span>
-                        </div>
-                      </div>
-                    </div>
+                    <p class="education-note">
+                      <img src="./Image/gks.png" alt="Global Korea Scholarship logo"
+                        class="education-logo education-logo--gks">
+                      <span>Global Korea Scholarship (GKS), fully funded.</span>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -535,79 +461,102 @@
 
               <!-- Recent Publications -->
               <div class="academic-section-heading">
-                <span class="academic-section-kicker">selected works</span>
-                <span class="academic-section-title">Recent Key Publications</span>
+                <span class="academic-section-kicker">Recent Key Publications</span>
               </div>
 
-              <div class="rp-list mt-4 mb-0">
-                <div class="rp-item">
-                  <p>
-                    <b>Nazmul Huda Badhon</b>, Sabit Ahamed Preanto, Abu Shahed Shah Md Nazmul Arefin, Kazi Jahid Hasan,
-                    Md. Baharul Islam,
-                    "Temporal Convolutional Network Based Indoor Location Recognition from BLE Beacon Signals in Nursing
-                    Care Facility."
-                    In
-                    <a href="https://www.jstage.jst.go.jp/browse/ijabc/_pubinfo/-char/en" target="_blank ">International
-                      Journal of Activity and
-                      Behavior Computing,
-                    </a>, Kyushu Institute of Technology, Japan, April 2026.
-                    <a class="rp-link" href="https://doi.org/10.60401/ijabc.154" target="_blank "
-                      aria-label="Open publication link ">
-                      <i class="fa-solid fa-link"></i>
-                    </a>
-                  </p>
+              <div class="publication-list">
+                <div class="publication-item">
+                  <span class="publication-year">2026</span>
+
+                  <div class="publication-content">
+                    <p>
+                      <b>Nazmul Huda Badhon</b>, Sabit Ahamed Preanto, Abu Shahed Shah Md
+                      Nazmul Arefin, Kazi Jahid Hasan, Md. Baharul Islam,
+                      “Temporal Convolutional Network Based Indoor Location Recognition from
+                      BLE Beacon Signals in Nursing Care Facility.”
+                    </p>
+
+                    <p class="publication-venue">
+                      <a href="https://www.jstage.jst.go.jp/browse/ijabc/_pubinfo/-char/en" target="_blank">
+                        International Journal of Activity and Behavior Computing
+                      </a>
+                      · Kyushu Institute of Technology, Japan · April 2026
+                      <a class="rp-link" href="https://doi.org/10.60401/ijabc.154" target="_blank"
+                        aria-label="Open publication">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                      </a>
+                    </p>
+                  </div>
                 </div>
 
-                <div class="rp-list mt-4 mb-0">
-                  <div class="rp-item">
+                <div class="publication-item">
+                  <span class="publication-year">2025</span>
+
+                  <div class="publication-content">
                     <p>
-                      <b>Nazmul Huda Badhon</b>, Imrus Salehin, Md Tomal Ahmed
-                      Sajib, Md Sakibul Hassan Rifat, SM Noman, Nazmun Nessa
-                      Moon,
-                      " TLCNN: Tabular data-based Lightweight Convolutional Neural Network for Electricity Energy Demand
-                      Prediction. "
-                      In
-                      <a href="https://www.sciencedirect.com/journal/global-energy-interconnection "
-                        target="_blank ">Global Energy Interconnection,
-                        Elsevier</a>, December 2025.
-                      <a class="rp-link" href="https://www.sciencedirect.com/science/article/pii/S2096511725001239 "
-                        target="_blank " aria-label="Open publication link ">
-                        <i class="fa-solid fa-link"></i>
+                      <b>Nazmul Huda Badhon</b>, Imrus Salehin, Md Tomal Ahmed Sajib,
+                      Md Sakibul Hassan Rifat, SM Noman, Nazmun Nessa Moon,
+                      “TLCNN: Tabular Data-Based Lightweight Convolutional Neural Network
+                      for Electricity Energy Demand Prediction.”
+                    </p>
+
+                    <p class="publication-venue">
+                      <a href="https://www.sciencedirect.com/journal/global-energy-interconnection" target="_blank">
+                        Global Energy Interconnection, Elsevier
+                      </a>
+                      · December 2025
+                      <a class="rp-link" href="https://www.sciencedirect.com/science/article/pii/S2096511725001239"
+                        target="_blank" aria-label="Open publication">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
                       </a>
                     </p>
                   </div>
+                </div>
 
-                  <div class="rp-item">
+                <div class="publication-item">
+                  <span class="publication-year">2025</span>
+
+                  <div class="publication-content">
                     <p>
-                      Md Tomal Ahmed Sajib, <b>Nazmul Huda Badhon</b>, Imrus
-                      Salehin, Md Sakibul Hassan Rifat, Faysal Ahmed, Nazmun
-                      Nessa Moon,
-                      "A comparative deep learning methodology for plant insect image classification: assessment of CNN
-                      architectures and augmentation techniques "
-                      In
-                      <a href="https://www.sciencedirect.com/journal/methodsx " target="_blank ">MethodsX</a>, December
-                      2025.
-                      <a class="rp-link" href="https://www.sciencedirect.com/science/article/pii/S2215016125005242 "
-                        target="_blank " aria-label="Open publication link ">
-                        <i class="fa-solid fa-link"></i>
+                      Md Tomal Ahmed Sajib, <b>Nazmul Huda Badhon</b>, Imrus Salehin,
+                      Md Sakibul Hassan Rifat, Faysal Ahmed, Nazmun Nessa Moon,
+                      “A Comparative Deep Learning Methodology for Plant Insect Image
+                      Classification: Assessment of CNN Architectures and Augmentation
+                      Techniques.”
+                    </p>
+
+                    <p class="publication-venue">
+                      <a href="https://www.sciencedirect.com/journal/methodsx" target="_blank">
+                        MethodsX
+                      </a>
+                      · December 2025
+                      <a class="rp-link" href="https://www.sciencedirect.com/science/article/pii/S2215016125005242"
+                        target="_blank" aria-label="Open publication">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
                       </a>
                     </p>
                   </div>
+                </div>
 
-                  <div class="rp-item">
+                <div class="publication-item">
+                  <span class="publication-year">2025</span>
+
+                  <div class="publication-content">
                     <p>
-                      Imrus Salehin, Md Tomal Ahmed Sajib, <b>Nazmul Huda
-                        Badhon</b>, Md Sakibul Hassan Rifat, Nazrul Amin, Nazmun
-                      Nessa Moon,
-                      "Systematic Literature Review of LLM–Large Language Models in Medical: Digital Health, Technology
-                      and Applications. "
-                      In
-                      <a href="https://onlinelibrary.wiley.com/journal/25778196 " target="_blank ">Engineering
-                        Reports</a>, September
-                      2025.
-                      <a class="rp-link" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/eng2.70365 "
-                        target="_blank " aria-label="Open publication link ">
-                        <i class="fa-solid fa-link"></i>
+                      Imrus Salehin, Md Tomal Ahmed Sajib, <b>Nazmul Huda Badhon</b>,
+                      Md Sakibul Hassan Rifat, Nazrul Amin, Nazmun Nessa Moon,
+                      “Systematic Literature Review of LLM–Large Language Models in Medical:
+                      Digital Health, Technology and Applications.”
+                    </p>
+
+                    <p class="publication-venue">
+                      <a href="https://onlinelibrary.wiley.com/journal/25778196" target="_blank">
+                        Engineering Reports
+                      </a>
+                      · September 2025
+                      <a class="rp-link" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/eng2.70365"
+                        target="_blank" aria-label="Open publication">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
                       </a>
                     </p>
                   </div>
@@ -622,29 +571,29 @@
     <footer id="sitefooter" class="w-full py-1 border-t border-white/10">
       <!-- Desktop footer: left and right like top nav -->
       <div class="hidden md:flex max-w-6xl mx-auto px-4 items-center justify-between">
-        <p class="text-sm text-[#06142A] tracking-wide">
+        <span class="text-[#06142A] tracking-wide">
           © 2026
           <span class="hover:text-[#87CEEB] transition"> Nazmul Huda Badhon</span>.
-        </p>
+        </span>
 
-        <p class="text-sm text-[#06142A] tracking-wide">
+        <span class="text-[#06142A] tracking-wide">
           All Rights Reserved.
-        </p>
+        </span>
       </div>
       <!-- Mobile footer: same as before -->
       <div class="md:hidden max-w-6xl mx-auto px-4 text-center">
-        <p class="text-sm text-[#06142A] tracking-wide">
+        <span class="text-sm text-[#06142A] tracking-wide">
           © 2026
           <span class="hover:text-[#87CEEB] transition"> Nazmul Huda Badhon</span>.
           All Rights Reserved.
-        </p>
+        </span>
       </div>
     </footer>
   </section>
 
   <!-- Back to Top Button -->
   <button id="backToTop " aria-label="Back to top "
-    class="fixed right-8 bottom-16 z-50 flex items-center justify-center h-12 w-12 rounded-full bg-[#87CEEB] text-white shadow-md transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1 hover:scale-110 focus:ring-4 focus:ring-[#87CEEB]/40">
+    class="fixed right-8 bottom-16 z-50 flex items-center justify-center h-8 w-8 bg-[#A51C30] text-white shadow-md transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1 hover:scale-110 focus:ring-4 focus:ring-[#A51C30]/40">
     <i class="fa-solid fa-arrow-up text-lg transition-transform duration-300 group-hover:-rotate-12"></i>
   </button>
 

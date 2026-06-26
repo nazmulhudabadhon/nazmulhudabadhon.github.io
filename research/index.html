@@ -27,26 +27,26 @@
 
 </head>
 
-<body class="scroll-smooth overflow-x-hidden lg:overflow-hidden">
+<body class="scroll-smooth">
     <!-- ===== TOP NAVBAR ===== -->
-    <header id="topHeader" class="hidden lg:block site-topbar w-full h-14 font-medium">
+    <header id="topHeader" class="hidden lg:block site-topbar w-full h-14">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             <div class="h-14 flex items-center justify-between">
 
                 <div class="brand text-[#06142A]">
-                    <a href="https://nazmulhudabadhon.github.io/" class="hover:text-[#0A3D91]"
+                    <a href="https://nazmulhudabadhon.github.io/" class="hover:text-[#A51C30]"
                         style="font-family: 'Libre Baskerville', Georgia, serif;">
                         <b>Nazmul Huda</b> Badhon
                     </a>
                 </div>
 
-                <nav id="topNav" class="flex items-center gap-6 text-[#06142A] font-medium">
-                    <a href="../" class="nav-link block hover:text-[#0A3D91]">Home</a>
-                    <a href="../research/" class="nav-link active block hover:text-[#0A3D91]">Publications</a>
-                    <a href="../projects/" class="nav-link block hover:text-[#0A3D91]">Projects</a>
-                    <a href="../achievement/" class="nav-link block hover:text-[#0A3D91]">Achievements</a>
+                <nav id="topNav" class="flex items-center gap-6 text-[#A51C30]">
+                    <a href="../" class="nav-link block hover:text-[#A51C30]">HOME</a>
+                    <a href="../research/" class="nav-link active block hover:text-[#A51C30]">PUBLICATIONS</a>
+                    <a href="../projects/" class="nav-link block hover:text-[#A51C30]">PROJECTS</a>
+                    <a href="../achievement/" class="nav-link block hover:text-[#A51C30]">ACHIEVEMENTS</a>
                     <a href="../resume/" target="_blank" rel="noopener"
-                        class="nav-link block hover:text-[#0A3D91]">CV</a>
+                        class="nav-link block hover:text-[#A51C30]">CV</a>
                 </nav>
 
             </div>
@@ -75,11 +75,11 @@
         <!-- Collapsible nav (hidden by default, header remains visible) -->
         <nav id="mobileMenu" class="hidden flex-col gap-2 px-4 pb-4 text-slate-900 font-medium">
             <br>
-            <a href="../" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Home</a><br><br>
-            <a href="./" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Publications</a><br><br>
-            <a href="../projects/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Projects</a><br><br>
+            <a href="../" class="py-2 border-b border-white/10 hover:text-[#E3872D]">HOME</a><br><br>
+            <a href="./" class="py-2 border-b border-white/10 hover:text-[#E3872D]">PUBLICATIONS</a><br><br>
+            <a href="../projects/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">PROJECTS</a><br><br>
             <a href="../achievement/"
-                class="py-2 border-b border-white/10 hover:text-[#E3872D]">Achievements</a><br><br>
+                class="py-2 border-b border-white/10 hover:text-[#E3872D]">ACHIEVEMENTS</a><br><br>
             <a href="../resume/" class="py-2 border-b border-white/10 hover:text-[#E3872D]" target="_blank"
                 rel="noopener">CV</a>
         </nav>
@@ -92,12 +92,13 @@
             <div class="drawer-content flex flex-col w-full max-w-full min-w-0 overflow-x-hidden">
 
                 <!-- PUBLICATIONS -->
-                <section class="scroll-mt-24 mt-0 w-full h-[calc(100vh-3.5rem)] bg-[var(--page-bg)]">
-                    <div class="max-w-7xl mx-auto px-6 md:px-12 h-full overflow-hidden pt-6 pb-4">
+                <section class="scroll-mt-24 mt-0 w-full bg-[var(--page-bg)]">
+                    <div class="max-w-7xl mx-auto px-6 md:px-12 pt-6 pb-10">
 
                         <!--Mobile Year Filter -->
-                        <div class="mb-4 flex justify-center items-center gap-6 text-sm md:text-[14px] lg:hidden" style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
-                            <button class="year-filter text-slate-900 font-semibold" data-year="all">All</button>
+                        <div class="mb-4 flex justify-center items-center gap-6 text-sm md:text-[14px] lg:hidden"
+                            style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
+                            <button class="year-filter text-slate-900 font-semibold" data-year="">All</button>
                             <button class="year-filter text-slate-500 hover:text-slate-900"
                                 data-year="2026">2026</button>
                             <button class="year-filter text-slate-500 hover:text-slate-900"
@@ -106,40 +107,30 @@
                                 data-year="2024">2024</button>
                         </div>
 
-                        <div
-                            class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_170px] gap-10 items-start h-full min-h-0 overflow-hidden">
+                        <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_170px] gap-10 items-start">
 
                             <!-- LEFT: only articles scroll -->
-                            <div
-                                class="flex flex-col gap-0 overflow-y-auto pr-2 h-full min-h-0 pb-8 publication-scroll justify-start items-stretch">
+                            <div class="flex flex-col gap-0 pr-2 pb-8 publication-scroll justify-start items-stretch">
 
-                                <div style="border-bottom: none; margin-top: 0;">
-                                    <span class="profile-name">Research Publications</span> ·
-                                    <span
-                                        style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif; font-size: 14px; color: var(--text-muted);">
-                                        Research contributions in deep learning learning, computer vision and applied
-                                        AI.
-                                    </span>
+                                <div class="research-page-heading">
+                                    <span class="academic-section-kicker">Research Publications</span>
+                                    <p>Research contributions in deep learning, computer vision, and applied AI.</p>
                                 </div>
 
                                 <!-- 2026 Group -->
-                                <div class="publication-year-group flex flex-col gap-6" data-group-year="2026">
-                                    <div class="publication-year-heading" data-heading-year="2026"
-                                        style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
-                                        <div class="flex items-end justify-between border-b border-slate-300 pb-2">
-                                            <span class="year-count text-md text-slate-500">2
-                                                publications</span>
-                                            <span class="text-3xl font-light text-slate-400">2026</span>
-                                        </div>
+                                <div class="publication-year-group" data-group-year="2026">
+
+                                    <div class="publication-year-heading" data-heading-year="2026">
+                                        <span class="publication-year-label">2026</span>
+                                        <span class="year-count">2 publications</span>
                                     </div>
 
                                     <!--TCN-Japan-->
-                                    <article data-year="2026" research-type="journal"
-                                        class="publication-card rounded-2xl border border-gray-200 bg-white p-4 md:p-8   shadow-sm ">
-                                        <div class="flex flex-col lg:flex-row gap-6 lg:gap-10 ">
+                                    <article data-year="2026" research-type="journal" class="publication-card">
+                                        <div class="publication-card-inner">
 
                                             <!-- LEFT: content -->
-                                            <div class="flex-1 min-w-0 ">
+                                            <div class="publication-card-content">
                                                 <!-- Meta row -->
                                                 <div class="flex flex-wrap items-center gap-2 text-sm ">
                                                     <!--<span
@@ -156,8 +147,7 @@
                                                     </span>
                                                 </div>
                                                 <!-- Title -->
-                                                <p
-                                                    class="mt-4 text-sm md:text-[13px] leading-snug text-justify text-gray-900">
+                                                <p class="mt-4 text-sm md:text-[13px] leading-snug   text-gray-900">
                                                     <span class="font-semibold">Nazmul Huda Badhon</span>, Sabit Ahamed
                                                     Preanto,
                                                     Abu Shahed Shah
@@ -188,23 +178,21 @@
                                             </div>
 
                                             <!-- RIGHT: thumbnails-->
-                                            <div class="w-full lg:w-[300px] shrink-0">
-                                                <div
-                                                    class="h-[180px] w-full overflow-hidden rounded-xl ring-1 ring-black/5 bg-gray-50 ">
+                                            <div class="publication-card-media">
+                                                <div class="publication-figure">
                                                     <img src="../Image/tcn_method.png " alt="Publication figure "
                                                         loading="lazy " class="h-full w-full object-cover " />
                                                 </div>
                                             </div>
+                                        </div>
                                     </article>
 
                                     <!-- Book Chapter -->
-                                    <article data-year="2026" research-type="book-chapter"
-                                        class="publication-card rounded-2xl border border-gray-200 p-4 md:p-8   shadow-sm ">
+                                    <article data-year="2026" research-type="book-chapter" class="publication-card">
 
-                                        <div class="flex flex-col lg:flex-row gap-6 lg:gap-10 ">
-
+                                        <div class="publication-card-inner">
                                             <!-- LEFT: content -->
-                                            <div class="flex-1 min-w-0 ">
+                                            <div class="publication-card-content">
                                                 <!-- Meta row -->
                                                 <div class="flex flex-wrap items-center gap-2 text-sm ">
                                                     <span
@@ -216,7 +204,7 @@
 
                                                 <!-- Citation -->
                                                 <p
-                                                    class="mt-4 text-sm md:text-[13px]  leading-snug text-gray-900 text-justify break-words">
+                                                    class="mt-4 text-sm md:text-[13px]  leading-snug text-gray-900   break-words">
                                                     Imrus Salehin, <span class="font-semibold">Nazmul Huda
                                                         Badhon</span>,
                                                     Md.
@@ -246,11 +234,10 @@
                                             </div>
 
                                             <!-- RIGHT: thumbnail -->
-                                            <div class="lg:w-[300px] shrink-0 ">
-                                                <div
-                                                    class="h-[180px] w-full overflow-hidden rounded-xl ring-1 ring-black/5 bg-gray-50 ">
-                                                    <img src="../Image/bookchapter.jpg " alt="Publication figure "
-                                                        loading="lazy " class="h-full w-full object-cover " />
+                                            <div class="publication-card-media">
+                                                <div class="publication-figure"> <img src="../Image/bookchapter.jpg "
+                                                        alt="Publication figure " loading="lazy "
+                                                        class="h-full w-full object-cover " />
                                                 </div>
                                             </div>
                                         </div>
@@ -258,23 +245,19 @@
                                 </div>
 
                                 <!-- 2025 Group -->
-                                <div class="publication-year-group flex flex-col gap-6" data-group-year="2025">
-                                    <div class="publication-year-heading" data-heading-year="2025"
-                                        style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
-                                        <div class="flex items-end justify-between border-b border-slate-300 pb-2">
-                                            <span class="year-count text-md text-slate-500">5
-                                                publications</span>
-                                            <span class="text-3xl font-light text-slate-400">2025</span>
-                                        </div>
+                                <div class="publication-year-group" data-group-year="2025">
+
+                                    <div class="publication-year-heading" data-heading-year="2025">
+                                        <span class="publication-year-label">2025</span>
+                                        <span class="year-count">5 publications</span>
                                     </div>
 
 
-                                    <article data-year="2025" research-type="journal"
-                                        class="publication-card rounded-2xl border border-gray-200 bg-white p-4 md:p-8  shadow-sm ">
-                                        <div class="flex flex-col lg:flex-row gap-6 lg:gap-10 ">
+                                    <article data-year="2025" research-type="journal" class="publication-card">
+                                        <div class="publication-card-inner">
 
                                             <!-- LEFT: content -->
-                                            <div class="flex-1 min-w-0 ">
+                                            <div class="publication-card-content">
                                                 <!-- Meta row -->
                                                 <div class="flex flex-wrap items-center gap-2 text-sm ">
                                                     <span
@@ -285,13 +268,15 @@
                                                     <span class="text-gray-700">November, 2025 &nbsp;–&nbsp; <span
                                                             class="tracking-wide "><i>Global Energy
                                                                 Interconnection</i></span>
-                                                        <span>&nbsp;–&nbsp; Impact Factor: 2.6, CiteScore: 6.0</span>
+                                                        <span>&nbsp;–&nbsp; Impact Factor: 2.6, CiteScore:
+                                                            6.0</span>
                                                     </span>
                                                 </div>
                                                 <!-- Title -->
                                                 <p
-                                                    class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900 text-justify break-words">
-                                                    <span class="font-semibold text-black">Nazmul Huda Badhon</span>,
+                                                    class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900   break-words">
+                                                    <span class="font-semibold text-black">Nazmul Huda
+                                                        Badhon</span>,
                                                     Imrus
                                                     Salehin, Md
                                                     Tomal Ahmed Sajib, Md
@@ -307,8 +292,8 @@
                                                 <!-- Buttons -->
                                                 <div class="mt-4 flex flex-wrap gap-3 ">
                                                     <a href="https://www.sciencedirect.com/science/article/pii/S2096511725001239 "
-                                                        target="_blank " class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 font-medium text-gray-900
-                                hover:bg-gray-50 transition ">
+                                                        target="_blank "
+                                                        class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 font-medium text-gray-900 hover:bg-gray-50 transition ">
                                                         <i class="fa-solid fa-file-pdf text-sm"></i> Paper
                                                     </a>
 
@@ -320,23 +305,21 @@
                                             </div>
 
                                             <!-- RIGHT: thumbnails-->
-                                            <div class="w-full lg:w-[300px] shrink-0">
-                                                <div
-                                                    class="h-[180px] w-full overflow-hidden rounded-xl ring-1 ring-black/5 bg-gray-50 ">
+                                            <div class="publication-card-media">
+                                                <div class="publication-figure">
                                                     <img src="../Image/tlcnn.jpg " alt="Publication figure "
                                                         loading="lazy " class="h-full w-full object-cover " />
                                                 </div>
                                             </div>
-
+                                        </div>
                                     </article>
 
                                     <!-- MethodsX -->
-                                    <article data-year="2025" research-type="journal"
-                                        class="publication-card rounded-2xl border border-gray-200 bg-white p-4 md:p-8   shadow-sm ">
+                                    <article data-year="2025" research-type="journal" class="publication-card">
 
-                                        <div class="flex flex-col lg:flex-row gap-6 lg:gap-10 ">
+                                        <div class="publication-card-inner">
                                             <!-- LEFT: content -->
-                                            <div class="flex-1 min-w-0 ">
+                                            <div class="publication-card-content">
                                                 <!-- Meta row -->
                                                 <div class="flex flex-wrap items-center gap-2 text-sm ">
                                                     <span
@@ -353,7 +336,7 @@
                                                 </div>
                                                 <!-- Title -->
                                                 <p
-                                                    class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900 text-justify break-words">
+                                                    class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900   break-words">
                                                     Md Tomal Ahmed Sajib, <span class="font-semibold">Nazmul Huda
                                                         Badhon</span>,
                                                     Imrus Salehin, Md
@@ -382,23 +365,22 @@
                                             </div>
 
                                             <!-- RIGHT: thumbnails-->
-                                            <div class="lg:w-[300px] shrink-0 ">
-                                                <div
-                                                    class="h-[180px] w-full overflow-hidden rounded-xl ring-1 ring-black/5 bg-gray-50 ">
+                                            <div class="publication-card-media">
+                                                <div class="publication-figure">
                                                     <img src="../Image/methodsx.jpg " alt="Publication figure "
                                                         loading="lazy " class="h-full w-full object-cover " />
                                                 </div>
                                             </div>
+                                        </div>
                                     </article>
 
                                     <!-- Bmode data -->
-                                    <article data-year="2025" research-type="journal"
-                                        class="publication-card rounded-2xl border border-gray-200 bg-white p-4 md:p-8   shadow-sm ">
+                                    <article data-year="2025" research-type="journal" class="publication-card">
 
-                                        <div class="flex flex-col lg:flex-row gap-6 lg:gap-10 ">
+                                        <div class="publication-card-inner">
 
                                             <!-- LEFT: content -->
-                                            <div class="flex-1 min-w-0 ">
+                                            <div class="publication-card-content">
                                                 <!-- Meta row -->
                                                 <div class="flex flex-wrap items-center gap-2 text-sm ">
                                                     <span
@@ -409,16 +391,19 @@
 
                                                     <span class="text-gray-700">September, 2025 &nbsp;–&nbsp;<span
                                                             class="   tracking-wide "><i>Data in Brief</i></span>
-                                                        <span>&nbsp;–&nbsp; Impact Factor: 1.4, CiteScore: 2.6</span>
+                                                        <span>&nbsp;–&nbsp; Impact Factor: 1.4, CiteScore:
+                                                            2.6</span>
                                                     </span>
                                                 </div>
 
                                                 <!-- Citation -->
                                                 <p
-                                                    class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900 text-justify break-words">
+                                                    class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900   break-words">
                                                     Imrus Salehin, <span class="font-semibold">Nazmul Huda
-                                                        Badhon</span>, Md. Tomal Ahmed Sajib, Nazmun Nessa Moon (2025),
-                                                    "DeepUS-ReconSeg: A multi-angle paired B-mode Ultrasound dataset for
+                                                        Badhon</span>, Md. Tomal Ahmed Sajib, Nazmun Nessa Moon
+                                                    (2025),
+                                                    "DeepUS-ReconSeg: A multi-angle paired B-mode Ultrasound dataset
+                                                    for
                                                     medical
                                                     imaging reconstruction and segmentation
                                                     " on Data in Brief, 112083, 19 September 2025. ISSN: 2352-3409,
@@ -441,9 +426,8 @@
                                             </div>
 
                                             <!-- RIGHT: thumbnail -->
-                                            <div class="lg:w-[300px] shrink-0 ">
-                                                <div
-                                                    class="h-[180px] w-full overflow-hidden rounded-xl ring-1 ring-black/5 bg-gray-50 ">
+                                            <div class="publication-card-media">
+                                                <div class="publication-figure">
                                                     <img src="../Image/bmode.png " alt="Publication figure "
                                                         loading="lazy " class="h-full w-full object-cover " />
                                                 </div>
@@ -452,13 +436,12 @@
                                     </article>
 
                                     <!-- IQ data -->
-                                    <article data-year="2025" research-type="journal"
-                                        class="publication-card rounded-2xl border border-gray-200 bg-white p-4 md:p-8   shadow-sm ">
+                                    <article data-year="2025" research-type="journal" class="publication-card">
 
-                                        <div class="flex flex-col lg:flex-row gap-6 lg:gap-10 ">
+                                        <div class="publication-card-inner">
 
                                             <!-- LEFT: content -->
-                                            <div class="flex-1 min-w-0 ">
+                                            <div class="publication-card-content">
                                                 <!-- Meta row -->
                                                 <div class="flex flex-wrap items-center gap-2 text-sm ">
                                                     <span
@@ -469,17 +452,20 @@
 
                                                     <span class="text-gray-700 ">August, 2025 &nbsp;–&nbsp;<span
                                                             class="   tracking-wide "><i>Data in Brief</i></span>
-                                                        <span>&nbsp;–&nbsp; Impact Factor: 1.4, CiteScore: 2.6</span>
+                                                        <span>&nbsp;–&nbsp; Impact Factor: 1.4, CiteScore:
+                                                            2.6</span>
                                                     </span>
                                                 </div>
 
                                                 <!-- Citation -->
                                                 <p
-                                                    class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900 text-justify break-words">
+                                                    class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900   break-words">
                                                     Imrus Salehin, <span class="font-semibold">Nazmul Huda
-                                                        Badhon</span>, Md Tomal Ahmed Sajib, Mohd Saifuzzaman, Nazmun
+                                                        Badhon</span>, Md Tomal Ahmed Sajib, Mohd Saifuzzaman,
+                                                    Nazmun
                                                     Nessa
-                                                    Moon (2025), "IQ-UltraRecon: Demodulated IQ ultrasound dataset of
+                                                    Moon (2025), "IQ-UltraRecon: Demodulated IQ ultrasound dataset
+                                                    of
                                                     human
                                                     hand
                                                     and arm tissue for deep learning-based reconstruction
@@ -503,9 +489,8 @@
                                             </div>
 
                                             <!-- RIGHT: thumbnail -->
-                                            <div class="lg:w-[300px] shrink-0 ">
-                                                <div
-                                                    class="h-[180px] w-full overflow-hidden rounded-xl ring-1 ring-black/5 bg-gray-50 ">
+                                            <div class="publication-card-media">
+                                                <div class="publication-figure">
                                                     <img src="../Image/ultrarecon_fig.png" alt="Publication figure"
                                                         loading="lazy" class="h-full w-full object-cover" />
                                                 </div>
@@ -514,13 +499,12 @@
                                     </article>
 
                                     <!-- LLM Review -->
-                                    <article data-year="2025" research-type="journal"
-                                        class="publication-card rounded-2xl border border-gray-200 bg-white p-4 md:p-8   shadow-sm ">
+                                    <article data-year="2025" research-type="journal" class="publication-card">
 
-                                        <div class="flex flex-col lg:flex-row gap-6 lg:gap-10 ">
+                                        <div class="publication-card-inner">
 
                                             <!-- LEFT: content -->
-                                            <div class="flex-1 min-w-0 ">
+                                            <div class="publication-card-content">
                                                 <!-- Meta row -->
                                                 <div class="flex flex-wrap items-center gap-2 text-sm ">
                                                     <span
@@ -531,15 +515,17 @@
 
                                                     <span class="text-gray-700">September, 2025 &nbsp;–&nbsp;<span
                                                             class="tracking-wide "><i>Engineering Reports</i></span>
-                                                        <span>&nbsp;–&nbsp; Impact Factor: 2.0, CiteScore: 4.1</span>
+                                                        <span>&nbsp;–&nbsp; Impact Factor: 2.0, CiteScore:
+                                                            4.1</span>
                                                     </span>
                                                 </div>
 
                                                 <!-- Citation -->
                                                 <p
-                                                    class="mt-4 text-sm md:text-[13px]  leading-snug text-gray-900 text-justify break-words">
+                                                    class="mt-4 text-sm md:text-[13px]  leading-snug text-gray-900   break-words">
                                                     Imrus Salehin, Md Tomal Ahmed Sajib,
-                                                    <span class="font-semibold">Nazmul Huda Badhon</span>, Md Sakibul
+                                                    <span class="font-semibold">Nazmul Huda Badhon</span>, Md
+                                                    Sakibul
                                                     Hassan
                                                     Rifat, Nazrul Amin,
                                                     Nazmun Nessa Moon, "Systematic Literature Review of LLM–Large
@@ -567,9 +553,8 @@
                                             </div>
 
                                             <!-- RIGHT: thumbnail -->
-                                            <div class="lg:w-[300px] shrink-0 ">
-                                                <div
-                                                    class="h-[180px] w-full overflow-hidden rounded-xl ring-1 ring-black/5 bg-gray-50 ">
+                                            <div class="publication-card-media">
+                                                <div class="publication-figure">
                                                     <img src="../Image/llm.jpg " alt="Publication figure "
                                                         loading="lazy " class="h-full w-full object-cover " />
                                                 </div>
@@ -579,24 +564,20 @@
                                 </div>
 
                                 <!-- 2024 Group -->
-                                <div class="publication-year-group flex flex-col gap-6" data-group-year="2024">
-                                    <div class="publication-year-heading" data-heading-year="2024"
-                                        style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
-                                        <div class="flex items-end justify-between border-b border-slate-300 pb-2">
-                                            <span class="year-count text-md text-slate-500">1
-                                                publication</span>
-                                            <span class="text-3xl font-light text-slate-400">2024</span>
-                                        </div>
+                                <div class="publication-year-group" data-group-year="2024">
+
+                                    <div class="publication-year-heading" data-heading-year="2024">
+                                        <span class="publication-year-label">2024</span>
+                                        <span class="year-count">1 publication</span>
                                     </div>
 
                                     <!-- BAU-Insectv2 -->
-                                    <article data-year="2024" research-type="journal"
-                                        class="publication-card rounded-2xl border border-gray-200 bg-white p-4 md:p-8   shadow-sm ">
+                                    <article data-year="2024" research-type="journal" class="publication-card">
 
-                                        <div class="flex flex-col lg:flex-row gap-6 lg:gap-10 ">
+                                        <div class="publication-card-inner">
 
                                             <!-- LEFT: content -->
-                                            <div class="flex-1 min-w-0 ">
+                                            <div class="publication-card-content">
                                                 <!-- Meta row -->
                                                 <div class="flex flex-wrap items-center gap-2 text-sm ">
                                                     <span
@@ -607,18 +588,20 @@
 
                                                     <span class="text-gray-700">January, 2024 &nbsp;–&nbsp;<span
                                                             class="   tracking-wide "><i>Data in Brief</i></span>
-                                                        <span>&nbsp;–&nbsp; Impact Factor: 1.4, CiteScore: 2.6</span>
+                                                        <span>&nbsp;–&nbsp; Impact Factor: 1.4, CiteScore:
+                                                            2.6</span>
                                                     </span>
                                                 </div>
 
                                                 <!-- Citation -->
                                                 <p
-                                                    class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900 text-justify break-words">
+                                                    class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900   break-words">
                                                     Imrus Salehin, Mahbubur Rahman Khan, Ummya Habiba, <span
                                                         class="font-semibold">Nazmul Huda
                                                         Badhon</span>, Nazmun Nessa Moon (2024), "BAU-Insectv2: An
                                                     Agricultural
-                                                    Plant Insect Dataset for Deep Learning and Biomedical Image Analysis
+                                                    Plant Insect Dataset for Deep Learning and Biomedical Image
+                                                    Analysis
                                                     " on Data in Brief, 110083, 23 January 2024. ISSN: 2352-3409,
                                                     Elsevier.
                                                 </p>
@@ -626,8 +609,8 @@
                                                 <!-- Buttons -->
                                                 <div class="mt-4 flex flex-wrap gap-3 ">
                                                     <a href="https://www.sciencedirect.com/science/article/pii/S2352340924000568 "
-                                                        target="_blank " class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 font-medium text-gray-900
-                                hover:bg-gray-50 transition ">
+                                                        target="_blank "
+                                                        class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 font-medium text-gray-900 hover:bg-gray-50 transition ">
                                                         <i class="fa-solid fa-file-pdf "></i> Paper
                                                     </a>
 
@@ -639,9 +622,8 @@
                                             </div>
 
                                             <!-- RIGHT: thumbnail -->
-                                            <div class="lg:w-[300px] shrink-0 ">
-                                                <div
-                                                    class="h-[180px] w-full overflow-hidden rounded-xl ring-1 ring-black/5 bg-gray-50 ">
+                                            <div class="publication-card-media">
+                                                <div class="publication-figure">
                                                     <img src="../Image/bauinsect.jpg " alt="Publication figure "
                                                         loading="lazy " class="h-full w-full object-cover " />
                                                 </div>
@@ -652,8 +634,7 @@
                             </div>
 
                             <!-- RIGHT: frozen sidebar -->
-                            <aside class="hidden lg:block h-full"
-                                style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
+                            <aside class="research-sidebar hidden lg:block">
                                 <div class="text-sm text-slate-700">
                                     <div class="mb-8">
                                         <h3 class="text-xs font-bold uppercase tracking-[0.25em] text-slate-500 mb-2">
@@ -661,19 +642,19 @@
                                         </h3>
                                         <div class="border-t border-slate-300 pt-3 space-y-0">
                                             <button type="button"
-                                                class="year-filter flex w-full justify-between text-left px-3 py-2 rounded-sm  text-slate-500 font-normal hover:text-slate-900"
+                                                class="year-filter flex w-full justify-between text-left"
                                                 data-year="2026">
                                                 <span>2026</span><span>2</span>
                                             </button>
 
                                             <button type="button"
-                                                class="year-filter flex w-full justify-between text-left px-3 py-2 rounded-sm  text-slate-500 font-normal hover:text-slate-900"
+                                                class="year-filter flex w-full justify-between text-left"
                                                 data-year="2025">
                                                 <span>2025</span><span>5</span>
                                             </button>
 
                                             <button type="button"
-                                                class="year-filter flex w-full justify-between text-left px-3 py-2 rounded-sm text-slate-500 font-normal hover:text-slate-900"
+                                                class="year-filter flex w-full justify-between text-left"
                                                 data-year="2024">
                                                 <span>2024</span><span>1</span>
                                             </button>
@@ -686,13 +667,13 @@
                                         </h3>
                                         <div class="border-t border-slate-300 pt-3">
                                             <button type="button"
-                                                class="research-filter flex w-full justify-between text-left px-3 py-2 rounded-sm text-slate-500 font-normal hover:text-slate-900"
+                                                class="research-filter flex w-full justify-between text-left"
                                                 research-type="journal">
                                                 <span>Journal</span><span>7</span>
                                             </button>
 
                                             <button type="button"
-                                                class="research-filter flex w-full justify-between text-left px-3 py-2 rounded-sm text-slate-500 font-normal hover:text-slate-900"
+                                                class="research-filter flex w-full justify-between text-left"
                                                 research-type="book-chapter">
                                                 <span>Book Chapter</span><span>1</span>
                                             </button>
@@ -716,13 +697,38 @@
                         </p>
                     </div>
                 </footer>-->
+            </div>
+        </div>
+    </section>
 
+    <!-- COPYRIGHT FOOTER -->
+    <footer id="sitefooter" class="w-full py-1 border-t border-white/10">
+        <!-- Desktop footer: left and right like top nav -->
+        <div class="hidden md:flex max-w-6xl mx-auto px-4 items-center justify-between">
+            <span class="text-[#06142A] tracking-wide">
+                © 2026
+                <span class="hover:text-[#87CEEB] transition"> Nazmul Huda Badhon</span>.
+            </span>
+
+            <span class="text-[#06142A] tracking-wide">
+                All Rights Reserved.
+            </span>
+        </div>
+        <!-- Mobile footer: same as before -->
+        <div class="md:hidden max-w-6xl mx-auto px-4 text-center">
+            <span class="text-sm text-[#06142A] tracking-wide">
+                © 2026
+                <span class="hover:text-[#87CEEB] transition"> Nazmul Huda Badhon</span>.
+                All Rights Reserved.
+            </span>
+        </div>
+    </footer>
     </section>
 
     <!-- Back to Top Button -->
-    <button id="backToTop" aria-label="Back to top "
-        class="fixed right-8 bottom-16 z-50 flex items-center justify-center h-12 w-12 rounded-full bg-[#87CEEB] text-white shadow-md transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1 hover:scale-110 focus:ring-4 focus:ring-[#87CEEB]/40 ">
-        <i class="fa-solid fa-arrow-up text-lg transition-transform duration-300 group-hover:-rotate-12 "></i>
+    <button id="backToTop " aria-label="Back to top "
+        class="fixed right-8 bottom-16 z-50 flex items-center justify-center h-8 w-8 bg-[#A51C30] text-white shadow-md transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1 hover:scale-110 focus:ring-4 focus:ring-[#A51C30]/40">
+        <i class="fa-solid fa-arrow-up text-lg transition-transform duration-300 group-hover:-rotate-12"></i>
     </button>
 
     <script src="../index.js "></script>

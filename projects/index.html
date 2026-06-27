@@ -34,18 +34,19 @@
             <div class="h-14 flex items-center justify-between">
 
                 <div class="brand text-[#06142A]">
-                    <a href="https://nazmulhudabadhon.github.io/" class="hover:text-[#0A3D91]"
+                    <a href="https://nazmulhudabadhon.github.io/" class="hover:text-[#A51C30]"
                         style="font-family: 'Libre Baskerville', Georgia, serif;">
                         <b>Nazmul Huda</b> Badhon
                     </a>
                 </div>
 
-                <nav id="topNav" class="flex items-center gap-6 text-[#06142A] font-medium">
-                    <a href="../" class="nav-link block hover:text-[#0A3D91]">Home</a>
-                    <a href="../research/" class="nav-link block hover:text-[#0A3D91]">Publications</a>
-                    <a href="../projects/" class="nav-link active block hover:text-[#0A3D91]">Projects</a>
-                    <a href="../achievement/" class="nav-link block hover:text-[#0A3D91]">Achievements</a>
-                    <a href="../resume/" target="_blank" rel="noopener" class="nav-link block hover:text-[#0A3D91]">CV</a>
+                <nav id="topNav" class="flex items-center gap-6 text-[#A51C30] font-medium">
+                    <a href="../" class="nav-link block hover:text-[#A51C30]">HOME</a>
+                    <a href="../research/" class="nav-link block hover:text-[#A51C30]">PUBLICATIONS</a>
+                    <a href="../projects/" class="nav-link active block hover:text-[#A51C30]">PROJECTS</a>
+                    <a href="../achievement/" class="nav-link block hover:text-[#A51C30]">ACHIEVEMENTS</a>
+                    <a href="../resume/" target="_blank" rel="noopener"
+                        class="nav-link block hover:text-[#A51C30]">CV</a>
                 </nav>
 
             </div>
@@ -91,26 +92,21 @@
 
 
                 <!-- PROJECT -->
-                <section class="scroll-mt-24 mt-0 w-full px-6 py-6 md:px-0">
-                    <div class="md:max-w-7xl md:mx-auto md:px-12">
-
-                        <div style="border-bottom: none; margin-top: 0; margin-bottom: 1.5rem;">
-                            <span class="profile-name">Projects</span> ·
-                            <span
-                                style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif; font-size: 14px; color: var(--text-muted);">
-                                projects by category in reverse chronological order
-                            </span>
+                <section class="scroll-mt-24 mt-0 w-full bg-[var(--page-bg)]">
+                    <div class="max-w-7xl mx-auto px-6 md:px-12 pt-6 pb-10">
+                        <div class="projects-page-heading">
+                            <span class="academic-section-kicker">Research Projects</span>
+                            <p>Projects in computer vision, deep learning, medical imaging, and applied AI.</p>
                         </div>
 
                         <!-- Project list -->
-                        <div class="space-y-8 md:space-y-8 ">
-
+                        <div class="project-list">
                             <!-- Project: Breast Cancer Segmentation & Classification (Hybrid) -->
-                            <article class="proj-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+                            <article class="proj-card">
                                 <div class="flex flex-col lg:flex-row">
 
                                     <!-- LEFT: content -->
-                                    <div class="flex-1 min-w-0 p-4 md:p-8"><span
+                                    <div class="flex-1 min-w-0 p-4 md:p-0"><span
                                             style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
                                             <div class="flex flex-wrap gap-2">
                                                 <span
@@ -124,7 +120,7 @@
                                                     class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-amber-100 text-amber-700">Classification</span>
                                             </div>
 
-                                            <h3 class="mt-4 text-xl text-slate-900">
+                                            <h3 class="mt-6 text-xl text-slate-900">
                                                 Breast Cancer: Segmentation-Guided Hybrid Classification
                                             </h3>
                                         </span>
@@ -141,7 +137,7 @@
                                         </p>
 
                                         <p
-                                            class="mt-4 text-justify text-sm md:text-[13px] leading-snug text-gray-900 break-words">
+                                            class="mt-6 mr-4 text-justify text-sm md:text-[13px] leading-snug text-gray-900 break-words">
                                             A two-stage pipeline on breast ultrasound: (1) train U-Net on BUSI-with-GT
                                             to obtain
                                             lesion masks, then segment BUSI_Corrected images; (2) merge classes
@@ -156,7 +152,7 @@
                                         <div class="mt-6 flex flex-wrap gap-3">
                                             <a href="https://github.com/nazmulhudabadhon/Computer-Vision-and-Deep-Learning-in-Medical-Imaging/blob/9303a9f41ee4fe1e1477e76dbd2743dd810db34a/Breast_Cancer_Segmentation_and_classification.ipynb"
                                                 target="_blank" rel="noopener noreferrer"
-                                                class="inline-flex items-center px-2 py-1 border border-black rounded-md text-gray-900 font-medium hover:bg-gray-50 transition">
+                                                class="inline-flex items-center px-6 py-2 border border-black rounded-md text-gray-900 font-medium hover:bg-gray-50 transition">
                                                 <i class="fa-brands fa-github mr-2 text-sm"></i> Code & Notebooks
                                             </a>
                                         </div>
@@ -164,7 +160,7 @@
 
                                     <!-- RIGHT: thumbnail -->
                                     <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
-                                        <div class="h-full min-h-[220px] w-full bg-gray-50">
+                                        <div class="w-full bg-gray-50">
                                             <img src="../Image/breast_ultrasound_thumbnail.jpg"
                                                 alt="Breast ultrasound – segmentation & hybrid classification"
                                                 loading="lazy" decoding="async" width="1280" height="720"
@@ -176,11 +172,11 @@
                             </article>
 
                             <!-- Lung Colon -->
-                            <article class="proj-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+                            <article class="proj-card">
                                 <div class="flex flex-col lg:flex-row">
 
                                     <!-- LEFT: content -->
-                                    <div class="flex-1 min-w-0 p-4 md:p-8">
+                                    <div class="flex-1 min-w-0 p-4 md:p-0">
                                         <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
                                             <div class="flex flex-wrap gap-2">
                                                 <span
@@ -221,7 +217,7 @@
                                         <div class="mt-6 flex flex-wrap gap-3">
                                             <a href="https://github.com/nazmulhudabadhon/Computer-Vision-and-Deep-Learning-in-Medical-Imaging/blob/a024c4d66ebfc31581006f1932921234cc33c346/Lung%E2%80%93Colon%20Histopathology%3A%20Image%20Enhancement%20%26%20Transfer%20Learning.ipynb"
                                                 target="_blank" rel="noopener noreferrer"
-                                                class="inline-flex items-center px-2 py-1 border border-black rounded-md text-black font-medium ">
+                                                class="inline-flex items-center px-6 py-2 border border-black rounded-md text-black font-medium ">
                                                 <i class="fa-brands fa-github mr-2"></i> Code & Notebooks
                                             </a>
                                         </div>
@@ -229,7 +225,7 @@
 
                                     <!-- RIGHT: thumbnail -->
                                     <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
-                                        <div class="h-full min-h-[220px] w-full bg-gray-50">
+                                        <div class=" w-full bg-gray-50">
                                             <img src="../Image/lc_histopathology_thumbnail.jpg"
                                                 alt="Lung–Colon project overview" loading="lazy" decoding="async"
                                                 width="1280" height="720" class="h-full w-full object-contain">
@@ -240,11 +236,11 @@
                             </article>
 
                             <!-- ViT Project -->
-                            <article class="proj-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+                            <article class="proj-card">
                                 <div class="flex flex-col lg:flex-row">
 
                                     <!-- LEFT: content -->
-                                    <div class="flex-1 min-w-0 p-4 md:p-8">
+                                    <div class="flex-1 min-w-0 p-4 md:p-0">
                                         <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
                                             <div class="flex flex-wrap gap-2">
                                                 <span
@@ -267,7 +263,7 @@
                                             Dataset: Medical Image Preprocessing Experiments
                                         </p>
 
-                                        <p class="mt-4 text-justify text-sm md:text-[14px]">
+                                        <p class="mt-6 text-justify text-sm md:text-[14px]">
                                             This project applied sequential preprocessing and quality enhancement steps
                                             to
                                             medical images, followed by classification using a Vision Transformer (ViT).
@@ -283,7 +279,7 @@
                                         <div class="mt-6 flex flex-wrap gap-3">
                                             <a href="https://github.com/nazmulhudabadhon/Computer-Vision-and-Deep-Learning-in-Medical-Imaging/blob/a024c4d66ebfc31581006f1932921234cc33c346/Image%20Preprocessing%20and%20Quality%20Analysis%20with%20Vision%20Transformer-ViT.ipynb"
                                                 target="_blank" rel="noopener noreferrer"
-                                                class="inline-flex items-center px-2 py-1 border border-black rounded-md text-black font-medium ">
+                                                class="inline-flex items-center px-6 py-2 border border-black rounded-md text-black font-medium ">
                                                 <i class="fa-brands fa-github mr-2"></i> Code & Notebooks
                                             </a>
                                         </div>
@@ -291,7 +287,7 @@
 
                                     <!-- RIGHT: thumbnail -->
                                     <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
-                                        <div class="h-full min-h-[220px] w-full bg-gray-50">
+                                        <div class=" w-full bg-gray-50">
                                             <img src="../Image/vit_thumbnail.jpg"
                                                 alt="Vision Transformer project overview" loading="lazy"
                                                 decoding="async" width="1280" height="720"
@@ -307,23 +303,33 @@
                 </section>
 
                 <!-- COPYRIGHT FOOTER -->
-                <footer id="sitefooter" class="w-full py-1 border-t border-white/10 ">
-                    <div class="max-w-7xl mx-auto px-4 text-center ">
-                        <p class="text-sm text-[#06142A] tracking-wide font-awesome">
+                <footer id="sitefooter" class="w-full py-1 border-t border-white/10">
+                    <!-- Desktop footer: left and right like top nav -->
+                    <div class="hidden md:flex max-w-6xl mx-auto px-4 items-center justify-between">
+                        <span class="text-[#06142A] tracking-wide">
                             © 2026
-                            <span class="hover:opacity-90 transition ">
-                                Nazmul Huda Badhon
-                            </span> . All Rights Reserved.
-                        </p>
+                            <span class="hover:text-[#87CEEB] transition"> Nazmul Huda Badhon</span>.
+                        </span>
+
+                        <span class="text-[#06142A] tracking-wide">
+                            All Rights Reserved.
+                        </span>
+                    </div>
+                    <!-- Mobile footer: same as before -->
+                    <div class="md:hidden max-w-6xl mx-auto px-4 text-center">
+                        <span class="text-sm text-[#06142A] tracking-wide">
+                            © 2026
+                            <span class="hover:text-[#87CEEB] transition"> Nazmul Huda Badhon</span>.
+                            All Rights Reserved.
+                        </span>
                     </div>
                 </footer>
-
     </section>
 
     <!-- Back to Top Button -->
-    <button id="backToTop" aria-label="Back to top "
-        class="fixed right-8 bottom-16 z-50 flex items-center justify-center h-12 w-12 rounded-full bg-[#87CEEB] text-white shadow-md transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1 hover:scale-110 focus:ring-4 focus:ring-[#87CEEB]/40 ">
-        <i class="fa-solid fa-arrow-up text-lg transition-transform duration-300 group-hover:-rotate-12 "></i>
+    <button id="backToTop " aria-label="Back to top "
+        class="fixed right-8 bottom-16 z-50 flex items-center justify-center h-8 w-8 bg-[#A51C30] text-white shadow-md transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1 hover:scale-110 focus:ring-4 focus:ring-[#A51C30]/40">
+        <i class="fa-solid fa-arrow-up text-lg transition-transform duration-300 group-hover:-rotate-12"></i>
     </button>
 
     <script src="../index.js"></script>

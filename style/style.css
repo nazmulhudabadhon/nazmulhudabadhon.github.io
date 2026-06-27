@@ -273,23 +273,127 @@ Mobile About Spacing
 }
 
 /* ================================
-Projects Card
+Projects page — research-style layout
 ================================ */
 
-.proj-card {
-    opacity: 1;
-    transform: none;
-    transition: none;
-    will-change: auto;
+.projects-page-heading {
+    margin: 0;
+    padding: 0 0 10px;
+    background: transparent;
 }
 
-.proj-card.in {
-    opacity: 1;
-    transform: none;
+.projects-page-heading .academic-section-kicker {
+    display: block;
+    margin-bottom: 2px;
 }
 
-.proj-card:hover {
-    transform: none;
+.projects-page-heading p {
+    margin: 0;
+    color: var(--text-muted);
+    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+article.proj-card {
+    margin: 0;
+    padding: 20px 0;
+    overflow: visible;
+    border: 0;
+    border-top: 1px solid var(--border);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.proj-card:first-child {
+    border-top: 0;
+}
+
+.proj-card .rounded-2xl,
+.proj-card .shadow-sm {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.proj-card h3 {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 16px;
+    line-height: 1.45;
+    font-weight: 700;
+}
+
+.proj-card .inline-flex.items-center {
+    padding: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: var(--text-muted) !important;
+    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.proj-card .inline-flex.items-center+.inline-flex.items-center::before {
+    content: "·";
+    margin-right: 8px;
+    color: var(--border);
+}
+
+.proj-card a.inline-flex {
+    border: 1px solid var(--border) !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: var(--accent-link) !important;
+    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.proj-card a.inline-flex:hover {
+    color: var(--accent-red) !important;
+    background: var(--soft-bg) !important;
+}
+
+.proj-card img {
+    border: 1px solid var(--border);
+}
+
+@media (max-width: 1023px) {
+    article.proj-card {
+        padding: 18px 0;
+    }
+}
+
+/* Projects: remove white article background and left gray accent */
+article.proj-card {
+    position: static !important;
+    overflow: visible !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-top: 1px solid var(--border) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+article.proj-card::before,
+article.proj-card::after {
+    display: none !important;
+}
+
+article.proj-card>* {
+    position: static !important;
+    z-index: auto !important;
+}
+
+.proj-card .bg-gray-50,
+.proj-card .bg-white {
+    background: transparent !important;
 }
 
 /* ================================
@@ -1164,7 +1268,7 @@ article.publication-card>* {
 }
 
 /* Page heading */
-.research-page-heading {
+.page-heading {
     position: sticky;
     margin: 0 0 0px;
     padding: 12px 0 10px;
@@ -1172,7 +1276,7 @@ article.publication-card>* {
 }
 
 @media (min-width: 1024px) {
-    .research-page-heading {
+    .page-heading {
         position: static !important;
         top: auto !important;
         z-index: auto !important;
@@ -1180,12 +1284,12 @@ article.publication-card>* {
     }
 }
 
-.research-page-heading .academic-section-kicker {
+.page-heading .academic-section-kicker {
     display: block;
     margin-bottom: 0px;
 }
 
-.research-page-heading p {
+.page-heading p {
     color: var(--accent-red);
     font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
     font-size: 13px;
@@ -1386,7 +1490,7 @@ Research page: fixed desktop elements
     }
 
     /* Keep research heading below the 56px header */
-    .research-page-heading {
+    .page-heading {
         position: sticky;
         top: 3.5rem;
         z-index: 30;
@@ -1574,4 +1678,109 @@ Footer
         text-align: center;
         gap: 4px;
     }
+}
+
+/* ================================
+Achievements page — research-style layout
+================================ */
+
+.achievement-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+article.ach-card {
+    position: static !important;
+    overflow: visible !important;
+    margin: 0;
+    padding: 20px 0;
+    border: 0 !important;
+    border-top: 1px solid var(--border) !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+article.ach-card::before,
+article.ach-card::after {
+    display: none !important;
+}
+
+article.ach-card>* {
+    position: static !important;
+    z-index: auto !important;
+}
+
+.ach-card:first-child {
+    border-top: 0 !important;
+}
+
+.ach-card .bg-gray-50,
+.ach-card .bg-white {
+    background: transparent !important;
+}
+
+.ach-card .inline-flex.items-center {
+    padding: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    color: var(--text-muted) !important;
+    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.ach-card .inline-flex.items-center+.inline-flex.items-center::before {
+    content: "·";
+    margin-right: 8px;
+    color: var(--border);
+}
+
+.ach-card h3,
+.ach-card h4 {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 16px;
+    line-height: 1.45;
+    font-weight: 700;
+}
+
+.ach-card img,
+.ach-card iframe {
+    border: 1px solid var(--border);
+}
+
+/* Sticky filter only */
+@media (min-width: 1024px) {
+    .achievement-sidebar {
+        position: sticky;
+        top: 5rem;
+        align-self: start;
+    }
+}
+
+/* Achievements: force text to left-align */
+.ach-card p,
+.ach-card h3,
+.ach-card h4 {
+    text-align: left !important;
+}
+
+/* Achievement keyword labels */
+.achievement-keyword {
+    color: var(--accent-red);
+    font-weight: 700;
+}
+
+.achievement-keyword--award {
+    color: #8b5e00;
+}
+
+.achievement-keyword--research {
+    color: var(--accent-link);
+}
+
+.achievement-keyword--eca {
+    color: #2f6d4f;
 }

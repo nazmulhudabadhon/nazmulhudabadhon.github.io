@@ -25,25 +25,25 @@
   <link rel="apple-touch-icon" sizes="180x180" href="../Image/apple-touch-icon.png" />
 </head>
 
-<body class="scroll-smooth overflow-x-hidden lg:overflow-hidden">
+<body class="scroll-smooth overflow-x-hidden">
   <!-- ===== TOP NAVBAR ===== -->
   <header id="topHeader" class="hidden lg:block site-topbar w-full h-14 font-medium">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       <div class="h-14 flex items-center justify-between">
 
         <div class="brand text-[#06142A]">
-          <a href="https://nazmulhudabadhon.github.io/" class="hover:text-[#0A3D91]"
+          <a href="https://nazmulhudabadhon.github.io/" class="hover:text-[#A51C30]"
             style="font-family: 'Libre Baskerville', Georgia, serif;">
             <b>Nazmul Huda</b> Badhon
           </a>
         </div>
 
-        <nav id="topNav" class="flex items-center gap-6 text-[#06142A] font-medium">
-          <a href="../" class="nav-link block hover:text-[#0A3D91]">Home</a>
-          <a href="../research/" class="nav-link block hover:text-[#0A3D91]">Publications</a>
-          <a href="../projects/" class="nav-link block hover:text-[#0A3D91]">Projects</a>
-          <a href="../achievement/" class="nav-link active block hover:text-[#0A3D91]">Achievements</a>
-          <a href="../resume/" target="_blank" rel="noopener" class="nav-link block hover:text-[#0A3D91]">CV</a>
+        <nav id="topNav" class="flex items-center gap-6 text-[#A51C30] font-medium">
+          <a href="../" class="nav-link block hover:text-[#A51C30]">HOME</a>
+          <a href="../research/" class="nav-link block hover:text-[#A51C30]">PUBLICATIONS</a>
+          <a href="../projects/" class="nav-link block hover:text-[#A51C30]">PROJECTS</a>
+          <a href="../achievement/" class="nav-link active block hover:text-[#A51C30]">ACHIEVEMENTS</a>
+          <a href="../resume/" target="_blank" rel="noopener" class="nav-link block hover:text-[#A51C30]">CV</a>
         </nav>
       </div>
     </div>
@@ -85,20 +85,15 @@
       <div class="drawer-content flex flex-col w-full">
 
         <!--ACHIEVEMENT & ECA-->
-        <section class="scroll-mt-24 mt-0 w-full px-6 py-6 md:px-0 h-[calc(100vh-3.5rem)] bg-[var(--page-bg)]">
-          <div class="md:max-w-7xl md:mx-auto md:px-12 h-full overflow-hidden">
-            <div
-              class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_170px] gap-10 items-start h-full min-h-0 overflow-hidden">
-
+        <section class="scroll-mt-24 mt-0 w-full bg-[var(--page-bg)]">
+          <div class="max-w-7xl mx-auto px-6 md:px-12 pt-6 pb-10">
+            <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_170px] gap-10 items-start">
               <!-- LEFT: heading + achievement cards scroll -->
-              <div
-                class="flex flex-col gap-0 overflow-y-auto pr-2 h-full min-h-0 pb-8 achievement-scroll justify-start items-stretch">
-                <div style="border-bottom: none; margin-top: 0; margin-bottom: 1.5rem;">
-                  <span class="profile-name">Achievements</span> ·
-                  <span
-                    style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif; font-size: 14px; color: var(--text-muted);">
-                    Awards, honors, certifications and leadership activities grouped by category.
-                  </span>
+              <div class="flex flex-col gap-0 pr-2 pb-8 achievement-scroll justify-start items-stretch">
+
+                <div class="page-heading">
+                  <span class="academic-section-kicker">Academic & Professional Recognition</span>
+                  <p>Awards, honors, certifications, research recognition, and leadership activities.</p>
                 </div>
 
                 <!-- Achievement Type Filter -->
@@ -110,38 +105,34 @@
                 </div>
 
                 <!-- Achievement list -->
-                <div class="flex flex-col gap-6 md:gap-8 w-full">
+                <div class="achievement-list">
 
                   <!-- Card 1: YouTube -->
-                  <article data-type="academic"
-                    class="ach-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+                  <article data-type="academic" class="ach-card">
                     <div class="flex flex-col lg:flex-row">
 
-                      <div class="flex-1 min-w-0 p-4 md:p-8">
-                        <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
-                          <span
-                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-red-100 text-[#800000]">
-                            Scholarship
-                          </span>
-
-                          <span
-                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-yellow-100 text-yellow-700">
-                            Academic Milestone
-                          </span>
-
-                          <h3 class="mt-4 text-xl text-slate-900">
-                            Global Korea Scholarship Recipient, 2023
-                          </h3>
+                      <div class="flex-1 min-w-0 p-4 md:p-0">
+                        <span class="inline-flex items-center uppercase">
+                          Scholarship
                         </span>
 
-                        <p
-                          class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-[13px] leading-snug break-words">
+                        <span
+                          class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-yellow-100 text-yellow-700">
+                          Academic Milestone
+                        </span>
+
+                        <h3 class="mt-6 text-xl text-slate-900">
+                          Global Korea Scholarship Recipient, 2023
+                        </h3>
+
+                        <p class="mt-4 mb-2 text-slate-700   text-sm md:text-[13px] leading-snug break-words">
                           Achieved the fully-funded GKS scholarship 2023 by the
                           Government of Republic of Korea while completing Bachelor of
                           Science degree at Daffodil International University and
                           studied one semester on-site in South Korea under the
                           Semester Exchange Program.
                         </p>
+                        <br>
 
                         <p class="text-sm md:text-[13px] text-slate-500 mt-2 flex items-center gap-1">
                           <span>Receiving Year: Fall 2023, Dongseo University, SK</span>
@@ -163,11 +154,10 @@
                   </article>
 
                   <!-- Card 2: Image -->
-                  <article data-type="research"
-                    class="ach-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+                  <article data-type="research" class="ach-card">
                     <div class="flex flex-col lg:flex-row">
 
-                      <div class="flex-1 min-w-0 p-4 md:p-8">
+                      <div class="flex-1 min-w-0 p-4 md:p-0">
                         <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
                           <span
                             class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-green-100 text-green-700">
@@ -179,18 +169,18 @@
                             Research
                           </span>
 
-                          <h3 class="mt-4 text-xl text-slate-900">
+                          <h3 class="mt-6 text-xl text-slate-900">
                             Research Award for Scholarly Publication in Reputed Indexed Journal
                           </h3>
                         </span>
 
-                        <p
-                          class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-[13px] leading-snug break-words">
+                        <p class="mt-4 mr-2 mb-2 text-slate-700 text-[13px] leading-snug break-words">
                           Recognized for scholarly publications in reputed indexed
                           journals by the Division of Research and Department of
                           Computer Science and Engineering, Daffodil International
                           University.
                         </p>
+                        <br>
 
                         <p class="text-sm md:text-[13px] text-slate-500 mt-2">
                           Receiving Date: 20 May 2025
@@ -209,11 +199,10 @@
                   </article>
 
                   <!-- Card 3: Image -->
-                  <article data-type="academic"
-                    class="ach-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+                  <article data-type="academic" class="ach-card">
                     <div class="flex flex-col lg:flex-row">
 
-                      <div class="flex-1 min-w-0 p-4 md:p-8">
+                      <div class="flex-1 min-w-0 p-4 md:p-0">
                         <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
                           <span
                             class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-orange-100 text-orange-700">
@@ -225,17 +214,18 @@
                             Academic Milestone
                           </span>
 
-                          <h3 class="mt-4 text-xl text-slate-900">
+                          <h3 class="mt-6 mr-2 text-xl text-slate-900">
                             Top Performer of Computer Vision and Deep Learning for Medical Image Analysis Bootcamp, 2025
                           </h3>
                         </span>
 
-                        <p class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-[13px]">
+                        <p class="mt-4 mb-2 text-slate-700   text-sm md:text-[13px]">
                           Received token of appreciation for top performance in
                           Computer Vision & Medical Image Analysis Bootcamp organized
                           by Health Informatics Research Lab, Daffodil International
                           University.
                         </p>
+                        <br>
 
                         <p class="text-sm md:text-[13px] text-slate-500 mt-2">
                           Receiving Date: 30 July 2025
@@ -254,11 +244,10 @@
                   </article>
 
                   <!-- Card 4: Image -->
-                  <article data-type="research"
-                    class="ach-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+                  <article data-type="research" class="ach-card">
                     <div class="flex flex-col lg:flex-row">
 
-                      <div class="flex-1 min-w-0 p-4 md:p-8">
+                      <div class="flex-1 min-w-0 p-4 md:p-0">
                         <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
                           <span
                             class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-pink-100 text-pink-700">
@@ -270,17 +259,18 @@
                             Research
                           </span>
 
-                          <h4 class="mt-4 text-xl text-slate-900">
+                          <h4 class="mt-6 text-xl text-slate-900">
                             Reviewed research article for Digital Health Journal, Sage Publishing, 2025
                           </h4>
                         </span>
 
-                        <p class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-[13px]">
+                        <p class="mt-4 mb-2 mr-2 text-slate-700 text-sm md:text-[13px]">
                           Received an acknowledgement certificate for serving as a peer reviewer for
                           <i>Digital Health</i>, a journal published by SAGE Publishing. I contributed to the scholarly
                           review process by evaluating a submitted research manuscript and providing constructive
                           academic feedback.
                         </p>
+                        <br>
 
                         <p class="text-sm md:text-[13px] text-slate-500 mt-2">
                           Receiving Date: 05 August 2025
@@ -299,11 +289,10 @@
                   </article>
 
                   <!-- Card 5: Image -->
-                  <article data-type="eca"
-                    class="ach-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+                  <article data-type="eca" class="ach-card">
                     <div class="flex flex-col lg:flex-row">
 
-                      <div class="flex-1 min-w-0 p-4 md:p-8">
+                      <div class="flex-1 min-w-0 p-4 md:p-0">
                         <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
                           <span
                             class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-blue-100 text-blue-700">
@@ -315,17 +304,18 @@
                             ECA
                           </span>
 
-                          <h4 class="mt-4 text-xl text-slate-900">
+                          <h4 class="mt-6 text-xl text-slate-900">
                             Founding General Secretary, Daffodil Research Society, 2024
                           </h4>
                         </span>
 
-                        <p class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-[13px]">
+                        <p class="mt-4 mb-2 text-slate-700 text-sm md:text-[13px]">
                           Served as Founding General Secretary for the Daffodil International University Research
                           Society,
                           2024. I contributed to the student community by organizing research initiatives and fostering
                           academic collaboration.
                         </p>
+                        <br>
 
                         <p class="text-sm md:text-[13px] text-slate-500 mt-2">
                           Timeline: March-July, 2024
@@ -344,11 +334,10 @@
                   </article>
 
                   <!-- Card 6: Image -->
-                  <article data-type="eca"
-                    class="ach-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
-                    <div class="flex flex-col lg:flex-row">
+                  <article data-type="eca" class="ach-card">
+                    <div class=" flex flex-col lg:flex-row">
 
-                      <div class="flex-1 min-w-0 p-4 md:p-8">
+                      <div class="flex-1 min-w-0 p-4 md:p-0">
                         <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
                           <span
                             class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-300 text-slate-700">
@@ -360,16 +349,17 @@
                             ECA
                           </span>
 
-                          <h4 class="mt-4 text-xl text-slate-900">
+                          <h4 class="mt-6 text-xl text-slate-900">
                             Team Leader, Dongseo University International Camp, 2023
                           </h4>
                         </span>
 
-                        <p class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-[13px]">
+                        <p class="mt-4 mb-2 text-slate-700   text-sm md:text-[13px]">
                           Participated as Team Leader for the Dongseo University International Camp, 2023. I contributed
                           to the international student community by building cross-cultural collaboration and exchanging
                           ideas through various camp activities.
                         </p>
+                        <br>
 
                         <p class="text-sm md:text-[13px] text-slate-500 mt-2">
                           Timeline: September, 2023. Place: South Korea
@@ -388,11 +378,10 @@
                   </article>
 
                   <!-- Card 7: Image -->
-                  <article data-type="eca"
-                    class="ach-card overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+                  <article data-type="eca" class="ach-card">
                     <div class="flex flex-col lg:flex-row">
 
-                      <div class="flex-1 min-w-0 p-4 md:p-8">
+                      <div class="flex-1 min-w-0 p-4 md:p-0">
                         <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
                           <span
                             class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-orange-100 text-orange-700">
@@ -404,15 +393,16 @@
                             ECA
                           </span>
 
-                          <h4 class="mt-4 text-xl text-slate-900">
+                          <h4 class="mt-6 text-xl text-slate-900">
                             Participant, Cultural Event by Embassy of the People's Republic of Korea in Bangladesh
                           </h4>
                         </span>
 
-                        <p class="mt-4 mb-2 text-slate-700 text-justify text-sm md:text-[13px]">
+                        <p class="mt-4 mb-2 text-slate-700   text-sm md:text-[13px]">
                           Participated in a cultural event in Bangladesh South Korean Embassy. It was an exciting
                           opportunity to showcase my talents and connect with other participants in K-pop culture.
                         </p>
+                        <br>
 
                         <p class="text-sm md:text-[13px] leading-snug text-slate-500 mt-2">
                           Timeline: 2025. Place: Bangladesh
@@ -434,7 +424,8 @@
               </div>
 
               <!-- RIGHT: achievement type filter/sidebar -->
-              <aside class="hidden lg:block h-full" style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
+              <aside class="achievement-sidebar hidden lg:block"
+                style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
                 <div class="text-sm text-slate-700">
                   <div>
                     <h3 class="text-xs font-bold uppercase tracking-[0.25em] text-slate-500 mb-2">
@@ -475,21 +466,33 @@
         </section>
       </div>
     </div>
+    <!-- COPYRIGHT FOOTER -->
+    <footer id="sitefooter" class="w-full py-1 border-t border-white/10">
+      <!-- Desktop footer: left and right like top nav -->
+      <div class="hidden md:flex max-w-6xl mx-auto px-4 items-center justify-between">
+        <span class="text-[#06142A] tracking-wide">
+          © 2026
+          <span class="hover:text-[#87CEEB] transition"> Nazmul Huda Badhon</span>.
+        </span>
+
+        <span class="text-[#06142A] tracking-wide">
+          All Rights Reserved.
+        </span>
+      </div>
+      <!-- Mobile footer: same as before -->
+      <div class="md:hidden max-w-6xl mx-auto px-4 text-center">
+        <span class="text-sm text-[#06142A] tracking-wide">
+          © 2026
+          <span class="hover:text-[#87CEEB] transition"> Nazmul Huda Badhon</span>.
+          All Rights Reserved.
+        </span>
+      </div>
+    </footer>
   </section>
 
-  <!-- COPYRIGHT FOOTER
-  <footer id="sitefooter" class="w-full py-1 border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <p class="text-sm text-[#06142A] tracking-wide font-awesome"> © 2026
-        <span class="hover:opacity-90 transition"> Nazmul Huda Badhon </span>
-        . All Rights Reserved.
-      </p>
-    </div>
-  </footer> -->
-
   <!-- Back to Top Button -->
-  <button id="backToTop" aria-label="Back to top "
-    class="fixed right-8 bottom-16 z-50 flex items-center justify-center h-12 w-12 rounded-full bg-[#87CEEB] text-white shadow-md transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1 hover:scale-110 focus:ring-4 focus:ring-[#87CEEB]/40">
+  <button id="backToTop " aria-label="Back to top "
+    class="fixed right-8 bottom-16 z-50 flex items-center justify-center h-8 w-8 bg-[#A51C30] text-white shadow-md transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1 hover:scale-110 focus:ring-4 focus:ring-[#A51C30]/40">
     <i class="fa-solid fa-arrow-up text-lg transition-transform duration-300 group-hover:-rotate-12"></i>
   </button>
 

@@ -2,339 +2,515 @@
 <html class="scroll-smooth" lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="canonical" href="../projects/">
     <title>Projects | Nazmul Huda Badhon</title>
 
-
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4/dist/full.min.css" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../style/style.css">
 
-    <!-- Current favicon for UI -->
     <link rel="icon" type="image/png" href="../Image/favicon.png">
-
-    <!-- Root-level versions for Google and crawlers -->
     <link rel="icon" type="image/png" sizes="32x32" href="../Image/favicon.png">
     <link rel="shortcut icon" href="../Image/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="../Image/apple-touch-icon.png">
-
 </head>
 
-<body class="scroll-smooth">
-    <!-- ===== TOP NAVBAR ===== -->
+<body class="scroll-smooth bg-white text-slate-900" style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
+
+    <!-- DESKTOP NAVIGATION -->
     <header id="topHeader" class="hidden lg:block site-topbar w-full h-14 font-medium">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             <div class="h-14 flex items-center justify-between">
 
                 <div class="brand text-[#06142A]">
-                    <a href="https://nazmulhudabadhon.github.io/" class="hover:text-[#A51C30]"
+                    <a href="https://nazmulhudabadhon.github.io/" class="hover:text-[#A51C30] transition-colors"
                         style="font-family: 'Libre Baskerville', Georgia, serif;">
-                        <b>Nazmul Huda</b> Badhon
+                        Nazmul Huda Badhon
                     </a>
                 </div>
 
-                <nav id="topNav" class="flex items-center gap-6 text-[#A51C30] font-medium">
-                    <a href="../" class="nav-link block hover:text-[#A51C30]">HOME</a>
-                    <a href="../research/" class="nav-link block hover:text-[#A51C30]">PUBLICATIONS</a>
-                    <a href="../projects/" class="nav-link active block hover:text-[#A51C30]">PROJECTS</a>
-                    <a href="../achievement/" class="nav-link block hover:text-[#A51C30]">ACHIEVEMENTS</a>
-                    <a href="../resume/" target="_blank" rel="noopener"
-                        class="nav-link block hover:text-[#A51C30]">CV</a>
+                <nav id="topNav" class="flex items-center gap-6 text-[#A51C30] font-medium"
+                    aria-label="Primary navigation">
+                    <a href="../" class="nav-link block hover:text-[#A51C30]">
+                        Home
+                    </a>
+
+                    <a href="../research/" class="nav-link block hover:text-[#A51C30]">
+                        Publications
+                    </a>
+
+                    <a href="../projects/" class="nav-link active block hover:text-[#A51C30]" aria-current="page">
+                        Projects
+                    </a>
+
+                    <a href="../achievement/" class="nav-link block hover:text-[#A51C30]">
+                        Achievements
+                    </a>
+
+                    <a href="../resume/" target="_blank" rel="noopener" class="nav-link block hover:text-[#A51C30]">
+                        CV
+                    </a>
                 </nav>
 
             </div>
         </div>
     </header>
 
-    <!-- Mobile header (phones only) -->
-    <header id="mobileHeader" class="md:hidden sticky top-0 z-50 text-[#06142A] w-full">
+    <!-- MOBILE NAVIGATION -->
+    <header id="mobileHeader" class="md:hidden sticky top-0 z-50 w-full text-[#06142A]">
         <div class="flex items-center justify-between px-4 py-3">
-            <!-- LEFT TEXT BLOCK -->
+
             <div class="flex flex-col">
-                <span class="text-slate-900 tracking-wide ">
+                <span class="text-slate-900 tracking-wide">
                     NAZMUL HUDA BADHON
                 </span>
-                <p class="text-left text-xs text-slate-500 tracking-wide">
+
+                <p class="text-left text-sm text-slate-500 tracking-wide">
                     B.Sc. Graduate | Deep Learning Research
                 </p>
             </div>
-            <button id="mobileMenuBtn" class="text-[#06142A] text-2xl focus:outline-none" aria-label="Toggle menu">
-                <i class="fa-solid fa-bars" id="menuOpenIcon"></i>
-                <i class="fa-solid fa-xmark hidden" id="menuCloseIcon"></i>
+
+            <button id="mobileMenuBtn" type="button" class="text-[#06142A] text-2xl focus:outline-none"
+                aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+                <i class="fa-solid fa-bars" id="menuOpenIcon" aria-hidden="true"></i>
+
+                <i class="fa-solid fa-xmark hidden" id="menuCloseIcon" aria-hidden="true"></i>
             </button>
 
         </div>
 
-        <!-- Collapsible nav (hidden by default, header remains visible) -->
-        <nav id="mobileMenu" class="hidden flex-col gap-2 px-4 pb-4 text-slate-900 font-medium">
-            <br>
-            <a href="../" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Home</a><br><br>
-            <a href="../research/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Publications</a><br><br>
-            <a href="../projects/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Projects</a><br><br>
-            <a href="../achievement/"
-                class="py-2 border-b border-white/10 hover:text-[#E3872D]">Achievements</a><br><br>
-            <a href="../resume/" class="py-2 border-b border-white/10 hover:text-[#E3872D]" target="_blank"
-                rel="noopener">CV</a>
+        <nav id="mobileMenu" class="hidden flex-col px-4 pb-5 text-slate-900 font-medium"
+            aria-label="Mobile navigation">
+            <a href="../" class="py-3 border-b border-slate-200 hover:text-[#A51C30] transition-colors">
+                Home
+            </a>
+
+            <a href="../research/" class="py-3 border-b border-slate-200 hover:text-[#A51C30] transition-colors">
+                Publications
+            </a>
+
+            <a href="../projects/" class="py-3 border-b border-slate-200 text-[#A51C30]" aria-current="page">
+                Projects
+            </a>
+
+            <a href="../achievement/" class="py-3 border-b border-slate-200 hover:text-[#A51C30] transition-colors">
+                Achievements
+            </a>
+
+            <a href="../resume/" target="_blank" rel="noopener" class="py-3 hover:text-[#A51C30] transition-colors">
+                CV
+            </a>
         </nav>
     </header>
 
-    <section>
-        <div class="drawer lg:drawer-open">
-            <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-            <div class="drawer-content flex flex-col w-full">
+    <!-- MAIN CONTENT -->
+    <main>
 
+        <section class="w-full bg-[var(--page-bg)]">
 
-                <!-- PROJECT -->
-                <section class="scroll-mt-24 mt-0 w-full bg-[var(--page-bg)]">
-                    <div class="max-w-7xl mx-auto px-6 md:px-12 pt-6 pb-10">
-                        <div class="projects-page-heading">
-                            <span class="academic-section-kicker">Research Projects</span>
-                            <p>Projects in computer vision, deep learning, medical imaging, and applied AI.</p>
+            <div class="max-w-7xl mx-auto px-6 md:px-12 pt-6 pb-10">
+
+                <!-- PAGE HEADING -->
+                <div class="projects-page-heading">
+
+                    <span class="profile-intro" style="
+                            font-family: 'Libre Baskerville', Georgia, serif;
+                            font-size: 18px;
+                            font-weight: 500;
+                        ">
+                        Research Projects
+                    </span>
+
+                    <div class="page-heading">
+                        <p>
+                            Selected projects in medical imaging, computer vision,
+                            deep learning, and applied artificial intelligence.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- PROJECT LIST -->
+                <div class="project-list">
+
+                    <!-- PROJECT 01 -->
+                    <article class="proj-card">
+
+                        <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px] gap-6 lg:gap-8 items-start">
+
+                            <!-- PROJECT CONTENT -->
+                            <div class="min-w-0">
+
+                                <!-- BADGES -->
+                                <div class="flex flex-wrap items-center gap-2">
+
+                                    <span
+                                        class="inline-flex items-center rounded-sm bg-slate-100 px-2 py-1 text-[11px] font-semibold text-slate-600">
+                                        Medical Imaging
+                                    </span>
+
+                                    <span
+                                        class="inline-flex items-center rounded-sm bg-cyan-100 px-2 py-1 text-[11px] font-semibold text-cyan-800">
+                                        Segmentation
+                                    </span>
+
+                                    <span
+                                        class="inline-flex items-center rounded-sm bg-violet-100 px-2 py-1 text-[11px] font-semibold text-violet-800">
+                                        Hybrid Model
+                                    </span>
+
+                                </div>
+
+                                <!-- TITLE -->
+                                <h2
+                                    class="mt-4 text-sm md:text-[14px] leading-snug font-semibold text-gray-900 text-left">
+                                    Breast Cancer Segmentation-Guided Hybrid
+                                    Classification
+                                </h2>
+
+                                <!-- SUMMARY -->
+                                <p class="mt-2 text-sm md:text-[12px] leading-snug text-gray-700 text-left">
+                                    Breast ultrasound lesion segmentation and
+                                    three-class classification using U-Net and fused
+                                    convolutional neural-network features.
+                                </p>
+
+                                <!-- INLINE METADATA -->
+                                <div
+                                    class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm md:text-[12px] text-gray-700">
+                                    <span>
+                                        <span class="font-semibold text-slate-500">
+                                            Dataset:
+                                        </span>
+                                        BUSI and BUSI_Corrected
+                                    </span>
+
+                                    <span>
+                                        <span class="font-semibold text-slate-500">
+                                            Methods:
+                                        </span>
+                                        U-Net · CNN feature fusion
+                                    </span>
+
+                                    <span>
+                                        <span class="font-semibold text-slate-500">
+                                            Tasks:
+                                        </span>
+                                        Segmentation · Classification
+                                    </span>
+                                </div>
+
+                                <!-- DESCRIPTION -->
+                                <p class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900 text-left">
+                                    The project uses a two-stage pipeline. First,
+                                    U-Net is trained on BUSI images with ground-truth
+                                    masks to identify breast lesions. The generated
+                                    lesion regions are then used to train a hybrid
+                                    classifier for normal, benign, and malignant
+                                    classes. Evaluation includes accuracy and loss
+                                    curves, multiclass ROC analysis, a confusion
+                                    matrix, and class-level performance metrics.
+                                </p>
+
+                                <!-- ACTIONS -->
+                                <div class="mt-4 flex flex-wrap gap-3">
+                                    <a href="https://github.com/nazmulhudabadhon/Computer-Vision-and-Deep-Learning-in-Medical-Imaging/blob/9303a9f41ee4fe1e1477e76dbd2743dd810db34a/Breast_Cancer_Segmentation_and_classification.ipynb"
+                                        target="_blank" rel="noopener noreferrer" class="project-button">
+                                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                                        Code
+                                    </a>
+                                    <a href="https://www.kaggle.com/datasets/sabahesaraki/breast-ultrasound-images-dataset"
+                                        target="_blank" rel="noopener noreferrer" class="project-button">
+                                        <i class="fa-solid fa-database" aria-hidden="true"></i>
+                                        Dataset
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- PROJECT IMAGE -->
+                            <div class="w-full">
+
+                                <div class="publication-figure">
+                                    <img src="../Image/breast_ultrasound_thumbnail.jpg"
+                                        alt="Breast ultrasound segmentation and hybrid classification workflow"
+                                        loading="lazy" decoding="async" width="1280" height="720"
+                                        class="h-full w-full object-contain">
+                                </div>
+
+                            </div>
+
                         </div>
 
-                        <!-- Project list -->
-                        <div class="project-list">
-                            <!-- Project: Breast Cancer Segmentation & Classification (Hybrid) -->
-                            <article class="proj-card">
-                                <div class="flex flex-col lg:flex-row">
+                    </article>
 
-                                    <!-- LEFT: content -->
-                                    <div class="flex-1 min-w-0 p-4 md:p-0"><span
-                                            style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
-                                            <div class="flex flex-wrap gap-2">
-                                                <span
-                                                    class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-pink-100 text-pink-700">Ultrasound</span>
-                                                <span
-                                                    class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700">Segmentation</span>
-                                                <span
-                                                    class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-indigo-100 text-indigo-700">Hybrid
-                                                    Model</span>
-                                                <span
-                                                    class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-amber-100 text-amber-700">Classification</span>
-                                            </div>
+                    <!-- PROJECT 02 -->
+                    <article class="proj-card">
 
-                                            <h3 class="mt-6 text-xl text-slate-900">
-                                                Breast Cancer: Segmentation-Guided Hybrid Classification
-                                            </h3>
-                                        </span>
+                        <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px] gap-6 lg:gap-8 items-start">
 
-                                        <p class="mt-2 text-sm text-slate-500">
-                                            Datasets:
-                                            <a class="underline"
-                                                href="https://www.kaggle.com/datasets/sabahesaraki/breast-ultrasound-images-dataset">BUSI
-                                                with GT</a>
-                                            (segmentation) &amp;
-                                            <a class="underline"
-                                                href="https://www.kaggle.com/datasets/mrmaazoo/breast-ultrasound-classification?select=BUSI_Corrected">BUSI_Corrected</a>
-                                            (classification)
-                                        </p>
+                            <!-- PROJECT CONTENT -->
+                            <div class="min-w-0">
 
-                                        <p
-                                            class="mt-6 mr-4 text-justify text-sm md:text-[13px] leading-snug text-gray-900 break-words">
-                                            A two-stage pipeline on breast ultrasound: (1) train U-Net on BUSI-with-GT
-                                            to obtain
-                                            lesion masks, then segment BUSI_Corrected images; (2) merge classes
-                                            (Normal,
-                                            Benign, Malignant) and train a hybrid classifier
-                                            that fuses features from strong CNN backbones. evaluation metrics:
-                                            Accuracy/Loss
-                                            curves, ROC for all classes, confusion matrix, and a full metrics table.
-                                        </p>
+                                <!-- BADGES -->
+                                <div class="flex flex-wrap items-center gap-2">
 
-                                        <!-- Actions -->
-                                        <div class="mt-6 flex flex-wrap gap-3">
-                                            <a href="https://github.com/nazmulhudabadhon/Computer-Vision-and-Deep-Learning-in-Medical-Imaging/blob/9303a9f41ee4fe1e1477e76dbd2743dd810db34a/Breast_Cancer_Segmentation_and_classification.ipynb"
-                                                target="_blank" rel="noopener noreferrer"
-                                                class="inline-flex items-center px-6 py-2 border border-black rounded-md text-gray-900 font-medium hover:bg-gray-50 transition">
-                                                <i class="fa-brands fa-github mr-2 text-sm"></i> Code & Notebooks
-                                            </a>
-                                        </div>
-                                    </div>
+                                    <span
+                                        class="inline-flex items-center rounded-sm bg-slate-100 px-2 py-1 text-[11px] font-semibold text-slate-600">
+                                        Computer Vision
+                                    </span>
 
-                                    <!-- RIGHT: thumbnail -->
-                                    <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
-                                        <div class="w-full bg-gray-50">
-                                            <img src="../Image/breast_ultrasound_thumbnail.jpg"
-                                                alt="Breast ultrasound – segmentation & hybrid classification"
-                                                loading="lazy" decoding="async" width="1280" height="720"
-                                                class="h-full w-full object-contain">
-                                        </div>
-                                    </div>
+                                    <span
+                                        class="inline-flex items-center rounded-sm bg-sky-100 px-2 py-1 text-[11px] font-semibold text-sky-800">
+                                        Transfer Learning
+                                    </span>
+
+                                    <span
+                                        class="inline-flex items-center rounded-sm bg-emerald-100 px-2 py-1 text-[11px] font-semibold text-emerald-800">
+                                        Ablation Study
+                                    </span>
 
                                 </div>
-                            </article>
 
-                            <!-- Lung Colon -->
-                            <article class="proj-card">
-                                <div class="flex flex-col lg:flex-row">
+                                <!-- TITLE -->
+                                <h2
+                                    class="mt-4 text-sm md:text-[14px] leading-snug font-semibold text-gray-900 text-left">
+                                    Lung–Colon Histopathology Classification with
+                                    Image Enhancement and Transfer Learning
+                                </h2>
 
-                                    <!-- LEFT: content -->
-                                    <div class="flex-1 min-w-0 p-4 md:p-0">
-                                        <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
-                                            <div class="flex flex-wrap gap-2">
-                                                <span
-                                                    class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-purple-100 text-purple-700">Computer
-                                                    Vision</span>
-                                                <span
-                                                    class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-sky-100 text-sky-700">Transfer
-                                                    Learning</span>
-                                                <span
-                                                    class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700">Ablation
-                                                    Study</span>
-                                            </div>
+                                <!-- SUMMARY -->
+                                <p class="mt-2 text-sm md:text-[12px] leading-snug text-gray-700 text-left">
+                                    Evaluation of preprocessing strategies and
+                                    transfer-learning architectures for lung and
+                                    colon histopathology classification.
+                                </p>
 
-                                            <h3 class="mt-4 text-xl text-slate-900">
-                                                Lung–Colon Histopathology: Image Enhancement & Transfer Learning
-                                            </h3>
+                                <!-- INLINE METADATA -->
+                                <div
+                                    class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm md:text-[12px] text-gray-700">
+                                    <span>
+                                        <span class="font-semibold text-slate-500">
+                                            Dataset:
                                         </span>
+                                        Lung–Colon Histopathology
+                                    </span>
 
-                                        <p class="mt-2 text-sm text-slate-500">
-                                            Dataset: Lung–Colon Histopathology Images
-                                        </p>
-
-                                        <p
-                                            class="mt-4 text-justify text-sm md:text-[13px] leading-snug text-gray-900 break-words">
-                                            This project applied sequential image processing techniques to enhance round
-                                            nuclei
-                                            in lung–colon histopathological images, followed by evaluation using MSE,
-                                            RMSE,
-                                            SSIM, and PSNR metrics.
-                                            Five transfer learning models (ResNet50, DenseNet121, EfficientNet-B0,
-                                            MobileNetV3,
-                                            ViT-B/16) were explored with the best model by accuracy and F1-score. An
-                                            ablation
-                                            study has also been performed.
-                                        </p>
-
-                                        <!-- Actions -->
-                                        <div class="mt-6 flex flex-wrap gap-3">
-                                            <a href="https://github.com/nazmulhudabadhon/Computer-Vision-and-Deep-Learning-in-Medical-Imaging/blob/a024c4d66ebfc31581006f1932921234cc33c346/Lung%E2%80%93Colon%20Histopathology%3A%20Image%20Enhancement%20%26%20Transfer%20Learning.ipynb"
-                                                target="_blank" rel="noopener noreferrer"
-                                                class="inline-flex items-center px-6 py-2 border border-black rounded-md text-black font-medium ">
-                                                <i class="fa-brands fa-github mr-2"></i> Code & Notebooks
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <!-- RIGHT: thumbnail -->
-                                    <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
-                                        <div class=" w-full bg-gray-50">
-                                            <img src="../Image/lc_histopathology_thumbnail.jpg"
-                                                alt="Lung–Colon project overview" loading="lazy" decoding="async"
-                                                width="1280" height="720" class="h-full w-full object-contain">
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </article>
-
-                            <!-- ViT Project -->
-                            <article class="proj-card">
-                                <div class="flex flex-col lg:flex-row">
-
-                                    <!-- LEFT: content -->
-                                    <div class="flex-1 min-w-0 p-4 md:p-0">
-                                        <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
-                                            <div class="flex flex-wrap gap-2">
-                                                <span
-                                                    class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-purple-100 text-purple-700">Computer
-                                                    Vision</span>
-                                                <span
-                                                    class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-sky-100 text-sky-700">Vision
-                                                    Transformer</span>
-                                                <span
-                                                    class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700">Image
-                                                    Processing</span>
-                                            </div>
-
-                                            <h3 class="mt-4 text-xl text-slate-900">
-                                                Image Preprocessing & Quality Analysis with Vision Transformer
-                                            </h3>
+                                    <span>
+                                        <span class="font-semibold text-slate-500">
+                                            Models:
                                         </span>
+                                        CNNs · ViT-B/16
+                                    </span>
 
-                                        <p class="mt-2 text-sm text-slate-500">
-                                            Dataset: Medical Image Preprocessing Experiments
-                                        </p>
-
-                                        <p class="mt-6 text-justify text-sm md:text-[14px]">
-                                            This project applied sequential preprocessing and quality enhancement steps
-                                            to
-                                            medical images, followed by classification using a Vision Transformer (ViT).
-                                            Performance evaluation achieved <b>87% testing accuracy</b>,
-                                            demonstrating the
-                                            effectiveness of preprocessing in improving transformer-based models. The
-                                            workflow
-                                            included image quality analysis, evaluation metrics
-                                            summarization.
-                                        </p>
-
-                                        <!-- Actions -->
-                                        <div class="mt-6 flex flex-wrap gap-3">
-                                            <a href="https://github.com/nazmulhudabadhon/Computer-Vision-and-Deep-Learning-in-Medical-Imaging/blob/a024c4d66ebfc31581006f1932921234cc33c346/Image%20Preprocessing%20and%20Quality%20Analysis%20with%20Vision%20Transformer-ViT.ipynb"
-                                                target="_blank" rel="noopener noreferrer"
-                                                class="inline-flex items-center px-6 py-2 border border-black rounded-md text-black font-medium ">
-                                                <i class="fa-brands fa-github mr-2"></i> Code & Notebooks
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <!-- RIGHT: thumbnail -->
-                                    <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
-                                        <div class=" w-full bg-gray-50">
-                                            <img src="../Image/vit_thumbnail.jpg"
-                                                alt="Vision Transformer project overview" loading="lazy"
-                                                decoding="async" width="1280" height="720"
-                                                class="h-full w-full object-contain">
-                                        </div>
-                                    </div>
-
+                                    <span>
+                                        <span class="font-semibold text-slate-500">
+                                            Evaluation:
+                                        </span>
+                                        Accuracy · F1 · SSIM · PSNR
+                                    </span>
                                 </div>
-                            </article>
+
+                                <!-- DESCRIPTION -->
+                                <p class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900 text-left">
+                                    Sequential image-processing methods were applied
+                                    to enhance circular nuclei and improve tissue
+                                    representation. Image quality was evaluated
+                                    through MSE, RMSE, SSIM, and PSNR. Five
+                                    transfer-learning architectures—ResNet50,
+                                    DenseNet121, EfficientNet-B0, MobileNetV3, and
+                                    ViT-B/16—were compared using accuracy and
+                                    F1-score, followed by an ablation study of the
+                                    preprocessing workflow.
+                                </p>
+
+                                <!-- ACTIONS -->
+                                <div class="mt-4 flex flex-wrap gap-3">
+                                    <a href="https://github.com/nazmulhudabadhon/Computer-Vision-and-Deep-Learning-in-Medical-Imaging/blob/a024c4d66ebfc31581006f1932921234cc33c346/Lung%E2%80%93Colon%20Histopathology%3A%20Image%20Enhancement%20%26%20Transfer%20Learning.ipynb"
+                                        target="_blank" rel="noopener noreferrer" class="project-button">
+                                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                                        Code
+                                    </a>
+                                </div>
+
+                            </div>
+
+                            <!-- PROJECT IMAGE -->
+                            <div class="w-full">
+
+                                <div class="publication-figure">
+                                    <img src="../Image/lc_histopathology_thumbnail.jpg"
+                                        alt="Lung and colon histopathology image-enhancement and transfer-learning workflow"
+                                        loading="lazy" decoding="async" width="1280" height="720"
+                                        class="h-full w-full object-contain">
+                                </div>
+
+                            </div>
 
                         </div>
-                    </div>
-                </section>
 
-                <!-- COPYRIGHT FOOTER -->
-                <footer id="sitefooter" class="w-full py-1 border-t border-white/10">
-                    <!-- Desktop footer: left and right like top nav -->
-                    <div class="hidden md:flex max-w-6xl mx-auto px-4 items-center justify-between">
-                        <span class="text-[#06142A] tracking-wide">
-                            © 2026
-                            <span class="hover:text-[#87CEEB] transition"> Nazmul Huda Badhon</span>.
-                        </span>
+                    </article>
 
-                        <span class="text-[#06142A] tracking-wide">
-                            All Rights Reserved.
-                        </span>
-                    </div>
-                    <!-- Mobile footer: same as before -->
-                    <div class="md:hidden max-w-6xl mx-auto px-4 text-center">
-                        <span class="text-sm text-[#06142A] tracking-wide">
-                            © 2026
-                            <span class="hover:text-[#87CEEB] transition"> Nazmul Huda Badhon</span>.
-                            All Rights Reserved.
-                        </span>
-                    </div>
-                </footer>
-    </section>
+                    <!-- PROJECT 03 -->
+                    <article class="proj-card">
 
-    <!-- Back to Top Button -->
-    <button id="backToTop " aria-label="Back to top "
-        class="fixed right-8 bottom-16 z-50 flex items-center justify-center h-8 w-8 bg-[#A51C30] text-white shadow-md transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1 hover:scale-110 focus:ring-4 focus:ring-[#A51C30]/40">
-        <i class="fa-solid fa-arrow-up text-lg transition-transform duration-300 group-hover:-rotate-12"></i>
+                        <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px] gap-6 lg:gap-8 items-start">
+
+                            <!-- PROJECT CONTENT -->
+                            <div class="min-w-0">
+
+                                <!-- BADGES -->
+                                <div class="flex flex-wrap items-center gap-2">
+
+                                    <span
+                                        class="inline-flex items-center rounded-sm bg-slate-100 px-2 py-1 text-[11px] font-semibold text-slate-600">
+                                        Medical Imaging
+                                    </span>
+
+                                    <span
+                                        class="inline-flex items-center rounded-sm bg-violet-100 px-2 py-1 text-[11px] font-semibold text-violet-800">
+                                        Vision Transformer
+                                    </span>
+
+                                    <span
+                                        class="inline-flex items-center rounded-sm bg-cyan-100 px-2 py-1 text-[11px] font-semibold text-cyan-800">
+                                        Image Processing
+                                    </span>
+
+                                </div>
+
+                                <!-- TITLE -->
+                                <h2
+                                    class="mt-4 text-sm md:text-[14px] leading-snug font-semibold text-gray-900 text-left">
+                                    Medical Image Quality Enhancement and
+                                    Classification with Vision Transformers
+                                </h2>
+
+                                <!-- SUMMARY -->
+                                <p class="mt-2 text-sm md:text-[12px] leading-snug text-gray-700 text-left">
+                                    Analysis of image-enhancement pipelines and
+                                    Vision Transformer classification for medical
+                                    imaging experiments.
+                                </p>
+
+                                <!-- INLINE METADATA -->
+                                <div
+                                    class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm md:text-[12px] text-gray-700">
+                                    <span>
+                                        <span class="font-semibold text-slate-500">
+                                            Domain:
+                                        </span>
+                                        Medical image analysis
+                                    </span>
+
+                                    <span>
+                                        <span class="font-semibold text-slate-500">
+                                            Model:
+                                        </span>
+                                        Vision Transformer
+                                    </span>
+
+                                    <span>
+                                        <span class="font-semibold text-slate-500">
+                                            Result:
+                                        </span>
+                                        87% testing accuracy
+                                    </span>
+                                </div>
+
+                                <!-- DESCRIPTION -->
+                                <p class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900 text-left">
+                                    The workflow applies sequential preprocessing
+                                    and quality-enhancement methods before
+                                    classification with a Vision Transformer. Image
+                                    quality and model performance are evaluated
+                                    across the processing stages. The final
+                                    experiment achieved 87% testing accuracy,
+                                    indicating that carefully selected preprocessing
+                                    methods can improve transformer-based medical
+                                    image classification.
+                                </p>
+
+                                <!-- ACTIONS -->
+                                <div class="mt-4 flex flex-wrap gap-3">
+                                    <a href="https://github.com/nazmulhudabadhon/Computer-Vision-and-Deep-Learning-in-Medical-Imaging/blob/a024c4d66ebfc31581006f1932921234cc33c346/Image%20Preprocessing%20and%20Quality%20Analysis%20with%20Vision%20Transformer-ViT.ipynb"
+                                        target="_blank" rel="noopener noreferrer" class="project-button">
+                                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                                        Code
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- PROJECT IMAGE -->
+                            <div class="w-full">
+
+                                <div class="publication-figure">
+                                    <img src="../Image/vit_thumbnail.jpg"
+                                        alt="Medical image preprocessing and Vision Transformer classification workflow"
+                                        loading="lazy" decoding="async" width="1280" height="720"
+                                        class="h-full w-full object-contain">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="sitefooter" class="w-full border-t border-slate-200 bg-white">
+
+        <!-- Desktop footer -->
+        <div class="hidden md:flex max-w-7xl mx-auto px-6 md:px-12 py-3 items-center justify-between">
+            <span class="text-sm text-slate-500 tracking-wide">
+                © 2026 Nazmul Huda Badhon.
+            </span>
+
+            <span class="text-sm text-slate-500 tracking-wide">
+                All Rights Reserved.
+            </span>
+        </div>
+
+        <!-- Mobile footer -->
+        <div class="md:hidden max-w-7xl mx-auto px-6 py-3 text-center">
+            <span class="text-sm text-[#06142A] tracking-wide">
+                © 2026
+                <span class="hover:text-[#87CEEB] transition">
+                    Nazmul Huda Badhon
+                </span>.
+                All Rights Reserved.
+            </span>
+        </div>
+
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button id="backToTop" type="button" aria-label="Back to top"
+        class="fixed right-5 md:right-8 bottom-16 z-50 flex h-8 w-8 items-center justify-center bg-[#A51C30] text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#A51C30]/40">
+        <i class="fa-solid fa-arrow-up text-sm" aria-hidden="true"></i>
     </button>
 
     <script src="../index.js"></script>
-</body>
 
-</html>
+</body>
 
 </html>

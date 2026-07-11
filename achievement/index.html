@@ -2,501 +2,629 @@
 <html class="scroll-smooth" lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="canonical" href="../achievement/" />
+  <link rel="canonical" href="../achievement/">
   <title>Achievements | Nazmul Huda Badhon</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@4/dist/full.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4/dist/full.min.css" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet">
+
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style/style.css" />
 
-  <!-- Current favicon for UI -->
-  <link rel="icon" type="image/png" href="../Image/favicon.png" />
+  <link rel="stylesheet" href="../style/style.css">
 
-  <!-- Root-level versions for Google and crawlers -->
-  <link rel="icon" type="image/png" sizes="32x32" href="../Image/favicon.png" />
-  <link rel="shortcut icon" href="../Image/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../Image/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" href="../Image/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../Image/favicon.png">
+  <link rel="shortcut icon" href="../Image/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../Image/apple-touch-icon.png">
 </head>
 
-<body class="scroll-smooth overflow-x-hidden">
-  <!-- ===== TOP NAVBAR ===== -->
+<body class="scroll-smooth overflow-x-hidden bg-white text-slate-900"
+  style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
+
+  <!-- =========================================================
+         DESKTOP NAVIGATION
+    ========================================================== -->
   <header id="topHeader" class="hidden lg:block site-topbar w-full h-14 font-medium">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       <div class="h-14 flex items-center justify-between">
 
         <div class="brand text-[#06142A]">
-          <a href="https://nazmulhudabadhon.github.io/" class="hover:text-[#A51C30]"
+          <a href="https://nazmulhudabadhon.github.io/" class="hover:text-[#A51C30] transition-colors"
             style="font-family: 'Libre Baskerville', Georgia, serif;">
-            <b>Nazmul Huda</b> Badhon
+            Nazmul Huda Badhon
           </a>
         </div>
 
-        <nav id="topNav" class="flex items-center gap-6 text-[#A51C30] font-medium">
-          <a href="../" class="nav-link block hover:text-[#A51C30]">HOME</a>
-          <a href="../research/" class="nav-link block hover:text-[#A51C30]">PUBLICATIONS</a>
-          <a href="../projects/" class="nav-link block hover:text-[#A51C30]">PROJECTS</a>
-          <a href="../achievement/" class="nav-link active block hover:text-[#A51C30]">ACHIEVEMENTS</a>
-          <a href="../resume/" target="_blank" rel="noopener" class="nav-link block hover:text-[#A51C30]">CV</a>
+        <nav id="topNav" class="flex items-center gap-6 text-[#A51C30] font-medium" aria-label="Primary navigation">
+          <a href="../" class="nav-link block hover:text-[#A51C30]">
+            Home
+          </a>
+
+          <a href="../research/" class="nav-link block hover:text-[#A51C30]">
+            Publications
+          </a>
+
+          <a href="../projects/" class="nav-link block hover:text-[#A51C30]">
+            Projects
+          </a>
+
+          <a href="../achievement/" class="nav-link active block hover:text-[#A51C30]" aria-current="page">
+            Achievements
+          </a>
+
+          <a href="../resume/" target="_blank" rel="noopener" class="nav-link block hover:text-[#A51C30]">
+            CV
+          </a>
         </nav>
+
       </div>
     </div>
   </header>
 
-  <!-- Mobile header (phones only) -->
-  <header id="mobileHeader" class="md:hidden sticky top-0 z-50 text-[#06142A] w-full">
+  <!-- =========================================================
+         MOBILE NAVIGATION
+    ========================================================== -->
+  <header id="mobileHeader" class="lg:hidden sticky top-0 z-50 w-full text-[#06142A]">
     <div class="flex items-center justify-between px-4 py-3">
-      <!-- LEFT TEXT BLOCK -->
+
       <div class="flex flex-col">
-        <span class="text-slate-900 tracking-wide ">
+        <span class="text-slate-900 tracking-wide">
           NAZMUL HUDA BADHON
         </span>
+
         <p class="text-left text-xs text-slate-500 tracking-wide">
           B.Sc. Graduate | Deep Learning Research
         </p>
       </div>
-      <button id="mobileMenuBtn" class="text-[#06142A] text-2xl focus:outline-none" aria-label="Toggle menu">
-        <i class="fa-solid fa-bars" id="menuOpenIcon"></i>
-        <i class="fa-solid fa-xmark hidden" id="menuCloseIcon"></i>
+
+      <button id="mobileMenuBtn" type="button" class="text-[#06142A] text-2xl focus:outline-none"
+        aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+        <i class="fa-solid fa-bars" id="menuOpenIcon" aria-hidden="true"></i>
+
+        <i class="fa-solid fa-xmark hidden" id="menuCloseIcon" aria-hidden="true"></i>
       </button>
+
     </div>
 
-    <!-- Collapsible nav (hidden by default, header remains visible) -->
-    <nav id="mobileMenu" class="hidden flex-col gap-2 px-4 pb-4 text-slate-900 font-medium">
-      <br />
-      <a href="../" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Home</a><br /><br />
-      <a href="../research/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Publications</a><br /><br />
-      <a href="/projects/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Projects</a><br /><br />
-      <a href="/achievement/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Achievements</a><br /><br />
-      <a href="../resume/" class="py-2 border-b border-white/10 hover:text-[#E3872D]" target="_blank"
-        rel="noopener">CV</a>
+    <nav id="mobileMenu" class="hidden flex-col px-4 pb-5 text-slate-900 font-medium" aria-label="Mobile navigation">
+      <a href="../" class="py-3 border-b border-slate-200 hover:text-[#A51C30] transition-colors">
+        Home
+      </a>
+
+      <a href="../research/" class="py-3 border-b border-slate-200 hover:text-[#A51C30] transition-colors">
+        Publications
+      </a>
+
+      <a href="../projects/" class="py-3 border-b border-slate-200 hover:text-[#A51C30] transition-colors">
+        Projects
+      </a>
+
+      <a href="../achievement/" class="py-3 border-b border-slate-200 text-[#A51C30]" aria-current="page">
+        Achievements
+      </a>
+
+      <a href="../resume/" target="_blank" rel="noopener" class="py-3 hover:text-[#A51C30] transition-colors">
+        CV
+      </a>
     </nav>
   </header>
 
-  <section>
-    <div class="drawer lg:drawer-open">
-      <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content flex flex-col w-full">
+  <!-- =========================================================
+         MAIN CONTENT
+    ========================================================== -->
+  <main>
 
-        <!--ACHIEVEMENT & ECA-->
-        <section class="scroll-mt-24 mt-0 w-full bg-[var(--page-bg)]">
-          <div class="max-w-7xl mx-auto px-6 md:px-12 pt-6 pb-10">
-            <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_170px] gap-10 items-start">
-              <!-- LEFT: heading + achievement cards scroll -->
-              <div class="flex flex-col gap-0 pr-2 pb-8 achievement-scroll justify-start items-stretch">
+    <section class="w-full bg-[var(--page-bg)]">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 pt-6 pb-10">
 
-                <div class="page-heading">
-                  <span class="academic-section-kicker">Academic & Professional Recognition</span>
-                  <p>Awards, honors, certifications, research recognition, and leadership activities.</p>
-                </div>
+        <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_170px] gap-10 items-start">
 
-                <!-- Achievement Type Filter -->
-                <div class="mb-4 flex justify-center items-center gap-6 text-sm md:text-[14px] lg:hidden">
-                  <button class="ach-filter text-slate-900 font-semibold" data-type="all">All</button>
-                  <button class="ach-filter text-slate-500 hover:text-slate-900" data-type="academic">Academic</button>
-                  <button class="ach-filter text-slate-500 hover:text-slate-900" data-type="research">Research</button>
-                  <button class="ach-filter text-slate-500 hover:text-slate-900" data-type="eca">ECA</button>
-                </div>
+          <!-- =============================================
+                         LEFT CONTENT
+                    ============================================== -->
+          <div class="min-w-0 achievement-scroll">
 
-                <!-- Achievement list -->
-                <div class="achievement-list">
+            <!-- PAGE HEADING -->
+            <span class="profile-intro" style="
+                                font-family: 'Libre Baskerville', Georgia, serif;
+                                font-size: 18px;
+                                font-weight: 500;
+                            ">
+              Academic &amp; Professional Recognition
+            </span>
 
-                  <!-- Card 1: YouTube -->
-                  <article data-type="academic" class="ach-card">
-                    <div class="flex flex-col lg:flex-row">
+            <div class="page-heading">
+              <p>
+                Awards, honors, certifications, research
+                recognition, and leadership activities.
+              </p>
+            </div>
 
-                      <div class="flex-1 min-w-0 p-4 md:p-0">
-                        <span class="inline-flex items-center uppercase">
-                          Scholarship
-                        </span>
+            <!-- MOBILE FILTER -->
+            <div class="achievement-mobile-filter lg:hidden" aria-label="Filter achievements">
+              <button type="button" class="ach-filter is-active" data-type="all">
+                All
+              </button>
 
-                        <span
-                          class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-yellow-100 text-yellow-700">
-                          Academic Milestone
-                        </span>
+              <button type="button" class="ach-filter" data-type="academic">
+                Academic
+              </button>
 
-                        <h3 class="mt-6 text-xl text-slate-900">
-                          Global Korea Scholarship Recipient, 2023
-                        </h3>
+              <button type="button" class="ach-filter" data-type="research">
+                Research
+              </button>
 
-                        <p class="mt-4 mb-2 text-slate-700   text-sm md:text-[13px] leading-snug break-words">
-                          Achieved the fully-funded GKS scholarship 2023 by the
-                          Government of Republic of Korea while completing Bachelor of
-                          Science degree at Daffodil International University and
-                          studied one semester on-site in South Korea under the
-                          Semester Exchange Program.
-                        </p>
-                        <br>
+              <button type="button" class="ach-filter" data-type="eca">
+                ECA
+              </button>
+            </div>
 
-                        <p class="text-sm md:text-[13px] text-slate-500 mt-2 flex items-center gap-1">
-                          <span>Receiving Year: Fall 2023, Dongseo University, SK</span>
-                          <img src="../Image/south-korea-flag.png" alt="South Korea" class="w-5 h-[14px] object-cover">
-                        </p>
-                      </div>
+            <!-- ACHIEVEMENT LIST -->
+            <div class="achievement-list">
 
-                      <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
-                        <div class="aspect-video min-h-[230px] w-full bg-gray-50 lg:h-full lg:min-h-[220px]">
-                          <iframe class="h-full w-full" src="https://www.youtube.com/embed/zmkiBl4CQtU"
-                            title="Global Korea Scholarship" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
-                            allowfullscreen>
-                          </iframe>
-                        </div>
-                      </div>
+              <!-- ACHIEVEMENT 01 -->
+              <article class="ach-card" data-type="academic">
+                <div class="achievement-card-inner">
 
+                  <div class="achievement-card-content">
+
+                    <div class="achievement-tags">
+                      <span class="achievement-tag bg-sky-100 text-sky-800">
+                        Scholarship
+                      </span>
+
+                      <span class="achievement-tag bg-yellow-100 text-yellow-700">
+                        Academic Milestone
+                      </span>
                     </div>
-                  </article>
 
-                  <!-- Card 2: Image -->
-                  <article data-type="research" class="ach-card">
-                    <div class="flex flex-col lg:flex-row">
+                    <h2 class="achievement-title">
+                      Global Korea Scholarship Recipient,
+                      2023
+                    </h2>
 
-                      <div class="flex-1 min-w-0 p-4 md:p-0">
-                        <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
-                          <span
-                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-green-100 text-green-700">
-                            Award
-                          </span>
+                    <p class="achievement-description">
+                      Achieved the fully funded Global Korea
+                      Scholarship from the Government of the
+                      Republic of Korea while completing a
+                      Bachelor of Science degree at Daffodil
+                      International University. Studied one
+                      semester at Dongseo University under
+                      the Semester Exchange Program.
+                    </p>
 
-                          <span
-                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-purple-100 text-purple-700">
-                            Research
-                          </span>
+                    <div class="achievement-meta">
+                      <span class="achievement-meta-label">
+                        Receiving period
+                      </span>
 
-                          <h3 class="mt-6 text-xl text-slate-900">
-                            Research Award for Scholarly Publication in Reputed Indexed Journal
-                          </h3>
-                        </span>
+                      <span class="achievement-meta-value">
+                        Fall 2023 · Dongseo University,
+                        South Korea
 
-                        <p class="mt-4 mr-2 mb-2 text-slate-700 text-[13px] leading-snug break-words">
-                          Recognized for scholarly publications in reputed indexed
-                          journals by the Division of Research and Department of
-                          Computer Science and Engineering, Daffodil International
-                          University.
-                        </p>
-                        <br>
-
-                        <p class="text-sm md:text-[13px] text-slate-500 mt-2">
-                          Receiving Date: 20 May 2025
-                        </p>
-                      </div>
-
-                      <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
-                        <div class="h-full min-h-[220px] w-full bg-gray-50">
-                          <img src="../Image/award_certificate.jpg"
-                            alt="Nazmul Huda Badhon research award certificate from Daffodil International University"
-                            loading="lazy" decoding="async" class="h-full w-full object-cover" />
-                        </div>
-                      </div>
-
+                        <img src="../Image/south-korea-flag.png" alt="South Korea" class="achievement-flag">
+                      </span>
                     </div>
-                  </article>
 
-                  <!-- Card 3: Image -->
-                  <article data-type="academic" class="ach-card">
-                    <div class="flex flex-col lg:flex-row">
+                  </div>
 
-                      <div class="flex-1 min-w-0 p-4 md:p-0">
-                        <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
-                          <span
-                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-orange-100 text-orange-700">
-                            Bootcamp
-                          </span>
-
-                          <span
-                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-yellow-100 text-yellow-700">
-                            Academic Milestone
-                          </span>
-
-                          <h3 class="mt-6 mr-2 text-xl text-slate-900">
-                            Top Performer of Computer Vision and Deep Learning for Medical Image Analysis Bootcamp, 2025
-                          </h3>
-                        </span>
-
-                        <p class="mt-4 mb-2 text-slate-700   text-sm md:text-[13px]">
-                          Received token of appreciation for top performance in
-                          Computer Vision & Medical Image Analysis Bootcamp organized
-                          by Health Informatics Research Lab, Daffodil International
-                          University.
-                        </p>
-                        <br>
-
-                        <p class="text-sm md:text-[13px] text-slate-500 mt-2">
-                          Receiving Date: 30 July 2025
-                        </p>
-                      </div>
-
-                      <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
-                        <div class="h-full min-h-[220px] w-full bg-gray-50">
-                          <img src="../Image/bootcamp.png"
-                            alt="Nazmul Huda Badhon top performer certificate for Computer Vision and Deep Learning bootcamp"
-                            loading="lazy" decoding="async" class="h-full w-full object-cover" />
-                        </div>
-                      </div>
-
-                    </div>
-                  </article>
-
-                  <!-- Card 4: Image -->
-                  <article data-type="research" class="ach-card">
-                    <div class="flex flex-col lg:flex-row">
-
-                      <div class="flex-1 min-w-0 p-4 md:p-0">
-                        <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
-                          <span
-                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-pink-100 text-pink-700">
-                            Peer Reviewer
-                          </span>
-
-                          <span
-                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-purple-100 text-purple-700">
-                            Research
-                          </span>
-
-                          <h4 class="mt-6 text-xl text-slate-900">
-                            Reviewed research article for Digital Health Journal, Sage Publishing, 2025
-                          </h4>
-                        </span>
-
-                        <p class="mt-4 mb-2 mr-2 text-slate-700 text-sm md:text-[13px]">
-                          Received an acknowledgement certificate for serving as a peer reviewer for
-                          <i>Digital Health</i>, a journal published by SAGE Publishing. I contributed to the scholarly
-                          review process by evaluating a submitted research manuscript and providing constructive
-                          academic feedback.
-                        </p>
-                        <br>
-
-                        <p class="text-sm md:text-[13px] text-slate-500 mt-2">
-                          Receiving Date: 05 August 2025
-                        </p>
-                      </div>
-
-                      <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
-                        <div class="h-[300px] min-h-[220px] w-full bg-gray-50">
-                          <img src="../Image/reviewer.jpg"
-                            alt="Nazmul Huda Badhon peer reviewer acknowledgement certificate from SAGE Digital Health journal"
-                            loading="lazy" decoding="async" class="h-full w-full object-contain" />
-                        </div>
-                      </div>
-
-                    </div>
-                  </article>
-
-                  <!-- Card 5: Image -->
-                  <article data-type="eca" class="ach-card">
-                    <div class="flex flex-col lg:flex-row">
-
-                      <div class="flex-1 min-w-0 p-4 md:p-0">
-                        <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
-                          <span
-                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-blue-100 text-blue-700">
-                            Voluntary Service
-                          </span>
-
-                          <span
-                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-teal-100 text-teal-700">
-                            ECA
-                          </span>
-
-                          <h4 class="mt-6 text-xl text-slate-900">
-                            Founding General Secretary, Daffodil Research Society, 2024
-                          </h4>
-                        </span>
-
-                        <p class="mt-4 mb-2 text-slate-700 text-sm md:text-[13px]">
-                          Served as Founding General Secretary for the Daffodil International University Research
-                          Society,
-                          2024. I contributed to the student community by organizing research initiatives and fostering
-                          academic collaboration.
-                        </p>
-                        <br>
-
-                        <p class="text-sm md:text-[13px] text-slate-500 mt-2">
-                          Timeline: March-July, 2024
-                        </p>
-                      </div>
-
-                      <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
-                        <div class="h-[300px] min-h-[220px] w-full bg-gray-50">
-                          <img src="../Image/gs.jpg"
-                            alt="Nazmul Huda Badhon Founding General Secretary of Daffodil Research Society"
-                            loading="lazy" decoding="async" class="h-full w-full object-cover" />
-                        </div>
-                      </div>
-
-                    </div>
-                  </article>
-
-                  <!-- Card 6: Image -->
-                  <article data-type="eca" class="ach-card">
-                    <div class=" flex flex-col lg:flex-row">
-
-                      <div class="flex-1 min-w-0 p-4 md:p-0">
-                        <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
-                          <span
-                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-300 text-slate-700">
-                            International Student Activity
-                          </span>
-
-                          <span
-                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-teal-100 text-teal-700">
-                            ECA
-                          </span>
-
-                          <h4 class="mt-6 text-xl text-slate-900">
-                            Team Leader, Dongseo University International Camp, 2023
-                          </h4>
-                        </span>
-
-                        <p class="mt-4 mb-2 text-slate-700   text-sm md:text-[13px]">
-                          Participated as Team Leader for the Dongseo University International Camp, 2023. I contributed
-                          to the international student community by building cross-cultural collaboration and exchanging
-                          ideas through various camp activities.
-                        </p>
-                        <br>
-
-                        <p class="text-sm md:text-[13px] text-slate-500 mt-2">
-                          Timeline: September, 2023. Place: South Korea
-                        </p>
-                      </div>
-
-                      <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
-                        <div class="h-[300px] min-h-[220px] w-full bg-gray-50">
-                          <img src="../Image/camp2.jpg"
-                            alt="Nazmul Huda Badhon team leader at Dongseo University International Camp 2023 in South Korea"
-                            loading="lazy" decoding="async" class="h-full w-full object-cover" />
-                        </div>
-                      </div>
-
-                    </div>
-                  </article>
-
-                  <!-- Card 7: Image -->
-                  <article data-type="eca" class="ach-card">
-                    <div class="flex flex-col lg:flex-row">
-
-                      <div class="flex-1 min-w-0 p-4 md:p-0">
-                        <span style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
-                          <span
-                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-orange-100 text-orange-700">
-                            Cultural Event
-                          </span>
-
-                          <span
-                            class="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-teal-100 text-teal-700">
-                            ECA
-                          </span>
-
-                          <h4 class="mt-6 text-xl text-slate-900">
-                            Participant, Cultural Event by Embassy of the People's Republic of Korea in Bangladesh
-                          </h4>
-                        </span>
-
-                        <p class="mt-4 mb-2 text-slate-700   text-sm md:text-[13px]">
-                          Participated in a cultural event in Bangladesh South Korean Embassy. It was an exciting
-                          opportunity to showcase my talents and connect with other participants in K-pop culture.
-                        </p>
-                        <br>
-
-                        <p class="text-sm md:text-[13px] leading-snug text-slate-500 mt-2">
-                          Timeline: 2025. Place: Bangladesh
-                        </p>
-                      </div>
-
-                      <div class="w-full lg:w-[360px] xl:w-[400px] shrink-0">
-                        <div class="h-[300px] min-h-[220px] w-full bg-gray-50">
-                          <img src="../Image/sing_embassy.jpg"
-                            alt="Nazmul Huda Badhon participating in Korean Embassy cultural event in Bangladesh"
-                            loading="lazy" decoding="async" class="h-full w-full object-cover" />
-                        </div>
-                      </div>
-
-                    </div>
-                  </article>
-
-                </div>
-              </div>
-
-              <!-- RIGHT: achievement type filter/sidebar -->
-              <aside class="achievement-sidebar hidden lg:block"
-                style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
-                <div class="text-sm text-slate-700">
-                  <div>
-                    <h3 class="text-xs font-bold uppercase tracking-[0.25em] text-slate-500 mb-2">
-                      By Type
-                    </h3>
-
-                    <div class="border-t border-slate-300 pt-3">
-                      <button type="button"
-                        class="ach-filter flex w-full justify-between text-left px-3 py-2 rounded-sm bg-black text-white font-semibold"
-                        data-type="all">
-                        <span>All</span><span>7</span>
-                      </button>
-
-                      <button type="button"
-                        class="ach-filter flex w-full justify-between text-left px-3 py-2 rounded-sm text-slate-500 font-normal hover:text-slate-900"
-                        data-type="academic">
-                        <span>Academic</span><span>2</span>
-                      </button>
-
-                      <button type="button"
-                        class="ach-filter flex w-full justify-between text-left px-3 py-2 rounded-sm text-slate-500 font-normal hover:text-slate-900"
-                        data-type="research">
-                        <span>Research</span><span>2</span>
-                      </button>
-
-                      <button type="button"
-                        class="ach-filter flex w-full justify-between text-left px-3 py-2 rounded-sm text-slate-500 font-normal hover:text-slate-900"
-                        data-type="eca">
-                        <span>ECA</span><span>3</span>
-                      </button>
+                  <div class="achievement-card-media">
+                    <div class="achievement-figure">
+                      <iframe src="https://www.youtube.com/embed/zmkiBl4CQtU" title="Global Korea Scholarship"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                     </div>
                   </div>
+
                 </div>
-              </aside>
+              </article>
+
+              <!-- ACHIEVEMENT 02 -->
+              <article class="ach-card" data-type="research">
+                <div class="achievement-card-inner">
+
+                  <div class="achievement-card-content">
+
+                    <div class="achievement-tags">
+                      <span class="achievement-tag bg-green-100 text-green-700">
+                        Award
+                      </span>
+
+                      <span class="achievement-tag bg-purple-100 text-purple-700">
+                        Research
+                      </span>
+                    </div>
+
+                    <h2 class="achievement-title">
+                      Research Award for Scholarly
+                      Publication in a Reputed Indexed
+                      Journal
+                    </h2>
+
+                    <p class="achievement-description">
+                      Recognized for scholarly publications
+                      in reputed indexed journals by the
+                      Division of Research and the Department
+                      of Computer Science and Engineering at
+                      Daffodil International University.
+                    </p>
+
+                    <div class="achievement-meta">
+                      <span class="achievement-meta-label">
+                        Receiving date
+                      </span>
+
+                      <span class="achievement-meta-value">
+                        20 May 2025
+                      </span>
+                    </div>
+
+                  </div>
+
+                  <div class="achievement-card-media">
+                    <div class="achievement-figure">
+                      <img src="../Image/award_certificate.jpg"
+                        alt="Research award certificate from Daffodil International University" loading="lazy"
+                        decoding="async" class="object-contain">
+                    </div>
+                  </div>
+
+                </div>
+              </article>
+
+              <!-- ACHIEVEMENT 03 -->
+              <article class="ach-card" data-type="academic">
+                <div class="achievement-card-inner">
+
+                  <div class="achievement-card-content">
+
+                    <div class="achievement-tags">
+                      <span class="achievement-tag bg-orange-100 text-orange-700">
+                        Bootcamp
+                      </span>
+
+                      <span class="achievement-tag bg-yellow-100 text-yellow-700">
+                        Academic Milestone
+                      </span>
+                    </div>
+
+                    <h2 class="achievement-title">
+                      Top Performer of Computer Vision and
+                      Deep Learning for Medical Image
+                      Analysis Bootcamp, 2025
+                    </h2>
+
+                    <p class="achievement-description">
+                      Received a token of appreciation for
+                      top performance in the Computer Vision
+                      and Medical Image Analysis Bootcamp
+                      organized by the Health Informatics
+                      Research Lab at Daffodil International
+                      University.
+                    </p>
+
+                    <div class="achievement-meta">
+                      <span class="achievement-meta-label">
+                        Receiving date
+                      </span>
+
+                      <span class="achievement-meta-value">
+                        30 July 2025
+                      </span>
+                    </div>
+
+                  </div>
+
+                  <div class="achievement-card-media">
+                    <div class="achievement-figure">
+                      <img src="../Image/bootcamp.png"
+                        alt="Top performer certificate for Computer Vision and Deep Learning bootcamp" loading="lazy"
+                        decoding="async" class="object-contain">
+                    </div>
+                  </div>
+
+                </div>
+              </article>
+
+              <!-- ACHIEVEMENT 04 -->
+              <article class="ach-card" data-type="research">
+                <div class="achievement-card-inner">
+
+                  <div class="achievement-card-content">
+
+                    <div class="achievement-tags">
+                      <span class="achievement-tag bg-pink-100 text-pink-700">
+                        Peer Reviewer
+                      </span>
+
+                      <span class="achievement-tag bg-purple-100 text-purple-700">
+                        Research
+                      </span>
+                    </div>
+
+                    <h2 class="achievement-title">
+                      Peer Reviewer for Digital Health,
+                      SAGE Publishing, 2025
+                    </h2>
+
+                    <p class="achievement-description">
+                      Received an acknowledgement
+                      certificate for serving as a peer
+                      reviewer for <i>Digital Health</i>,
+                      published by SAGE. Contributed to the
+                      scholarly review process by evaluating
+                      a submitted research manuscript and
+                      providing constructive academic
+                      feedback.
+                    </p>
+
+                    <div class="achievement-meta">
+                      <span class="achievement-meta-label">
+                        Receiving date
+                      </span>
+
+                      <span class="achievement-meta-value">
+                        05 August 2025
+                      </span>
+                    </div>
+
+                  </div>
+
+                  <div class="achievement-card-media">
+                    <div class="achievement-figure">
+                      <img src="../Image/reviewer.jpg"
+                        alt="Peer reviewer acknowledgement certificate from SAGE Digital Health" loading="lazy"
+                        decoding="async" class="object-contain">
+                    </div>
+                  </div>
+
+                </div>
+              </article>
+
+              <!-- ACHIEVEMENT 05 -->
+              <article class="ach-card" data-type="eca">
+                <div class="achievement-card-inner">
+
+                  <div class="achievement-card-content">
+
+                    <div class="achievement-tags">
+                      <span class="achievement-tag bg-blue-100 text-blue-700">
+                        Voluntary Service
+                      </span>
+
+                      <span class="achievement-tag bg-teal-100 text-teal-700">
+                        ECA
+                      </span>
+                    </div>
+
+                    <h2 class="achievement-title">
+                      Founding General Secretary, Daffodil
+                      Research Society, 2024
+                    </h2>
+
+                    <p class="achievement-description">
+                      Served as Founding General Secretary
+                      of the Daffodil International
+                      University Research Society. Organized
+                      research initiatives and contributed
+                      to academic collaboration within the
+                      student community.
+                    </p>
+
+                    <div class="achievement-meta">
+                      <span class="achievement-meta-label">
+                        Timeline
+                      </span>
+
+                      <span class="achievement-meta-value">
+                        March–July 2024
+                      </span>
+                    </div>
+
+                  </div>
+
+                  <div class="achievement-card-media">
+                    <div class="achievement-figure">
+                      <img src="../Image/gs.jpg" alt="Founding General Secretary of Daffodil Research Society"
+                        loading="lazy" decoding="async" class="object-cover">
+                    </div>
+                  </div>
+
+                </div>
+              </article>
+
+              <!-- ACHIEVEMENT 06 -->
+              <article class="ach-card" data-type="eca">
+                <div class="achievement-card-inner">
+
+                  <div class="achievement-card-content">
+
+                    <div class="achievement-tags">
+                      <span class="achievement-tag bg-slate-200 text-slate-700">
+                        International Student Activity
+                      </span>
+
+                      <span class="achievement-tag bg-teal-100 text-teal-700">
+                        ECA
+                      </span>
+                    </div>
+
+                    <h2 class="achievement-title">
+                      Team Leader, Dongseo University
+                      International Camp, 2023
+                    </h2>
+
+                    <p class="achievement-description">
+                      Participated as a team leader at the
+                      Dongseo University International Camp.
+                      Supported cross-cultural collaboration
+                      and exchanged ideas with international
+                      students through camp activities.
+                    </p>
+
+                    <div class="achievement-meta">
+                      <span class="achievement-meta-label">
+                        Timeline
+                      </span>
+
+                      <span class="achievement-meta-value">
+                        September 2023 · South Korea
+                      </span>
+                    </div>
+
+                  </div>
+
+                  <div class="achievement-card-media">
+                    <div class="achievement-figure">
+                      <img src="../Image/camp2.jpg" alt="Team leader at Dongseo University International Camp"
+                        loading="lazy" decoding="async" class="object-cover">
+                    </div>
+                  </div>
+
+                </div>
+              </article>
+
+              <!-- ACHIEVEMENT 07 -->
+              <article class="ach-card" data-type="eca">
+                <div class="achievement-card-inner">
+
+                  <div class="achievement-card-content">
+
+                    <div class="achievement-tags">
+                      <span class="achievement-tag bg-orange-100 text-orange-700">
+                        Cultural Event
+                      </span>
+
+                      <span class="achievement-tag bg-teal-100 text-teal-700">
+                        ECA
+                      </span>
+                    </div>
+
+                    <h2 class="achievement-title">
+                      Participant, Cultural Event by the
+                      Embassy of the Republic of Korea in
+                      Bangladesh
+                    </h2>
+
+                    <p class="achievement-description">
+                      Participated in a cultural event
+                      organized by the Embassy of the
+                      Republic of Korea in Bangladesh. The
+                      event provided an opportunity to
+                      perform and connect with participants
+                      interested in Korean popular culture.
+                    </p>
+
+                    <div class="achievement-meta">
+                      <span class="achievement-meta-label">
+                        Timeline
+                      </span>
+
+                      <span class="achievement-meta-value">
+                        2025 · Bangladesh
+                      </span>
+                    </div>
+
+                  </div>
+
+                  <div class="achievement-card-media">
+                    <div class="achievement-figure">
+                      <img src="../Image/sing_embassy.jpg"
+                        alt="Participation in Korean Embassy cultural event in Bangladesh" loading="lazy"
+                        decoding="async" class="object-cover">
+                    </div>
+                  </div>
+
+                </div>
+              </article>
 
             </div>
           </div>
-        </section>
+
+          <!-- DESKTOP FILTER SIDEBAR -->
+          <aside class="achievement-sidebar hidden lg:block">
+            <div class="text-sm text-slate-700">
+
+              <h3>
+                By Type
+              </h3>
+
+              <div class="border-t border-slate-300">
+
+                <button type="button" class="ach-filter is-active flex w-full justify-between text-left"
+                  data-type="all">
+                  <span>All</span>
+                  <span>7</span>
+                </button>
+
+                <button type="button" class="ach-filter flex w-full justify-between text-left" data-type="academic">
+                  <span>Academic</span>
+                  <span>2</span>
+                </button>
+
+                <button type="button" class="ach-filter flex w-full justify-between text-left" data-type="research">
+                  <span>Research</span>
+                  <span>2</span>
+                </button>
+
+                <button type="button" class="ach-filter flex w-full justify-between text-left" data-type="eca">
+                  <span>ECA</span>
+                  <span>3</span>
+                </button>
+
+              </div>
+            </div>
+          </aside>
+
+        </div>
       </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="sitefooter" class="w-full border-t border-slate-200 bg-white">
+
+    <div class="hidden md:flex max-w-7xl mx-auto px-6 md:px-12 py-3 items-center justify-between">
+      <span class="text-sm text-slate-500 tracking-wide">
+        © 2026 Nazmul Huda Badhon.
+      </span>
+
+      <span class="text-sm text-slate-500 tracking-wide">
+        All Rights Reserved.
+      </span>
     </div>
-    <!-- COPYRIGHT FOOTER -->
-    <footer id="sitefooter" class="w-full py-1 border-t border-white/10">
-      <!-- Desktop footer: left and right like top nav -->
-      <div class="hidden md:flex max-w-6xl mx-auto px-4 items-center justify-between">
-        <span class="text-[#06142A] tracking-wide">
-          © 2026
-          <span class="hover:text-[#87CEEB] transition"> Nazmul Huda Badhon</span>.
-        </span>
 
-        <span class="text-[#06142A] tracking-wide">
-          All Rights Reserved.
-        </span>
-      </div>
-      <!-- Mobile footer: same as before -->
-      <div class="md:hidden max-w-6xl mx-auto px-4 text-center">
-        <span class="text-sm text-[#06142A] tracking-wide">
-          © 2026
-          <span class="hover:text-[#87CEEB] transition"> Nazmul Huda Badhon</span>.
-          All Rights Reserved.
-        </span>
-      </div>
-    </footer>
-  </section>
+    <div class="md:hidden max-w-7xl mx-auto px-6 py-3 text-center">
+      <span class="text-sm text-[#06142A] tracking-wide">
+        © 2026
+        <span class="hover:text-[#87CEEB] transition">
+          Nazmul Huda Badhon
+        </span>.
+        All Rights Reserved.
+      </span>
+    </div>
 
-  <!-- Back to Top Button -->
-  <button id="backToTop " aria-label="Back to top "
-    class="fixed right-8 bottom-16 z-50 flex items-center justify-center h-8 w-8 bg-[#A51C30] text-white shadow-md transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1 hover:scale-110 focus:ring-4 focus:ring-[#A51C30]/40">
-    <i class="fa-solid fa-arrow-up text-lg transition-transform duration-300 group-hover:-rotate-12"></i>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop" type="button" aria-label="Back to top"
+    class="fixed right-5 md:right-8 bottom-16 z-50 flex h-8 w-8 items-center justify-center bg-[#A51C30] text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#A51C30]/40">
+    <i class="fa-solid fa-arrow-up text-sm" aria-hidden="true"></i>
   </button>
 
   <script src="../index.js"></script>
+
 </body>
 
 </html>

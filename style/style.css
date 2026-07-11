@@ -15,7 +15,7 @@
     color: #333;
     text-decoration: none;
     font-weight: 500;
-    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
 
 .nav-link:hover {
@@ -38,11 +38,12 @@
 
 /* Academic profile text */
 .profile-copy {
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
     margin-top: 10px;
     margin-bottom: 18px;
-    font-size: 14px;
-    line-height: 1.68;
-    text-align: left;
+    font-size: 14.5px;
+    line-height: 1.75;
+    text-align: justify;
     color: var(--text-main);
 }
 
@@ -58,8 +59,8 @@ Global Typography
 
 html,
 body {
-    font-family: "Libre Baskerville", Georgia, "Times New Roman", serif;
-    font-size: 15px;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 14.5px;
     font-weight: 400;
     line-height: 1.6;
     background: var(--page-bg);
@@ -73,15 +74,16 @@ body {
 }
 
 p {
-    font-size: 14.5px;
+    font-size: 14px;
     line-height: 1.65;
-    font-weight: 400;
+    font-weight: 500;
+    text-align: justify;
 }
 
 strong,
 b,
 .font-semibold {
-    font-weight: 700 !important;
+    font-weight: 600 !important;
     color: #0f172a;
 }
 
@@ -94,7 +96,7 @@ b,
 #topNav,
 .brand {
     color: var(--text-muted);
-    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
 
 /* Main academic body paragraphs only */
@@ -171,7 +173,6 @@ Transparent Top Nav - Desktop Base
     top: 0;
     z-index: 9999;
 
-
     background: rgba(250, 249, 246, 0.35) !important;
     -webkit-backdrop-filter: none !important;
     backdrop-filter: none !important;
@@ -179,7 +180,6 @@ Transparent Top Nav - Desktop Base
     border-bottom: 1px solid rgba(15, 23, 42, 0.08);
 
     transition: none;
-
 
 }
 
@@ -202,7 +202,6 @@ Transparent Top Nav - Desktop Base
         border-bottom: 1px solid rgba(15, 23, 42, 0.08);
     }
 
-
     #topHeader.is-scrolled,
     #topHeader.nav-hide,
     #topHeader.nav-show {
@@ -212,7 +211,6 @@ Transparent Top Nav - Desktop Base
         box-shadow: none !important;
     }
 
-
 }
 
 /* ================================
@@ -221,14 +219,50 @@ Reveal Animations
 
 .reveal {
     opacity: 0;
-    transform: translateY(14px);
-    transition: opacity 1.05s cubic-bezier(.22, 1, .36, 1),
-        transform .5s cubic-bezier(.22, 1, .36, 1);
+    transition:
+        opacity 700ms cubic-bezier(.22, 1, .36, 1),
+        transform 700ms cubic-bezier(.22, 1, .36, 1);
+}
+
+.reveal-left {
+    transform: translateX(-24px);
+}
+
+.reveal-right {
+    transform: translateX(24px);
+    transition-delay: 180ms;
 }
 
 .reveal.show {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
+}
+
+@media (max-width: 767px) {
+
+    .reveal-left,
+    .reveal-right {
+        transform: translateY(16px);
+    }
+
+    .reveal-right {
+        transition-delay: 120ms;
+    }
+
+    .reveal.show {
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal,
+    .reveal-left,
+    .reveal-right {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
 
 /* ================================
@@ -256,12 +290,10 @@ Mobile About Spacing
         padding: 0;
     }
 
-
     #about {
         margin-top: 0 !important;
         padding-top: 0 !important;
     }
-
 
 }
 
@@ -272,18 +304,25 @@ Mobile About Spacing
 }
 
 /* ================================
-Projects page — research-style layout
+Projects page — academic case-study rows
 ================================ */
 
 .projects-page-heading {
     margin: 0;
-    padding: 0 0 10px;
+    padding: 0 0 24px;
+    border-bottom: 1px solid var(--border);
     background: transparent;
 }
 
 .projects-page-heading .academic-section-kicker {
     display: block;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
+    color: var(--text-main);
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 500;
+    text-transform: none;
 }
 
 .projects-page-heading p {
@@ -291,7 +330,8 @@ Projects page — research-style layout
     color: var(--text-muted);
     font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
     font-size: 13px;
-    line-height: 1.55;
+    line-height: 1.6;
+    text-align: left;
 }
 
 .project-list {
@@ -300,99 +340,178 @@ Projects page — research-style layout
     gap: 0;
 }
 
+/* Remove global article card styling */
 article.proj-card {
-    margin: 0;
-    padding: 20px 0;
+    position: static;
+    display: block;
     overflow: visible;
+    margin: 0;
+    padding: 30px 0;
     border: 0;
-    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
     border-radius: 0;
     background: transparent;
     box-shadow: none;
 }
 
-.proj-card:first-child {
-    border-top: 0;
+article.proj-card:last-child {
+    border-bottom: 0;
 }
 
-.proj-card .rounded-2xl,
-.proj-card .shadow-sm {
-    border-radius: 0 !important;
-    box-shadow: none !important;
+article.proj-card::before,
+article.proj-card::after {
+    display: none;
 }
 
+article.proj-card>* {
+    position: static;
+    z-index: auto;
+}
+
+/* Project title */
+.proj-card h2,
 .proj-card h3 {
+    margin-top: 14px;
+    color: var(--text-main);
     font-family: "Libre Baskerville", Georgia, serif;
     font-size: 16px;
     line-height: 1.45;
-    font-weight: 700;
+    font-weight: 500;
+    text-align: left;
 }
 
+/* Project text */
+.proj-card p {
+    text-align: left;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+    text-align: justify;
+}
+
+.proj-card p.text-slate-500 {
+    color: var(--text-muted);
+    font-size: 13.5px;
+    line-height: 1.65;
+}
+
+.proj-card p.text-slate-700 {
+    color: #334155;
+    font-size: 13px;
+    line-height: 1.75;
+    font-weight: 400;
+}
+
+/* Keep Tailwind badge colors */
+.proj-card span.inline-flex {
+    border-radius: 2px;
+}
+
+/* Prevent the older badge rule from removing colors */
 .proj-card .inline-flex.items-center {
-    padding: 0 !important;
-    border-radius: 0 !important;
-    background: transparent !important;
-    color: var(--text-muted) !important;
+    padding: 4px 8px !important;
+    border-radius: 2px !important;
     font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-size: 10px;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: 0.06em;
 }
 
+/* Remove dot separators between badges */
 .proj-card .inline-flex.items-center+.inline-flex.items-center::before {
-    content: "·";
-    margin-right: 8px;
-    color: var(--border);
+    content: none;
 }
 
+/* Project detail labels */
+.proj-card .uppercase {
+    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+}
+
+/* Action links */
 .proj-card a.inline-flex {
+    padding: 8px 16px !important;
     border: 1px solid var(--border) !important;
     border-radius: 0 !important;
     background: transparent !important;
     color: var(--accent-link) !important;
     font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
     font-size: 12px;
+    font-weight: 500;
+    letter-spacing: normal;
 }
 
 .proj-card a.inline-flex:hover {
-    color: var(--accent-red) !important;
+    border-color: var(--accent-red) !important;
     background: var(--soft-bg) !important;
+    color: var(--accent-red) !important;
 }
 
+/* Dataset text link without button border */
+.proj-card a.inline-flex.border-0,
+.proj-card a.inline-flex:not([class*="border"]) {
+    border-color: transparent !important;
+}
+
+/* Project image */
 .proj-card img {
-    border: 1px solid var(--border);
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: contain;
 }
 
-@media (max-width: 1023px) {
+/* Image frame */
+.proj-card .aspect-\[16\/10\],
+.proj-card .aspect-\[4\/3\] {
+    padding: 8px;
+    border: 1px solid var(--border);
+    background: #ffffff !important;
+}
+
+/* Do not make image backgrounds transparent */
+.proj-card .bg-gray-50,
+.proj-card .bg-white,
+.proj-card .bg-slate-50 {
+    background: #ffffff !important;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
     article.proj-card {
-        padding: 18px 0;
+        padding: 32px 0;
+    }
+
+    .proj-card h2,
+    .proj-card h3 {
+        font-size: 19px;
     }
 }
 
-/* Projects: remove white article background and left gray accent */
-article.proj-card {
-    position: static !important;
-    overflow: visible !important;
-    background: transparent !important;
-    border: 0 !important;
-    border-top: 1px solid var(--border) !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-}
+/* Mobile */
+@media (max-width: 767px) {
+    .projects-page-heading {
+        padding-bottom: 18px;
+    }
 
-article.proj-card::before,
-article.proj-card::after {
-    display: none !important;
-}
+    article.proj-card {
+        padding: 24px 0;
+    }
 
-article.proj-card>* {
-    position: static !important;
-    z-index: auto !important;
-}
+    .proj-card h2,
+    .proj-card h3 {
+        font-size: 17px;
+        line-height: 1.5;
+    }
 
-.proj-card .bg-gray-50,
-.proj-card .bg-white {
-    background: transparent !important;
+    .proj-card p {
+        text-align: left !important;
+    }
+
+    .proj-card .inline-flex.items-center {
+        font-size: 9px;
+    }
 }
 
 /* ================================
@@ -410,11 +529,9 @@ Back to Top Button
         transform: translateY(0);
     }
 
-
     50% {
         transform: translateY(-6px);
     }
-
 
 }
 
@@ -482,8 +599,8 @@ Profile Sidebar
 }
 
 .profile-icons img {
-    width: 24px !important;
-    height: 24px !important;
+    width: 20px !important;
+    height: 20px !important;
     object-fit: contain;
     opacity: 0.85;
     transition: opacity 0.2s ease, transform 0.2s ease;
@@ -521,10 +638,11 @@ Profile Sidebar
 
 .metric-number {
     display: block;
-    font-family: "Lato", "IBM Plex Sans", Arial, sans-serif;
+    font-family: "Libre Baskerville", Arial, sans-serif;
     font-size: 18px;
     line-height: 1;
-    font-weight: 500;
+    margin-top: 2px;
+    font-weight: 400;
     letter-spacing: -0.02em;
     color: #1f2937;
 }
@@ -532,13 +650,11 @@ Profile Sidebar
 .metric-label {
     display: block;
     margin-top: 6px;
-    font-family: "Lato", "IBM Plex Sans", Arial, sans-serif;
-    font-size: 10px;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 12px;
     line-height: 1.25;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #7b8491;
+    font-weight: 500;
+    color: var(--text-muted);
 }
 
 /* Desktop sidebar alignment */
@@ -579,17 +695,18 @@ Profile Sidebar
     margin-bottom: 8px;
     font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-muted);
 }
 
 .research-intro p {
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 14px !important;
     margin: 0;
     color: var(--text-main);
-    font-size: 14px;
-    line-height: 1.7;
+    line-height: 1.75;
 }
 
 .research-intro p+p {
@@ -619,7 +736,7 @@ Profile Sidebar
         font-family: "Libre Baskerville", Georgia, serif;
         font-size: 19px;
         line-height: 1.25;
-        font-weight: 500;
+        font-weight: 400;
         color: var(--text-main);
     }
 
@@ -630,15 +747,15 @@ Profile Sidebar
     .profile-role {
         margin-bottom: 10px !important;
         font-family: "IBM Plex Sans", Arial, sans-serif;
-        font-size: 15px !important;
+        font-size: 14px !important;
         color: var(--accent-red);
     }
 
     .profile-affiliation {
         margin-bottom: 14px !important;
         font-family: "IBM Plex Sans", Arial, sans-serif;
-        font-size: 13px !important;
-        line-height: 1.6;
+        font-size: 13.5px !important;
+        line-height: 1.65;
         color: var(--text-muted);
     }
 }
@@ -655,13 +772,12 @@ Desktop Reference-Style Profile
         margin: 0;
     }
 
-
     /* Smaller photo while keeping left-column spacing */
     .academic-portrait {
         width: 180px;
         height: 180px;
         margin-left: 0;
-        border: none;
+        border: 1px solid #d8d6cf;
         box-shadow: none;
     }
 
@@ -676,35 +792,34 @@ Desktop Reference-Style Profile
         width: 300px;
         margin-top: 24px;
         padding-top: 0;
-        text-align: left;
+        text-align: justify;
     }
 
     .profile-intro span {
         margin: 0 0 10px;
         font-family: "Libre Baskerville", Georgia, serif;
-        font-size: 20px;
+        font-size: 18px;
         line-height: 1.18;
-        font-weight: 500;
-        color: #111827;
-    }
-
-    .profile-intro p {
-        margin: 0;
+        font-weight: 400;
+        color: #1f2937;
+        ;
     }
 
     .profile-role {
-        margin-bottom: 10px !important;
-        font-family: "IBM Plex Sans", Arial, sans-serif;
-        font-size: 16px !important;
+        margin-bottom: 14px !important;
+        font-family: "Open Sans", Arial, sans-serif;
+        font-size: 14px !important;
+        font-weight: 400;
         color: #a51c30;
     }
 
     .profile-affiliation {
-        margin-bottom: 22px !important;
-        font-family: "IBM Plex Sans", Arial, sans-serif;
-        font-size: 14px !important;
+        margin-bottom: 16px !important;
+        font-family: "Libre Baskerville", Arial, sans-serif;
+        font-size: 13.5px !important;
+        font-weight: 400;
         line-height: 1.65;
-        color: #64748b;
+        color: #475569;
     }
 
     /* Stacked Google Scholar / ResearchGate / LinkedIn links */
@@ -713,8 +828,8 @@ Desktop Reference-Style Profile
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-        gap: 12px;
-        margin-top: 24px;
+        gap: 10px;
+        margin-top: 20px;
         padding: 0;
         border: none;
     }
@@ -722,12 +837,13 @@ Desktop Reference-Style Profile
     .profile-icons a {
         display: inline-flex;
         align-items: center;
-        gap: 11px;
+        gap: 10px;
         padding: 0;
-        color: #64748b;
+        color: #475569;
+        font-weight: 500;
         text-decoration: none;
-        font-family: "IBM Plex Sans", Arial, sans-serif;
-        font-size: 14px;
+        font-family: "Open Sans", Arial, sans-serif;
+        font-size: 12.5px;
     }
 
     .profile-icons a::after {
@@ -735,10 +851,10 @@ Desktop Reference-Style Profile
     }
 
     .profile-icons img {
-        width: 20px !important;
-        height: 20px !important;
+        width: 18px !important;
+        height: 18px !important;
         object-fit: contain;
-        opacity: 0.8;
+        opacity: 1;
     }
 
     .profile-icons a:hover {
@@ -779,7 +895,7 @@ Academic Status Line
 .status-text,
 .status-cta {
     min-width: 0;
-    padding: 12px 16px;
+    padding: 12px 0 12px;
     display: flex;
     align-items: center;
 }
@@ -788,23 +904,10 @@ Academic Status Line
     gap: 8px;
     border-right: 1px solid var(--border);
     color: var(--text-muted);
-    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.16em;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
     text-transform: uppercase;
-}
-
-.status-badge .live-dot {
-    width: 7px;
-    height: 7px;
-    flex: 0 0 auto;
-    border-radius: 50%;
-    background: var(--accent-red);
-}
-
-.status-badge .live-dot::after {
-    display: none;
 }
 
 .status-text {
@@ -814,21 +917,20 @@ Academic Status Line
 
 .status-text p {
     margin: 0;
-    color: var(--text-main);
+    color: var(--text-muted);
     font-size: 14px;
     line-height: 1.45;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .status-cta {
     justify-content: center;
     gap: 7px;
     border-left: 1px solid var(--border);
-    color: var(--accent);
-    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    color: var(--text-muted);
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
     font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
+    font-weight: 600;
     text-transform: uppercase;
     text-decoration: none;
 }
@@ -881,7 +983,7 @@ Mobile-only CV Button
         box-shadow: none;
         font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
         font-size: 12px;
-        font-weight: 700;
+        font-weight: 600;
         letter-spacing: 0.14em;
         text-transform: uppercase;
         text-decoration: none;
@@ -920,7 +1022,6 @@ Mobile-only CV Button
         transform: translate(1px, -1px);
     }
 
-
 }
 
 /* ================================
@@ -938,233 +1039,293 @@ Section Headers
 
 .academic-section-kicker {
     font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 12.5px;
+    font-weight: 600;
     text-transform: uppercase;
     color: var(--text-muted);
 }
 
 /* ================================
-Academic Highlights Carousel
+Academic Highlights — Large Carousel
 ================================ */
+
+.act {
+    width: 100%;
+    margin-top: 28px;
+    margin-bottom: 40px;
+}
 
 .act__head {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 0.75rem;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
 }
 
-.act__controls {
-    display: flex;
-    gap: 0.5rem;
+.act__stage {
+    position: relative;
+    margin-top: 24px;
 }
 
-.act__btn {
-    width: 28px;
-    height: 28px;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    border-radius: 10px;
-    background: var(--card-bg);
+.act__viewport {
+    width: 100%;
+    overflow: hidden;
     border: 1px solid var(--border);
-    color: #808080;
-    display: grid;
-    place-items: center;
-    cursor: pointer;
-    transition: background .15s ease, border-color .15s ease, transform .15s ease;
-}
-
-.act__btn:hover {
     background: var(--soft-bg);
-    border-color: var(--border);
-    transform: translateY(-1px);
-}
-
-.act__btn:active {
-    transform: translateY(0);
-}
-
-@media (max-width: 768px) {
-    .act__controls {
-        display: none;
-    }
 }
 
 .act__track {
     display: flex;
-    gap: 0.95rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    padding: 0;
-    scrollbar-width: none;
-    overscroll-behavior-x: contain;
-    scrollbar-gutter: stable both-edges;
-}
-
-.act__track::-webkit-scrollbar {
-    display: none;
-}
-
-.act__card {
-    flex: 0 0 88%;
-    scroll-snap-align: start;
-    background: var(--card-bg);
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
-    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-}
-
-.act__card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.10);
-    border-color: var(--border);
-}
-
-@media (min-width: 768px) {
-    .act__card {
-        flex-basis: 46%;
-    }
-}
-
-@media (min-width: 1100px) {
-    .act__card {
-        flex-basis: 32%;
-    }
-}
-
-.act__media {
-    aspect-ratio: 16 / 10;
-    background: var(--soft-bg);
-    overflow: hidden;
-}
-
-.act__media img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: transform 520ms cubic-bezier(.22, 1, .36, 1);
+    will-change: transform;
+}
+
+.act__slide {
+    min-width: 100%;
+    flex: 0 0 100%;
+}
+
+.act__figure {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: #f8fafc;
+}
+
+.act__figure>img {
     display: block;
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    object-position: center;
 }
 
-@media (max-width: 640px) {
-    .act__track {
-        padding-left: 6%;
-        padding-right: 6%;
-        scroll-padding-left: 6%;
-        scroll-padding-right: 6%;
-    }
-
-
-    .act__card {
-        scroll-snap-align: center;
-    }
-
-
+/* Short caption at bottom-left */
+.act__caption {
+    position: absolute;
+    left: 22px;
+    bottom: 22px;
+    max-width: 72%;
+    padding: 12px 16px 13px;
+    border-left: 3px solid var(--accent-red);
+    background: rgba(6, 20, 42, 0.84);
+    color: #ffffff;
+    box-shadow: 0 8px 22px rgba(2, 8, 23, 0.18);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
-.act__body {
-    padding: 1rem 1.1rem 1.15rem;
-}
-
-.act__h3 {
-    margin: 0 0 .35rem;
-    font-size: 1rem;
+.act__eyebrow {
+    display: block;
+    margin-bottom: 5px;
+    color: #f3c4ca;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    line-height: 1.2;
     font-weight: 700;
-    line-height: 1.25;
-    color: #0f172a;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.act__title {
+    margin: 0 0 4px;
+    color: #ffffff;
+    font-family: "Open Sans", Georgia, serif;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 500;
 }
 
 .act__meta {
     margin: 0;
-    font-size: 0.875rem;
-    color: var(--text-muted);
-}
-
-.act__body p {
-    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.84);
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 11px;
     line-height: 1.45;
+    font-weight: 500;
+    text-align: left;
 }
 
-/* ================================
-Academic Highlights — flatter academic style
-================================ */
-
-.act {
-    margin-top: 22px;
+/* Navigation arrows */
+.act__arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(216, 214, 207, 0.95);
+    background: rgba(255, 255, 255, 0.96);
+    color: var(--accent);
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition:
+        color 180ms ease,
+        background 180ms ease,
+        border-color 180ms ease;
 }
 
-.act__head {
-    padding-bottom: 7px;
-    border-bottom: 1px solid var(--border);
-}
-
-.act__controls {
-    gap: 5px;
-}
-
-.act__btn {
-    width: 26px;
-    height: 26px;
-    margin: 0;
-    border-radius: 0;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text-muted);
-    box-shadow: none;
-}
-
-.act__btn:hover {
-    background: var(--soft-bg);
-    border-color: var(--border);
+.act__arrow:hover {
     color: var(--accent-red);
-    transform: none;
-}
-
-.act__track {
-    gap: 12px;
-    padding-top: 14px;
-}
-
-.act__card {
-    border-radius: 0;
-    border: 1px solid var(--border);
-    box-shadow: none;
-    background: transparent;
-    transition: border-color 180ms ease;
-}
-
-.act__card:hover {
-    transform: none;
+    background: #ffffff;
     border-color: #b8b5ab;
-    box-shadow: none;
 }
 
-.act__media {
-    aspect-ratio: 16 / 9;
-    background: var(--soft-bg);
+.act__arrow:focus-visible {
+    outline: 2px solid var(--accent-red);
+    outline-offset: 3px;
 }
 
-.act__body {
-    padding: 12px 14px 14px;
+.act__arrow--prev {
+    left: 18px;
 }
 
-.act__h3 {
-    margin-bottom: 5px;
-    font-family: "Libre Baskerville", Georgia, serif;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--text-main);
+.act__arrow--next {
+    right: 18px;
 }
 
-.act__meta,
-.act__body p {
-    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
-    font-size: 12px;
-    line-height: 1.55;
+/* Indicator bars and counter */
+.act__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding-top: 16px;
+}
+
+.act__indicators {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.act__indicator {
+    width: 30px;
+    height: 3px;
+    padding: 0;
+    border: 0;
+    background: #d8d6cf;
+    cursor: pointer;
+    transition:
+        width 200ms ease,
+        background 200ms ease;
+}
+
+.act__indicator:hover {
+    background: #94a3b8;
+}
+
+.act__indicator.is-active {
+    width: 38px;
+    background: var(--accent-link);
+}
+
+.act__counter {
+    display: flex;
+    align-items: center;
+    gap: 9px;
     color: var(--text-muted);
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 0.08em;
+}
+
+.act__counter-separator {
+    color: var(--border);
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+    .act__figure>img {
+        height: 440px;
+    }
+
+    .act__caption {
+        left: 16px;
+        bottom: 16px;
+        max-width: 78%;
+    }
+
+    .act__arrow {
+        width: 42px;
+        height: 42px;
+    }
+
+    .act__arrow--prev {
+        left: 12px;
+    }
+
+    .act__arrow--next {
+        right: 12px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .act {
+        margin-top: 22px;
+        margin-bottom: 30px;
+    }
+
+    .act__stage {
+        margin-top: 18px;
+    }
+
+    .act__figure>img {
+        height: 390px;
+    }
+
+    .act__caption {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        max-width: none;
+        padding: 10px 12px;
+    }
+
+    .act__title {
+        font-size: 16px;
+    }
+
+    .act__meta {
+        font-size: 10px;
+    }
+
+    .act__arrow {
+        width: 38px;
+        height: 38px;
+    }
+
+    .act__arrow--prev {
+        left: 8px;
+    }
+
+    .act__arrow--next {
+        right: 8px;
+    }
+
+    .act__indicator {
+        width: 22px;
+    }
+
+    .act__indicator.is-active {
+        width: 30px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .act__track {
+        transition: none;
+    }
 }
 
 /* ================================
@@ -1188,7 +1349,7 @@ Selected Publications
     color: var(--text-muted);
     font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.06em;
 }
 
@@ -1290,8 +1451,8 @@ article.publication-card>* {
 
 .page-heading p {
     color: var(--accent-red);
-    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
-    font-size: 13px;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 12.5px;
 }
 
 /* Year divider */
@@ -1311,7 +1472,7 @@ article.publication-card>* {
 }
 
 .publication-year-label {
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
 }
@@ -1333,7 +1494,7 @@ article.publication-card>* {
 .publication-card-inner {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 220px;
-    gap: 24px;
+    gap: 22px;
     align-items: start;
     min-height: 180px;
 }
@@ -1347,8 +1508,10 @@ article.publication-card>* {
     display: block;
     margin: 14px 0 0;
     color: var(--text-main);
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
     font-size: 14px;
-    line-height: 1.6;
+    font-weight: 400;
+    line-height: 1.65;
     white-space: normal;
 }
 
@@ -1378,18 +1541,18 @@ article.publication-card>* {
     border-radius: 0;
     background: transparent !important;
     color: var(--text-muted);
-    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
 
 .publication-card .text-gray-700 {
     color: var(--text-muted);
-    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
     font-size: 12px;
-    line-height: 1.5;
+    line-height: 1;
 }
 
 /* Paper and BibTeX buttons */
@@ -1397,7 +1560,7 @@ article.publication-card>* {
     border: 1px solid var(--border);
     border-radius: 0;
     background: transparent;
-    color: var(--accent-link);
+    color: var(--accent-red);
     font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
     font-size: 12px;
     box-shadow: none;
@@ -1418,7 +1581,7 @@ article.publication-card>* {
     margin: 0 0 8px;
     color: var(--text-muted);
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
 }
@@ -1511,7 +1674,7 @@ Research page: fixed desktop elements
 .research-sidebar .research-filter.bg-black:hover {
     background: transparent !important;
     color: var(--accent-red) !important;
-    font-weight: 700 !important;
+    font-weight: 600 !important;
 }
 
 .research-sidebar .research-filter.text-white,
@@ -1552,7 +1715,7 @@ Education
     color: var(--text-main);
     font-size: 14px;
     line-height: 1.45;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .education-place {
@@ -1656,7 +1819,6 @@ Footer
     margin: 0 auto;
     padding: 14px 24px;
 
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1665,7 +1827,6 @@ Footer
     font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
     font-size: 13px;
     color: var(--text-muted);
-
 
 }
 
@@ -1680,8 +1841,13 @@ Footer
 }
 
 /* ================================
-Achievements page — research-style layout
+Achievements — research interface
 ================================ */
+
+.achievement-scroll {
+    min-width: 0;
+    overflow: visible;
+}
 
 .achievement-list {
     display: flex;
@@ -1689,11 +1855,34 @@ Achievements page — research-style layout
     gap: 0;
 }
 
+.achievement-year-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-top: 26px;
+    padding-bottom: 7px;
+}
+
+.achievement-year-label,
+.achievement-count {
+    color: var(--accent-link);
+    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.achievement-year-label {
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* Achievement entry */
 article.ach-card {
     position: static !important;
+    display: block;
     overflow: visible !important;
     margin: 0;
-    padding: 20px 0;
+    padding: 18px 0;
     border: 0 !important;
     border-top: 1px solid var(--border) !important;
     border-radius: 0 !important;
@@ -1711,75 +1900,355 @@ article.ach-card>* {
     z-index: auto !important;
 }
 
-.ach-card:first-child {
-    border-top: 0 !important;
+.ach-card.hidden {
+    display: none !important;
 }
 
-.ach-card .bg-gray-50,
-.ach-card .bg-white {
-    background: transparent !important;
+.achievement-card-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 380px;
+    gap: 30px;
+    align-items: start;
+    min-height: 240px;
 }
 
-.ach-card .inline-flex.items-center {
-    padding: 0 !important;
-    border-radius: 0 !important;
-    background: transparent !important;
-    color: var(--text-muted) !important;
+.achievement-card-content {
+    min-width: 0;
+}
+
+/* Colored labels */
+.achievement-tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+}
+
+.achievement-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 2px;
     font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-size: 10px;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
 }
 
-.ach-card .inline-flex.items-center+.inline-flex.items-center::before {
-    content: "·";
-    margin-right: 8px;
-    color: var(--border);
-}
-
-.ach-card h3,
-.ach-card h4 {
+/* Text */
+.achievement-title {
+    margin: 14px 0 0;
+    color: var(--text-main);
     font-family: "Libre Baskerville", Georgia, serif;
     font-size: 16px;
-    line-height: 1.45;
-    font-weight: 700;
+    line-height: 1.5;
+    font-weight: 600;
+    text-align: left;
 }
 
-.ach-card img,
-.ach-card iframe {
+.achievement-description {
+    margin: 14px 0 0;
+    color: var(--text-main);
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 1.7;
+    font-weight: 400;
+    text-align: left;
+}
+
+.achievement-meta {
+    margin-top: 16px;
+}
+
+.achievement-meta-label {
+    display: block;
+    color: var(--text-muted);
+    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    line-height: 1.3;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.achievement-meta-value {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 4px;
+    color: var(--text-muted);
+    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.achievement-flag {
+    width: 20px;
+    height: 14px;
+    object-fit: cover;
+}
+
+/* Media */
+.achievement-card-media {
+    width: 380px;
+    min-width: 0;
+}
+
+.achievement-figure {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
     border: 1px solid var(--border);
+    background: var(--soft-bg);
 }
 
-/* Sticky filter only */
+.achievement-figure img,
+.achievement-figure iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.achievement-figure img.object-contain {
+    padding: 6px;
+    object-fit: contain;
+    background: #ffffff;
+}
+
+.achievement-figure img.object-cover {
+    object-fit: cover;
+}
+
+/* Desktop sidebar */
+.achievement-sidebar {
+    padding-left: 8px;
+    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+}
+
+.achievement-sidebar h3 {
+    margin: 0 0 8px;
+    color: var(--text-muted);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.achievement-sidebar .border-t {
+    border-color: var(--border) !important;
+}
+
+.achievement-sidebar .ach-filter {
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    background: transparent;
+    color: var(--text-muted);
+    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    transition: color 180ms ease;
+}
+
+.achievement-sidebar .ach-filter:hover,
+.achievement-sidebar .ach-filter.is-active {
+    color: var(--accent-red);
+}
+
+.achievement-sidebar .ach-filter.is-active {
+    font-weight: 600;
+}
+
+.achievement-sidebar .ach-filter span:last-child {
+    font-size: 12px;
+}
+
+/* Mobile filter */
+.achievement-mobile-filter {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 18px;
+    padding-bottom: 10px;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--border);
+    scrollbar-width: none;
+}
+
+.achievement-mobile-filter::-webkit-scrollbar {
+    display: none;
+}
+
+.achievement-mobile-filter .ach-filter {
+    flex: 0 0 auto;
+    padding: 0 0 5px;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    background: transparent;
+    color: var(--text-muted);
+    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.achievement-mobile-filter .ach-filter:hover,
+.achievement-mobile-filter .ach-filter.is-active {
+    color: var(--accent-red);
+}
+
+.achievement-mobile-filter .ach-filter.is-active {
+    border-bottom-color: var(--accent-red);
+    font-weight: 600;
+}
+
+/* Responsive */
 @media (min-width: 1024px) {
+
+    /* Allow sticky positioning to work */
+    main,
+    main section,
+    .achievement-scroll {
+        overflow: visible !important;
+    }
+
+    /* Keep the filter visible while articles scroll */
     .achievement-sidebar {
-        position: sticky;
+        position: sticky !important;
         top: 5rem;
-        align-self: start;
+        align-self: start !important;
+        height: max-content;
+        max-height: calc(100vh - 6rem);
+        overflow: visible;
+        z-index: 20;
+    }
+
+    /* Mobile filter must not appear on desktop */
+    .achievement-mobile-filter {
+        display: none !important;
+    }
+
+    /* Larger achievement media */
+    .achievement-card-inner {
+        grid-template-columns: minmax(0, 1fr) 380px;
+        gap: 30px;
+        align-items: start;
+        min-height: 240px;
+    }
+
+    .achievement-card-media {
+        width: 380px;
+    }
+
+    .achievement-figure {
+        min-height: 240px;
+    }
+
+    .achievement-figure iframe {
+        min-height: 240px;
     }
 }
 
-/* Achievements: force text to left-align */
-.ach-card p,
-.ach-card h3,
-.ach-card h4 {
-    text-align: left !important;
+/* Larger desktop screens */
+@media (min-width: 1280px) {
+    .achievement-card-inner {
+        grid-template-columns: minmax(0, 1fr) 420px;
+        gap: 32px;
+        min-height: 265px;
+    }
+
+    .achievement-card-media {
+        width: 420px;
+    }
+
+    .achievement-figure,
+    .achievement-figure iframe {
+        min-height: 265px;
+    }
 }
 
-/* Achievement keyword labels */
-.achievement-keyword {
-    color: var(--accent-red);
-    font-weight: 700;
+/* Tablet and mobile */
+@media (max-width: 1023px) {
+    .achievement-sidebar {
+        display: none !important;
+    }
+
+    .achievement-mobile-filter {
+        display: flex;
+    }
+
+    .achievement-card-inner {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        min-height: 0;
+    }
+
+    .achievement-card-media {
+        width: 100%;
+        order: -1;
+    }
+
+    .achievement-figure,
+    .achievement-figure iframe {
+        width: 100%;
+        min-height: 300px;
+    }
 }
 
-.achievement-keyword--award {
-    color: #8b5e00;
+@media (max-width: 640px) {
+    article.ach-card {
+        padding: 16px 0;
+    }
+
+    .achievement-title {
+        font-size: 15px;
+    }
+
+    .achievement-description {
+        font-size: 13px;
+        text-align: left;
+    }
+
+    .achievement-figure,
+    .achievement-figure iframe {
+        min-height: 220px;
+    }
 }
 
-.achievement-keyword--research {
-    color: var(--accent-link);
+article.proj-card a.project-button {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 38px;
+    padding: 8px 16px !important;
+
+    border: 1px solid var(--border) !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+
+    color: var(--accent-link) !important;
+    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    font-size: 14px !important;
+    line-height: 1.2;
+    font-weight: 500;
+
+    text-decoration: none;
+    transition:
+        color 180ms ease,
+        border-color 180ms ease,
+        background 180ms ease;
 }
 
-.achievement-keyword--eca {
-    color: #2f6d4f;
+article.proj-card a.project-button:hover {
+    color: var(--accent-red) !important;
+    border-color: var(--accent-red) !important;
+    background: var(--soft-bg) !important;
+}
+
+article.proj-card a.project-button i {
+    font-size: 14px;
 }

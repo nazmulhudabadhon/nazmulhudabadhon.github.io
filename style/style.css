@@ -1,6 +1,5 @@
 :root {
-    --page-bg: #FAF9F6;
-    --card-bg: #FFFFFF;
+    --page-bg: #FFFFFF;
     --soft-bg: #F4F1EA;
     --border: #D8D6CF;
     --text-main: #111827;
@@ -187,7 +186,7 @@ Transparent Top Nav - Desktop Base
 #topHeader.is-scrolled,
 #topHeader.nav-hide,
 #topHeader.nav-show {
-    background: rgba(250, 249, 246, 0.50) !important;
+    background: rgba(255, 255, 255, 0.5) !important;
     -webkit-backdrop-filter: none !important;
     backdrop-filter: none !important;
     transform: none !important;

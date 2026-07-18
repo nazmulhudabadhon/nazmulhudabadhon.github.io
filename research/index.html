@@ -8,7 +8,6 @@
     <link rel="canonical" href="../research/">
     <title>Publications | Nazmul Huda Badhon</title>
 
-
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4/dist/full.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -16,6 +15,10 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../style/style.css">
 
     <!-- Current favicon for UI -->
@@ -29,28 +32,21 @@
 </head>
 
 <body class="scroll-smooth">
-    <!-- ===== TOP NAVBAR ===== -->
-    <header id="topHeader" class="hidden lg:block site-topbar w-full h-14">
-        <div class="max-w-7xl mx-auto px-6 md:px-12">
-            <div class="h-14 flex items-center justify-between">
+    <!-- ===== DESKTOP TOP NAVBAR ===== -->
+    <header class="desktop-header hidden lg:block">
+        <div class="desktop-header__inner max-w-7xl mx-auto px-6 md:px-12" style="max-width: 80rem;">
+            <nav class="segmented-nav" aria-label="Main navigation">
+                <a href="../" class="segmented-nav__link">Home</a>
 
-                <div class="brand text-[#06142A]">
-                    <a href="https://nazmulhudabadhon.github.io/" class="hover:text-[#A51C30]"
-                        style="font-family: 'Libre Baskerville', Georgia, serif;">
-                        Nazmul Huda Badhon
-                    </a>
-                </div>
+                <a href="../research/" class="segmented-nav__link is-active" aria-current="page">Publications</a>
 
-                <nav id="topNav" class="flex items-center gap-6 text-[#A51C30]">
-                    <a href="../" class="nav-link block hover:text-[#A51C30]">Home</a>
-                    <a href="../research/" class="nav-link active block hover:text-[#A51C30]">Publications</a>
-                    <a href="../projects/" class="nav-link block hover:text-[#A51C30]">Projects</a>
-                    <a href="../achievement/" class="nav-link block hover:text-[#A51C30]">Achievements</a>
-                    <a href="../resume/" target="_blank" rel="noopener"
-                        class="nav-link block hover:text-[#A51C30]">CV</a>
-                </nav>
+                <a href="../projects/" class="segmented-nav__link">Projects</a>
 
-            </div>
+                <a href="../achievement/" class="segmented-nav__link">Achievements</a>
+
+                <a href="../resume/" target="_blank" rel="noopener"
+                    class="segmented-nav__link segmented-nav__link--cv">CV</a>
+            </nav>
         </div>
     </header>
 
@@ -111,8 +107,9 @@
                         <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_170px] gap-10 items-start">
 
                             <!-- LEFT: only articles scroll -->
-                            <div class="flex flex-col gap-0 pr-2 pb-8 publication-scroll justify-start items-stretch">
-                                <span class="profile-intro"
+                            <div
+                                class="flex flex-col gap-0 pr-2 pb-8 publication-scroll justify-start items-stretch reveal reveal-left">
+                                <span
                                     style="font-family: 'Libre Baskerville', Arial, Helvetica, sans-serif; font-size: 18px; font-weight: 500;">Research
                                     Publications</span>
 
@@ -715,7 +712,7 @@
                             </div>
 
                             <!-- RIGHT: frozen sidebar -->
-                            <aside class="research-sidebar hidden lg:block">
+                            <aside class="research-sidebar hidden lg:block reveal reveal-right">
                                 <div class="text-sm text-slate-700">
                                     <div class="mb-8">
                                         <h3 class="text-xs font-bold uppercase tracking-[0.25em] text-slate-500 mb-2">

@@ -1,5 +1,7 @@
+/* Design tokens and site-wide color variables */
 :root {
     --page-bg: #FFFFFF;
+    --card-bg: #FFFFFF;
     --soft-bg: #F4F1EA;
     --border: #D8D6CF;
     --text-main: #111827;
@@ -36,7 +38,6 @@
     background-color: var(--accent-red);
 }
 
-/* Academic profile text */
 .profile-copy {
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
     margin-top: 10px;
@@ -52,10 +53,6 @@
         max-width: 100%;
     }
 }
-
-/* ================================
-Global Typography
-================================ */
 
 html,
 body {
@@ -87,7 +84,6 @@ b,
     color: #0f172a;
 }
 
-/* Navigation */
 #topHeader a {
     font-size: 13px;
 }
@@ -99,7 +95,6 @@ b,
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
 
-/* Main academic body paragraphs only */
 #about p.text-justify {
     font-size: 14.5px !important;
     line-height: 1.65;
@@ -122,7 +117,6 @@ article {
     box-shadow: 0 8px 24px rgba(15, 23, 42, 0.055);
 }
 
-/* Premium academic left accent */
 article::before {
     content: "";
     position: absolute;
@@ -133,7 +127,6 @@ article::before {
     background: linear-gradient(180deg, var(--accent) 0%, #0A3D91 55%, #8fb8e8 100%);
 }
 
-/* Very subtle paper highlight */
 article::after {
     content: "";
     position: absolute;
@@ -144,15 +137,10 @@ article::after {
     pointer-events: none;
 }
 
-/* Keep real content above the overlay */
 article>* {
     position: relative;
     z-index: 1;
 }
-
-/* ================================
-Animated Text Height Fix
-================================ */
 
 #animatedText {
     min-height: 2.75rem;
@@ -164,23 +152,15 @@ Animated Text Height Fix
     }
 }
 
-/* ================================
-Transparent Top Nav - Desktop Base
-================================ */
-
 #topHeader {
     position: sticky;
     top: 0;
     z-index: 9999;
-
     background: rgba(250, 249, 246, 0.35) !important;
     -webkit-backdrop-filter: none !important;
     backdrop-filter: none !important;
-
     border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-
     transition: none;
-
 }
 
 #topHeader.is-scrolled,
@@ -193,7 +173,6 @@ Transparent Top Nav - Desktop Base
     box-shadow: none !important;
 }
 
-/* Mobile-only blurry header */
 @media (max-width: 1023px) {
     #topHeader {
         background: rgba(250, 249, 246, 0.82) !important;
@@ -210,12 +189,7 @@ Transparent Top Nav - Desktop Base
         backdrop-filter: blur(12px) saturate(135%) !important;
         box-shadow: none !important;
     }
-
 }
-
-/* ================================
-Reveal Animations
-================================ */
 
 .reveal {
     opacity: 0;
@@ -265,10 +239,6 @@ Reveal Animations
     }
 }
 
-/* ================================
-Photo Card Hover
-================================ */
-
 .photo-card {
     transition: transform 320ms cubic-bezier(.22, 1, .36, 1),
         box-shadow 320ms cubic-bezier(.22, 1, .36, 1);
@@ -278,10 +248,6 @@ Photo Card Hover
     transform: translateY(-4px) scale(1.01);
     box-shadow: 0 18px 40px rgba(2, 8, 23, .12);
 }
-
-/* ================================
-Mobile About Spacing
-================================ */
 
 @media (max-width: 767px) {
     .about-heading {
@@ -294,7 +260,6 @@ Mobile About Spacing
         margin-top: 0 !important;
         padding-top: 0 !important;
     }
-
 }
 
 @media (max-width: 640px) {
@@ -302,10 +267,6 @@ Mobile About Spacing
         padding-top: 1.25rem;
     }
 }
-
-/* ================================
-Projects page — academic case-study rows
-================================ */
 
 .projects-page-heading {
     margin: 0;
@@ -340,7 +301,6 @@ Projects page — academic case-study rows
     gap: 0;
 }
 
-/* Remove global article card styling */
 article.proj-card {
     position: static;
     display: block;
@@ -368,7 +328,6 @@ article.proj-card>* {
     z-index: auto;
 }
 
-/* Project title */
 .proj-card h2,
 .proj-card h3 {
     margin-top: 14px;
@@ -380,7 +339,6 @@ article.proj-card>* {
     text-align: left;
 }
 
-/* Project text */
 .proj-card p {
     text-align: left;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
@@ -402,12 +360,10 @@ article.proj-card>* {
     font-weight: 400;
 }
 
-/* Keep Tailwind badge colors */
 .proj-card span.inline-flex {
     border-radius: 2px;
 }
 
-/* Prevent the older badge rule from removing colors */
 .proj-card .inline-flex.items-center {
     padding: 4px 8px !important;
     border-radius: 2px !important;
@@ -418,17 +374,14 @@ article.proj-card>* {
     letter-spacing: 0.06em;
 }
 
-/* Remove dot separators between badges */
 .proj-card .inline-flex.items-center+.inline-flex.items-center::before {
     content: none;
 }
 
-/* Project detail labels */
 .proj-card .uppercase {
     font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
 }
 
-/* Action links */
 .proj-card a.inline-flex {
     padding: 8px 16px !important;
     border: 1px solid var(--border) !important;
@@ -447,13 +400,11 @@ article.proj-card>* {
     color: var(--accent-red) !important;
 }
 
-/* Dataset text link without button border */
 .proj-card a.inline-flex.border-0,
 .proj-card a.inline-flex:not([class*="border"]) {
     border-color: transparent !important;
 }
 
-/* Project image */
 .proj-card img {
     display: block;
     width: 100%;
@@ -462,7 +413,6 @@ article.proj-card>* {
     object-fit: contain;
 }
 
-/* Image frame */
 .proj-card .aspect-\[16\/10\],
 .proj-card .aspect-\[4\/3\] {
     padding: 8px;
@@ -470,14 +420,12 @@ article.proj-card>* {
     background: #ffffff !important;
 }
 
-/* Do not make image backgrounds transparent */
 .proj-card .bg-gray-50,
 .proj-card .bg-white,
 .proj-card .bg-slate-50 {
     background: #ffffff !important;
 }
 
-/* Desktop */
 @media (min-width: 1024px) {
     article.proj-card {
         padding: 32px 0;
@@ -489,7 +437,6 @@ article.proj-card>* {
     }
 }
 
-/* Mobile */
 @media (max-width: 767px) {
     .projects-page-heading {
         padding-bottom: 18px;
@@ -514,10 +461,6 @@ article.proj-card>* {
     }
 }
 
-/* ================================
-Back to Top Button
-================================ */
-
 #backToTop {
     animation: float 3s ease-in-out infinite;
 }
@@ -532,13 +475,9 @@ Back to Top Button
     50% {
         transform: translateY(-6px);
     }
-
 }
 
-/* ================================
-Profile Sidebar
-================================ */
-
+/* Mobile and default profile-sidebar structure */
 .profile-card {
     width: 300px;
     margin: 0 auto;
@@ -562,7 +501,6 @@ Profile Sidebar
     color: var(--text-main);
 }
 
-/* Profile photo — mobile/default */
 .academic-portrait {
     width: 65%;
     margin: 0 auto;
@@ -580,7 +518,6 @@ Profile Sidebar
     object-fit: cover;
 }
 
-/* Social links — mobile/default */
 .profile-icons {
     margin-top: 8px;
     padding: 8px 0;
@@ -611,60 +548,71 @@ Profile Sidebar
     transform: translateY(-2px);
 }
 
-/* Scholar metrics */
+/* Scholar metrics displayed as stacked two-column rows */
 .scholar-metrics {
-    width: 100%;
-    max-width: 260px;
+    width: 220px;
+    max-width: 220px;
+    margin: 18px 0 0 auto;
     padding: 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
     background: transparent;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-    border-left: none;
-    border-right: none;
+    border-left: 0;
+    border-right: 0;
 }
 
+/* Each metric forms one table-like row */
 .metric-item {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    align-items: auto;
     min-width: 0;
-    padding: 5px 5px 5px;
-    text-align: center;
-    border-right: 1px solid var(--border);
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid var(--border);
 }
 
+/* Removes the duplicate separator from the final row */
 .metric-item:last-child {
-    border-right: none;
+    border-bottom: 0;
 }
 
+/* Number cell */
 .metric-number {
-    display: block;
-    font-family: "Libre Baskerville", Arial, sans-serif;
-    font-size: 18px;
-    line-height: 1;
-    margin-top: 2px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 5px 8px;
+    border-right: 1px solid var(--border);
     color: #1f2937;
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-align: center;
 }
 
+/* Label cell */
 .metric-label {
-    display: block;
-    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 5px 0 5px 10px;
+    border: 0;
+    color: var(--text-muted);
     font-family: "Open Sans", Arial, sans-serif;
     font-size: 12px;
-    line-height: 1.25;
     font-weight: 500;
-    color: var(--text-muted);
+    line-height: 1.3;
+    text-align: right;
 }
 
-/* Desktop sidebar alignment */
-@media (min-width: 768px) {
-    .scholar-metrics {
-        width: 260px;
-    }
-}
-
-/* Mobile */
+/* Keeps the same table structure on smaller screens */
 @media (max-width: 767px) {
     .scholar-metrics {
         width: 100%;
@@ -673,19 +621,20 @@ Profile Sidebar
     }
 
     .metric-item {
-        padding: 9px 4px 8px;
+        grid-template-columns: 64px minmax(0, 1fr);
     }
 
     .metric-number {
-        font-size: 16px;
+        padding: 9px 10px;
+        font-size: 12px;
     }
 
     .metric-label {
-        font-size: 9px;
+        padding: 9px 0 9px 14px;
+        font-size: 14px;
     }
 }
 
-/* Right column: research introduction */
 .research-intro {
     padding: 0 0 4px;
 }
@@ -723,7 +672,6 @@ Profile Sidebar
     color: var(--accent-red);
 }
 
-/* Profile intro — mobile only */
 @media (max-width: 767px) {
     .profile-intro {
         width: 100%;
@@ -742,6 +690,8 @@ Profile Sidebar
 
     .profile-intro p {
         margin: 0;
+        margin-bottom: 18px;
+        margin-top: 18px;
     }
 
     .profile-role {
@@ -760,27 +710,37 @@ Profile Sidebar
     }
 }
 
-/* ================================
-Desktop Reference-Style Profile
-================================ */
-
+/* =========================================
+   Desktop profile sidebar layout and content
+========================================= */
 @media (min-width: 768px) {
 
-    /* Preserve original left-column width */
-    .profile-card {
+    /* Keeps all desktop sidebar elements on one shared width */
+    .profile-card,
+    .profile-footer,
+    .profile-intro,
+    .profile-icons {
         width: 300px;
-        margin: 0;
+        max-width: 300px;
     }
 
-    /* Smaller photo while keeping left-column spacing */
+    /* Anchors the profile card to the right side of its column */
+    .profile-card {
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    /* Sizes and right-aligns the desktop portrait */
     .academic-portrait {
         width: 180px;
         height: 180px;
-        margin-left: 0;
+        margin-left: auto;
+        margin-right: 0;
         border: 1px solid #d8d6cf;
         box-shadow: none;
     }
 
+    /* Preserves a consistent portrait crop */
     .academic-portrait img {
         width: 100%;
         height: 100%;
@@ -788,99 +748,134 @@ Desktop Reference-Style Profile
         object-position: top center;
     }
 
+    /* Aligns the profile information with the portrait's right edge */
     .profile-footer {
-        width: 300px;
         margin-top: 24px;
         padding-top: 0;
-        text-align: justify;
+        text-align: right;
     }
 
+    /* Right-aligns the name, role, and organization details */
+    .profile-intro,
+    .profile-intro p,
+    .profile-role,
+    .profile-affiliation {
+        text-align: right;
+    }
+
+    /* Styles the desktop profile name */
     .profile-intro span {
-        margin: 0 0 10px;
-        font-family: "Libre Baskerville", Georgia, serif;
-        font-size: 18px;
-        line-height: 1.18;
-        font-weight: 400;
+        display: block;
+        margin: 0 0 4px;
         color: #1f2937;
-        ;
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 16.5px;
+        font-weight: 400;
+        line-height: 1.18;
     }
 
+    /* Styles the research-role line */
     .profile-role {
         margin-bottom: 14px !important;
-        font-family: "Open Sans", Arial, sans-serif;
+        color: var(--accent-red);
         font-size: 14px !important;
         font-weight: 400;
-        color: #a51c30;
     }
 
+    /* Styles the organization and researcher-status text */
     .profile-affiliation {
         margin-bottom: 16px !important;
-        font-family: "Libre Baskerville", Arial, sans-serif;
+        color: #475569;
+        font-family: "Libre Baskerville", Georgia, serif;
         font-size: 13.5px !important;
         font-weight: 400;
         line-height: 1.65;
-        color: #475569;
     }
 
-    /* Stacked Google Scholar / ResearchGate / LinkedIn links */
+    /* Keeps the three academic metrics evenly distributed */
+    .scholar-metrics {
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    /* Aligns the metrics table with the sidebar's right edge */
+    .scholar-metrics {
+        width: 190px;
+        max-width: 190px;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    /* Aligns the update timestamp with the sidebar's right edge */
+    .profile-footer>.text-slate-400 {
+        display: block;
+        width: 300px;
+        text-align: right;
+    }
+
+    /* Stacks social links and aligns every row to the right */
     .profile-icons {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        gap: 10px;
         margin-top: 20px;
+        margin-left: auto;
+        margin-right: 0;
         padding: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
         border: none;
     }
 
+    /* Places each social label before its icon */
     .profile-icons a {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
+        display: flex;
+        width: 100%;
+        min-width: 0;
         padding: 0;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
         color: #475569;
-        font-weight: 500;
-        text-decoration: none;
         font-family: "Open Sans", Arial, sans-serif;
         font-size: 12.5px;
+        font-weight: 500;
+        line-height: 1.4;
+        text-align: right;
+        text-decoration: none;
     }
 
+    /* Generates the visible label from each link's aria-label */
     .profile-icons a::after {
         content: attr(aria-label);
+        order: 1;
+        min-width: 0;
+        text-align: right;
+        overflow-wrap: anywhere;
     }
 
+    /* Keeps social icons uniform and positions them after labels */
     .profile-icons img {
+        order: 2;
         width: 18px !important;
         height: 18px !important;
+        flex: 0 0 18px;
         object-fit: contain;
         opacity: 1;
     }
 
+    /* Applies the sidebar accent color on link hover */
     .profile-icons a:hover {
-        color: #a51c30;
+        color: var(--accent-red);
     }
 
+    /* Adds subtle icon movement on link hover */
     .profile-icons a:hover img {
         opacity: 1;
         transform: translateY(-1px);
     }
-
-    /* Keep scholar metrics and last-updated text visible */
-    .scholar-metrics {
-        display: grid;
-        width: 300px;
-    }
-
-    .profile-footer>.text-slate-400 {
-        display: inline-block;
-    }
 }
 
-/* ================================
-Academic Status Line
-================================ */
-
+/* Availability and assistantship status row */
 .status-card {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
@@ -920,7 +915,7 @@ Academic Status Line
     color: var(--text-muted);
     font-size: 14px;
     line-height: 1.45;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .status-cta {
@@ -961,10 +956,6 @@ Academic Status Line
     }
 }
 
-/* ================================
-Mobile-only CV Button
-================================ */
-
 .mobile-cv-button {
     display: none;
 }
@@ -979,7 +970,6 @@ Mobile-only CV Button
         border-radius: 0;
         background: transparent;
         color: var(--accent);
-
         box-shadow: none;
         font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
         font-size: 12px;
@@ -987,15 +977,12 @@ Mobile-only CV Button
         letter-spacing: 0.14em;
         text-transform: uppercase;
         text-decoration: none;
-
         display: inline-flex;
         align-items: center;
         justify-content: center;
         gap: 8px;
-
         white-space: nowrap;
         overflow: hidden;
-
         transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
     }
 
@@ -1021,13 +1008,9 @@ Mobile-only CV Button
     .mobile-cv-button:focus-visible svg {
         transform: translate(1px, -1px);
     }
-
 }
 
-/* ================================
-Section Headers
-================================ */
-
+/* Shared academic section headings */
 .academic-section-heading {
     display: flex;
     align-items: end;
@@ -1045,10 +1028,7 @@ Section Headers
     color: var(--text-muted);
 }
 
-/* ================================
-Academic Highlights — Large Carousel
-================================ */
-
+/* Academic highlights carousel */
 .act {
     width: 100%;
     margin-top: 28px;
@@ -1073,21 +1053,35 @@ Academic Highlights — Large Carousel
     overflow: hidden;
     border: 1px solid var(--border);
     background: var(--soft-bg);
+
+    contain: layout paint;
+    touch-action: pan-y;
+    transform: translateZ(0);
 }
 
+/* Smoother hardware-accelerated carousel movement */
 .act__track {
     display: flex;
     width: 100%;
     margin: 0;
     padding: 0;
     list-style: none;
-    transition: transform 520ms cubic-bezier(.22, 1, .36, 1);
+
+    transform: translate3d(0, 0, 0);
+    transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+
     will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
+/* Prevents flickering during movement */
 .act__slide {
     min-width: 100%;
     flex: 0 0 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 .act__figure {
@@ -1101,12 +1095,23 @@ Academic Highlights — Large Carousel
 .act__figure>img {
     display: block;
     width: 100%;
-    height: 520px;
+    height: 430px;
     object-fit: cover;
     object-position: center;
 }
 
-/* Short caption at bottom-left */
+@media (max-width: 1023px) {
+    .act__figure>img {
+        height: 380px;
+    }
+}
+
+@media (max-width: 640px) {
+    .act__figure>img {
+        height: 300px;
+    }
+}
+
 .act__caption {
     position: absolute;
     left: 22px;
@@ -1152,7 +1157,6 @@ Academic Highlights — Large Carousel
     text-align: left;
 }
 
-/* Navigation arrows */
 .act__arrow {
     position: absolute;
     top: 50%;
@@ -1191,7 +1195,6 @@ Academic Highlights — Large Carousel
     right: 18px;
 }
 
-/* Indicator bars and counter */
 .act__footer {
     display: flex;
     flex-direction: column;
@@ -1243,7 +1246,6 @@ Academic Highlights — Large Carousel
     color: var(--border);
 }
 
-/* Tablet */
 @media (max-width: 1023px) {
     .act__figure>img {
         height: 440px;
@@ -1269,7 +1271,6 @@ Academic Highlights — Large Carousel
     }
 }
 
-/* Mobile */
 @media (max-width: 640px) {
     .act {
         margin-top: 22px;
@@ -1328,10 +1329,7 @@ Academic Highlights — Large Carousel
     }
 }
 
-/* ================================
-Selected Publications
-================================ */
-
+/* Recent-publications list on the home page */
 .publication-list {
     margin-top: 14px;
 }
@@ -1394,11 +1392,7 @@ Selected Publications
     }
 }
 
-/* ================================
-Main Publications
-================================ */
-
-/* Normal document flow — overrides global article styles */
+/* Main publications page layout */
 .publication-scroll {
     padding-right: 0;
     overflow: visible;
@@ -1427,7 +1421,6 @@ article.publication-card>* {
     z-index: auto;
 }
 
-/* Page heading */
 .page-heading {
     position: sticky;
     margin: 0 0 0px;
@@ -1455,7 +1448,6 @@ article.publication-card>* {
     font-size: 12.5px;
 }
 
-/* Year divider */
 .publication-year-heading {
     display: flex;
     align-items: baseline;
@@ -1483,14 +1475,12 @@ article.publication-card>* {
     gap: 0;
 }
 
-/* Let JavaScript filtering hide publication cards and year groups */
 .publication-card.hidden,
 .publication-year-group.hidden,
 .publication-year-heading.hidden {
     display: none !important;
 }
 
-/* Individual publication */
 .publication-card-inner {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 220px;
@@ -1535,7 +1525,6 @@ article.publication-card>* {
     object-fit: cover;
 }
 
-/* Metadata labels */
 .publication-card .inline-flex.items-center.px-2.py-1.rounded-full {
     padding: 0;
     border-radius: 0;
@@ -1555,7 +1544,6 @@ article.publication-card>* {
     line-height: 1;
 }
 
-/* Paper and BibTeX buttons */
 .publication-card .mt-4.flex.flex-wrap.gap-3 a {
     border: 1px solid var(--border);
     border-radius: 0;
@@ -1571,7 +1559,6 @@ article.publication-card>* {
     background: var(--soft-bg);
 }
 
-/* Filter sidebar */
 .research-sidebar {
     padding-left: 8px;
     font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
@@ -1615,7 +1602,6 @@ article.publication-card>* {
     font-size: 12px;
 }
 
-/* Mobile and tablet */
 @media (max-width: 1023px) {
     .publication-card-inner {
         grid-template-columns: 1fr;
@@ -1633,25 +1619,19 @@ article.publication-card>* {
     }
 }
 
-/* ================================
-Research page: fixed desktop elements
-================================ */
 @media (min-width: 1024px) {
 
-    /* Prevent parent overflow rules from breaking sticky positioning */
     .drawer-content,
     .publication-scroll {
         overflow: visible !important;
     }
 
-    /* Top navigation is already sticky through #topHeader */
     #topHeader {
         position: sticky !important;
         top: 0;
         z-index: 9999;
     }
 
-    /* Keep research heading below the 56px header */
     .page-heading {
         position: sticky;
         top: 3.5rem;
@@ -1661,15 +1641,13 @@ Research page: fixed desktop elements
         padding-bottom: 10px;
     }
 
-    /* Keep filter sidebar visible while publication list scrolls */
     .research-sidebar {
         position: sticky;
-        top: 5rem;
+        top: 3.25rem;
         align-self: start;
     }
 }
 
-/* By Type: remove JavaScript's black active background */
 .research-sidebar .research-filter.bg-black,
 .research-sidebar .research-filter.bg-black:hover {
     background: transparent !important;
@@ -1682,10 +1660,7 @@ Research page: fixed desktop elements
     color: var(--accent-red) !important;
 }
 
-/* ================================
-Education
-================================ */
-
+/* Education timeline and institution metadata */
 .education-list {
     margin-top: 14px;
 }
@@ -1800,10 +1775,7 @@ Education
     background: transparent;
 }
 
-/* ================================
-Footer
-================================ */
-
+/* Site footer */
 #siteFooter,
 #sitefooter {
     background: rgba(250, 249, 246, 0.35) !important;
@@ -1818,16 +1790,13 @@ Footer
     max-width: 1152px;
     margin: 0 auto;
     padding: 14px 24px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-
     font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
     font-size: 13px;
     color: var(--text-muted);
-
 }
 
 @media (max-width: 640px) {
@@ -1840,10 +1809,7 @@ Footer
     }
 }
 
-/* ================================
-Achievements — research interface
-================================ */
-
+/* Achievements page list and filtering interface */
 .achievement-scroll {
     min-width: 0;
     overflow: visible;
@@ -1876,7 +1842,6 @@ Achievements — research interface
     text-transform: uppercase;
 }
 
-/* Achievement entry */
 article.ach-card {
     position: static !important;
     display: block;
@@ -1916,7 +1881,6 @@ article.ach-card>* {
     min-width: 0;
 }
 
-/* Colored labels */
 .achievement-tags {
     display: flex;
     flex-wrap: wrap;
@@ -1937,7 +1901,6 @@ article.ach-card>* {
     text-transform: uppercase;
 }
 
-/* Text */
 .achievement-title {
     margin: 14px 0 0;
     color: var(--text-main);
@@ -1990,7 +1953,6 @@ article.ach-card>* {
     object-fit: cover;
 }
 
-/* Media */
 .achievement-card-media {
     width: 380px;
     min-width: 0;
@@ -2022,7 +1984,6 @@ article.ach-card>* {
     object-fit: cover;
 }
 
-/* Desktop sidebar */
 .achievement-sidebar {
     padding-left: 8px;
     font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
@@ -2066,7 +2027,6 @@ article.ach-card>* {
     font-size: 12px;
 }
 
-/* Mobile filter */
 .achievement-mobile-filter {
     display: flex;
     align-items: center;
@@ -2104,20 +2064,17 @@ article.ach-card>* {
     font-weight: 600;
 }
 
-/* Responsive */
 @media (min-width: 1024px) {
 
-    /* Allow sticky positioning to work */
     main,
     main section,
     .achievement-scroll {
         overflow: visible !important;
     }
 
-    /* Keep the filter visible while articles scroll */
     .achievement-sidebar {
         position: sticky !important;
-        top: 5rem;
+        top: 3.25rem;
         align-self: start !important;
         height: max-content;
         max-height: calc(100vh - 6rem);
@@ -2125,12 +2082,10 @@ article.ach-card>* {
         z-index: 20;
     }
 
-    /* Mobile filter must not appear on desktop */
     .achievement-mobile-filter {
         display: none !important;
     }
 
-    /* Larger achievement media */
     .achievement-card-inner {
         grid-template-columns: minmax(0, 1fr) 380px;
         gap: 30px;
@@ -2151,7 +2106,6 @@ article.ach-card>* {
     }
 }
 
-/* Larger desktop screens */
 @media (min-width: 1280px) {
     .achievement-card-inner {
         grid-template-columns: minmax(0, 1fr) 420px;
@@ -2169,7 +2123,6 @@ article.ach-card>* {
     }
 }
 
-/* Tablet and mobile */
 @media (max-width: 1023px) {
     .achievement-sidebar {
         display: none !important;
@@ -2222,20 +2175,16 @@ article.proj-card a.project-button {
     align-items: center;
     justify-content: center;
     gap: 8px;
-
     min-height: 38px;
     padding: 8px 16px !important;
-
     border: 1px solid var(--border) !important;
     border-radius: 0 !important;
     background: transparent !important;
-
     color: var(--accent-link) !important;
     font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
     font-size: 14px !important;
     line-height: 1.2;
     font-weight: 500;
-
     text-decoration: none;
     transition:
         color 180ms ease,
@@ -2251,4 +2200,147 @@ article.proj-card a.project-button:hover {
 
 article.proj-card a.project-button i {
     font-size: 14px;
+}
+
+.desktop-header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 36px;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+}
+
+.desktop-header__inner {
+    width: 100%;
+    max-width: 1000px;
+    height: 36px;
+    min-height: 36px;
+    margin: 0 auto;
+    display: block;
+}
+
+.desktop-brand {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    min-width: 0;
+    color: #1f2937;
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 180ms ease;
+}
+
+.segmented-nav {
+    width: 100%;
+    height: 36px;
+    min-height: 36px;
+    display: grid;
+    grid-template-columns:
+        minmax(100px, 1fr) minmax(130px, 1.15fr) minmax(100px, 1fr) minmax(130px, 1.15fr) minmax(70px, 0.7fr);
+    overflow: hidden;
+    border-left: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2;
+    background: #f2f2f2;
+}
+
+.segmented-nav__link {
+    position: relative;
+    min-width: 0;
+    height: 100%;
+    padding: 0 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border-right: 1px solid #ffffff;
+    background: #f2f2f2;
+    color: #1f1f1f;
+    font-family: "Oswald", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+        background-color 180ms ease,
+        color 180ms ease;
+}
+
+.segmented-nav__link:last-child {
+    border-right: 0;
+}
+
+.segmented-nav__link:hover {
+    background: #e4e4e4;
+    color: #111111;
+}
+
+.segmented-nav__link.is-active,
+.segmented-nav__link[aria-current="page"] {
+    background: #303030;
+    color: #ffffff;
+}
+
+.segmented-nav__link.is-active::after,
+.segmented-nav__link[aria-current="page"]::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+}
+
+.segmented-nav__link--cv i {
+    font-size: 9px;
+}
+
+.segmented-nav__link:focus-visible {
+    z-index: 1;
+    outline: 2px solid var(--accent-red);
+    outline-offset: -2px;
+}
+
+@media (min-width: 1024px) and (max-width: 1120px) {
+    .desktop-header__inner {
+        max-width: calc(100% - 48px);
+        grid-template-columns: 190px minmax(0, 1fr);
+        gap: 40px;
+    }
+
+    .segmented-nav__link {
+        padding: 0 10px;
+        font-size: 11.5px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .mobile-profile-intro {
+        width: 100%;
+        text-align: center !important;
+    }
+
+    .mobile-profile-intro>span,
+    .mobile-profile-intro>p {
+        display: block;
+        width: 100%;
+        text-align: center !important;
+    }
+
+    .mobile-profile-intro>span {
+        font-size: 16px !important;
+    }
+
+    .mobile-profile-intro .profile-role {
+        font-size: 1rem !important;
+    }
 }

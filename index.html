@@ -20,6 +20,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style/style.css" />
 
   <!-- Current favicon for UI -->
@@ -79,55 +80,49 @@
 </head>
 
 <body class="scroll-smooth">
-  <!-- ===== TOP NAVBAR ===== -->
-  <header id="topHeader" class="hidden lg:block site-topbar w-full h-14 font-medium">
-    <div class="w-full max-w-[1000px] mx-auto px-6 lg:px-0">
-      <div class="h-14 flex items-center gap-20">
-        <!-- LEFT: matches profile column -->
-        <div class="w-[220px] flex-none">
-          <div class="w-full text-left brand text-[#06142A]">
-            <a href="https://nazmulhudabadhon.github.io/" class="hover:text-[#A51C30] transition"
-              style="font-family: 'Libre Baskerville', Georgia, serif;">
-              Nazmul Huda Badhon
-            </a>
-          </div>
-        </div>
+  <!-- ===== DESKTOP TOP NAVBAR ===== -->
+  <header class="desktop-header hidden lg:block">
+    <div class="desktop-header__inner">
+      <nav class="segmented-nav" aria-label="Main navigation">
+        <a href="./" class="segmented-nav__link is-active" aria-current="page">Home</a>
 
-        <!-- RIGHT: matches main content column -->
-        <nav id="topNav" class="w-[700px] flex-none flex items-center justify-end gap-6 text-[#06142A]">
-          <a href="./" class="nav-link active block hover:text-[#A51C30]">Home</a>
-          <a href="./research/" class="nav-link block hover:text-[#A51C30]">Publications</a>
-          <a href="./projects/" class="nav-link block hover:text-[#A51C30]">Projects</a>
-          <a href="./achievement/" class="nav-link block hover:text-[#A51C30]">Achievements</a>
-          <a href="./resume/" target="_blank" rel="noopener" class="nav-link block hover:text-[#A51C30]">CV</a>
-        </nav>
+        <a href="./research/" class="segmented-nav__link">Publications</a>
 
-      </div>
+        <a href="./projects/" class="segmented-nav__link">Projects</a>
+
+        <a href="./achievement/" class="segmented-nav__link">Achievements</a>
+
+        <a href="./resume/" target="_blank" rel="noopener" class="segmented-nav__link segmented-nav__link--cv">CV</a>
+      </nav>
     </div>
   </header>
 
   <!-- Mobile header (phones only) -->
-  <header id="topHeader" class="md:hidden sticky top-0 z-50 text-[#06142A] w-full">
+  <header id="mobileHeader" class="md:hidden sticky top-0 z-50 text-[#06142A] w-full">
     <div class="flex items-center justify-between px-4 py-3">
       <!-- LEFT TEXT BLOCK -->
       <div class="flex flex-col">
-        <span class=" text-slate-700 tracking-wide" style="font-family: 'Libre Baskerville', Georgia, serif;">
-          NAZMUL HUDA BADHON </span>
-        <p class="text-left text-xs text-slate-500 tracking-wide">BSc Graduate | Deep Learning Research</p>
+        <span class="text-slate-900 tracking-wide ">
+          NAZMUL HUDA BADHON
+        </span>
+        <p class="text-left text-xs text-slate-500 tracking-wide">
+          BSc Graduate | Deep Learning Research
+        </p>
       </div>
       <button id="mobileMenuBtn" class="text-[#06142A] text-2xl focus:outline-none" aria-label="Toggle menu">
         <i class="fa-solid fa-bars" id="menuOpenIcon"></i>
         <i class="fa-solid fa-xmark hidden" id="menuCloseIcon"></i>
       </button>
+
     </div>
 
     <!-- Collapsible nav (hidden by default, header remains visible) -->
-    <nav id="mobileMenu" class="hidden flex-col gap-2 px-4 pb-4 hover:text-[#A51C30] text-slate-900 font-medium">
-      <br />
-      <a href="./" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Home</a><br /><br />
-      <a href="./research/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Publications</a><br /><br />
-      <a href="./projects/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Projects</a><br /><br />
-      <a href="./achievement/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">Achievements</a><br /><br />
+    <nav id="mobileMenu" class="hidden flex-col gap-2 px-4 pb-4 text-slate-900 font-medium">
+      <br>
+      <a href="./" class="py-2 border-b border-white/10 hover:text-[#E3872D]">HOME</a><br><br>
+      <a href="./research/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">PUBLICATIONS</a><br><br>
+      <a href="./projects/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">PROJECTS</a><br><br>
+      <a href="./achievement/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">ACHIEVEMENTS</a><br><br>
       <a href="./resume/" class="py-2 border-b border-white/10 hover:text-[#E3872D]" target="_blank"
         rel="noopener">CV</a>
     </nav>
@@ -143,85 +138,9 @@
         <section id="about" class="pt-12 lg:pt-16 pb-12 lg:pb-16">
           <!-- Flex container -->
           <div class="flex flex-col lg:flex-row items-start gap-8 lg:gap-20 w-full max-w-[1000px] mx-auto px-6 lg:px-0">
-            <!-- Mobile-only spacer -->
-            <div class="block lg:hidden h-4"></div>
 
             <!-- LEFT COLUMN -->
-            <div class="w-full lg:w-[220px] lg:flex-none reveal reveal-left flex justify-center lg:justify-start">
-              <div class="profile-card">
-                <div class="relative w-full max-w-[300px] mx-auto">
-                  <!-- Photo card -->
-                  <div class="academic-portrait">
-                    <img src="./Image/badhonn.jpg"
-                      alt="Nazmul Huda Badhon – Graduate | Research in Deep Learning and Computer Vision" />
-                  </div>
-                </div>
-                <div class="profile-footer">
-
-                  <div class="profile-intro">
-                    <span>Nazmul Huda Badhon</span>
-                    <p class="profile-role">Deep Learning Researcher</p>
-                    <p style="margin-bottom: 16px; margin-top: 13px; font-size: 13px; color: #475569;">CSE AI Centre,
-                      DIU<br>Graduate
-                      Researcher</p>
-                  </div>
-
-                  <a class="mobile-cv-button lg:hidden" href="./resume/" target="_blank" rel="noopener"
-                    aria-label="View CV">
-                    <span>View CV</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
-                      aria-hidden="true">
-                      <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z"></path>
-                      <path d="M5 5h6v2H7v10h10v-4h2v6H5V5z"></path>
-                    </svg>
-                  </a>
-
-                  <!-- Scholar Metrics -->
-                  <div class="scholar-metrics">
-                    <div class="metric-item">
-                      <span class="metric-number">8</span>
-                      <span class="metric-label">Publications</span>
-                    </div>
-
-                    <div class="metric-item">
-                      <span class="metric-number">17</span>
-                      <span class="metric-label">Citations</span>
-                    </div>
-
-                    <div class="metric-item">
-                      <span class="metric-number">5</span>
-                      <span class="metric-label">Q1 Journals</span>
-                    </div>
-                  </div>
-                  <span class="text-slate-400 mt-0 text-[0.7rem]">Last updated: 2026-07-12</span>
-
-
-                  <div class="profile-icons">
-                    <a target="_blank" rel="noopener noreferrer" href="mailto:nazmul.badhon.research@gmail.com"
-                      aria-label="nazmul.badhon.research@gmail.com">
-                      <img src="./Image/email.png" alt="Email" />
-                    </a>
-                    <a target="_blank" rel="noopener noreferrer"
-                      href="https://scholar.google.com/citations?user=pIs1mzsAAAAJ" aria-label="Google Scholar">
-                      <img src="./Image/hat.png" alt="Google Scholar" />
-                    </a>
-
-                    <a target="_blank" rel="noopener noreferrer"
-                      href="https://www.researchgate.net/profile/Nazmul-Huda-Badhon" aria-label="ResearchGate">
-                      <img src="./Image/researchgate.jpg" alt="ResearchGate" />
-                    </a>
-
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/nazmulhudabadhon/"
-                      aria-label="LinkedIn">
-                      <img src="./Image/linkedin.png" alt="LinkedIn" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- RIGHT COLUMN -->
-            <div class="w-full lg:w-[700px] lg:flex-none reveal reveal-right min-w-0">
+            <div class="order-2 lg:order-1 w-full lg:w-[700px] lg:flex-none reveal reveal-left min-w-0">
               <!-- Biography Header -->
               <p class="profile-affiliation">
                 <i>BSc Graduate, Dept. of Computer Science and Engineering <span
@@ -250,11 +169,6 @@
                 <div class="status-text">
                   <p>Graduate Research or Teaching Assistantship</p>
                 </div>
-
-                <a class="status-cta hidden lg:inline-flex" href="./resume/" target="_blank" rel="noopener">
-                  View CV
-                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-                </a>
               </div>
 
               <!--Biography-->
@@ -290,6 +204,83 @@
                 Learning Bootcamp for Medical Data at DIU.
               </p>
             </div>
+
+            <!-- Mobile-only spacer -->
+            <div class="block lg:hidden h-2"></div>
+
+            <!-- Right COLUMN -->
+            <div
+              class="order-1 lg:order-2 w-full lg:w-[220px] lg:flex-none reveal reveal-right flex justify-center lg:justify-end">
+              <div class="profile-card">
+                <div class="relative w-full max-w-[300px] mx-auto">
+                  <!-- Photo card -->
+                  <div class="academic-portrait">
+                    <img src="./Image/badhonn.jpg"
+                      alt="Nazmul Huda Badhon – Graduate | Research in Deep Learning and Computer Vision" />
+                  </div>
+                </div>
+                <div class="profile-footer">
+                  <div class="profile-intro mobile-profile-intro">
+                    <span>Nazmul Huda Badhon</span>
+                    <p class="profile-role">Deep Learning Researcher</p>
+                    <p style="font-size: 13px; color: #475569;">CSE AI Centre,
+                      DIU<br>Graduate
+                      Researcher</p>
+                  </div>
+
+                  <a class="mobile-cv-button lg:hidden" href="./resume/" target="_blank" rel="noopener"
+                    aria-label="View CV">
+                    <span>View CV</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                      aria-hidden="true">
+                      <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z"></path>
+                      <path d="M5 5h6v2H7v10h10v-4h2v6H5V5z"></path>
+                    </svg>
+                  </a>
+
+                  <!-- Scholar Metrics -->
+                  <div class="scholar-metrics">
+                    <div class="metric-item">
+                      <span class="metric-number">8</span>
+                      <span class="metric-label">Publications</span>
+                    </div>
+
+                    <div class="metric-item">
+                      <span class="metric-number">17</span>
+                      <span class="metric-label">Citations</span>
+                    </div>
+
+                    <div class="metric-item">
+                      <span class="metric-number">5</span>
+                      <span class="metric-label">Q1 Journals</span>
+                    </div>
+                  </div>
+                  <span class="text-slate-400 mt-2 text-[0.7rem]">Last updated: 2026-07-12</span>
+
+
+                  <div class="profile-icons">
+                    <a target="_blank" rel="noopener noreferrer" href="mailto:nazmul.badhon.research@gmail.com"
+                      aria-label="nazmul.badhon.research@gmail.com">
+                      <img src="./Image/email.png" alt="Email" />
+                    </a>
+                    <a target="_blank" rel="noopener noreferrer"
+                      href="https://scholar.google.com/citations?user=pIs1mzsAAAAJ" aria-label="Google Scholar">
+                      <img src="./Image/hat.png" alt="Google Scholar" />
+                    </a>
+
+                    <a target="_blank" rel="noopener noreferrer"
+                      href="https://www.researchgate.net/profile/Nazmul-Huda-Badhon" aria-label="ResearchGate">
+                      <img src="./Image/researchgate.jpg" alt="ResearchGate" />
+                    </a>
+
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/nazmulhudabadhon/"
+                      aria-label="LinkedIn">
+                      <img src="./Image/linkedin.png" alt="LinkedIn" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="w-full max-w-[1000px] mx-auto px-6 lg:pt-3 lg:px-0">
@@ -316,9 +307,9 @@
                     <!-- Slide 1 -->
                     <li class="act__slide" role="listitem">
                       <figure class="act__figure">
-                        <img src="./Image/Badhon_graduated.JPG"
-                          alt="Nazmul Huda Badhon at his Bachelor of Science convocation" width="5754" height="4316"
-                          loading="lazy" decoding="async" />
+                        <img src="./Image/badhon_graduated.webp"
+                          alt="Nazmul Huda Badhon at his Bachelor of Science convocation" width="1600" height="900"
+                          loading="eager" decoding="async" fetchpriority="high" />
 
                         <figcaption class="act__caption">
                           <span class="act__eyebrow">Academic Milestone</span>

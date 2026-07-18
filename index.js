@@ -546,7 +546,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const track = document.getElementById("actTrack");
     const prevButton = document.getElementById("actPrev");
     const nextButton = document.getElementById("actNext");
-    const indicatorsContainer = document.getElementById("actIndicators");
+    const indicatorsContainer =
+        document.getElementById("actIndicators");
     const currentCounter = document.getElementById("actCurrent");
     const totalCounter = document.getElementById("actTotal");
     const carousel = track?.closest(".act");
@@ -562,29 +563,58 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    const academicSlides = Array.from(
+    const originalSlides = Array.from(
         track.querySelectorAll(".act__slide")
     );
 
-    if (!academicSlides.length) {
+    const slideCount = originalSlides.length;
+
+    if (!slideCount) {
         return;
     }
 
-    let currentIndex = 0;
-    let touchStartX = 0;
-    let touchStartY = 0;
+    /*
+     * Clone the last and first slides.
+     *
+     * Track order becomes:
+     * clone of slide 5, slide 1, slide 2, slide 3,
+     * slide 4, slide 5, clone of slide 1.
+     */
+    const firstClone = originalSlides[0].cloneNode(true);
+    const lastClone =
+        originalSlides[slideCount - 1].cloneNode(true);
+
+    firstClone.classList.add("act__slide--clone");
+    lastClone.classList.add("act__slide--clone");
+
+    firstClone.setAttribute("aria-hidden", "true");
+    lastClone.setAttribute("aria-hidden", "true");
+
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, originalSlides[0]);
+
+    /*
+     * Index 0 is the cloned final slide.
+     * Index 1 is the real first slide.
+     */
+    let currentIndex = 1;
+    let isAnimating = false;
     let autoplayTimer = null;
 
-    const autoplayDelay = 3000;
+    let touchStartX = 0;
+    let touchStartY = 0;
 
-    totalCounter.textContent = String(
-        academicSlides.length
-    ).padStart(2, "0");
+    const autoplayDelay = 4500;
+    const transitionDuration = 700;
+
+    totalCounter.textContent =
+        String(slideCount).padStart(2, "0");
 
     indicatorsContainer.innerHTML = "";
 
-    const indicators = academicSlides.map((_, slideIndex) => {
-        const indicatorButton = document.createElement("button");
+    const indicators = originalSlides.map((_, slideIndex) => {
+        const indicatorButton =
+            document.createElement("button");
 
         indicatorButton.type = "button";
         indicatorButton.className = "act__indicator";
@@ -595,7 +625,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         indicatorButton.addEventListener("click", () => {
-            goToSlide(slideIndex);
+            goToRealSlide(slideIndex);
             restartAutoplay();
         });
 
@@ -604,56 +634,147 @@ document.addEventListener("DOMContentLoaded", () => {
         return indicatorButton;
     });
 
-    function updateCarousel() {
-        track.style.transform =
-            `translateX(-${currentIndex * 100}%)`;
+    /*
+     * Converts the physical track index, including clones,
+     * into the visible real-slide index from 0 to slideCount - 1.
+     */
+    function getRealIndex() {
+        return (
+            (currentIndex - 1 + slideCount) %
+            slideCount
+        );
+    }
 
-        currentCounter.textContent = String(
-            currentIndex + 1
-        ).padStart(2, "0");
+    function updateInterface() {
+        const realIndex = getRealIndex();
+
+        currentCounter.textContent =
+            String(realIndex + 1).padStart(2, "0");
 
         indicators.forEach((indicator, indicatorIndex) => {
-            const isActive = indicatorIndex === currentIndex;
+            const isActive = indicatorIndex === realIndex;
 
-            indicator.classList.toggle("is-active", isActive);
+            indicator.classList.toggle(
+                "is-active",
+                isActive
+            );
 
             if (isActive) {
-                indicator.setAttribute("aria-current", "true");
+                indicator.setAttribute(
+                    "aria-current",
+                    "true"
+                );
             } else {
                 indicator.removeAttribute("aria-current");
             }
         });
 
-        academicSlides.forEach((slide, slideIndex) => {
+        originalSlides.forEach((slide, slideIndex) => {
             slide.setAttribute(
                 "aria-hidden",
-                slideIndex === currentIndex ? "false" : "true"
+                slideIndex === realIndex
+                    ? "false"
+                    : "true"
             );
         });
     }
 
-    function goToSlide(slideIndex) {
-        currentIndex =
-            (slideIndex + academicSlides.length) %
-            academicSlides.length;
+    function moveTrack(animate = true) {
+        if (animate) {
+            track.style.transition =
+                `transform ${transitionDuration}ms ` +
+                "cubic-bezier(0.22, 1, 0.36, 1)";
+        } else {
+            track.style.transition = "none";
+        }
 
-        updateCarousel();
+        track.style.transform =
+            `translate3d(-${currentIndex * 100}%, 0, 0)`;
+
+        updateInterface();
     }
+
+    function nextSlide() {
+        if (isAnimating) {
+            return;
+        }
+
+        isAnimating = true;
+        currentIndex += 1;
+        moveTrack(true);
+    }
+
+    function previousSlide() {
+        if (isAnimating) {
+            return;
+        }
+
+        isAnimating = true;
+        currentIndex -= 1;
+        moveTrack(true);
+    }
+
+    function goToRealSlide(realIndex) {
+        if (isAnimating) {
+            return;
+        }
+
+        const normalizedIndex =
+            (realIndex + slideCount) % slideCount;
+
+        isAnimating = true;
+        currentIndex = normalizedIndex + 1;
+
+        moveTrack(true);
+    }
+
+    /*
+     * After reaching a cloned slide, instantly move to
+     * the matching real slide without a visible animation.
+     */
+    track.addEventListener("transitionend", (event) => {
+        if (event.propertyName !== "transform") {
+            return;
+        }
+
+        if (currentIndex === slideCount + 1) {
+            currentIndex = 1;
+            moveTrack(false);
+        } else if (currentIndex === 0) {
+            currentIndex = slideCount;
+            moveTrack(false);
+        }
+
+        /*
+         * Force the instant reset to render before restoring
+         * the transition for the next movement.
+         */
+        void track.offsetWidth;
+
+        track.style.transition =
+            `transform ${transitionDuration}ms ` +
+            "cubic-bezier(0.22, 1, 0.36, 1)";
+
+        isAnimating = false;
+    });
 
     function startAutoplay() {
         stopAutoplay();
 
         if (
-            academicSlides.length <= 1 ||
+            slideCount <= 1 ||
             document.hidden ||
-            window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            ).matches
         ) {
             return;
         }
 
-        autoplayTimer = window.setInterval(() => {
-            goToSlide(currentIndex + 1);
-        }, autoplayDelay);
+        autoplayTimer = window.setInterval(
+            nextSlide,
+            autoplayDelay
+        );
     }
 
     function stopAutoplay() {
@@ -669,12 +790,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     prevButton.addEventListener("click", () => {
-        goToSlide(currentIndex - 1);
+        previousSlide();
         restartAutoplay();
     });
 
     nextButton.addEventListener("click", () => {
-        goToSlide(currentIndex + 1);
+        nextSlide();
         restartAutoplay();
     });
 
@@ -683,13 +804,13 @@ document.addEventListener("DOMContentLoaded", () => {
     track.addEventListener("keydown", (event) => {
         if (event.key === "ArrowLeft") {
             event.preventDefault();
-            goToSlide(currentIndex - 1);
+            previousSlide();
             restartAutoplay();
         }
 
         if (event.key === "ArrowRight") {
             event.preventDefault();
-            goToSlide(currentIndex + 1);
+            nextSlide();
             restartAutoplay();
         }
     });
@@ -697,57 +818,107 @@ document.addEventListener("DOMContentLoaded", () => {
     track.addEventListener(
         "touchstart",
         (event) => {
-            touchStartX = event.changedTouches[0].clientX;
-            touchStartY = event.changedTouches[0].clientY;
+            touchStartX =
+                event.changedTouches[0].clientX;
+
+            touchStartY =
+                event.changedTouches[0].clientY;
+
             stopAutoplay();
         },
-        { passive: true }
+        {
+            passive: true,
+        }
     );
 
     track.addEventListener(
         "touchend",
         (event) => {
-            const touchEndX = event.changedTouches[0].clientX;
-            const touchEndY = event.changedTouches[0].clientY;
+            const touchEndX =
+                event.changedTouches[0].clientX;
 
-            const horizontalDistance = touchStartX - touchEndX;
-            const verticalDistance = touchStartY - touchEndY;
+            const touchEndY =
+                event.changedTouches[0].clientY;
+
+            const horizontalDistance =
+                touchStartX - touchEndX;
+
+            const verticalDistance =
+                touchStartY - touchEndY;
+
             const minimumSwipeDistance = 50;
 
             if (
                 Math.abs(horizontalDistance) >
                 Math.abs(verticalDistance)
             ) {
-                if (horizontalDistance > minimumSwipeDistance) {
-                    goToSlide(currentIndex + 1);
-                } else if (
-                    horizontalDistance < -minimumSwipeDistance
+                if (
+                    horizontalDistance >
+                    minimumSwipeDistance
                 ) {
-                    goToSlide(currentIndex - 1);
+                    nextSlide();
+                } else if (
+                    horizontalDistance <
+                    -minimumSwipeDistance
+                ) {
+                    previousSlide();
                 }
             }
 
             restartAutoplay();
         },
-        { passive: true }
+        {
+            passive: true,
+        }
     );
 
     if (carousel) {
-        carousel.addEventListener("mouseenter", stopAutoplay);
-        carousel.addEventListener("mouseleave", startAutoplay);
-        carousel.addEventListener("focusin", stopAutoplay);
-        carousel.addEventListener("focusout", startAutoplay);
+        carousel.addEventListener(
+            "mouseenter",
+            stopAutoplay
+        );
+
+        carousel.addEventListener(
+            "mouseleave",
+            startAutoplay
+        );
+
+        carousel.addEventListener(
+            "focusin",
+            stopAutoplay
+        );
+
+        carousel.addEventListener(
+            "focusout",
+            startAutoplay
+        );
     }
 
-    document.addEventListener("visibilitychange", () => {
-        if (document.hidden) {
-            stopAutoplay();
-        } else {
-            startAutoplay();
+    document.addEventListener(
+        "visibilitychange",
+        () => {
+            if (document.hidden) {
+                stopAutoplay();
+            } else {
+                startAutoplay();
+            }
         }
+    );
+
+    /*
+     * Start on the real first slide without displaying
+     * the cloned final slide.
+     */
+    moveTrack(false);
+
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            track.style.transition =
+                `transform ${transitionDuration}ms ` +
+                "cubic-bezier(0.22, 1, 0.36, 1)";
+        });
     });
 
-    updateCarousel();
     startAutoplay();
 })();
 });

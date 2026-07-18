@@ -9,15 +9,15 @@
     <title>Projects | Nazmul Huda Badhon</title>
 
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4/dist/full.min.css" rel="stylesheet">
-
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../style/style.css">
 
@@ -27,94 +27,58 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../Image/apple-touch-icon.png">
 </head>
 
-<body class="scroll-smooth bg-white text-slate-900" style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
+<body class="scroll-smooth bg-white text-slate-900">
 
-    <!-- DESKTOP NAVIGATION -->
-    <header id="topHeader" class="hidden lg:block site-topbar w-full h-14 font-medium">
-        <div class="max-w-7xl mx-auto px-6 md:px-12">
-            <div class="h-14 flex items-center justify-between">
+    <!-- ===== DESKTOP TOP NAVBAR ===== -->
+    <header class="desktop-header hidden lg:block">
+        <div class="desktop-header__inner max-w-7xl mx-auto px-6 md:px-12" style="max-width: 80rem;">
+            <nav class="segmented-nav" aria-label="Main navigation">
+                <a href="../" class="segmented-nav__link">Home</a>
 
-                <div class="brand text-[#06142A]">
-                    <a href="https://nazmulhudabadhon.github.io/" class="hover:text-[#A51C30] transition-colors"
-                        style="font-family: 'Libre Baskerville', Georgia, serif;">
-                        Nazmul Huda Badhon
-                    </a>
-                </div>
+                <a href="../research/" class="segmented-nav__link">Publications</a>
 
-                <nav id="topNav" class="flex items-center gap-6 text-[#A51C30] font-medium"
-                    aria-label="Primary navigation">
-                    <a href="../" class="nav-link block hover:text-[#A51C30]">
-                        Home
-                    </a>
+                <a href="../projects/" class="segmented-nav__link is-active" aria-current="page">Projects</a>
 
-                    <a href="../research/" class="nav-link block hover:text-[#A51C30]">
-                        Publications
-                    </a>
+                <a href="../achievement/" class="segmented-nav__link">Achievements</a>
 
-                    <a href="../projects/" class="nav-link active block hover:text-[#A51C30]" aria-current="page">
-                        Projects
-                    </a>
-
-                    <a href="../achievement/" class="nav-link block hover:text-[#A51C30]">
-                        Achievements
-                    </a>
-
-                    <a href="../resume/" target="_blank" rel="noopener" class="nav-link block hover:text-[#A51C30]">
-                        CV
-                    </a>
-                </nav>
-
-            </div>
+                <a href="../resume/" target="_blank" rel="noopener"
+                    class="segmented-nav__link segmented-nav__link--cv">CV</a>
+            </nav>
         </div>
     </header>
 
-    <!-- MOBILE NAVIGATION -->
-    <header id="mobileHeader" class="md:hidden sticky top-0 z-50 w-full text-[#06142A]">
+    <!-- Mobile header (phones only) -->
+    <header id="mobileHeader" class="md:hidden sticky top-0 z-50 text-[#06142A] w-full">
         <div class="flex items-center justify-between px-4 py-3">
-
+            <!-- LEFT TEXT BLOCK -->
             <div class="flex flex-col">
-                <span class="text-slate-900 tracking-wide">
+                <span class="text-slate-900 tracking-wide ">
                     NAZMUL HUDA BADHON
                 </span>
-
-                <p class="text-left text-sm text-slate-500 tracking-wide">
-                    B.Sc. Graduate | Deep Learning Research
+                <p class="text-left text-xs text-slate-500 tracking-wide">
+                    BSc Graduate | Deep Learning Research
                 </p>
             </div>
-
-            <button id="mobileMenuBtn" type="button" class="text-[#06142A] text-2xl focus:outline-none"
-                aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
-                <i class="fa-solid fa-bars" id="menuOpenIcon" aria-hidden="true"></i>
-
-                <i class="fa-solid fa-xmark hidden" id="menuCloseIcon" aria-hidden="true"></i>
+            <button id="mobileMenuBtn" class="text-[#06142A] text-2xl focus:outline-none" aria-label="Toggle menu">
+                <i class="fa-solid fa-bars" id="menuOpenIcon"></i>
+                <i class="fa-solid fa-xmark hidden" id="menuCloseIcon"></i>
             </button>
 
         </div>
 
-        <nav id="mobileMenu" class="hidden flex-col px-4 pb-5 text-slate-900 font-medium"
-            aria-label="Mobile navigation">
-            <a href="../" class="py-3 border-b border-slate-200 hover:text-[#A51C30] transition-colors">
-                Home
-            </a>
-
-            <a href="../research/" class="py-3 border-b border-slate-200 hover:text-[#A51C30] transition-colors">
-                Publications
-            </a>
-
-            <a href="../projects/" class="py-3 border-b border-slate-200 text-[#A51C30]" aria-current="page">
-                Projects
-            </a>
-
-            <a href="../achievement/" class="py-3 border-b border-slate-200 hover:text-[#A51C30] transition-colors">
-                Achievements
-            </a>
-
-            <a href="../resume/" target="_blank" rel="noopener" class="py-3 hover:text-[#A51C30] transition-colors">
-                CV
-            </a>
+        <!-- Collapsible nav (hidden by default, header remains visible) -->
+        <nav id="mobileMenu" class="hidden flex-col gap-2 px-4 pb-4 text-slate-900 font-medium">
+            <br>
+            <a href="../" class="py-2 border-b border-white/10 hover:text-[#E3872D]">HOME</a><br><br>
+            <a href="./" class="py-2 border-b border-white/10 hover:text-[#E3872D]">PUBLICATIONS</a><br><br>
+            <a href="../projects/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">PROJECTS</a><br><br>
+            <a href="../achievement/"
+                class="py-2 border-b border-white/10 hover:text-[#E3872D]">ACHIEVEMENTS</a><br><br>
+            <a href="../resume/" class="py-2 border-b border-white/10 hover:text-[#E3872D]" target="_blank"
+                rel="noopener">CV</a>
         </nav>
     </header>
-
+    
     <!-- MAIN CONTENT -->
     <main>
 
@@ -146,7 +110,7 @@
                 <div class="project-list">
 
                     <!-- PROJECT 01 -->
-                    <article class="proj-card">
+                    <article class="proj-card reveal reveal-left">
 
                         <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px] gap-6 lg:gap-8 items-start">
 
@@ -174,16 +138,15 @@
                                 </div>
 
                                 <!-- TITLE -->
-                                <h2
-                                    class="mt-4 text-sm md:text-[14px] leading-snug font-semibold text-gray-900 text-left">
+                                <h2 class="achievement-title">
                                     Breast Cancer Segmentation-Guided Hybrid
                                     Classification
                                 </h2>
 
                                 <!-- SUMMARY -->
-                                <p class="mt-2 text-sm md:text-[12px] leading-snug text-gray-700 text-left">
+                                <p class="achievement-meta-value" style="font-size: 13px;">
                                     Breast ultrasound lesion segmentation and
-                                    three-class classification using U-Net and fused
+                                    classification using U-Net and fused
                                     convolutional neural-network features.
                                 </p>
 
@@ -213,7 +176,7 @@
                                 </div>
 
                                 <!-- DESCRIPTION -->
-                                <p class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900 text-left">
+                                <p class="achievement-description" style="font-size: 13px;">
                                     The project uses a two-stage pipeline. First,
                                     U-Net is trained on BUSI images with ground-truth
                                     masks to identify breast lesions. The generated
@@ -256,7 +219,7 @@
                     </article>
 
                     <!-- PROJECT 02 -->
-                    <article class="proj-card">
+                    <article class="proj-card reveal reveal-right">
 
                         <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px] gap-6 lg:gap-8 items-start">
 
@@ -284,15 +247,14 @@
                                 </div>
 
                                 <!-- TITLE -->
-                                <h2
-                                    class="mt-4 text-sm md:text-[14px] leading-snug font-semibold text-gray-900 text-left">
+                                <h2 class="achievement-title">
                                     Lung–Colon Histopathology Classification with
                                     Image Enhancement and Transfer Learning
                                 </h2>
 
                                 <!-- SUMMARY -->
-                                <p class="mt-2 text-sm md:text-[12px] leading-snug text-gray-700 text-left">
-                                    Evaluation of preprocessing strategies and
+                                <p class="achievement-meta-value" style="font-size: 13px;">
+                                    Evaluation of preprocessing and
                                     transfer-learning architectures for lung and
                                     colon histopathology classification.
                                 </p>
@@ -323,7 +285,7 @@
                                 </div>
 
                                 <!-- DESCRIPTION -->
-                                <p class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900 text-left">
+                                <p class="achievement-description" style="font-size: 13px;">
                                     Sequential image-processing methods were applied
                                     to enhance circular nuclei and improve tissue
                                     representation. Image quality was evaluated
@@ -363,7 +325,7 @@
                     </article>
 
                     <!-- PROJECT 03 -->
-                    <article class="proj-card">
+                    <article class="proj-card reveal reveal-left">
 
                         <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px] gap-6 lg:gap-8 items-start">
 
@@ -391,14 +353,13 @@
                                 </div>
 
                                 <!-- TITLE -->
-                                <h2
-                                    class="mt-4 text-sm md:text-[14px] leading-snug font-semibold text-gray-900 text-left">
+                                <h2 class="achievement-title">
                                     Medical Image Quality Enhancement and
                                     Classification with Vision Transformers
                                 </h2>
 
                                 <!-- SUMMARY -->
-                                <p class="mt-2 text-sm md:text-[12px] leading-snug text-gray-700 text-left">
+                                <p class="achievement-meta-value" style="font-size: 13px;">
                                     Analysis of image-enhancement pipelines and
                                     Vision Transformer classification for medical
                                     imaging experiments.
@@ -430,7 +391,7 @@
                                 </div>
 
                                 <!-- DESCRIPTION -->
-                                <p class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900 text-left">
+                                <p class="achievement-description" style="font-size: 13px;">
                                     The workflow applies sequential preprocessing
                                     and quality-enhancement methods before
                                     classification with a Vision Transformer. Image

@@ -286,15 +286,6 @@ article>* {
     text-transform: none;
 }
 
-.projects-page-heading p {
-    margin: 0;
-    color: var(--text-muted);
-    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    line-height: 1.6;
-    text-align: left;
-}
-
 .project-list {
     display: flex;
     flex-direction: column;
@@ -1421,13 +1412,6 @@ article.publication-card>* {
     z-index: auto;
 }
 
-.page-heading {
-    position: sticky;
-    margin: 0 0 0px;
-    padding: 12px 0 10px;
-    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-}
-
 @media (min-width: 1024px) {
     .page-heading {
         position: static !important;
@@ -1440,12 +1424,6 @@ article.publication-card>* {
 .page-heading .academic-section-kicker {
     display: block;
     margin-bottom: 0px;
-}
-
-.page-heading p {
-    color: var(--accent-red);
-    font-family: "Open Sans", Arial, Helvetica, sans-serif;
-    font-size: 12.5px;
 }
 
 .publication-year-heading {
@@ -1903,10 +1881,9 @@ article.ach-card>* {
 
 .achievement-title {
     margin: 14px 0 0;
-    color: var(--text-main);
-    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--accent-main);
+    font-family: "Open Sans", Georgia, serif;
     font-size: 16px;
-    line-height: 1.5;
     font-weight: 600;
     text-align: left;
 }

@@ -1,12 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="scroll-smooth" lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portfolio of Nazmul Huda Badhon, a computer science graduate and deep learning researcher working in healthcare AI, sensor-based machine learning, and lightweight deep learning." />
+  <meta name="theme-color" content="#ffffff" />
   <meta name="keywords"
     content="Nazmul Huda Badhon, Computer Science, Deep Learning, AI, Medical Imaging, Research, Publications, Portfolio, CSE Researcher" />
-  <link rel="canonical" href="./" />
+  <link rel="canonical" href="https://nazmulhudabadhon.github.io/" />
 
   <!-- Google site verification -->
   <meta name="google-site-verification" content="2ws3IdBsnUZpFe400H1C5vRXXWAB_O7FI4sjySFVsS0" />
@@ -15,12 +18,14 @@
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4/dist/full.min.css" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="./style/style.css" />
 
   <!-- Current favicon for UI -->
@@ -80,6 +85,9 @@
 </head>
 
 <body class="scroll-smooth">
+  <a class="skip-link sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[10000] focus:bg-white focus:px-4 focus:py-2 focus:shadow-lg"
+    href="#main-content">Skip to main content</a>
+
   <!-- ===== DESKTOP TOP NAVBAR ===== -->
   <header class="desktop-header hidden lg:block">
     <div class="desktop-header__inner">
@@ -92,13 +100,13 @@
 
         <a href="./achievement/" class="segmented-nav__link">Achievements</a>
 
-        <a href="./resume/" target="_blank" rel="noopener" class="segmented-nav__link segmented-nav__link--cv">CV</a>
+        <a href="./resume/" class="segmented-nav__link segmented-nav__link--cv">CV</a>
       </nav>
     </div>
   </header>
 
   <!-- Mobile header (phones only) -->
-  <header id="mobileHeader" class="md:hidden sticky top-0 z-50 text-[#06142A] w-full">
+  <header id="mobileHeader" class="lg:hidden sticky top-0 z-50 text-[#06142A] w-full">
     <div class="flex items-center justify-between px-4 py-3">
       <!-- LEFT TEXT BLOCK -->
       <div class="flex flex-col">
@@ -109,7 +117,8 @@
           BSc Graduate | Deep Learning Research
         </p>
       </div>
-      <button id="mobileMenuBtn" class="text-[#06142A] text-2xl focus:outline-none" aria-label="Toggle menu">
+      <button id="mobileMenuBtn" type="button" class="text-[#06142A] text-2xl focus:outline-none"
+        aria-label="Toggle navigation menu" aria-controls="mobileMenu" aria-expanded="false">
         <i class="fa-solid fa-bars" id="menuOpenIcon"></i>
         <i class="fa-solid fa-xmark hidden" id="menuCloseIcon"></i>
       </button>
@@ -117,19 +126,19 @@
     </div>
 
     <!-- Collapsible nav (hidden by default, header remains visible) -->
-    <nav id="mobileMenu" class="hidden flex-col gap-2 px-4 pb-4 text-slate-900 font-medium">
-      <br>
-      <a href="./" class="py-2 border-b border-white/10 hover:text-[#E3872D]">HOME</a><br><br>
-      <a href="./research/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">PUBLICATIONS</a><br><br>
-      <a href="./projects/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">PROJECTS</a><br><br>
-      <a href="./achievement/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">ACHIEVEMENTS</a><br><br>
+    <nav id="mobileMenu" class="hidden flex-col gap-2 px-4 pb-4 text-slate-900 font-medium"
+      aria-label="Mobile navigation">
+      <a href="./" class="py-2 border-b border-white/10 hover:text-[#E3872D]">HOME</a>
+      <a href="./research/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">PUBLICATIONS</a>
+      <a href="./projects/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">PROJECTS</a>
+      <a href="./achievement/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">ACHIEVEMENTS</a>
       <a href="./resume/" class="py-2 border-b border-white/10 hover:text-[#E3872D]" target="_blank"
-        rel="noopener">CV</a>
+        rel="noopener noreferrer">CV</a>
     </nav>
   </header>
 
   <!-- ===== MAIN CONTENT ===== -->
-  <section>
+  <main id="main-content">
     <div class="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content flex flex-col w-full">
@@ -188,7 +197,8 @@
                   Salehin</a> (PhD Student, NCAT), <a
                   href="https://scholar.google.com/citations?user=TzuA2ScAAAAJ&hl=en"
                   class="hover:text-red-500 text-[#00778B] underline hover:decoration-red-400">Md. Baharul Islam</a>
-                (Associate Professor, FGCU, USA), and <a href="https://scholar.google.com/citations?user=2D3mKUYAAAAJ&hl=en"
+                (Associate Professor, FGCU, USA), and <a
+                  href="https://scholar.google.com/citations?user=2D3mKUYAAAAJ&hl=en"
                   class="hover:text-red-500 text-[#00778B] underline hover:decoration-red-400">Dr. Fernaz Narin Nur</a>
                 (Professor, DIU).
               </p>
@@ -216,7 +226,8 @@
                   <!-- Photo card -->
                   <div class="academic-portrait">
                     <img src="./Image/badhonn.jpg"
-                      alt="Nazmul Huda Badhon – Graduate | Research in Deep Learning and Computer Vision" />
+                      alt="Nazmul Huda Badhon – Graduate | Research in Deep Learning and Computer Vision" width="600"
+                      height="600" loading="eager" decoding="async" fetchpriority="high" />
                   </div>
                 </div>
                 <div class="profile-footer">
@@ -228,7 +239,7 @@
                       Researcher</p>
                   </div>
 
-                  <a class="mobile-cv-button lg:hidden" href="./resume/" target="_blank" rel="noopener"
+                  <a class="mobile-cv-button lg:hidden" href="./resume/" target="_blank" rel="noopener noreferrer"
                     aria-label="View CV">
                     <span>View CV</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
@@ -284,134 +295,187 @@
           </div>
 
           <div class="w-full max-w-[1000px] mx-auto px-6 lg:pt-3 lg:px-0">
-            <!-- Academic Highlights Carousel -->
-            <section class="act" aria-labelledby="actTitle">
+            <div class="academic-showcase-layout">
+              <!-- Academic Highlights Carousel -->
+              <section class="act" aria-labelledby="actTitle">
 
-              <div class="act__head">
-                <h2 id="actTitle" class="academic-section-kicker">
-                  Academic Highlights
-                </h2>
-              </div>
-
-              <div class="act__stage">
-
-                <button class="act__arrow act__arrow--prev" type="button" id="actPrev"
-                  aria-label="Previous academic highlight" aria-controls="actTrack">
-                  <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-                </button>
-
-                <div class="act__viewport">
-
-                  <ul class="act__track" id="actTrack" role="list">
-
-                    <!-- Slide 1 -->
-                    <li class="act__slide" role="listitem">
-                      <figure class="act__figure">
-                        <img src="./Image/Badhon_graduated.webp"
-                          alt="Nazmul Huda Badhon at his Bachelor of Science convocation" width="1600" height="900"
-                          loading="eager" decoding="async" fetchpriority="high" />
-
-                        <figcaption class="act__caption">
-                          <span class="act__eyebrow">Academic Milestone</span>
-                          <h3 class="act__title">BSc Convocation</h3>
-                          <p class="act__meta">
-                            2026 · Daffodil International University
-                          </p>
-                        </figcaption>
-                      </figure>
-                    </li>
-
-                    <!-- Slide 2 -->
-                    <li class="act__slide" role="listitem">
-                      <figure class="act__figure">
-                        <img src="./Image/Badhon with professors.jpg"
-                          alt="Nazmul Huda Badhon with faculty members after completing his undergraduate thesis"
-                          width="5754" height="4316" loading="eager" decoding="async" />
-
-                        <figcaption class="act__caption">
-                          <span class="act__eyebrow">Research Milestone</span>
-                          <h3 class="act__title">Undergraduate Thesis</h3>
-                          <p class="act__meta">
-                            Fall 2025 · Daffodil International University
-                          </p>
-                        </figcaption>
-                      </figure>
-                    </li>
-
-                    <!-- Slide 3 -->
-                    <li class="act__slide" role="listitem">
-                      <figure class="act__figure">
-                        <img src="./Image/dsum.jpg"
-                          alt="Nazmul Huda Badhon during his semester exchange at Dongseo University" width="961"
-                          height="1280" loading="lazy" decoding="async" />
-
-                        <figcaption class="act__caption">
-                          <span class="act__eyebrow">International Experience</span>
-                          <h3 class="act__title">Semester Exchange</h3>
-                          <p class="act__meta">
-                            Fall 2023 · Dongseo University, South Korea
-                          </p>
-                        </figcaption>
-                      </figure>
-                    </li>
-
-                    <!-- Slide 4 -->
-                    <li class="act__slide" role="listitem">
-                      <figure class="act__figure">
-                        <img src="./Image/bootcamp.png"
-                          alt="Nazmul Huda Badhon recognized as a top performer in a computer vision bootcamp"
-                          width="1200" height="800" loading="lazy" decoding="async" />
-
-                        <figcaption class="act__caption">
-                          <span class="act__eyebrow">Academic Achievement</span>
-                          <h3 class="act__title">
-                            Top Performer in Computer Vision Bootcamp
-                          </h3>
-                          <p class="act__meta">
-                            2025 · Daffodil International University
-                          </p>
-                        </figcaption>
-                      </figure>
-                    </li>
-
-                    <!-- Slide 5 -->
-                    <li class="act__slide" role="listitem">
-                      <figure class="act__figure">
-                        <img src="./Image/camp.JPG"
-                          alt="Nazmul Huda Badhon participating in an international academic camp in South Korea"
-                          width="1200" height="800" loading="lazy" decoding="async" />
-
-                        <figcaption class="act__caption">
-                          <span class="act__eyebrow">Global Engagement</span>
-                          <h3 class="act__title">International Academic Camp</h3>
-                          <p class="act__meta">
-                            2023 · Busan, South Korea
-                          </p>
-                        </figcaption>
-                      </figure>
-                    </li>
-                  </ul>
+                <div class="act__head">
+                  <h2 id="actTitle" class="academic-section-kicker">
+                    Academic Highlights
+                  </h2>
                 </div>
 
-                <button class="act__arrow act__arrow--next" type="button" id="actNext"
-                  aria-label="Next academic highlight" aria-controls="actTrack">
-                  <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                </button>
+                <div class="act__stage">
 
-              </div>
+                  <button class="act__arrow act__arrow--prev" type="button" id="actPrev"
+                    aria-label="Previous academic highlight" aria-controls="actTrack">
+                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                  </button>
 
-              <div class="act__footer">
-                <div class="act__indicators" id="actIndicators" aria-label="Academic highlight navigation"></div>
+                  <div class="act__viewport">
 
-                <div class="act__counter" aria-live="polite">
-                  <span id="actCurrent">01</span>
-                  <span class="act__counter-separator">/</span>
-                  <span id="actTotal">05</span>
+                    <ul class="act__track" id="actTrack" role="list">
+
+                      <!-- Slide 1 -->
+                      <li class="act__slide" role="listitem">
+                        <figure class="act__figure">
+                          <img src="./Image/Badhon_graduated.jpg"
+                            alt="Nazmul Huda Badhon at his Bachelor of Science convocation" width="1600" height="900"
+                            loading="eager" decoding="async" fetchpriority="high" />
+
+                          <figcaption class="act__caption">
+                            <span class="act__eyebrow">Academic Milestone</span>
+                            <h3 class="act__title">BSc Convocation</h3>
+                            <p class="act__meta">
+                              2026 · Daffodil International University
+                            </p>
+                          </figcaption>
+                        </figure>
+                      </li>
+
+                      <!-- Slide 2 -->
+                      <li class="act__slide" role="listitem">
+                        <figure class="act__figure">
+                          <img src="./Image/Badhon with professors.jpg"
+                            alt="Nazmul Huda Badhon with faculty members after completing his undergraduate thesis"
+                            width="5754" height="4316" loading="eager" decoding="async" />
+
+                          <figcaption class="act__caption">
+                            <span class="act__eyebrow">Research Milestone</span>
+                            <h3 class="act__title">Undergraduate Thesis</h3>
+                            <p class="act__meta">
+                              Fall 2025 · Daffodil International University
+                            </p>
+                          </figcaption>
+                        </figure>
+                      </li>
+
+                      <!-- Slide 3 -->
+                      <li class="act__slide" role="listitem">
+                        <figure class="act__figure">
+                          <img src="./Image/dsum.jpg"
+                            alt="Nazmul Huda Badhon during his semester exchange at Dongseo University" width="961"
+                            height="1280" loading="lazy" decoding="async" />
+
+                          <figcaption class="act__caption">
+                            <span class="act__eyebrow">International Experience</span>
+                            <h3 class="act__title">Semester Exchange</h3>
+                            <p class="act__meta">
+                              Fall 2023 · Dongseo University, South Korea
+                            </p>
+                          </figcaption>
+                        </figure>
+                      </li>
+
+                      <!-- Slide 4 -->
+                      <li class="act__slide" role="listitem">
+                        <figure class="act__figure">
+                          <img src="./Image/bootcamp.png"
+                            alt="Nazmul Huda Badhon recognized as a top performer in a computer vision bootcamp"
+                            width="1200" height="800" loading="lazy" decoding="async" />
+
+                          <figcaption class="act__caption">
+                            <span class="act__eyebrow">Academic Achievement</span>
+                            <h3 class="act__title">
+                              Top Performer in Computer Vision Bootcamp
+                            </h3>
+                            <p class="act__meta">
+                              2025 · Daffodil International University
+                            </p>
+                          </figcaption>
+                        </figure>
+                      </li>
+
+                      <!-- Slide 5 -->
+                      <li class="act__slide" role="listitem">
+                        <figure class="act__figure">
+                          <img src="./Image/camp.JPG"
+                            alt="Nazmul Huda Badhon participating in an international academic camp in South Korea"
+                            width="1200" height="800" loading="lazy" decoding="async" />
+
+                          <figcaption class="act__caption">
+                            <span class="act__eyebrow">Global Engagement</span>
+                            <h3 class="act__title">International Academic Camp</h3>
+                            <p class="act__meta">
+                              2023 · Busan, South Korea
+                            </p>
+                          </figcaption>
+                        </figure>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <button class="act__arrow act__arrow--next" type="button" id="actNext"
+                    aria-label="Next academic highlight" aria-controls="actTrack">
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                  </button>
+
                 </div>
-              </div>
 
-            </section>
-            <!-- End of Academic Highlights Carousel -->
+                <div class="act__footer">
+                  <div class="act__indicators" id="actIndicators" aria-label="Academic highlight navigation"></div>
+
+                  <div class="act__counter" aria-live="polite">
+                    <span id="actCurrent">01</span>
+                    <span class="act__counter-separator">/</span>
+                    <span id="actTotal">05</span>
+                  </div>
+                </div>
+
+              </section>
+              <!-- End of Academic Highlights Carousel -->
+
+              <!-- New right-side research interests -->
+              <aside class="research-interests-panel" aria-labelledby="researchInterestsTitle">
+
+                <div class="research-interests-panel__head">
+                  <h2 id="researchInterestsTitle" class="academic-section-kicker">
+                    Research Interests
+                  </h2>
+                </div>
+
+                <ol class="research-interests-list">
+
+                  <li class="research-interests-item">
+                    <span class="research-interests-number">01</span>
+
+                    <div class="research-interests-content">
+                      <h3>Lightweight Neural Architectures</h3>
+                      <p>
+                        Compact transformer and CNN designs tuned for real-time
+                        inference on the edge.
+                      </p>
+                    </div>
+                  </li>
+
+                  <li class="research-interests-item">
+                    <span class="research-interests-number">02</span>
+
+                    <div class="research-interests-content">
+                      <h3>Computer Vision</h3>
+                      <p>
+                        Detection, segmentation, and recognition with
+                        transformer-based architectures.
+                      </p>
+                    </div>
+                  </li>
+
+                  <li class="research-interests-item">
+                    <span class="research-interests-number">03</span>
+
+                    <div class="research-interests-content">
+                      <h3>Multimodal Learning &amp; Fusion</h3>
+                      <p>
+                        Cross-modal fusion across vision, text, and sensor signals —
+                        multi-task heads.
+                      </p>
+                    </div>
+                  </li>
+
+                </ol>
+              </aside>
+
+            </div>
 
             <!-- Education -->
             <div class="academic-section-heading">
@@ -425,7 +489,7 @@
                 </div>
 
                 <div class="education-content">
-                  <h3>Bachelor of Science in Computer Science and Engineering</h3>
+                  <h3 style="font-family: 'Libre Baskerville', Georgia, serif;">Bachelor of Science in Computer Science and Engineering</h3>
 
                   <p class="education-place">
                     <img src="./Image/diu.png" alt="Daffodil International University logo" class="education-logo">
@@ -440,11 +504,12 @@
               </div>
 
               <div class="education-item">
-                <div class="education-marker education-marker--muted">
+                <div class="education-marker">
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
                 </div>
 
                 <div class="education-content">
-                  <h3>Semester Exchange, Computer Engineering</h3>
+                  <h3 style="font-family: 'Libre Baskerville', Georgia, serif;">Semester Exchange, Computer Engineering</h3>
 
                   <p class="education-place">
                     <img src="./Image/dsu.svg" alt="Dongseo University logo" class="education-logo">
@@ -477,19 +542,20 @@
 
                 <div class="publication-content">
                   <p>
-                    <b>Nazmul Huda Badhon</b>, Sabit Ahamed Preanto, Abu Shahed Shah Md
+                    <span style="font-weight: bold;">Nazmul Huda Badhon</span>, Sabit Ahamed Preanto, Abu Shahed Shah Md
                     Nazmul Arefin, Kazi Jahid Hasan, Md. Baharul Islam,
                     “Temporal Convolutional Network Based Indoor Location Recognition from
                     BLE Beacon Signals in Nursing Care Facility.”
                   </p>
 
                   <p class="publication-venue">
-                    <a href="https://www.jstage.jst.go.jp/browse/ijabc/_pubinfo/-char/en" target="_blank">
+                    <a href="https://www.jstage.jst.go.jp/browse/ijabc/_pubinfo/-char/en" target="_blank"
+                      rel="noopener noreferrer">
                       International Journal of Activity and Behavior Computing
                     </a>
                     · Kyushu Institute of Technology, Japan · April 2026
                     <a class="rp-link" href="https://doi.org/10.60401/ijabc.154" target="_blank"
-                      aria-label="Open publication">
+                      aria-label="Open publication" rel="noopener noreferrer">
                       <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                   </p>
@@ -501,19 +567,20 @@
 
                 <div class="publication-content">
                   <p>
-                    <b>Nazmul Huda Badhon</b>, Imrus Salehin, Md Tomal Ahmed Sajib,
+                    <span style="font-weight: bold;">Nazmul Huda Badhon</span>, Imrus Salehin, Md Tomal Ahmed Sajib,
                     Md Sakibul Hassan Rifat, SM Noman, Nazmun Nessa Moon,
                     “TLCNN: Tabular Data-Based Lightweight Convolutional Neural Network
                     for Electricity Energy Demand Prediction.”
                   </p>
 
                   <p class="publication-venue">
-                    <a href="https://www.sciencedirect.com/journal/global-energy-interconnection" target="_blank">
+                    <a href="https://www.sciencedirect.com/journal/global-energy-interconnection" target="_blank"
+                      rel="noopener noreferrer">
                       Global Energy Interconnection, Elsevier
                     </a>
                     · December 2025
                     <a class="rp-link" href="https://www.sciencedirect.com/science/article/pii/S2096511725001239"
-                      target="_blank" aria-label="Open publication">
+                      target="_blank" aria-label="Open publication" rel="noopener noreferrer">
                       <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                   </p>
@@ -525,7 +592,7 @@
 
                 <div class="publication-content">
                   <p>
-                    Md Tomal Ahmed Sajib, <b>Nazmul Huda Badhon</b>, Imrus Salehin,
+                    Md Tomal Ahmed Sajib, <span style="font-weight: bold;">Nazmul Huda Badhon</span>, Imrus Salehin,
                     Md Sakibul Hassan Rifat, Faysal Ahmed, Nazmun Nessa Moon,
                     “A Comparative Deep Learning Methodology for Plant Insect Image
                     Classification: Assessment of CNN Architectures and Augmentation
@@ -533,12 +600,12 @@
                   </p>
 
                   <p class="publication-venue">
-                    <a href="https://www.sciencedirect.com/journal/methodsx" target="_blank">
+                    <a href="https://www.sciencedirect.com/journal/methodsx" target="_blank" rel="noopener noreferrer">
                       MethodsX
                     </a>
                     · December 2025
                     <a class="rp-link" href="https://www.sciencedirect.com/science/article/pii/S2215016125005242"
-                      target="_blank" aria-label="Open publication">
+                      target="_blank" aria-label="Open publication" rel="noopener noreferrer">
                       <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                   </p>
@@ -550,19 +617,20 @@
 
                 <div class="publication-content">
                   <p>
-                    Imrus Salehin, Md Tomal Ahmed Sajib, <b>Nazmul Huda Badhon</b>,
+                    Imrus Salehin, Md Tomal Ahmed Sajib, <span style="font-weight: bold;">Nazmul Huda Badhon</span>,
                     Md Sakibul Hassan Rifat, Nazrul Amin, Nazmun Nessa Moon,
                     “Systematic Literature Review of LLM–Large Language Models in Medical:
                     Digital Health, Technology and Applications.”
                   </p>
 
                   <p class="publication-venue">
-                    <a href="https://onlinelibrary.wiley.com/journal/25778196" target="_blank">
+                    <a href="https://onlinelibrary.wiley.com/journal/25778196" target="_blank"
+                      rel="noopener noreferrer">
                       Engineering Reports
                     </a>
                     · September 2025
                     <a class="rp-link" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/eng2.70365" target="_blank"
-                      aria-label="Open publication">
+                      aria-label="Open publication" rel="noopener noreferrer">
                       <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </a>
                   </p>
@@ -595,15 +663,16 @@
         </span>
       </div>
     </footer>
-  </section>
+  </main>
 
   <!-- Back to Top Button -->
-  <button id="backToTop " aria-label="Back to top "
+  <button type="button" id="backToTop" aria-label="Back to top"
     class="fixed right-8 bottom-16 z-50 flex items-center justify-center h-8 w-8 bg-[#A51C30] text-white shadow-md transition-all duration-300 ease-out hover:shadow-xl hover:-translate-y-1 hover:scale-110 focus:ring-4 focus:ring-[#A51C30]/40">
-    <i class="fa-solid fa-arrow-up text-lg transition-transform duration-300 group-hover:-rotate-12"></i>
+    <i class="fa-solid fa-arrow-up text-lg transition-transform duration-300 group-hover:-rotate-12"
+      aria-hidden="true"></i>
   </button>
 
-  <script src="./index.js "></script>
+  <script src="./index.js"></script>
 </body>
 
 </html>

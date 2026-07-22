@@ -13,11 +13,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="../style/style.css">
 
@@ -34,7 +34,7 @@
 <body class="scroll-smooth">
     <!-- ===== DESKTOP TOP NAVBAR ===== -->
     <header class="desktop-header hidden lg:block">
-        <div class="desktop-header__inner max-w-7xl mx-auto px-6 md:px-12" style="max-width: 80rem;">
+        <div class="desktop-header__inner w-full max-w-[1000px] mx-auto px-6 lg:px-0">
             <nav class="segmented-nav" aria-label="Main navigation">
                 <a href="../" class="segmented-nav__link">Home</a>
 
@@ -89,146 +89,161 @@
 
                 <!-- PUBLICATIONS -->
                 <section class="scroll-mt-24 mt-0 w-full bg-[var(--page-bg)]">
-                    <div class="max-w-7xl mx-auto px-6 md:px-12 pt-6 pb-10">
-
-                        <!--Mobile Year Filter -->
-                        <div class="mb-4 flex justify-center items-center gap-6 text-sm md:text-[14px] lg:hidden"
-                            style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
-                            <button class="year-filter text-slate-900 font-semibold" data-year="">All</button>
-                            <button class="year-filter text-slate-500 hover:text-slate-900"
-                                data-year="2026">2026</button>
-                            <button class="year-filter text-slate-500 hover:text-slate-900"
-                                data-year="2025">2025</button>
-                            <button class="year-filter text-slate-500 hover:text-slate-900"
-                                data-year="2024">2024</button>
-                        </div>
+                    <div class="w-full max-w-[1000px] mx-auto px-6 lg:px-0 pt-6 pb-10">
 
                         <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_170px] gap-10 items-start">
 
-                            <!-- LEFT: only articles scroll -->
-                            <div
-                                class="flex flex-col gap-0 pr-2 pb-8 publication-scroll justify-start items-stretch reveal reveal-left">
-                                <p
-                                    style="font-family: 'Libre Baskerville', Arial, Helvetica, sans-serif; font-size: 16.5px; font-weight: 600;">
-                                    Research
-                                    Publications</p>
+                            <!-- LEFT: publications -->
+                            <div class="publication-scroll">
 
-                                <p style="font-size: 13px;">Research contributions in lightweight deep learning,
-                                    sensor-based machine learning and healthcare AI.</p>
+                                <!--Mobile Year Filter -->
+                                <div class="mb-4 flex justify-center items-center gap-6 text-sm md:text-[14px] lg:hidden"
+                                    style="font-family: 'IBM Plex Sans', Arial, Helvetica, sans-serif;">
+                                    <button class="year-filter text-slate-900 font-semibold" data-year="">All</button>
+                                    <button class="year-filter text-slate-500 hover:text-slate-900"
+                                        data-year="2026">2026</button>
+                                    <button class="year-filter text-slate-500 hover:text-slate-900"
+                                        data-year="2025">2025</button>
+                                    <button class="year-filter text-slate-500 hover:text-slate-900"
+                                        data-year="2024">2024</button>
+                                </div>
 
-                                <!-- 2026 Group -->
-                                <div class="publication-year-group" data-group-year="2026">
+                                <div class="relative w-full">
+                                    <!-- LEFT: only articles scroll -->
+                                    <div
+                                        class="flex flex-col gap-0 pr-2 pb-8 publication-scroll justify-start items-stretch reveal reveal-left">
+                                        <p
+                                            class="font-['Source_Sans_3'] text-[15.5px] font-medium leading-[1.72] lg:leading-[1.45] sm:text-[16px] text-[#A51C30]">
+                                            Research
+                                            Publications</p>
 
-                                    <div class="publication-year-heading" data-heading-year="2026">
-                                        <span class="publication-year-label">2026</span>
-                                        <span class="year-count">3 publications</span>
-                                    </div>
+                                        <p style="font-size: 13px;">Research contributions in lightweight deep learning,
+                                            sensor-based machine learning and healthcare AI.</p>
 
-                                    <!--TCN-Japan-->
-                                    <article data-year="2026" research-type="journal" class="publication-card">
-                                        <div class="publication-card-inner">
+                                        <!-- 2026 Group -->
+                                        <div class="publication-year-group" data-group-year="2026">
 
-                                            <!-- LEFT: content -->
-                                            <div class="publication-card-content">
-                                                <!-- Meta row -->
-                                                <div class="flex flex-wrap items-center gap-2 text-sm ">
-                                                    <span
-                                                        class="inline-flex items-center px-2 py-1 rounded-sm bg-slate-100 text-slate-600 text-xs font-semibold">
-                                                        Research Article
-                                                    </span>
-                                                    <span class="text-gray-700">April, 2026 &nbsp;–&nbsp; <span
-                                                            class="tracking-wide"><i>International Journal of Activity &
-                                                                Behavior Computing </i></span> &nbsp;–&nbsp;<span
-                                                            class="text-amber-700 font-semibold">
-                                                            [8th ABC Challenge Paper, Japan]
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                                <!-- Title -->
-                                                <p class="mt-4 text-sm md:text-[12px] leading-snug text-gray-900">
-                                                    [9] <span class="font-semibold">Nazmul Huda Badhon</span>, Sabit
-                                                    Ahamed
-                                                    Preanto,
-                                                    Abu Shahed Shah
-                                                    Md
-                                                    Nazmul Arefin, Kazi Jahid Hasan, Md. Baharul Islam, <span
-                                                        class=" group-hover:text-purple-600 transition-colors duration-200 ">"Temporal
-                                                        Convolutional Network Based Indoor Location Recognition from BLE
-                                                        Beacon
-                                                        Signals in Nursing Care Facility. "</span> in International
-                                                    Journal
-                                                    of
-                                                    Activity and Behavior Computing. ISSN: 2759-2871.
-
-                                                </p>
-                                                <!-- Buttons -->
-                                                <div class="mt-4 flex flex-wrap gap-3 ">
-                                                    <a href="https://doi.org/10.60401/ijabc.154" target="_blank "
-                                                        class="inline-flex items-center gap-2 border border-slate-300 px-2 py-1 text-[#00778B] hover:text-[#A51C30] hover:bg-slate-50 transition">
-                                                        <i class="fa-solid fa-file-pdf text-sm"></i> Paper
-                                                    </a>
-
-                                                    <a href="https://www.jstage.jst.go.jp/AF06S010ShoshJkuDld?sryCd=ijabc&noVol=2026&noIssue=2&kijiCd=2026_154&kijiLangKrke=en&kijiToolIdHkwtsh=AT0073&request_locale=EN "
-                                                        target="_blank "
-                                                        class="inline-flex items-center gap-2 border border-slate-300 px-2 py-1 text-[#00778B] hover:text-[#A51C30] hover:bg-slate-50 transition">
-                                                        <i class="fa-solid fa-quote-right text-sm"></i> BibTeX
-                                                    </a>
-                                                </div>
+                                            <div class="publication-year-heading" data-heading-year="2026">
+                                                <span class="publication-year-label">2026</span>
+                                                <span class="year-count">3 publications</span>
                                             </div>
 
-                                            <!-- RIGHT: thumbnails-->
-                                            <div class="publication-card-media">
-                                                <div class="publication-figure">
-                                                    <img src="../Image/tcn_method.png " alt="Publication figure "
-                                                        loading="lazy " class="h-full w-full object-cover " />
+                                            <!--TCN-Japan-->
+                                            <article data-year="2026" research-type="journal" class="publication-card">
+                                                <div class="publication-card-inner">
+
+                                                    <!-- LEFT: content -->
+                                                    <div class="publication-card-content">
+                                                        <!-- Meta row -->
+                                                        <div class="flex flex-wrap items-center gap-2 text-sm ">
+                                                            <span
+                                                                class="inline-flex items-center px-2 py-1 rounded-sm bg-slate-100 text-slate-600 text-xs font-semibold">
+                                                                Research Article
+                                                            </span>
+                                                            <span class="text-gray-700">April, 2026 &nbsp;–&nbsp; <span
+                                                                    class="tracking-wide"><i>International Journal of
+                                                                        Activity &
+                                                                        Behavior Computing </i></span>
+                                                                &nbsp;–&nbsp;<span class="text-amber-700 font-semibold">
+                                                                    [8th ABC Challenge Paper, Japan]
+                                                                </span>
+                                                            </span>
+                                                        </div>
+                                                        <!-- Title -->
+                                                        <p
+                                                            class="mt-4 text-sm md:text-[12px] leading-snug text-gray-900">
+                                                            [9] <span class="font-semibold">Nazmul Huda Badhon</span>,
+                                                            Sabit
+                                                            Ahamed
+                                                            Preanto,
+                                                            Abu Shahed Shah
+                                                            Md
+                                                            Nazmul Arefin, Kazi Jahid Hasan, Md. Baharul Islam, <span
+                                                                class=" group-hover:text-purple-600 transition-colors duration-200 ">"Temporal
+                                                                Convolutional Network Based Indoor Location Recognition
+                                                                from BLE
+                                                                Beacon
+                                                                Signals in Nursing Care Facility. "</span> in
+                                                            International
+                                                            Journal
+                                                            of
+                                                            Activity and Behavior Computing. ISSN: 2759-2871.
+
+                                                        </p>
+                                                        <!-- Buttons -->
+                                                        <div class="mt-4 flex flex-wrap gap-3 ">
+                                                            <a href="https://doi.org/10.60401/ijabc.154"
+                                                                target="_blank "
+                                                                class="inline-flex items-center gap-2 border border-slate-300 px-2 py-1 text-[#00778B] hover:text-[#A51C30] hover:bg-slate-50 transition">
+                                                                <i class="fa-solid fa-file-pdf text-sm"></i> Paper
+                                                            </a>
+
+                                                            <a href="https://www.jstage.jst.go.jp/AF06S010ShoshJkuDld?sryCd=ijabc&noVol=2026&noIssue=2&kijiCd=2026_154&kijiLangKrke=en&kijiToolIdHkwtsh=AT0073&request_locale=EN "
+                                                                target="_blank "
+                                                                class="inline-flex items-center gap-2 border border-slate-300 px-2 py-1 text-[#00778B] hover:text-[#A51C30] hover:bg-slate-50 transition">
+                                                                <i class="fa-solid fa-quote-right text-sm"></i> BibTeX
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- RIGHT: thumbnails-->
+                                                    <div class="publication-card-media">
+                                                        <div class="publication-figure">
+                                                            <img src="../Image/tcn_method.png "
+                                                                alt="Publication figure " loading="lazy "
+                                                                class="h-full w-full object-cover " />
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </article>
+                                            </article>
 
-                                    <!--EEG-IJEDRO-->
-                                    <article data-year="2026" research-type="journal" class="publication-card">
-                                        <div class="publication-card-inner">
+                                            <!--EEG-IJEDRO-->
+                                            <article data-year="2026" research-type="journal" class="publication-card">
+                                                <div class="publication-card-inner">
 
-                                            <!-- LEFT: content -->
-                                            <div class="publication-card-content">
-                                                <!-- Meta row -->
-                                                <div class="flex flex-wrap items-center gap-2 text-sm ">
-                                                    <!--<span
+                                                    <!-- LEFT: content -->
+                                                    <div class="publication-card-content">
+                                                        <!-- Meta row -->
+                                                        <div class="flex flex-wrap items-center gap-2 text-sm ">
+                                                            <!--<span
                                                 class="inline-flex items-center px-2 py-1 rounded-full bg-[#8D7772] text-black tracking-wide ">Journal</span>-->
-                                                    <span
-                                                        class="inline-flex items-center px-2 py-1 rounded-sm bg-green-100 text-green-800 text-xs font-semibold">
-                                                        Q1</span>
-                                                    <span
-                                                        class="inline-flex items-center px-2 py-1 rounded-sm bg-orange-100 text-orange-800 text-xs font-semibold">
-                                                        Under Review
-                                                    </span>
-                                                    <!-- Review Article -->
-                                                    <span
-                                                        class="inline-flex items-center px-2 py-1 rounded-sm bg-violet-100 text-violet-800 text-xs font-semibold">
-                                                        Review Article
-                                                    </span>
-                                                    <span class="text-gray-700">April, 2026 &nbsp;–&nbsp; <span
-                                                            class="tracking-wide"><i>International Journal of
-                                                                Educational Research Open</i></span>
-                                                    </span>
-                                                </div>
-                                                <!-- Title -->
-                                                <p class="mt-4 text-sm md:text-[12px] leading-snug   text-gray-900">
-                                                    [8] A.H.M. Saiful Islam*, <span class="font-semibold">Nazmul Huda
-                                                        Badhon*</span>, Fernaz Narin Nur*, Md Tomal Ahmed Sajib, Md.
-                                                    Nasim Adnan, Nazmun Nessa Moon, Shaheena Sultana <span
-                                                        class=" group-hover:text-purple-600 transition-colors duration-200 ">"Bridging
-                                                        Neuroscience and Education: A Scoping Review of EEG-Based
-                                                        Cognitive and
-                                                        Emotional States in Educational Settings"</span> in
-                                                    International
-                                                    Journal
-                                                    of
-                                                    Educational Research Open. Under Review, ISSN: 2666-3740.
+                                                            <span
+                                                                class="inline-flex items-center px-2 py-1 rounded-sm bg-green-100 text-green-800 text-xs font-semibold">
+                                                                Q1</span>
+                                                            <span
+                                                                class="inline-flex items-center px-2 py-1 rounded-sm bg-orange-100 text-orange-800 text-xs font-semibold">
+                                                                Under Review
+                                                            </span>
+                                                            <!-- Review Article -->
+                                                            <span
+                                                                class="inline-flex items-center px-2 py-1 rounded-sm bg-violet-100 text-violet-800 text-xs font-semibold">
+                                                                Review Article
+                                                            </span>
+                                                            <span class="text-gray-700">April, 2026 &nbsp;–&nbsp; <span
+                                                                    class="tracking-wide"><i>International Journal of
+                                                                        Educational Research Open</i></span>
+                                                            </span>
+                                                        </div>
+                                                        <!-- Title -->
+                                                        <p
+                                                            class="mt-4 text-sm md:text-[12px] leading-snug   text-gray-900">
+                                                            [8] A.H.M. Saiful Islam*, <span class="font-semibold">Nazmul
+                                                                Huda
+                                                                Badhon*</span>, Fernaz Narin Nur*, Md Tomal Ahmed Sajib,
+                                                            Md.
+                                                            Nasim Adnan, Nazmun Nessa Moon, Shaheena Sultana <span
+                                                                class=" group-hover:text-purple-600 transition-colors duration-200 ">"Bridging
+                                                                Neuroscience and Education: A Scoping Review of
+                                                                EEG-Based
+                                                                Cognitive and
+                                                                Emotional States in Educational Settings"</span> in
+                                                            International
+                                                            Journal
+                                                            of
+                                                            Educational Research Open. Under Review, ISSN: 2666-3740.
 
-                                                </p>
-                                                <!-- Buttons 
+                                                        </p>
+                                                        <!-- Buttons 
                                                 <div class="mt-4 flex flex-wrap gap-3 ">
                                                     <a href=" " target="_blank "
                                                         class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-[#00778B] hover:text-[#A51C30] transition ">
@@ -240,534 +255,556 @@
                                                         <i class="fa-solid fa-quote-right text-sm"></i> BibTeX
                                                     </a>
                                                 </div>-->
-                                            </div>
+                                                    </div>
 
-                                            <!-- RIGHT: thumbnails-->
-                                            <div class="publication-card-media">
-                                                <div class="publication-figure">
-                                                    <img src="../Image/eeg.jpg" alt="Publication figure "
-                                                        loading="lazy " class="h-full w-full object-cover " />
+                                                    <!-- RIGHT: thumbnails-->
+                                                    <div class="publication-card-media">
+                                                        <div class="publication-figure">
+                                                            <img src="../Image/eeg.jpg" alt="Publication figure "
+                                                                loading="lazy " class="h-full w-full object-cover " />
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </article>
+
+                                            <!-- Book Chapter -->
+                                            <article data-year="2026" research-type="book-chapter"
+                                                class="publication-card">
+
+                                                <div class="publication-card-inner">
+                                                    <!-- LEFT: content -->
+                                                    <div class="publication-card-content">
+                                                        <!-- Meta row -->
+                                                        <div class="flex flex-wrap items-center gap-2 text-sm ">
+                                                            <span
+                                                                class="inline-flex items-center px-2 py-1 rounded-sm bg-sky-100 text-sky-800 text-xs font-semibold">
+                                                                Book Chapter
+                                                            </span>
+                                                            <span class="text-gray-700">April, 2026 &nbsp;–&nbsp;<span
+                                                                    class="tracking-wide ">Taylor & Francis</span>
+                                                        </div>
+
+                                                        <!-- Citation -->
+                                                        <p
+                                                            class="mt-4 text-sm md:text-[13px]  leading-snug text-gray-900   break-words">
+                                                            [7] Imrus Salehin, <span class="font-semibold">Nazmul Huda
+                                                                Badhon</span>,
+                                                            Md.
+                                                            Tomal Ahmed Sajib,
+                                                            Md.
+                                                            Sakibul Hassan Rifat, Nazmun Nessa Moon, "Predicting Peak
+                                                            Energy
+                                                            Demand
+                                                            Using
+                                                            Machine Learning Techniques for Efficient Electricity
+                                                            Supply Management. " In Engineering Applications of AI for
+                                                            Demand
+                                                            Forecasting,
+                                                            Vol. 1, p. 13. Taylor & Francis Group, 2026.
+                                                        </p>
+
+                                                        <!-- Buttons -->
+                                                        <div class="mt-4 flex flex-wrap gap-3 ">
+                                                            <a href="https://doi.org/10.1201/9781003541875-9"
+                                                                target="_blank "
+                                                                class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
+                                                                <i class="fa-solid fa-file-pdf text-sm"></i> Paper
+                                                            </a>
+
+                                                            <a href=" " target="_blank "
+                                                                class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
+                                                                <i class="fa-solid fa-quote-right "></i> BibTeX
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- RIGHT: thumbnail -->
+                                                    <div class="publication-card-media">
+                                                        <div class="publication-figure"> <img
+                                                                src="../Image/bookchapter.jpg "
+                                                                alt="Publication figure " loading="lazy "
+                                                                class="h-full w-full object-cover " />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
                                         </div>
-                                    </article>
 
-                                    <!-- Book Chapter -->
-                                    <article data-year="2026" research-type="book-chapter" class="publication-card">
+                                        <!-- 2025 Group -->
+                                        <div class="publication-year-group" data-group-year="2025">
 
-                                        <div class="publication-card-inner">
-                                            <!-- LEFT: content -->
-                                            <div class="publication-card-content">
-                                                <!-- Meta row -->
-                                                <div class="flex flex-wrap items-center gap-2 text-sm ">
-                                                    <span
-                                                        class="inline-flex items-center px-2 py-1 rounded-sm bg-sky-100 text-sky-800 text-xs font-semibold">
-                                                        Book Chapter
-                                                    </span>
-                                                    <span class="text-gray-700">April, 2026 &nbsp;–&nbsp;<span
-                                                            class="tracking-wide ">Taylor & Francis</span>
-                                                </div>
-
-                                                <!-- Citation -->
-                                                <p
-                                                    class="mt-4 text-sm md:text-[13px]  leading-snug text-gray-900   break-words">
-                                                    [7] Imrus Salehin, <span class="font-semibold">Nazmul Huda
-                                                        Badhon</span>,
-                                                    Md.
-                                                    Tomal Ahmed Sajib,
-                                                    Md.
-                                                    Sakibul Hassan Rifat, Nazmun Nessa Moon, "Predicting Peak Energy
-                                                    Demand
-                                                    Using
-                                                    Machine Learning Techniques for Efficient Electricity
-                                                    Supply Management. " In Engineering Applications of AI for Demand
-                                                    Forecasting,
-                                                    Vol. 1, p. 13. Taylor & Francis Group, 2026.
-                                                </p>
-
-                                                <!-- Buttons -->
-                                                <div class="mt-4 flex flex-wrap gap-3 ">
-                                                    <a href="https://doi.org/10.1201/9781003541875-9" target="_blank "
-                                                        class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
-                                                        <i class="fa-solid fa-file-pdf text-sm"></i> Paper
-                                                    </a>
-
-                                                    <a href=" " target="_blank "
-                                                        class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
-                                                        <i class="fa-solid fa-quote-right "></i> BibTeX
-                                                    </a>
-                                                </div>
+                                            <div class="publication-year-heading" data-heading-year="2025">
+                                                <span class="publication-year-label">2025</span>
+                                                <span class="year-count">5 publications</span>
                                             </div>
 
-                                            <!-- RIGHT: thumbnail -->
-                                            <div class="publication-card-media">
-                                                <div class="publication-figure"> <img src="../Image/bookchapter.jpg "
-                                                        alt="Publication figure " loading="lazy "
-                                                        class="h-full w-full object-cover " />
+
+                                            <article data-year="2025" research-type="journal" class="publication-card">
+                                                <div class="publication-card-inner">
+
+                                                    <!-- LEFT: content -->
+                                                    <div class="publication-card-content">
+                                                        <!-- Meta row -->
+                                                        <div class="flex flex-wrap items-center gap-2 text-sm ">
+                                                            <span
+                                                                class="inline-flex items-center px-2 py-1 rounded-sm bg-green-100 text-green-800 text-xs font-semibold">
+                                                                Q1
+                                                            </span>
+                                                            <span
+                                                                class="inline-flex items-center px-2 py-1 rounded-sm bg-slate-100 text-slate-600 text-xs font-semibold">
+                                                                Research Article
+                                                            </span>
+                                                            <span class="text-gray-700">November, 2025 &nbsp;–&nbsp;
+                                                                <span class="tracking-wide "><i>Global Energy
+                                                                        Interconnection</i></span>
+                                                                <span>&nbsp;–&nbsp; Impact Factor: 2.6, CiteScore:
+                                                                    6.0</span>
+                                                            </span>
+                                                        </div>
+                                                        <!-- Title -->
+                                                        <p
+                                                            class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900   break-words">
+                                                            [6] <span class="font-semibold text-black">Nazmul Huda
+                                                                Badhon*</span>,
+                                                            Imrus
+                                                            Salehin*, Md
+                                                            Tomal Ahmed Sajib, Md
+                                                            Sakibul Hassan Rifat, SM Noman, Nazmun Nessa Moon, "TLCNN:
+                                                            Tabular data-based Lightweight Convolutional Neural Network
+                                                            for
+                                                            Electricity
+                                                            Energy Demand Prediction." in Global Energy
+                                                            Interconnection. ISSN: 2590-0358, Elsevier.
+                                                        </p>
+
+                                                        <!-- Buttons -->
+                                                        <div class="mt-4 flex flex-wrap gap-3 ">
+                                                            <a href="https://www.sciencedirect.com/science/article/pii/S2096511725001239 "
+                                                                target="_blank "
+                                                                class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
+                                                                <i class="fa-solid fa-file-pdf text-sm"></i> Paper
+                                                            </a>
+
+                                                            <a href="../bibtex/tlcnn.bib " target="_blank "
+                                                                class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
+                                                                <i class="fa-solid fa-quote-right "></i> BibTeX
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- RIGHT: thumbnails-->
+                                                    <div class="publication-card-media">
+                                                        <div class="publication-figure">
+                                                            <img src="../Image/tlcnn.jpg " alt="Publication figure "
+                                                                loading="lazy " class="h-full w-full object-cover " />
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </article>
+
+                                            <!-- MethodsX -->
+                                            <article data-year="2025" research-type="journal" class="publication-card">
+
+                                                <div class="publication-card-inner">
+                                                    <!-- LEFT: content -->
+                                                    <div class="publication-card-content">
+                                                        <!-- Meta row -->
+                                                        <div class="flex flex-wrap items-center gap-2 text-sm ">
+                                                            <span
+                                                                class="inline-flex items-center px-2 py-1 rounded-sm bg-green-100 text-green-800 text-xs font-semibold">
+                                                                Q1
+                                                            </span>
+                                                            <span
+                                                                class="inline-flex items-center px-2 py-1 rounded-sm bg-slate-100 text-slate-600 text-xs font-semibold">
+                                                                Research Article
+                                                            </span>
+                                                            <span class="text-gray-700">October, 2025 &nbsp;–&nbsp;
+                                                                <span class="tracking-wide"><i>MethodsX</i></span>
+                                                                <span>&nbsp;–&nbsp;
+                                                                    Impact
+                                                                    Factor: 1.9, CiteScore: 3.4</span>
+                                                            </span>
+                                                        </div>
+                                                        <!-- Title -->
+                                                        <p
+                                                            class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900   break-words">
+                                                            [5] Md Tomal Ahmed Sajib, <span class="font-semibold">Nazmul
+                                                                Huda
+                                                                Badhon</span>,
+                                                            Imrus Salehin, Md
+                                                            Sakibul Hassan Rifat, Faysal Ahmed, Nazmun Nessa Moon, "A
+                                                            comparative
+                                                            deep
+                                                            learning methodology for plant insect image classification:
+                                                            assessment of CNN architectures and augmentation techniques"
+                                                            in
+                                                            MethodsX. ISSN: 2215-0161, Elsevier.
+                                                        </p>
+                                                        <!-- Buttons -->
+                                                        <div class="mt-4 flex flex-wrap gap-3">
+                                                            <a href="https://www.sciencedirect.com/science/article/pii/S2215016125005242 "
+                                                                target="_blank "
+                                                                class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
+                                                                <i class="fa-solid fa-file-pdf text-sm"></i> Paper
+                                                            </a>
+
+                                                            <a href="../bibtex/methodsx.bib " target="_blank "
+                                                                class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
+                                                                <i class="fa-solid fa-quote-right text-sm"></i> BibTeX
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- RIGHT: thumbnails-->
+                                                    <div class="publication-card-media">
+                                                        <div class="publication-figure">
+                                                            <img src="../Image/methodsx.jpg " alt="Publication figure "
+                                                                loading="lazy " class="h-full w-full object-cover " />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+
+                                            <!-- Bmode data -->
+                                            <article data-year="2025" research-type="journal" class="publication-card">
+
+                                                <div class="publication-card-inner">
+
+                                                    <!-- LEFT: content -->
+                                                    <div class="publication-card-content">
+                                                        <!-- Meta row -->
+                                                        <div class="flex flex-wrap items-center gap-2 text-sm ">
+                                                            <span
+                                                                class="inline-flex items-center px-2 py-1 rounded-sm bg-green-100 text-green-800 text-xs font-semibold">
+                                                                Q1
+                                                            </span>
+                                                            <span
+                                                                class="inline-flex items-center px-2 py-1 rounded-sm bg-cyan-100 text-cyan-800 text-xs font-semibold">
+                                                                Data Article
+                                                            </span>
+                                                            <span class="text-gray-700">September, 2025
+                                                                &nbsp;–&nbsp;<span class="   tracking-wide "><i>Data in
+                                                                        Brief</i></span>
+                                                                <span>&nbsp;–&nbsp; Impact Factor: 1.4, CiteScore:
+                                                                    2.6</span>
+                                                            </span>
+                                                        </div>
+
+                                                        <!-- Citation -->
+                                                        <p
+                                                            class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900   break-words">
+                                                            [4] Imrus Salehin, <span class="font-semibold">Nazmul Huda
+                                                                Badhon</span>, Md. Tomal Ahmed Sajib, Nazmun Nessa Moon
+                                                            (2025),
+                                                            "DeepUS-ReconSeg: A multi-angle paired B-mode Ultrasound
+                                                            dataset
+                                                            for
+                                                            medical
+                                                            imaging reconstruction and segmentation" in Data in Brief,
+                                                            112083.
+                                                            ISSN: 2352-3409,
+                                                            Elsevier.
+                                                        </p>
+
+                                                        <!-- Buttons -->
+                                                        <div class="mt-4 flex flex-wrap gap-3">
+                                                            <a href="https://www.sciencedirect.com/science/article/pii/S2352340925008054"
+                                                                target="_blank "
+                                                                class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
+                                                                <i class="fa-solid fa-file-pdf text-sm"></i> Paper
+                                                            </a>
+
+                                                            <a href="../bibtex/deepus-reconseg.bib " target="_blank "
+                                                                class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
+                                                                <i class="fa-solid fa-quote-right "></i> BibTeX
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- RIGHT: thumbnail -->
+                                                    <div class="publication-card-media">
+                                                        <div class="publication-figure">
+                                                            <img src="../Image/bmode.png " alt="Publication figure "
+                                                                loading="lazy " class="h-full w-full object-cover " />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+
+                                            <!-- IQ data -->
+                                            <article data-year="2025" research-type="journal" class="publication-card">
+
+                                                <div class="publication-card-inner">
+
+                                                    <!-- LEFT: content -->
+                                                    <div class="publication-card-content">
+                                                        <!-- Meta row -->
+                                                        <div class="flex flex-wrap items-center gap-2 text-sm ">
+                                                            <span
+                                                                class="inline-flex items-center px-2 py-1 rounded-sm bg-green-100 text-green-800 text-xs font-semibold">
+                                                                Q1
+                                                            </span>
+                                                            <span
+                                                                class="inline-flex items-center px-2 py-1 rounded-sm bg-cyan-100 text-cyan-800 text-xs font-semibold">
+                                                                Data Article
+                                                            </span>
+                                                            <span class="text-gray-700 ">August, 2025 &nbsp;–&nbsp;<span
+                                                                    class="   tracking-wide "><i>Data in
+                                                                        Brief</i></span>
+                                                                <span>&nbsp;–&nbsp; Impact Factor: 1.4, CiteScore:
+                                                                    2.6</span>
+                                                            </span>
+                                                        </div>
+
+                                                        <!-- Citation -->
+                                                        <p
+                                                            class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900   break-words">
+                                                            [3] Imrus Salehin, <span class="font-semibold">Nazmul Huda
+                                                                Badhon</span>, Md Tomal Ahmed Sajib, Mohd Saifuzzaman,
+                                                            Nazmun
+                                                            Nessa
+                                                            Moon (2025), "IQ-UltraRecon: Demodulated IQ ultrasound
+                                                            dataset
+                                                            of
+                                                            human
+                                                            hand
+                                                            and arm tissue for deep learning-based reconstruction" in
+                                                            Data in
+                                                            Brief, 112001. ISSN: 2352-3409,
+                                                            Elsevier.
+                                                        </p>
+
+                                                        <!-- Buttons -->
+                                                        <div class="mt-4 flex flex-wrap gap-3 ">
+                                                            <a href="https://www.sciencedirect.com/science/article/pii/S2352340925007255"
+                                                                target="_blank "
+                                                                class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
+                                                                <i class="fa-solid fa-file-pdf text-sm"></i> Paper
+                                                            </a>
+
+                                                            <a href="../bibtex/iq-ultrarecon.bib " target="_blank "
+                                                                class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
+                                                                <i class="fa-solid fa-quote-right text-sm"></i> BibTeX
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- RIGHT: thumbnail -->
+                                                    <div class="publication-card-media">
+                                                        <div class="publication-figure">
+                                                            <img src="../Image/ultrarecon_fig.png"
+                                                                alt="Publication figure" loading="lazy"
+                                                                class="h-full w-full object-cover" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+
+                                            <!-- LLM Review -->
+                                            <article data-year="2025" research-type="journal" class="publication-card">
+
+                                                <div class="publication-card-inner">
+
+                                                    <!-- LEFT: content -->
+                                                    <div class="publication-card-content">
+                                                        <!-- Meta row -->
+                                                        <div class="flex flex-wrap items-center gap-2 text-sm ">
+                                                            <span
+                                                                class="inline-flex items-center px-2 py-1 rounded-sm bg-amber-100 text-amber-800 text-xs font-semibold">
+                                                                Q2
+                                                            </span>
+                                                            <span
+                                                                class="inline-flex items-center px-2 py-1 rounded-sm bg-violet-100 text-violet-800 text-xs font-semibold">
+                                                                Review Article
+                                                            </span>
+
+                                                            <span class="text-gray-700">September, 2025
+                                                                &nbsp;–&nbsp;<span class="tracking-wide "><i>Engineering
+                                                                        Reports</i></span>
+                                                                <span>&nbsp;–&nbsp; Impact Factor: 2.0, CiteScore:
+                                                                    4.1</span>
+                                                            </span>
+                                                        </div>
+
+                                                        <!-- Citation -->
+                                                        <p
+                                                            class="mt-4 text-sm md:text-[13px]  leading-snug text-gray-900   break-words">
+                                                            [2] Imrus Salehin, Md Tomal Ahmed Sajib,
+                                                            <span class="font-semibold">Nazmul Huda Badhon</span>, Md
+                                                            Sakibul
+                                                            Hassan
+                                                            Rifat, Nazrul Amin,
+                                                            Nazmun Nessa Moon, "Systematic Literature Review of
+                                                            LLM–Large
+                                                            Language
+                                                            Models in
+                                                            Medical: Digital Health, Technology and Applications." in
+                                                            Engineering Reports, 7(9): e70365. ISSN:
+                                                            2577-8196,
+                                                            Wiley.
+                                                        </p>
+
+                                                        <!-- Buttons -->
+                                                        <div class="mt-4 flex flex-wrap gap-3 ">
+                                                            <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/eng2.70365 "
+                                                                target="_blank "
+                                                                class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
+                                                                <i class="fa-solid fa-file-pdf text-sm"></i> Paper
+                                                            </a>
+
+                                                            <a href="../bibtex/llm_review.bibtex" target="_blank "
+                                                                class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
+                                                                <i class="fa-solid fa-quote-right "></i> BibTeX
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- RIGHT: thumbnail -->
+                                                    <div class="publication-card-media">
+                                                        <div class="publication-figure">
+                                                            <img src="../Image/llm.jpg " alt="Publication figure "
+                                                                loading="lazy " class="h-full w-full object-cover " />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
                                         </div>
-                                    </article>
-                                </div>
 
-                                <!-- 2025 Group -->
-                                <div class="publication-year-group" data-group-year="2025">
+                                        <!-- 2024 Group -->
+                                        <div class="publication-year-group" data-group-year="2024">
 
-                                    <div class="publication-year-heading" data-heading-year="2025">
-                                        <span class="publication-year-label">2025</span>
-                                        <span class="year-count">5 publications</span>
+                                            <div class="publication-year-heading" data-heading-year="2024">
+                                                <span class="publication-year-label">2024</span>
+                                                <span class="year-count">1 publication</span>
+                                            </div>
+
+                                            <!-- BAU-Insectv2 -->
+                                            <article data-year="2024" research-type="journal" class="publication-card">
+
+                                                <div class="publication-card-inner">
+
+                                                    <!-- LEFT: content -->
+                                                    <div class="publication-card-content">
+                                                        <!-- Meta row -->
+                                                        <div class="flex flex-wrap items-center gap-2 text-sm ">
+                                                            <span
+                                                                class="inline-flex items-center px-2 py-1 rounded-sm bg-green-100 text-green-800 text-xs font-semibold">
+                                                                Q1
+                                                            </span>
+                                                            <span
+                                                                class="inline-flex items-center px-2 py-1 rounded-sm bg-cyan-100 text-cyan-800 text-xs font-semibold">
+                                                                Data Article
+                                                            </span>
+                                                            <span class="text-gray-700">January, 2024 &nbsp;–&nbsp;<span
+                                                                    class="   tracking-wide "><i>Data in
+                                                                        Brief</i></span>
+                                                                <span>&nbsp;–&nbsp; Impact Factor: 1.4, CiteScore:
+                                                                    2.6</span>
+                                                            </span>
+                                                        </div>
+
+                                                        <!-- Citation -->
+                                                        <p
+                                                            class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900   break-words">
+                                                            [1] Imrus Salehin, Mahbubur Rahman Khan, Ummya Habiba, <span
+                                                                class="font-semibold">Nazmul Huda
+                                                                Badhon</span>, Nazmun Nessa Moon (2024), "BAU-Insectv2:
+                                                            An
+                                                            Agricultural
+                                                            Plant Insect Dataset for Deep Learning and Biomedical Image
+                                                            Analysis" in Data in Brief, 110083. ISSN:
+                                                            2352-3409,
+                                                            Elsevier.
+                                                        </p>
+
+                                                        <!-- Buttons -->
+                                                        <div class="mt-4 flex flex-wrap gap-3 ">
+                                                            <a href="https://www.sciencedirect.com/science/article/pii/S2352340924000568 "
+                                                                target="_blank "
+                                                                class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
+                                                                <i class="fa-solid fa-file-pdf "></i> Paper
+                                                            </a>
+
+                                                            <a href="../bibtex/bau-insectv2.bib " target="_blank "
+                                                                class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
+                                                                <i class="fa-solid fa-quote-right text-sm"></i> BibTeX
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- RIGHT: thumbnail -->
+                                                    <div class="publication-card-media">
+                                                        <div class="publication-figure">
+                                                            <img src="../Image/bauinsect.jpg " alt="Publication figure "
+                                                                loading="lazy " class="h-full w-full object-cover " />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
                                     </div>
 
+                                    <!-- RIGHT: frozen sidebar -->
+                                    <aside
+                                        class="research-sidebar hidden lg:block absolute left-full top-0 ml-10 w-[170px] reveal reveal-right">
+                                        <div class="text-sm text-slate-700">
+                                            <div class="mb-8">
+                                                <h3
+                                                    class="text-xs font-bold uppercase tracking-[0.25em] text-slate-500 mb-2">
+                                                    Jump to Year
+                                                </h3>
+                                                <div class="border-t border-slate-300 pt-3 space-y-0">
+                                                    <button type="button"
+                                                        class="year-filter flex w-full justify-between text-left"
+                                                        data-year="2026">
+                                                        <span>2026</span><span>3</span>
+                                                    </button>
 
-                                    <article data-year="2025" research-type="journal" class="publication-card">
-                                        <div class="publication-card-inner">
+                                                    <button type="button"
+                                                        class="year-filter flex w-full justify-between text-left"
+                                                        data-year="2025">
+                                                        <span>2025</span><span>5</span>
+                                                    </button>
 
-                                            <!-- LEFT: content -->
-                                            <div class="publication-card-content">
-                                                <!-- Meta row -->
-                                                <div class="flex flex-wrap items-center gap-2 text-sm ">
-                                                    <span
-                                                        class="inline-flex items-center px-2 py-1 rounded-sm bg-green-100 text-green-800 text-xs font-semibold">
-                                                        Q1
-                                                    </span>
-                                                    <span
-                                                        class="inline-flex items-center px-2 py-1 rounded-sm bg-slate-100 text-slate-600 text-xs font-semibold">
-                                                        Research Article
-                                                    </span>
-                                                    <span class="text-gray-700">November, 2025 &nbsp;–&nbsp; <span
-                                                            class="tracking-wide "><i>Global Energy
-                                                                Interconnection</i></span>
-                                                        <span>&nbsp;–&nbsp; Impact Factor: 2.6, CiteScore:
-                                                            6.0</span>
-                                                    </span>
-                                                </div>
-                                                <!-- Title -->
-                                                <p
-                                                    class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900   break-words">
-                                                    [6] <span class="font-semibold text-black">Nazmul Huda
-                                                        Badhon*</span>,
-                                                    Imrus
-                                                    Salehin*, Md
-                                                    Tomal Ahmed Sajib, Md
-                                                    Sakibul Hassan Rifat, SM Noman, Nazmun Nessa Moon, "TLCNN:
-                                                    Tabular data-based Lightweight Convolutional Neural Network for
-                                                    Electricity
-                                                    Energy Demand Prediction." in Global Energy
-                                                    Interconnection. ISSN: 2590-0358, Elsevier.
-                                                </p>
-
-                                                <!-- Buttons -->
-                                                <div class="mt-4 flex flex-wrap gap-3 ">
-                                                    <a href="https://www.sciencedirect.com/science/article/pii/S2096511725001239 "
-                                                        target="_blank "
-                                                        class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
-                                                        <i class="fa-solid fa-file-pdf text-sm"></i> Paper
-                                                    </a>
-
-                                                    <a href="../bibtex/tlcnn.bib " target="_blank "
-                                                        class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
-                                                        <i class="fa-solid fa-quote-right "></i> BibTeX
-                                                    </a>
+                                                    <button type="button"
+                                                        class="year-filter flex w-full justify-between text-left"
+                                                        data-year="2024">
+                                                        <span>2024</span><span>1</span>
+                                                    </button>
                                                 </div>
                                             </div>
 
-                                            <!-- RIGHT: thumbnails-->
-                                            <div class="publication-card-media">
-                                                <div class="publication-figure">
-                                                    <img src="../Image/tlcnn.jpg " alt="Publication figure "
-                                                        loading="lazy " class="h-full w-full object-cover " />
+                                            <div>
+                                                <h3
+                                                    class="text-xs font-bold uppercase tracking-[0.25em] text-slate-500 mb-2">
+                                                    By Type
+                                                </h3>
+                                                <div class="border-t border-slate-300 pt-3">
+                                                    <button type="button"
+                                                        class="research-filter flex w-full justify-between text-left"
+                                                        research-type="journal">
+                                                        <span>Journal</span><span>8</span>
+                                                    </button>
+
+                                                    <button type="button"
+                                                        class="research-filter flex w-full justify-between text-left"
+                                                        research-type="book-chapter">
+                                                        <span>Book Chapter</span><span>1</span>
+                                                    </button>
+
+                                                    <button type="button"
+                                                        class="research-filter flex w-full justify-between text-left"
+                                                        research-type="">
+                                                        <span>All</span><span>9</span>
+                                                    </button>
+
                                                 </div>
                                             </div>
                                         </div>
-                                    </article>
-
-                                    <!-- MethodsX -->
-                                    <article data-year="2025" research-type="journal" class="publication-card">
-
-                                        <div class="publication-card-inner">
-                                            <!-- LEFT: content -->
-                                            <div class="publication-card-content">
-                                                <!-- Meta row -->
-                                                <div class="flex flex-wrap items-center gap-2 text-sm ">
-                                                    <span
-                                                        class="inline-flex items-center px-2 py-1 rounded-sm bg-green-100 text-green-800 text-xs font-semibold">
-                                                        Q1
-                                                    </span>
-                                                    <span
-                                                        class="inline-flex items-center px-2 py-1 rounded-sm bg-slate-100 text-slate-600 text-xs font-semibold">
-                                                        Research Article
-                                                    </span>
-                                                    <span class="text-gray-700">October, 2025 &nbsp;–&nbsp; <span
-                                                            class="tracking-wide"><i>MethodsX</i></span>
-                                                        <span>&nbsp;–&nbsp;
-                                                            Impact
-                                                            Factor: 1.9, CiteScore: 3.4</span>
-                                                    </span>
-                                                </div>
-                                                <!-- Title -->
-                                                <p
-                                                    class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900   break-words">
-                                                    [5] Md Tomal Ahmed Sajib, <span class="font-semibold">Nazmul Huda
-                                                        Badhon</span>,
-                                                    Imrus Salehin, Md
-                                                    Sakibul Hassan Rifat, Faysal Ahmed, Nazmun Nessa Moon, "A
-                                                    comparative
-                                                    deep
-                                                    learning methodology for plant insect image classification:
-                                                    assessment of CNN architectures and augmentation techniques" in
-                                                    MethodsX. ISSN: 2215-0161, Elsevier.
-                                                </p>
-                                                <!-- Buttons -->
-                                                <div class="mt-4 flex flex-wrap gap-3">
-                                                    <a href="https://www.sciencedirect.com/science/article/pii/S2215016125005242 "
-                                                        target="_blank "
-                                                        class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
-                                                        <i class="fa-solid fa-file-pdf text-sm"></i> Paper
-                                                    </a>
-
-                                                    <a href="../bibtex/methodsx.bib " target="_blank "
-                                                        class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
-                                                        <i class="fa-solid fa-quote-right text-sm"></i> BibTeX
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                            <!-- RIGHT: thumbnails-->
-                                            <div class="publication-card-media">
-                                                <div class="publication-figure">
-                                                    <img src="../Image/methodsx.jpg " alt="Publication figure "
-                                                        loading="lazy " class="h-full w-full object-cover " />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-
-                                    <!-- Bmode data -->
-                                    <article data-year="2025" research-type="journal" class="publication-card">
-
-                                        <div class="publication-card-inner">
-
-                                            <!-- LEFT: content -->
-                                            <div class="publication-card-content">
-                                                <!-- Meta row -->
-                                                <div class="flex flex-wrap items-center gap-2 text-sm ">
-                                                    <span
-                                                        class="inline-flex items-center px-2 py-1 rounded-sm bg-green-100 text-green-800 text-xs font-semibold">
-                                                        Q1
-                                                    </span>
-                                                    <span
-                                                        class="inline-flex items-center px-2 py-1 rounded-sm bg-cyan-100 text-cyan-800 text-xs font-semibold">
-                                                        Data Article
-                                                    </span>
-                                                    <span class="text-gray-700">September, 2025 &nbsp;–&nbsp;<span
-                                                            class="   tracking-wide "><i>Data in Brief</i></span>
-                                                        <span>&nbsp;–&nbsp; Impact Factor: 1.4, CiteScore:
-                                                            2.6</span>
-                                                    </span>
-                                                </div>
-
-                                                <!-- Citation -->
-                                                <p
-                                                    class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900   break-words">
-                                                    [4] Imrus Salehin, <span class="font-semibold">Nazmul Huda
-                                                        Badhon</span>, Md. Tomal Ahmed Sajib, Nazmun Nessa Moon
-                                                    (2025),
-                                                    "DeepUS-ReconSeg: A multi-angle paired B-mode Ultrasound dataset
-                                                    for
-                                                    medical
-                                                    imaging reconstruction and segmentation" in Data in Brief, 112083.
-                                                    ISSN: 2352-3409,
-                                                    Elsevier.
-                                                </p>
-
-                                                <!-- Buttons -->
-                                                <div class="mt-4 flex flex-wrap gap-3">
-                                                    <a href="https://www.sciencedirect.com/science/article/pii/S2352340925008054"
-                                                        target="_blank "
-                                                        class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
-                                                        <i class="fa-solid fa-file-pdf text-sm"></i> Paper
-                                                    </a>
-
-                                                    <a href="../bibtex/deepus-reconseg.bib " target="_blank "
-                                                        class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
-                                                        <i class="fa-solid fa-quote-right "></i> BibTeX
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                            <!-- RIGHT: thumbnail -->
-                                            <div class="publication-card-media">
-                                                <div class="publication-figure">
-                                                    <img src="../Image/bmode.png " alt="Publication figure "
-                                                        loading="lazy " class="h-full w-full object-cover " />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-
-                                    <!-- IQ data -->
-                                    <article data-year="2025" research-type="journal" class="publication-card">
-
-                                        <div class="publication-card-inner">
-
-                                            <!-- LEFT: content -->
-                                            <div class="publication-card-content">
-                                                <!-- Meta row -->
-                                                <div class="flex flex-wrap items-center gap-2 text-sm ">
-                                                    <span
-                                                        class="inline-flex items-center px-2 py-1 rounded-sm bg-green-100 text-green-800 text-xs font-semibold">
-                                                        Q1
-                                                    </span>
-                                                    <span
-                                                        class="inline-flex items-center px-2 py-1 rounded-sm bg-cyan-100 text-cyan-800 text-xs font-semibold">
-                                                        Data Article
-                                                    </span>
-                                                    <span class="text-gray-700 ">August, 2025 &nbsp;–&nbsp;<span
-                                                            class="   tracking-wide "><i>Data in Brief</i></span>
-                                                        <span>&nbsp;–&nbsp; Impact Factor: 1.4, CiteScore:
-                                                            2.6</span>
-                                                    </span>
-                                                </div>
-
-                                                <!-- Citation -->
-                                                <p
-                                                    class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900   break-words">
-                                                    [3] Imrus Salehin, <span class="font-semibold">Nazmul Huda
-                                                        Badhon</span>, Md Tomal Ahmed Sajib, Mohd Saifuzzaman,
-                                                    Nazmun
-                                                    Nessa
-                                                    Moon (2025), "IQ-UltraRecon: Demodulated IQ ultrasound dataset
-                                                    of
-                                                    human
-                                                    hand
-                                                    and arm tissue for deep learning-based reconstruction" in Data in
-                                                    Brief, 112001. ISSN: 2352-3409,
-                                                    Elsevier.
-                                                </p>
-
-                                                <!-- Buttons -->
-                                                <div class="mt-4 flex flex-wrap gap-3 ">
-                                                    <a href="https://www.sciencedirect.com/science/article/pii/S2352340925007255"
-                                                        target="_blank "
-                                                        class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
-                                                        <i class="fa-solid fa-file-pdf text-sm"></i> Paper
-                                                    </a>
-
-                                                    <a href="../bibtex/iq-ultrarecon.bib " target="_blank "
-                                                        class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
-                                                        <i class="fa-solid fa-quote-right text-sm"></i> BibTeX
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                            <!-- RIGHT: thumbnail -->
-                                            <div class="publication-card-media">
-                                                <div class="publication-figure">
-                                                    <img src="../Image/ultrarecon_fig.png" alt="Publication figure"
-                                                        loading="lazy" class="h-full w-full object-cover" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-
-                                    <!-- LLM Review -->
-                                    <article data-year="2025" research-type="journal" class="publication-card">
-
-                                        <div class="publication-card-inner">
-
-                                            <!-- LEFT: content -->
-                                            <div class="publication-card-content">
-                                                <!-- Meta row -->
-                                                <div class="flex flex-wrap items-center gap-2 text-sm ">
-                                                    <span
-                                                        class="inline-flex items-center px-2 py-1 rounded-sm bg-amber-100 text-amber-800 text-xs font-semibold">
-                                                        Q2
-                                                    </span>
-                                                    <span
-                                                        class="inline-flex items-center px-2 py-1 rounded-sm bg-violet-100 text-violet-800 text-xs font-semibold">
-                                                        Review Article
-                                                    </span>
-
-                                                    <span class="text-gray-700">September, 2025 &nbsp;–&nbsp;<span
-                                                            class="tracking-wide "><i>Engineering Reports</i></span>
-                                                        <span>&nbsp;–&nbsp; Impact Factor: 2.0, CiteScore:
-                                                            4.1</span>
-                                                    </span>
-                                                </div>
-
-                                                <!-- Citation -->
-                                                <p
-                                                    class="mt-4 text-sm md:text-[13px]  leading-snug text-gray-900   break-words">
-                                                    [2] Imrus Salehin, Md Tomal Ahmed Sajib,
-                                                    <span class="font-semibold">Nazmul Huda Badhon</span>, Md
-                                                    Sakibul
-                                                    Hassan
-                                                    Rifat, Nazrul Amin,
-                                                    Nazmun Nessa Moon, "Systematic Literature Review of LLM–Large
-                                                    Language
-                                                    Models in
-                                                    Medical: Digital Health, Technology and Applications." in
-                                                    Engineering Reports, 7(9): e70365. ISSN:
-                                                    2577-8196,
-                                                    Wiley.
-                                                </p>
-
-                                                <!-- Buttons -->
-                                                <div class="mt-4 flex flex-wrap gap-3 ">
-                                                    <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/eng2.70365 "
-                                                        target="_blank "
-                                                        class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
-                                                        <i class="fa-solid fa-file-pdf text-sm"></i> Paper
-                                                    </a>
-
-                                                    <a href="../bibtex/llm_review.bibtex" target="_blank "
-                                                        class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
-                                                        <i class="fa-solid fa-quote-right "></i> BibTeX
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                            <!-- RIGHT: thumbnail -->
-                                            <div class="publication-card-media">
-                                                <div class="publication-figure">
-                                                    <img src="../Image/llm.jpg " alt="Publication figure "
-                                                        loading="lazy " class="h-full w-full object-cover " />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
+                                    </aside>
                                 </div>
 
-                                <!-- 2024 Group -->
-                                <div class="publication-year-group" data-group-year="2024">
-
-                                    <div class="publication-year-heading" data-heading-year="2024">
-                                        <span class="publication-year-label">2024</span>
-                                        <span class="year-count">1 publication</span>
-                                    </div>
-
-                                    <!-- BAU-Insectv2 -->
-                                    <article data-year="2024" research-type="journal" class="publication-card">
-
-                                        <div class="publication-card-inner">
-
-                                            <!-- LEFT: content -->
-                                            <div class="publication-card-content">
-                                                <!-- Meta row -->
-                                                <div class="flex flex-wrap items-center gap-2 text-sm ">
-                                                    <span
-                                                        class="inline-flex items-center px-2 py-1 rounded-sm bg-green-100 text-green-800 text-xs font-semibold">
-                                                        Q1
-                                                    </span>
-                                                    <span
-                                                        class="inline-flex items-center px-2 py-1 rounded-sm bg-cyan-100 text-cyan-800 text-xs font-semibold">
-                                                        Data Article
-                                                    </span>
-                                                    <span class="text-gray-700">January, 2024 &nbsp;–&nbsp;<span
-                                                            class="   tracking-wide "><i>Data in Brief</i></span>
-                                                        <span>&nbsp;–&nbsp; Impact Factor: 1.4, CiteScore:
-                                                            2.6</span>
-                                                    </span>
-                                                </div>
-
-                                                <!-- Citation -->
-                                                <p
-                                                    class="mt-4 text-sm md:text-[13px] leading-snug text-gray-900   break-words">
-                                                    [1] Imrus Salehin, Mahbubur Rahman Khan, Ummya Habiba, <span
-                                                        class="font-semibold">Nazmul Huda
-                                                        Badhon</span>, Nazmun Nessa Moon (2024), "BAU-Insectv2: An
-                                                    Agricultural
-                                                    Plant Insect Dataset for Deep Learning and Biomedical Image
-                                                    Analysis" in Data in Brief, 110083. ISSN:
-                                                    2352-3409,
-                                                    Elsevier.
-                                                </p>
-
-                                                <!-- Buttons -->
-                                                <div class="mt-4 flex flex-wrap gap-3 ">
-                                                    <a href="https://www.sciencedirect.com/science/article/pii/S2352340924000568 "
-                                                        target="_blank "
-                                                        class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
-                                                        <i class="fa-solid fa-file-pdf "></i> Paper
-                                                    </a>
-
-                                                    <a href="../bibtex/bau-insectv2.bib " target="_blank "
-                                                        class="inline-flex items-center gap-2 rounded-md border border-black px-2 py-1 text-gray-900 hover:bg-gray-50 transition ">
-                                                        <i class="fa-solid fa-quote-right text-sm"></i> BibTeX
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                            <!-- RIGHT: thumbnail -->
-                                            <div class="publication-card-media">
-                                                <div class="publication-figure">
-                                                    <img src="../Image/bauinsect.jpg " alt="Publication figure "
-                                                        loading="lazy " class="h-full w-full object-cover " />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
                             </div>
-
-                            <!-- RIGHT: frozen sidebar -->
-                            <aside class="research-sidebar hidden lg:block reveal reveal-right">
-                                <div class="text-sm text-slate-700">
-                                    <div class="mb-8">
-                                        <h3 class="text-xs font-bold uppercase tracking-[0.25em] text-slate-500 mb-2">
-                                            Jump to Year
-                                        </h3>
-                                        <div class="border-t border-slate-300 pt-3 space-y-0">
-                                            <button type="button"
-                                                class="year-filter flex w-full justify-between text-left"
-                                                data-year="2026">
-                                                <span>2026</span><span>3</span>
-                                            </button>
-
-                                            <button type="button"
-                                                class="year-filter flex w-full justify-between text-left"
-                                                data-year="2025">
-                                                <span>2025</span><span>5</span>
-                                            </button>
-
-                                            <button type="button"
-                                                class="year-filter flex w-full justify-between text-left"
-                                                data-year="2024">
-                                                <span>2024</span><span>1</span>
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <h3 class="text-xs font-bold uppercase tracking-[0.25em] text-slate-500 mb-2">
-                                            By Type
-                                        </h3>
-                                        <div class="border-t border-slate-300 pt-3">
-                                            <button type="button"
-                                                class="research-filter flex w-full justify-between text-left"
-                                                research-type="journal">
-                                                <span>Journal</span><span>8</span>
-                                            </button>
-
-                                            <button type="button"
-                                                class="research-filter flex w-full justify-between text-left"
-                                                research-type="book-chapter">
-                                                <span>Book Chapter</span><span>1</span>
-                                            </button>
-
-                                            <button type="button"
-                                                class="research-filter flex w-full justify-between text-left"
-                                                research-type="">
-                                                <span>All</span><span>9</span>
-                                            </button>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </aside>
-                        </div>
-
-                    </div>
                 </section>
             </div>
         </div>

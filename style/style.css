@@ -1755,7 +1755,7 @@ article.publication-card>* {
 /* Site footer */
 #siteFooter,
 #sitefooter {
-    background: rgba(250, 249, 246, 0.35) !important;
+    background: var(--page-bg);
     -webkit-backdrop-filter: none !important;
     backdrop-filter: none !important;
     border-top: 1px solid rgba(15, 23, 42, 0.08);
@@ -2178,77 +2178,6 @@ article.proj-card a.project-button i {
     font-size: 14px;
 }
 
-/* DESKTOP HEADER — ALIGNED WITH 1000PX PAGE CONTENT */
-
-.desktop-header {
-    width: 100%;
-    padding: 0;
-    background: #ffffff;
-}
-
-.desktop-header__inner {
-    width: min(100% - 48px, 1000px);
-    margin-inline: auto;
-}
-
-.segmented-nav {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-
-    padding: 4px;
-    border: 0;
-    border-radius: 12px;
-
-    background: rgba(246, 248, 251, 0.9);
-    box-shadow: none;
-}
-
-.segmented-nav__link {
-    position: relative;
-    flex: 1;
-
-    min-height: 34px;
-    padding: 8px 16px;
-
-    border: 0;
-    border-radius: 9px;
-
-    background: transparent;
-    color: #566274;
-
-    font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1;
-
-    text-align: center;
-    text-decoration: none;
-
-    transition:
-        color 160ms ease,
-        background-color 160ms ease,
-        transform 160ms ease;
-}
-
-.segmented-nav__link::after {
-    display: none;
-}
-
-.segmented-nav__link:hover {
-    color: #17324d;
-    background: rgba(255, 255, 255, 0.75);
-}
-
-.segmented-nav__link.is-active {
-    color: #8d2638;
-    background: #f5edef;
-
-    box-shadow:
-        inset 0 0 0 1px rgba(141, 38, 56, 0.08),
-        0 2px 6px rgba(15, 23, 42, 0.04);
-}
-
 /* =========================================================
    Reference-style desktop top navigation
    ========================================================= */
@@ -2423,7 +2352,7 @@ article.proj-card a.project-button i {
 
     --header-bg: #fbf9f6;
     --nav-text: #5d6676;
-    --nav-hover-bg: #f0e7fb;
+    --nav-hover-bg: #f5f0fc;
     --nav-active-bg: #e9dcf8;
     --nav-active-text: #6519dc;
     --theme-button-bg: #ffffff;
@@ -2449,6 +2378,11 @@ html {
 
 .segmented-nav__link:hover {
     color: var(--nav-active-text);
+    background: var(--nav-hover-bg);
+}
+
+.segmented-nav__link:hover:not(.is-active) {
+    color: var(--nav-hover-text);
     background: var(--nav-hover-bg);
 }
 
@@ -2556,8 +2490,7 @@ html[data-theme="dark"] article::after {
 /* Common Tailwind background utilities */
 html[data-theme="dark"] .bg-white,
 html[data-theme="dark"] .bg-gray-50,
-html[data-theme="dark"] .bg-slate-50,
-html[data-theme="dark"] .bg-\[\#F4F1EA\] {
+html[data-theme="dark"] .bg-slate-50 {
     background-color: var(--card-bg) !important;
 }
 
@@ -2636,5 +2569,46 @@ article,
     .desktop-theme-toggle,
     .segmented-nav__link {
         transition: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .academic-profile-links {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-wrap: nowrap !important;
+        gap: 16px !important;
+
+        width: 100% !important;
+        max-width: none !important;
+        margin-top: 22px !important;
+        padding: 8px 0 !important;
+    }
+
+    .academic-profile-links > a {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex: 0 0 40px !important;
+
+        width: 40px !important;
+        min-width: 40px !important;
+        height: 40px !important;
+        padding: 0 !important;
+
+        border: 1px solid var(--border);
+        border-radius: 50%;
+    }
+
+    .academic-profile-links > a > span {
+        display: none !important;
+    }
+
+    .academic-profile-links > a > img {
+        width: 18px !important;
+        height: 18px !important;
+        margin: 0 !important;
     }
 }

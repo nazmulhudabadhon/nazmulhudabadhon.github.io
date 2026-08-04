@@ -79,21 +79,6 @@
         ]
       }
     </script>
-  <script>
-    (function () {
-      try {
-        const savedTheme = localStorage.getItem("site-theme");
-        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        const theme = savedTheme || (systemDark ? "dark" : "light");
-
-        document.documentElement.dataset.theme = theme;
-        document.documentElement.style.colorScheme = theme;
-      } catch (error) {
-        document.documentElement.dataset.theme = "light";
-        document.documentElement.style.colorScheme = "light";
-      }
-    })();
-  </script>
 </head>
 
 <body class="scroll-smooth">
@@ -112,14 +97,14 @@
 
         <a href="./research/" class="segmented-nav__link">Publications</a>
 
-        <a href="./projects/" class="segmented-nav__link">Projects</a>
+        <!-- <a href="./projects/" class="segmented-nav__link">Projects</a> -->
 
         <a href="./achievement/" class="segmented-nav__link">Achievements</a>
 
         <a href="./resume/" class="segmented-nav__link segmented-nav__link--cv">CV</a>
 
-        <button id="themeToggle" class="desktop-theme-toggle" type="button"
-          aria-label="Switch to dark mode" title="Switch to dark mode" aria-pressed="false">
+        <button id="themeToggle" class="desktop-theme-toggle" type="button" aria-label="Switch to dark mode"
+          title="Switch to dark mode" aria-pressed="false">
           <i class="fa-regular fa-moon" aria-hidden="true"></i>
         </button>
       </nav>
@@ -135,11 +120,10 @@
           NAZMUL HUDA BADHON
         </span>
         <p class="text-left text-xs text-slate-500 tracking-wide">
-          BSc Graduate | Deep Learning Research
+          CS Graduate | Deep Learning Researcher
         </p>
       </div>
-      <button id="mobileMenuBtn" type="button" class="text-[#06142A] text-2xl focus:outline-none"
-        aria-label="Toggle navigation menu" aria-controls="mobileMenu" aria-expanded="false">
+      <button id="mobileMenuBtn" class="text-[#06142A] text-2xl focus:outline-none" aria-label="Toggle menu">
         <i class="fa-solid fa-bars" id="menuOpenIcon"></i>
         <i class="fa-solid fa-xmark hidden" id="menuCloseIcon"></i>
       </button>
@@ -147,14 +131,14 @@
     </div>
 
     <!-- Collapsible nav (hidden by default, header remains visible) -->
-    <nav id="mobileMenu" class="hidden flex-col gap-2 px-4 pb-4 text-slate-900 font-medium"
-      aria-label="Mobile navigation">
-      <a href="./" class="py-2 border-b border-white/10 hover:text-[#E3872D]">HOME</a>
-      <a href="./research/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">PUBLICATIONS</a>
-      <a href="./projects/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">PROJECTS</a>
-      <a href="./achievement/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">ACHIEVEMENTS</a>
-      <a href="./resume/" class="py-2 border-b border-white/10 hover:text-[#E3872D]" target="_blank"
-        rel="noopener noreferrer">CV</a>
+    <nav id="mobileMenu" class="hidden flex-col gap-2 px-4 pb-4 text-slate-900 font-medium">
+      <br>
+      <a href="./" class="py-2 border-b border-white/10 hover:text-[#E3872D]">HOME</a><br><br>
+      <a href="./research/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">PUBLICATIONS</a><br><br>
+      <!-- <a href="./projects/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">PROJECTS</a><br><br>-->
+      <a href="./achievement/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">ACHIEVEMENTS</a><br><br>
+      <a href="./resume/cv-viewer.html" class="py-2 border-b border-white/10 hover:text-[#E3872D]" target="_blank"
+        rel="noopener">CV</a>
     </nav>
   </header>
 
@@ -303,8 +287,9 @@
               </div>
 
               <!-- Academic and professional links -->
-              <nav class="mx-auto mt-4 flex w-full max-w-[340px] flex-col border-[#D8D6CF] py-3.5
-                lg:ml-auto lg:mr-0 lg:w-[280px] lg:max-w-[280px]" aria-label="Academic profiles">
+              <nav
+                class="academic-profile-links mx-auto mt-4 flex w-full max-w-[340px] flex-col border-[#D8D6CF] py-3.5 lg:ml-auto lg:mr-0 lg:w-[280px] lg:max-w-[280px]"
+                aria-label="Academic profiles">
 
                 <!-- Email -->
                 <a href="mailto:nazmul.badhon.research@gmail.com" aria-label="Send email to Nazmul Huda Badhon" class="flex w-full min-w-0 items-center justify-between gap-2.5 py-1.5
@@ -368,7 +353,7 @@
               </nav>
 
               <!-- Mobile CV link -->
-              <a href="./resume/" target="_blank" rel="noopener noreferrer" aria-label="View CV"
+              <a href="./resume/cv-viewer.html" target="_blank" rel="noopener noreferrer" aria-label="View CV"
                 class="mx-auto mt-4 flex w-full max-w-[340px] items-center justify-center gap-2 border border-[#D8D6CF] px-4 py-2.5 font-['Source_Sans_3'] text-[14px] font-semibold uppercase tracking-[0.05em] text-[#06142A] no-underline transition-colors hover:bg-[#F4F1EA] lg:hidden">
 
                 <span>View CV</span>
@@ -390,7 +375,8 @@
           <section class="mt-0 w-full max-w-[1000px] mx-auto px-6 lg:pt-3 lg:px-0" aria-labelledby="homeProfileTitle">
 
             <div class="mb-4 flex items-end justify-between border-b border-[#D8D6CF] pb-1.5">
-              <h2 id="homeProfileTitle" class="m-0 font-['Source_Sans_3'] text-[13px] font-semibold sm:text-[14px]">
+              <h2 id="homeProfileTitle" class="m-0 font-['Source_Sans_3'] text-[13px] sm:text-[14px]"
+                style="color: var(--text-main); font-weight: 600;">
                 Academic Profile
               </h2>
             </div>
@@ -435,22 +421,22 @@
                 text-slate-800 sm:text-[16px]"">
                 I have been recognized through key honors including the
                 <span class=" font-semibold text-[#111111]">
-                  fully funded Global Korea Scholarship (GKS) in 2023
-                </span>
-                by the Government of the Republic of Korea and the
-                <span class="font-semibold text-[#111111]">
-                  Research Awards in 2024 and 2025
-                </span>
-                from the Division of Research and the Department of Computer Science
-                and Engineering at Daffodil International University. I was also
-                recognized as a top performer in the Computer Vision and Deep Learning
-                Bootcamp for Medical Data at DIU.
+              fully funded Global Korea Scholarship (GKS) in 2023
+              </span>
+              by the Government of the Republic of Korea and the
+              <span class="font-semibold text-[#111111]">
+                Research Awards in 2024 and 2025
+              </span>
+              from the Division of Research and the Department of Computer Science
+              and Engineering at Daffodil International University. I was also
+              recognized as a top performer in the Computer Vision and Deep Learning
+              Bootcamp for Medical Data at DIU.
 
-                <a href="./achievement/"
-                  class="ml-1 inline-flex items-center gap-1 whitespace-nowrap text-[#00778B] decoration-[#00778B]/40 underline-offset-2 transition hover:text-[#6519dc]">
-                  View all achievements
-                  <span aria-hidden="true">→</span>
-                </a>
+              <a href="./achievement/"
+                class="ml-1 inline-flex items-center gap-1 whitespace-nowrap text-[#00778B] decoration-[#00778B]/40 underline-offset-2 transition hover:text-[#6519dc]">
+                View all achievements
+                <span aria-hidden="true">→</span>
+              </a>
             </p>
           </section>
 
@@ -917,15 +903,15 @@
       <div class="hidden md:flex max-w-[1000px] mx-auto px-6 lg:px-0 py-2.5
            items-center justify-between gap-6">
 
-        <span class="font-['Source_Sans_3'] text-[14px] font-normal leading-5 text-slate-500">
+        <span class="font-['Source_Sans_3'] text-[14.5px] font-normal leading-5 text-slate-500">
           © 2026
           <span class="transition-colors hover:text-[#A51C30]">
             Nazmul Huda Badhon
-          </span>.
+          </span>
         </span>
 
-        <span class="font-['Source_Sans_3'] text-[14px] font-normal leading-5 text-slate-500">
-          All Rights Reserved.
+        <span class="font-['Source_Sans_3'] text-[14.5px] font-normal leading-5 text-slate-500">
+          All Rights Reserved
         </span>
       </div>
 

@@ -5,23 +5,30 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CV Viewer</title>
+
     <style>
         html,
         body {
-            margin: 0;
+            width: 100%;
             height: 100%;
+            margin: 0;
+            overflow: hidden;
         }
 
         iframe {
-            width: 100vw;
-            height: 100vh;
+            display: block;
+            width: 100%;
+            height: 100%;
             border: 0;
         }
     </style>
 </head>
 
 <body>
-    <iframe src="/pdfs/CV_Nazmul_Huda_Badhon.pdf" title="CV"></iframe>
+    <iframe
+        src="../pdfs/CV_Nazmul_Huda_Badhon.pdf"
+        title="Curriculum vitae of Nazmul Huda Badhon">
+    </iframe>
 </body>
 
 </html>

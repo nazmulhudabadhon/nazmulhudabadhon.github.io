@@ -32,7 +32,7 @@
     <!-- ===== DESKTOP TOP NAVBAR ===== -->
     <header class="desktop-header hidden lg:block">
         <div class="desktop-header__inner">
-            <a href="./" class="desktop-brand" aria-label="Nazmul Huda Badhon home">
+            <a href="../" class="desktop-brand" aria-label="Nazmul Huda Badhon home">
                 Nazmul Huda Badhon
             </a>
 
@@ -65,7 +65,7 @@
                     NAZMUL HUDA BADHON
                 </span>
                 <p class="text-left text-xs text-slate-500 tracking-wide">
-                    BSc Graduate | Deep Learning Research
+                    CS Graduate | Deep Learning Researcher
                 </p>
             </div>
             <button id="mobileMenuBtn" class="text-[#06142A] text-2xl focus:outline-none" aria-label="Toggle menu">
@@ -83,7 +83,7 @@
             <a href="../projects/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">PROJECTS</a><br><br>
             <a href="../achievement/"
                 class="py-2 border-b border-white/10 hover:text-[#E3872D]">ACHIEVEMENTS</a><br><br>
-            <a href="../resume/" class="py-2 border-b border-white/10 hover:text-[#E3872D]" target="_blank"
+            <a href="../resume/cv-viewer.html" class="py-2 border-b border-white/10 hover:text-[#E3872D]" target="_blank"
                 rel="noopener">CV</a>
         </nav>
     </header>
@@ -110,329 +110,329 @@
                 </div>
 
                 <!-- PROJECT LIST -->
-                <div class="project-list">
+                <div class="project-list reveal reveal-left">
 
                     <!-- PROJECT 01 -->
-                    <article class="proj-card reveal reveal-left">
+                    <article class="proj-card">
 
                         <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px] gap-6 lg:gap-8 items-start">
 
                             <!-- PROJECT CONTENT -->
-                            <div class="min-w-0">
+                            <div class="min-w-0 publication-card-content"">
 
                                 <!-- BADGES -->
-                                <div class="flex flex-wrap items-center gap-2">
+                                <div class=" flex flex-wrap items-center gap-2">
 
-                                    <span
-                                        class="inline-flex items-center rounded-sm bg-slate-100 px-2 py-1 text-[11px] font-semibold text-slate-600">
-                                        Medical Imaging
-                                    </span>
+                                <span
+                                    class="inline-flex items-center px-2 py-1 rounded-sm bg-slate-100 text-slate-600 text-xs font-semibold">
+                                    Medical Imaging
+                                </span>
 
-                                    <span
-                                        class="inline-flex items-center rounded-sm bg-cyan-100 px-2 py-1 text-[11px] font-semibold text-cyan-800">
-                                        Segmentation
-                                    </span>
+                                <span
+                                    class="inline-flex items-center rounded-sm bg-cyan-100 px-2 py-1 text-[11px] font-semibold text-cyan-800">
+                                    Segmentation
+                                </span>
 
-                                    <span
-                                        class="inline-flex items-center rounded-sm bg-violet-100 px-2 py-1 text-[11px] font-semibold text-violet-800">
-                                        Hybrid Model
-                                    </span>
+                                <span
+                                    class="inline-flex items-center rounded-sm bg-violet-100 px-2 py-1 text-[11px] font-semibold text-violet-800">
+                                    Hybrid Model
+                                </span>
 
-                                </div>
-
-                                <!-- TITLE -->
-                                <div class="achievement-title">
-                                    Breast Cancer Segmentation-Guided Hybrid
-                                    Classification
-                                </div>
-
-                                <!-- SUMMARY -->
-                                <p class="achievement-meta-value" style="font-size: 13px;">
-                                    Breast ultrasound lesion segmentation and
-                                    classification using U-Net and fused
-                                    convolutional neural-network features.
-                                </p>
-
-                                <!-- INLINE METADATA -->
-                                <div
-                                    class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm md:text-[12px] text-gray-700">
-                                    <span>
-                                        <span class="font-semibold text-slate-500">
-                                            Dataset:
-                                        </span>
-                                        BUSI and BUSI_Corrected
-                                    </span>
-
-                                    <span>
-                                        <span class="font-semibold text-slate-500">
-                                            Methods:
-                                        </span>
-                                        U-Net · CNN feature fusion
-                                    </span>
-
-                                    <span>
-                                        <span class="font-semibold text-slate-500">
-                                            Tasks:
-                                        </span>
-                                        Segmentation · Classification
-                                    </span>
-                                </div>
-
-                                <!-- DESCRIPTION -->
-                                <p class="achievement-description" style="font-size: 13px;">
-                                    The project uses a two-stage pipeline. First,
-                                    U-Net is trained on BUSI images with ground-truth
-                                    masks to identify breast lesions. The generated
-                                    lesion regions are then used to train a hybrid
-                                    classifier for normal, benign, and malignant
-                                    classes. Evaluation includes accuracy and loss
-                                    curves, multiclass ROC analysis, a confusion
-                                    matrix, and class-level performance metrics.
-                                </p>
-
-                                <!-- ACTIONS -->
-                                <div class="mt-4 flex flex-wrap gap-3">
-                                    <a href="https://github.com/nazmulhudabadhon/Computer-Vision-and-Deep-Learning-in-Medical-Imaging/blob/9303a9f41ee4fe1e1477e76dbd2743dd810db34a/Breast_Cancer_Segmentation_and_classification.ipynb"
-                                        target="_blank" rel="noopener noreferrer" class="project-button">
-                                        <i class="fa-brands fa-github" aria-hidden="true"></i>
-                                        Code
-                                    </a>
-                                    <a href="https://www.kaggle.com/datasets/sabahesaraki/breast-ultrasound-images-dataset"
-                                        target="_blank" rel="noopener noreferrer" class="project-button">
-                                        <i class="fa-solid fa-database" aria-hidden="true"></i>
-                                        Dataset
-                                    </a>
-                                </div>
                             </div>
 
-                            <!-- PROJECT IMAGE -->
-                            <div class="w-full">
+                            <!-- TITLE -->
+                            <div class="achievement-title">
+                                Breast Cancer Segmentation-Guided Hybrid
+                                Classification
+                            </div>
 
-                                <div class="publication-figure">
-                                    <img src="../Image/breast_ultrasound_thumbnail.jpg"
-                                        alt="Breast ultrasound segmentation and hybrid classification workflow"
-                                        loading="lazy" decoding="async" width="1280" height="720"
-                                        class="h-full w-full object-contain">
-                                </div>
+                            <!-- SUMMARY -->
+                            <p class="achievement-meta-value" style="font-size: 13px;">
+                                Breast ultrasound lesion segmentation and
+                                classification using U-Net and fused
+                                convolutional neural-network features.
+                            </p>
 
+                            <!-- INLINE METADATA -->
+                            <div
+                                class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm md:text-[12px] text-gray-700">
+                                <span>
+                                    <span class="font-semibold text-slate-500">
+                                        Dataset:
+                                    </span>
+                                    BUSI and BUSI_Corrected
+                                </span>
+
+                                <span>
+                                    <span class="font-semibold text-slate-500">
+                                        Methods:
+                                    </span>
+                                    U-Net · CNN feature fusion
+                                </span>
+
+                                <span>
+                                    <span class="font-semibold text-slate-500">
+                                        Tasks:
+                                    </span>
+                                    Segmentation · Classification
+                                </span>
+                            </div>
+
+                            <!-- DESCRIPTION -->
+                            <p class="achievement-description" style="font-size: 13px;">
+                                The project uses a two-stage pipeline. First,
+                                U-Net is trained on BUSI images with ground-truth
+                                masks to identify breast lesions. The generated
+                                lesion regions are then used to train a hybrid
+                                classifier for normal, benign, and malignant
+                                classes. Evaluation includes accuracy and loss
+                                curves, multiclass ROC analysis, a confusion
+                                matrix, and class-level performance metrics.
+                            </p>
+
+                            <!-- ACTIONS -->
+                            <div class="mt-4 flex flex-wrap gap-3">
+                                <a href="https://github.com/nazmulhudabadhon/Computer-Vision-and-Deep-Learning-in-Medical-Imaging/blob/9303a9f41ee4fe1e1477e76dbd2743dd810db34a/Breast_Cancer_Segmentation_and_classification.ipynb"
+                                    target="_blank" rel="noopener noreferrer" class="project-button">
+                                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                                    Code
+                                </a>
+                                <a href="https://www.kaggle.com/datasets/sabahesaraki/breast-ultrasound-images-dataset"
+                                    target="_blank" rel="noopener noreferrer" class="project-button">
+                                    <i class="fa-solid fa-database" aria-hidden="true"></i>
+                                    Dataset
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- PROJECT IMAGE -->
+                        <div class="w-full">
+
+                            <div class="publication-figure">
+                                <img src="../Image/breast_ultrasound_thumbnail.jpg"
+                                    alt="Breast ultrasound segmentation and hybrid classification workflow"
+                                    loading="lazy" decoding="async" width="1280" height="720"
+                                    class="h-full w-full object-contain">
                             </div>
 
                         </div>
-
-                    </article>
-
-                    <!-- PROJECT 02 -->
-                    <article class="proj-card reveal reveal-right">
-
-                        <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px] gap-6 lg:gap-8 items-start">
-
-                            <!-- PROJECT CONTENT -->
-                            <div class="min-w-0">
-
-                                <!-- BADGES -->
-                                <div class="flex flex-wrap items-center gap-2">
-
-                                    <span
-                                        class="inline-flex items-center rounded-sm bg-slate-100 px-2 py-1 text-[11px] font-semibold text-slate-600">
-                                        Computer Vision
-                                    </span>
-
-                                    <span
-                                        class="inline-flex items-center rounded-sm bg-sky-100 px-2 py-1 text-[11px] font-semibold text-sky-800">
-                                        Transfer Learning
-                                    </span>
-
-                                    <span
-                                        class="inline-flex items-center rounded-sm bg-emerald-100 px-2 py-1 text-[11px] font-semibold text-emerald-800">
-                                        Ablation Study
-                                    </span>
-
-                                </div>
-
-                                <!-- TITLE -->
-                                <div class="achievement-title">
-                                    Lung–Colon Histopathology Classification with
-                                    Image Enhancement and Transfer Learning
-                                </div>
-
-                                <!-- SUMMARY -->
-                                <p class="achievement-meta-value" style="font-size: 13px;">
-                                    Evaluation of preprocessing and
-                                    transfer-learning architectures for lung and
-                                    colon histopathology classification.
-                                </p>
-
-                                <!-- INLINE METADATA -->
-                                <div
-                                    class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm md:text-[12px] text-gray-700">
-                                    <span>
-                                        <span class="font-semibold text-slate-500">
-                                            Dataset:
-                                        </span>
-                                        Lung–Colon Histopathology
-                                    </span>
-
-                                    <span>
-                                        <span class="font-semibold text-slate-500">
-                                            Models:
-                                        </span>
-                                        CNNs · ViT-B/16
-                                    </span>
-
-                                    <span>
-                                        <span class="font-semibold text-slate-500">
-                                            Evaluation:
-                                        </span>
-                                        Accuracy · F1 · SSIM · PSNR
-                                    </span>
-                                </div>
-
-                                <!-- DESCRIPTION -->
-                                <p class="achievement-description" style="font-size: 13px;">
-                                    Sequential image-processing methods were applied
-                                    to enhance circular nuclei and improve tissue
-                                    representation. Image quality was evaluated
-                                    through MSE, RMSE, SSIM, and PSNR. Five
-                                    transfer-learning architectures—ResNet50,
-                                    DenseNet121, EfficientNet-B0, MobileNetV3, and
-                                    ViT-B/16—were compared using accuracy and
-                                    F1-score, followed by an ablation study of the
-                                    preprocessing workflow.
-                                </p>
-
-                                <!-- ACTIONS -->
-                                <div class="mt-4 flex flex-wrap gap-3">
-                                    <a href="https://github.com/nazmulhudabadhon/Computer-Vision-and-Deep-Learning-in-Medical-Imaging/blob/a024c4d66ebfc31581006f1932921234cc33c346/Lung%E2%80%93Colon%20Histopathology%3A%20Image%20Enhancement%20%26%20Transfer%20Learning.ipynb"
-                                        target="_blank" rel="noopener noreferrer" class="project-button">
-                                        <i class="fa-brands fa-github" aria-hidden="true"></i>
-                                        Code
-                                    </a>
-                                </div>
-
-                            </div>
-
-                            <!-- PROJECT IMAGE -->
-                            <div class="w-full">
-
-                                <div class="publication-figure">
-                                    <img src="../Image/lc_histopathology_thumbnail.jpg"
-                                        alt="Lung and colon histopathology image-enhancement and transfer-learning workflow"
-                                        loading="lazy" decoding="async" width="1280" height="720"
-                                        class="h-full w-full object-contain">
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-                    <!-- PROJECT 03 -->
-                    <article class="proj-card reveal reveal-left">
-
-                        <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px] gap-6 lg:gap-8 items-start">
-
-                            <!-- PROJECT CONTENT -->
-                            <div class="min-w-0">
-
-                                <!-- BADGES -->
-                                <div class="flex flex-wrap items-center gap-2">
-
-                                    <span
-                                        class="inline-flex items-center rounded-sm bg-slate-100 px-2 py-1 text-[11px] font-semibold text-slate-600">
-                                        Medical Imaging
-                                    </span>
-
-                                    <span
-                                        class="inline-flex items-center rounded-sm bg-violet-100 px-2 py-1 text-[11px] font-semibold text-violet-800">
-                                        Vision Transformer
-                                    </span>
-
-                                    <span
-                                        class="inline-flex items-center rounded-sm bg-cyan-100 px-2 py-1 text-[11px] font-semibold text-cyan-800">
-                                        Image Processing
-                                    </span>
-
-                                </div>
-
-                                <!-- TITLE -->
-                                <div class="achievement-title">
-                                    Medical Image Quality Enhancement and
-                                    Classification with Vision Transformers
-                                </div>
-
-                                <!-- SUMMARY -->
-                                <p class="achievement-meta-value" style="font-size: 13px;">
-                                    Analysis of image-enhancement pipelines and
-                                    Vision Transformer classification for medical
-                                    imaging experiments.
-                                </p>
-
-                                <!-- INLINE METADATA -->
-                                <div
-                                    class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm md:text-[12px] text-gray-700">
-                                    <span>
-                                        <span class="font-semibold text-slate-500">
-                                            Domain:
-                                        </span>
-                                        Medical image analysis
-                                    </span>
-
-                                    <span>
-                                        <span class="font-semibold text-slate-500">
-                                            Model:
-                                        </span>
-                                        Vision Transformer
-                                    </span>
-
-                                    <span>
-                                        <span class="font-semibold text-slate-500">
-                                            Result:
-                                        </span>
-                                        87% testing accuracy
-                                    </span>
-                                </div>
-
-                                <!-- DESCRIPTION -->
-                                <p class="achievement-description" style="font-size: 13px;">
-                                    The workflow applies sequential preprocessing
-                                    and quality-enhancement methods before
-                                    classification with a Vision Transformer. Image
-                                    quality and model performance are evaluated
-                                    across the processing stages. The final
-                                    experiment achieved 87% testing accuracy,
-                                    indicating that carefully selected preprocessing
-                                    methods can improve transformer-based medical
-                                    image classification.
-                                </p>
-
-                                <!-- ACTIONS -->
-                                <div class="mt-4 flex flex-wrap gap-3">
-                                    <a href="https://github.com/nazmulhudabadhon/Computer-Vision-and-Deep-Learning-in-Medical-Imaging/blob/a024c4d66ebfc31581006f1932921234cc33c346/Image%20Preprocessing%20and%20Quality%20Analysis%20with%20Vision%20Transformer-ViT.ipynb"
-                                        target="_blank" rel="noopener noreferrer" class="project-button">
-                                        <i class="fa-brands fa-github" aria-hidden="true"></i>
-                                        Code
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- PROJECT IMAGE -->
-                            <div class="w-full">
-
-                                <div class="publication-figure">
-                                    <img src="../Image/vit_thumbnail.jpg"
-                                        alt="Medical image preprocessing and Vision Transformer classification workflow"
-                                        loading="lazy" decoding="async" width="1280" height="720"
-                                        class="h-full w-full object-contain">
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </article>
 
                 </div>
+
+                </article>
+
+                <!-- PROJECT 02 -->
+                <article class="proj-card">
+
+                    <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px] gap-6 lg:gap-8 items-start">
+
+                        <!-- PROJECT CONTENT -->
+                        <div class="min-w-0">
+
+                            <!-- BADGES -->
+                            <div class="flex flex-wrap items-center gap-2">
+
+                                <span
+                                    class="inline-flex items-center rounded-sm bg-slate-100 px-2 py-1 text-[11px] font-semibold text-slate-600">
+                                    Computer Vision
+                                </span>
+
+                                <span
+                                    class="inline-flex items-center rounded-sm bg-sky-100 px-2 py-1 text-[11px] font-semibold text-sky-800">
+                                    Transfer Learning
+                                </span>
+
+                                <span
+                                    class="inline-flex items-center rounded-sm bg-emerald-100 px-2 py-1 text-[11px] font-semibold text-emerald-800">
+                                    Ablation Study
+                                </span>
+
+                            </div>
+
+                            <!-- TITLE -->
+                            <div class="achievement-title">
+                                Lung–Colon Histopathology Classification with
+                                Image Enhancement and Transfer Learning
+                            </div>
+
+                            <!-- SUMMARY -->
+                            <p class="achievement-meta-value" style="font-size: 13px;">
+                                Evaluation of preprocessing and
+                                transfer-learning architectures for lung and
+                                colon histopathology classification.
+                            </p>
+
+                            <!-- INLINE METADATA -->
+                            <div
+                                class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm md:text-[12px] text-gray-700">
+                                <span>
+                                    <span class="font-semibold text-slate-500">
+                                        Dataset:
+                                    </span>
+                                    Lung–Colon Histopathology
+                                </span>
+
+                                <span>
+                                    <span class="font-semibold text-slate-500">
+                                        Models:
+                                    </span>
+                                    CNNs · ViT-B/16
+                                </span>
+
+                                <span>
+                                    <span class="font-semibold text-slate-500">
+                                        Evaluation:
+                                    </span>
+                                    Accuracy · F1 · SSIM · PSNR
+                                </span>
+                            </div>
+
+                            <!-- DESCRIPTION -->
+                            <p class="achievement-description" style="font-size: 13px;">
+                                Sequential image-processing methods were applied
+                                to enhance circular nuclei and improve tissue
+                                representation. Image quality was evaluated
+                                through MSE, RMSE, SSIM, and PSNR. Five
+                                transfer-learning architectures—ResNet50,
+                                DenseNet121, EfficientNet-B0, MobileNetV3, and
+                                ViT-B/16—were compared using accuracy and
+                                F1-score, followed by an ablation study of the
+                                preprocessing workflow.
+                            </p>
+
+                            <!-- ACTIONS -->
+                            <div class="mt-4 flex flex-wrap gap-3">
+                                <a href="https://github.com/nazmulhudabadhon/Computer-Vision-and-Deep-Learning-in-Medical-Imaging/blob/a024c4d66ebfc31581006f1932921234cc33c346/Lung%E2%80%93Colon%20Histopathology%3A%20Image%20Enhancement%20%26%20Transfer%20Learning.ipynb"
+                                    target="_blank" rel="noopener noreferrer" class="project-button">
+                                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                                    Code
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <!-- PROJECT IMAGE -->
+                        <div class="w-full">
+
+                            <div class="publication-figure">
+                                <img src="../Image/lc_histopathology_thumbnail.jpg"
+                                    alt="Lung and colon histopathology image-enhancement and transfer-learning workflow"
+                                    loading="lazy" decoding="async" width="1280" height="720"
+                                    class="h-full w-full object-contain">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- PROJECT 03 -->
+                <article class="proj-card">
+
+                    <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px] gap-6 lg:gap-8 items-start">
+
+                        <!-- PROJECT CONTENT -->
+                        <div class="min-w-0">
+
+                            <!-- BADGES -->
+                            <div class="flex flex-wrap items-center gap-2">
+
+                                <span
+                                    class="inline-flex items-center rounded-sm bg-slate-100 px-2 py-1 text-[11px] font-semibold text-slate-600">
+                                    Medical Imaging
+                                </span>
+
+                                <span
+                                    class="inline-flex items-center rounded-sm bg-violet-100 px-2 py-1 text-[11px] font-semibold text-violet-800">
+                                    Vision Transformer
+                                </span>
+
+                                <span
+                                    class="inline-flex items-center rounded-sm bg-cyan-100 px-2 py-1 text-[11px] font-semibold text-cyan-800">
+                                    Image Processing
+                                </span>
+
+                            </div>
+
+                            <!-- TITLE -->
+                            <div class="achievement-title">
+                                Medical Image Quality Enhancement and
+                                Classification with Vision Transformers
+                            </div>
+
+                            <!-- SUMMARY -->
+                            <p class="achievement-meta-value" style="font-size: 13px;">
+                                Analysis of image-enhancement pipelines and
+                                Vision Transformer classification for medical
+                                imaging experiments.
+                            </p>
+
+                            <!-- INLINE METADATA -->
+                            <div
+                                class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm md:text-[12px] text-gray-700">
+                                <span>
+                                    <span class="font-semibold text-slate-500">
+                                        Domain:
+                                    </span>
+                                    Medical image analysis
+                                </span>
+
+                                <span>
+                                    <span class="font-semibold text-slate-500">
+                                        Model:
+                                    </span>
+                                    Vision Transformer
+                                </span>
+
+                                <span>
+                                    <span class="font-semibold text-slate-500">
+                                        Result:
+                                    </span>
+                                    87% testing accuracy
+                                </span>
+                            </div>
+
+                            <!-- DESCRIPTION -->
+                            <p class="achievement-description" style="font-size: 13px;">
+                                The workflow applies sequential preprocessing
+                                and quality-enhancement methods before
+                                classification with a Vision Transformer. Image
+                                quality and model performance are evaluated
+                                across the processing stages. The final
+                                experiment achieved 87% testing accuracy,
+                                indicating that carefully selected preprocessing
+                                methods can improve transformer-based medical
+                                image classification.
+                            </p>
+
+                            <!-- ACTIONS -->
+                            <div class="mt-4 flex flex-wrap gap-3">
+                                <a href="https://github.com/nazmulhudabadhon/Computer-Vision-and-Deep-Learning-in-Medical-Imaging/blob/a024c4d66ebfc31581006f1932921234cc33c346/Image%20Preprocessing%20and%20Quality%20Analysis%20with%20Vision%20Transformer-ViT.ipynb"
+                                    target="_blank" rel="noopener noreferrer" class="project-button">
+                                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                                    Code
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- PROJECT IMAGE -->
+                        <div class="w-full">
+
+                            <div class="publication-figure">
+                                <img src="../Image/vit_thumbnail.jpg"
+                                    alt="Medical image preprocessing and Vision Transformer classification workflow"
+                                    loading="lazy" decoding="async" width="1280" height="720"
+                                    class="h-full w-full object-contain">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
 
             </div>
 
@@ -441,30 +441,35 @@
     </main>
 
     <!-- FOOTER -->
-    <footer id="sitefooter" class="w-full border-t border-slate-200 bg-white">
-
+    <!-- COPYRIGHT FOOTER -->
+    <footer id="sitefooter" class="w-full border-t border-[#D8D6CF]">
         <!-- Desktop footer -->
-        <div class="hidden md:flex max-w-7xl mx-auto px-6 md:px-12 py-3 items-center justify-between">
-            <span class="text-sm text-slate-500 tracking-wide">
-                © 2026 Nazmul Huda Badhon.
+        <div class="hidden md:flex max-w-[1000px] mx-auto px-6 lg:px-0 py-2.5
+            items-center justify-between gap-6">
+
+            <span class="font-['Source_Sans_3'] text-[14px] font-normal leading-5 text-slate-500">
+                © 2026
+                <span class="transition-colors hover:text-[#A51C30]">
+                    Nazmul Huda Badhon
+                </span>
             </span>
 
-            <span class="text-sm text-slate-500 tracking-wide">
-                All Rights Reserved.
+            <span class="font-['Source_Sans_3'] text-[14px] font-normal leading-5 text-slate-500">
+                All Rights Reserved
             </span>
         </div>
 
         <!-- Mobile footer -->
-        <div class="md:hidden max-w-7xl mx-auto px-6 py-3 text-center">
-            <span class="text-sm text-[#06142A] tracking-wide">
+        <div class="md:hidden max-w-[1000px] mx-auto px-6 py-3 text-center">
+
+            <span class="font-['Source_Sans_3'] text-[12px] font-normal leading-5 text-slate-500">
                 © 2026
-                <span class="hover:text-[#87CEEB] transition">
+                <span class="transition-colors hover:text-[#A51C30]">
                     Nazmul Huda Badhon
                 </span>.
                 All Rights Reserved.
             </span>
         </div>
-
     </footer>
 
     <!-- BACK TO TOP -->

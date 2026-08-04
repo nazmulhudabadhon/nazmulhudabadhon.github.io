@@ -56,48 +56,24 @@
         </div>
     </header>
 
-    <!-- Mobile header (phones only) -->
-    <header id="mobileHeader" class="lg:hidden sticky top-0 z-50 text-[#06142A] w-full">
-        <div class="flex items-center justify-between px-4 py-3">
-            <!-- LEFT TEXT BLOCK -->
-            <div class="flex flex-col">
-                <span class="text-slate-900 tracking-wide ">
-                    NAZMUL HUDA BADHON
-                </span>
-                <p class="text-left text-xs text-slate-500 tracking-wide">
-                    CS Graduate | Deep Learning Researcher
-                </p>
-            </div>
-            <button id="mobileMenuBtn" class="text-[#06142A] text-2xl focus:outline-none" aria-label="Toggle menu">
-                <i class="fa-solid fa-bars" id="menuOpenIcon"></i>
-                <i class="fa-solid fa-xmark hidden" id="menuCloseIcon"></i>
-            </button>
+    <!-- Mobile top header -->
+    <header class="mobile-topbar lg:hidden">
+        <a href="./" class="mobile-topbar__brand">
+            <span class="mobile-topbar__name">Nazmul Huda Badhon</span>
+        </a>
 
-        </div>
-
-        <!-- Collapsible nav (hidden by default, header remains visible) -->
-        <nav id="mobileMenu" class="hidden flex-col gap-2 px-4 pb-4 text-slate-900 font-medium">
-            <br>
-            <a href="../" class="py-2 border-b border-white/10 hover:text-[#E3872D]">HOME</a><br><br>
-            <a href="./" class="py-2 border-b border-white/10 hover:text-[#E3872D]">PUBLICATIONS</a><br><br>
-            <a href="../projects/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">PROJECTS</a><br><br>
-            <a href="../achievement/"
-                class="py-2 border-b border-white/10 hover:text-[#E3872D]">ACHIEVEMENTS</a><br><br>
-            <a href="../resume/cv-viewer.html" class="py-2 border-b border-white/10 hover:text-[#E3872D]" target="_blank"
-                rel="noopener">CV</a>
-        </nav>
+        <button id="mobileThemeToggle" class="mobile-topbar__theme" type="button" aria-label="Switch theme"
+            aria-pressed="false">
+            <i class="fa-regular fa-sun" aria-hidden="true"></i>
+        </button>
     </header>
 
     <!-- MAIN CONTENT -->
     <main>
-
         <section class="w-full bg-[var(--page-bg)]">
-
             <div class="w-full max-w-[1000px] mx-auto px-6 lg:px-0 pt-6 pb-10">
-
                 <!-- PAGE HEADING -->
                 <div class="projects-page-heading">
-
                     <span
                         class="font-['Source_Sans_3'] text-[15.5px] font-medium leading-[1.72] lg:leading-[1.45] sm:text-[16px] text-[#A51C30]">
                         Projects
@@ -425,22 +401,43 @@
                                     loading="lazy" decoding="async" width="1280" height="720"
                                     class="h-full w-full object-contain">
                             </div>
-
                         </div>
-
                     </div>
-
                 </article>
-
             </div>
-
-            </div>
-
         </section>
-
     </main>
 
-    <!-- FOOTER -->
+    <!-- Mobile bottom navigation -->
+    <nav class="mobile-bottom-nav lg:hidden" aria-label="Mobile navigation">
+
+        <a href="../" class="mobile-bottom-nav__link is-active" aria-current="page">
+            <i class="fa-regular fa-house" aria-hidden="true"></i>
+            <span>Home</span>
+        </a>
+
+        <a href="../research/" class="mobile-bottom-nav__link">
+            <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
+            <span>Papers</span>
+        </a>
+
+        <a href="./" class="mobile-bottom-nav__link">
+            <i class="fa-regular fa-folder-open" aria-hidden="true"></i>
+            <span>Projects</span>
+        </a>
+
+        <a href="../achievement/" class="mobile-bottom-nav__link">
+            <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+            <span>Awards</span>
+        </a>
+
+        <a href="../resume/cv-viewer.html" target="_blank" rel="noopener noreferrer" class="mobile-bottom-nav__link">
+            <i class="fa-regular fa-id-card" aria-hidden="true"></i>
+            <span>CV</span>
+        </a>
+
+    </nav>
+
     <!-- COPYRIGHT FOOTER -->
     <footer id="sitefooter" class="w-full border-t border-[#D8D6CF]">
         <!-- Desktop footer -->

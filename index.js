@@ -17,54 +17,52 @@
 })();
 
 // 2. Connect the button after HTML loads
-	document.addEventListener("DOMContentLoaded", function () {
-      const themeToggle = document.getElementById("themeToggle");
-      if (!themeToggle) return;
+document.addEventListener("DOMContentLoaded", function () {
+    const themeButtons = document.querySelectorAll(
+        "#themeToggle, #mobileThemeToggle"
+    );
 
-      const root = document.documentElement;
-      const icon = themeToggle.querySelector("i");
+    if (!themeButtons.length) return;
 
-      function setTheme(theme, save) {
+    const root = document.documentElement;
+
+    function updateThemeButtons(theme) {
         const isDark = theme === "dark";
 
-        root.dataset.theme = theme;
-        root.style.colorScheme = theme;
+        themeButtons.forEach(function (button) {
+            const icon = button.querySelector("i");
 
-        themeToggle.setAttribute("aria-pressed", String(isDark));
-        themeToggle.setAttribute(
-          "aria-label",
-          isDark ? "Switch to light mode" : "Switch to dark mode"
-        );
-        themeToggle.setAttribute(
-          "title",
-          isDark ? "Switch to light mode" : "Switch to dark mode"
-        );
+            button.setAttribute("aria-pressed", String(isDark));
+            button.setAttribute(
+                "aria-label",
+                isDark ? "Switch to light mode" : "Switch to dark mode"
+            );
 
-        if (icon) {
-          icon.className = isDark
-            ? "fa-regular fa-sun"
-            : "fa-regular fa-moon";
-        }
+            if (icon) {
+                icon.className = isDark
+                    ? "fa-regular fa-sun"
+                    : "fa-regular fa-moon";
+            }
+        });
+    }
 
-        const themeMeta = document.querySelector('meta[name="theme-color"]');
-        if (themeMeta) {
-          themeMeta.setAttribute("content", isDark ? "#111318" : "#fbf9f6");
-        }
+    updateThemeButtons(
+        root.dataset.theme === "dark" ? "dark" : "light"
+    );
 
-        if (save) {
-          localStorage.setItem("site-theme", theme);
-        }
-      }
+    themeButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            const nextTheme =
+                root.dataset.theme === "dark" ? "light" : "dark";
 
-      setTheme(root.dataset.theme === "dark" ? "dark" : "light", false);
+            root.dataset.theme = nextTheme;
+            root.style.colorScheme = nextTheme;
 
-      themeToggle.addEventListener("click", function () {
-        const nextTheme =
-          root.dataset.theme === "dark" ? "light" : "dark";
-
-        setTheme(nextTheme, true);
-      });
+            localStorage.setItem("site-theme", nextTheme);
+            updateThemeButtons(nextTheme);
+        });
     });
+});
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("[id]").forEach((el) => {

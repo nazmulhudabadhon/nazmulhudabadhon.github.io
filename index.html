@@ -111,36 +111,18 @@
     </div>
   </header>
 
-  <!-- Mobile header (phones only) -->
-  <header id="mobileHeader" class="lg:hidden sticky top-0 z-50 text-[#06142A] w-full">
-    <div class="flex items-center justify-between px-4 py-3">
-      <!-- LEFT TEXT BLOCK -->
-      <div class="flex flex-col">
-        <span class="text-slate-900 tracking-wide ">
-          NAZMUL HUDA BADHON
-        </span>
-        <p class="text-left text-xs text-slate-500 tracking-wide">
-          CS Graduate | Deep Learning Researcher
-        </p>
-      </div>
-      <button id="mobileMenuBtn" class="text-[#06142A] text-2xl focus:outline-none" aria-label="Toggle menu">
-        <i class="fa-solid fa-bars" id="menuOpenIcon"></i>
-        <i class="fa-solid fa-xmark hidden" id="menuCloseIcon"></i>
-      </button>
+  <!-- Mobile top header -->
+  <header class="mobile-topbar lg:hidden">
+    <a href="./" class="mobile-topbar__brand">
+      <span class="mobile-topbar__name">Nazmul Huda Badhon</span>
+    </a>
 
-    </div>
-
-    <!-- Collapsible nav (hidden by default, header remains visible) -->
-    <nav id="mobileMenu" class="hidden flex-col gap-2 px-4 pb-4 text-slate-900 font-medium">
-      <br>
-      <a href="./" class="py-2 border-b border-white/10 hover:text-[#E3872D]">HOME</a><br><br>
-      <a href="./research/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">PUBLICATIONS</a><br><br>
-      <!-- <a href="./projects/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">PROJECTS</a><br><br>-->
-      <a href="./achievement/" class="py-2 border-b border-white/10 hover:text-[#E3872D]">ACHIEVEMENTS</a><br><br>
-      <a href="./resume/cv-viewer.html" class="py-2 border-b border-white/10 hover:text-[#E3872D]" target="_blank"
-        rel="noopener">CV</a>
-    </nav>
+    <button id="mobileThemeToggle" class="mobile-topbar__theme" type="button" aria-label="Switch theme"
+      aria-pressed="false">
+      <i class="fa-regular fa-sun" aria-hidden="true"></i>
+    </button>
   </header>
+
 
   <!-- ===== MAIN CONTENT ===== -->
   <main id="main-content">
@@ -156,7 +138,7 @@
             class="mx-auto grid w-full max-w-[1000px] grid-cols-1 items-start gap-9 px-6 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-14 lg:px-0">
 
             <!-- Main introduction -->
-            <div class="order-2 min-w-0 lg:order-1">
+            <div class="order-1 min-w-0 lg:order-1">
 
               <!-- Affiliation -->
               <p
@@ -168,7 +150,7 @@
 
               <!-- Name -->
               <h1
-                class="mb-0 mt-3 font-['Source_Serif_4'] text-[32px] leading-[1.18] tracking-[-0.015em] sm:text-[30px] lg:text-[24px]">
+                class="mb-0 mt-3 font-['Source_Serif_4'] text-[28px] max-[430px]:text-[26px] leading-[1.18] tracking-[-0.015em] lg:text-[24px]">
                 Nazmul Huda Badhon
               </h1>
 
@@ -178,9 +160,35 @@
                 Deep Learning Researcher
               </p>
 
+              <!-- Mobile-only wrapped profile section -->
+              <div class="mobile-research-wrap lg:hidden">
+
+                <img src="./Image/badhonn.jpg" alt="Nazmul Huda Badhon" class="mobile-research-photo">
+
+                <p class="mobile-research-text">
+                  My research focuses on
+
+                  <span class="text-[#A51C30]">
+                    lightweight deep learning, sensor-based machine learning and
+                    artificial intelligence for healthcare.
+                  </span>
+
+                  My undergraduate thesis focused on developing a lightweight
+                  convolutional neural network for tabular data-based energy-demand
+                  prediction under the supervision of Associate Professor
+
+                  <a href="https://scholar.google.com/citations?user=mC0VMYQAAAAJ&hl=en" target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-normal text-[#00778B] underline decoration-[#00778B]/40 underline-offset-2 transition-colors hover:text-[#6519dc] hover:decoration-[#6519dc]">
+                    Nazmun Nessa Moon.
+                  </a>
+                </p>
+
+              </div>
+
               <!-- Research introduction -->
               <p
-                class="mb-0 mt-6 text-left font-['Source_Sans_3'] text-[15.5px] font-normal leading-[1.72] lg:leading-[1.45] text-slate-700 sm:text-[16px]">
+                class="hidden lg:block mb-0 mt-6 text-left font-['Source_Sans_3'] text-[15.5px] font-normal leading-[1.72] lg:leading-[1.45] text-slate-700 sm:text-[16px]">
                 My research focuses on
 
                 <span class="text-[#A51C30]">
@@ -256,18 +264,17 @@
 
               <!-- Update metadata -->
               <p
-                class="mb-0 mt-2 text-right font-['Source_Sans_3'] text-[12px] font-normal leading-5 text-slate-400 sm:text-[13px]">
+                class="mb-0 mt-2 text-right font-['Source_Sans_3'] text-[12px] font-normal leading-5 text-slate-400 sm:text-[13px] lg:mb-0">
                 Last updated: 2026-08-04
               </p>
 
             </div>
 
             <!-- Portrait and profile links -->
-            <aside class="order-1 w-full lg:order-2" aria-label="Profile photograph and academic links">
-
+            <aside class="hidden lg:block lg:order-2 lg:w-full" aria-label="Profile photograph and academic links">
               <!-- Portrait -->
               <div
-                class="mx-auto w-[170px] overflow-hidden rounded-md border border-[#D8D6CF] bg-[#F4F1EA] sm:w-[180px] lg:ml-auto lg:mr-0 lg:w-[190px]">
+                class="hidden lg:block mx-auto w-[170px] overflow-hidden rounded-md border border-[#D8D6CF] bg-[#F4F1EA] sm:w-[180px] lg:ml-auto lg:mr-0 lg:w-[190px]">
 
                 <img src="./Image/badhonn.jpg"
                   alt="Nazmul Huda Badhon – Graduate | Research in Deep Learning and Computer Vision" width="600"
@@ -276,7 +283,8 @@
               </div>
 
               <!-- Institutional information -->
-              <div class="mx-auto mt-4 w-full max-w-[300px] text-center lg:ml-auto lg:mr-0 lg:w-[190px] lg:text-right">
+              <div
+                class="hidden lg:block mx-auto mt-4 w-full max-w-[300px] text-center lg:ml-auto lg:mr-0 lg:w-[190px] lg:text-right">
 
                 <p
                   class="m-0 text-center font-['Source_Sans_3'] text-[13px] font-normal leading-[1.55] text-slate-600 sm:text-[14px] lg:text-right">
@@ -288,7 +296,7 @@
 
               <!-- Academic and professional links -->
               <nav
-                class="academic-profile-links mx-auto mt-4 flex w-full max-w-[340px] flex-col border-[#D8D6CF] py-3.5 lg:ml-auto lg:mr-0 lg:w-[280px] lg:max-w-[280px]"
+                class="hidden lg:block mx-auto mt-4 flex w-full max-w-[340px] flex-col border-[#D8D6CF] py-3.5 lg:ml-auto lg:mr-0 lg:w-[280px] lg:max-w-[280px]"
                 aria-label="Academic profiles">
 
                 <!-- Email -->
@@ -349,13 +357,6 @@
                   <img src="./Image/linkedin.png" alt="" aria-hidden="true" width="18" height="18" loading="lazy"
                     decoding="async" class="h-[18px] w-[18px] shrink-0 object-contain" />
                 </a>
-
-                <!-- Mobile CV -->
-                <a href="./resume/cv-viewer.html" target="_blank" rel="noopener noreferrer" aria-label="View CV"
-                  class="mobile-social-cv">
-                  <span>CV</span>
-                </a>
-
               </nav>
             </aside>
 
@@ -363,7 +364,7 @@
           <!-- End homepage introduction -->
 
           <!-- Academic profile -->
-          <section class="mt-0 w-full max-w-[1000px] mx-auto px-6 lg:pt-3 lg:px-0" aria-labelledby="homeProfileTitle">
+          <section class="mt-0 w-full max-w-[1000px] mx-auto px-6 lg:pt-0 lg:px-0" aria-labelledby="homeProfileTitle">
 
             <div class="mb-4 flex items-end justify-between border-b border-[#D8D6CF] pb-1.5">
               <h2 id="homeProfileTitle" class="m-0 font-['Source_Sans_3'] text-[13px] sm:text-[14px]"
@@ -887,6 +888,36 @@
         </section>
       </div>
     </div>
+
+    <!-- Mobile bottom navigation -->
+    <nav class="mobile-bottom-nav lg:hidden" aria-label="Mobile navigation">
+
+      <a href="./" class="mobile-bottom-nav__link is-active" aria-current="page">
+        <i class="fa-regular fa-house" aria-hidden="true"></i>
+        <span>Home</span>
+      </a>
+
+      <a href="./research/" class="mobile-bottom-nav__link">
+        <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
+        <span>Papers</span>
+      </a>
+
+      <a href="./projects/" class="mobile-bottom-nav__link">
+        <i class="fa-regular fa-folder-open" aria-hidden="true"></i>
+        <span>Projects</span>
+      </a>
+
+      <a href="./achievement/" class="mobile-bottom-nav__link">
+        <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+        <span>Awards</span>
+      </a>
+
+      <a href="./resume/cv-viewer.html" target="_blank" rel="noopener noreferrer" class="mobile-bottom-nav__link">
+        <i class="fa-regular fa-id-card" aria-hidden="true"></i>
+        <span>CV</span>
+      </a>
+
+    </nav>
 
     <!-- COPYRIGHT FOOTER -->
     <footer id="sitefooter" class="w-full border-t border-[#D8D6CF]">

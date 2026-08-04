@@ -2572,14 +2572,14 @@ article,
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
     .academic-profile-links {
         display: flex !important;
         flex-direction: row !important;
         align-items: center !important;
         justify-content: center !important;
         flex-wrap: nowrap !important;
-        gap: 16px !important;
+        gap: 14px !important;
 
         width: 100% !important;
         max-width: none !important;
@@ -2591,15 +2591,19 @@ article,
         display: inline-flex !important;
         align-items: center !important;
         justify-content: center !important;
-        flex: 0 0 40px !important;
 
+        flex: 0 0 40px !important;
         width: 40px !important;
         min-width: 40px !important;
         height: 40px !important;
+        min-height: 40px !important;
         padding: 0 !important;
 
-        border: 1px solid var(--border);
-        border-radius: 50%;
+        border: 1px solid var(--border) !important;
+        border-radius: 50% !important;
+        background: transparent !important;
+
+        text-decoration: none !important;
     }
 
     .academic-profile-links > a > span {
@@ -2607,8 +2611,33 @@ article,
     }
 
     .academic-profile-links > a > img {
+        display: block !important;
         width: 18px !important;
         height: 18px !important;
         margin: 0 !important;
+        object-fit: contain !important;
+    }
+
+    .academic-profile-links > a.mobile-social-cv > span {
+        display: block !important;
+        margin: 0 !important;
+
+        color: var(--text-main) !important;
+        font-family: "Source Sans 3", Arial, sans-serif !important;
+        font-size: 11px !important;
+        font-weight: 700 !important;
+        line-height: 1 !important;
+        letter-spacing: 0.03em !important;
+    }
+
+    .academic-profile-links > a:hover {
+        border-color: #d6c7eb !important;
+        background: #f5f0fc !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .academic-profile-links > .mobile-social-cv {
+        display: none !important;
     }
 }

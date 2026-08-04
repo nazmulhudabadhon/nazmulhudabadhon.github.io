@@ -31,7 +31,11 @@
 
   <!-- ===== DESKTOP TOP NAVBAR ===== -->
   <header class="desktop-header hidden lg:block">
-    <div class="desktop-header__inner w-full max-w-[1000px] mx-auto px-6 lg:px-0">
+    <div class="desktop-header__inner">
+      <a href="./" class="desktop-brand" aria-label="Nazmul Huda Badhon home">
+        Nazmul Huda Badhon
+      </a>
+
       <nav class="segmented-nav" aria-label="Main navigation">
         <a href="../" class="segmented-nav__link">Home</a>
 
@@ -43,6 +47,11 @@
 
         <a href="../resume/" class="segmented-nav__link segmented-nav__link--cv">CV</a>
       </nav>
+
+        <button id="themeToggle" class="desktop-theme-toggle" type="button"
+          aria-label="Switch to dark mode" title="Switch to dark mode" aria-pressed="false">
+          <i class="fa-regular fa-moon" aria-hidden="true"></i>
+        </button>
     </div>
   </header>
 

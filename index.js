@@ -1,3 +1,71 @@
+    // 1. Read saved theme immediately
+(function () {
+    try {
+        const savedTheme = localStorage.getItem("site-theme");
+        const systemDark = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+        ).matches;
+
+        const theme = savedTheme || (systemDark ? "dark" : "light");
+
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+    } catch (error) {
+        document.documentElement.dataset.theme = "light";
+        document.documentElement.style.colorScheme = "light";
+    }
+})();
+
+// 2. Connect the button after HTML loads
+	document.addEventListener("DOMContentLoaded", function () {
+      const themeToggle = document.getElementById("themeToggle");
+      if (!themeToggle) return;
+
+      const root = document.documentElement;
+      const icon = themeToggle.querySelector("i");
+
+      function setTheme(theme, save) {
+        const isDark = theme === "dark";
+
+        root.dataset.theme = theme;
+        root.style.colorScheme = theme;
+
+        themeToggle.setAttribute("aria-pressed", String(isDark));
+        themeToggle.setAttribute(
+          "aria-label",
+          isDark ? "Switch to light mode" : "Switch to dark mode"
+        );
+        themeToggle.setAttribute(
+          "title",
+          isDark ? "Switch to light mode" : "Switch to dark mode"
+        );
+
+        if (icon) {
+          icon.className = isDark
+            ? "fa-regular fa-sun"
+            : "fa-regular fa-moon";
+        }
+
+        const themeMeta = document.querySelector('meta[name="theme-color"]');
+        if (themeMeta) {
+          themeMeta.setAttribute("content", isDark ? "#111318" : "#fbf9f6");
+        }
+
+        if (save) {
+          localStorage.setItem("site-theme", theme);
+        }
+      }
+
+      setTheme(root.dataset.theme === "dark" ? "dark" : "light", false);
+
+      themeToggle.addEventListener("click", function () {
+        const nextTheme =
+          root.dataset.theme === "dark" ? "light" : "dark";
+
+        setTheme(nextTheme, true);
+      });
+    });
+
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("[id]").forEach((el) => {
         const trimmed = (el.id || "").trim();

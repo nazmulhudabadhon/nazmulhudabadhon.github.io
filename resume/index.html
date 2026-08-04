@@ -15,145 +15,32 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap"
         rel="stylesheet">
 
+    <link rel="stylesheet" href="../style/style.css">
+
     <style>
-        :root {
-            --page-bg: #ffffff;
-            --text-main: #111827;
-            --text-muted: #566274;
-            --accent-red: #8d2638;
-            --nav-bg: rgba(246, 248, 251, 0.9);
-            --nav-active-bg: rgba(255, 255, 255, 0.88);
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        html::-webkit-scrollbar,
+        body::-webkit-scrollbar {
+            display: none;
         }
 
         *,
         *::before,
         *::after {
             box-sizing: border-box;
-        }
-
-        html,
-        body {
-            width: 100%;
-            min-height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            min-height: 100vh;
-            min-height: 100dvh;
-            background: var(--page-bg);
-            color: var(--text-main);
-            font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
-        }
-
-        .cv-page {
-            display: flex;
-            min-height: 100vh;
-            min-height: 100dvh;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        /* Desktop navigation */
-        .desktop-header {
-            display: none;
-            width: 100%;
-            flex: 0 0 auto;
-            background: #ffffff;
-        }
-
-        .desktop-header__inner {
-            width: min(calc(100% - 48px), 1000px);
-            margin-inline: auto;
-        }
-
-        .segmented-nav {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-
-            width: 100%;
-            padding: 4px;
-
-            border: 0;
-            border-radius: 12px;
-
-            background: var(--nav-bg);
-            box-shadow: none;
-        }
-
-        .segmented-nav__link {
-            position: relative;
-
-            display: flex;
-            min-width: 0;
-            min-height: 34px;
-            flex: 1 1 0;
-            align-items: center;
-            justify-content: center;
-
-            padding: 7px 16px;
-
-            border: 0;
-            border-radius: 9px;
-
-            background: transparent;
-            color: var(--text-muted);
-
-            font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
-            font-size: 15px;
-            font-weight: 500;
-            line-height: 1;
-
-            text-align: center;
-            text-decoration: none;
-            white-space: nowrap;
-
-            transition:
-                color 160ms ease,
-                background-color 160ms ease,
-                box-shadow 160ms ease,
-                transform 160ms ease;
-        }
-
-        .segmented-nav__link:hover {
-            color: #17324d;
-            background: rgba(255, 255, 255, 0.72);
-        }
-
-        .segmented-nav__link.is-active {
-            color: #17324d;
-            background: var(--nav-active-bg);
-
-            box-shadow:
-                0 1px 2px rgba(15, 23, 42, 0.035),
-                0 3px 8px rgba(15, 23, 42, 0.045);
-        }
-
-        .segmented-nav__link--cv {
-            color: var(--accent-red);
-            font-weight: 600;
-        }
-
-        .segmented-nav__link--cv.is-active {
-            color: var(--accent-red);
-            background: #f5edef;
-
-            box-shadow:
-                inset 0 0 0 1px rgba(141, 38, 56, 0.08),
-                0 2px 6px rgba(15, 23, 42, 0.04);
-        }
-
-        .segmented-nav__link:focus-visible {
-            z-index: 2;
-            outline: 2px solid rgba(0, 119, 139, 0.32);
-            outline-offset: 2px;
         }
 
         /* CV viewer */
@@ -193,25 +80,15 @@
             }
 
             .cv-frame {
-                height: calc(100vh - 42px);
-                height: calc(100dvh - 42px);
+                height: calc(100vh - 50px);
+                height: calc(100dvh - 50px);
             }
         }
+
 
         @media (max-width: 1023px) {
             .cv-viewer {
                 width: 100%;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .desktop-header__inner {
-                width: calc(100% - 24px);
-            }
-
-            .segmented-nav__link {
-                padding-inline: 10px;
-                font-size: 14px;
             }
         }
 
@@ -244,6 +121,11 @@
 
     <header class="desktop-header">
         <div class="desktop-header__inner">
+
+            <a href="../" class="desktop-brand" aria-label="Nazmul Huda Badhon home">
+                Nazmul Huda Badhon
+            </a>
+
             <nav class="segmented-nav" aria-label="Main navigation">
 
                 <a href="../" class="segmented-nav__link">
@@ -262,11 +144,14 @@
                     Achievements
                 </a>
 
-                <a href="../resume/"
-                    class="segmented-nav__link segmented-nav__link--cv is-active"
-                    aria-current="page">
+                <a href="../resume/" class="segmented-nav__link segmented-nav__link--cv is-active" aria-current="page">
                     CV
                 </a>
+
+                <button id="themeToggle" class="desktop-theme-toggle" type="button" aria-label="Switch to dark mode"
+                    title="Switch to dark mode" aria-pressed="false">
+                    <i class="fa-regular fa-moon" aria-hidden="true"></i>
+                </button>
 
             </nav>
         </div>
@@ -274,11 +159,8 @@
 
     <main id="cv-document" class="cv-viewer">
 
-        <iframe
-            class="cv-frame"
-            src="../pdfs/CV_Nazmul_Huda_Badhon.pdf#zoom=125&view=FitH"
-            title="Curriculum vitae of Nazmul Huda Badhon"
-            loading="eager">
+        <iframe class="cv-frame" src="../pdfs/CV_Nazmul_Huda_Badhon.pdf#zoom=125&view=FitH"
+            title="Curriculum vitae of Nazmul Huda Badhon" loading="eager">
 
             <p class="pdf-fallback">
                 Your browser cannot display this PDF.
@@ -300,6 +182,7 @@
 
     </main>
 
+    <script src="../index.js"></script>
 </body>
 
 </html>

@@ -34,7 +34,11 @@
 <body class="scroll-smooth">
     <!-- ===== DESKTOP TOP NAVBAR ===== -->
     <header class="desktop-header hidden lg:block">
-        <div class="desktop-header__inner w-full max-w-[1000px] mx-auto px-6 lg:px-0">
+        <div class="desktop-header__inner">
+            <a href="./" class="desktop-brand" aria-label="Nazmul Huda Badhon home">
+                Nazmul Huda Badhon
+            </a>
+
             <nav class="segmented-nav" aria-label="Main navigation">
                 <a href="../" class="segmented-nav__link">Home</a>
 
@@ -46,6 +50,11 @@
 
                 <a href="../resume/" class="segmented-nav__link segmented-nav__link--cv">CV</a>
             </nav>
+
+            <button id="themeToggle" class="desktop-theme-toggle" type="button" aria-label="Switch to dark mode"
+                title="Switch to dark mode" aria-pressed="false">
+                <i class="fa-regular fa-moon" aria-hidden="true"></i>
+            </button>
         </div>
     </header>
 
@@ -743,68 +752,67 @@
                                             </article>
                                         </div>
                                     </div>
-
-                                    <!-- RIGHT: frozen sidebar -->
-                                    <aside
-                                        class="research-sidebar hidden lg:block absolute left-full top-0 ml-10 w-[170px] reveal reveal-right">
-                                        <div class="text-sm text-slate-700">
-                                            <div class="mb-8">
-                                                <h3
-                                                    class="text-xs font-bold uppercase tracking-[0.25em] text-slate-500 mb-2">
-                                                    Jump to Year
-                                                </h3>
-                                                <div class="border-t border-slate-300 pt-3 space-y-0">
-                                                    <button type="button"
-                                                        class="year-filter flex w-full justify-between text-left"
-                                                        data-year="2026">
-                                                        <span>2026</span><span>3</span>
-                                                    </button>
-
-                                                    <button type="button"
-                                                        class="year-filter flex w-full justify-between text-left"
-                                                        data-year="2025">
-                                                        <span>2025</span><span>5</span>
-                                                    </button>
-
-                                                    <button type="button"
-                                                        class="year-filter flex w-full justify-between text-left"
-                                                        data-year="2024">
-                                                        <span>2024</span><span>1</span>
-                                                    </button>
-                                                </div>
-                                            </div>
-
-                                            <div>
-                                                <h3
-                                                    class="text-xs font-bold uppercase tracking-[0.25em] text-slate-500 mb-2">
-                                                    By Type
-                                                </h3>
-                                                <div class="border-t border-slate-300 pt-3">
-                                                    <button type="button"
-                                                        class="research-filter flex w-full justify-between text-left"
-                                                        research-type="journal">
-                                                        <span>Journal</span><span>8</span>
-                                                    </button>
-
-                                                    <button type="button"
-                                                        class="research-filter flex w-full justify-between text-left"
-                                                        research-type="book-chapter">
-                                                        <span>Book Chapter</span><span>1</span>
-                                                    </button>
-
-                                                    <button type="button"
-                                                        class="research-filter flex w-full justify-between text-left"
-                                                        research-type="">
-                                                        <span>All</span><span>9</span>
-                                                    </button>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </aside>
                                 </div>
-
                             </div>
+
+                            <!-- RIGHT: frozen sidebar -->
+                            <aside
+                                class="research-sidebar hidden lg:block sticky top-16 self-start w-[170px] reveal reveal-right">
+                                <div class="text-sm text-slate-700">
+                                    <div class="mb-8">
+                                        <h3 class="text-xs font-bold uppercase tracking-[0.25em] text-slate-500 mb-2">
+                                            Jump to Year
+                                        </h3>
+                                        <div class="border-t border-slate-300 pt-3 space-y-0">
+                                            <button type="button"
+                                                class="year-filter flex w-full justify-between text-left"
+                                                data-year="2026">
+                                                <span>2026</span><span>3</span>
+                                            </button>
+
+                                            <button type="button"
+                                                class="year-filter flex w-full justify-between text-left"
+                                                data-year="2025">
+                                                <span>2025</span><span>5</span>
+                                            </button>
+
+                                            <button type="button"
+                                                class="year-filter flex w-full justify-between text-left"
+                                                data-year="2024">
+                                                <span>2024</span><span>1</span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h3 class="text-xs font-bold uppercase tracking-[0.25em] text-slate-500 mb-2">
+                                            By Type
+                                        </h3>
+                                        <div class="border-t border-slate-300 pt-3">
+                                            <button type="button"
+                                                class="research-filter flex w-full justify-between text-left"
+                                                research-type="journal">
+                                                <span>Journal</span><span>8</span>
+                                            </button>
+
+                                            <button type="button"
+                                                class="research-filter flex w-full justify-between text-left"
+                                                research-type="book-chapter">
+                                                <span>Book Chapter</span><span>1</span>
+                                            </button>
+
+                                            <button type="button"
+                                                class="research-filter flex w-full justify-between text-left"
+                                                research-type="">
+                                                <span>All</span><span>9</span>
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </aside>
+
+                        </div>
                 </section>
             </div>
         </div>

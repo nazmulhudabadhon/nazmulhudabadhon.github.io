@@ -79,6 +79,21 @@
         ]
       }
     </script>
+  <script>
+    (function () {
+      try {
+        const savedTheme = localStorage.getItem("site-theme");
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = savedTheme || (systemDark ? "dark" : "light");
+
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      } catch (error) {
+        document.documentElement.dataset.theme = "light";
+        document.documentElement.style.colorScheme = "light";
+      }
+    })();
+  </script>
 </head>
 
 <body class="scroll-smooth">
@@ -88,6 +103,10 @@
   <!-- ===== DESKTOP TOP NAVBAR ===== -->
   <header class="desktop-header hidden lg:block">
     <div class="desktop-header__inner">
+      <a href="./" class="desktop-brand" aria-label="Nazmul Huda Badhon home">
+        Nazmul Huda Badhon
+      </a>
+
       <nav class="segmented-nav" aria-label="Main navigation">
         <a href="./" class="segmented-nav__link is-active" aria-current="page">Home</a>
 
@@ -98,6 +117,11 @@
         <a href="./achievement/" class="segmented-nav__link">Achievements</a>
 
         <a href="./resume/" class="segmented-nav__link segmented-nav__link--cv">CV</a>
+
+        <button id="themeToggle" class="desktop-theme-toggle" type="button"
+          aria-label="Switch to dark mode" title="Switch to dark mode" aria-pressed="false">
+          <i class="fa-regular fa-moon" aria-hidden="true"></i>
+        </button>
       </nav>
     </div>
   </header>
@@ -160,7 +184,7 @@
 
               <!-- Name -->
               <h1
-                class="mb-0 mt-3 font-['Source_Serif_4'] text-[32px] font-normal leading-[1.18] tracking-[-0.015em] text-slate-900 sm:text-[30px] lg:text-[24px]">
+                class="mb-0 mt-3 font-['Source_Serif_4'] text-[32px] leading-[1.18] tracking-[-0.015em] sm:text-[30px] lg:text-[24px]">
                 Nazmul Huda Badhon
               </h1>
 
@@ -175,7 +199,7 @@
                 class="mb-0 mt-6 text-left font-['Source_Sans_3'] text-[15.5px] font-normal leading-[1.72] lg:leading-[1.45] text-slate-700 sm:text-[16px]">
                 My research focuses on
 
-                <span class="font-semibold text-[#A51C30]">
+                <span class="text-[#A51C30]">
                   lightweight deep learning, sensor-based machine learning and
                   artificial intelligence for healthcare.
                 </span>
@@ -186,7 +210,7 @@
 
                 <a href="https://scholar.google.com/citations?user=mC0VMYQAAAAJ&hl=en" target="_blank"
                   rel="noopener noreferrer"
-                  class="font-normal text-[#00778B] underline decoration-[#00778B]/40 underline-offset-2 transition-colors hover:text-[#A51C30] hover:decoration-[#A51C30]">
+                  class="font-normal text-[#00778B] underline decoration-[#00778B]/40 underline-offset-2 transition-colors hover:text-[#6519dc] hover:decoration-[#6519dc]">
                   Nazmun Nessa Moon.
                 </a>
               </p>
@@ -211,7 +235,7 @@
 
                 <div class="px-1 py-2 text-center sm:px-3 sm:py-2.5">
                   <strong
-                    class="block font-['Source_Serif_4'] text-[20px] font-medium leading-6 text-[#06142A] sm:text-[22px]">
+                    class="block font-['Source_Serif_4'] text-[20px] font-medium leading-6 text-[#6519dc] sm:text-[22px]">
                     8
                   </strong>
 
@@ -223,8 +247,8 @@
 
                 <div class="border-x border-[#D8D6CF] px-1 py-2 text-center sm:px-3 sm:py-2.5">
                   <strong
-                    class="block font-['Source_Serif_4'] text-[20px] font-medium leading-6 text-[#06142A] sm:text-[22px]">
-                    17
+                    class="block font-['Source_Serif_4'] text-[20px] font-medium leading-6 text-[#6519dc] sm:text-[22px]">
+                    19
                   </strong>
 
                   <span
@@ -235,7 +259,7 @@
 
                 <div class="px-1 py-2 text-center sm:px-3 sm:py-2.5">
                   <strong
-                    class="block font-['Source_Serif_4'] text-[20px] font-medium leading-6 text-[#06142A] sm:text-[22px]">
+                    class="block font-['Source_Serif_4'] text-[20px] font-medium leading-6 text-[#6519dc] sm:text-[22px]">
                     5
                   </strong>
 
@@ -249,7 +273,7 @@
               <!-- Update metadata -->
               <p
                 class="mb-0 mt-2 text-right font-['Source_Sans_3'] text-[12px] font-normal leading-5 text-slate-400 sm:text-[13px]">
-                Last updated: 2026-07-12
+                Last updated: 2026-08-04
               </p>
 
             </div>
@@ -386,46 +410,47 @@
 
               <a href="https://scholar.google.com/citations?user=eg3QPhcAAAAJ&hl=en" target="_blank"
                 rel="noopener noreferrer"
-                class="font-normal text-[#00778B] underline decoration-[#00778B]/40 underline-offset-2 transition-colors hover:text-[#A51C30] hover:decoration-[#A51C30]">
+                class="font-normal text-[#00778B] underline decoration-[#00778B]/40 underline-offset-2 transition-colors hover:text-[#6519dc] hover:decoration-[#6519dc]">
                 Imrus Salehin
               </a>
               (PhD Student, NCAT),
 
               <a href="https://scholar.google.com/citations?user=TzuA2ScAAAAJ&hl=en" target="_blank"
                 rel="noopener noreferrer"
-                class="font-normal text-[#00778B] underline decoration-[#00778B]/40 underline-offset-2 transition-colors hover:text-[#A51C30] hover:decoration-[#A51C30]">
+                class="font-normal text-[#00778B] underline decoration-[#00778B]/40 underline-offset-2 transition-colors hover:text-[#6519dc] hover:decoration-[#6519dc]">
                 Md. Baharul Islam
               </a>
               (Associate Professor, FGCU, USA), and
 
               <a href="https://scholar.google.com/citations?user=2D3mKUYAAAAJ&hl=en" target="_blank"
                 rel="noopener noreferrer"
-                class="font-normal text-[#00778B] underline decoration-[#00778B]/40 underline-offset-2 transition-colors hover:text-[#A51C30] hover:decoration-[#A51C30]"">
+                class="font-normal text-[#00778B] underline decoration-[#00778B]/40 underline-offset-2 transition-colors hover:text-[#6519dc] hover:decoration-[#6519dc]">
                 Dr. Fernaz Narin Nur
               </a>
               (Professor, DIU).
             </p>
 
             <!-- Second original paragraph preserved -->
-            <p class="mt-4 text-left font-['Source_Sans_3'] text-[15.5px] font-normal leading-[1.75] lg:leading-[1.45] text-slate-800 sm:text-[16px]"">
-              I have been recognized through key honors including the
-              <span class=" font-semibold text-[#111111]">
-              fully funded Global Korea Scholarship (GKS) in 2023
-              </span>
-              by the Government of the Republic of Korea and the
-              <span class="font-semibold text-[#111111]">
-                Research Awards in 2024 and 2025
-              </span>
-              from the Division of Research and the Department of Computer Science
-              and Engineering at Daffodil International University. I was also
-              recognized as a top performer in the Computer Vision and Deep Learning
-              Bootcamp for Medical Data at DIU.
+            <p class=" mt-4 text-left font-['Source_Sans_3'] text-[15.5px] font-normal leading-[1.75] lg:leading-[1.45]
+                text-slate-800 sm:text-[16px]"">
+                I have been recognized through key honors including the
+                <span class=" font-semibold text-[#111111]">
+                  fully funded Global Korea Scholarship (GKS) in 2023
+                </span>
+                by the Government of the Republic of Korea and the
+                <span class="font-semibold text-[#111111]">
+                  Research Awards in 2024 and 2025
+                </span>
+                from the Division of Research and the Department of Computer Science
+                and Engineering at Daffodil International University. I was also
+                recognized as a top performer in the Computer Vision and Deep Learning
+                Bootcamp for Medical Data at DIU.
 
-              <a href="./achievement/"
-                class="ml-1 inline-flex items-center gap-1 whitespace-nowrap text-[#00778B] decoration-[#00778B]/40 underline-offset-2 transition hover:text-[#A51C30]">
-                View all achievements
-                <span aria-hidden="true">→</span>
-              </a>
+                <a href="./achievement/"
+                  class="ml-1 inline-flex items-center gap-1 whitespace-nowrap text-[#00778B] decoration-[#00778B]/40 underline-offset-2 transition hover:text-[#6519dc]">
+                  View all achievements
+                  <span aria-hidden="true">→</span>
+                </a>
             </p>
           </section>
 
@@ -699,7 +724,7 @@
 
                 <div class="academic-timeline__content">
                   <p class="academic-timeline__title">
-                    <strong>Nazmul Huda Badhon</strong>, Sabit Ahamed Preanto,
+                    <span class="font-semibold text-[#111111]">Nazmul Huda Badhon</span>, Sabit Ahamed Preanto,
                     Abu Shahed Shah Md Nazmul Arefin, Kazi Jahid Hasan,
                     Md. Baharul Islam,
                     “Temporal Convolutional Network Based Indoor Location Recognition
@@ -738,7 +763,7 @@
 
                 <div class="academic-timeline__content">
                   <p class="academic-timeline__title">
-                    <strong>Nazmul Huda Badhon</strong>, Imrus Salehin,
+                    <span class="font-semibold text-[#111111]">Nazmul Huda Badhon</span>, Imrus Salehin,
                     Md Tomal Ahmed Sajib, Md Sakibul Hassan Rifat,
                     SM Noman, Nazmun Nessa Moon,
                     “TLCNN: Tabular Data-Based Lightweight Convolutional Neural Network
@@ -776,7 +801,7 @@
                 <div class="academic-timeline__content">
 
                   <p class="academic-timeline__title">
-                    Md Tomal Ahmed Sajib, <strong>Nazmul Huda Badhon</strong>,
+                    Md Tomal Ahmed Sajib, <span class="font-semibold text-[#111111]">Nazmul Huda Badhon</span>,
                     Imrus Salehin, Md Sakibul Hassan Rifat, Faysal Ahmed,
                     Nazmun Nessa Moon,
                     “A Comparative Deep Learning Methodology for Plant Insect Image
@@ -815,7 +840,7 @@
 
                   <p class="academic-timeline__title">
                     Imrus Salehin, Md Tomal Ahmed Sajib,
-                    <strong>Nazmul Huda Badhon</strong>,
+                    <span class="font-semibold text-[#111111]">Nazmul Huda Badhon</span>,
                     Md Sakibul Hassan Rifat, Nazrul Amin,
                     Nazmun Nessa Moon,
                     “Systematic Literature Review of LLM–Large Language Models in Medical:
@@ -925,6 +950,7 @@
     </button>
 
     <script src="./index.js"></script>
+
 </body>
 
 </html>

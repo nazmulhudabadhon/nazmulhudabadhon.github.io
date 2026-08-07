@@ -1212,7 +1212,7 @@ article.proj-card>* {
 }
 
 .academic-timeline-link:hover {
-    color: var(--accent-red);
+    color: #6519dc;
 }
 
 .academic-timeline-link i {

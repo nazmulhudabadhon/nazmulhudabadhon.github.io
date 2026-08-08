@@ -1347,6 +1347,10 @@ article.proj-card>* {
     transform: rotate(180deg);
 }
 
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 /* Dark mode */
 html[data-theme="dark"] .news-toggle:hover {
     color: #cba6ff;
@@ -1618,7 +1622,14 @@ article.publication-card>* {
 .publication-year-group {
     display: flex;
     flex-direction: column;
+    scroll-margin-top: 40px;
     gap: 0;
+}
+
+@media (max-width: 1023px) {
+    .publication-year-group {
+        scroll-margin-top: 40px;
+    }
 }
 
 .publication-card.hidden,
@@ -1740,12 +1751,24 @@ article.publication-card>* {
 
 .research-sidebar .year-filter:hover,
 .research-sidebar .research-filter:hover {
-    color: var(--accent-red);
+    color: #6519dc;
 }
 
 .research-sidebar .year-filter span:last-child,
 .research-sidebar .research-filter span:last-child {
     font-size: 12px;
+}
+
+/* Auto-highlight the year currently in view while scrolling */
+.research-sidebar .year-filter.is-current {
+    color: #6519dc;
+    font-weight: 600;
+}
+
+/* Active state for the type filter (Journal / Book Chapter / All) */
+.research-sidebar .research-filter.is-active {
+    color: #6519dc;
+    font-weight: 600;
 }
 
 @media (max-width: 1023px) {
@@ -1792,18 +1815,6 @@ article.publication-card>* {
         top: 3.25rem;
         align-self: start;
     }
-}
-
-.research-sidebar .research-filter.bg-black,
-.research-sidebar .research-filter.bg-black:hover {
-    background: transparent !important;
-    color: var(--accent-red) !important;
-    font-weight: 600 !important;
-}
-
-.research-sidebar .research-filter.text-white,
-.research-sidebar .research-filter.text-white span {
-    color: var(--accent-red) !important;
 }
 
 .academic-emphasis {
@@ -2052,7 +2063,7 @@ article.ach-card>* {
 
 .achievement-sidebar .ach-filter:hover,
 .achievement-sidebar .ach-filter.is-active {
-    color: var(--accent-red);
+    color: #6519dc;
 }
 
 .achievement-sidebar .ach-filter.is-active {
@@ -2238,7 +2249,7 @@ article.ach-card>* {
     background: #ffffff;
 }
 
-#award-cert-2:checked ~ .mini-carousel__track {
+#award-cert-2:checked~.mini-carousel__track {
     transform: translateX(-50%);
 }
 
@@ -2263,8 +2274,8 @@ article.ach-card>* {
     transition: background-color 180ms ease, transform 180ms ease;
 }
 
-#award-cert-1:checked ~ .mini-carousel__dots label[for="award-cert-1"],
-#award-cert-2:checked ~ .mini-carousel__dots label[for="award-cert-2"] {
+#award-cert-1:checked~.mini-carousel__dots label[for="award-cert-1"],
+#award-cert-2:checked~.mini-carousel__dots label[for="award-cert-2"] {
     background: var(--accent-link);
     transform: scale(1.2);
 }
@@ -2528,7 +2539,7 @@ html[data-theme="dark"] {
     --card-bg: #171a21;
     --soft-bg: #1d2028;
     --border: #303541;
-    --text-main: #e8eaf0;
+    --text-main: #D6C8B7;
     --text-muted: #a0a7b4;
     --accent: #d8def0;
     --accent-link: #69c9da;
@@ -2782,8 +2793,8 @@ article,
         display: block;
 
         font-family: "Source Serif 4", Georgia, serif;
-        font-size: 17px;
-        font-weight: 600;
+        font-size: 16px;
+        font-weight: 500;
         line-height: 1.2;
         letter-spacing: -0.01em;
     }

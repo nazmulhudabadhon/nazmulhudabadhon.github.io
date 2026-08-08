@@ -1,4 +1,4 @@
-    // 1. Read saved theme immediately
+// 1. Read saved theme immediately
 (function () {
     try {
         const savedTheme = localStorage.getItem("site-theme");
@@ -86,21 +86,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 	
 	//News button
-	  const newsToggle = document.getElementById("newsToggle");
-  const newsExtras = document.querySelectorAll(".news-extra");
+	const newsToggle = document.getElementById("newsToggle");
+	const newsExtras = document.querySelectorAll(".news-extra");
 
-  newsToggle.addEventListener("click", () => {
-    const isExpanded = newsToggle.classList.toggle("is-expanded");
+	if (newsToggle) {
+	    newsToggle.addEventListener("click", () => {
+	        const isExpanded = newsToggle.classList.toggle("is-expanded");
 
-    newsExtras.forEach((item) => {
-      item.classList.toggle("is-visible", isExpanded);
-    });
+	        newsExtras.forEach((item) => {
+	            item.classList.toggle("is-visible", isExpanded);
+	        });
 
-    newsToggle.setAttribute("aria-expanded", isExpanded);
+	        newsToggle.setAttribute("aria-expanded", isExpanded);
 
-    newsToggle.querySelector(".news-toggle__text").textContent =
-      isExpanded ? "Show less" : "Show more";
-  });
+	        newsToggle.querySelector(".news-toggle__text").textContent =
+	            isExpanded ? "Show less" : "Show more";
+	    });
+	}
 
 
     // 3) Publication year + research type toggle filter
@@ -119,39 +121,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const publicationYearGroups =
         document.querySelectorAll(".publication-year-group");
 
-    let activeYear = null;
     let activeResearchType = null;
 
-    function updateButtonCount(button, count) {
-        const spans = button.querySelectorAll("span");
-        const countSpan = spans[spans.length - 1];
-
-        if (countSpan) {
-            countSpan.textContent = count;
-        }
-    }
-
+    // ---- TYPE FILTER (Journal / Book Chapter / All) ----
     function updatePublicationFilters() {
         const visibleCountByYear = {};
 
         publicationCards.forEach((card) => {
             const cardYear = card.dataset.year;
+            const cardType = card.getAttribute("research-type");
 
-            const cardResearchType =
-                card.getAttribute("research-type");
+            const typeMatches = !activeResearchType || activeResearchType === cardType;
 
-            const yearMatches =
-                !activeYear || activeYear === cardYear;
-
-            const typeMatches =
-                !activeResearchType ||
-                activeResearchType === cardResearchType;
-
-            if (yearMatches && typeMatches) {
+            if (typeMatches) {
                 card.classList.remove("hidden");
-
-                visibleCountByYear[cardYear] =
-                    (visibleCountByYear[cardYear] || 0) + 1;
+                visibleCountByYear[cardYear] = (visibleCountByYear[cardYear] || 0) + 1;
             } else {
                 card.classList.add("hidden");
             }
@@ -160,200 +144,78 @@ document.addEventListener("DOMContentLoaded", () => {
         publicationYearHeadings.forEach((heading) => {
             const headingYear = heading.dataset.headingYear;
             const count = visibleCountByYear[headingYear] || 0;
+
+            heading.classList.toggle("hidden", count === 0);
+
             const countText = heading.querySelector(".year-count");
-
-            if (count > 0) {
-                heading.classList.remove("hidden");
-
-                if (countText) {
-                    countText.textContent =
-                        count === 1
-                            ? "1 publication"
-                            : `${count} publications`;
-                }
-            } else {
-                heading.classList.add("hidden");
+            if (countText) {
+                countText.textContent = count === 1 ? "1 publication" : `${count} publications`;
             }
         });
 
         publicationYearGroups.forEach((group) => {
             const groupYear = group.dataset.groupYear;
             const count = visibleCountByYear[groupYear] || 0;
-
-            if (count > 0) {
-                group.classList.remove("hidden");
-            } else {
-                group.classList.add("hidden");
-            }
-        });
-
-        updateAvailableFilterButtons();
-    }
-
-    function updateAvailableFilterButtons() {
-        yearFilterButtons.forEach((filterButton) => {
-            const year = filterButton.dataset.year;
-
-            const matchingCards = Array.from(
-                publicationCards
-            ).filter((card) => {
-                const cardYear = card.dataset.year;
-
-                const cardResearchType =
-                    card.getAttribute("research-type");
-
-                const yearMatches = cardYear === year;
-
-                const typeMatches =
-                    !activeResearchType ||
-                    activeResearchType === cardResearchType;
-
-                return yearMatches && typeMatches;
-            });
-
-            const count = matchingCards.length;
-
-            if (count > 0 || activeYear === year) {
-                filterButton.classList.remove("hidden");
-                updateButtonCount(filterButton, count);
-            } else {
-                filterButton.classList.add("hidden");
-            }
-        });
-
-        researchFilterButtons.forEach((filterButton) => {
-            filterButton.classList.remove("hidden");
+            group.classList.toggle("hidden", count === 0);
         });
     }
 
-    function updateActiveButtonStyles() {
-        yearFilterButtons.forEach((filterButton) => {
-            const year = filterButton.dataset.year;
-
-            if (activeYear === year) {
-                filterButton.classList.remove(
-                    "text-slate-500",
-                    "font-normal"
-                );
-
-                filterButton.classList.add(
-                    "text-slate-900",
-                    "font-semibold"
-                );
-            } else {
-                filterButton.classList.remove(
-                    "text-slate-900",
-                    "font-semibold"
-                );
-
-                filterButton.classList.add(
-                    "text-slate-500",
-                    "font-normal"
-                );
-            }
-        });
-
-        researchFilterButtons.forEach((filterButton) => {
-            const type =
-                filterButton.getAttribute("research-type");
-
-            if (activeResearchType === type) {
-                filterButton.classList.remove(
-                    "text-slate-500",
-                    "font-normal",
-                    "hover:bg-slate-100",
-                    "hover:text-slate-900"
-                );
-
-                filterButton.classList.add(
-                    "bg-black",
-                    "text-white",
-                    "font-semibold"
-                );
-            } else {
-                filterButton.classList.remove(
-                    "bg-black",
-                    "text-white",
-                    "font-semibold"
-                );
-
-                filterButton.classList.add(
-                    "text-slate-500",
-                    "font-normal",
-                    "hover:bg-slate-100",
-                    "hover:text-slate-900"
-                );
-            }
+    function updateActiveTypeStyles() {
+        researchFilterButtons.forEach((btn) => {
+            const type = btn.getAttribute("research-type");
+            btn.classList.toggle("is-active", activeResearchType === type && activeResearchType !== "");
         });
     }
 
     if (publicationCards.length) {
+        // ---- YEAR BUTTONS: scroll to that year's section, no filtering ----
         yearFilterButtons.forEach((button) => {
             button.addEventListener("click", () => {
                 const selectedYear = button.dataset.year;
 
-                // Mobile "All" button
-                if (!selectedYear) {
-                    document
-                        .querySelector(".research-page-heading")
-                        ?.scrollIntoView({
-                            behavior: "smooth",
-                            block: "start",
-                        });
+                // "All" button (empty data-year) scrolls back to the top of the list
+                const target = selectedYear
+                    ? document.querySelector(`.publication-year-group[data-group-year="${selectedYear}"]`)
+                    : document.querySelector(".publication-scroll");
 
-                    return;
-                }
-
-                const target = document.querySelector(
-                    `.publication-year-group[data-group-year="${selectedYear}"]`
-                );
-
-                target?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                });
+                target?.scrollIntoView({ behavior: "smooth", block: "start" });
             });
         });
 
+        // ---- TYPE BUTTONS: actual filter ----
         researchFilterButtons.forEach((button) => {
             button.addEventListener("click", () => {
-                const selectedType =
-                    button.getAttribute("research-type");
+                const selectedType = button.getAttribute("research-type");
+                activeResearchType = activeResearchType === selectedType ? null : selectedType;
 
-                activeResearchType =
-                    activeResearchType === selectedType
-                        ? null
-                        : selectedType;
-
-                if (activeYear) {
-                    const selectedYearStillExists = Array.from(
-                        publicationCards
-                    ).some((card) => {
-                        return (
-                            card.dataset.year === activeYear &&
-                            (
-                                !activeResearchType ||
-                                card.getAttribute("research-type") ===
-                                    activeResearchType
-                            )
-                        );
-                    });
-
-                    if (!selectedYearStillExists) {
-                        activeYear = null;
-                    }
-                }
-
-                updateActiveButtonStyles();
+                updateActiveTypeStyles();
                 updatePublicationFilters();
             });
         });
 
-        updateActiveButtonStyles();
+        updateActiveTypeStyles();
         updatePublicationFilters();
+
+        // ---- SCROLL-SPY: auto-highlight the year currently in view ----
+        const yearObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const year = entry.target.dataset.groupYear;
+                        yearFilterButtons.forEach((btn) => {
+                            btn.classList.toggle("is-current", btn.dataset.year === year);
+                        });
+                    }
+                });
+            },
+            { rootMargin: "-100px 0px -60% 0px", threshold: 0 }
+        );
+
+        publicationYearGroups.forEach((group) => yearObserver.observe(group));
     }
 
     // Achievement type filter
+// Achievement type filter
     const achievementFilterButtons =
         document.querySelectorAll(".ach-filter");
 
@@ -381,33 +243,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 });
 
-                achievementFilterButtons.forEach(
-                    (filterButton) => {
-                        filterButton.classList.remove(
-                            "bg-black",
-                            "text-white",
-                            "font-semibold"
-                        );
-
-                        filterButton.classList.add(
-                            "text-slate-500",
-                            "font-normal",
-                            "hover:text-slate-900"
-                        );
-                    }
-                );
-
-                button.classList.remove(
-                    "text-slate-500",
-                    "font-normal",
-                    "hover:text-slate-900"
-                );
-
-                button.classList.add(
-                    "bg-black",
-                    "text-white",
-                    "font-semibold"
-                );
+                // Toggle .is-active on all matching-type buttons
+                // (mobile filter row + desktop sidebar both use .ach-filter)
+                achievementFilterButtons.forEach((filterButton) => {
+                    filterButton.classList.toggle(
+                        "is-active",
+                        filterButton.dataset.type === selectedType
+                    );
+                });
 
                 const achievementScrollArea =
                     document.querySelector(".research-scroll");
@@ -421,7 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
-
+	
 // 7) Academic Highlights Carousel
 (() => {
     const track = document.getElementById("actTrack");
@@ -732,7 +575,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 ) {
                     nextSlide();
                 } else if (
-                    horizontalDistance <
+                    horizontalDistance 
                     -minimumSwipeDistance
                 ) {
                     previousSlide();

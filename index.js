@@ -84,209 +84,24 @@ document.addEventListener("DOMContentLoaded", () => {
         const id = href.slice(1).trim();
         a.setAttribute("href", "#" + id);
     });
+	
+	//News button
+	  const newsToggle = document.getElementById("newsToggle");
+  const newsExtras = document.querySelectorAll(".news-extra");
 
-    // 1) Back to top
-    const topBtn = document.getElementById("backToTop");
+  newsToggle.addEventListener("click", () => {
+    const isExpanded = newsToggle.classList.toggle("is-expanded");
 
-    if (topBtn) {
-        const toggleTopBtn = () => {
-            if (window.scrollY > 300) {
-                topBtn.classList.remove("hidden");
-            } else {
-                topBtn.classList.add("hidden");
-            }
-        };
+    newsExtras.forEach((item) => {
+      item.classList.toggle("is-visible", isExpanded);
+    });
 
-        toggleTopBtn();
+    newsToggle.setAttribute("aria-expanded", isExpanded);
 
-        window.addEventListener("scroll", toggleTopBtn, {
-            passive: true,
-        });
+    newsToggle.querySelector(".news-toggle__text").textContent =
+      isExpanded ? "Show less" : "Show more";
+  });
 
-        topBtn.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-            });
-        });
-    }
-
-    // 2) Scroll reveal
-    function makeReplayObserver(selector, inClass, baseDelay = 0) {
-        const els = Array.from(document.querySelectorAll(selector));
-
-        if (!els.length) {
-            return;
-        }
-
-        els.forEach((el, i) => {
-            if (baseDelay) {
-                el.style.transitionDelay = `${i * baseDelay}s`;
-            }
-        });
-
-        const obs = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add(inClass);
-                    } else if (entry.intersectionRatio === 0) {
-                        entry.target.classList.remove(inClass);
-                    }
-                });
-            },
-            {
-                threshold: [0, 0.15],
-                rootMargin: "0px 0px -12% 0px",
-            }
-        );
-
-        els.forEach((el) => {
-            obs.observe(el);
-        });
-
-        els.forEach((el) => {
-            const rect = el.getBoundingClientRect();
-
-            if (
-                rect.top < window.innerHeight * 0.9 &&
-                rect.bottom > 0
-            ) {
-                el.classList.add(inClass);
-            }
-        });
-    }
-
-    makeReplayObserver(".reveal", "show", 0);
-    makeReplayObserver(".edu-reveal", "in", 0.08);
-    makeReplayObserver(".proj-card", "in", 0.12);
-    makeReplayObserver(".ach-card", "in", 0.10);
-
-    // Existing generic carousel
-    const slides = document.querySelectorAll(".carousel-slide");
-
-    if (slides.length > 0) {
-        slides[0].classList.add("active");
-    }
-
-    const dots = document.querySelectorAll(".carousel-dots .dot");
-    let index = 0;
-
-    function showSlide(i) {
-        slides.forEach((slide) => {
-            slide.classList.remove("active");
-        });
-
-        dots.forEach((dot) => {
-            dot.classList.remove("active");
-        });
-
-        if (slides[i]) {
-            slides[i].classList.add("active");
-        }
-
-        if (dots[i]) {
-            dots[i].classList.add("active");
-        }
-    }
-
-    if (slides.length && dots.length) {
-        setInterval(() => {
-            index = (index + 1) % slides.length;
-            showSlide(index);
-        }, 4500);
-
-        dots.forEach((dot, dotIndex) => {
-            dot.addEventListener("click", () => {
-                index = dotIndex;
-                showSlide(dotIndex);
-            });
-        });
-    }
-
-    // Desktop header scroll behavior
-    (() => {
-        const header = document.getElementById("topHeader");
-
-        if (!header) {
-            return;
-        }
-
-        let lastY = window.scrollY;
-        let ticking = false;
-
-        const onScroll = () => {
-            const y = window.scrollY;
-
-            if (y > 10) {
-                header.classList.add("is-scrolled");
-            } else {
-                header.classList.remove("is-scrolled");
-            }
-
-            if (y > lastY && y > 120) {
-                header.classList.add("nav-hide");
-                header.classList.remove("nav-show");
-            } else {
-                header.classList.add("nav-show");
-                header.classList.remove("nav-hide");
-            }
-
-            lastY = y;
-            ticking = false;
-        };
-
-        window.addEventListener(
-            "scroll",
-            () => {
-                if (!ticking) {
-                    window.requestAnimationFrame(onScroll);
-                    ticking = true;
-                }
-            },
-            {
-                passive: true,
-            }
-        );
-
-        header.classList.add("nav-show");
-    })();
-
-    // Mobile menu
-    const btn = document.getElementById("mobileMenuBtn");
-    const menu = document.getElementById("mobileMenu");
-    const openIcon = document.getElementById("menuOpenIcon");
-    const closeIcon = document.getElementById("menuCloseIcon");
-
-    if (btn && menu) {
-        btn.addEventListener("click", () => {
-            const isOpen = !menu.classList.contains("hidden");
-
-            menu.classList.toggle("hidden");
-
-            if (openIcon) {
-                openIcon.classList.toggle("hidden", !isOpen);
-            }
-
-            if (closeIcon) {
-                closeIcon.classList.toggle("hidden", isOpen);
-            }
-        });
-
-        menu.addEventListener("click", (event) => {
-            if (event.target.closest("a")) {
-                menu.classList.add("hidden");
-
-                if (openIcon) {
-                    openIcon.classList.remove("hidden");
-                }
-
-                if (closeIcon) {
-                    closeIcon.classList.add("hidden");
-                }
-            }
-        });
-    }
 
     // 3) Publication year + research type toggle filter
     const yearFilterButtons =
@@ -639,13 +454,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    /*
-     * Clone the last and first slides.
-     *
-     * Track order becomes:
-     * clone of slide 5, slide 1, slide 2, slide 3,
-     * slide 4, slide 5, clone of slide 1.
-     */
     const firstClone = originalSlides[0].cloneNode(true);
     const lastClone =
         originalSlides[slideCount - 1].cloneNode(true);
@@ -960,17 +768,16 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
-    document.addEventListener(
-        "visibilitychange",
-        () => {
-            if (document.hidden) {
-                stopAutoplay();
-            } else {
-                startAutoplay();
-            }
-        }
-    );
+document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+        stopAutoplay();
+        return;
+    }
 
+    requestAnimationFrame(() => {
+        startAutoplay();
+    });
+});
     /*
      * Start on the real first slide without displaying
      * the cloned final slide.

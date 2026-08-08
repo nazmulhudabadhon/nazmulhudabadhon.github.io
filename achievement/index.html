@@ -188,12 +188,12 @@
                     <h2 class="achievement-title">
                       Research Award for Scholarly
                       Publication in a Reputed Indexed
-                      Journal
+                      Journal, 2024-2025
                     </h2>
 
                     <p class="achievement-description">
-                      Recognized for scholarly publications
-                      in reputed indexed journals by the
+                      Recognized for 6 scholarly publications
+                      in reputed indexed journals for two consecutive yearsby the
                       Division of Research and the Department
                       of Computer Science and Engineering at
                       Daffodil International University.
@@ -205,17 +205,36 @@
                       </span>
 
                       <span class="achievement-meta-value">
-                        20 May 2025
+                        20 May 2025; 21 July 2026
                       </span>
                     </div>
 
                   </div>
 
                   <div class="achievement-card-media">
-                    <div class="achievement-figure">
-                      <img src="../Image/award_certificate.jpg"
-                        alt="Research award certificate from Daffodil International University" loading="lazy"
-                        decoding="async" class="object-contain">
+                    <div class="achievement-figure mini-carousel">
+
+                      <input type="radio" name="award-cert" id="award-cert-1" class="mini-carousel__radio" checked>
+                      <input type="radio" name="award-cert" id="award-cert-2" class="mini-carousel__radio">
+
+                      <div class="mini-carousel__track">
+                        <div class="mini-carousel__slide">
+                          <img src="../Image/award_certificate.jpg" alt="Research award certificate, front"
+                            loading="lazy" decoding="async" class="object-contain">
+                        </div>
+                        <div class="mini-carousel__slide">
+                          <img src="../Image/award_certificate2.jpg" alt="Research award certificate, second page"
+                            loading="lazy" decoding="async" class="object-contain">
+                        </div>
+                      </div>
+
+                      <div class="mini-carousel__dots">
+                        <label for="award-cert-1" class="mini-carousel__dot"
+                          aria-label="Show certificate image 1"></label>
+                        <label for="award-cert-2" class="mini-carousel__dot"
+                          aria-label="Show certificate image 2"></label>
+                      </div>
+
                     </div>
                   </div>
 
@@ -564,18 +583,47 @@
   <footer id="sitefooter" class="w-full border-t border-[#D8D6CF]">
     <!-- Desktop footer -->
     <div class="hidden md:flex max-w-[1000px] mx-auto px-6 lg:px-0 py-2.5
-           items-center justify-between gap-6">
+       items-center justify-between gap-6">
 
-      <span class="font-['Source_Sans_3'] text-[14px] font-normal leading-5 text-slate-500">
+      <span class="font-['Source_Sans_3'] text-[14.5px] font-normal leading-5 text-slate-500">
         © 2026
         <span class="transition-colors hover:text-[#A51C30]">
-          Nazmul Huda Badhon
+          Nazmul Huda Badhon · All Rights Reserved
         </span>
       </span>
 
-      <span class="font-['Source_Sans_3'] text-[14px] font-normal leading-5 text-slate-500">
-        All Rights Reserved
-      </span>
+      <!-- Footer social/profile icons -->
+      <nav aria-label="Academic profiles"
+        style="display:flex; flex-direction:row; align-items:center; justify-content:flex-end; gap:14px;">
+
+        <a href="mailto:nazmul.badhon.research@gmail.com" aria-label="Email">
+          <img src="../Image/email.png" alt="" aria-hidden="true" width="18" height="18" loading="lazy" decoding="async"
+            style="width:18px; height:18px; object-fit:contain;" />
+        </a>
+
+        <a href="https://scholar.google.com/citations?user=pIs1mzsAAAAJ" target="_blank" rel="noopener noreferrer"
+          aria-label="Google Scholar">
+          <img src="../Image/hat.png" alt="" aria-hidden="true" width="18" height="18" loading="lazy" decoding="async"
+            style="width:18px; height:18px; object-fit:contain;" />
+        </a>
+
+        <a href="https://www.orcid.org/0000-0002-1234-5678" target="_blank" rel="noopener noreferrer"
+          aria-label="Orcid">
+          <img src="../Image/orcid.png" alt="" aria-hidden="true" width="18" height="18" loading="lazy" decoding="async"
+            style="width:18px; height:18px; object-fit:contain;" />
+        </a>
+
+        <a href="https://github.com/nazmulhudabadhon" target="_blank" rel="noopener noreferrer" aria-label="Github">
+          <img src="../Image/github.png" alt="" aria-hidden="true" width="18" height="18" loading="lazy"
+            decoding="async" style="width:18px; height:18px; object-fit:contain;" />
+        </a>
+
+        <a href="https://www.linkedin.com/in/nazmulhudabadhon/" target="_blank" rel="noopener noreferrer"
+          aria-label="LinkedIn">
+          <img src="../Image/linkedin.png" alt="" aria-hidden="true" width="18" height="18" loading="lazy"
+            decoding="async" style="width:18px; height:18px; object-fit:contain;" />
+        </a>
+      </nav>
     </div>
 
     <!-- Mobile footer -->
@@ -590,12 +638,6 @@
       </span>
     </div>
   </footer>
-
-  <!-- BACK TO TOP -->
-  <button id="backToTop" type="button" aria-label="Back to top"
-    class="fixed right-5 md:right-8 bottom-16 z-50 flex h-8 w-8 items-center justify-center bg-[#A51C30] text-white shadow-md transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#A51C30]/40">
-    <i class="fa-solid fa-arrow-up text-sm" aria-hidden="true"></i>
-  </button>
 
   <script src="../index.js"></script>
 

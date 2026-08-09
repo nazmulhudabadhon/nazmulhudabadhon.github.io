@@ -1,22 +1,4 @@
-// 1. Read saved theme immediately
-(function () {
-    try {
-        const savedTheme = localStorage.getItem("site-theme");
-        const systemDark = window.matchMedia(
-            "(prefers-color-scheme: dark)"
-        ).matches;
-
-        const theme = savedTheme || (systemDark ? "dark" : "light");
-
-        document.documentElement.dataset.theme = theme;
-        document.documentElement.style.colorScheme = theme;
-    } catch (error) {
-        document.documentElement.dataset.theme = "light";
-        document.documentElement.style.colorScheme = "light";
-    }
-})();
-
-// 2. Connect the button after HTML loads
+// 1. Connect the button after HTML loads
 document.addEventListener("DOMContentLoaded", function () {
     const themeButtons = document.querySelectorAll(
         "#themeToggle, #mobileThemeToggle"

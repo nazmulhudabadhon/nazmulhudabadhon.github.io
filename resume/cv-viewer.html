@@ -21,14 +21,33 @@
             height: 100%;
             border: 0;
         }
+
+        .pdf-fallback {
+            display: none;
+            padding: 32px 24px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
     </style>
 </head>
 
 <body>
-    <iframe
-        src="../pdfs/CV_Nazmul_Huda_Badhon.pdf"
-        title="Curriculum vitae of Nazmul Huda Badhon">
+    <iframe id="pdfFrame" src="../pdfs/CV_Nazmul_Huda_Badhon.pdf" title="Curriculum vitae of Nazmul Huda Badhon">
     </iframe>
+
+    <p class="pdf-fallback" id="pdfFallback">
+        <a href="../pdfs/CV_Nazmul_Huda_Badhon.pdf">Tap here to view the CV</a>
+    </p>
+
+    <script>
+        // iOS Safari can't reliably render PDFs inside an iframe,
+        // so redirect straight to the PDF on iOS devices.
+        var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+        if (isIOS) {
+            window.location.replace("../pdfs/CV_Nazmul_Huda_Badhon.pdf");
+        }
+    </script>
 </body>
 
 </html>

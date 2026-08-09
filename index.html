@@ -15,9 +15,11 @@
   <meta name="google-site-verification" content="2ws3IdBsnUZpFe400H1C5vRXXWAB_O7FI4sjySFVsS0" />
 
   <title>Nazmul Huda Badhon | Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/daisyui@4/dist/full.min.css" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="./style/tailwind-built.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/solid.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/regular.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -26,19 +28,24 @@
   <link rel="stylesheet" href="./style/style.css" />
 
   <!-- Current favicon for UI -->
-  <link rel="icon" type="image/png" href="./Image/favicon.png" />
+  <link rel="icon" type="image/png"
+    href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223898/favicon.png" />
 
   <!-- Root-level versions for Google and crawlers -->
-  <link rel="icon" type="image/png" sizes="32x32" href="./Image/favicon.png" />
-  <link rel="shortcut icon" href="./Image/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./Image/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223898/favicon.png" />
+  <link rel="shortcut icon"
+    href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223837/favicon_qq6rld.ico" />
+  <link rel="apple-touch-icon" sizes="180x180"
+    href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223017/apple-touch-icon.png" />
 
   <!-- Link Preview: Facebook, LinkedIn, WhatsApp -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nazmulhudabadhon.github.io/">
   <meta property="og:title" content="Nazmul Huda Badhon | Portfolio">
   <meta property="og:description" content="BSc Graduate in CSE | Deep Learning Researcher">
-  <meta property="og:image" content="https://nazmulhudabadhon.github.io/Image/preview.png">
+  <meta property="og:image"
+    content="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223200/preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Nazmul Huda Badhon portfolio preview">
@@ -51,7 +58,7 @@
         "name": "Nazmul Huda Badhon",
         "url": "https://nazmulhudabadhon.github.io",
         "image": [
-          "https://nazmulhudabadhon.github.io/Image/badhonn.jpg",
+          "https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_400/v1786226067/badhonn_idltdp.jpg",
           "https://upload.wikimedia.org/wikipedia/commons/9/96/Nazmulhudabadhon.jpg"
         ],
         "jobTitle": "Deep Learning Researcher and Computer Science Graduate",
@@ -85,6 +92,22 @@
         ]
       }
     </script>
+
+  <script>
+    (function () {
+      try {
+        const savedTheme = localStorage.getItem("site-theme");
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = savedTheme || (systemDark ? "dark" : "light");
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      } catch (error) {
+        document.documentElement.dataset.theme = "light";
+        document.documentElement.style.colorScheme = "light";
+      }
+    })();
+  </script>
+
 </head>
 
 <body class="scroll-smooth">
@@ -169,7 +192,9 @@
               <!-- Mobile-only wrapped profile section -->
               <div class="mobile-research-wrap lg:hidden">
 
-                <img src="./Image/badhonn.jpg" alt="Nazmul Huda Badhon" class="mobile-research-photo">
+                <img
+                  src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_400/v1786226067/badhonn_idltdp.jpg"
+                  alt="Nazmul Huda Badhon" class="mobile-research-photo">
 
                 <p class="mobile-research-text">
                   My research focuses on
@@ -234,7 +259,7 @@
 
                 <div class="px-1 py-2 text-center sm:px-3 sm:py-2.5">
                   <strong
-                    class="block font-['Source_Serif_4'] text-[20px] font-medium leading-6 text-[#6519dc] sm:text-[22px]">
+                    class="dark-blue block font-['Source_Serif_4'] text-[20px] font-medium leading-6 text-[#6519dc] sm:text-[22px]">
                     8
                   </strong>
 
@@ -246,7 +271,7 @@
 
                 <div class="border-x border-[#D8D6CF] px-1 py-2 text-center sm:px-3 sm:py-2.5">
                   <strong
-                    class="block font-['Source_Serif_4'] text-[20px] font-medium leading-6 text-[#6519dc] dark:text-[#e5e7eb]  sm:text-[22px]">
+                    class="dark-blue block font-['Source_Serif_4'] text-[20px] font-medium leading-6 text-[#6519dc] sm:text-[22px]">
                     19
                   </strong>
 
@@ -258,7 +283,7 @@
 
                 <div class="px-1 py-2 text-center sm:px-3 sm:py-2.5">
                   <strong
-                    class="block font-['Source_Serif_4'] text-[20px] font-medium leading-6 text-[#6519dc] sm:text-[22px]">
+                    class="dark-blue block font-['Source_Serif_4'] text-[20px] font-medium leading-6 text-[#6519dc] sm:text-[22px]">
                     5
                   </strong>
 
@@ -283,7 +308,8 @@
               <div
                 class="hidden lg:block mx-auto w-[170px] overflow-hidden rounded-md border border-[#D8D6CF] bg-[#F4F1EA] sm:w-[180px] lg:ml-auto lg:mr-0 lg:w-[190px]">
 
-                <img src="./Image/badhonn.jpg"
+                <img
+                  src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_400/v1786226067/badhonn_idltdp.jpg"
                   alt="Nazmul Huda Badhon – Graduate | Research in Deep Learning and Computer Vision" width="600"
                   height="600" loading="eager" decoding="async" fetchpriority="high"
                   class="block aspect-square w-full object-cover object-top" />
@@ -291,7 +317,8 @@
 
               <!-- Institutional information -->
               <div
-                class="hidden lg:block mx-auto mt-4 w-full max-w-[300px] text-center lg:ml-auto lg:mr-0 lg:w-[190px] lg:text-right">
+                class="hidden lg:block mx-auto mt-4 w-full max-w-[300px] text-center lg:ml-auto lg:mr-0 lg:w-[190px] lg:text-right"
+                aria-label="Institutional information">
 
                 <p
                   class="m-0 text-center font-['Source_Sans_3'] text-[13px] font-normal leading-[1.55] text-slate-600 sm:text-[14px] lg:text-right">
@@ -316,8 +343,10 @@
                     nazmul.badhon.research@gmail.com
                   </span>
 
-                  <img src="./Image/email.png" alt="" aria-hidden="true" width="18" height="18" loading="lazy"
-                    decoding="async" class="h-[18px] w-[18px] shrink-0 object-contain" />
+                  <img
+                    src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_60/v1786221115/email_cqgi7z.png"
+                    alt="" aria-hidden="true" width="18" height="18" loading="lazy" decoding="async"
+                    class="h-[18px] w-[18px] shrink-0 object-contain" />
                 </a>
 
                 <!-- Google Scholar -->
@@ -331,8 +360,10 @@
                     Google Scholar
                   </span>
 
-                  <img src="./Image/hat.png" alt="" aria-hidden="true" width="18" height="18" loading="lazy"
-                    decoding="async" class="h-[18px] w-[18px] shrink-0 object-contain" />
+                  <img
+                    src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_60/v1786221124/hat_zmoqjo.png"
+                    alt="" aria-hidden="true" width="18" height="18" loading="lazy" decoding="async"
+                    class="h-[18px] w-[18px] shrink-0 object-contain" />
                 </a>
 
                 <!-- ResearchGate -->
@@ -346,8 +377,10 @@
                     ResearchGate
                   </span>
 
-                  <img src="./Image/researchgate.jpg" alt="" aria-hidden="true" width="18" height="18" loading="lazy"
-                    decoding="async" class="h-[18px] w-[18px] shrink-0 object-contain" />
+                  <img
+                    src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_60/v1786221132/researchgate_cexnvc.png"
+                    alt="" aria-hidden="true" width="18" height="18" loading="lazy" decoding="async"
+                    class="h-[18px] w-[18px] shrink-0 object-contain" />
                 </a>
 
                 <!-- LinkedIn -->
@@ -361,8 +394,10 @@
                     LinkedIn
                   </span>
 
-                  <img src="./Image/linkedin.png" alt="" aria-hidden="true" width="18" height="18" loading="lazy"
-                    decoding="async" class="h-[18px] w-[18px] shrink-0 object-contain" />
+                  <img
+                    src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_60/v1786221126/linkedin_urf8pt.png"
+                    alt="" aria-hidden="true" width="18" height="18" loading="lazy" decoding="async"
+                    class="h-[18px] w-[18px] shrink-0 object-contain" />
                 </a>
               </nav>
             </aside>
@@ -374,8 +409,8 @@
           <section class="mt-0 w-full max-w-[1000px] mx-auto px-6 lg:pt-0 lg:px-0" aria-labelledby="homeProfileTitle">
 
             <div class="mb-4 flex items-end justify-between border-b border-[#D8D6CF] pb-1.5">
-              <h2 id="homeProfileTitle" class="m-0 font-['Source_Sans_3'] text-[13px] sm:text-[14px]"
-                style="color: var(--text-main); font-weight: 600;   text-transform: uppercase;letter-spacing: 0.08em;">
+              <h2 id="homeProfileTitle" class="m-0 font-['Source_Sans_3'] text-[13px] sm:text-[13px]"
+                style="color: var(--text-main); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;">
                 Academic Profile
               </h2>
             </div>
@@ -441,119 +476,93 @@
 
           <div class="w-full max-w-[1000px] mx-auto px-6 lg:pt-3 lg:px-0">
             <div class="academic-showcase-layout">
+
               <!-- Academic Highlights Carousel -->
               <section class="act" aria-labelledby="actTitle">
 
                 <div class="act__head">
                   <h2 id="actTitle" class="academic-section-kicker">
-                    Academic Highlights
+                    Highlights
                   </h2>
                 </div>
 
                 <div class="act__stage">
 
-                  <button class="act__arrow act__arrow--prev" type="button" id="actPrev"
-                    aria-label="Previous academic highlight" aria-controls="actTrack">
-                    <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-                  </button>
-
                   <div class="act__viewport">
+
+                    <button class="act__arrow act__arrow--prev" type="button" id="actPrev"
+                      aria-label="Previous academic highlight" aria-controls="actTrack">
+                      <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                    </button>
 
                     <ul class="act__track" id="actTrack" role="list">
 
                       <!-- Slide 1 -->
                       <li class="act__slide" role="listitem">
                         <figure class="act__figure">
-                          <img src="./Image/Badhon_graduated.jpg"
+                          <img
+                            src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_1000/v1786218870/IMG_9066_jmb3ff.jpg"
                             alt="Nazmul Huda Badhon at his Bachelor of Science convocation" width="1600" height="900"
                             loading="eager" decoding="async" fetchpriority="high" />
-
-                          <figcaption class="act__caption">
-                            <span class="act__eyebrow">Academic Milestone</span>
-                            <h3 class="act__title">BSc Convocation</h3>
-                            <p class="act__meta">
-                              2026 · Daffodil International University
-                            </p>
-                          </figcaption>
                         </figure>
                       </li>
 
                       <!-- Slide 2 -->
                       <li class="act__slide" role="listitem">
                         <figure class="act__figure">
-                          <img src="./Image/Badhon with professors.jpg"
+                          <img
+                            src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_1000/v1786218835/photo-output_hrixpt.jpg"
                             alt="Nazmul Huda Badhon with faculty members after completing his undergraduate thesis"
                             width="5754" height="4316" loading="eager" decoding="async" />
-
-                          <figcaption class="act__caption">
-                            <span class="act__eyebrow">Research Milestone</span>
-                            <h3 class="act__title">Undergraduate Thesis</h3>
-                            <p class="act__meta">
-                              Fall 2025 · Daffodil International University
-                            </p>
-                          </figcaption>
                         </figure>
                       </li>
 
                       <!-- Slide 3 -->
                       <li class="act__slide" role="listitem">
                         <figure class="act__figure">
-                          <img src="./Image/dsum.jpg"
-                            alt="Nazmul Huda Badhon during his semester exchange at Dongseo University" width="961"
-                            height="1280" loading="lazy" decoding="async" />
-
-                          <figcaption class="act__caption">
-                            <span class="act__eyebrow">International Experience</span>
-                            <h3 class="act__title">Semester Exchange</h3>
-                            <p class="act__meta">
-                              Fall 2023 · Dongseo University, South Korea
-                            </p>
-                          </figcaption>
+                          <img
+                            src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_1000/v1786218819/IMG_0562_no3nf9.jpg"
+                            alt="Nazmul Huda Badhon was the founding General Secretary of DIU Research Society"
+                            width="5754" height="4316" loading="eager" decoding="async" />
                         </figure>
                       </li>
 
                       <!-- Slide 4 -->
                       <li class="act__slide" role="listitem">
                         <figure class="act__figure">
-                          <img src="./Image/bootcamp.png"
-                            alt="Nazmul Huda Badhon recognized as a top performer in a computer vision bootcamp"
-                            width="1200" height="800" loading="lazy" decoding="async" />
-
-                          <figcaption class="act__caption">
-                            <span class="act__eyebrow">Academic Achievement</span>
-                            <h3 class="act__title">
-                              Top Performer in Computer Vision Bootcamp
-                            </h3>
-                            <p class="act__meta">
-                              2025 · Daffodil International University
-                            </p>
-                          </figcaption>
+                          <img
+                            src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_1000/v1786220058/IMG_0278_tjve3a.jpg"
+                            alt="Nazmul Huda Badhon during his semester exchange at Dongseo University" width="961"
+                            height="1280" loading="lazy" decoding="async" />
                         </figure>
                       </li>
 
                       <!-- Slide 5 -->
                       <li class="act__slide" role="listitem">
                         <figure class="act__figure">
-                          <img src="./Image/camp.JPG"
+                          <img
+                            src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_1000/v1786220597/IMG_20250219_095044_1_xv1egt.jpg"
+                            alt="Nazmul Huda Badhon recognized as a top performer in a computer vision bootcamp"
+                            width="1200" height="800" loading="lazy" decoding="async" />
+                        </figure>
+                      </li>
+
+                      <!-- Slide 6 -->
+                      <li class="act__slide" role="listitem">
+                        <figure class="act__figure">
+                          <img
+                            src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_1000/v1786220050/IMG_1345_ssosnu.jpg"
                             alt="Nazmul Huda Badhon participating in an international academic camp in South Korea"
                             width="1200" height="800" loading="lazy" decoding="async" />
-
-                          <figcaption class="act__caption">
-                            <span class="act__eyebrow">Global Engagement</span>
-                            <h3 class="act__title">International Academic Camp</h3>
-                            <p class="act__meta">
-                              2023 · Busan, South Korea
-                            </p>
-                          </figcaption>
                         </figure>
                       </li>
                     </ul>
-                  </div>
 
-                  <button class="act__arrow act__arrow--next" type="button" id="actNext"
-                    aria-label="Next academic highlight" aria-controls="actTrack">
-                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-                  </button>
+                    <button class="act__arrow act__arrow--next" type="button" id="actNext"
+                      aria-label="Next academic highlight" aria-controls="actTrack">
+                      <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                  </div>
 
                 </div>
 
@@ -563,7 +572,7 @@
                   <div class="act__counter" aria-live="polite">
                     <span id="actCurrent">01</span>
                     <span class="act__counter-separator">/</span>
-                    <span id="actTotal">05</span>
+                    <span id="actTotal">06</span>
                   </div>
                 </div>
 
@@ -644,8 +653,10 @@
                   </h3>
 
                   <p class="education-timeline-place">
-                    <img src="./Image/diu.png" alt="Daffodil International University logo" width="28" height="28"
-                      loading="lazy" decoding="async">
+                    <img
+                      src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_60/v1786221113/diu_xy5y6n.png"
+                      alt="Daffodil International University logo" width="28" height="28" loading="lazy"
+                      decoding="async">
 
                     <span>Daffodil International University, Dhaka, Bangladesh</span>
                   </p>
@@ -669,8 +680,9 @@
                   </h3>
 
                   <p class="education-timeline-place">
-                    <img src="./Image/dsu.svg" alt="Dongseo University logo" width="28" height="28" loading="lazy"
-                      decoding="async">
+                    <img
+                      src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_60/v1786221113/dsu_oqsnu6.svg"
+                      alt="Dongseo University logo" width="28" height="28" loading="lazy" decoding="async">
 
                     <span>Dongseo University, South Korea</span>
                   </p>
@@ -680,8 +692,9 @@
                   </div>
 
                   <p class="education-timeline-note">
-                    <img src="./Image/gks.png" alt="Global Korea Scholarship logo" width="24" height="24" loading="lazy"
-                      decoding="async">
+                    <img
+                      src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_60/v1786221122/gks_w8m2xw.png"
+                      alt="Global Korea Scholarship logo" width="24" height="24" loading="lazy" decoding="async">
 
                     <span>Global Korea Scholarship (GKS), fully funded.</span>
                   </p>
@@ -1064,7 +1077,9 @@
                 <span>View all publications</span>
                 <i class="fa-solid fa-arrow-right news-toggle__icon" aria-hidden="true"></i>
               </a>
-            </div <!-- Contact -->
+            </div>
+
+            <!-- Contact -->
             <section class="home-contact" aria-labelledby="homeContactTitle">
               <div class="home-contact__intro">
                 <span class="home-contact__kicker">Contact</span>
@@ -1178,30 +1193,36 @@
           style="display:flex; flex-direction:row; align-items:center; justify-content:flex-end; gap:14px;">
 
           <a href="mailto:nazmul.badhon.research@gmail.com" aria-label="Email">
-            <img src="./Image/email.png" alt="" aria-hidden="true" width="18" height="18" loading="lazy"
-              decoding="async" style="width:18px; height:18px; object-fit:contain;" />
+            <img src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_60/v1786221115/email_cqgi7z.png"
+              alt="" aria-hidden="true" width="18" height="18" loading="lazy" decoding="async"
+              style="width:18px; height:18px; object-fit:contain;" />
           </a>
 
           <a href="https://scholar.google.com/citations?user=pIs1mzsAAAAJ" target="_blank" rel="noopener noreferrer"
             aria-label="Google Scholar">
-            <img src="./Image/hat.png" alt="" aria-hidden="true" width="18" height="18" loading="lazy" decoding="async"
+            <img src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_60/v1786221124/hat_zmoqjo.png"
+              alt="" aria-hidden="true" width="18" height="18" loading="lazy" decoding="async"
               style="width:18px; height:18px; object-fit:contain;" />
           </a>
 
           <a href="https://orcid.org/0009-0006-6205-2422" target="_blank" rel="noopener noreferrer" aria-label="Orcid">
-            <img src="./Image/orcid.png" alt="" aria-hidden="true" width="18" height="18" loading="lazy"
-              decoding="async" style="width:18px; height:18px; object-fit:contain;" />
+            <img src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_60/v1786221129/orcid_srrwzo.png"
+              alt="" aria-hidden="true" width="18" height="18" loading="lazy" decoding="async"
+              style="width:18px; height:18px; object-fit:contain;" />
           </a>
 
           <a href="https://github.com/nazmulhudabadhon" target="_blank" rel="noopener noreferrer" aria-label="Github">
-            <img src="./Image/github.png" alt="" aria-hidden="true" width="18" height="18" loading="lazy"
-              decoding="async" style="width:18px; height:18px; object-fit:contain;" />
+            <img src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_60/v1786221121/github_rj0qce.png"
+              alt="" aria-hidden="true" width="18" height="18" loading="lazy" decoding="async"
+              style="width:18px; height:18px; object-fit:contain;" />
           </a>
 
           <a href="https://www.linkedin.com/in/nazmulhudabadhon/" target="_blank" rel="noopener noreferrer"
             aria-label="LinkedIn">
-            <img src="./Image/linkedin.png" alt="" aria-hidden="true" width="18" height="18" loading="lazy"
-              decoding="async" style="width:18px; height:18px; object-fit:contain;" />
+            <img
+              src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_60/v1786221126/linkedin_urf8pt.png"
+              alt="" aria-hidden="true" width="18" height="18" loading="lazy" decoding="async"
+              style="width:18px; height:18px; object-fit:contain;" />
           </a>
         </nav>
       </div>

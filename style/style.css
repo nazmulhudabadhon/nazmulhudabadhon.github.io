@@ -11,6 +11,35 @@
     --accent-red: #A51C30;
 }
 
+/* Drawer layout */
+.drawer {
+    display: flex;
+    width: 100%;
+}
+
+.drawer-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.drawer-toggle {
+    position: fixed;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.nav-link {
+    position: relative;
+    padding-bottom: 1px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
+}
+
 .nav-link {
     position: relative;
     padding-bottom: 1px;
@@ -37,10 +66,6 @@
     height: 2px;
     background-color: var(--accent-red);
 }
-
-
-
-
 
 html,
 body {
@@ -409,7 +434,7 @@ article.proj-card>* {
 
 .academic-section-kicker {
     font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -432,11 +457,11 @@ article.proj-card>* {
 }
 
 .act__stage {
-    position: relative;
     margin-top: 20px;
 }
 
 .act__viewport {
+    position: relative;
     width: 100%;
     overflow: hidden;
     border: 1px solid var(--border);
@@ -465,113 +490,43 @@ article.proj-card>* {
 .act__figure>img {
     display: block;
     width: 100%;
-    height: 330px;
+    height: 100%;
     object-fit: cover;
     object-position: center;
 }
-
-/* Caption */
-
-.act__caption {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    width: 100%;
-    min-height: 20px;
-    padding: 8px 44px 9px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3px;
-
-    background: rgba(6, 20, 42, 0.68);
-    color: #fff;
-    text-align: center;
-
-    -webkit-backdrop-filter: blur(2px);
-    backdrop-filter: blur(2px);
-}
-
-.act__eyebrow {
-    display: block;
-    margin: 0;
-
-    color: #e4c875;
-
-    font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
-    font-size: 10px;
-    line-height: 1.15;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-}
-
-.act__title {
-    margin: 0;
-
-    color: #fff;
-
-    font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    line-height: 1.2;
-    font-weight: 600;
-}
-
-.act__meta {
-    margin: 0;
-
-    color: #c4d3df;
-
-    font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
-    font-size: 10px;
-    line-height: 1.2;
-    font-weight: 400;
-}
-
-.act__eyebrow::after,
-.act__title::after {
-    content: none;
-}
-
-/* Navigation */
 
 .act__arrow {
     position: absolute;
     top: 50%;
     z-index: 10;
 
-    width: 30px;
-    height: 30px;
+    width: 34px;
+    height: 34px;
 
     display: grid;
     place-items: center;
 
-    border: 1px solid rgba(216, 214, 207, 0.95);
-    background: rgba(255, 255, 255, 0.96);
-    color: var(--accent);
+    border: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.35);
+    color: #ffffff;
 
     cursor: pointer;
     transform: translateY(-50%);
 
     transition:
-        color 180ms ease,
         background 180ms ease,
-        border-color 180ms ease;
+        transform 180ms ease;
 }
 
 .act__arrow:hover {
-    color: var(--accent-red);
-    background: #fff;
-    border-color: #b8b5ab;
+    background: rgba(0, 0, 0, 0.55);
+    color: #ffffff;
 }
 
 .act__arrow:focus-visible {
-    outline: 1px solid var(--accent-red);
-    outline-offset: 3px;
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
 }
 
 .act__arrow--prev {
@@ -581,8 +536,6 @@ article.proj-card>* {
 .act__arrow--next {
     right: 14px;
 }
-
-/* Indicators */
 
 .act__footer {
     display: flex;
@@ -638,8 +591,6 @@ article.proj-card>* {
     color: var(--border);
 }
 
-/* Carousel and interests layout */
-
 .academic-showcase-layout {
     display: grid;
     grid-template-columns: minmax(0, 1.75fr) minmax(270px, 0.85fr);
@@ -659,104 +610,41 @@ article.proj-card>* {
     height: 330px;
 }
 
-/* Tablet */
-
 @media (max-width: 1023px) {
     .academic-showcase-layout {
         grid-template-columns: 1fr;
-        gap: 28px;
+        gap: 30px;
     }
 
     .academic-showcase-layout .act__figure>img {
-        height: 360px;
-    }
-
-    .act__caption {
-        left: 14px;
-        right: 14px;
-        bottom: 14px;
-        width: auto;
-        max-width: 82%;
-    }
-
-    .act__arrow {
-        width: 40px;
-        height: 40px;
-    }
-
-    .act__arrow--prev {
-        left: 10px;
-    }
-
-    .act__arrow--next {
-        right: 10px;
+        height: 320px;
     }
 }
-
-/* Mobile */
 
 @media (max-width: 640px) {
     .academic-showcase-layout {
+        gap: 24px;
         margin-top: 22px;
-        margin-bottom: 30px;
+        margin-bottom: 32px;
     }
 
     .academic-showcase-layout .act__figure>img {
-        height: 280px;
+        height: 240px;
     }
 
-    .act__stage {
-        margin-top: 16px;
+    .research-interests-item {
+        grid-template-columns: 28px minmax(0, 1fr);
+        gap: 12px;
+        padding-bottom: 22px;
     }
 
-    .act__caption {
-        left: 10px;
-        right: 10px;
-        bottom: 10px;
-
-        max-width: none;
-        padding: 8px 10px;
+    .research-interests-content h3 {
+        font-size: 15px;
     }
 
-    .act__eyebrow {
-        font-size: 9px;
-    }
-
-    .act__title {
-        font-size: 14px;
-    }
-
-    .act__meta {
-        font-size: 9px;
-    }
-
-    .act__arrow {
-        width: 36px;
-        height: 36px;
-    }
-
-    .act__arrow--prev {
-        left: 7px;
-    }
-
-    .act__arrow--next {
-        right: 7px;
-    }
-
-    .act__indicator {
-        width: 21px;
-    }
-
-    .act__indicator.is-active {
-        width: 28px;
-    }
-}
-
-/* Reduced motion */
-
-@media (prefers-reduced-motion: reduce) {
-    .act__track {
-        transition: none;
+    .research-interests-content p {
+        margin-top: 8px;
+        font-size: 12.5px;
     }
 }
 
@@ -1346,10 +1234,6 @@ article.proj-card>* {
 .news-toggle.is-expanded .news-toggle__icon {
     transform: rotate(180deg);
 }
-
-@import "tailwindcss";
-
-@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 /* Dark mode */
 html[data-theme="dark"] .news-toggle:hover {
@@ -2323,7 +2207,7 @@ article.proj-card a.project-button i {
         width: 100%;
 
         background: var(--header-bg);
-        border-bottom: 1px solid var(--border);
+        border-bottom-color: var(--border);
     }
 }
 
@@ -2484,7 +2368,7 @@ article.proj-card a.project-button i {
 :root {
     color-scheme: light;
 
-    --header-bg: #fbf9f6;
+    --header-bg: rgba(251, 249, 246, 0.75);
     --nav-text: #5d6676;
     --nav-hover-bg: #f5f0fc;
     --nav-active-bg: #e9dcf8;
@@ -2507,6 +2391,19 @@ html {
 
 .desktop-brand {
     color: var(--text-main);
+}
+
+html[data-theme="dark"] .desktop-brand,
+html[data-theme="dark"] .mobile-topbar__name {
+    opacity: 0.75;
+}
+
+html[data-theme="dark"] nav[aria-label="Academic profiles"] img {
+    opacity: 0.75;
+}
+
+html[data-theme="dark"] .dark-blue {
+    color: #cba6ff;
 }
 
 .segmented-nav__link {
@@ -2549,7 +2446,7 @@ html[data-theme="dark"] {
     --accent-red: #e58b9a;
 
     --header-bg: #15171c;
-    --nav-text: #b3bac7;
+    --nav-text: #C9B49A;
     --nav-hover-bg: #292336;
     --nav-active-bg: #35294a;
     --nav-active-text: #cba6ff;
@@ -2571,6 +2468,7 @@ html[data-theme="dark"] #mobile-topbar,
 html[data-theme="dark"] footer {
     background: var(--header-bg) !important;
     border-color: var(--border) !important;
+    opacity: 0.75;
 }
 
 html[data-theme="dark"] main,
@@ -2579,6 +2477,16 @@ html[data-theme="dark"] .drawer,
 html[data-theme="dark"] .drawer-content {
     background-color: var(--page-bg);
     color: var(--text-main);
+}
+
+/* Warm muted text for specific elements in dark mode */
+html[data-theme="dark"] #about .text-slate-500,
+html[data-theme="dark"] #about .text-slate-400,
+html[data-theme="dark"] nav[aria-label="Academic profiles"] .text-slate-600,
+html[data-theme="dark"] aside [aria-label="Institutional information"] .text-slate-600 {
+    color: var(--text-main) !important;
+    opacity: 0.75;
+
 }
 
 /* Text utilities used throughout the HTML */

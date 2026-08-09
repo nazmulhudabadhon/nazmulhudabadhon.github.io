@@ -29,6 +29,22 @@
     <link rel="shortcut icon" href="https://res.cloudinary.com/a3xhs0jd/image/upload/v1786223837/favicon_qq6rld.ico">
     <link rel="apple-touch-icon" sizes="180x180"
         href="https://res.cloudinary.com/a3xhs0jd/image/upload/v1786223017/apple-touch-icon.png">
+
+    <script>
+        (function () {
+            try {
+                const savedTheme = localStorage.getItem("site-theme");
+                const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                const theme = savedTheme || (systemDark ? "dark" : "light");
+                document.documentElement.dataset.theme = theme;
+                document.documentElement.style.colorScheme = theme;
+            } catch (error) {
+                document.documentElement.dataset.theme = "light";
+                document.documentElement.style.colorScheme = "light";
+            }
+        })();
+    </script>
+
 </head>
 
 <body class="scroll-smooth bg-white text-slate-900">

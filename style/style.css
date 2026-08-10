@@ -2392,9 +2392,6 @@ article.proj-card a.project-button i {
 /* =========================================================
     desktop top navigation
    ========================================================= */
-/* =========================================================
-   FINAL DESKTOP NAVIGATION — SINGLE SOURCE OF TRUTH
-   ========================================================= */
 @media (min-width: 1024px) {
 
     .desktop-header {
@@ -2491,23 +2488,6 @@ article.proj-card a.project-button i {
     line-height: 1;
     white-space: nowrap;
 
-}
-
-.desktop-brand__logo {
-    display: block;
-    height: 32px;
-    opacity: 0.75;
-
-    /* scales width proportionally to ~120px */
-    width: auto;
-    object-fit: contain;
-}
-
-@media (min-width: 1024px) {
-    .desktop-brand__logo {
-        height: 30px;
-        /* fine-tune to taste against your 7px-padded header */
-    }
 }
 
 /* =========================================================

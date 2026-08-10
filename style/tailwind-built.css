@@ -493,6 +493,10 @@ video {
     max-width: 1000px
 }
 
+.max-w-\[768px\] {
+    max-width: 768px
+}
+
 .max-w-\[300px\] {
     max-width: 300px
 }
@@ -1415,6 +1419,10 @@ video {
 
     .lg\:grid-cols-\[minmax\(0\2c 1fr\)_300px\] {
         grid-template-columns: minmax(0, 1fr) 300px
+    }
+
+    .lg\:grid-cols-\[190px_minmax\(0\2c 1fr\)\] {
+        grid-template-columns: 190px minmax(0, 1fr)
     }
 
     .lg\:gap-14 {

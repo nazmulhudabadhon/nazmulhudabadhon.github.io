@@ -2397,6 +2397,10 @@ article.proj-card a.project-button i {
     .desktop-header {
         width: 100%;
         padding: 7px 0;
+
+        position: sticky;
+        top: 0;
+        z-index: 9999;
     }
 
     .desktop-header__inner {
@@ -2508,6 +2512,12 @@ article.proj-card a.project-button i {
 
     --mobile-nav-bg: rgba(251, 249, 246, 0.78);
     --mobile-nav-border: rgba(216, 214, 207, 0.72);
+}
+
+@property --border {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: #D8D6CF;
 }
 
 html {
@@ -3114,11 +3124,11 @@ article,
     width: 30px;
     height: 30px;
     border-radius: 8px;
-    border: 1px solid #D8D6CF;
+    border: 1px solid #E5E3DD;
     background: transparent;
     transition:
-        border-color 160ms ease,
-        background-color 160ms ease,
+        border-color 220ms ease,
+        background-color 220ms ease,
         transform 160ms ease;
 }
 
@@ -3132,4 +3142,20 @@ article,
     width: 17px;
     height: 17px;
     object-fit: contain;
+}
+
+html[data-theme="dark"] .profile-hero__links a {
+    border-color: #4d4c4b;
+}
+
+html[data-theme="dark"] .profile-hero__links a:hover {
+    border-color: rgba(203, 166, 255, 0.42);
+    background: rgba(203, 166, 255, 0.08);
+}
+
+/* Disable visual transitions while changing theme */
+html.is-theme-switching *,
+html.is-theme-switching *::before,
+html.is-theme-switching *::after {
+    transition: none !important;
 }

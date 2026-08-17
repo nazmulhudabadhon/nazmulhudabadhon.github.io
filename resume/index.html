@@ -19,10 +19,12 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/solid.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/regular.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css">
+
     <link
         href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap"
         rel="stylesheet">
@@ -34,8 +36,12 @@
         (function () {
             try {
                 const savedTheme = localStorage.getItem("site-theme");
-                const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                const theme = savedTheme || (systemDark ? "dark" : "light");
+                const systemDark =
+                    window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+                const theme =
+                    savedTheme || (systemDark ? "dark" : "light");
+
                 document.documentElement.dataset.theme = theme;
                 document.documentElement.style.colorScheme = theme;
             } catch (error) {
@@ -46,17 +52,18 @@
     </script>
 
     <style>
+        /* Base */
+
+        /* Base */
+
+        html {
+            scrollbar-gutter: stable;
+        }
+
         html,
         body {
             margin: 0;
             padding: 0;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-
-        html::-webkit-scrollbar,
-        body::-webkit-scrollbar {
-            display: none;
         }
 
         *,
@@ -66,10 +73,12 @@
         }
 
         /* CV viewer */
+
         .cv-viewer {
-            width: min(calc(100% - 48px), 1000px);
+            width: min(calc(100% - 48px), 768px);
             min-height: 0;
-            margin-inline: auto;
+            margin-left: auto;
+            margin-right: auto;
             flex: 1 1 auto;
         }
 
@@ -93,12 +102,18 @@
             font-weight: 600;
         }
 
+        /* Desktop header */
+
         @media (min-width: 1024px) {
             .desktop-header {
                 position: sticky;
                 top: 0;
                 z-index: 9999;
-                display: block;
+            }
+
+            .cv-page .desktop-theme-toggle {
+                margin: 0 !important;
+                margin-left: 0 !important;
             }
 
             .cv-frame {
@@ -107,12 +122,15 @@
             }
         }
 
+        /* Mobile */
 
         @media (max-width: 1023px) {
             .cv-viewer {
                 width: 100%;
             }
         }
+
+        /* Reduced motion */
 
         @media (prefers-reduced-motion: reduce) {
 
@@ -124,6 +142,8 @@
                 animation-duration: 0.01ms !important;
             }
         }
+
+        /* Print */
 
         @media print {
             .desktop-header {
@@ -141,12 +161,13 @@
 
 <body class="cv-page">
 
+    <!-- Desktop top navbar -->
+
     <header class="desktop-header">
-        <div class="desktop-header__inner" style="width: min(100% - 48px, 1000px);
-">
+        <div class="desktop-header__inner">
 
             <a href="../" class="desktop-brand" aria-label="Nazmul Huda Badhon home">
-                Nazmul Huda Badhon
+                <span style="font-weight: 600;">Nazmul Huda</span>&nbsp;Badhon
             </a>
 
             <nav class="segmented-nav" aria-label="Main navigation">
@@ -159,9 +180,9 @@
                     Publications
                 </a>
 
-                <!--<a href="../projects/" class="segmented-nav__link">
+                <a href="../projects/" class="segmented-nav__link">
                     Projects
-                </a>-->
+                </a>
 
                 <a href="../achievement/" class="segmented-nav__link">
                     Achievements
@@ -170,14 +191,20 @@
                 <a href="../resume/" class="segmented-nav__link segmented-nav__link--cv is-active" aria-current="page">
                     CV
                 </a>
+
             </nav>
 
             <button id="themeToggle" class="desktop-theme-toggle" type="button" aria-label="Switch to dark mode"
                 title="Switch to dark mode" aria-pressed="false">
+
                 <i class="fa-regular fa-moon" aria-hidden="true"></i>
+
             </button>
+
         </div>
     </header>
+
+    <!-- CV document -->
 
     <main id="cv-document" class="cv-viewer">
 
@@ -205,6 +232,7 @@
     </main>
 
     <script src="../index.js"></script>
+
 </body>
 
 </html>

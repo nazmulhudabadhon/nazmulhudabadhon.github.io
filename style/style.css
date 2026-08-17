@@ -2389,9 +2389,8 @@ article.proj-card a.project-button i {
     font-size: 14px;
 }
 
-/* =========================================================
-    desktop top navigation
-   ========================================================= */
+/* Desktop top navigation */
+
 @media (min-width: 1024px) {
 
     .desktop-header {
@@ -2406,24 +2405,31 @@ article.proj-card a.project-button i {
     .desktop-header__inner {
         display: flex;
         align-items: center;
-        width: min(100% - 48px, 768px);
-        margin-inline: auto;
-        gap: 24px;
+
+        width: 768px;
+        max-width: calc(100% - 48px);
+
+        margin-left: auto;
+        margin-right: auto;
+
+        gap: 8px;
     }
 
     .segmented-nav {
         display: flex;
         align-items: center;
         justify-content: flex-start;
+
         width: auto;
         margin-left: auto;
-        gap: 8px;
-        /* THIS controls spacing */
+
+        gap: 0;
         padding: 0;
     }
 
     .segmented-nav__link {
         flex: 0 0 auto;
+
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -2432,11 +2438,12 @@ article.proj-card a.project-button i {
         padding: 8px 14px !important;
 
         min-height: 0;
+
         border: 0;
         border-radius: 999px;
 
         font-family: "Source Sans 3", Arial, sans-serif;
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 500;
         line-height: 1.2;
 
@@ -2462,12 +2469,16 @@ article.proj-card a.project-button i {
 .desktop-theme-toggle {
     width: 32px;
     height: 32px;
+
     padding: 0;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     border: 1px solid #e4dfd8;
     border-radius: 50%;
+
     background: rgba(255, 255, 255, 0.7);
 }
 
@@ -2488,11 +2499,11 @@ article.proj-card a.project-button i {
 
     color: var(--text-main);
     font-family: "Source Serif 4", Georgia, serif;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1;
     white-space: nowrap;
-
 }
+
 
 /* =========================================================
    SITE-WIDE DARK MODE

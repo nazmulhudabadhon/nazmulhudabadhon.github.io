@@ -8,29 +8,43 @@
     <title>CV | Nazmul Huda Badhon</title>
     <meta name="description" content="View and download the CV of Nazmul Huda Badhon.">
 
-    <link rel="icon" type="image/png"
-        href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223898/favicon.png">
     <link rel="icon" type="image/png" sizes="32x32"
         href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223898/favicon.png">
+
+    <link rel="icon" type="image/png"
+        href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223898/favicon.png">
+
     <link rel="shortcut icon"
         href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223837/favicon_qq6rld.ico">
+
     <link rel="apple-touch-icon" sizes="180x180"
         href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223017/apple-touch-icon.png">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+    <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/solid.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/regular.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap"
-        rel="stylesheet">
+    <!-- Font Awesome icon fonts -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-regular-400.woff2"
+        as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2"
+        as="font" type="font/woff2" crossorigin>
 
+    <!-- Local fonts -->
+    <link rel="preload" href="../fonts/SourceSans3-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/SourceSans3-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/SourceSans3-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/SourceSans3-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/SourceSans3-Italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../fonts/SourceSerif4-VariableFont_opsz,wght.woff2" as="font" type="font/woff2"
+        crossorigin>
+
+    <!-- Styles -->
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/tailwind-built.css">
+
 
     <script>
         (function () {
@@ -53,9 +67,6 @@
 
     <style>
         /* Base */
-
-        /* Base */
-
         html {
             scrollbar-gutter: stable;
         }
@@ -76,19 +87,16 @@
 
         .cv-viewer {
             width: min(calc(100% - 48px), 768px);
+            height: calc(100dvh - 50px);
+            margin-inline: auto;
             min-height: 0;
-            margin-left: auto;
-            margin-right: auto;
-            flex: 1 1 auto;
         }
 
         .cv-frame {
             display: block;
             width: 100%;
-            height: 100vh;
-            height: 100dvh;
+            height: 100%;
             border: 0;
-            background: #ffffff;
         }
 
         .pdf-fallback {
@@ -119,14 +127,6 @@
             .cv-frame {
                 height: calc(100vh - 50px);
                 height: calc(100dvh - 50px);
-            }
-        }
-
-        /* Mobile */
-
-        @media (max-width: 1023px) {
-            .cv-viewer {
-                width: 100%;
             }
         }
 
@@ -208,8 +208,8 @@
 
     <main id="cv-document" class="cv-viewer">
 
-        <iframe class="cv-frame" src="../pdfs/CV_Nazmul_Huda_Badhon.pdf#zoom=125&view=FitH"
-            title="Curriculum vitae of Nazmul Huda Badhon" loading="eager">
+        <iframe class="cv-frame" src="../pdfs/CV_Nazmul_Huda_Badhon.pdf" title="Curriculum vitae of Nazmul Huda Badhon"
+            loading="eager">
 
             <p class="pdf-fallback">
                 Your browser cannot display this PDF.

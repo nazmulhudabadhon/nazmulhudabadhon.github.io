@@ -213,7 +213,7 @@ b,
     .profile-intro__photo {
         float: left;
 
-        width: 140px;
+        width: 130px;
         aspect-ratio: 1 / 1;
 
         margin: 0 24px 12px 0;
@@ -242,9 +242,9 @@ b,
 
         color: var(--text-main);
         font-family: "Source Serif 4", Georgia, serif;
-        font-size: 17px;
+        font-size: 16px;
         font-weight: 400;
-        line-height: 1.72;
+        line-height: 1.65;
 
         text-align: left;
     }
@@ -256,7 +256,7 @@ b,
     .profile-intro__second {
         clear: both;
 
-        margin: 18px 0 0;
+        margin: 14px 0 0;
 
         color: var(--text-main);
         font-family: "Source Serif 4", Georgia, serif;
@@ -2595,7 +2595,7 @@ article.proj-card a.project-button i {
 :root {
     color-scheme: light;
 
-    --header-bg: rgba(248, 249, 250, 0.82);
+    --header-bg: #FAF9F6;
     --nav-text: #111111;
     --nav-hover-bg: #f5f0fc;
     --nav-active-bg: #e9dcf8;
@@ -2626,11 +2626,6 @@ html {
 
 .desktop-brand {
     color: var(--text-main);
-}
-
-html[data-theme="dark"] .desktop-brand,
-html[data-theme="dark"] .mobile-topbar__name {
-    opacity: 0.85;
 }
 
 html[data-theme="dark"] nav[aria-label="Academic profiles"] img {
@@ -2703,7 +2698,6 @@ html[data-theme="dark"] #mobile-topbar,
 html[data-theme="dark"] footer {
     background: var(--header-bg) !important;
     border-color: var(--border) !important;
-    opacity: 0.85;
 }
 
 html[data-theme="dark"] main,

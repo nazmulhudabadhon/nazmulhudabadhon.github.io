@@ -1403,7 +1403,7 @@ article.proj-card>* {
     border: 1px solid var(--nav-active-bg);
     border-radius: 999px;
     background: transparent;
-    color: var(--nav-active-text);
+    color: var(--text-muted);
     box-shadow: none;
 
     font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
@@ -1488,11 +1488,50 @@ html[data-theme="dark"] .news-toggle:hover {
     border-bottom: 1px solid var(--border);
 
     background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
 }
 
 .home-contact__intro {
     width: 100%;
     max-width: none;
+}
+
+/* Contact main content */
+.home-contact__main {
+    flex: 1;
+    min-width: 0;
+}
+
+/* HiHello QR */
+.home-contact__qr {
+    flex: 0 0 auto;
+    width: 120px;
+    text-align: center;
+}
+
+.home-contact__qr img {
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+
+    object-fit: contain;
+}
+
+.home-contact__qr span {
+    display: block;
+    margin-top: 8px;
+
+    color: var(--text-muted);
+
+    font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.35;
 }
 
 .home-contact__kicker {
@@ -1502,10 +1541,9 @@ html[data-theme="dark"] .news-toggle:hover {
     color: #6519dc;
 
     font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1;
-    letter-spacing: 0.08em;
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: 0.08em !important;
     text-transform: uppercase;
 }
 
@@ -1540,9 +1578,9 @@ html[data-theme="dark"] .news-toggle:hover {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 
-    margin-top: 22px;
+    margin-top: 16px;
 }
 
 .home-contact__nav-link {
@@ -1558,7 +1596,7 @@ html[data-theme="dark"] .news-toggle:hover {
     border-radius: 999px;
 
     background: transparent;
-    color: var(--timeline-line-color);
+    color: var(--text-muted);
 
     font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
     font-size: 13px;
@@ -1750,15 +1788,23 @@ article.publication-card>* {
     margin: 14px 0 0;
     color: var(--text-main);
     font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 14.5px;
     font-weight: 400;
-    line-height: 1.65;
+    line-height: 1.45;
     white-space: normal;
 }
 
 .publication-card-media {
     width: 220px;
     min-width: 0;
+}
+
+.publication-card .mt-4 a {
+    color: var(--text-muted) !important;
+}
+
+.publication-card .mt-4 a:hover {
+    color: #A51C30 !important;
 }
 
 .publication-figure {
@@ -1791,7 +1837,7 @@ article.publication-card>* {
 .publication-card .text-gray-700 {
     color: var(--text-muted);
     font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1;
 }
 
@@ -2131,8 +2177,8 @@ article.ach-card>* {
     margin: 14px 0 0;
     color: var(--text-main);
     font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    line-height: 1.7;
+    font-size: 14px;
+    line-height: 1.65;
     font-weight: 400;
     text-align: left;
 }
@@ -2145,7 +2191,7 @@ article.ach-card>* {
     display: block;
     color: var(--text-muted);
     font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
-    font-size: 10px;
+    font-size: 11.5px;
     line-height: 1.3;
     font-weight: 600;
     letter-spacing: 0.1em;
@@ -2159,7 +2205,7 @@ article.ach-card>* {
     margin-top: 4px;
     color: var(--text-muted);
     font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1.5;
 }
 
@@ -3220,7 +3266,7 @@ article,
     width: 32px;
     height: 32px;
     border-radius: 8px;
-    border: 1px solid #a59e9e;
+    border: 1px solid #d8c8ee;
     background: transparent;
     transition:
         border-color 220ms ease,

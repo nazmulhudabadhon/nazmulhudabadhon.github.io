@@ -212,15 +212,10 @@ b,
 
     .profile-intro__photo {
         float: left;
-
-        width: 130px;
+        width: 120px;
         aspect-ratio: 1 / 1;
-
-        margin: 0 24px 12px 0;
-
+        margin: 6px 24px 12px 0;
         overflow: hidden;
-        /* rounded-md */
-
         border: 1px solid var(--border);
         background: var(--soft-bg);
     }
@@ -1217,7 +1212,7 @@ article.proj-card>* {
     font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.45;
     text-align: left;
 }
 

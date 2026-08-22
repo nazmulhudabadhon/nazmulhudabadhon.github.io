@@ -77,6 +77,7 @@
             padding: 0;
         }
 
+
         *,
         *::before,
         *::after {
@@ -86,10 +87,21 @@
         /* CV viewer */
 
         .cv-viewer {
-            width: min(calc(100% - 48px), 768px);
+            position: relative;
+
+            /* The PDF is 768px wide */
+            width: 768px;
+            max-width: calc(100vw - 48px);
+
             height: calc(100dvh - 50px);
-            margin-inline: auto;
+
+            margin: 0 auto;
             min-height: 0;
+        }
+
+        .cv-frame-wrapper {
+            width: 100%;
+            height: 100%;
         }
 
         .cv-frame {
@@ -97,6 +109,38 @@
             width: 100%;
             height: 100%;
             border: 0;
+        }
+
+        .cv-fullscreen-btn {
+            position: absolute;
+
+            /* Put it outside the 768px PDF */
+            left: calc(100% + 12px);
+            top: 8px;
+
+            width: 36px;
+            height: 36px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 0;
+
+            border: 1px solid var(--border-color, #ccc);
+            border-radius: 8px;
+
+            background: var(--bg-main, #fff);
+            color: var(--text-main);
+
+            cursor: pointer;
+            font-size: 15px;
+
+            z-index: 100;
+        }
+
+        .cv-fullscreen-btn:hover {
+            opacity: 0.75;
         }
 
         .pdf-fallback {
@@ -208,17 +252,28 @@
 
     <main id="cv-document" class="cv-viewer">
 
-        <iframe class="cv-frame" src="../pdfs/CV_Nazmul_Huda_Badhon.pdf" title="Curriculum vitae of Nazmul Huda Badhon"
-            loading="eager">
+        <div class="cv-frame-wrapper">
 
-            <p class="pdf-fallback">
-                Your browser cannot display this PDF.
-                <a href="../pdfs/CV_Nazmul_Huda_Badhon.pdf">
-                    Download the CV
-                </a>.
-            </p>
+            <iframe class="cv-frame" src="../pdfs/CV_Nazmul_Huda_Badhon.pdf"
+                title="Curriculum vitae of Nazmul Huda Badhon" loading="eager">
 
-        </iframe>
+                <p class="pdf-fallback">
+                    Your browser cannot display this PDF.
+                    <a href="../pdfs/CV_Nazmul_Huda_Badhon.pdf">
+                        Download the CV
+                    </a>.
+                </p>
+
+            </iframe>
+
+        </div>
+
+        <button id="fullscreenBtn" class="cv-fullscreen-btn" type="button" aria-label="Open CV in fullscreen"
+            title="Open CV in fullscreen">
+
+            <i class="fa-solid fa-expand" aria-hidden="true"></i>
+
+        </button>
 
         <noscript>
             <p class="pdf-fallback">
@@ -230,6 +285,70 @@
         </noscript>
 
     </main>
+
+    <script>
+        const cvViewer = document.getElementById("cv-document");
+        const fullscreenBtn = document.getElementById("fullscreenBtn");
+        const cvFrame = document.querySelector(".cv-frame");
+
+        const normalPdf = "../pdfs/CV_Nazmul_Huda_Badhon.pdf";
+        const fullscreenPdf = "../pdfs/CV_Nazmul_Huda_Badhon.pdf#zoom=150";
+
+        let wasFullscreen = false;
+
+        fullscreenBtn.addEventListener("click", async () => {
+            try {
+                if (!document.fullscreenElement) {
+
+                    // Load PDF at 150% before entering fullscreen
+                    cvFrame.src = fullscreenPdf;
+
+                    // Wait briefly for Chrome's PDF viewer to initialize
+                    await new Promise(resolve => setTimeout(resolve, 150));
+
+                    wasFullscreen = true;
+
+                    await cvViewer.requestFullscreen();
+
+                } else {
+                    await document.exitFullscreen();
+                }
+
+            } catch (error) {
+                console.error("Fullscreen failed:", error);
+            }
+        });
+
+        document.addEventListener("fullscreenchange", () => {
+            const isFullscreen = document.fullscreenElement === cvViewer;
+
+            fullscreenBtn.innerHTML = isFullscreen
+                ? '<i class="fa-solid fa-compress" aria-hidden="true"></i>'
+                : '<i class="fa-solid fa-expand" aria-hidden="true"></i>';
+
+            fullscreenBtn.setAttribute(
+                "aria-label",
+                isFullscreen ? "Exit fullscreen" : "Open CV in fullscreen"
+            );
+
+            fullscreenBtn.setAttribute(
+                "title",
+                isFullscreen ? "Exit fullscreen" : "Open CV in fullscreen"
+            );
+
+            // Return to normal PDF zoom when leaving fullscreen
+            if (!isFullscreen && wasFullscreen) {
+
+                cvFrame.src = "";
+
+                requestAnimationFrame(() => {
+                    cvFrame.src = normalPdf;
+                });
+
+                wasFullscreen = false;
+            }
+        });
+    </script>
 
     <script src="../index.js"></script>
 

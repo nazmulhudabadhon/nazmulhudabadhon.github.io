@@ -837,7 +837,7 @@ article.proj-card>* {
 
     .research-interests-content p {
         margin-top: 8px;
-        font-size: 12.5px;
+        font-size: 13px;
     }
 }
 
@@ -926,7 +926,7 @@ article.proj-card>* {
     font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
     font-size: 13px;
     font-weight: 400;
-    line-height: 1.55;
+    line-height: 1.45;
     text-align: left;
 }
 
@@ -1657,6 +1657,10 @@ html[data-theme="dark"] .home-contact__nav-link.is-active:hover {
     border-color: rgba(203, 166, 255, 0.42);
     background: rgba(203, 166, 255, 0.08);
     color: #cba6ff;
+}
+
+html[data-theme="dark"] .mobile-bottom-nav__link.is-active {
+    color: #d8c8ee;
 }
 
 /* Mobile */

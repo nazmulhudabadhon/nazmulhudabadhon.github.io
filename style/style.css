@@ -582,7 +582,7 @@ article.proj-card>* {
     justify-content: space-between;
     border-bottom: 1px solid var(--border);
     padding-bottom: 4px;
-    margin: 22px 0 14px;
+    margin: 32px 0 14px;
 }
 
 .academic-section-kicker {
@@ -963,6 +963,36 @@ article.proj-card>* {
     }
 }
 
+.research-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100%;
+    border-top: 1px solid #D8D6CF;
+    border-bottom: 1px solid #D8D6CF;
+}
+
+.research-stats__item {
+    position: relative;
+    padding: 8px 4px;
+    text-align: center;
+}
+
+.research-stats__item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0.5px;
+    height: 100%;
+    background: #D8D6CF;
+}
+
+@media (min-width: 640px) {
+    .research-stats__item {
+        padding: 10px 12px;
+    }
+}
+
 /* =========================================================
    SHARED ACADEMIC TIMELINE
    Education + Recent Publications
@@ -972,12 +1002,12 @@ article.proj-card>* {
 .publication-timeline {
     --timeline-year-width: 64px;
     --timeline-rail-width: 18px;
-    --timeline-column-gap: 10px;
+    --timeline-column-gap: 8px;
     --timeline-item-gap: 28px;
 
-    --timeline-dot-size: 9px;
+    --timeline-dot-size: 8px;
     --timeline-dot-top: 5px;
-    --timeline-dot-border: 2px;
+    --timeline-dot-border: 1px;
 
     --timeline-dot-color: #35506f;
     --timeline-line-color: #d8d6cf;
@@ -1088,7 +1118,7 @@ article.proj-card>* {
     bottom: calc(-1 * var(--timeline-item-gap));
     left: 50%;
 
-    width: 1px;
+    width: 0.5px;
     background: var(--timeline-line-color);
 
     transform: translateX(-50%);

@@ -33,17 +33,21 @@
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/tailwind-built.css">
 
-    <!-- Current favicon for UI -->
-    <link rel="icon" type="image/png"
-        href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223898/favicon.png">
+    <!-- Primary favicon -->
+    <link rel="icon" type="image/png" sizes="48x48"
+        href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_png,w_48,h_48,c_fill/v1786223898/favicon.png">
 
-    <!-- Root-level versions for Google and crawlers -->
+    <!-- Additional favicon size -->
     <link rel="icon" type="image/png" sizes="32x32"
-        href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223898/favicon.png">
-    <link rel="shortcut icon"
-        href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223837/favicon_qq6rld.ico">
+        href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_png,w_32,h_32,c_fill/v1786223898/favicon.png">
+
+    <!-- ICO fallback -->
+    <link rel="icon" type="image/x-icon"
+        href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_ico,w_32,h_32,c_fill/v1786223837/favicon_qq6rld.ico">
+
+    <!-- Apple / iOS -->
     <link rel="apple-touch-icon" sizes="180x180"
-        href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223017/apple-touch-icon.png">
+        href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_png,w_180,h_180,c_fill/v1786223017/apple-touch-icon.png">
 
     <script>
         (function () {
@@ -157,13 +161,6 @@
                                 Classification
                             </div>
 
-                            <!-- SUMMARY -->
-                            <p class="achievement-meta-value">
-                                Breast ultrasound lesion segmentation and
-                                classification using U-Net and fused
-                                convolutional neural-network features.
-                            </p>
-
                             <!-- INLINE METADATA -->
                             <div
                                 class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm md:text-[13px] text-gray-700">
@@ -215,8 +212,9 @@
                             <div class="publication-figure">
                                 <img src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_900/v1786223428/breast_ultrasound_thumbnail_c5wrhn.jpg"
                                     alt="Breast ultrasound segmentation and hybrid classification workflow"
-                                    loading="lazy" decoding="async" width="1280" height="720"
-                                    class="h-full w-full object-contain">
+                                    loading="lazy" decoding="async" width="1280" height="720" class="w-full h-auto"
+                                    data-lightbox
+                                    data-caption="[1] Breast Cancer Segmentation-Guided Hybrid Classification">
                             </div>
 
                         </div>
@@ -259,13 +257,6 @@
                             Lung–Colon Histopathology Classification with
                             Image Enhancement and Transfer Learning
                         </div>
-
-                        <!-- SUMMARY -->
-                        <p class="achievement-meta-value">
-                            Evaluation of preprocessing and
-                            transfer-learning architectures for lung and
-                            colon histopathology classification.
-                        </p>
 
                         <!-- INLINE METADATA -->
                         <div
@@ -315,8 +306,9 @@
                         <div class="publication-figure">
                             <img src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_900/v1786223427/lc_histopathology_thumbnail_qiwzki.jpg"
                                 alt="Lung and colon histopathology image-enhancement and transfer-learning workflow"
-                                loading="lazy" decoding="async" width="1280" height="720"
-                                class="h-full w-full object-contain">
+                                loading="lazy" decoding="async" width="1280" height="720" class="w-full h-auto"
+                                data-lightbox
+                                data-caption="[2] Lung–Colon Histopathology Classification with Image Enhancement and Transfer Learning">
                         </div>
 
                     </div>
@@ -355,16 +347,8 @@
 
                         <!-- TITLE -->
                         <div class="achievement-title">
-                            Medical Image Quality Enhancement and
-                            Classification with Vision Transformers
+                            Medical Image Quality Enhancement and Classification with Vision Transformers
                         </div>
-
-                        <!-- SUMMARY -->
-                        <p class="achievement-meta-value">
-                            Analysis of image-enhancement pipelines and
-                            Vision Transformer classification for medical
-                            imaging experiments.
-                        </p>
 
                         <!-- INLINE METADATA -->
                         <div
@@ -413,8 +397,9 @@
                         <div class="publication-figure">
                             <img src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_900/v1786223428/vit_thumbnail_wb77jn.jpg"
                                 alt="Medical image preprocessing and Vision Transformer classification workflow"
-                                loading="lazy" decoding="async" width="1280" height="720"
-                                class="h-full w-full object-contain">
+                                loading="lazy" decoding="async" width="1280" height="720" class="w-full h-auto"
+                                data-lightbox
+                                data-caption="[3] Medical Image Quality Enhancement and Classification with Vision Transformers">
                         </div>
                     </div>
                 </div>
@@ -520,6 +505,29 @@
     </footer>
 
     <script src="../index.js"></script>
+
+    <div id="publicationLightbox" class="publication-lightbox" aria-hidden="true">
+
+        <button type="button" class="publication-lightbox__close" aria-label="Close image viewer">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <button type="button" class="act__arrow act__arrow--prev" aria-label="Previous image">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="publication-lightbox__stage">
+            <img id="publicationLightboxImage" src="" alt="">
+
+            <p id="publicationLightboxCaption" class="publication-lightbox__caption">
+            </p>
+        </div>
+
+        <button type="button" class="act__arrow act__arrow--next" aria-label="Next image">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+    </div>
 
 </body>
 

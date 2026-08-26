@@ -1,33 +1,32 @@
 // 1. Connect the button after HTML loads
 document.addEventListener("DOMContentLoaded", function () {
-    const themeButtons = document.querySelectorAll(
-        "#themeToggle, #mobileThemeToggle"
-    );
+const themeButtons = document.querySelectorAll(
+    "#themeToggle, #mobileThemeToggle"
+);
 
-    if (!themeButtons.length) return;
+const root = document.documentElement;
 
-    const root = document.documentElement;
+function updateThemeButtons(theme) {
+    const isDark = theme === "dark";
 
-    function updateThemeButtons(theme) {
-        const isDark = theme === "dark";
+    themeButtons.forEach(function (button) {
+        const icon = button.querySelector("i");
 
-        themeButtons.forEach(function (button) {
-            const icon = button.querySelector("i");
+        button.setAttribute("aria-pressed", String(isDark));
+        button.setAttribute(
+            "aria-label",
+            isDark ? "Switch to light mode" : "Switch to dark mode"
+        );
 
-            button.setAttribute("aria-pressed", String(isDark));
-            button.setAttribute(
-                "aria-label",
-                isDark ? "Switch to light mode" : "Switch to dark mode"
-            );
+        if (icon) {
+            icon.className = isDark
+                ? "fa-regular fa-sun"
+                : "fa-regular fa-moon";
+        }
+    });
+}
 
-            if (icon) {
-                icon.className = isDark
-                    ? "fa-regular fa-sun"
-                    : "fa-regular fa-moon";
-            }
-        });
-    }
-
+if (themeButtons.length) {
     updateThemeButtons(
         root.dataset.theme === "dark" ? "dark" : "light"
     );
@@ -52,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     });
+}
 
     document.querySelectorAll("[id]").forEach((el) => {
         const trimmed = (el.id || "").trim();
@@ -561,8 +561,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     ) {
                         nextSlide();
                     } else if (
-                        horizontalDistance
-                        -minimumSwipeDistance
+                        horizontalDistance < -minimumSwipeDistance
                     ) {
                         previousSlide();
                     }
@@ -624,4 +623,522 @@ document.addEventListener("DOMContentLoaded", function () {
 
         startAutoplay();
     })();
+	
+// 5. Shared Image + YouTube Lightbox
+(() => {
+    const lightboxItems = Array.from(
+        document.querySelectorAll("[data-lightbox]")
+    );
+
+    // No lightbox items on this page
+    if (!lightboxItems.length) {
+        return;
+    }
+
+    /*
+     * ---------------------------------------------------------
+     * CREATE LIGHTBOX
+     * ---------------------------------------------------------
+     */
+
+    const lightbox = document.createElement("div");
+
+    lightbox.id = "publicationLightbox";
+    lightbox.className = "publication-lightbox";
+    lightbox.setAttribute("aria-hidden", "true");
+
+    lightbox.innerHTML = `
+        <button
+            type="button"
+            class="publication-lightbox__close"
+            aria-label="Close image viewer">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <button
+            type="button"
+            class="act__arrow act__arrow--prev"
+            aria-label="Previous item">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="publication-lightbox__stage">
+
+            <img
+                id="publicationLightboxImage"
+                src=""
+                alt=""
+                style="display: none;">
+
+            <iframe
+                id="publicationLightboxVideo"
+                src=""
+                title=""
+                frameborder="0"
+                allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share
+                "
+                allowfullscreen
+                style="display: none;">
+            </iframe>
+
+            <p
+                id="publicationLightboxCaption"
+                class="publication-lightbox__caption">
+            </p>
+
+        </div>
+
+        <button
+            type="button"
+            class="act__arrow act__arrow--next"
+            aria-label="Next item">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    `;
+
+    document.body.appendChild(lightbox);
+
+
+    /*
+     * ---------------------------------------------------------
+     * ELEMENTS
+     * ---------------------------------------------------------
+     */
+
+    const lightboxImage =
+        lightbox.querySelector("#publicationLightboxImage");
+
+    const lightboxVideo =
+        lightbox.querySelector("#publicationLightboxVideo");
+
+    const caption =
+        lightbox.querySelector("#publicationLightboxCaption");
+
+    const closeButton =
+        lightbox.querySelector(".publication-lightbox__close");
+
+    const prevButton =
+        lightbox.querySelector(".act__arrow--prev");
+
+    const nextButton =
+        lightbox.querySelector(".act__arrow--next");
+
+
+    /*
+     * ---------------------------------------------------------
+     * STATE
+     * ---------------------------------------------------------
+     */
+
+    let currentIndex = 0;
+
+
+    /*
+     * ---------------------------------------------------------
+     * GET ITEM TYPE
+     * ---------------------------------------------------------
+     */
+
+    function getItemType(item) {
+        const type = item.dataset.lightbox;
+
+        if (type === "youtube" || type === "video") {
+            return "youtube";
+        }
+
+        return "image";
+    }
+
+
+    /*
+     * ---------------------------------------------------------
+     * GET YOUTUBE URL
+     * ---------------------------------------------------------
+     */
+
+    function getYouTubeUrl(item) {
+        let videoUrl =
+            item.dataset.video ||
+            item.dataset.youtube ||
+            item.getAttribute("src") ||
+            "";
+
+        if (!videoUrl) {
+            return "";
+        }
+
+        /*
+         * If it's already an embed URL,
+         * add autoplay.
+         */
+        if (videoUrl.includes("youtube.com/embed/")) {
+            const separator =
+                videoUrl.includes("?") ? "&" : "?";
+
+            return `${videoUrl}${separator}autoplay=1&rel=0`;
+        }
+
+        /*
+         * Convert normal YouTube URLs
+         *
+         * https://www.youtube.com/watch?v=VIDEO_ID
+         *
+         * into:
+         *
+         * https://www.youtube.com/embed/VIDEO_ID
+         */
+
+        let videoId = "";
+
+        try {
+            const url = new URL(videoUrl);
+
+            if (url.hostname.includes("youtu.be")) {
+                videoId = url.pathname.replace("/", "");
+            } else if (url.searchParams.get("v")) {
+                videoId = url.searchParams.get("v");
+            }
+        } catch (error) {
+            // Ignore invalid URL
+        }
+
+        if (!videoId) {
+            return "";
+        }
+
+        return `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+    }
+
+
+    /*
+     * ---------------------------------------------------------
+     * UPDATE PREV / NEXT BUTTONS
+     * ---------------------------------------------------------
+     */
+
+    function updateNavigation() {
+        /*
+         * FIRST ITEM
+         * No previous button
+         */
+        if (currentIndex === 0) {
+            prevButton.style.visibility = "hidden";
+            prevButton.setAttribute("aria-hidden", "true");
+        } else {
+            prevButton.style.visibility = "visible";
+            prevButton.setAttribute("aria-hidden", "false");
+        }
+
+        /*
+         * LAST ITEM
+         * No next button
+         */
+        if (currentIndex === lightboxItems.length - 1) {
+            nextButton.style.visibility = "hidden";
+            nextButton.setAttribute("aria-hidden", "true");
+        } else {
+            nextButton.style.visibility = "visible";
+            nextButton.setAttribute("aria-hidden", "false");
+        }
+    }
+
+
+    /*
+     * ---------------------------------------------------------
+     * SHOW ITEM
+     * ---------------------------------------------------------
+     */
+
+    function showItem(index) {
+        if (
+            index < 0 ||
+            index >= lightboxItems.length
+        ) {
+            return;
+        }
+
+        currentIndex = index;
+
+        const item = lightboxItems[currentIndex];
+        const type = getItemType(item);
+
+        /*
+         * Stop/remove previous YouTube video
+         * before showing another item.
+         */
+        lightboxVideo.src = "";
+        lightboxVideo.style.display = "none";
+
+        lightboxImage.src = "";
+        lightboxImage.style.display = "none";
+
+
+        /*
+         * -----------------------------------------------------
+         * IMAGE
+         * -----------------------------------------------------
+         */
+
+        if (type === "image") {
+            lightboxImage.src =
+                item.currentSrc ||
+                item.getAttribute("src") ||
+                "";
+
+            lightboxImage.alt =
+                item.getAttribute("alt") ||
+                "Image";
+
+            lightboxImage.style.display = "block";
+        }
+
+
+        /*
+         * -----------------------------------------------------
+         * YOUTUBE
+         * -----------------------------------------------------
+         */
+
+        if (type === "youtube") {
+            const youtubeUrl =
+                getYouTubeUrl(item);
+
+            if (youtubeUrl) {
+                lightboxVideo.src = youtubeUrl;
+
+                lightboxVideo.title =
+                    item.dataset.title ||
+                    item.getAttribute("title") ||
+                    "YouTube video";
+
+                lightboxVideo.style.display = "block";
+            }
+        }
+
+
+        /*
+         * -----------------------------------------------------
+         * CAPTION
+         * -----------------------------------------------------
+         */
+
+        caption.textContent =
+            item.dataset.caption ||
+            "";
+
+
+        /*
+         * -----------------------------------------------------
+         * NAVIGATION
+         * -----------------------------------------------------
+         */
+
+        updateNavigation();
+    }
+
+
+    /*
+     * ---------------------------------------------------------
+     * OPEN LIGHTBOX
+     * ---------------------------------------------------------
+     */
+
+    function openLightbox(index) {
+        showItem(index);
+
+        lightbox.classList.add("is-open");
+
+        lightbox.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        document.body.classList.add(
+            "lightbox-open"
+        );
+
+        closeButton.focus();
+    }
+
+
+    /*
+     * ---------------------------------------------------------
+     * CLOSE LIGHTBOX
+     * ---------------------------------------------------------
+     */
+
+    function closeLightbox() {
+        lightbox.classList.remove("is-open");
+
+        lightbox.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        document.body.classList.remove(
+            "lightbox-open"
+        );
+
+        /*
+         * Removing iframe src stops YouTube playback.
+         */
+        lightboxVideo.src = "";
+
+        lightboxImage.src = "";
+
+        caption.textContent = "";
+    }
+
+
+    /*
+     * ---------------------------------------------------------
+     * PREVIOUS
+     * ---------------------------------------------------------
+     */
+
+    function previousItem() {
+        if (currentIndex <= 0) {
+            return;
+        }
+
+        showItem(currentIndex - 1);
+    }
+
+
+    /*
+     * ---------------------------------------------------------
+     * NEXT
+     * ---------------------------------------------------------
+     */
+
+    function nextItem() {
+        if (
+            currentIndex >=
+            lightboxItems.length - 1
+        ) {
+            return;
+        }
+
+        showItem(currentIndex + 1);
+    }
+
+
+    /*
+     * ---------------------------------------------------------
+     * CLICK ITEMS TO OPEN
+     * ---------------------------------------------------------
+     */
+
+    lightboxItems.forEach((item, index) => {
+        item.style.cursor = "pointer";
+
+        item.addEventListener("click", (event) => {
+
+            /*
+             * If the item itself is a YouTube iframe,
+             * clicking inside the iframe normally belongs
+             * to YouTube. We therefore don't try to intercept
+             * that click.
+             */
+            if (
+                item.tagName.toLowerCase() === "iframe"
+            ) {
+                return;
+            }
+
+            event.preventDefault();
+
+            openLightbox(index);
+        });
+    });
+
+
+    /*
+     * ---------------------------------------------------------
+     * CLOSE BUTTON
+     * ---------------------------------------------------------
+     */
+
+    closeButton.addEventListener(
+        "click",
+        closeLightbox
+    );
+
+
+    /*
+     * ---------------------------------------------------------
+     * PREVIOUS BUTTON
+     * ---------------------------------------------------------
+     */
+
+    prevButton.addEventListener(
+        "click",
+        previousItem
+    );
+
+
+    /*
+     * ---------------------------------------------------------
+     * NEXT BUTTON
+     * ---------------------------------------------------------
+     */
+
+    nextButton.addEventListener(
+        "click",
+        nextItem
+    );
+
+lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+        event.stopPropagation();
+        return;
+    }
+});
+
+    /*
+     * ---------------------------------------------------------
+     * KEYBOARD CONTROLS
+     * ---------------------------------------------------------
+     */
+
+    document.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (
+                !lightbox.classList.contains(
+                    "is-open"
+                )
+            ) {
+                return;
+            }
+
+            if (event.key === "Escape") {
+                event.preventDefault();
+                closeLightbox();
+                return;
+            }
+
+            if (event.key === "ArrowLeft") {
+                event.preventDefault();
+                previousItem();
+                return;
+            }
+
+            if (event.key === "ArrowRight") {
+                event.preventDefault();
+                nextItem();
+                return;
+            }
+        }
+    );
+
+})();
 });

@@ -32,17 +32,21 @@
   <link rel="stylesheet" href="../style/style.css">
   <link rel="stylesheet" href="../style/tailwind-built.css">
 
-  <!-- Current favicon for UI -->
-  <link rel="icon" type="image/png"
-    href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223898/favicon.png">
+  <!-- Primary favicon -->
+  <link rel="icon" type="image/png" sizes="48x48"
+    href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_png,w_48,h_48,c_fill/v1786223898/favicon.png">
 
-  <!-- Root-level versions for Google and crawlers -->
+  <!-- Additional favicon size -->
   <link rel="icon" type="image/png" sizes="32x32"
-    href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223898/favicon.png">
-  <link rel="shortcut icon"
-    href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223837/favicon_qq6rld.ico">
+    href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_png,w_32,h_32,c_fill/v1786223898/favicon.png">
+
+  <!-- ICO fallback -->
+  <link rel="icon" type="image/x-icon"
+    href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_ico,w_32,h_32,c_fill/v1786223837/favicon_qq6rld.ico">
+
+  <!-- Apple / iOS -->
   <link rel="apple-touch-icon" sizes="180x180"
-    href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223017/apple-touch-icon.png">
+    href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_png,w_180,h_180,c_fill/v1786223017/apple-touch-icon.png">
 
   <script>
     (function () {
@@ -191,11 +195,32 @@
                 </div>
 
                 <div class="achievement-card-media">
-                  <div class="achievement-figure">
-                    <iframe src="https://www.youtube.com/embed/zmkiBl4CQtU" title="Global Korea Scholarship"
-                      loading="lazy" width="500" height="333"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen></iframe>
+                  <div>
+
+                    <!-- Desktop: thumbnail opens lightbox -->
+                    <button type="button" class="youtube-lightbox-trigger" data-lightbox="youtube"
+                      data-video="https://www.youtube.com/watch?v=zmkiBl4CQtU"
+                      data-caption="Global Korea Scholarship Recipient, 2023" data-title="Global Korea Scholarship"
+                      aria-label="Play Global Korea Scholarship">
+
+                      <img src="https://img.youtube.com/vi/zmkiBl4CQtU/maxresdefault.jpg"
+                        alt="Global Korea Scholarship Recipient, 2023" width="500" height="333" loading="lazy"
+                        class="w-full h-auto">
+
+                      <span class="youtube-lightbox-play" aria-hidden="true">
+                        <i class="fa-solid fa-play"></i>
+                      </span>
+                    </button>
+
+                    <!-- Mobile: normal YouTube player -->
+                    <div class="youtube-mobile-player">
+                      <iframe src="https://www.youtube.com/embed/zmkiBl4CQtU" title="Global Korea Scholarship"
+                        loading="lazy" width="500" height="333"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                      </iframe>
+                    </div>
+
                   </div>
                 </div>
 
@@ -255,13 +280,17 @@
                         <img
                           src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_900/v1786223425/award_certificate_i9iqvx.jpg"
                           alt="Research award certificate, front" width="500" height="333" loading="lazy"
-                          decoding="async" class="object-cover">
+                          decoding="async" class="object-cover" data-lightbox data-caption="Research Award for One Scholarly
+                    Publication in a Reputed Indexed
+                    Journal, 2024">
                       </div>
                       <div class="mini-carousel__slide">
                         <img
                           src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_900/v1786223425/award_certificate2_ke2wew.jpg"
                           alt="Research award certificate, second page" width="500" height="333" loading="lazy"
-                          decoding="async" class="object-cover">
+                          decoding="async" class="object-cover" data-lightbox data-caption="Research Award for Five Scholarly
+                    Publication in a Reputed Indexed
+                    Journal, 2024">
                       </div>
                     </div>
 
@@ -326,7 +355,8 @@
                     <img
                       src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_900/v1786220597/IMG_20250219_095044_1_xv1egt.jpg"
                       alt="Top performer certificate for Computer Vision and Deep Learning bootcamp" width="500"
-                      height="333" loading="lazy" decoding="async" class="object-cover">
+                      height="333" loading="lazy" decoding="async" class="object-cover" data-lightbox
+                      data-caption="Top Performer of Computer Vision and Deep Learning for Medical Image Analysis Bootcamp, 2025">
                   </div>
                 </div>
 
@@ -382,7 +412,8 @@
                     <img
                       src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_900/v1786223426/reviewer_jriexv.jpg"
                       alt="Peer reviewer acknowledgement certificate from SAGE Digital Health" width="500" height="333"
-                      loading="lazy" decoding="async" class="object-contain">
+                      loading="lazy" decoding="async" class="object-contain" data-lightbox
+                      data-caption="Peer Reviewer for Digital Health, SAGE Publishing, 2025">
                   </div>
                 </div>
 
@@ -436,7 +467,8 @@
                     <img
                       src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_900/v1786218819/IMG_0562_no3nf9.jpg"
                       alt="Founding General Secretary of Daffodil Research Society" width="500" height="333"
-                      loading="lazy" decoding="async" class="object-cover">
+                      loading="lazy" decoding="async" class="object-cover" data-lightbox data-caption="Founding General Secretary, Daffodil
+                    Research Society, 2024">
                   </div>
                 </div>
 
@@ -489,7 +521,8 @@
                     <img
                       src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_900/v1786219225/photo_2026-08-09_02-00-08_qv1fnt.jpg"
                       alt="Team leader at Dongseo University International Camp" width="500" height="333" loading="lazy"
-                      decoding="async" class="object-cover">
+                      decoding="async" class="object-cover" data-lightbox data-caption="Team Leader, Dongseo University
+                    International Camp, 2023">
                   </div>
                 </div>
 
@@ -544,7 +577,8 @@
                     <img
                       src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_900/v1786219226/photo_2026-08-09_02-00-03_ka4p8j.jpg"
                       alt="Participation in Korean Embassy cultural event in Bangladesh" width="500" height="333"
-                      loading="lazy" decoding="async" class="object-cover">
+                      loading="lazy" decoding="async" class="object-cover" data-lightbox
+                      data-caption="Participant, Cultural Event by the Embassy of the Republic of Korea in Bangladesh">
                   </div>
                 </div>
 
@@ -687,6 +721,37 @@
 
   <script src="../index.js"></script>
 
+  <!-- Shared Publication / Media Lightbox -->
+  <div id="publicationLightbox" class="publication-lightbox" aria-hidden="true">
+
+    <!-- Close -->
+    <button type="button" class="publication-lightbox__close" aria-label="Close media viewer">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <!-- Previous -->
+    <button type="button" class="act__arrow act__arrow--prev publication-lightbox__prev" aria-label="Previous item">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <!-- Media -->
+    <div class="publication-lightbox__stage">
+
+      <!-- Image will be inserted here by JS -->
+
+      <!-- YouTube iframe will be inserted here by JS -->
+
+      <p id="publicationLightboxCaption" class="publication-lightbox__caption">
+      </p>
+
+    </div>
+
+    <!-- Next -->
+    <button type="button" class="act__arrow act__arrow--next publication-lightbox__next" aria-label="Next item">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+  </div>
 </body>
 
 </html>

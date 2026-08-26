@@ -38,17 +38,21 @@
   <link rel="stylesheet" href="./style/style.css">
   <link rel="stylesheet" href="./style/tailwind-built.css">
 
-  <!-- Current favicon for UI -->
-  <link rel="icon" type="image/png"
-    href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223898/favicon.png">
+  <!-- Primary favicon -->
+  <link rel="icon" type="image/png" sizes="48x48"
+    href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_png,w_48,h_48,c_fill/v1786223898/favicon.png">
 
-  <!-- Root-level versions for Google and crawlers -->
+  <!-- Additional favicon size -->
   <link rel="icon" type="image/png" sizes="32x32"
-    href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223898/favicon.png">
-  <link rel="shortcut icon"
-    href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223837/favicon_qq6rld.ico">
+    href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_png,w_32,h_32,c_fill/v1786223898/favicon.png">
+
+  <!-- ICO fallback -->
+  <link rel="icon" type="image/x-icon"
+    href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_ico,w_32,h_32,c_fill/v1786223837/favicon_qq6rld.ico">
+
+  <!-- Apple / iOS -->
   <link rel="apple-touch-icon" sizes="180x180"
-    href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223017/apple-touch-icon.png">
+    href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_png,w_180,h_180,c_fill/v1786223017/apple-touch-icon.png">
 
   <!-- Link Preview: Facebook, LinkedIn, WhatsApp -->
   <meta property="og:type" content="website">
@@ -207,9 +211,9 @@
                 <p class="mobile-research-text">
                   My research focuses on
 
-                  <span class="text-[#A51C30]">
+                  <span class="text-[#111111]">
                     robust and efficient deep learning, sensor-based machine learning and
-                    artificial intelligence for healthcare.
+                    AI for healthcare.
                   </span>
 
                   My undergraduate thesis focused on developing a lightweight
@@ -218,9 +222,64 @@
 
                   <a href="https://scholar.google.com/citations?user=mC0VMYQAAAAJ&hl=en" target="_blank"
                     rel="noopener noreferrer"
-                    class="font-normal text-[#00778B] underline decoration-[#00778B]/40 underline-offset-2 transition-colors hover:text-[#6519dc] hover:decoration-[#6519dc]">
-                    Nazmun Nessa Moon.
+                    class="font-normal text-[#00778B] underline decoration-[#00778B]/40 underline-offset-2 transition-colors hover:text-[#6519dc] hover:decoration-[#6519dc]"
+                    style="text-decoration-thickness: 1px;">
+                    Nazmun Nessa Moon,
                   </a>
+
+                  continuing in her lab as a Research Associate.
+
+                  I began my research journey as a sophomore during my undergrad at
+                  DIU. While studying there,
+                  I participated in a semester exchange program at Dongseo University, South Korea.
+                  This experience strengthened my interest in deep learning and applied
+                  AI research.
+                  Throughout this journey, I have
+                  collaborated closely with research mentors and collaborators including
+
+                  <a href="https://scholar.google.com/citations?user=eg3QPhcAAAAJ&hl=en" target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-normal text-[#00778B] underline decoration-[#00778B]/40 underline-offset-2 transition-colors hover:text-[#6519dc] hover:decoration-[#6519dc]"
+                    style="text-decoration-thickness: 1px;">
+                    Imrus Salehin
+                  </a>
+                  (PhD Student, NC A&T, USA),
+
+                  <a href="https://scholar.google.com/citations?user=TzuA2ScAAAAJ&hl=en" target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-normal text-[#00778B] underline decoration-[#00778B]/40 underline-offset-2 transition-colors hover:text-[#6519dc] hover:decoration-[#6519dc]"
+                    style="text-decoration-thickness: 1px;">
+                    Md. Baharul Islam
+                  </a>
+                  (Associate Professor, FGCU, USA), and
+
+                  <a href="https://scholar.google.com/citations?user=2D3mKUYAAAAJ&hl=en" target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-normal text-[#00778B] underline decoration-[#00778B]/40 underline-offset-2 transition-colors hover:text-[#6519dc] hover:decoration-[#6519dc]"
+                    style="text-decoration-thickness: 1px;">
+                    Dr. Fernaz Narin Nur
+                  </a>
+                  (Professor, DIU).
+
+                  I have been recognized through key honors including the
+                  <span class="font-semibold text-[#111111]">
+                    fully funded Global Korea Scholarship (GKS) in 2023
+                  </span>
+                  by the Government of the Republic of Korea and the
+                  <span class="font-semibold text-[#111111]">
+                    Research Awards in 2024 and 2025
+                  </span>
+                  from the Division of Research, DIU. My research has been published in Elsevier, Wiley and Taylor &
+                  Francis. I was also
+                  recognized as a top performer in the Computer Vision and Deep Learning
+                  Bootcamp for Medical Data at DIU.
+
+                  <a href="./achievement/"
+                    class="ml-1 inline-flex items-center gap-1 whitespace-nowrap text-[#00778B] decoration-[#00778B]/40 underline-offset-2 transition hover:text-[#6519dc]">
+                    View all achievements
+                    <span aria-hidden="true">→</span>
+                  </a>
+
                 </p>
               </div>
 
@@ -396,53 +455,50 @@
               <div class="research-stats mt-5" aria-label="Research statistics">
 
                 <div class="research-stats__item">
-                  <strong
-                    class="dark-blue block font-['Source_Serif_4'] text-[20px] font-medium leading-6 text-[#6519dc] sm:text-[22px]">
+                  <span class="block font-['Source_Serif_4'] text-[20px] leading-6 text-[#111111] sm:text-[22px]">
                     8
-                  </strong>
+                  </span>
 
                   <span
-                    class="mt-2 block font-['Source_Sans_3'] text-[9px] leading-4 tracking-[0.05em] text-slate-500 sm:text-[13px]">
-                    Publications
+                    class="block font-['Source_Sans_3'] text-[9px] leading-4 tracking-[0.05em] text-slate-500 sm:text-[12px]">
+                    PUBLICATIONS
                   </span>
+
                 </div>
 
 
                 <div class="research-stats__item">
-                  <strong
-                    class="dark-blue block font-['Source_Serif_4'] text-[20px] font-medium leading-6 text-[#6519dc] sm:text-[22px]">
+                  <span class="block font-['Source_Serif_4'] text-[20px] leading-6 text-[#111111] sm:text-[22px]">
                     20
-                  </strong>
+                  </span>
 
                   <span
-                    class="mt-2 block font-['Source_Sans_3'] text-[9px] leading-4 tracking-[0.05em] text-slate-500 sm:text-[13px]">
-                    Citations
+                    class="block font-['Source_Sans_3'] text-[9px] leading-4 tracking-[0.05em] text-slate-500 sm:text-[12px]">
+                    CITATIONS
                   </span>
                 </div>
 
 
                 <div class="research-stats__item">
-                  <strong
-                    class="dark-blue block font-['Source_Serif_4'] text-[20px] font-medium leading-6 text-[#6519dc] sm:text-[22px]">
+                  <span class="block font-['Source_Serif_4'] text-[20px] leading-6 text-[#111111] sm:text-[22px]">
                     2
-                  </strong>
+                  </span>
 
                   <span
-                    class="mt-2 block font-['Source_Sans_3'] text-[9px] leading-4 tracking-[0.05em] text-slate-500 sm:text-[13px]">
-                    H-Index
+                    class="block font-['Source_Sans_3'] text-[9px] leading-4 tracking-[0.05em] text-slate-500 sm:text-[12px]">
+                    H-INDEX
                   </span>
                 </div>
 
 
                 <div class="research-stats__item">
-                  <strong
-                    class="dark-blue block font-['Source_Serif_4'] text-[20px] font-medium leading-6 text-[#6519dc] sm:text-[22px]">
+                  <span class="block font-['Source_Serif_4'] text-[20px] leading-6 text-[#111111] sm:text-[22px]">
                     5
-                  </strong>
+                  </span>
 
                   <span
-                    class="mt-2 block font-['Source_Sans_3'] text-[9px] leading-4 tracking-[0.05em] text-slate-500 sm:text-[13px]">
-                    Q1 Journals
+                    class="block font-['Source_Sans_3'] text-[9px] leading-4 tracking-[0.05em] text-slate-500 sm:text-[12px]">
+                    Q1 JOURNALS
                   </span>
                 </div>
 
@@ -485,7 +541,8 @@
                             <img
                               src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_1000/v1786218870/IMG_9066_jmb3ff.jpg"
                               alt="Nazmul Huda Badhon at his Bachelor of Science convocation" width="1600" height="900"
-                              loading="eager" decoding="async" fetchpriority="high" />
+                              loading="eager" decoding="async" fetchpriority="high" data-lightbox
+                              data-caption="Nazmul Huda Badhon at his Bachelor of Science convocation" />
                           </figure>
                         </li>
 
@@ -495,7 +552,8 @@
                             <img
                               src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_1000/v1786218835/photo-output_hrixpt.jpg"
                               alt="Nazmul Huda Badhon with faculty members after completing his undergraduate thesis"
-                              width="5754" height="4316" loading="eager" decoding="async" />
+                              width="5754" height="4316" loading="eager" decoding="async" data-lightbox
+                              data-caption="Nazmul Huda Badhon with faculty members after completing his undergraduate thesis" />
                           </figure>
                         </li>
 
@@ -505,7 +563,8 @@
                             <img
                               src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_1000/v1786218819/IMG_0562_no3nf9.jpg"
                               alt="Nazmul Huda Badhon was the founding General Secretary of DIU Research Society"
-                              width="5754" height="4316" loading="eager" decoding="async" />
+                              width="5754" height="4316" loading="eager" decoding="async" data-lightbox
+                              data-caption="Nazmul Huda Badhon was the founding General Secretary of DIU Research Society" />
                           </figure>
                         </li>
 
@@ -515,7 +574,8 @@
                             <img
                               src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_1000/v1786220058/IMG_0278_tjve3a.jpg"
                               alt="Nazmul Huda Badhon during his semester exchange at Dongseo University" width="961"
-                              height="1280" loading="lazy" decoding="async" />
+                              height="1280" loading="lazy" decoding="async" data-lightbox
+                              data-caption="Nazmul Huda Badhon during his semester exchange at Dongseo University" />
                           </figure>
                         </li>
 
@@ -525,7 +585,8 @@
                             <img
                               src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_1000/v1786220597/IMG_20250219_095044_1_xv1egt.jpg"
                               alt="Nazmul Huda Badhon recognized as a top performer in a computer vision bootcamp"
-                              width="1200" height="800" loading="lazy" decoding="async" />
+                              width="1200" height="800" loading="lazy" decoding="async" data-lightbox
+                              data-caption="Nazmul Huda Badhon recognized as a top performer in a computer vision bootcamp" />
                           </figure>
                         </li>
 
@@ -535,7 +596,8 @@
                             <img
                               src="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto,w_1000/v1786220050/IMG_1345_ssosnu.jpg"
                               alt="Nazmul Huda Badhon participating in an international academic camp in South Korea"
-                              width="1200" height="800" loading="lazy" decoding="async" />
+                              width="1200" height="800" loading="lazy" decoding="async" data-lightbox
+                              data-caption="Nazmul Huda Badhon participating in an international academic camp in South Korea" />
                           </figure>
                         </li>
                       </ul>
@@ -718,7 +780,6 @@
                   <div class="academic-timeline__year">4/2026</div>
 
                   <div class="academic-timeline__rail" aria-hidden="true"></div>
-
                   <div class="academic-timeline__content">
                     <p class="academic-timeline__title">
                       <span class="education-timeline-note"
@@ -906,11 +967,15 @@
 
                   <div class="academic-timeline__content">
                     <p class="academic-timeline__title">
-                      <span class="font-semibold text-[#111111]">Nazmul Huda Badhon</span>, Sabit Ahamed Preanto,
+                      <span class="publication-news-badge">NEW!</span>
+                      Temporal Convolutional Network Based Indoor Location Recognition
+                      from BLE Beacon Signals in Nursing Care Facility
+                    </p>
+
+                    <p style="margin-top:4px; font-size:13.5px; line-height:16px;"> <span
+                        class="font-semibold text-[#111111]">Nazmul Huda Badhon</span>, Sabit Ahamed Preanto,
                       Abu Shahed Shah Md Nazmul Arefin, Kazi Jahid Hasan,
-                      Md. Baharul Islam,
-                      “Temporal Convolutional Network Based Indoor Location Recognition
-                      from BLE Beacon Signals in Nursing Care Facility.”
+                      Md. Baharul Islam
                     </p>
 
                     <p class="academic-timeline__meta">
@@ -945,11 +1010,14 @@
 
                   <div class="academic-timeline__content">
                     <p class="academic-timeline__title">
-                      <span class="font-semibold text-[#111111]">Nazmul Huda Badhon</span>, Imrus Salehin,
+                      TLCNN: Tabular Data-Based Lightweight Convolutional Neural Network
+                      for Electricity Energy Demand Prediction
+                    </p>
+
+                    <p style="margin-top:4px; font-size:13.5px; line-height:16px;"> <span
+                        class="font-semibold text-[#111111]">Nazmul Huda Badhon</span>, Imrus Salehin,
                       Md Tomal Ahmed Sajib, Md Sakibul Hassan Rifat,
-                      SM Noman, Nazmun Nessa Moon,
-                      “TLCNN: Tabular Data-Based Lightweight Convolutional Neural Network
-                      for Electricity Energy Demand Prediction.”
+                      SM Noman, Nazmun Nessa Moon
                     </p>
 
                     <p class="academic-timeline__meta">
@@ -983,12 +1051,15 @@
                   <div class="academic-timeline__content">
 
                     <p class="academic-timeline__title">
-                      Md Tomal Ahmed Sajib, <span class="font-semibold text-[#111111]">Nazmul Huda Badhon</span>,
-                      Imrus Salehin, Md Sakibul Hassan Rifat, Faysal Ahmed,
-                      Nazmun Nessa Moon,
-                      “A Comparative Deep Learning Methodology for Plant Insect Image
+                      A Comparative Deep Learning Methodology for Plant Insect Image
                       Classification: Assessment of CNN Architectures and Augmentation
-                      Techniques.”
+                      Techniques
+                    </p>
+
+                    <p style="margin-top:4px; font-size:13.5px; line-height:16px;"> Md Tomal Ahmed Sajib, <span
+                        class="font-semibold text-[#111111]">Nazmul Huda Badhon</span>,
+                      Imrus Salehin, Md Sakibul Hassan Rifat, Faysal Ahmed,
+                      Nazmun Nessa Moon
                     </p>
 
                     <p class="academic-timeline__meta">
@@ -1022,12 +1093,15 @@
                   <div class="academic-timeline__content">
 
                     <p class="academic-timeline__title">
-                      Imrus Salehin, Md Tomal Ahmed Sajib,
+                      Systematic Literature Review of LLM–Large Language Models in Medical:
+                      Digital Health, Technology and Applications
+                    </p>
+
+                    <p style="margin-top:4px; font-size:13.5px; line-height:16px;"> Imrus Salehin, Md Tomal Ahmed Sajib,
                       <span class="font-semibold text-[#111111]">Nazmul Huda Badhon</span>,
                       Md Sakibul Hassan Rifat, Nazrul Amin,
-                      Nazmun Nessa Moon,
-                      “Systematic Literature Review of LLM–Large Language Models in Medical:
-                      Digital Health, Technology and Applications.”
+                      Nazmun Nessa Moon
+
                     </p>
 
                     <p class="academic-timeline__meta">
@@ -1218,11 +1292,40 @@
             Nazmul Huda Badhon
           </span>.
           All Rights Reserved.
+          <br>
+          <a href="https://hihello.com/p/c70ce350-eedc-47a5-9353-6c8a7bba6c92" target="_blank" rel="noopener noreferrer"
+            class="font-normal text-[#00778B] underline decoration-[#00778B]/40 underline-offset-2 transition-colors hover:text-[#6519dc] hover:decoration-[#6519dc]"
+            style="text-decoration-thickness: 1px;" aria-label="Contact Card">
+            <span>Virtual Contact Card</span></a>
+
         </span>
       </div>
     </footer>
 
     <script src="./index.js"></script>
+
+    <div id="publicationLightbox" class="publication-lightbox" aria-hidden="true">
+
+      <button type="button" class="publication-lightbox__close" aria-label="Close image viewer">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <button type="button" class="act__arrow act__arrow--prev" aria-label="Previous image">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <div class="publication-lightbox__stage">
+        <img id="publicationLightboxImage" src="" alt="">
+
+        <p id="publicationLightboxCaption" class="publication-lightbox__caption">
+        </p>
+      </div>
+
+      <button type="button" class="act__arrow act__arrow--next" aria-label="Next image">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+
+    </div>
 
 </body>
 

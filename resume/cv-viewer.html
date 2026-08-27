@@ -2,52 +2,1065 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CV Viewer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CV | Nazmul Huda Badhon</title>
+    <meta name="description" content="View the CV of Nazmul Huda Badhon.">
+
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223898/favicon.png">
+
+    <link rel="icon" type="image/png"
+        href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223898/favicon.png">
+
+    <link rel="shortcut icon"
+        href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223837/favicon_qq6rld.ico">
+
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://res.cloudinary.com/a3xhs0jd/image/upload/f_auto,q_auto/v1786223017/apple-touch-icon.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/solid.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/regular.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css">
+
+    <!-- Font Awesome icon fonts -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-regular-400.woff2"
+        as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/webfonts/fa-solid-900.woff2"
+        as="font" type="font/woff2" crossorigin>
+
+    <!-- Local fonts -->
+    <link rel="preload" href="../fonts/SourceSans3-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="../fonts/SourceSans3-Medium.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="../fonts/SourceSans3-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="../fonts/SourceSans3-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="../fonts/SourceSans3-Italic.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" href="../fonts/SourceSerif4-VariableFont_opsz,wght.woff2" as="font" type="font/woff2"
+        crossorigin>
+
+    <!-- Site styles -->
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/tailwind-built.css">
+
+    <!-- PDF.js -->
+    <script type="module">
+        import * as pdfjsLib from
+            "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs";
+
+        window.pdfjsLib = pdfjsLib;
+    </script>
+
+    <!-- Prevent theme flash -->
+    <script>
+        (function () {
+            try {
+                const savedTheme = localStorage.getItem("site-theme");
+                const systemDark =
+                    window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+                const theme =
+                    savedTheme || (systemDark ? "dark" : "light");
+
+                document.documentElement.dataset.theme = theme;
+                document.documentElement.style.colorScheme = theme;
+
+            } catch (error) {
+                document.documentElement.dataset.theme = "light";
+                document.documentElement.style.colorScheme = "light";
+            }
+        })();
+    </script>
 
     <style>
+        /* Base */
+
+        html {
+            scrollbar-gutter: stable;
+        }
+
         html,
         body {
-            width: 100%;
-            height: 100%;
             margin: 0;
+            padding: 0;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        /* CV viewer */
+
+        .cv-viewer {
+            position: relative;
+            width: 768px;
+            max-width: calc(100vw - 48px);
+            height: calc(100dvh - 50px);
+            margin: 0 auto;
+            min-height: 0;
             overflow: hidden;
         }
 
-        iframe {
-            display: block;
+        .cv-pdf-scroll {
             width: 100%;
             height: 100%;
-            border: 0;
+            overflow-y: auto;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior-y: contain;
+            scrollbar-gutter: stable;
         }
 
+        /* PDF page */
+
+        .cv-pdf-page {
+            display: block;
+            margin: 0 auto 16px;
+            background: #ffffff;
+            box-shadow: 0 1px 5px rgba(15, 23, 42, 0.14);
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+            image-rendering: auto;
+        }
+
+        /* Loading */
+
+        .cv-loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 180px;
+            padding: 32px;
+            color: var(--text-muted);
+            font-family: "Source Sans 3", Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        /* Error fallback */
+
         .pdf-fallback {
-            display: none;
             padding: 32px 24px;
+            color: var(--text-main);
             text-align: center;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: "Source Sans 3", Arial, sans-serif;
+        }
+
+        .pdf-fallback a {
+            color: var(--accent-red);
+            font-weight: 600;
+        }
+
+        /* Desktop PDF controls */
+
+        .cv-controls {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px;
+            border: 1px solid var(--border-color, #ccc);
+            border-radius: 9px;
+            background: var(--bg-main, #fff);
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+        }
+
+        .cv-controls button {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            border: 0;
+            border-radius: 6px;
+            background: transparent;
+            color: var(--text-main);
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        .cv-controls button:hover {
+            background: rgba(100, 116, 139, 0.10);
+        }
+
+        .cv-controls button:disabled {
+            opacity: 0.4;
+            cursor: default;
+        }
+
+        .cv-zoom-level {
+            min-width: 48px;
+            padding: 0 4px;
+            color: var(--text-main);
+            text-align: center;
+            font-family: "Source Sans 3", Arial, sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Fullscreen */
+
+        .cv-fullscreen-btn {
+            position: absolute;
+            left: calc(100% + 12px);
+            top: 8px;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            border: 1px solid var(--border-color, #ccc);
+            border-radius: 8px;
+            background: var(--bg-main, #fff);
+            color: var(--text-main);
+            cursor: pointer;
+            font-size: 15px;
+            z-index: 100;
+        }
+
+        .cv-fullscreen-btn:hover {
+            opacity: 0.75;
+        }
+
+        /* Desktop */
+
+        @media (min-width: 1024px) {
+
+            .desktop-header {
+                position: sticky;
+                top: 0;
+                z-index: 9999;
+            }
+
+            .cv-page .desktop-theme-toggle {
+                margin: 0 !important;
+                margin-left: 0 !important;
+            }
+
+            .cv-pdf-scroll {
+                padding-top: 0;
+            }
+        }
+
+        /* Mobile */
+
+        @media (max-width: 1023px) {
+
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+
+            body.cv-page {
+                padding-bottom: 0;
+            }
+
+            .desktop-header {
+                display: none !important;
+            }
+
+            .cv-viewer {
+                width: 100%;
+                max-width: none;
+                height: calc(100dvh - 54px - 92px);
+                margin: 0;
+                min-height: 0;
+            }
+
+            .cv-pdf-scroll {
+                width: 100%;
+                height: 100%;
+                padding: 8px 8px 20px;
+                overflow-y: auto;
+                overflow-x: hidden;
+                -webkit-overflow-scrolling: touch;
+                overscroll-behavior-y: contain;
+            }
+
+            .cv-pdf-page {
+                width: 100%;
+                max-width: 768px;
+                margin: 0 auto 12px;
+                box-shadow: 0 1px 5px rgba(15, 23, 42, 0.14);
+            }
+
+            .cv-controls {
+                top: 8px;
+                right: 8px;
+            }
+
+            .cv-fullscreen-btn {
+                display: none;
+            }
+
+            .cv-loading {
+                min-height: 120px;
+            }
+        }
+
+        /* Reduced motion */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+
+        /* Print */
+
+        @media print {
+
+            .desktop-header,
+            .mobile-topbar,
+            .mobile-bottom-nav,
+            .cv-controls,
+            .cv-fullscreen-btn {
+                display: none !important;
+            }
+
+            .cv-viewer {
+                width: 100%;
+                height: auto;
+                max-width: none;
+            }
+
+            .cv-pdf-scroll {
+                overflow: visible;
+            }
+
+            .cv-pdf-page {
+                width: 100%;
+                margin: 0;
+                box-shadow: none;
+            }
         }
     </style>
 </head>
 
-<body>
-    <iframe id="pdfFrame" src="../pdfs/CV_Nazmul_Huda_Badhon.pdf" title="Curriculum vitae of Nazmul Huda Badhon">
-    </iframe>
+<body class="cv-page">
 
-    <p class="pdf-fallback" id="pdfFallback">
-        <a href="../pdfs/CV_Nazmul_Huda_Badhon.pdf">Tap here to view the CV</a>
-    </p>
+    <!-- Mobile top bar -->
 
-    <script>
-        // iOS Safari can't reliably render PDFs inside an iframe,
-        // so redirect straight to the PDF on iOS devices.
-        var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    <header class="mobile-topbar lg:hidden">
 
-        if (isIOS) {
-            window.location.replace("../pdfs/CV_Nazmul_Huda_Badhon.pdf");
+        <a href="../" class="mobile-topbar__brand" aria-label="Nazmul Huda Badhon home">
+
+            <span class="mobile-topbar__name">
+                Nazmul Huda Badhon
+            </span>
+
+        </a>
+
+        <button id="mobileThemeToggle" class="mobile-topbar__theme" type="button" aria-label="Switch to dark mode"
+            title="Switch to dark mode" aria-pressed="false">
+
+            <i class="fa-regular fa-moon" aria-hidden="true"></i>
+
+        </button>
+
+    </header>
+
+    <!-- Desktop top navigation -->
+
+    <header class="desktop-header">
+
+        <div class="desktop-header__inner">
+
+            <a href="../" class="desktop-brand" aria-label="Nazmul Huda Badhon home">
+
+                <span style="font-weight: 600;">
+                    Nazmul Huda
+                </span>
+
+                &nbsp;Badhon
+
+            </a>
+
+            <nav class="segmented-nav" aria-label="Main navigation">
+
+                <a href="../" class="segmented-nav__link">
+                    Home
+                </a>
+
+                <a href="../research/" class="segmented-nav__link">
+                    Publications
+                </a>
+
+                <a href="../projects/" class="segmented-nav__link">
+                    Projects
+                </a>
+
+                <a href="../achievement/" class="segmented-nav__link">
+                    Achievements
+                </a>
+
+                <a href="../resume/" class="segmented-nav__link segmented-nav__link--cv is-active" aria-current="page">
+
+                    CV
+
+                </a>
+
+            </nav>
+
+            <button id="themeToggle" class="desktop-theme-toggle" type="button" aria-label="Switch to dark mode"
+                title="Switch to dark mode" aria-pressed="false">
+
+                <i class="fa-regular fa-moon" aria-hidden="true"></i>
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- CV document -->
+
+    <main id="cv-document" class="cv-viewer" aria-label="Curriculum vitae">
+
+        <div id="cvPdfScroll" class="cv-pdf-scroll">
+
+            <div id="cvLoading" class="cv-loading">
+
+                Loading CV…
+
+            </div>
+
+        </div>
+
+        <!-- PDF controls -->
+
+        <div class="cv-controls" aria-label="PDF controls">
+
+            <button id="zoomOutBtn" type="button" aria-label="Zoom out" title="Zoom out">
+
+                <i class="fa-solid fa-minus" aria-hidden="true"></i>
+
+            </button>
+
+            <span id="zoomLevel" class="cv-zoom-level">
+
+                100%
+
+            </span>
+
+            <button id="zoomInBtn" type="button" aria-label="Zoom in" title="Zoom in">
+
+                <i class="fa-solid fa-plus" aria-hidden="true"></i>
+
+            </button>
+
+        </div>
+
+        <!-- Desktop fullscreen -->
+
+        <button id="fullscreenBtn" class="cv-fullscreen-btn" type="button" aria-label="Open CV in fullscreen"
+            title="Open CV in fullscreen">
+
+            <i class="fa-solid fa-expand" aria-hidden="true"></i>
+
+        </button>
+
+        <noscript>
+
+            <p class="pdf-fallback">
+
+                JavaScript is disabled.
+
+                <a href="../pdfs/CV_Nazmul_Huda_Badhon.pdf">
+                    Download the CV
+                </a>
+
+                to view it.
+
+            </p>
+
+        </noscript>
+
+    </main>
+
+    <!-- Mobile bottom navigation -->
+
+    <nav class="mobile-bottom-nav lg:hidden" aria-label="Mobile navigation">
+
+        <a href="../" class="mobile-bottom-nav__link">
+
+            <i class="fa-solid fa-house" aria-hidden="true"></i>
+
+            <span>
+                Home
+            </span>
+
+        </a>
+
+        <a href="../research/" class="mobile-bottom-nav__link">
+
+            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+
+            <span>
+                Papers
+            </span>
+
+        </a>
+
+        <a href="../projects/" class="mobile-bottom-nav__link">
+
+            <i class="fa-solid fa-brain" aria-hidden="true"></i>
+
+            <span>
+                Projects
+            </span>
+
+        </a>
+
+        <a href="../achievement/" class="mobile-bottom-nav__link">
+
+            <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+
+            <span>
+                Awards
+            </span>
+
+        </a>
+
+        <a href="./" class="mobile-bottom-nav__link is-active" aria-current="page">
+
+            <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+
+            <span>
+                CV
+            </span>
+
+        </a>
+
+    </nav>
+
+    <!-- PDF.js viewer -->
+
+    <script type="module">
+
+        import * as pdfjsLib from
+            "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs";
+
+        /* PDF.js worker */
+
+        pdfjsLib.GlobalWorkerOptions.workerSrc =
+            "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs";
+
+        /* Elements */
+
+        const cvViewer =
+            document.getElementById("cv-document");
+
+        const pdfScroll =
+            document.getElementById("cvPdfScroll");
+
+        const loading =
+            document.getElementById("cvLoading");
+
+        const zoomInBtn =
+            document.getElementById("zoomInBtn");
+
+        const zoomOutBtn =
+            document.getElementById("zoomOutBtn");
+
+        const zoomLevel =
+            document.getElementById("zoomLevel");
+
+        const fullscreenBtn =
+            document.getElementById("fullscreenBtn");
+
+        /* PDF */
+
+        const pdfUrl =
+            "../pdfs/CV_Nazmul_Huda_Badhon.pdf";
+
+        let pdf = null;
+
+        let currentZoom = 1;
+
+        let rendering = false;
+
+        let renderQueued = false;
+
+        /* Zoom limits */
+
+        const MIN_ZOOM = 0.75;
+
+        const MAX_ZOOM = 2.0;
+
+        const ZOOM_STEP = 0.1;
+
+        /* Get display scale */
+
+        function getCssScale(page) {
+
+            const baseViewport =
+                page.getViewport({
+                    scale: 1
+                });
+
+            const availableWidth =
+                Math.max(
+                    pdfScroll.clientWidth,
+                    1
+                );
+
+            const isMobile =
+                window.matchMedia(
+                    "(max-width: 1023px)"
+                ).matches;
+
+            let targetWidth =
+                availableWidth;
+
+            if (isMobile) {
+
+                targetWidth =
+                    Math.min(
+                        availableWidth,
+                        768
+                    );
+
+            } else {
+
+                targetWidth = 768;
+
+            }
+
+            const widthScale =
+                targetWidth /
+                baseViewport.width;
+
+            return widthScale * currentZoom;
         }
+
+        /* Get render pixel ratio */
+
+        function getOutputScale() {
+
+            const dpr =
+                window.devicePixelRatio || 1;
+
+            return Math.min(
+                Math.max(dpr, 2),
+                3
+            );
+        }
+
+        /* Render one page */
+
+        async function renderPage(
+            page,
+            pageNumber
+        ) {
+
+            const cssScale =
+                getCssScale(page);
+
+            const outputScale =
+                getOutputScale();
+
+            const cssViewport =
+                page.getViewport({
+                    scale: cssScale
+                });
+
+            const renderViewport =
+                page.getViewport({
+                    scale:
+                        cssScale *
+                        outputScale
+                });
+
+            const canvas =
+                document.createElement(
+                    "canvas"
+                );
+
+            const context =
+                canvas.getContext(
+                    "2d",
+                    {
+                        alpha: false,
+                        willReadFrequently: false
+                    }
+                );
+
+            if (!context) {
+                throw new Error(
+                    "Unable to create canvas context."
+                );
+            }
+
+            /* Use high-resolution internal pixels */
+
+            canvas.width =
+                Math.ceil(
+                    renderViewport.width
+                );
+
+            canvas.height =
+                Math.ceil(
+                    renderViewport.height
+                );
+
+            /* Display at CSS dimensions */
+
+            canvas.style.width =
+                `${cssViewport.width}px`;
+
+            canvas.style.height =
+                `${cssViewport.height}px`;
+
+            canvas.className =
+                "cv-pdf-page";
+
+            canvas.setAttribute(
+                "data-page-number",
+                pageNumber
+            );
+
+            pdfScroll.appendChild(
+                canvas
+            );
+
+            /* Render at high resolution */
+
+            await page.render({
+                canvasContext: context,
+                viewport: renderViewport
+            }).promise;
+
+        }
+
+        /* Remove rendered pages */
+
+        function clearPages() {
+
+            const pages =
+                pdfScroll.querySelectorAll(
+                    ".cv-pdf-page"
+                );
+
+            pages.forEach(
+                page => page.remove()
+            );
+
+        }
+
+        /* Render complete PDF */
+
+        async function renderPdf() {
+
+            if (!pdf) {
+                return;
+            }
+
+            if (rendering) {
+
+                renderQueued = true;
+
+                return;
+
+            }
+
+            rendering = true;
+
+            renderQueued = false;
+
+            try {
+
+                clearPages();
+
+                for (
+                    let pageNumber = 1;
+                    pageNumber <= pdf.numPages;
+                    pageNumber++
+                ) {
+
+                    await renderPage(
+                        await pdf.getPage(
+                            pageNumber
+                        ),
+                        pageNumber
+                    );
+
+                }
+
+                updateZoomUI();
+
+            } catch (error) {
+
+                console.error(
+                    "PDF rendering failed:",
+                    error
+                );
+
+            } finally {
+
+                rendering = false;
+
+                if (renderQueued) {
+                    renderPdf();
+                }
+
+            }
+
+        }
+
+        /* Update zoom UI */
+
+        function updateZoomUI() {
+
+            zoomLevel.textContent =
+                `${Math.round(currentZoom * 100)}%`;
+
+            zoomOutBtn.disabled =
+                currentZoom <= MIN_ZOOM;
+
+            zoomInBtn.disabled =
+                currentZoom >= MAX_ZOOM;
+
+        }
+
+        /* Zoom in */
+
+        zoomInBtn.addEventListener(
+            "click",
+            async () => {
+
+                if (
+                    currentZoom >=
+                    MAX_ZOOM
+                ) {
+                    return;
+                }
+
+                currentZoom =
+                    Math.min(
+                        currentZoom +
+                        ZOOM_STEP,
+                        MAX_ZOOM
+                    );
+
+                updateZoomUI();
+
+                await renderPdf();
+
+            }
+        );
+
+        /* Zoom out */
+
+        zoomOutBtn.addEventListener(
+            "click",
+            async () => {
+
+                if (
+                    currentZoom <=
+                    MIN_ZOOM
+                ) {
+                    return;
+                }
+
+                currentZoom =
+                    Math.max(
+                        currentZoom -
+                        ZOOM_STEP,
+                        MIN_ZOOM
+                    );
+
+                updateZoomUI();
+
+                await renderPdf();
+
+            }
+        );
+
+        /* Load PDF */
+
+        async function loadPdf() {
+
+            try {
+
+                const loadingTask =
+                    pdfjsLib.getDocument({
+                        url: pdfUrl
+                    });
+
+                pdf =
+                    await loadingTask.promise;
+
+                loading.remove();
+
+                updateZoomUI();
+
+                await renderPdf();
+
+            } catch (error) {
+
+                console.error(
+                    "Unable to load CV:",
+                    error
+                );
+
+                loading.innerHTML = `
+
+                    <div class="pdf-fallback">
+
+                        <p>
+                            Unable to display the CV here.
+                        </p>
+
+                        <a
+                            href="${pdfUrl}"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            Open or download the CV
+
+                        </a>
+
+                    </div>
+
+                `;
+
+            }
+
+        }
+
+        /* Re-render after window resize */
+
+        let resizeTimer = null;
+
+        window.addEventListener(
+            "resize",
+            () => {
+
+                clearTimeout(
+                    resizeTimer
+                );
+
+                resizeTimer =
+                    setTimeout(
+                        () => {
+
+                            if (pdf) {
+                                renderPdf();
+                            }
+
+                        },
+                        250
+                    );
+
+            }
+        );
+
+        /* Fullscreen */
+
+        fullscreenBtn.addEventListener(
+            "click",
+            async () => {
+
+                try {
+
+                    if (
+                        !document.fullscreenElement
+                    ) {
+
+                        await cvViewer.requestFullscreen();
+
+                    } else {
+
+                        await document.exitFullscreen();
+
+                    }
+
+                } catch (error) {
+
+                    console.error(
+                        "Fullscreen failed:",
+                        error
+                    );
+
+                }
+
+            }
+        );
+
+        /* Fullscreen icon */
+
+        document.addEventListener(
+            "fullscreenchange",
+            () => {
+
+                const isFullscreen =
+                    document.fullscreenElement ===
+                    cvViewer;
+
+                fullscreenBtn.innerHTML =
+                    isFullscreen
+
+                        ? '<i class="fa-solid fa-compress" aria-hidden="true"></i>'
+
+                        : '<i class="fa-solid fa-expand" aria-hidden="true"></i>';
+
+                fullscreenBtn.setAttribute(
+                    "aria-label",
+                    isFullscreen
+                        ? "Exit fullscreen"
+                        : "Open CV in fullscreen"
+                );
+
+                fullscreenBtn.setAttribute(
+                    "title",
+                    isFullscreen
+                        ? "Exit fullscreen"
+                        : "Open CV in fullscreen"
+                );
+
+            }
+        );
+
+        /* Initial zoom state */
+
+        updateZoomUI();
+
+        /* Start */
+
+        loadPdf();
+
     </script>
+
+    <!-- Site JavaScript -->
+
+    <script src="../index.js"></script>
+
 </body>
 
 </html>

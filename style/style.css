@@ -83,7 +83,7 @@ Local Fonts
     --soft-bg: #F4F1EA;
     --border: #E5E3DD;
     --text-main: #111827;
-    --text-muted: #64748B;
+    --text-muted: #6B6680;
     --accent: #06142A;
     --accent-link: #00778B;
     --accent-red: #A51C30;
@@ -3797,9 +3797,10 @@ article,
         padding: 7px 8px;
 
         border: 1px solid var(--mobile-nav-border);
-        border-radius: 26px;
+        border-radius: 48px;
 
         background: var(--mobile-nav-bg);
+
         box-shadow:
             0 10px 28px rgba(15, 23, 42, 0.10),
             0 2px 7px rgba(15, 23, 42, 0.05);
@@ -3817,9 +3818,9 @@ article,
 
         min-width: 0;
         min-height: 48px;
-        padding: 5px 2px;
+        padding: 5px 8px;
 
-        border-radius: 16px;
+        border-radius: 999px;
 
         color: var(--text-muted);
         text-decoration: none;
@@ -3828,6 +3829,27 @@ article,
             color 180ms ease,
             background-color 180ms ease,
             transform 180ms ease;
+    }
+
+    /* Active button */
+    .mobile-bottom-nav__link.is-active {
+        color: #9567d5;
+
+        /* subtle violet glass */
+        background: rgba(149, 103, 213, 0.10);
+        border-radius: 999px;
+
+        box-shadow:
+            inset 0 1px 1px rgba(255, 255, 255, 0.18),
+            0 1px 4px rgba(15, 23, 42, 0.04);
+    }
+
+    .mobile-bottom-nav__link.is-active i {
+        font-weight: 700;
+    }
+
+    .mobile-bottom-nav__link.is-active span {
+        font-weight: 600;
     }
 
     .mobile-bottom-nav__link i {
@@ -3843,23 +3865,6 @@ article,
         white-space: nowrap;
     }
 
-    .mobile-bottom-nav__link:hover {
-        color: #6519dc;
-        background: rgba(244, 240, 250, 0.7);
-    }
-
-    .mobile-bottom-nav__link:active {
-        transform: scale(0.95);
-    }
-
-    .mobile-bottom-nav__link.is-active {
-        color: #6519dc;
-        background: transparent;
-    }
-
-    .mobile-bottom-nav__link.is-active i {
-        font-weight: 600;
-    }
 }
 
 /* =========================================================

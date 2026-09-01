@@ -1465,4 +1465,14 @@ video {
     .lg\:leading-\[1\.45\] {
         line-height: 1.45
     }
+
+    .bsc-affiliation {
+        font-style: italic;
+    }
+
+    @media (min-width: 640px) {
+        .bsc-affiliation {
+            font-style: normal;
+        }
+    }
 }

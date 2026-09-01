@@ -207,16 +207,18 @@ b,
     .profile-intro {
         width: 100%;
         display: flow-root;
-        margin-bottom: 0;
+        margin: 0;
     }
 
     .profile-intro__photo {
         float: left;
-        width: 115px;
+        width: 116px;
         aspect-ratio: 1 / 1;
         margin: 6px 24px 12px 0;
         overflow: hidden;
+        border-radius: 2px;
         border: 1px solid var(--border);
+
         background: var(--soft-bg);
     }
 
@@ -232,8 +234,6 @@ b,
     }
 
     .profile-intro__text {
-        margin-top: -10;
-
         color: var(--text-main);
         font-family: "Source Serif 4", Georgia, serif;
         font-size: 16px;
@@ -626,8 +626,7 @@ article.proj-card>* {
 
     color: var(--accent-link);
     font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 14px;
     text-decoration: none;
 
     transition: color 160ms ease;
@@ -1262,7 +1261,7 @@ article.proj-card>* {
     font-family: 'Source Serif 4', serif;
     font-size: 15px;
     font-weight: 400;
-    line-height: 1.45;
+    line-height: 1.4;
     text-align: justify;
 }
 
@@ -1653,7 +1652,7 @@ html[data-theme="dark"] .news-toggle:hover {
     padding: 8px 14px;
 
     border: 1px solid var(--nav-active-bg);
-    border-radius: 999px;
+    border-radius: 2px;
 
     background: transparent;
     color: var(--text-muted);
@@ -1680,9 +1679,8 @@ html[data-theme="dark"] .news-toggle:hover {
 
 .home-contact__nav-link:hover,
 .home-contact__nav-link.is-active {
-    border-color: rgba(101, 25, 220, 0.35);
-    background: rgba(101, 25, 220, 0.055);
-    color: #6519dc;
+    background: #e9dcf8 ;
+    color: #111111;
 
     transform: translateY(-1px);
 }
@@ -3206,7 +3204,7 @@ article.proj-card a.project-button i {
         min-height: 0;
 
         border: 0;
-        border-radius: 999px;
+        border-radius: 2px;
 
         font-family: "Source Sans 3", Arial, sans-serif;
         font-size: 14px;
@@ -3242,10 +3240,10 @@ article.proj-card a.project-button i {
     align-items: center;
     justify-content: center;
 
-    border: 1px solid #e4dfd8;
-    border-radius: 50%;
+    border: 0px solid #e4dfd8;
+    border-radius: 2px;
 
-    background: rgba(255, 255, 255, 0.7);
+    background: transparent;
 }
 
 .desktop-theme-toggle i {
@@ -3256,7 +3254,6 @@ article.proj-card a.project-button i {
     color: #6519dc;
     border-color: #d8c8ee;
     background: #f7f1fc;
-    transform: translateY(-1px);
 }
 
 .desktop-brand {
@@ -3283,7 +3280,7 @@ article.proj-card a.project-button i {
     --nav-hover-bg: #f5f0fc;
     --nav-active-bg: #e9dcf8;
     --nav-active-text: #6519dc;
-    --theme-button-bg: #ffffff;
+    --theme-button-bg: transparent;
     --theme-button-border: #e4dfd8;
 
     --mobile-nav-bg: rgba(251, 249, 246, 0.78);
@@ -3363,7 +3360,7 @@ html[data-theme="dark"] {
     --nav-hover-bg: #292336;
     --nav-active-bg: #35294a;
     --nav-active-text: #cba6ff;
-    --theme-button-bg: #1d2027;
+    --theme-button-bg: transparent;
     --theme-button-border: #383d48;
 
     --mobile-nav-bg: rgba(23, 26, 33, 0.8);
@@ -3416,7 +3413,8 @@ html[data-theme="dark"] .education-timeline-note {
     color: #93c5fd !important;
 }
 
-html[data-theme="dark"] .text-\[\#00778B\] {
+html[data-theme="dark"] .text-\[\#00778B\],
+html[data-theme="dark"] .text-\[\#A51C30\] {
     color: #f9a8d4 !important;
 }
 
@@ -3677,7 +3675,7 @@ article,
         margin: 2px 18px 8px 0;
 
         border: 1px solid var(--border);
-        border-radius: 4px;
+        border-radius: 8px;
 
         object-fit: cover;
         object-position: center top;
@@ -3689,7 +3687,7 @@ article,
         margin: 0;
 
         color: var(--text-main);
-        font-family: "Source Sans 3", Arial, sans-serif;
+        font-family: "Source Serif 4", Georgia, serif;
         font-size: 14px;
         line-height: 1.75;
         text-align: left;
@@ -3880,7 +3878,7 @@ article,
     display: none;
     flex-wrap: wrap;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 @media (min-width: 1024px) {
@@ -3895,7 +3893,7 @@ article,
     justify-content: center;
     width: 32px;
     height: 32px;
-    border-radius: 8px;
+    border-radius: 2px;
     border: 1px solid #d8c8ee;
     background: transparent;
     transition:
@@ -3909,8 +3907,8 @@ article,
 }
 
 .profile-hero__links img {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     object-fit: contain;
 }
 

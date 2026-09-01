@@ -1721,6 +1721,10 @@ html[data-theme="dark"] .mobile-bottom-nav__link.is-active {
     color: #d8c8ee;
 }
 
+html[data-theme="dark"] .mobile-bottom-nav {
+    background: #1a1212;
+}
+
 /* Mobile */
 @media (max-width: 640px) {
     .home-contact {
@@ -3363,7 +3367,7 @@ html[data-theme="dark"] {
     --theme-button-bg: transparent;
     --theme-button-border: #383d48;
 
-    --mobile-nav-bg: rgba(23, 26, 33, 0.8);
+    --mobile-nav-bg: #1a1212;
     --mobile-nav-border: rgba(48, 53, 65, 0.72);
 }
 
@@ -3415,17 +3419,25 @@ html[data-theme="dark"] .education-timeline-note {
 
 html[data-theme="dark"] .text-\[\#00778B\],
 html[data-theme="dark"] .text-\[\#A51C30\] {
-    color: #f9a8d4 !important;
+    color: #d8c8ee !important;
+}
+
+html[data-theme="dark"] .text-\[\#00778B\]:hover {
+    color: #69c9da !important;
+}
+
+html[data-theme="dark"]  .academic-timeline__meta a:hover {
+    color: #d8c8ee !important;
 }
 
 html[data-theme="dark"] .text-\[\#35506f\],
 html[data-theme="dark"] .education-timeline-place {
-    color: #f9a8d4 !important;
+    color: #d8c8ee !important;
 }
 
 html[data-theme="dark"] .education-timeline-meta,
 html[data-theme="dark"] .academic-timeline__year {
-    color: #f9a8d4 !important;
+    color: #d8c8ee !important;
 }
 
 html[data-theme="dark"] .bg-slate-100 {

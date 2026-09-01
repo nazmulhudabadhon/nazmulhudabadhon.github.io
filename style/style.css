@@ -1679,7 +1679,7 @@ html[data-theme="dark"] .news-toggle:hover {
 
 .home-contact__nav-link:hover,
 .home-contact__nav-link.is-active {
-    background: #e9dcf8 ;
+    background: #e9dcf8;
     color: #111111;
 
     transform: translateY(-1px);
@@ -3380,7 +3380,7 @@ html[data-theme="dark"] body {
 html[data-theme="dark"] .desktop-header,
 html[data-theme="dark"] #mobile-topbar,
 html[data-theme="dark"] footer {
-    background: var(--header-bg) !important;
+    background: var(--page-bg) !important;
     border-color: var(--border) !important;
 }
 
@@ -3426,7 +3426,7 @@ html[data-theme="dark"] .text-\[\#00778B\]:hover {
     color: #69c9da !important;
 }
 
-html[data-theme="dark"]  .academic-timeline__meta a:hover {
+html[data-theme="dark"] .academic-timeline__meta a:hover {
     color: #d8c8ee !important;
 }
 
@@ -3931,6 +3931,20 @@ html[data-theme="dark"] .profile-hero__links a {
 html[data-theme="dark"] .profile-hero__links a:hover {
     border-color: rgba(203, 166, 255, 0.42);
     background: rgba(203, 166, 255, 0.08);
+}
+
+html[data-theme="dark"] .act__head-link:hover {
+    color: #cba6ff;
+}
+
+html[data-theme="dark"] .research-sidebar-floating .year-filter:hover,
+html[data-theme="dark"] .research-sidebar-floating .research-filter:hover,
+html[data-theme="dark"] .research-sidebar-floating .year-filter.is-current,
+html[data-theme="dark"] .research-sidebar-floating .research-filter.is-active,
+html[data-theme="dark"] .research-sidebar-floating .ach-filter:hover,
+html[data-theme="dark"] .research-sidebar-floating .ach-filter.is-active {
+    color: #cba6ff;
+    font-weight: 700;
 }
 
 /* Disable visual transitions while changing theme */

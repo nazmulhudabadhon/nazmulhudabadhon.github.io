@@ -3345,8 +3345,8 @@ html[data-theme="dark"] .dark-blue {
 html[data-theme="dark"] {
     color-scheme: dark;
 
-    --page-bg: #111318;
-    --card-bg: #171a21;
+    --page-bg: #1a1212;
+    --card-bg: #1a1212;
     --soft-bg: #1d2028;
     --border: #303541;
     --text-main: #D6C8B7;

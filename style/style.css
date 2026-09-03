@@ -3723,7 +3723,7 @@ article,
         margin: 2px 18px 8px 0;
 
         border: 1px solid var(--border);
-        border-radius: 8px;
+        border-radius: 2px;
 
         object-fit: cover;
         object-position: center top;

@@ -1609,7 +1609,7 @@ html[data-theme="dark"] .news-toggle:hover {
     color: var(--text-main);
 
     font-family: "Source Serif 4", Georgia, serif;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 500;
     line-height: 1.25;
     letter-spacing: -0.015em;
@@ -2065,6 +2065,47 @@ article.publication-card>* {
 .research-sidebar-floating .ach-filter.is-active {
     color: #6519dc;
     font-weight: 600;
+}
+
+/* =========================
+   Authorship Badges
+   ========================= */
+
+.author-first,
+.author-co-first {
+    background-color: #fce7f3;
+    color: #be185d;
+}
+
+.author-second {
+    background-color: #e0e7ff;
+    color: #4338ca;
+}
+
+.author-co {
+    background-color: #f1f5f9;
+    color: #64748b;
+}
+
+/* Dark mode */
+html[data-theme="dark"] .author-first {
+    background-color: #4a1d35;
+    color: #f9a8d4;
+}
+
+html[data-theme="dark"] .author-co-first {
+    background-color: #4a1d35;
+    color: #f9a8d4;
+}
+
+html[data-theme="dark"] .author-second {
+    background-color: #252a55;
+    color: #a5b4fc;
+}
+
+html[data-theme="dark"] .author-co {
+    background-color: #334155;
+    color: #cbd5e1;
 }
 
 /* =========================================================
@@ -3177,7 +3218,7 @@ article.proj-card a.project-button i {
         margin-left: auto;
         margin-right: auto;
 
-        gap: 8px;
+        gap: 0px;
     }
 
     .segmented-nav {
@@ -3188,7 +3229,7 @@ article.proj-card a.project-button i {
         width: auto;
         margin-left: auto;
 
-        gap: 0;
+        gap: 2;
         padding: 0;
     }
 
@@ -3200,11 +3241,9 @@ article.proj-card a.project-button i {
         justify-content: center;
 
         margin: 0 !important;
-        padding: 8px 14px !important;
+        padding: 6px 12px !important;
 
         min-height: 0;
-
-        border: 0;
         border-radius: 2px;
 
         font-family: "Source Sans 3", Arial, sans-serif;

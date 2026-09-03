@@ -212,13 +212,11 @@ b,
 
     .profile-intro__photo {
         float: left;
-        width: 116px;
+        width: 108px;
         aspect-ratio: 1 / 1;
         margin: 6px 24px 12px 0;
         overflow: hidden;
         border-radius: 2px;
-        border: 1px solid var(--border);
-
         background: var(--soft-bg);
     }
 
@@ -236,11 +234,13 @@ b,
     .profile-intro__text {
         color: var(--text-main);
         font-family: "Source Serif 4", Georgia, serif;
-        font-size: 16px;
+        font-size: 15.5px;
         font-weight: 400;
-        line-height: 1.6;
+        line-height: 1.55;
 
         text-align: justify;
+        hyphens: auto;
+        text-justify: inter-word;
     }
 
     /*
@@ -254,11 +254,13 @@ b,
 
         color: var(--text-main);
         font-family: "Source Serif 4", Georgia, serif;
-        font-size: 16px;
+        font-size: 15.5px;
         font-weight: 400;
         line-height: 1.6;
 
         text-align: justify;
+        hyphens: auto;
+        text-justify: inter-word;
     }
 
     .flow-root {
@@ -831,7 +833,7 @@ article.proj-card>* {
 
     .research-interests-content p {
         margin-top: 8px;
-        font-size: 13px;
+        font-size: 14px;
     }
 }
 
@@ -1065,14 +1067,14 @@ article.proj-card>* {
     display: flex;
     align-items: baseline;
     justify-content: flex-start;
-    gap: 2px;
+    gap: 1px;
 
     color: #2b3f5c;
     font-family: "Source Serif 4", serif;
     font-size: 13.5px;
     font-weight: 400;
     line-height: 1.4;
-    letter-spacing: 0.035em;
+    letter-spacing: 0.005em;
 
     white-space: nowrap;
 }
@@ -1209,7 +1211,7 @@ article.proj-card>* {
     flex-wrap: wrap;
     gap: 0;
 
-    margin: 5px 0 0;
+    margin: 2px 0 0;
 
     color: #526b8b;
     font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
@@ -1232,11 +1234,11 @@ article.proj-card>* {
     gap: 10px;
 
     width: 100%;
-    margin: 11px 0 0;
+    margin: 10px 0 0;
 
-    color: var(--accent-link);
+    color: #00778B;
     font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
-    font-size: 12.5px;
+    font-size: 13px;
     font-weight: 500;
     line-height: 1.5;
     text-align: left;
@@ -1258,16 +1260,15 @@ article.proj-card>* {
     margin: 0;
 
     color: var(--text-main);
-    font-family: 'Source Serif 4', serif;
+    font-family: "Source Serif 4", Georgia, serif;
     font-size: 15px;
     font-weight: 400;
-    line-height: 1.4;
-    text-align: justify;
+    line-height: 1.5;
+    text-align: left;
 }
 
 .publication-timeline .academic-timeline__title strong {
-    color: #0f172a;
-    font-weight: 600;
+    color: #cba6ff;
 }
 
 .publication-news-badge {
@@ -1457,10 +1458,10 @@ article.proj-card>* {
     gap: 7px;
 
     min-width: 118px;
-    padding: 8px 18px;
+    padding: 6px 10px;
 
     border: 1px solid var(--nav-active-bg);
-    border-radius: 999px;
+    border-radius: 2px;
     background: transparent;
     color: var(--text-muted);
     box-shadow: none;

@@ -651,7 +651,7 @@ article.proj-card>* {
     position: relative;
     width: 100%;
     overflow: hidden;
-    border: 1px solid var(--border);
+    border-radius: 2px;
     background: var(--soft-bg);
     touch-action: pan-y;
 }
@@ -1318,8 +1318,8 @@ article.proj-card>* {
     align-items: center;
     justify-content: center;
 
-    margin-left: 2px;
-    color: var(--accent-link);
+    margin: 0 0 8px 2px;
+    color: var(--text-main);
     line-height: 1;
     text-decoration: none;
 }
@@ -1329,7 +1329,7 @@ article.proj-card>* {
 }
 
 .academic-timeline-link i {
-    font-size: 11px;
+    font-size: 10px;
 }
 
 
@@ -1592,7 +1592,7 @@ html[data-theme="dark"] .news-toggle:hover {
 
 .home-contact__kicker {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 
     color: #6519dc;
 
@@ -1618,7 +1618,7 @@ html[data-theme="dark"] .news-toggle:hover {
 .home-contact__intro p {
     width: 100%;
     max-width: none;
-    margin: 12px 0 0;
+    margin: 4px 0 0;
 
     color: var(--text-muted);
 
@@ -1636,7 +1636,7 @@ html[data-theme="dark"] .news-toggle:hover {
     align-items: center;
     gap: 8px;
 
-    margin-top: 16px;
+    margin-top: 10px;
 }
 
 .home-contact__nav-link {

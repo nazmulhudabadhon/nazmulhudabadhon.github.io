@@ -569,18 +569,15 @@ article.proj-card>* {
     }
 }
 
-/* =========================================
-   Desktop profile sidebar layout and content
-========================================= */
-
 /* Shared academic section headings */
 .academic-section-heading {
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     justify-content: space-between;
     border-bottom: 1px solid var(--border);
     padding-bottom: 4px;
-    margin: 32px 0 14px;
+    margin: 48px 0 14px;
+    position: relative;
 }
 
 .academic-section-kicker {
@@ -991,8 +988,8 @@ article.proj-card>* {
 }
 
 /* =========================================================
-   SHARED ACADEMIC TIMELINE
-   Education + Recent Publications
+    SHARED ACADEMIC TIMELINE
+    Education + Recent Publications
    ========================================================= */
 
 .academic-timeline,
@@ -1000,7 +997,7 @@ article.proj-card>* {
     --timeline-year-width: 64px;
     --timeline-rail-width: 18px;
     --timeline-column-gap: 8px;
-    --timeline-item-gap: 28px;
+    --timeline-item-gap: 36px;
 
     --timeline-dot-size: 8px;
     --timeline-dot-top: 5px;
@@ -1019,18 +1016,15 @@ article.proj-card>* {
 .academic-timeline--education {
     --timeline-item-gap: 30px;
     margin-top: 18px;
-    margin-bottom: 38px;
+    margin-bottom: 0px;
 }
 
 .publication-timeline {
     --timeline-item-gap: 24px;
+    margin-bottom: 0px;
 }
 
-
-/* =========================================================
-   TIMELINE ITEM
-   ========================================================= */
-
+/* TIMELINE ITEM */
 .academic-timeline__item {
     position: relative;
     display: grid;
@@ -1049,9 +1043,7 @@ article.proj-card>* {
 }
 
 
-/* =========================================================
-   YEAR
-   ========================================================= */
+/* YEAR */
 
 .academic-timeline__year {
     box-sizing: border-box;
@@ -1076,13 +1068,13 @@ article.proj-card>* {
 }
 
 .academic-timeline__year span:first-child {
-    width: 28px;
+    width: 30px;
     text-align: left;
 }
 
 .academic-timeline__year span:last-child {
-    width: auto;
-    text-align: left;
+    width: 32px;
+    text-align: right;
 }
 
 /* =========================================================
@@ -1148,9 +1140,7 @@ article.proj-card>* {
 }
 
 
-/* =========================================================
-   CONTENT
-   ========================================================= */
+/* Content */
 
 .academic-timeline__content {
     min-width: 0;
@@ -1159,9 +1149,7 @@ article.proj-card>* {
 }
 
 
-/* =========================================================
-   EDUCATION
-   ========================================================= */
+/* Education */
 
 .academic-timeline--education .academic-timeline__content h3 {
     margin: 0;
@@ -1184,9 +1172,9 @@ article.proj-card>* {
     width: 100%;
     margin: 5px 0 0;
 
-    color: #334e70;
-    font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
-    font-size: 14.5px;
+    color: var(--text-main);
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 14px;
     font-weight: 400;
     line-height: 1.5;
     text-align: left;
@@ -1232,10 +1220,10 @@ article.proj-card>* {
     width: 100%;
     margin: 10px 0 0;
 
-    color:var(--text-muted);
+    color: #00778B;
     font-family: "Source Sans 3", Arial, Helvetica, sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.5;
     text-align: left;
 }
@@ -1481,7 +1469,7 @@ article.proj-card>* {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-top: 4px;
+    margin-top: 20px;
 }
 
 .news-toggle:hover {
